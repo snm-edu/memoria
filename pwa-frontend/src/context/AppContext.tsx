@@ -5,12 +5,16 @@ import { loadQuestionsToCache } from '../services/dataLoader';
 import { syncPendingAnswers } from '../services/sync';
 import type { StudentProfile, Screen } from '../types';
 
+// クイズモード: 'home'からの学年制限付き or 'nav'からの自由選択
+type QuizMode = 'graded' | 'free';
+
 interface AppState {
   profile: StudentProfile | null;
   screen: Screen;
   isOnline: boolean;
   pendingSyncCount: number;
   lastSync: string;
+  quizMode: QuizMode;
 }
 
 type AppAction =
@@ -18,7 +22,8 @@ type AppAction =
   | { type: 'SET_SCREEN'; screen: Screen }
   | { type: 'SET_ONLINE'; isOnline: boolean }
   | { type: 'SET_SYNC_COUNT'; count: number }
-  | { type: 'SET_LAST_SYNC'; timestamp: string };
+  | { type: 'SET_LAST_SYNC'; timestamp: string }
+  | { type: 'SET_QUIZ_MODE'; mode: QuizMode };
 
 function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
@@ -32,6 +37,8 @@ function appReducer(state: AppState, action: AppAction): AppState {
       return { ...state, pendingSyncCount: action.count };
     case 'SET_LAST_SYNC':
       return { ...state, lastSync: action.timestamp };
+    case 'SET_QUIZ_MODE':
+      return { ...state, quizMode: action.mode };
   }
 }
 
@@ -41,6 +48,7 @@ const initialState: AppState = {
   isOnline: navigator.onLine,
   pendingSyncCount: 0,
   lastSync: '',
+  quizMode: 'free',
 };
 
 const AppContext = createContext<{

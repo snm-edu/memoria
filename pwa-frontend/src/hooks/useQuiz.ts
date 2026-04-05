@@ -3,11 +3,13 @@ import { db } from '../services/db';
 import { sm2Update, calculateQuality, createCardState } from '../services/sm2';
 import { analyzeError as apiAnalyzeError } from '../services/api';
 import { useApp } from '../context/AppContext';
+import { getCategoriesForGrade, getMaxDifficultyForGrade } from '../services/gradeFilter';
 import type { Question, ErrorAnalysis } from '../types';
 
 export interface QuizFilters {
   category?: string;
   year?: number;
+  gradeLimit?: number; // 学年に応じた出題範囲制限
 }
 
 interface QuizState {
@@ -51,6 +53,13 @@ export function useQuiz() {
     const matchesFilter = (q: Question): boolean => {
       if (filters?.category && q.category !== filters.category) return false;
       if (filters?.year && q.exam_year !== filters.year) return false;
+      // 学年別カリキュラムフィルター
+      if (filters?.gradeLimit) {
+        const allowedCategories = getCategoriesForGrade(filters.gradeLimit);
+        if (!allowedCategories.includes(q.category)) return false;
+        const maxDifficulty = getMaxDifficultyForGrade(filters.gradeLimit);
+        if (q.difficulty > maxDifficulty) return false;
+      }
       return true;
     };
 

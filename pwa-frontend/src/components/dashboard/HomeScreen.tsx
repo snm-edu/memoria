@@ -2,6 +2,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
 import { DEPARTMENT_LABELS } from '../../types';
+import { getCategoriesForGrade } from '../../services/gradeFilter';
 
 export function HomeScreen() {
   const { state, dispatch } = useApp();
@@ -77,9 +78,25 @@ export function HomeScreen() {
       .slice(0, 3);
   }, [], []);
 
-  function startQuiz() {
+  // ホームからの「新しい問題に挑戦」→ 学年制限付き
+  function startGradedQuiz() {
+    dispatch({ type: 'SET_QUIZ_MODE', mode: 'graded' });
     dispatch({ type: 'SET_SCREEN', screen: 'quiz' });
   }
+
+  // ナビの「クイズ」→ 全問題から自由選択
+  function startFreeQuiz() {
+    dispatch({ type: 'SET_QUIZ_MODE', mode: 'free' });
+    dispatch({ type: 'SET_SCREEN', screen: 'quiz' });
+  }
+
+  // 学年の出題範囲にある問題数を計算
+  const gradeCategories = profile ? getCategoriesForGrade(profile.grade) : [];
+  const gradeQuestionCount = useLiveQuery(async () => {
+    if (!profile) return 0;
+    const all = await db.questionCache.toArray();
+    return all.filter(q => gradeCategories.includes(q.category)).length;
+  }, [profile?.grade], 0);
 
   return (
     <div className="min-h-screen p-4 pb-20">
@@ -119,9 +136,14 @@ export function HomeScreen() {
           {reviewCount > 0 ? reviewCount : '0'}
           <span className="text-lg text-slate-400 ml-1">問</span>
         </p>
-        <button onClick={startQuiz} className="btn-primary w-full mt-2">
+        <button onClick={startGradedQuiz} className="btn-primary w-full mt-2">
           {reviewCount > 0 ? '復習を始める' : '新しい問題に挑戦'}
         </button>
+        {profile && (
+          <p className="text-xs text-slate-400 mt-2">
+            {profile.grade}年生の範囲から出題（{gradeQuestionCount}問）
+          </p>
+        )}
       </div>
 
       {/* 統計カード */}
@@ -187,7 +209,7 @@ export function HomeScreen() {
           <span className="text-xs">ホーム</span>
         </button>
         <button
-          onClick={startQuiz}
+          onClick={startFreeQuiz}
           className="flex flex-col items-center text-slate-400"
         >
           <span className="text-lg">📝</span>

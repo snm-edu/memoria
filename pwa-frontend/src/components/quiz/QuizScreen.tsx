@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { useQuiz } from '../../hooks/useQuiz';
 import type { QuizFilters } from '../../hooks/useQuiz';
 import { useApp } from '../../context/AppContext';
@@ -30,9 +30,20 @@ function SafeHtml({ text, className }: { text: string; className?: string }) {
 }
 
 export function QuizScreen() {
-  const { dispatch } = useApp();
+  const { state, dispatch } = useApp();
   const quiz = useQuiz();
-  const [showFilter, setShowFilter] = useState(true);
+  // graded モードではフィルター画面をスキップ
+  const isGraded = state.quizMode === 'graded';
+  const [showFilter, setShowFilter] = useState(!isGraded);
+  const gradedStarted = useRef(false);
+
+  // graded モード: 学年制限付きで自動開始
+  useEffect(() => {
+    if (isGraded && !gradedStarted.current && state.profile) {
+      gradedStarted.current = true;
+      void quiz.startSession(20, { gradeLimit: state.profile.grade });
+    }
+  }, [isGraded, state.profile, quiz.startSession]);
 
   const handleFilterStart = useCallback(
     (filters: QuizFilters) => {
@@ -46,7 +57,8 @@ export function QuizScreen() {
     dispatch({ type: 'SET_SCREEN', screen: 'home' });
   }, [dispatch]);
 
-  if (showFilter) {
+  // free モード: フィルター画面を表示
+  if (showFilter && !isGraded) {
     return (
       <QuizFilterScreen onStart={handleFilterStart} onCancel={handleFilterCancel} />
     );
