@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.npm
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+.env.*
+
+# GAS auth
+.clasprc.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Parser output (large JSON)
+scripts/output/*.json
+
+# Logs
+*.log
+npm-debug.log*
