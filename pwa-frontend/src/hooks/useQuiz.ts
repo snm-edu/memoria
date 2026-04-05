@@ -2,6 +2,7 @@ import { useState, useCallback, useRef } from 'react';
 import { db } from '../services/db';
 import { sm2Update, calculateQuality, createCardState } from '../services/sm2';
 import { analyzeError as apiAnalyzeError } from '../services/api';
+import { useApp } from '../context/AppContext';
 import type { Question, ErrorAnalysis } from '../types';
 
 export interface QuizFilters {
@@ -25,6 +26,7 @@ interface QuizState {
 }
 
 export function useQuiz() {
+  const { triggerSync } = useApp();
   const [state, setState] = useState<QuizState>({
     questions: [],
     currentIndex: 0,
@@ -226,6 +228,8 @@ export function useQuiz() {
     setState((s) => {
       const nextIndex = s.currentIndex + 1;
       if (nextIndex >= s.questions.length) {
+        // クイズ終了時にバッチ同期を実行
+        triggerSync();
         return { ...s, isFinished: true };
       }
       startTimeRef.current = Date.now();
@@ -240,7 +244,7 @@ export function useQuiz() {
         consecutiveErrors: 0,
       };
     });
-  }, []);
+  }, [triggerSync]);
 
   const currentQuestion = state.questions[state.currentIndex] || null;
 

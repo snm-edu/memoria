@@ -1,7 +1,8 @@
-import { createContext, useContext, useReducer, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useReducer, useEffect, useCallback, type ReactNode } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../services/db';
 import { loadQuestionsToCache } from '../services/dataLoader';
+import { syncPendingAnswers } from '../services/sync';
 import type { StudentProfile, Screen } from '../types';
 
 interface AppState {
@@ -9,13 +10,15 @@ interface AppState {
   screen: Screen;
   isOnline: boolean;
   pendingSyncCount: number;
+  lastSync: string;
 }
 
 type AppAction =
   | { type: 'SET_PROFILE'; profile: StudentProfile }
   | { type: 'SET_SCREEN'; screen: Screen }
   | { type: 'SET_ONLINE'; isOnline: boolean }
-  | { type: 'SET_SYNC_COUNT'; count: number };
+  | { type: 'SET_SYNC_COUNT'; count: number }
+  | { type: 'SET_LAST_SYNC'; timestamp: string };
 
 function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
@@ -27,6 +30,8 @@ function appReducer(state: AppState, action: AppAction): AppState {
       return { ...state, isOnline: action.isOnline };
     case 'SET_SYNC_COUNT':
       return { ...state, pendingSyncCount: action.count };
+    case 'SET_LAST_SYNC':
+      return { ...state, lastSync: action.timestamp };
   }
 }
 
@@ -35,12 +40,14 @@ const initialState: AppState = {
   screen: 'setup',
   isOnline: navigator.onLine,
   pendingSyncCount: 0,
+  lastSync: '',
 };
 
 const AppContext = createContext<{
   state: AppState;
   dispatch: React.Dispatch<AppAction>;
-}>({ state: initialState, dispatch: () => {} });
+  triggerSync: () => Promise<void>;
+}>({ state: initialState, dispatch: () => {}, triggerSync: async () => {} });
 
 export function AppProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(appReducer, initialState);
@@ -86,8 +93,33 @@ export function AppProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'SET_SYNC_COUNT', count: pendingCount });
   }, [pendingCount]);
 
+  // バッチ同期関数
+  const triggerSync = useCallback(async () => {
+    if (!state.profile || !state.isOnline) return;
+    try {
+      const result = await syncPendingAnswers(
+        state.profile.studentId,
+        state.profile.department,
+        state.profile.grade
+      );
+      if (result.synced > 0) {
+        console.log(`同期完了: ${result.synced}件送信`);
+        dispatch({ type: 'SET_LAST_SYNC', timestamp: new Date().toISOString() });
+      }
+    } catch (err) {
+      console.error('同期エラー:', err);
+    }
+  }, [state.profile, state.isOnline]);
+
+  // アプリ起動時に自動同期
+  useEffect(() => {
+    if (state.profile && state.isOnline) {
+      triggerSync();
+    }
+  }, [state.profile, state.isOnline, triggerSync]);
+
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
+    <AppContext.Provider value={{ state, dispatch, triggerSync }}>
       {children}
     </AppContext.Provider>
   );
