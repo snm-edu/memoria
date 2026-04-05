@@ -4,6 +4,11 @@ import { sm2Update, calculateQuality, createCardState } from '../services/sm2';
 import { analyzeError as apiAnalyzeError } from '../services/api';
 import type { Question, ErrorAnalysis } from '../types';
 
+export interface QuizFilters {
+  category?: string;
+  year?: number;
+}
+
 interface QuizState {
   questions: Question[];
   currentIndex: number;
@@ -37,8 +42,15 @@ export function useQuiz() {
   const startTimeRef = useRef<number>(Date.now());
 
   // クイズセッションを開始
-  const startSession = useCallback(async (limit = 20) => {
+  const startSession = useCallback(async (limit = 20, filters?: QuizFilters) => {
     setState((s) => ({ ...s, isLoading: true }));
+
+    // フィルター条件に合致するかチェック
+    const matchesFilter = (q: Question): boolean => {
+      if (filters?.category && q.category !== filters.category) return false;
+      if (filters?.year && q.exam_year !== filters.year) return false;
+      return true;
+    };
 
     // 復習予定の問題を優先取得
     const today = new Date().toISOString().split('T')[0]!;
@@ -56,7 +68,7 @@ export function useQuiz() {
         .where('question_id')
         .anyOf(reviewIds)
         .toArray();
-      questions = shuffleArray(reviewQuestions).slice(0, limit);
+      questions = shuffleArray(reviewQuestions.filter(matchesFilter)).slice(0, limit);
     }
 
     // 復習問題が足りない場合、新��問題を追加
@@ -66,7 +78,8 @@ export function useQuiz() {
       );
       const newQuestions = (await db.questionCache.toArray())
         .filter((q) => !studiedIds.has(q.question_id))
-        .filter((q) => q.correct_answer.length > 0); // 正解のある問題のみ
+        .filter((q) => q.correct_answer.length > 0) // 正解のある問題のみ
+        .filter(matchesFilter);
 
       const needed = limit - questions.length;
       questions = [

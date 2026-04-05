@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { useQuiz } from '../../hooks/useQuiz';
+import type { QuizFilters } from '../../hooks/useQuiz';
 import { useApp } from '../../context/AppContext';
 import { AnalysisCard } from '../ai/AnalysisCard';
+import { QuizFilterScreen } from './QuizFilterScreen';
 
 const CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -30,11 +32,25 @@ function SafeHtml({ text, className }: { text: string; className?: string }) {
 export function QuizScreen() {
   const { dispatch } = useApp();
   const quiz = useQuiz();
+  const [showFilter, setShowFilter] = useState(true);
 
-  useEffect(() => {
-    quiz.startSession(20);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const handleFilterStart = useCallback(
+    (filters: QuizFilters) => {
+      setShowFilter(false);
+      void quiz.startSession(20, filters);
+    },
+    [quiz.startSession]
+  );
+
+  const handleFilterCancel = useCallback(() => {
+    dispatch({ type: 'SET_SCREEN', screen: 'home' });
+  }, [dispatch]);
+
+  if (showFilter) {
+    return (
+      <QuizFilterScreen onStart={handleFilterStart} onCancel={handleFilterCancel} />
+    );
+  }
 
   if (quiz.isLoading) {
     return (
@@ -72,7 +88,7 @@ export function QuizScreen() {
           </p>
           <div className="space-y-3">
             <button
-              onClick={() => quiz.startSession(20)}
+              onClick={() => setShowFilter(true)}
               className="btn-primary w-full"
             >
               もう一度
@@ -235,15 +251,26 @@ export function QuizScreen() {
               {quiz.isCorrect ? '⭕ 正解！' : '❌ 不正解'}
             </p>
             {!quiz.isCorrect && (
-              <p className="text-sm text-slate-600">
-                正答: {q.correct_answer.join(', ')}
-              </p>
+              <div className="text-sm text-slate-600 space-y-1">
+                <p>
+                  あなたの回答: <span className="font-bold text-red-600">{quiz.selectedAnswers.join(', ')}</span>
+                </p>
+                <p>
+                  正答: <span className="font-bold text-green-600">{q.correct_answer.join(', ')}</span>
+                </p>
+              </div>
             )}
-            {q.explanation && (
+            {q.explanation ? (
               <SafeHtml
                 text={q.explanation}
                 className="text-sm text-slate-600 mt-2 block"
               />
+            ) : (
+              !quiz.isCorrect && (
+                <p className="text-sm text-slate-500 mt-2">
+                  正解の選択肢をよく確認し、なぜその答えが正しいのか考えてみましょう。
+                </p>
+              )
             )}
           </div>
           {/* AI分析ローディング */}
