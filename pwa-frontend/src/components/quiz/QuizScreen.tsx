@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useQuiz } from '../../hooks/useQuiz';
 import { useApp } from '../../context/AppContext';
+import { AnalysisCard } from '../ai/AnalysisCard';
 
 const CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -245,6 +246,30 @@ export function QuizScreen() {
               />
             )}
           </div>
+          {/* AI分析ローディング */}
+          {quiz.aiLoading && (
+            <div className="p-4 rounded-xl bg-blue-50 border border-blue-200 text-center">
+              <p className="text-sm text-blue-600 animate-pulse">
+                🤖 AI が誤答を分析中...
+              </p>
+            </div>
+          )}
+
+          {/* AI分析結果 */}
+          {quiz.aiAnalysis && (
+            <AnalysisCard
+              analysis={quiz.aiAnalysis}
+              onClose={() => {}}
+            />
+          )}
+
+          {/* 連続誤答の警告 */}
+          {!quiz.isCorrect && quiz.consecutiveErrors >= 2 && quiz.consecutiveErrors < 3 && (
+            <p className="text-xs text-amber-600 text-center">
+              ⚠️ この問題を{quiz.consecutiveErrors}回連続で間違えています。次に間違えるとAIが分析します。
+            </p>
+          )}
+
           <button onClick={quiz.nextQuestion} className="btn-primary w-full">
             次の問題へ →
           </button>

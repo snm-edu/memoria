@@ -1,7 +1,8 @@
 import { useState, useCallback, useRef } from 'react';
 import { db } from '../services/db';
 import { sm2Update, calculateQuality, createCardState } from '../services/sm2';
-import type { Question } from '../types';
+import { analyzeError as apiAnalyzeError } from '../services/api';
+import type { Question, ErrorAnalysis } from '../types';
 
 interface QuizState {
   questions: Question[];
@@ -12,6 +13,10 @@ interface QuizState {
   sessionStats: { correct: number; total: number };
   isLoading: boolean;
   isFinished: boolean;
+  // AI分析
+  aiAnalysis: ErrorAnalysis | null;
+  aiLoading: boolean;
+  consecutiveErrors: number;
 }
 
 export function useQuiz() {
@@ -24,6 +29,9 @@ export function useQuiz() {
     sessionStats: { correct: 0, total: 0 },
     isLoading: true,
     isFinished: false,
+    aiAnalysis: null,
+    aiLoading: false,
+    consecutiveErrors: 0,
   });
 
   const startTimeRef = useRef<number>(Date.now());
@@ -76,6 +84,9 @@ export function useQuiz() {
       sessionStats: { correct: 0, total: 0 },
       isLoading: false,
       isFinished: questions.length === 0,
+      aiAnalysis: null,
+      aiLoading: false,
+      consecutiveErrors: 0,
     });
 
     startTimeRef.current = Date.now();
@@ -134,15 +145,67 @@ export function useQuiz() {
       console.error('DB保存エラー:', err);
     }
 
+    // 連続誤答数をカウント（IndexedDBの回答ログから計算）
+    let consecutiveErrors = 0;
+    if (!isCorrect) {
+      try {
+        const logs = await db.answerLog
+          .where('questionId')
+          .equals(current.question_id)
+          .reverse()
+          .sortBy('timestamp');
+        // 最新から連続で不正解な回数を数える
+        for (const log of logs) {
+          if (!log.isCorrect) {
+            consecutiveErrors++;
+          } else {
+            break;
+          }
+        }
+      } catch {
+        consecutiveErrors = 1;
+      }
+    }
+
+    // 3回連続誤答でAI分析を発動
+    const shouldAnalyze = !isCorrect && consecutiveErrors >= 3;
+
     setState((s) => ({
       ...s,
       showFeedback: true,
       isCorrect,
+      consecutiveErrors,
+      aiAnalysis: null,
+      aiLoading: shouldAnalyze,
       sessionStats: {
         correct: s.sessionStats.correct + (isCorrect ? 1 : 0),
         total: s.sessionStats.total + 1,
       },
     }));
+
+    // AI分析を非同期で実行
+    if (shouldAnalyze) {
+      try {
+        const res = await apiAnalyzeError({
+          questionId: current.question_id,
+          studentAnswer: finalAnswers,
+          correctAnswer: current.correct_answer,
+          questionText: current.question_text,
+          choices: current.choices,
+        });
+        if (res.success && res.data) {
+          setState((s) => ({
+            ...s,
+            aiAnalysis: res.data as ErrorAnalysis,
+            aiLoading: false,
+          }));
+        } else {
+          setState((s) => ({ ...s, aiLoading: false }));
+        }
+      } catch {
+        setState((s) => ({ ...s, aiLoading: false }));
+      }
+    }
   }, [state]);
 
   // 次の問題へ
@@ -159,6 +222,9 @@ export function useQuiz() {
         selectedAnswers: [],
         showFeedback: false,
         isCorrect: null,
+        aiAnalysis: null,
+        aiLoading: false,
+        consecutiveErrors: 0,
       };
     });
   }, []);
