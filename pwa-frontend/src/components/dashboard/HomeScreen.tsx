@@ -207,6 +207,13 @@ export function HomeScreen() {
           <span className="text-lg">📅</span>
           <span className="text-xs">予定</span>
         </button>
+        <button
+          onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'settings' })}
+          className="flex flex-col items-center text-slate-400"
+        >
+          <span className="text-lg">⚙️</span>
+          <span className="text-xs">設定</span>
+        </button>
       </nav>
     </div>
   );

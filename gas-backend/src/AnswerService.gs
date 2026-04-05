@@ -1,30 +1,39 @@
 /**
- * ナースメモリア 回答記録サービス
+ * Memoria 回答記録サービス
  */
 
 const AnswerService = {
   /**
    * 回答を記録
    */
-  submitAnswer({ studentId, questionId, answer, responseTime, department, grade }) {
+  submitAnswer({ studentId, studentNumber, questionId, answer, isCorrect, responseTime, department, grade, timestamp }) {
     if (!studentId || !questionId) {
       return { error: 'studentId and questionId are required' };
     }
 
     const sheet = getOrCreateSheet(CONFIG.SHEETS.STUDENT_LOGS);
 
-    // 正解を取得して判定
-    const question = findQuestionById(questionId);
-    if (!question) {
-      return { error: 'Question not found: ' + questionId };
+    // ヘッダー確認・作成
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        'log_id', 'student_id', 'student_number', 'department', 'grade',
+        'question_id', 'selected_answer', 'is_correct', 'response_time_ms',
+        'attempt_count', 'timestamp'
+      ]);
     }
 
     const selectedAnswer = Array.isArray(answer) ? answer : [answer];
-    const correctAnswer = question.correct_answer;
-    const isCorrect = arraysEqual(
-      selectedAnswer.sort(),
-      correctAnswer.sort()
-    );
+
+    // isCorrectがPWAから送られていない場合は正解判定する
+    if (isCorrect === undefined || isCorrect === null) {
+      const question = findQuestionById(questionId);
+      if (question) {
+        const correctAnswer = question.correct_answer;
+        isCorrect = arraysEqual(selectedAnswer.sort(), correctAnswer.sort());
+      } else {
+        isCorrect = false;
+      }
+    }
 
     // この問題の挑戦回数を取得
     const attemptCount = getAttemptCount(sheet, studentId, questionId) + 1;
@@ -35,11 +44,12 @@ const AnswerService = {
       lock.waitLock(10000);
 
       const logId = Utilities.getUuid();
-      const timestamp = new Date().toISOString();
+      const ts = timestamp || new Date().toISOString();
 
       sheet.appendRow([
         logId,
         studentId,
+        studentNumber || '',
         department || '',
         grade || '',
         questionId,
@@ -47,17 +57,13 @@ const AnswerService = {
         isCorrect,
         responseTime || 0,
         attemptCount,
-        timestamp,
+        ts,
       ]);
 
       return {
         log_id: logId,
         is_correct: isCorrect,
-        correct_answer: correctAnswer,
         attempt_count: attemptCount,
-        explanation: question.explanation || '',
-        // 3回目の連続誤答でAI分析フラグ
-        should_analyze: !isCorrect && attemptCount >= 3,
       };
     } finally {
       lock.releaseLock();
@@ -78,6 +84,54 @@ const AnswerService = {
       results.push(result);
     }
     return { results, count: results.length };
+  },
+
+  /**
+   * 学籍番号の変更（過去ログも一括更新）
+   */
+  updateStudentNumber({ oldStudentNumber, newStudentNumber, studentId }) {
+    if (!newStudentNumber) {
+      return { error: 'newStudentNumber is required' };
+    }
+
+    const sheet = getOrCreateSheet(CONFIG.SHEETS.STUDENT_LOGS);
+    const data = sheet.getDataRange().getValues();
+
+    if (data.length <= 1) {
+      return { updatedRows: 0 };
+    }
+
+    const headers = data[0];
+    const idx = {};
+    headers.forEach((h, i) => { idx[h] = i; });
+
+    const studentIdCol = idx['student_id'];
+    const studentNumberCol = idx['student_number'];
+
+    // student_number カラムが存在しない場合は追加
+    if (studentNumberCol === undefined) {
+      return { error: 'student_number column not found. Please update the sheet headers.' };
+    }
+
+    let updatedRows = 0;
+    const lock = LockService.getScriptLock();
+    try {
+      lock.waitLock(30000);
+
+      for (let i = 1; i < data.length; i++) {
+        const row = data[i];
+        // studentId（端末ID）で照合、または旧学籍番号で照合
+        if (row[studentIdCol] === studentId ||
+            (oldStudentNumber && row[studentNumberCol] === oldStudentNumber)) {
+          sheet.getRange(i + 1, studentNumberCol + 1).setValue(newStudentNumber);
+          updatedRows++;
+        }
+      }
+    } finally {
+      lock.releaseLock();
+    }
+
+    return { updatedRows };
   },
 
   /**
@@ -145,7 +199,6 @@ const AnswerService = {
     for (const date of dates) {
       if (date === checkDate) {
         streakDays++;
-        // 前日に移動
         const d = new Date(checkDate);
         d.setDate(d.getDate() - 1);
         checkDate = d.toISOString().split('T')[0];
@@ -154,7 +207,7 @@ const AnswerService = {
       }
     }
 
-    // 分野別統計（問題のcategoryを取得して集計）
+    // 分野別統計
     const categoryStats = {};
     const questionSheet = getOrCreateSheet(CONFIG.SHEETS.QUESTIONS);
     const qData = questionSheet.getDataRange().getValues();

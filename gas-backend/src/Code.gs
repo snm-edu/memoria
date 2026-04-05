@@ -1,10 +1,12 @@
 /**
- * ナースメモリア GASバックエンド メインルーター
+ * Memoria GASバックエンド メインルーター
  *
  * GET  /exec?action=getQuestions&dept=nursing&category=...&limit=20&offset=0
  * GET  /exec?action=getReviewQueue&studentId=xxx
  * GET  /exec?action=getStudentStats&studentId=xxx
- * POST /exec?action=submitAnswer   { studentId, questionId, answer, responseTime, department, grade }
+ * POST /exec?action=submitAnswer   { studentId, studentNumber, questionId, answer, responseTime, department, grade }
+ * POST /exec?action=submitAnswerBatch { answers: [...] }
+ * POST /exec?action=updateStudentNumber { oldStudentNumber, newStudentNumber, studentId }
  * POST /exec?action=analyzeError   { questionId, studentAnswer, correctAnswer }
  * POST /exec?action=generateSimilar { questionId, errorType }
  */
@@ -54,15 +56,25 @@ function doPost(e) {
       case 'submitAnswer':
         return jsonResponse(AnswerService.submitAnswer({
           studentId: body.studentId,
+          studentNumber: body.studentNumber || '',
           questionId: body.questionId,
           answer: body.answer,
+          isCorrect: body.isCorrect,
           responseTime: body.responseTime,
           department: body.department,
           grade: body.grade,
+          timestamp: body.timestamp || '',
         }));
 
       case 'submitAnswerBatch':
         return jsonResponse(AnswerService.submitAnswerBatch(body.answers));
+
+      case 'updateStudentNumber':
+        return jsonResponse(AnswerService.updateStudentNumber({
+          oldStudentNumber: body.oldStudentNumber,
+          newStudentNumber: body.newStudentNumber,
+          studentId: body.studentId,
+        }));
 
       case 'analyzeError':
         return jsonResponse(GeminiService.analyzeError({

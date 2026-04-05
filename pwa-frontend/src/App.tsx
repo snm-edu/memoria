@@ -4,6 +4,7 @@ import { HomeScreen } from './components/dashboard/HomeScreen';
 import { QuizScreen } from './components/quiz/QuizScreen';
 import { WeaknessMap } from './components/dashboard/WeaknessMap';
 import { ReviewSchedule } from './components/dashboard/ReviewSchedule';
+import { SettingsScreen } from './components/settings/SettingsScreen';
 
 function AppContent() {
   const { state } = useApp();
@@ -19,6 +20,8 @@ function AppContent() {
       return <WeaknessMap />;
     case 'schedule':
       return <ReviewSchedule />;
+    case 'settings':
+      return <SettingsScreen />;
     default:
       return <HomeScreen />;
   }

@@ -29,6 +29,21 @@ export class NurseMemoriaDB extends Dexie {
       answerLog: '++id, questionId, timestamp, synced',
       aiCache: '++id, [questionId+selectedAnswer], questionId',
     });
+    // v2: 学籍番号フィールド追加
+    this.version(2).stores({
+      profile: '++id, studentId, studentNumber, department, grade',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+    }).upgrade(tx => {
+      // 既存プロフィールに studentNumber を追加（空文字で初期化）
+      return tx.table('profile').toCollection().modify(profile => {
+        if (!profile.studentNumber) {
+          profile.studentNumber = '';
+        }
+      });
+    });
   }
 }
 

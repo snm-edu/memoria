@@ -10,14 +10,16 @@ export function SetupScreen() {
   const { dispatch } = useApp();
   const [department, setDepartment] = useState<Department | null>(null);
   const [grade, setGrade] = useState<number | null>(null);
-  const [step, setStep] = useState<'dept' | 'grade' | 'confirm'>('dept');
+  const [studentNumber, setStudentNumber] = useState('');
+  const [step, setStep] = useState<'dept' | 'grade' | 'studentNum' | 'confirm'>('dept');
 
   async function handleConfirm() {
-    if (!department || !grade) return;
+    if (!department || !grade || !studentNumber.trim()) return;
 
     const studentId = crypto.randomUUID();
     const profile = {
       studentId,
+      studentNumber: studentNumber.trim(),
       department,
       grade,
       createdAt: new Date().toISOString(),
@@ -87,7 +89,7 @@ export function SetupScreen() {
               {GRADES.map((g) => (
                 <button
                   key={g}
-                  onClick={() => { setGrade(g); setStep('confirm'); }}
+                  onClick={() => { setGrade(g); setStep('studentNum'); }}
                   className={`p-4 rounded-xl text-center font-bold text-xl transition-all
                     ${grade === g
                       ? 'bg-primary-500 text-white shadow-lg'
@@ -107,27 +109,64 @@ export function SetupScreen() {
           </div>
         )}
 
-        {/* 確認 */}
-        {step === 'confirm' && department && grade && (
-          <div className="text-center space-y-6">
-            <div className="card">
-              <p className="text-slate-500 mb-1">学科</p>
-              <p className="text-xl font-bold">{DEPARTMENT_LABELS[department]}</p>
-              <p className="text-slate-500 mb-1 mt-4">学年</p>
-              <p className="text-xl font-bold">{grade}年</p>
-            </div>
-            <p className="text-sm text-slate-400">
-              端末に匿名IDが自動生成されます。<br />
-              アカウント登録は不要です。
+        {/* 学籍番号入力 */}
+        {step === 'studentNum' && (
+          <div className="space-y-4">
+            <h2 className="text-lg font-bold text-center mb-4">学籍番号を入力</h2>
+            <input
+              type="text"
+              value={studentNumber}
+              onChange={(e) => setStudentNumber(e.target.value)}
+              placeholder="例: 25N001"
+              className="w-full p-4 rounded-xl border-2 border-slate-200 text-center text-xl font-bold
+                focus:border-primary-400 focus:outline-none transition-all"
+              autoFocus
+            />
+            <p className="text-xs text-slate-400 text-center">
+              学習記録の管理に使用します。あとから変更もできます。
             </p>
-            <button onClick={handleConfirm} className="btn-primary w-full">
-              はじめる
+            <button
+              onClick={() => { if (studentNumber.trim()) setStep('confirm'); }}
+              disabled={!studentNumber.trim()}
+              className={`w-full p-4 rounded-xl font-bold text-lg transition-all
+                ${studentNumber.trim()
+                  ? 'bg-primary-500 text-white shadow-lg active:bg-primary-600'
+                  : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                }`}
+            >
+              次へ
             </button>
             <button
               onClick={() => setStep('grade')}
               className="w-full text-center text-slate-400 py-2"
             >
               ← 学年選択に戻る
+            </button>
+          </div>
+        )}
+
+        {/* 確認 */}
+        {step === 'confirm' && department && grade && studentNumber.trim() && (
+          <div className="text-center space-y-6">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+              <p className="text-slate-500 text-sm mb-1">学科</p>
+              <p className="text-xl font-bold">{DEPARTMENT_LABELS[department]}</p>
+              <p className="text-slate-500 text-sm mb-1 mt-4">学年</p>
+              <p className="text-xl font-bold">{grade}年</p>
+              <p className="text-slate-500 text-sm mb-1 mt-4">学籍番号</p>
+              <p className="text-xl font-bold">{studentNumber.trim()}</p>
+            </div>
+            <p className="text-xs text-slate-400">
+              これらの情報はあとから設定画面で変更できます。
+            </p>
+            <button onClick={handleConfirm} className="btn-primary w-full">
+              はじめる
+            </button>
+            <button
+              onClick={() => setStep('studentNum')}
+              className="w-full text-center text-slate-400 py-2"
+            >
+              ← 学籍番号入力に戻る
             </button>
           </div>
         )}

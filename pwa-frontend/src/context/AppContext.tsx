@@ -100,7 +100,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       const result = await syncPendingAnswers(
         state.profile.studentId,
         state.profile.department,
-        state.profile.grade
+        state.profile.grade,
+        state.profile.studentNumber
       );
       if (result.synced > 0) {
         console.log(`同期完了: ${result.synced}件送信`);

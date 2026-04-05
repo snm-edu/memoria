@@ -57,6 +57,7 @@ export interface AnswerLog {
 export interface StudentProfile {
   id?: number;
   studentId: string;
+  studentNumber: string;  // 学籍番号（教員が識別に使用）
   department: Department;
   grade: number;
   createdAt: string;
@@ -93,4 +94,4 @@ export interface ApiResponse<T = unknown> {
 }
 
 // 画面
-export type Screen = 'setup' | 'home' | 'quiz' | 'analysis' | 'weakness' | 'schedule';
+export type Screen = 'setup' | 'home' | 'quiz' | 'analysis' | 'weakness' | 'schedule' | 'settings';

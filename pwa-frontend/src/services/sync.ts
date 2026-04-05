@@ -7,7 +7,8 @@ import { submitAnswerBatch } from './api';
 export async function syncPendingAnswers(
   studentId: string,
   department: string,
-  grade: number
+  grade: number,
+  studentNumber?: string
 ): Promise<{ synced: number; failed: number }> {
   const pending = await db.answerLog
     .where('synced')
@@ -20,11 +21,14 @@ export async function syncPendingAnswers(
 
   const batch = pending.map((log) => ({
     studentId,
+    studentNumber: studentNumber || '',
     questionId: log.questionId,
     answer: log.selectedAnswer,
+    isCorrect: log.isCorrect,
     responseTime: log.responseTimeMs,
     department,
     grade,
+    timestamp: log.timestamp,
   }));
 
   try {

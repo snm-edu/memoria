@@ -108,6 +108,14 @@ export async function generateSimilar(body: {
   return apiPost({ action: 'generateSimilar', ...body });
 }
 
+export async function updateStudentNumber(body: {
+  oldStudentNumber: string;
+  newStudentNumber: string;
+  studentId: string;
+}): Promise<ApiResponse<{ updatedRows: number }>> {
+  return apiPost({ action: 'updateStudentNumber', ...body });
+}
+
 export async function ping(): Promise<boolean> {
   const res = await apiGet<{ status: string }>({ action: 'ping' });
   return res.success === true;
