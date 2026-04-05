@@ -3,6 +3,9 @@ import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
 import { DEPARTMENTS, DEPARTMENT_LABELS, GRADES, type Department } from '../../types';
 
+// 現在問題データが用意されている学科
+const AVAILABLE_DEPARTMENTS: Department[] = ['nursing'];
+
 export function SetupScreen() {
   const { dispatch } = useApp();
   const [department, setDepartment] = useState<Department | null>(null);
@@ -42,19 +45,30 @@ export function SetupScreen() {
         {step === 'dept' && (
           <div className="space-y-3">
             <h2 className="text-lg font-bold text-center mb-4">学科を選択</h2>
-            {DEPARTMENTS.map((dept) => (
-              <button
-                key={dept}
-                onClick={() => { setDepartment(dept); setStep('grade'); }}
-                className={`w-full p-4 rounded-xl text-left font-medium transition-all
-                  ${department === dept
-                    ? 'bg-primary-500 text-white shadow-lg'
-                    : 'bg-white border-2 border-slate-200 active:border-primary-400'
-                  }`}
-              >
-                {DEPARTMENT_LABELS[dept]}
-              </button>
-            ))}
+            {DEPARTMENTS.map((dept) => {
+              const isAvailable = AVAILABLE_DEPARTMENTS.includes(dept);
+              return (
+                <button
+                  key={dept}
+                  onClick={() => { if (isAvailable) { setDepartment(dept); setStep('grade'); } }}
+                  disabled={!isAvailable}
+                  className={`w-full p-4 rounded-xl text-left font-medium transition-all relative
+                    ${!isAvailable
+                      ? 'bg-slate-100 border-2 border-slate-200 text-slate-400 cursor-not-allowed opacity-60'
+                      : department === dept
+                        ? 'bg-primary-500 text-white shadow-lg'
+                        : 'bg-white border-2 border-slate-200 active:border-primary-400'
+                    }`}
+                >
+                  <span>{DEPARTMENT_LABELS[dept]}</span>
+                  {!isAvailable && (
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs bg-amber-100 text-amber-600 px-2 py-1 rounded-full font-bold">
+                      Coming Soon
+                    </span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         )}
 
