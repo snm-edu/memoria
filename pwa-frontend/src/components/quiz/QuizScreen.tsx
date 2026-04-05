@@ -261,10 +261,15 @@ export function QuizScreen() {
               </div>
             )}
             {q.explanation ? (
-              <SafeHtml
-                text={q.explanation}
-                className="text-sm text-slate-600 mt-2 block"
-              />
+              <>
+                <SafeHtml
+                  text={q.explanation}
+                  className="text-sm text-slate-600 mt-2 block"
+                />
+                <p className="text-[10px] text-slate-400 mt-1">
+                  ※解説は生成AIの回答なので必ずしも正しいとは限りません。他情報も確認するようにしてください。
+                </p>
+              </>
             ) : (
               !quiz.isCorrect && (
                 <p className="text-sm text-slate-500 mt-2">
