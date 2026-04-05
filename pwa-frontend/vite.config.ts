@@ -3,8 +3,11 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
+// GitHub Pages: base='/memoria/'  Vercel: base='/'
+const base = process.env.VITE_BASE_PATH || '/memoria/';
+
 export default defineConfig({
-  base: '/memoria/',
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -18,8 +21,8 @@ export default defineConfig({
         background_color: '#f8fafc',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/memoria/',
-        scope: '/memoria/',
+        start_url: base,
+        scope: base,
         icons: [
           {
             src: 'icon-192.png',
