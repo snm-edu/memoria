@@ -100,34 +100,39 @@ export function useQuiz() {
     });
   }, []);
 
-  // 回答を確定
-  const confirmAnswer = useCallback(async () => {
+  // 回答を確定（answersを直接渡せるようにして、stale closure問題を回避）
+  const confirmAnswer = useCallback(async (answers?: string[]) => {
     const { questions, currentIndex, selectedAnswers } = state;
+    const finalAnswers = answers ?? selectedAnswers;
     const current = questions[currentIndex];
-    if (!current || selectedAnswers.length === 0) return;
+    if (!current || finalAnswers.length === 0) return;
 
     const responseTimeMs = Date.now() - startTimeRef.current;
     const isCorrect = arraysEqualIgnoreOrder(
-      selectedAnswers,
+      finalAnswers,
       current.correct_answer
     );
 
-    // SM-2更新
-    const quality = calculateQuality(isCorrect, responseTimeMs);
-    const existingCard = await db.cardStates.get(current.question_id);
-    const card = existingCard || createCardState(current.question_id);
-    const updatedCard = sm2Update(card, quality);
-    await db.cardStates.put(updatedCard);
+    try {
+      // SM-2更新
+      const quality = calculateQuality(isCorrect, responseTimeMs);
+      const existingCard = await db.cardStates.get(current.question_id);
+      const card = existingCard || createCardState(current.question_id);
+      const updatedCard = sm2Update(card, quality);
+      await db.cardStates.put(updatedCard);
 
-    // 回答ロ���記録
-    await db.answerLog.add({
-      questionId: current.question_id,
-      selectedAnswer: selectedAnswers,
-      isCorrect,
-      responseTimeMs,
-      timestamp: new Date().toISOString(),
-      synced: false,
-    });
+      // 回答ログ記録
+      await db.answerLog.add({
+        questionId: current.question_id,
+        selectedAnswer: finalAnswers,
+        isCorrect,
+        responseTimeMs,
+        timestamp: new Date().toISOString(),
+        synced: false,
+      });
+    } catch (err) {
+      console.error('DB保存エラー:', err);
+    }
 
     setState((s) => ({
       ...s,

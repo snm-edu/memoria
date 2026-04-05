@@ -182,8 +182,8 @@ export function QuizScreen() {
                 if (!quiz.showFeedback) {
                   quiz.selectAnswer(label);
                   if (!isMultiSelect) {
-                    // 単一選択は即��答確定
-                    setTimeout(() => quiz.confirmAnswer(), 200);
+                    // 単一選択は即回答確定（選択した回答を直接渡す）
+                    setTimeout(() => quiz.confirmAnswer([label]), 200);
                   }
                 }
               }}
