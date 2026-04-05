@@ -40,6 +40,8 @@ export interface CardState {
   repetitions: number;
   nextReview: string;
   lastReview: string;
+  hintLevel: number;               // メモリアステップ: 0〜6（ヒントレベル）
+  consecutiveCorrectAtZero: number; // レベル0での連続正答数
 }
 
 // 回答ログ

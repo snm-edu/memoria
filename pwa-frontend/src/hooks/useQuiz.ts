@@ -2,9 +2,16 @@ import { useState, useCallback, useRef } from 'react';
 import { db } from '../services/db';
 import { sm2Update, calculateQuality, createCardState } from '../services/sm2';
 import { analyzeError as apiAnalyzeError } from '../services/api';
+import {
+  updateHintLevel,
+  getVisibleChoices,
+  createFillInBlank,
+  getEaseFactorPenalty,
+  shouldExtendInterval,
+} from '../services/memoriaStep';
 import { useApp } from '../context/AppContext';
 import { getCategoriesForGrade, getMaxDifficultyForGrade } from '../services/gradeFilter';
-import type { Question, ErrorAnalysis } from '../types';
+import type { Question, ErrorAnalysis, CardState } from '../types';
 
 export interface QuizFilters {
   category?: string;
@@ -25,6 +32,82 @@ interface QuizState {
   aiAnalysis: ErrorAnalysis | null;
   aiLoading: boolean;
   consecutiveErrors: number;
+  // メモリアステップ
+  hintLevel: number;
+  visibleChoices: string[];
+  visibleLabels: string[];
+  fillInBlank: { text: string; answer: string } | null;
+  confirmationMode: boolean; // レベル6
+}
+
+/** CHOICE_LABELSの定数（選択肢ラベル全体） */
+const ALL_CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E'];
+
+/**
+ * 問題に対するメモリアステップの状態を計算するヘルパー
+ * CardStateのhintLevelと問題データから、表示用の選択肢・ラベル・穴埋め等を算出
+ */
+function computeMemoriaState(
+  question: Question,
+  hintLevel: number
+): Pick<QuizState, 'hintLevel' | 'visibleChoices' | 'visibleLabels' | 'fillInBlank' | 'confirmationMode'> {
+  // 複数選択問題ではレベル2,4の選択肢削減をスキップ → レベル1(カテゴリヒント)にフォールバック
+  const effectiveLevel =
+    question.is_multi_select && (hintLevel === 2 || hintLevel === 4)
+      ? 1
+      : hintLevel;
+
+  // レベル5: 穴埋め変換
+  if (effectiveLevel === 5) {
+    const correctChoiceTexts = question.correct_answer.map((label) => {
+      const idx = ALL_CHOICE_LABELS.indexOf(label.toUpperCase());
+      return idx >= 0 ? question.choices[idx] ?? '' : '';
+    });
+    const blank = createFillInBlank(question.explanation, correctChoiceTexts);
+    return {
+      hintLevel: effectiveLevel,
+      visibleChoices: question.choices,
+      visibleLabels: ALL_CHOICE_LABELS.slice(0, question.choices.length),
+      fillInBlank: blank,
+      confirmationMode: false,
+    };
+  }
+
+  // レベル6: 確認モード
+  if (effectiveLevel === 6) {
+    return {
+      hintLevel: effectiveLevel,
+      visibleChoices: question.choices,
+      visibleLabels: ALL_CHOICE_LABELS.slice(0, question.choices.length),
+      fillInBlank: null,
+      confirmationMode: true,
+    };
+  }
+
+  // レベル2,4: 選択肢削減
+  if (effectiveLevel === 2 || effectiveLevel === 4) {
+    const result = getVisibleChoices(
+      question.choices,
+      question.correct_answer,
+      effectiveLevel
+    );
+    return {
+      hintLevel: effectiveLevel,
+      visibleChoices: result.choices,
+      visibleLabels: result.labels,
+      fillInBlank: null,
+      confirmationMode: false,
+    };
+  }
+
+  // レベル0,1,3: 全選択肢表示
+  return {
+    hintLevel: effectiveLevel,
+    visibleChoices: question.choices,
+    visibleLabels: ALL_CHOICE_LABELS.slice(0, question.choices.length),
+    fillInBlank: null,
+    confirmationMode: false,
+  };
 }
 
 export function useQuiz() {
@@ -41,6 +124,12 @@ export function useQuiz() {
     aiAnalysis: null,
     aiLoading: false,
     consecutiveErrors: 0,
+    // メモリアステップ初期値
+    hintLevel: 0,
+    visibleChoices: [],
+    visibleLabels: [],
+    fillInBlank: null,
+    confirmationMode: false,
   });
 
   const startTimeRef = useRef<number>(Date.now());
@@ -99,6 +188,22 @@ export function useQuiz() {
       ];
     }
 
+    // 最初の問題のメモリアステップ状態を計算
+    let memoriaState: Pick<QuizState, 'hintLevel' | 'visibleChoices' | 'visibleLabels' | 'fillInBlank' | 'confirmationMode'> = {
+      hintLevel: 0,
+      visibleChoices: [],
+      visibleLabels: [],
+      fillInBlank: null,
+      confirmationMode: false,
+    };
+
+    if (questions.length > 0) {
+      const firstQ = questions[0]!;
+      const card = await db.cardStates.get(firstQ.question_id);
+      const hl = card?.hintLevel ?? 0;
+      memoriaState = computeMemoriaState(firstQ, hl);
+    }
+
     setState({
       questions,
       currentIndex: 0,
@@ -111,6 +216,7 @@ export function useQuiz() {
       aiAnalysis: null,
       aiLoading: false,
       consecutiveErrors: 0,
+      ...memoriaState,
     });
 
     startTimeRef.current = Date.now();
@@ -153,8 +259,27 @@ export function useQuiz() {
       const quality = calculateQuality(isCorrect, responseTimeMs);
       const existingCard = await db.cardStates.get(current.question_id);
       const card = existingCard || createCardState(current.question_id);
-      const updatedCard = sm2Update(card, quality);
-      await db.cardStates.put(updatedCard);
+      const sm2Card = sm2Update(card, quality);
+
+      // メモリアステップ処理
+      // 1. updateHintLevelでカード更新（CardState全体を返す）
+      const memoriaCard = updateHintLevel(sm2Card, isCorrect) as CardState;
+
+      // 2. getEaseFactorPenaltyでeaseFactor補正（最低1.3）
+      const penalty = getEaseFactorPenalty(memoriaCard.hintLevel);
+      memoriaCard.easeFactor = Math.max(1.3, memoriaCard.easeFactor - penalty);
+
+      // 3. shouldExtendIntervalならinterval 1.5倍
+      if (shouldExtendInterval(memoriaCard)) {
+        memoriaCard.interval = Math.round(memoriaCard.interval * 1.5);
+        // nextReviewも再計算
+        const extendedDate = new Date();
+        extendedDate.setDate(extendedDate.getDate() + memoriaCard.interval);
+        memoriaCard.nextReview = extendedDate.toISOString().split('T')[0]!;
+      }
+
+      // 4. DBに保存
+      await db.cardStates.put(memoriaCard);
 
       // 回答ログ記録
       await db.answerLog.add({
@@ -191,8 +316,10 @@ export function useQuiz() {
       }
     }
 
-    // 3回連続誤答でAI分析を発動
-    const shouldAnalyze = !isCorrect && consecutiveErrors >= 3;
+    // AI分析の発動条件: hintLevel >= 3 に変更（メモリアステップ対応）
+    const currentCard = await db.cardStates.get(current.question_id);
+    const currentHintLevel = currentCard?.hintLevel ?? 0;
+    const shouldAnalyze = !isCorrect && currentHintLevel >= 3;
 
     setState((s) => ({
       ...s,
@@ -233,27 +360,66 @@ export function useQuiz() {
   }, [state]);
 
   // 次の問題へ
-  const nextQuestion = useCallback(() => {
-    setState((s) => {
-      const nextIndex = s.currentIndex + 1;
-      if (nextIndex >= s.questions.length) {
-        // クイズ終了時にバッチ同期を実行
-        triggerSync();
-        return { ...s, isFinished: true };
+  const nextQuestion = useCallback(async () => {
+    const nextIndex = state.currentIndex + 1;
+    if (nextIndex >= state.questions.length) {
+      // クイズ終了時にバッチ同期を実行
+      triggerSync();
+      setState((s) => ({ ...s, isFinished: true }));
+      return;
+    }
+
+    // 次の問題のメモリアステップ状態を計算
+    const nextQ = state.questions[nextIndex]!;
+    const card = await db.cardStates.get(nextQ.question_id);
+    const hl = card?.hintLevel ?? 0;
+    const memoriaState = computeMemoriaState(nextQ, hl);
+
+    startTimeRef.current = Date.now();
+    setState((s) => ({
+      ...s,
+      currentIndex: nextIndex,
+      selectedAnswers: [],
+      showFeedback: false,
+      isCorrect: null,
+      aiAnalysis: null,
+      aiLoading: false,
+      consecutiveErrors: 0,
+      ...memoriaState,
+    }));
+  }, [state.currentIndex, state.questions, triggerSync]);
+
+  // レベル6の確認モード用ハンドラ
+  const handleConfirmation = useCallback(async (understood: boolean) => {
+    const { questions, currentIndex } = state;
+    const current = questions[currentIndex];
+    if (!current) return;
+
+    try {
+      const existingCard = await db.cardStates.get(current.question_id);
+      const card = existingCard || createCardState(current.question_id);
+
+      if (understood) {
+        // 理解できた: quality=3相当でSM-2更新、hintLevelを3に引き下げ
+        const updatedCard = sm2Update(card, 3);
+        updatedCard.hintLevel = 3;
+        updatedCard.consecutiveCorrectAtZero = 0;
+        await db.cardStates.put(updatedCard);
+      } else {
+        // まだ不安: hintLevel=6のまま、翌日に再出題
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        card.nextReview = tomorrow.toISOString().split('T')[0]!;
+        card.lastReview = new Date().toISOString().split('T')[0]!;
+        await db.cardStates.put(card);
       }
-      startTimeRef.current = Date.now();
-      return {
-        ...s,
-        currentIndex: nextIndex,
-        selectedAnswers: [],
-        showFeedback: false,
-        isCorrect: null,
-        aiAnalysis: null,
-        aiLoading: false,
-        consecutiveErrors: 0,
-      };
-    });
-  }, [triggerSync]);
+    } catch (err) {
+      console.error('確認モードDB保存エラー:', err);
+    }
+
+    // sessionStatsにはカウントしない → 次の問題へ
+    await nextQuestion();
+  }, [state, nextQuestion]);
 
   const currentQuestion = state.questions[state.currentIndex] || null;
 
@@ -264,6 +430,7 @@ export function useQuiz() {
     selectAnswer,
     confirmAnswer,
     nextQuestion,
+    handleConfirmation,
   };
 }
 

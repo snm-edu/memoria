@@ -44,6 +44,24 @@ export class NurseMemoriaDB extends Dexie {
         }
       });
     });
+    // v3: メモリアステップ用フィールド追加
+    this.version(3).stores({
+      profile: '++id, studentId, studentNumber, department, grade',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+    }).upgrade(tx => {
+      // 既存カード状態に hintLevel, consecutiveCorrectAtZero を付与
+      return tx.table('cardStates').toCollection().modify(card => {
+        if (card.hintLevel === undefined) {
+          card.hintLevel = 0;
+        }
+        if (card.consecutiveCorrectAtZero === undefined) {
+          card.consecutiveCorrectAtZero = 0;
+        }
+      });
+    });
   }
 }
 

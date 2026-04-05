@@ -64,5 +64,7 @@ export function createCardState(questionId: string): CardState {
     repetitions: 0,
     nextReview: new Date().toISOString().split('T')[0]!,
     lastReview: '',
+    hintLevel: 0,
+    consecutiveCorrectAtZero: 0,
   };
 }
