@@ -212,7 +212,7 @@ export function QuizScreen() {
       {/* ��数選択時���回��ボタン */}
       {isMultiSelect && !quiz.showFeedback && (
         <button
-          onClick={quiz.confirmAnswer}
+          onClick={() => quiz.confirmAnswer()}
           disabled={quiz.selectedAnswers.length < 2}
           className="btn-primary w-full mt-4"
         >
