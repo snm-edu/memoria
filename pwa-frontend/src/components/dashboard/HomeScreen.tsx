@@ -86,7 +86,12 @@ export function HomeScreen() {
       {/* ヘッダー */}
       <header className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-xl font-bold text-primary-600">ナースメモリア</h1>
+          <h1 className="text-xl font-extrabold tracking-tight"
+              style={{
+                background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>Memoria</h1>
           {profile && (
             <p className="text-sm text-slate-400">
               {DEPARTMENT_LABELS[profile.department]} {profile.grade}年

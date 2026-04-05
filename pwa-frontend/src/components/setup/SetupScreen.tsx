@@ -33,10 +33,17 @@ export function SetupScreen() {
       <div className="w-full max-w-md">
         {/* ロゴ・タイトル */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-primary-600 mb-2">
-            ナースメモリア
+          <h1 className="text-4xl font-extrabold tracking-tight mb-2"
+              style={{
+                background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                fontFamily: '"Inter", "Helvetica Neue", sans-serif',
+                letterSpacing: '-0.02em',
+              }}>
+            Memoria
           </h1>
-          <p className="text-slate-500">
+          <p className="text-slate-500 text-sm">
             国家試験対策アダプティブラーニング
           </p>
         </div>
