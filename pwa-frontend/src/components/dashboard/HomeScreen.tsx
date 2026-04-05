@@ -1,11 +1,19 @@
+import { useEffect } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
+import { useBgm } from '../../hooks/useBgm';
 import { DEPARTMENT_LABELS } from '../../types';
 import { getCategoriesForGrade } from '../../services/gradeFilter';
 
 export function HomeScreen() {
   const { state, dispatch } = useApp();
+  const { isMuted, toggleMute, play } = useBgm();
+
+  // ホーム画面では home BGM を再生
+  useEffect(() => {
+    play('home');
+  }, [play]);
   const { profile } = state;
 
   // 今日の復習予定数
@@ -116,6 +124,13 @@ export function HomeScreen() {
           )}
         </div>
         <div className="flex items-center gap-2">
+          <button
+            onClick={toggleMute}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors"
+            title={isMuted ? 'BGMオン' : 'BGMオフ'}
+          >
+            {isMuted ? '🔇' : '🔊'}
+          </button>
           {!state.isOnline && (
             <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">
               オフライン

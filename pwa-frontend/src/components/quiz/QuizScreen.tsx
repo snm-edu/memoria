@@ -1,10 +1,12 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useQuiz } from '../../hooks/useQuiz';
 import type { QuizFilters } from '../../hooks/useQuiz';
 import { useApp } from '../../context/AppContext';
+import { useBgm } from '../../hooks/useBgm';
 import { AnalysisCard } from '../ai/AnalysisCard';
 import { QuizFilterScreen } from './QuizFilterScreen';
 import { highlightKeywords } from '../../services/memoriaStep';
+import type { BgmTrack } from '../../services/bgm';
 
 /** 安全なHTMLタグのみレンダリング（sub, sup, br, strong, span+style） */
 function SafeHtml({ text, className }: { text: string; className?: string }) {
@@ -52,6 +54,7 @@ function getStepBarColor(level: number): string {
 export function QuizScreen() {
   const { state, dispatch } = useApp();
   const quiz = useQuiz();
+  const { isMuted, toggleMute, play } = useBgm();
   // graded モードではフィルター画面をスキップ
   const isGraded = state.quizMode === 'graded';
   const [showFilter, setShowFilter] = useState(!isGraded);
@@ -68,6 +71,20 @@ export function QuizScreen() {
     setFillInSubmitted(false);
     setFillInCorrect(null);
   }, [quiz.currentIndex]);
+
+  // BGM: ヒントレベルに応じてトラック切り替え
+  const bgmTrack: BgmTrack = useMemo(() => {
+    if (quiz.isFinished) return 'finish';
+    if (quiz.isLoading || showFilter) return 'home'; // フィルター中はホーム曲を維持
+    const hl = quiz.hintLevel;
+    if (hl <= 2) return 'quiz1';
+    if (hl <= 4) return 'quiz2';
+    return 'quiz3'; // レベル5-6
+  }, [quiz.isFinished, quiz.isLoading, quiz.hintLevel, showFilter]);
+
+  useEffect(() => {
+    play(bgmTrack);
+  }, [bgmTrack, play]);
 
   // graded モード: 学年制限付きで自動開始
   useEffect(() => {
@@ -127,7 +144,16 @@ export function QuizScreen() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-6">
         <div className="card w-full max-w-md text-center">
-          <h2 className="text-2xl font-bold mb-4">セッション完了</h2>
+          <div className="flex justify-end mb-2">
+            <button
+              onClick={toggleMute}
+              className="text-slate-400 text-sm"
+              title={isMuted ? 'BGMオン' : 'BGMオフ'}
+            >
+              {isMuted ? '🔇' : '🔊'}
+            </button>
+          </div>
+          <h2 className="text-2xl font-bold mb-4">🏆 セッション完了</h2>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <p className="text-slate-400 text-sm">正答数</p>
@@ -204,6 +230,13 @@ export function QuizScreen() {
           className="text-slate-400 text-sm"
         >
           ✕
+        </button>
+        <button
+          onClick={toggleMute}
+          className="text-slate-400 text-sm"
+          title={isMuted ? 'BGMオン' : 'BGMオフ'}
+        >
+          {isMuted ? '🔇' : '🔊'}
         </button>
         <div className="flex-1 bg-slate-200 rounded-full h-2">
           <div
