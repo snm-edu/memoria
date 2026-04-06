@@ -3,9 +3,9 @@ export type Department = 'nursing' | 'clinical_eng' | 'dental_hyg' | 'orthoptist
 
 export const DEPARTMENT_LABELS: Record<Department, string> = {
   nursing: '看護学科',
-  clinical_eng: '臨床工学科',
-  dental_hyg: '歯科衛生学科',
-  orthoptist: '視能訓練学科',
+  clinical_eng: '臨床工学技士学科',
+  dental_hyg: '歯科衛生士学科',
+  orthoptist: '視能訓練士学科',
 };
 
 export const DEPARTMENTS: Department[] = ['nursing', 'clinical_eng', 'dental_hyg', 'orthoptist'];
