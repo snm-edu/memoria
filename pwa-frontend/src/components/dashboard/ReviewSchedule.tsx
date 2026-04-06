@@ -1,14 +1,28 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
+import { getCategoriesForGrade } from '../../services/gradeFilter';
 
 export function ReviewSchedule() {
-  const { dispatch } = useApp();
+  const { state, dispatch } = useApp();
+  const grade = state.profile?.grade ?? 3;
+  const gradeCategories = getCategoriesForGrade(grade);
 
-  // 今後7日間の復習予定を集計
+  // 学年範囲内のquestion_idセットを取得
+  const gradeQuestionIds = useLiveQuery(async () => {
+    const questions = await db.questionCache.toArray();
+    return new Set(
+      questions
+        .filter(q => gradeCategories.includes(q.category))
+        .map(q => q.question_id)
+    );
+  }, [gradeCategories], new Set<string>());
+
+  // 今後7日間の復習予定を集計（学年範囲でフィルタ）
   const schedule = useLiveQuery(async () => {
     const cards = await db.cardStates.toArray();
-    if (cards.length === 0) return [];
+    const filteredCards = cards.filter(c => gradeQuestionIds.has(c.questionId));
+    if (filteredCards.length === 0) return [];
 
     const days: { date: string; count: number; label: string }[] = [];
     const dayLabels = ['日', '月', '火', '水', '木', '金', '土'];
@@ -17,23 +31,24 @@ export function ReviewSchedule() {
       const d = new Date();
       d.setDate(d.getDate() + i);
       const dateStr = d.toISOString().split('T')[0]!;
-      const count = cards.filter((c) => c.nextReview === dateStr).length;
+      const count = filteredCards.filter((c) => c.nextReview === dateStr).length;
       const label = i === 0 ? '今日' : i === 1 ? '明日' : `${d.getMonth() + 1}/${d.getDate()}(${dayLabels[d.getDay()]})`;
       days.push({ date: dateStr, count, label });
     }
 
     return days;
-  }, [], []);
+  }, [gradeQuestionIds], []);
 
-  // 全体の復習統計
+  // 全体の復習統計（学年範囲でフィルタ）
   const totalStats = useLiveQuery(async () => {
     const cards = await db.cardStates.toArray();
+    const filteredCards = cards.filter(c => gradeQuestionIds.has(c.questionId));
     const today = new Date().toISOString().split('T')[0]!;
-    const overdue = cards.filter((c) => c.nextReview < today).length;
-    const dueToday = cards.filter((c) => c.nextReview === today).length;
-    const upcoming = cards.filter((c) => c.nextReview > today).length;
-    return { total: cards.length, overdue, dueToday, upcoming };
-  }, [], { total: 0, overdue: 0, dueToday: 0, upcoming: 0 });
+    const overdue = filteredCards.filter((c) => c.nextReview < today).length;
+    const dueToday = filteredCards.filter((c) => c.nextReview === today).length;
+    const upcoming = filteredCards.filter((c) => c.nextReview > today).length;
+    return { total: filteredCards.length, overdue, dueToday, upcoming };
+  }, [gradeQuestionIds], { total: 0, overdue: 0, dueToday: 0, upcoming: 0 });
 
   const maxCount = Math.max(...schedule.map((d) => d.count), 1);
 
@@ -129,6 +144,13 @@ export function ReviewSchedule() {
         <button className="flex flex-col items-center text-primary-500">
           <span className="text-lg">📅</span>
           <span className="text-xs">予定</span>
+        </button>
+        <button
+          onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'settings' })}
+          className="flex flex-col items-center text-slate-400"
+        >
+          <span className="text-lg">⚙️</span>
+          <span className="text-xs">設定</span>
         </button>
       </nav>
     </div>
