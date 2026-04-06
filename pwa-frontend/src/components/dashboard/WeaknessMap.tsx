@@ -1,7 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
-import { getCategoriesForGrade } from '../../services/gradeFilter';
 
 interface CategoryStat {
   category: string;
@@ -11,9 +10,7 @@ interface CategoryStat {
 }
 
 export function WeaknessMap() {
-  const { state, dispatch } = useApp();
-  const grade = state.profile?.grade ?? 3;
-  const gradeCategories = getCategoriesForGrade(grade);
+  const { dispatch } = useApp();
 
   const stats = useLiveQuery(async (): Promise<CategoryStat[]> => {
     const logs = await db.answerLog.toArray();
@@ -25,8 +22,6 @@ export function WeaknessMap() {
     const acc: Record<string, { correct: number; total: number }> = {};
     for (const log of logs) {
       const cat = catMap.get(log.questionId) || '未分類';
-      // 学年の出題範囲内のカテゴリのみ集計
-      if (!gradeCategories.includes(cat)) continue;
       if (!acc[cat]) acc[cat] = { correct: 0, total: 0 };
       acc[cat]!.total++;
       if (log.isCorrect) acc[cat]!.correct++;
@@ -40,7 +35,7 @@ export function WeaknessMap() {
         accuracy: Math.round((s.correct / s.total) * 100),
       }))
       .sort((a, b) => a.accuracy - b.accuracy);
-  }, [gradeCategories], []);
+  }, [], []);
 
   function getColorForAccuracy(accuracy: number): string {
     if (accuracy < 30) return 'bg-red-500';
