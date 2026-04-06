@@ -134,6 +134,10 @@ export function useQuiz() {
 
   const startTimeRef = useRef<number>(Date.now());
 
+  // stale closure対策: stateの最新値を常にrefで追跡
+  const stateRef = useRef(state);
+  stateRef.current = state;
+
   // クイズセッションを開始
   const startSession = useCallback(async (limit = 20, filters?: QuizFilters) => {
     setState((s) => ({ ...s, isLoading: true }));
@@ -241,9 +245,9 @@ export function useQuiz() {
     });
   }, []);
 
-  // 回答を確定（answersを直接渡せるようにして、stale closure問題を回避）
+  // 回答を確定（stateRefで最新値を参照し、stale closure問題を回避）
   const confirmAnswer = useCallback(async (answers?: string[]) => {
-    const { questions, currentIndex, selectedAnswers } = state;
+    const { questions, currentIndex, selectedAnswers } = stateRef.current;
     const finalAnswers = answers ?? selectedAnswers;
     const current = questions[currentIndex];
     if (!current || finalAnswers.length === 0) return;
@@ -357,12 +361,13 @@ export function useQuiz() {
         setState((s) => ({ ...s, aiLoading: false }));
       }
     }
-  }, [state]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // 次の問題へ
   const nextQuestion = useCallback(async () => {
-    const nextIndex = state.currentIndex + 1;
-    if (nextIndex >= state.questions.length) {
+    const nextIndex = stateRef.current.currentIndex + 1;
+    if (nextIndex >= stateRef.current.questions.length) {
       // クイズ終了時にバッチ同期を実行
       triggerSync();
       setState((s) => ({ ...s, isFinished: true }));
@@ -370,7 +375,7 @@ export function useQuiz() {
     }
 
     // 次の問題のメモリアステップ状態を計算
-    const nextQ = state.questions[nextIndex]!;
+    const nextQ = stateRef.current.questions[nextIndex]!;
     const card = await db.cardStates.get(nextQ.question_id);
     const hl = card?.hintLevel ?? 0;
     const memoriaState = computeMemoriaState(nextQ, hl);
@@ -387,11 +392,12 @@ export function useQuiz() {
       consecutiveErrors: 0,
       ...memoriaState,
     }));
-  }, [state.currentIndex, state.questions, triggerSync]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [triggerSync]);
 
   // レベル6の確認モード用ハンドラ
   const handleConfirmation = useCallback(async (understood: boolean) => {
-    const { questions, currentIndex } = state;
+    const { questions, currentIndex } = stateRef.current;
     const current = questions[currentIndex];
     if (!current) return;
 
@@ -419,7 +425,8 @@ export function useQuiz() {
 
     // sessionStatsにはカウントしない → 次の問題へ
     await nextQuestion();
-  }, [state, nextQuestion]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nextQuestion]);
 
   const currentQuestion = state.questions[state.currentIndex] || null;
 
