@@ -279,8 +279,9 @@ export function useQuiz() {
       const card = existingCard || createCardState(current.question_id);
       const sm2Card = sm2Update(card, quality);
 
-      // メモリアステップ処理
-      const memoriaCard = updateHintLevel(sm2Card, isCorrect) as CardState;
+      // メモリアステップ処理（SM-2カードにヒントレベルをマージ）
+      const hintUpdate = updateHintLevel(sm2Card, isCorrect);
+      const memoriaCard: CardState = { ...sm2Card, ...hintUpdate };
       const penalty = getEaseFactorPenalty(memoriaCard.hintLevel);
       memoriaCard.easeFactor = Math.max(1.3, memoriaCard.easeFactor - penalty);
 
