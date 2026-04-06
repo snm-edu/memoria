@@ -22,40 +22,39 @@ const TRACK_FILES: Record<Exclude<BgmTrack, 'none'>, string> = {
 const LOOP_TRACKS: Set<BgmTrack> = new Set(['home', 'quiz1', 'quiz2', 'quiz3']);
 
 const STORAGE_KEY = 'memoria-bgm-muted';
-const FADE_MS = 600; // クロスフェード時間
-const TARGET_VOLUME = 0.25; // 最大音量（控えめ）
+const FADE_MS = 600;
+const TARGET_VOLUME = 0.25;
 
 class BgmManager {
   private current: HTMLAudioElement | null = null;
   private currentTrack: BgmTrack = 'none';
   private muted: boolean;
-  private unlocked = false; // ユーザ操作後に true
+  private unlocked = false;
   private pendingTrack: BgmTrack = 'none';
   private fadingOut = false;
+  private fadeTimer: ReturnType<typeof setInterval> | null = null;
   private listeners: Set<() => void> = new Set();
 
   constructor() {
     this.muted = localStorage.getItem(STORAGE_KEY) === 'true';
     // ユーザ操作でオーディオをアンロック
     const unlock = () => {
+      if (this.unlocked) return;
       this.unlocked = true;
-      // 保留中のトラックがあれば再生開始
-      if (this.pendingTrack !== 'none') {
-        this.play(this.pendingTrack);
+      // ミュートでなく保留中のトラックがあれば再生開始
+      if (!this.muted && this.pendingTrack !== 'none') {
+        this.startAudio(this.pendingTrack);
       }
-      document.removeEventListener('touchstart', unlock);
-      document.removeEventListener('click', unlock);
     };
-    document.addEventListener('touchstart', unlock, { once: true });
-    document.addEventListener('click', unlock, { once: true });
+    // 複数回呼ばれても安全なように once は使わない
+    document.addEventListener('touchstart', unlock, { passive: true });
+    document.addEventListener('click', unlock);
   }
 
-  /** ミュート状態を取得 */
   get isMuted(): boolean {
     return this.muted;
   }
 
-  /** 現在のトラック名を取得 */
   get track(): BgmTrack {
     return this.currentTrack;
   }
@@ -64,59 +63,60 @@ class BgmManager {
   toggleMute(): boolean {
     this.muted = !this.muted;
     localStorage.setItem(STORAGE_KEY, String(this.muted));
-    if (this.current) {
-      if (this.muted) {
-        this.current.volume = 0;
-      } else {
-        this.current.volume = TARGET_VOLUME;
+
+    // このクリック自体がユーザ操作なのでアンロック
+    this.unlocked = true;
+
+    if (this.muted) {
+      // ミュートにする: 再生中なら停止
+      if (this.current) {
+        this.current.pause();
+        this.current.src = '';
+        this.current = null;
+      }
+      if (this.fadeTimer) {
+        clearInterval(this.fadeTimer);
+        this.fadeTimer = null;
+      }
+      this.fadingOut = false;
+    } else {
+      // ミュート解除: 現在のトラックを再生開始
+      const trackToPlay = this.currentTrack !== 'none' ? this.currentTrack : this.pendingTrack;
+      if (trackToPlay !== 'none') {
+        this.startAudio(trackToPlay);
       }
     }
+
     this.notify();
     return this.muted;
   }
 
   /** 指定トラックを再生（クロスフェード） */
   play(track: BgmTrack): void {
-    if (track === this.currentTrack && !this.fadingOut) return;
     if (track === 'none') {
       this.stop();
+      return;
+    }
+
+    // 同じトラックが既に再生中ならスキップ
+    if (track === this.currentTrack && this.current && !this.fadingOut) return;
+
+    this.currentTrack = track;
+
+    // ミュート中は再生せずトラック名だけ記録
+    if (this.muted) {
+      this.notify();
       return;
     }
 
     // モバイルで未アンロックの場合は保留
     if (!this.unlocked) {
       this.pendingTrack = track;
-      this.currentTrack = track;
       this.notify();
       return;
     }
 
-    this.pendingTrack = 'none';
-
-    // 現在再生中のトラックをフェードアウト
-    if (this.current) {
-      this.fadeOut(this.current);
-    }
-
-    // 新しいトラック
-    const basePath = import.meta.env.BASE_URL || '/';
-    const src = `${basePath}${TRACK_FILES[track]}`;
-    const audio = new Audio(src);
-    audio.loop = LOOP_TRACKS.has(track);
-    audio.volume = this.muted ? 0 : 0;
-    audio.preload = 'auto';
-
-    this.current = audio;
-    this.currentTrack = track;
-
-    audio.play().then(() => {
-      this.fadeIn(audio);
-    }).catch((err) => {
-      // autoplay blocked — 次のユーザ操作で再試行
-      console.warn('BGM autoplay blocked:', err);
-      this.pendingTrack = track;
-    });
-
+    this.startAudio(track);
     this.notify();
   }
 
@@ -137,20 +137,55 @@ class BgmManager {
     return () => this.listeners.delete(fn);
   }
 
+  /** 実際にオーディオ再生を開始する内部メソッド */
+  private startAudio(track: BgmTrack): void {
+    if (track === 'none') return;
+
+    // 現在再生中のトラックをフェードアウト
+    if (this.current) {
+      this.fadeOut(this.current);
+    }
+
+    this.pendingTrack = 'none';
+
+    const basePath = import.meta.env.BASE_URL || '/';
+    const src = `${basePath}${TRACK_FILES[track]}`;
+    const audio = new Audio(src);
+    audio.loop = LOOP_TRACKS.has(track);
+    audio.volume = 0;
+    audio.preload = 'auto';
+
+    this.current = audio;
+    this.currentTrack = track;
+
+    audio.play().then(() => {
+      this.fadeIn(audio);
+    }).catch((err) => {
+      console.warn('BGM autoplay blocked:', err);
+      this.pendingTrack = track;
+    });
+  }
+
   private notify(): void {
     this.listeners.forEach((fn) => fn());
   }
 
   private fadeIn(audio: HTMLAudioElement): void {
     if (this.muted) return;
+    // 前のフェードタイマーをクリア
+    if (this.fadeTimer) clearInterval(this.fadeTimer);
+
     const steps = 20;
     const stepMs = FADE_MS / steps;
     const increment = TARGET_VOLUME / steps;
     let vol = 0;
-    const timer = setInterval(() => {
+    this.fadeTimer = setInterval(() => {
       vol = Math.min(vol + increment, TARGET_VOLUME);
       try { audio.volume = vol; } catch { /* disposed */ }
-      if (vol >= TARGET_VOLUME) clearInterval(timer);
+      if (vol >= TARGET_VOLUME) {
+        if (this.fadeTimer) clearInterval(this.fadeTimer);
+        this.fadeTimer = null;
+      }
     }, stepMs);
   }
 
@@ -159,6 +194,13 @@ class BgmManager {
     const steps = 15;
     const stepMs = FADE_MS / steps;
     const startVol = audio.volume;
+    if (startVol <= 0) {
+      // すでに無音なら即停止
+      audio.pause();
+      audio.src = '';
+      this.fadingOut = false;
+      return;
+    }
     const decrement = startVol / steps;
     let vol = startVol;
     const timer = setInterval(() => {
