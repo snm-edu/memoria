@@ -90,9 +90,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  // 未同期件数
+  // 未同期件数（synced === false のログをカウント）
   const pendingCount = useLiveQuery(
-    () => db.answerLog.where('synced').equals(0).count(),
+    async () => {
+      const all = await db.answerLog.toArray();
+      return all.filter(log => log.synced === false || log.synced === 0 as unknown as boolean).length;
+    },
     [],
     0
   );
