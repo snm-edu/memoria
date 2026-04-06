@@ -247,16 +247,30 @@ export function useQuiz() {
 
   // 回答を確定（stateRefで最新値を参照し、stale closure問題を回避）
   const confirmAnswer = useCallback(async (answers?: string[]) => {
-    const { questions, currentIndex, selectedAnswers } = stateRef.current;
-    const finalAnswers = answers ?? selectedAnswers;
-    const current = questions[currentIndex];
-    if (!current || finalAnswers.length === 0) return;
+    const s = stateRef.current;
+    const finalAnswers = answers ?? s.selectedAnswers;
+    const current = s.questions[s.currentIndex];
+
+    console.log('[confirmAnswer] called', {
+      answersArg: answers,
+      finalAnswers,
+      currentIndex: s.currentIndex,
+      questionsLen: s.questions.length,
+      hasCurrentQ: !!current,
+    });
+
+    if (!current || finalAnswers.length === 0) {
+      console.warn('[confirmAnswer] EARLY RETURN - no current question or no answers');
+      return;
+    }
 
     const responseTimeMs = Date.now() - startTimeRef.current;
     const isCorrect = arraysEqualIgnoreOrder(
       finalAnswers,
       current.correct_answer
     );
+
+    console.log('[confirmAnswer] isCorrect:', isCorrect, 'qid:', current.question_id);
 
     try {
       // SM-2更新
@@ -266,24 +280,20 @@ export function useQuiz() {
       const sm2Card = sm2Update(card, quality);
 
       // メモリアステップ処理
-      // 1. updateHintLevelでカード更新（CardState全体を返す）
       const memoriaCard = updateHintLevel(sm2Card, isCorrect) as CardState;
-
-      // 2. getEaseFactorPenaltyでeaseFactor補正（最低1.3）
       const penalty = getEaseFactorPenalty(memoriaCard.hintLevel);
       memoriaCard.easeFactor = Math.max(1.3, memoriaCard.easeFactor - penalty);
 
-      // 3. shouldExtendIntervalならinterval 1.5倍
       if (shouldExtendInterval(memoriaCard)) {
         memoriaCard.interval = Math.round(memoriaCard.interval * 1.5);
-        // nextReviewも再計算
         const extendedDate = new Date();
         extendedDate.setDate(extendedDate.getDate() + memoriaCard.interval);
         memoriaCard.nextReview = extendedDate.toISOString().split('T')[0]!;
       }
 
-      // 4. DBに保存
+      // DBに保存
       await db.cardStates.put(memoriaCard);
+      console.log('[confirmAnswer] cardState saved:', memoriaCard.questionId, 'next:', memoriaCard.nextReview);
 
       // 回答ログ記録
       await db.answerLog.add({
@@ -294,8 +304,9 @@ export function useQuiz() {
         timestamp: new Date().toISOString(),
         synced: false,
       });
+      console.log('[confirmAnswer] answerLog saved');
     } catch (err) {
-      console.error('DB保存エラー:', err);
+      console.error('[confirmAnswer] DB保存エラー:', err);
     }
 
     // 連続誤答数をカウント（IndexedDBの回答ログから計算）
