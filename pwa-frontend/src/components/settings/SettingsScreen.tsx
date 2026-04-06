@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
 import { DEPARTMENT_LABELS, GRADES } from '../../types';
@@ -156,21 +157,80 @@ export function SettingsScreen() {
         )}
 
         {/* デバッグ情報 */}
-        <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200">
-          <p className="text-xs text-slate-400 mb-1">端末ID</p>
-          <p className="text-xs text-slate-500 font-mono break-all">{profile.studentId}</p>
-          <p className="text-xs text-slate-400 mt-2 mb-1">未同期データ</p>
-          <p className="text-xs text-slate-500">{state.pendingSyncCount}件</p>
-          {state.lastSync && (
-            <>
-              <p className="text-xs text-slate-400 mt-2 mb-1">最終同期</p>
-              <p className="text-xs text-slate-500">
-                {new Date(state.lastSync).toLocaleString('ja-JP')}
-              </p>
-            </>
-          )}
+        <DebugInfo profile={profile} state={state} />
+      </div>
+    </div>
+  );
+}
+
+/** DB内容を表示するデバッグコンポーネント */
+function DebugInfo({ profile, state }: { profile: NonNullable<ReturnType<typeof useApp>['state']['profile']>; state: ReturnType<typeof useApp>['state'] }) {
+  const answerLogCount = useLiveQuery(() => db.answerLog.count(), [], 0);
+  const cardStatesCount = useLiveQuery(() => db.cardStates.count(), [], 0);
+  const questionCacheCount = useLiveQuery(() => db.questionCache.count(), [], 0);
+
+  const recentLogs = useLiveQuery(async () => {
+    return db.answerLog.orderBy('timestamp').reverse().limit(5).toArray();
+  }, [], []);
+
+  const recentCards = useLiveQuery(async () => {
+    return db.cardStates.limit(5).toArray();
+  }, [], []);
+
+  return (
+    <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-3">
+      <p className="text-xs font-bold text-slate-500">デバッグ情報</p>
+
+      <div className="grid grid-cols-3 gap-2 text-center">
+        <div>
+          <p className="text-xs text-slate-400">回答ログ</p>
+          <p className="text-sm font-bold">{answerLogCount}</p>
+        </div>
+        <div>
+          <p className="text-xs text-slate-400">カード状態</p>
+          <p className="text-sm font-bold">{cardStatesCount}</p>
+        </div>
+        <div>
+          <p className="text-xs text-slate-400">問題キャッシュ</p>
+          <p className="text-sm font-bold">{questionCacheCount}</p>
         </div>
       </div>
+
+      <div>
+        <p className="text-xs text-slate-400 mb-1">端末ID</p>
+        <p className="text-xs text-slate-500 font-mono break-all">{profile.studentId}</p>
+      </div>
+
+      <div>
+        <p className="text-xs text-slate-400 mb-1">未同期: {state.pendingSyncCount}件</p>
+        {state.lastSync && (
+          <p className="text-xs text-slate-500">
+            最終同期: {new Date(state.lastSync).toLocaleString('ja-JP')}
+          </p>
+        )}
+      </div>
+
+      {recentLogs.length > 0 && (
+        <div>
+          <p className="text-xs text-slate-400 mb-1">直近の回答ログ</p>
+          {recentLogs.map((log, i) => (
+            <p key={i} className="text-xs text-slate-500 font-mono">
+              {log.questionId.slice(-10)} {log.isCorrect ? '⭕' : '❌'} {new Date(log.timestamp).toLocaleTimeString('ja-JP')}
+            </p>
+          ))}
+        </div>
+      )}
+
+      {recentCards.length > 0 && (
+        <div>
+          <p className="text-xs text-slate-400 mb-1">カード状態（上位5件）</p>
+          {recentCards.map((card, i) => (
+            <p key={i} className="text-xs text-slate-500 font-mono">
+              {card.questionId.slice(-10)} next:{card.nextReview} rep:{card.repetitions} hl:{card.hintLevel}
+            </p>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
