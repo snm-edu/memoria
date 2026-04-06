@@ -95,5 +95,28 @@ export interface ApiResponse<T = unknown> {
   error?: string;
 }
 
+// ゲーミフィケーション
+export interface GamificationState {
+  id?: number;
+  visitorId: string;        // studentIdと紐づけ
+  exp: number;
+  level: number;
+  streakDays: number;
+  lastStudyDate: string;    // "2026-04-06" 形式
+  badges: string[];         // 獲得済みバッジID配列
+  weeklyQuestions: number;  // 今週の回答数
+  weeklyCorrect: number;    // 今週の正答数
+  weekStartDate: string;    // 週の開始日
+}
+
+// バッジ定義
+export interface BadgeDefinition {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  category: 'quantity' | 'streak' | 'accuracy' | 'mastery' | 'challenge';
+}
+
 // 画面
-export type Screen = 'setup' | 'home' | 'quiz' | 'analysis' | 'weakness' | 'schedule' | 'settings';
+export type Screen = 'setup' | 'home' | 'quiz' | 'analysis' | 'weakness' | 'schedule' | 'settings' | 'badges' | 'ai_dashboard';

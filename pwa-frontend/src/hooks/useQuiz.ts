@@ -9,6 +9,7 @@ import {
   getEaseFactorPenalty,
   shouldExtendInterval,
 } from '../services/memoriaStep';
+import { updateGamification } from '../services/gamification';
 import { useApp } from '../context/AppContext';
 import { getCategoriesForGrade, getMaxDifficultyForGrade } from '../services/gradeFilter';
 import type { Question, ErrorAnalysis, CardState } from '../types';
@@ -133,6 +134,10 @@ export function useQuiz() {
   });
 
   const startTimeRef = useRef<number>(Date.now());
+  // ゲーミフィケーション用セッション追跡
+  const sessionConsecutiveCorrectRef = useRef(0);
+  const sessionMaxConsecutiveRef = useRef(0);
+  const sessionFastCorrectRef = useRef(0);
 
   // stale closure対策: stateの最新値を常にrefで追跡
   const stateRef = useRef(state);
@@ -306,6 +311,33 @@ export function useQuiz() {
         synced: false,
       });
       console.log('[confirmAnswer] answerLog saved');
+
+      // ゲーミフィケーション更新
+      if (isCorrect) {
+        sessionConsecutiveCorrectRef.current++;
+        if (responseTimeMs < 5000) sessionFastCorrectRef.current++;
+      } else {
+        sessionConsecutiveCorrectRef.current = 0;
+      }
+      sessionMaxConsecutiveRef.current = Math.max(
+        sessionMaxConsecutiveRef.current,
+        sessionConsecutiveCorrectRef.current
+      );
+
+      const isReview = !!existingCard;
+      try {
+        const profile = await db.profile.toCollection().first();
+        if (profile) {
+          await updateGamification(
+            profile.studentId,
+            isCorrect,
+            isReview,
+            sessionConsecutiveCorrectRef.current,
+          );
+        }
+      } catch (gErr) {
+        console.warn('[confirmAnswer] gamification error:', gErr);
+      }
     } catch (err) {
       console.error('[confirmAnswer] DB保存エラー:', err);
     }
@@ -382,6 +414,27 @@ export function useQuiz() {
     if (nextIndex >= stateRef.current.questions.length) {
       // クイズ終了時にバッチ同期を実行
       triggerSync();
+      // セッション終了時のバッジチェック（パーフェクト、10問連続正解等）
+      try {
+        const profile = await db.profile.toCollection().first();
+        if (profile) {
+          const s = stateRef.current;
+          await updateGamification(
+            profile.studentId,
+            true, false, 0,
+            {
+              correct: s.sessionStats.correct,
+              total: s.sessionStats.total,
+              consecutiveCorrect: sessionMaxConsecutiveRef.current,
+              fastCorrect: sessionFastCorrectRef.current,
+            }
+          );
+        }
+      } catch (e) { console.warn('[quiz] session badge check error:', e); }
+      // セッションカウンターリセット
+      sessionConsecutiveCorrectRef.current = 0;
+      sessionMaxConsecutiveRef.current = 0;
+      sessionFastCorrectRef.current = 0;
       setState((s) => ({ ...s, isFinished: true }));
       return;
     }

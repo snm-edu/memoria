@@ -5,6 +5,8 @@ import { QuizScreen } from './components/quiz/QuizScreen';
 import { WeaknessMap } from './components/dashboard/WeaknessMap';
 import { ReviewSchedule } from './components/dashboard/ReviewSchedule';
 import { SettingsScreen } from './components/settings/SettingsScreen';
+import { BadgesScreen } from './components/dashboard/BadgesScreen';
+import { AiDashboard } from './components/dashboard/AiDashboard';
 
 function AppContent() {
   const { state } = useApp();
@@ -22,6 +24,10 @@ function AppContent() {
       return <ReviewSchedule />;
     case 'settings':
       return <SettingsScreen />;
+    case 'badges':
+      return <BadgesScreen />;
+    case 'ai_dashboard':
+      return <AiDashboard />;
     default:
       return <HomeScreen />;
   }

@@ -35,6 +35,11 @@ function doGet(e) {
           e.parameter.studentId
         ));
 
+      case 'getDashboard':
+        return jsonResponse(DashboardService.getStudentDashboard(
+          e.parameter.studentId
+        ));
+
       case 'ping':
         return jsonResponse({ status: 'ok', timestamp: new Date().toISOString() });
 

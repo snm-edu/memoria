@@ -106,6 +106,27 @@ export function HomeScreen() {
     return all.filter(q => gradeCategories.includes(q.category)).length;
   }, [profile?.grade], 0);
 
+  // ゲーミフィケーションデータ取得
+  const gamification = useLiveQuery(async () => {
+    if (!profile) return null;
+    return db.gamification.where('visitorId').equals(profile.studentId).first();
+  }, [profile?.studentId]);
+
+  const streakDays = gamification?.streakDays || 0;
+  const exp = gamification?.exp || 0;
+  const badgeCount = gamification?.badges?.length || 0;
+
+  // レベル計算
+  const level = Math.min(40, Math.floor(Math.sqrt(exp / 25)) + 1);
+  const currentLevelExp = (level - 1) * (level - 1) * 25;
+  const nextLevelExp = level * level * 25;
+  const progress = nextLevelExp > currentLevelExp ? (exp - currentLevelExp) / (nextLevelExp - currentLevelExp) : 1;
+
+  // 称号
+  const TITLES = [[1,'見学生'],[5,'実習生'],[10,'新人'],[15,'一人前'],[20,'プリセプター'],[25,'主任'],[30,'師長'],[35,'専門家'],[40,'部長']] as const;
+  let levelTitle = '見学生';
+  for (const [lv, t] of TITLES) { if (level >= lv) levelTitle = t; }
+
   return (
     <div className="min-h-screen p-4 pb-20">
       {/* ヘッダー */}
@@ -143,6 +164,42 @@ export function HomeScreen() {
           )}
         </div>
       </header>
+
+      {/* ストリーク & レベル */}
+      <div className="flex items-center gap-3 mb-4">
+        <div className="flex-1 card flex items-center gap-2 py-2">
+          <span className="text-xl">🔥</span>
+          <div>
+            <p className="text-lg font-bold">{streakDays}日</p>
+            <p className="text-xs text-slate-400">連続学習</p>
+          </div>
+        </div>
+        <div className="flex-1 card flex items-center gap-2 py-2">
+          <span className="text-xl">⭐</span>
+          <div>
+            <p className="text-lg font-bold">Lv.{level}</p>
+            <p className="text-xs text-slate-400">{levelTitle}</p>
+          </div>
+        </div>
+        <button onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'badges' })} className="card flex items-center gap-1 py-2 px-3">
+          <span className="text-xl">🏅</span>
+          <div>
+            <p className="text-lg font-bold">{badgeCount}</p>
+            <p className="text-xs text-slate-400">バッジ</p>
+          </div>
+        </button>
+      </div>
+
+      {/* EXPプログレスバー */}
+      <div className="mb-4 px-1">
+        <div className="flex justify-between text-xs text-slate-400 mb-1">
+          <span>EXP {exp}</span>
+          <span>次のレベルまで {nextLevelExp - exp}</span>
+        </div>
+        <div className="w-full bg-slate-100 rounded-full h-2">
+          <div className="bg-gradient-to-r from-blue-400 to-purple-500 h-2 rounded-full transition-all" style={{ width: `${progress * 100}%` }} />
+        </div>
+      </div>
 
       {/* メイン学習ボタン */}
       <div className="card mb-4 text-center">
@@ -182,6 +239,19 @@ export function HomeScreen() {
           <p className="text-2xl font-bold">{totalQuestions}</p>
         </div>
       </div>
+
+      {/* AI分析ボタン */}
+      <button
+        onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'ai_dashboard' })}
+        className="w-full card mb-4 flex items-center gap-3 active:bg-slate-50 transition-colors"
+      >
+        <span className="text-2xl">🤖</span>
+        <div className="flex-1 text-left">
+          <p className="text-sm font-bold">AI分析ダッシュボード</p>
+          <p className="text-xs text-slate-400">苦手分野の深掘り・学習アドバイス</p>
+        </div>
+        <span className="text-slate-300">→</span>
+      </button>
 
       {/* 弱点分野 */}
       {weakCategories.length > 0 && (
