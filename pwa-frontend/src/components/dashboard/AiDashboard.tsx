@@ -187,14 +187,28 @@ export function AiDashboard() {
                     {/* サブカテゴリ */}
                     {cat.subcategories && cat.subcategories.length > 0 && (
                       <div className="ml-4 mt-1 space-y-1">
-                        {cat.subcategories.slice(0, 3).map((sub, j) => (
-                          <div key={j} className="flex items-center justify-between">
-                            <span className="text-xs text-slate-500 truncate flex-1">{sub.subcategory}</span>
-                            <span className={`text-xs font-bold ${sub.rate < 50 ? 'text-red-500' : 'text-slate-500'}`}>
-                              {sub.rate}%
-                            </span>
-                          </div>
-                        ))}
+                        {cat.subcategories.slice(0, 3).map((sub, j) => {
+                          // "人体の構造と機能 > B.消化と吸収" → "B.消化と吸収"
+                          const subName = sub.subcategory.includes(' > ')
+                            ? sub.subcategory.split(' > ')[1]!
+                            : sub.subcategory;
+                          return (
+                            <div key={j} className="flex items-center justify-between gap-1">
+                              <span className="text-xs text-slate-500 truncate flex-1">{sub.subcategory}</span>
+                              <div className="flex items-center gap-1 flex-shrink-0">
+                                <span className={`text-xs font-bold ${sub.rate < 50 ? 'text-red-500' : 'text-slate-500'}`}>
+                                  {sub.rate}%
+                                </span>
+                                <button
+                                  onClick={() => dispatch({ type: 'START_CATEGORY_QUIZ', category: cat.category, subcategory: subName })}
+                                  className="text-[10px] bg-orange-500 text-white px-1.5 py-0.5 rounded-full active:bg-orange-600"
+                                >
+                                  挑戦
+                                </button>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

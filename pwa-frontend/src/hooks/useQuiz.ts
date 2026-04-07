@@ -16,6 +16,7 @@ import type { Question, ErrorAnalysis, CardState } from '../types';
 
 export interface QuizFilters {
   category?: string;
+  subcategory?: string; // サブカテゴリで更に絞り込み
   year?: number;
   gradeLimit?: number; // 学年に応じた出題範囲制限
 }
@@ -150,6 +151,7 @@ export function useQuiz() {
     // フィルター条件に合致するかチェック
     const matchesFilter = (q: Question): boolean => {
       if (filters?.category && q.category !== filters.category) return false;
+      if (filters?.subcategory && q.subcategory !== filters.subcategory) return false;
       if (filters?.year && q.exam_year !== filters.year) return false;
       // 学年別カリキュラムフィルター
       if (filters?.gradeLimit) {

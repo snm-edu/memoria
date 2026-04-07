@@ -100,11 +100,15 @@ export function QuizScreen() {
   useEffect(() => {
     if (hasCategory && !categoryStarted.current) {
       categoryStarted.current = true;
-      void quiz.startSession(20, { category: state.quizCategory });
+      const filters: QuizFilters = { category: state.quizCategory };
+      if (state.quizSubcategory) {
+        filters.subcategory = state.quizSubcategory;
+      }
+      void quiz.startSession(20, filters);
       // カテゴリ指定をクリア（次回は通常モードに戻す）
       dispatch({ type: 'START_CATEGORY_QUIZ', category: '' });
     }
-  }, [hasCategory, state.quizCategory, quiz.startSession, dispatch]);
+  }, [hasCategory, state.quizCategory, state.quizSubcategory, quiz.startSession, dispatch]);
 
   const handleFilterStart = useCallback(
     (filters: QuizFilters) => {
