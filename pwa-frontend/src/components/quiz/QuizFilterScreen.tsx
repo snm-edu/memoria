@@ -68,8 +68,8 @@ export function QuizFilterScreen({ onStart, onCancel }: Props) {
     <div className="min-h-screen flex flex-col p-4 pb-6">
       {/* ヘッダー */}
       <div className="flex items-center gap-3 mb-6">
-        <button onClick={onCancel} className="text-slate-400 text-sm">
-          ✕
+        <button onClick={onCancel} className="text-slate-400">
+          ← 戻る
         </button>
         <h1 className="text-lg font-bold">クイズ設定</h1>
       </div>
