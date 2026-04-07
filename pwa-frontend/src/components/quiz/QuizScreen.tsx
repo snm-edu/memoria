@@ -247,13 +247,6 @@ export function QuizScreen() {
         >
           ✕
         </button>
-        <button
-          onClick={toggleMute}
-          className="text-slate-400 text-sm"
-          title={isMuted ? 'BGMオン' : 'BGMオフ'}
-        >
-          {isMuted ? '🔇' : '🔊'}
-        </button>
         <div className="flex-1 bg-slate-200 rounded-full h-2">
           <div
             className="bg-primary-500 h-2 rounded-full transition-all"
@@ -265,6 +258,13 @@ export function QuizScreen() {
         <span className="text-sm text-slate-400">
           {quiz.currentIndex + 1}/{quiz.questions.length}
         </span>
+        <button
+          onClick={toggleMute}
+          className="text-slate-400 text-sm"
+          title={isMuted ? 'BGMオン' : 'BGMオフ'}
+        >
+          {isMuted ? '🔇' : '🔊'}
+        </button>
       </div>
 
       {/* メモリアステップ インジケーター */}
