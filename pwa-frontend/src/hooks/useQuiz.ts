@@ -148,8 +148,15 @@ export function useQuiz() {
   const startSession = useCallback(async (limit = 20, filters?: QuizFilters) => {
     setState((s) => ({ ...s, isLoading: true }));
 
+    // 選択肢が画像のみ（&#160;等）の問題を除外する判定
+    const hasValidChoices = (q: Question): boolean => {
+      if (q.choices.length === 0) return false;
+      return q.choices.some(c => c.trim() !== '' && c !== '\u00A0' && !c.match(/^&#\d+;$/));
+    };
+
     // フィルター条件に合致するかチェック
     const matchesFilter = (q: Question): boolean => {
+      if (!hasValidChoices(q)) return false; // 選択肢が画像のみの問題を除外
       if (filters?.category && q.category !== filters.category) return false;
       if (filters?.subcategory && q.subcategory !== filters.subcategory) return false;
       if (filters?.year && q.exam_year !== filters.year) return false;
