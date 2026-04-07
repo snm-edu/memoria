@@ -111,9 +111,12 @@ const DashboardService = {
       sheet.clear();
     }
 
+    // 学生名簿から学籍番号→氏名のマップを作成
+    var nameMap = this.getStudentNameMap();
+
     // ヘッダー
     var headers = [
-      'student_id', 'student_number', 'department', 'grade',
+      'student_id', 'student_number', 'student_name', 'department', 'grade',
       'category', 'subcategory', 'subtopic',
       'total_count', 'correct_count', 'accuracy_rate'
     ];
@@ -127,6 +130,8 @@ const DashboardService = {
     for (var studentId in studentGroups) {
       var logs = studentGroups[studentId];
       var latest = logs[logs.length - 1] || {};
+      var studentNumber = latest.studentNumber || '';
+      var studentName = nameMap[studentNumber] || '';
 
       // 分野 × サブカテゴリ × サブトピックの3階層で集計
       var stats = {};
@@ -154,7 +159,8 @@ const DashboardService = {
         var rate = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
         rows.push([
           studentId,
-          latest.studentNumber || '',
+          studentNumber,
+          studentName,
           latest.department || '',
           latest.grade || '',
           s.cat,
@@ -173,6 +179,49 @@ const DashboardService = {
     }
 
     Logger.log('category_stats更新: ' + rows.length + '行');
+  },
+
+  /**
+   * 学生名簿スプレッドシートから学籍番号→氏名のマップを取得
+   */
+  getStudentNameMap() {
+    var nameMap = {};
+    try {
+      var nameSheetId = PropertiesService.getScriptProperties().getProperty('STUDENT_LIST_ID');
+      if (!nameSheetId) {
+        // スクリプトプロパティ未設定の場合、同じスプレッドシート内のstudentsシートを探す
+        var ss = getSpreadsheet();
+        var sheet = ss.getSheetByName('students');
+        if (sheet) {
+          var data = sheet.getDataRange().getValues();
+          var headers = data[0];
+          var idx = {};
+          headers.forEach(function(h, i) { idx[h] = i; });
+          for (var i = 1; i < data.length; i++) {
+            var num = String(data[i][idx['student_number']] || '');
+            var name = data[i][idx['student_name']] || '';
+            if (num) nameMap[num] = name;
+          }
+          return nameMap;
+        }
+        return nameMap;
+      }
+      var nameSS = SpreadsheetApp.openById(nameSheetId);
+      var sheet = nameSS.getSheetByName('students');
+      if (!sheet) return nameMap;
+      var data = sheet.getDataRange().getValues();
+      var headers = data[0];
+      var idx = {};
+      headers.forEach(function(h, i) { idx[h] = i; });
+      for (var i = 1; i < data.length; i++) {
+        var num = String(data[i][idx['student_number']] || '');
+        var name = data[i][idx['student_name']] || '';
+        if (num) nameMap[num] = name;
+      }
+    } catch (e) {
+      Logger.log('学生名簿取得エラー: ' + e);
+    }
+    return nameMap;
   },
 
   /**
