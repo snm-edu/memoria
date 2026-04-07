@@ -168,7 +168,15 @@ export function AiDashboard() {
                   <div key={i}>
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-sm font-bold">{cat.category}</span>
-                      <span className="text-sm font-bold text-red-500">{cat.rate}%</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-bold text-red-500">{cat.rate}%</span>
+                        <button
+                          onClick={() => dispatch({ type: 'START_CATEGORY_QUIZ', category: cat.category })}
+                          className="text-xs bg-red-500 text-white px-2 py-0.5 rounded-full active:bg-red-600"
+                        >
+                          挑戦→
+                        </button>
+                      </div>
                     </div>
                     <div className="w-full bg-slate-100 rounded-full h-2 mb-1">
                       <div

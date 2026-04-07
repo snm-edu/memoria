@@ -84,11 +84,19 @@ export function WeaknessMap() {
                   />
                 </div>
               </div>
-              <div className="text-right flex-shrink-0">
-                <p className="text-sm font-bold">{stat.accuracy}%</p>
-                <p className="text-xs text-slate-400">
-                  {stat.correct}/{stat.total}
-                </p>
+              <div className="text-right flex-shrink-0 flex items-center gap-2">
+                <div>
+                  <p className="text-sm font-bold">{stat.accuracy}%</p>
+                  <p className="text-xs text-slate-400">
+                    {stat.correct}/{stat.total}
+                  </p>
+                </div>
+                <button
+                  onClick={() => dispatch({ type: 'START_CATEGORY_QUIZ', category: stat.category })}
+                  className="text-xs bg-primary-500 text-white px-2 py-1 rounded-full active:bg-primary-600"
+                >
+                  挑戦
+                </button>
               </div>
             </div>
           ))}

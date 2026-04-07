@@ -15,6 +15,7 @@ interface AppState {
   pendingSyncCount: number;
   lastSync: string;
   quizMode: QuizMode;
+  quizCategory: string; // カテゴリ指定クイズ用（空文字=指定なし）
 }
 
 type AppAction =
@@ -23,7 +24,8 @@ type AppAction =
   | { type: 'SET_ONLINE'; isOnline: boolean }
   | { type: 'SET_SYNC_COUNT'; count: number }
   | { type: 'SET_LAST_SYNC'; timestamp: string }
-  | { type: 'SET_QUIZ_MODE'; mode: QuizMode };
+  | { type: 'SET_QUIZ_MODE'; mode: QuizMode }
+  | { type: 'START_CATEGORY_QUIZ'; category: string };
 
 function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
@@ -39,6 +41,8 @@ function appReducer(state: AppState, action: AppAction): AppState {
       return { ...state, lastSync: action.timestamp };
     case 'SET_QUIZ_MODE':
       return { ...state, quizMode: action.mode };
+    case 'START_CATEGORY_QUIZ':
+      return { ...state, screen: 'quiz', quizMode: 'free', quizCategory: action.category };
   }
 }
 
@@ -49,6 +53,7 @@ const initialState: AppState = {
   pendingSyncCount: 0,
   lastSync: '',
   quizMode: 'free',
+  quizCategory: '',
 };
 
 const AppContext = createContext<{

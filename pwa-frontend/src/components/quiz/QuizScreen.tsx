@@ -55,10 +55,12 @@ export function QuizScreen() {
   const { state, dispatch } = useApp();
   const quiz = useQuiz();
   const { isMuted, toggleMute, play } = useBgm();
-  // graded モードではフィルター画面をスキップ
+  // graded モードまたはカテゴリ指定ではフィルター画面をスキップ
   const isGraded = state.quizMode === 'graded';
-  const [showFilter, setShowFilter] = useState(!isGraded);
+  const hasCategory = !!state.quizCategory;
+  const [showFilter, setShowFilter] = useState(!isGraded && !hasCategory);
   const gradedStarted = useRef(false);
+  const categoryStarted = useRef(false);
 
   // レベル5穴埋め用の入力状態
   const [fillInAnswer, setFillInAnswer] = useState('');
@@ -93,6 +95,16 @@ export function QuizScreen() {
       void quiz.startSession(20, { gradeLimit: state.profile.grade });
     }
   }, [isGraded, state.profile, quiz.startSession]);
+
+  // カテゴリ指定モード: 苦手分野から直接開始
+  useEffect(() => {
+    if (hasCategory && !categoryStarted.current) {
+      categoryStarted.current = true;
+      void quiz.startSession(20, { category: state.quizCategory });
+      // カテゴリ指定をクリア（次回は通常モードに戻す）
+      dispatch({ type: 'START_CATEGORY_QUIZ', category: '' });
+    }
+  }, [hasCategory, state.quizCategory, quiz.startSession, dispatch]);
 
   const handleFilterStart = useCallback(
     (filters: QuizFilters) => {
