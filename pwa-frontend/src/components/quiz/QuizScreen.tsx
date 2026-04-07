@@ -332,6 +332,17 @@ export function QuizScreen() {
             ※ 2つ選んでください
           </p>
         )}
+        {/* 問題画像 */}
+        {q.has_image && q.image_url && (
+          <div className="mt-3">
+            <img
+              src={`${import.meta.env.BASE_URL}${q.image_url}`}
+              alt="問題の図"
+              className="w-full rounded-lg border border-slate-200"
+              loading="lazy"
+            />
+          </div>
+        )}
       </div>
 
       {/* レベル6: 確認モード */}
