@@ -91,7 +91,88 @@ const DashboardService = {
     }
 
     Logger.log('ダッシュボード更新完了: ' + updatedCount + '名');
+
+    // category_statsシートを更新（ツリーマップ用）
+    this.updateCategoryStats(ss, allLogs, categoryMap);
+
     return { updated: updatedCount };
+  },
+
+  /**
+   * 分野別統計シートを更新（ツリーマップ・Looker Studio用）
+   * student × category × subcategory × subtopic の粒度で集計
+   */
+  updateCategoryStats(ss, allLogs, categoryMap) {
+    var sheetName = 'category_stats';
+    var sheet = ss.getSheetByName(sheetName);
+    if (!sheet) {
+      sheet = ss.insertSheet(sheetName);
+    } else {
+      sheet.clear();
+    }
+
+    // ヘッダー
+    var headers = [
+      'student_id', 'student_number', 'department', 'grade',
+      'category', 'subcategory', 'subtopic',
+      'total_count', 'correct_count', 'accuracy_rate'
+    ];
+    sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+
+    // 学生ごとにグループ化
+    var studentGroups = this.groupByStudent(allLogs);
+    var rows = [];
+
+    for (var studentId in studentGroups) {
+      var logs = studentGroups[studentId];
+      var latest = logs[logs.length - 1] || {};
+
+      // 分野 × サブカテゴリ × サブトピックの3階層で集計
+      var stats = {};
+
+      for (var i = 0; i < logs.length; i++) {
+        var log = logs[i];
+        var info = categoryMap[log.questionId];
+        if (!info) continue;
+
+        var cat = info.category || '未分類';
+        var sub = info.subcategory || '未分類';
+        var topic = info.subtopic || '未分類';
+        var key = cat + '|||' + sub + '|||' + topic;
+
+        if (!stats[key]) {
+          stats[key] = { correct: 0, total: 0, cat: cat, sub: sub, topic: topic };
+        }
+        stats[key].total++;
+        if (log.isCorrect) stats[key].correct++;
+      }
+
+      // 行データ作成
+      for (var key in stats) {
+        var s = stats[key];
+        var rate = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+        rows.push([
+          studentId,
+          latest.studentNumber || '',
+          latest.department || '',
+          latest.grade || '',
+          s.cat,
+          s.sub,
+          s.topic,
+          s.total,
+          s.correct,
+          rate
+        ]);
+      }
+    }
+
+    // 一括書き込み
+    if (rows.length > 0) {
+      sheet.getRange(2, 1, rows.length, headers.length).setValues(rows);
+    }
+
+    Logger.log('category_stats更新: ' + rows.length + '行');
   },
 
   /**

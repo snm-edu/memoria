@@ -25,6 +25,7 @@ const CONFIG = {
     STUDENT_LOGS: 'student_logs',
     AI_GENERATED: 'ai_generated',
     AI_DASHBOARD: 'ai_dashboard',
+    CATEGORY_STATS: 'category_stats',
   },
 
   // デフォルト取得件数
