@@ -61,7 +61,7 @@ export function SetupScreen() {
                   key={dept}
                   onClick={() => { if (isAvailable) { setDepartment(dept); setStep('grade'); } }}
                   disabled={!isAvailable}
-                  className={`w-full p-4 rounded-xl text-left font-medium transition-all relative
+                  className={`w-full p-4 rounded-xl text-center font-medium transition-all relative
                     ${!isAvailable
                       ? 'bg-slate-100 border-2 border-slate-200 text-slate-400 cursor-not-allowed opacity-60'
                       : department === dept

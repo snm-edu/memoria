@@ -102,7 +102,7 @@ export function HomeScreen() {
   }
 
   // 学年の出題範囲にある問題数を計算
-  const gradeCategories = profile ? getCategoriesForGrade(profile.grade) : [];
+  const gradeCategories = profile ? getCategoriesForGrade(profile.grade, profile.department) : [];
   const gradeQuestionCount = useLiveQuery(async () => {
     if (!profile) return 0;
     const all = await db.questionCache.toArray();

@@ -166,7 +166,7 @@ export function useQuiz() {
       if (filters?.year && q.exam_year !== filters.year) return false;
       // 学年別カリキュラムフィルター
       if (filters?.gradeLimit) {
-        const allowedCategories = getCategoriesForGrade(filters.gradeLimit);
+        const allowedCategories = getCategoriesForGrade(filters.gradeLimit, profileDept);
         if (!allowedCategories.includes(q.category)) return false;
         const maxDifficulty = getMaxDifficultyForGrade(filters.gradeLimit);
         if (q.difficulty > maxDifficulty) return false;
