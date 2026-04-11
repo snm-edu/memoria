@@ -70,7 +70,7 @@ def extract_questions(filepath):
 
             # 選択肢（最大5つ、画像のみの選択肢にも対応）
             choices = []
-            correct_idx = -1
+            correct_indices = []
             for j in range(2, 12):
                 if i + j >= len(rows):
                     break
@@ -89,9 +89,9 @@ def extract_questions(filepath):
                         is_correct = (len(c_row) > 6 and c_row[6] == '正解')
                         choices.append(choice_text)
                         if is_correct:
-                            correct_idx = len(choices) - 1
+                            correct_indices.append(len(choices) - 1)
 
-            correct_letter = chr(ord('A') + correct_idx) if correct_idx >= 0 else ''
+            correct_letter = ','.join(chr(ord('A') + idx) for idx in correct_indices) if correct_indices else ''
             is_multi = any(kw in q_text for kw in ['組合せ', '2つ選べ', '２つ選べ'])
             num_match = re.search(r'(\d+)', qid.split('_')[-1])
             exam_num = int(num_match.group(1)) if num_match else 0

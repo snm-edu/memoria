@@ -514,7 +514,8 @@ const DashboardService = {
     }
 
     var prompt = 'あなたは医療系専門学校の教育アドバイザーです。以下の学生の学習データを分析し、150字以内で具体的な学習アドバイスを日本語のプレーンテキストで書いてください。JSONではなく普通の文章で回答してください。\n\n' +
-      '学科: ' + analysis.department + '\n' +
+      '学科: ' + getDepartmentLabel_(analysis.department) + '\n' +
+      '対象国家試験: ' + getDepartmentExpertName(analysis.department) + '\n' +
       '学年: ' + analysis.grade + '年\n' +
       '総回答数: ' + analysis.totalQuestions + '問\n' +
       '全体正答率: ' + analysis.correctRate + '%\n' +
@@ -584,6 +585,19 @@ const DashboardService = {
     };
   },
 };
+
+/**
+ * departmentコードから日本語学科名を返す
+ */
+function getDepartmentLabel_(department) {
+  var map = {
+    nursing: '看護学科',
+    clinical_eng: '臨床工学技士学科',
+    dental_hyg: '歯科衛生士学科',
+    orthoptist: '視能訓練士学科',
+  };
+  return map[department] || department;
+}
 
 // === トリガーセットアップ・実行関数 ===
 

@@ -6,7 +6,7 @@ const GeminiService = {
   /**
    * 誤��分析
    */
-  analyzeError({ questionId, studentAnswer, correctAnswer, questionText, choices }) {
+  analyzeError({ questionId, studentAnswer, correctAnswer, questionText, choices, department }) {
     if (!questionId || !studentAnswer || !correctAnswer) {
       return { error: 'questionId, studentAnswer, correctAnswer are required' };
     }
@@ -17,15 +17,16 @@ const GeminiService = {
       return cached;
     }
 
-    // レート制限チェックは呼び出し側（PWA）で行う
+    // 学科に応じた専門家名を決定
+    const expertName = getDepartmentExpertName(department || '');
 
     const choiceLabels = ['A', 'B', 'C', 'D', 'E'];
     const choiceText = (choices || []).map((c, i) =>
       `${choiceLabels[i]}: ${c}`
     ).join('\n');
 
-    const prompt = `あなたは���護師国家試験の教育専門家です。
-学生が以下の問題に間違えました。間違えた原因を分析してくだ��い。
+    const prompt = `あなたは${expertName}の教育専門家です。
+学生が以下の問題に間違えました。間違えた原因を分析してください。
 
 【問題】${questionText}
 【選択肢】
@@ -67,7 +68,7 @@ error_typeの判定基準:
   /**
    * 類題生成
    */
-  generateSimilar({ questionId, errorType, originalQuestion, analysis }) {
+  generateSimilar({ questionId, errorType, originalQuestion, analysis, department }) {
     if (!questionId || !errorType) {
       return { error: 'questionId and errorType are required' };
     }
@@ -84,7 +85,8 @@ error_typeの判定基準:
       confusion: '混同しやすい概念を明確に弁別させる問題にする',
     };
 
-    const prompt = `あなたは看護師国家試験の問題作成者です。
+    const expertName = getDepartmentExpertName(department || '');
+    const prompt = `あなたは${expertName}の問題作成者です。
 以下の問題で学生が${errorType}のミスをしました。
 この弱点を克服するための類題を1問作成してください。
 
@@ -158,6 +160,21 @@ error_typeの判定基準:
     };
   },
 };
+
+// === 学科名マッピング ===
+
+/**
+ * departmentコードから国家試験名を返す
+ */
+function getDepartmentExpertName(department) {
+  const map = {
+    nursing: '看護師国家試験',
+    clinical_eng: '臨床工学技士国家試験',
+    dental_hyg: '歯科衛生士国家試験',
+    orthoptist: '視能訓練士国家試験',
+  };
+  return map[department] || '国家試験';
+}
 
 // === Gemini API ヘルパー ===
 

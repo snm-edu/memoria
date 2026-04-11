@@ -90,6 +90,7 @@ export async function analyzeError(body: {
   correctAnswer: string[];
   questionText: string;
   choices: string[];
+  department?: string;
 }): Promise<ApiResponse<{
   error_type: string;
   analysis: string;
@@ -104,6 +105,7 @@ export async function generateSimilar(body: {
   errorType: string;
   originalQuestion: string;
   analysis: string;
+  department?: string;
 }): Promise<ApiResponse<unknown>> {
   return apiPost({ action: 'generateSimilar', ...body });
 }

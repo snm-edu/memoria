@@ -389,6 +389,7 @@ export function useQuiz() {
           correctAnswer: current.correct_answer,
           questionText: current.question_text,
           choices: current.choices,
+          department: appState.profile?.department,
         });
         if (res.success && res.data) {
           setState((s) => ({
