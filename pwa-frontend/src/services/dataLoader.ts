@@ -7,7 +7,7 @@ const DATA_URL = import.meta.env.BASE_URL + 'data/questions.json';
  * データバージョン — questions.jsonを更新したら必ずインクリメントする
  * これによりIndexedDBの古いキャッシュが自動的に再読み込みされる
  */
-const DATA_VERSION = 4; // v3→v4: DH歯科衛生士2,640問追加
+const DATA_VERSION = 5; // v4→v5: CO視能訓練士1,800問追加（全4学科8,940問）
 const VERSION_KEY = 'memoria-data-version';
 
 /**
