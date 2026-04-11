@@ -46,7 +46,7 @@ error_typeの判定基準:
 - misread: 問題文や選択肢の読み違い（否定語の見落とし等）
 - confusion: 類似概念との混同（例: 交感神経と副交感神経）`;
 
-    const result = callGeminiAPI(prompt);
+    const result = callGeminiAPI(prompt, 3, { json: true });
     if (result.error) return result;
 
     // レスポンスをパース
@@ -106,7 +106,7 @@ error_typeの判定基準:
   "difficulty": 3
 }`;
 
-    const result = callGeminiAPI(prompt);
+    const result = callGeminiAPI(prompt, 3, { json: true });
     if (result.error) return result;
 
     const generated = parseJsonResponse(result.text);
@@ -164,20 +164,26 @@ error_typeの判定基準:
 /**
  * Gemini APIを呼び出す
  */
-function callGeminiAPI(prompt, retries) {
+function callGeminiAPI(prompt, retries, options) {
   retries = retries || 3;
+  options = options || {};
 
   const url = CONFIG.GEMINI_API_URL + CONFIG.GEMINI_MODEL + ':generateContent?key=' + CONFIG.GEMINI_API_KEY;
+
+  var genConfig = {
+    temperature: 0.7,
+    maxOutputTokens: 1024,
+  };
+  // JSON出力が必要な場合のみ設定（デフォルトはテキスト）
+  if (options.json) {
+    genConfig.responseMimeType = 'application/json';
+  }
 
   const payload = {
     contents: [{
       parts: [{ text: prompt }]
     }],
-    generationConfig: {
-      temperature: 0.7,
-      maxOutputTokens: 1024,
-      responseMimeType: 'application/json',
-    },
+    generationConfig: genConfig,
   };
 
   for (let attempt = 0; attempt < retries; attempt++) {

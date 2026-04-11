@@ -11,7 +11,7 @@ const CONFIG = {
   GEMINI_API_KEY: PropertiesService.getScriptProperties().getProperty('GEMINI_API_KEY') || '',
 
   // Gemini モデル
-  GEMINI_MODEL: 'gemini-2.0-flash',
+  GEMINI_MODEL: 'gemini-2.5-flash',
 
   // Gemini API エンドポイント
   GEMINI_API_URL: 'https://generativelanguage.googleapis.com/v1beta/models/',

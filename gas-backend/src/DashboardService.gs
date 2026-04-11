@@ -4,11 +4,13 @@
  * 日次バッチで全学生の学習データを集計・分析し、
  * ai_dashboardシートに保存する。
  * Gemini APIで個別アドバイスコメントも生成する。
+ *
+ * 最適化: 差分更新 + AIコメントキャッシュで高速化
  */
 
 const DashboardService = {
   /**
-   * 全学生のダッシュボードを更新
+   * 全学生のダッシュボードを更新（差分最適化版）
    */
   updateAll() {
     const ss = getSpreadsheet();
@@ -22,47 +24,76 @@ const DashboardService = {
     // questionsシートからカテゴリ情報取得
     const categoryMap = this.getCategoryMap(ss);
 
-    // ai_dashboardシート取得or作成
+    // 学生名簿から学籍番号→氏名のマップを作成
+    var nameMap = this.getStudentNameMap();
+
+    // ai_dashboardシート取得or作成（student_name列追加対応）
     let dashboard = ss.getSheetByName(CONFIG.SHEETS.AI_DASHBOARD);
+    const dashHeaders = [
+      'student_id', 'student_number', 'student_name', 'department', 'grade',
+      'total_questions', 'correct_rate', 'streak_days',
+      'weak_categories', 'strong_categories', 'weekly_trend',
+      'error_patterns', 'ai_comment', 'updated_at'
+    ];
     if (!dashboard) {
       dashboard = ss.insertSheet(CONFIG.SHEETS.AI_DASHBOARD);
-      const headers = [
-        'student_id', 'student_number', 'department', 'grade',
-        'total_questions', 'correct_rate', 'streak_days',
-        'weak_categories', 'strong_categories', 'weekly_trend',
-        'error_patterns', 'ai_comment', 'updated_at'
-      ];
-      dashboard.getRange(1, 1, 1, headers.length).setValues([headers]);
-      dashboard.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+      dashboard.getRange(1, 1, 1, dashHeaders.length).setValues([dashHeaders]);
+      dashboard.getRange(1, 1, 1, dashHeaders.length).setFontWeight('bold');
+    } else {
+      // 既存シートにstudent_name列がなければヘッダーを更新
+      var currentHeaders = dashboard.getRange(1, 1, 1, dashboard.getLastColumn()).getValues()[0];
+      if (currentHeaders.indexOf('student_name') === -1) {
+        dashboard.clear();
+        dashboard.getRange(1, 1, 1, dashHeaders.length).setValues([dashHeaders]);
+        dashboard.getRange(1, 1, 1, dashHeaders.length).setFontWeight('bold');
+      }
     }
 
-    // 既存データを読み込み（student_idで更新 or 追加）
+    // 既存データを読み込み（差分チェック用）
     const existingData = dashboard.getDataRange().getValues();
     const existingMap = {};
     existingData.slice(1).forEach(function(row, i) {
-      existingMap[row[0]] = i + 2; // 行番号（1-indexed、ヘッダー除く）
+      existingMap[row[0]] = {
+        rowNum: i + 2,
+        totalQuestions: row[5],
+        aiComment: row[12]
+      };
     });
 
     const studentIds = Object.keys(studentGroups);
     let updatedCount = 0;
+    let skippedCount = 0;
 
     for (var s = 0; s < studentIds.length; s++) {
       var studentId = studentIds[s];
       var logs = studentGroups[studentId];
       var analysis = this.analyzeStudent(logs, categoryMap);
 
-      // Gemini APIでコメント生成（レート制限考慮）
+      // 差分チェック: 回答数が変わっていなければAI呼び出しをスキップ
+      var existing = existingMap[studentId];
       var aiComment = '';
-      try {
-        aiComment = this.generateAiComment(analysis);
-      } catch (e) {
-        aiComment = '分析コメント生成中にエラーが発生しました';
-        Logger.log('Gemini API error for ' + studentId + ': ' + e);
+
+      if (existing && existing.totalQuestions === analysis.totalQuestions && existing.aiComment) {
+        // データ変化なし → 既存のAIコメントを再利用
+        aiComment = existing.aiComment;
+        skippedCount++;
+      } else {
+        // 新規 or データ変化あり → Gemini APIでコメント生成
+        try {
+          aiComment = this.generateAiComment(analysis);
+        } catch (e) {
+          aiComment = '分析コメント生成中にエラーが発生しました';
+          Logger.log('Gemini API error for ' + studentId + ': ' + e);
+        }
+        // レート制限対策: Gemini API呼び出し後に1秒待機
+        Utilities.sleep(1000);
       }
 
+      var studentName = nameMap[analysis.studentNumber] || '';
       var row = [
         studentId,
         analysis.studentNumber,
+        studentName,
         analysis.department,
         analysis.grade,
         analysis.totalQuestions,
@@ -76,26 +107,21 @@ const DashboardService = {
         new Date().toISOString()
       ];
 
-      if (existingMap[studentId]) {
-        // 更新
-        dashboard.getRange(existingMap[studentId], 1, 1, 13).setValues([row]);
+      if (existing) {
+        dashboard.getRange(existing.rowNum, 1, 1, 14).setValues([row]);
       } else {
-        // 追加
         dashboard.appendRow(row);
       }
 
       updatedCount++;
-
-      // レート制限対策: Gemini API呼び出し間に1秒待機
-      Utilities.sleep(1000);
     }
 
-    Logger.log('ダッシュボード更新完了: ' + updatedCount + '名');
+    Logger.log('ダッシュボード更新完了: ' + updatedCount + '名（AI更新: ' + (updatedCount - skippedCount) + '名、スキップ: ' + skippedCount + '名）');
 
     // category_statsシートを更新（ツリーマップ用）
     this.updateCategoryStats(ss, allLogs, categoryMap);
 
-    return { updated: updatedCount };
+    return { updated: updatedCount, skipped: skippedCount };
   },
 
   /**
@@ -189,7 +215,6 @@ const DashboardService = {
     try {
       var nameSheetId = PropertiesService.getScriptProperties().getProperty('STUDENT_LIST_ID');
       if (!nameSheetId) {
-        // スクリプトプロパティ未設定の場合、同じスプレッドシート内のstudentsシートを探す
         var ss = getSpreadsheet();
         var sheet = ss.getSheetByName('students');
         if (sheet) {
@@ -234,7 +259,6 @@ const DashboardService = {
     for (var s = 0; s < sheets.length; s++) {
       var sheet = sheets[s];
       var name = sheet.getName();
-      // student_logs 本体およびアーカイブシート（student_logs_2025Q1 等）
       if (name === CONFIG.SHEETS.STUDENT_LOGS || name.indexOf(CONFIG.SHEETS.STUDENT_LOGS + '_') === 0) {
         var data = sheet.getDataRange().getValues();
         if (data.length <= 1) continue;
@@ -369,7 +393,6 @@ const DashboardService = {
       var rate = Math.round((stats.correct / stats.total) * 100);
       var entry = { category: cat, rate: rate, count: stats.total };
 
-      // サブカテゴリの詳細
       var subs = [];
       var subKeys = Object.keys(stats.subs);
       for (var s = 0; s < subKeys.length; s++) {
@@ -464,7 +487,7 @@ const DashboardService = {
   },
 
   /**
-   * Gemini APIで個別アドバイスを生成
+   * Gemini APIで個別アドバイスを生成（プレーンテキスト出力）
    */
   generateAiComment(analysis) {
     if (!CONFIG.GEMINI_API_KEY) return '（APIキー未設定）';
@@ -490,7 +513,7 @@ const DashboardService = {
       }
     }
 
-    var prompt = 'あなたは医療系専門学校の教育アドバイザーです。以下の学生の学習データを分析し、150字以内で具体的な学習アドバイスを日本語で書いてください。\n\n' +
+    var prompt = 'あなたは医療系専門学校の教育アドバイザーです。以下の学生の学習データを分析し、150字以内で具体的な学習アドバイスを日本語のプレーンテキストで書いてください。JSONではなく普通の文章で回答してください。\n\n' +
       '学科: ' + analysis.department + '\n' +
       '学年: ' + analysis.grade + '年\n' +
       '総回答数: ' + analysis.totalQuestions + '問\n' +
@@ -538,7 +561,6 @@ const DashboardService = {
     }
     if (!row) return { error: '該当する学生データが見つかりません' };
 
-    // JSONフィールドを安全にパース
     function safeParse(val) {
       if (!val) return [];
       try { return JSON.parse(val); } catch (e) { return []; }
@@ -547,6 +569,7 @@ const DashboardService = {
     return {
       studentId: row[idx['student_id']],
       studentNumber: row[idx['student_number']],
+      studentName: row[idx['student_name']],
       department: row[idx['department']],
       grade: row[idx['grade']],
       totalQuestions: row[idx['total_questions']],
@@ -569,7 +592,6 @@ const DashboardService = {
  * GASエディタで一度手動実行してください
  */
 function setupDailyDashboard() {
-  // 既存トリガーを削除
   var triggers = ScriptApp.getProjectTriggers();
   for (var i = 0; i < triggers.length; i++) {
     if (triggers[i].getHandlerFunction() === 'runDashboardUpdate') {
@@ -577,7 +599,6 @@ function setupDailyDashboard() {
     }
   }
 
-  // 毎日午前4時に実行
   ScriptApp.newTrigger('runDashboardUpdate')
     .timeBased()
     .everyDays(1)

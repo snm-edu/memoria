@@ -1,0 +1,434 @@
+{
+  "year": 2024,
+  "total_images": 52,
+  "am_images": 31,
+  "pm_images": 21,
+  "image_map": {
+    "2024_ce_24_am028": [
+      "2024_ce_24_am028.jpg"
+    ],
+    "2024_ce_24_am043": [
+      "2024_ce_24_am043.jpg"
+    ],
+    "2024_ce_24_am046": [
+      "2024_ce_24_am046.jpg",
+      "2024_ce_24_am046_2.jpg",
+      "2024_ce_24_am046_3.jpg",
+      "2024_ce_24_am046_4.jpg",
+      "2024_ce_24_am046_5.jpg",
+      "2024_ce_24_am046_6.jpg"
+    ],
+    "2024_ce_24_am047": [
+      "2024_ce_24_am047.jpg"
+    ],
+    "2024_ce_24_am048": [
+      "2024_ce_24_am048.jpg"
+    ],
+    "2024_ce_24_am049": [
+      "2024_ce_24_am049.jpg"
+    ],
+    "2024_ce_24_am050": [
+      "2024_ce_24_am050.jpg"
+    ],
+    "2024_ce_24_am055": [
+      "2024_ce_24_am055.jpg"
+    ],
+    "2024_ce_24_am057": [
+      "2024_ce_24_am057.jpg",
+      "2024_ce_24_am057_2.jpg",
+      "2024_ce_24_am057_3.jpg",
+      "2024_ce_24_am057_4.jpg",
+      "2024_ce_24_am057_5.jpg"
+    ],
+    "2024_ce_24_am063": [
+      "2024_ce_24_am063.jpg",
+      "2024_ce_24_am063_2.jpg",
+      "2024_ce_24_am063_3.jpg",
+      "2024_ce_24_am063_4.jpg",
+      "2024_ce_24_am063_5.jpg"
+    ],
+    "2024_ce_24_am070": [
+      "2024_ce_24_am070.jpg",
+      "2024_ce_24_am070_2.jpg",
+      "2024_ce_24_am070_3.jpg",
+      "2024_ce_24_am070_4.jpg",
+      "2024_ce_24_am070_5.jpg"
+    ],
+    "2024_ce_24_am074": [
+      "2024_ce_24_am074.jpg"
+    ],
+    "2024_ce_24_am077": [
+      "2024_ce_24_am077.jpg"
+    ],
+    "2024_ce_24_am082": [
+      "2024_ce_24_am082.jpg"
+    ],
+    "2024_ce_24_pm026": [
+      "2024_ce_24_pm026.jpg"
+    ],
+    "2024_ce_24_pm038": [
+      "2024_ce_24_pm038.jpg"
+    ],
+    "2024_ce_24_pm040": [
+      "2024_ce_24_pm040.jpg"
+    ],
+    "2024_ce_24_pm047": [
+      "2024_ce_24_pm047.jpg"
+    ],
+    "2024_ce_24_pm049": [
+      "2024_ce_24_pm049.jpg"
+    ],
+    "2024_ce_24_pm050": [
+      "2024_ce_24_pm050.jpg"
+    ],
+    "2024_ce_24_pm051": [
+      "2024_ce_24_pm051.jpg"
+    ],
+    "2024_ce_24_pm052": [
+      "2024_ce_24_pm052.jpg"
+    ],
+    "2024_ce_24_pm054": [
+      "2024_ce_24_pm054.jpg",
+      "2024_ce_24_pm054_2.jpg",
+      "2024_ce_24_pm054_3.jpg",
+      "2024_ce_24_pm054_4.jpg",
+      "2024_ce_24_pm054_5.jpg",
+      "2024_ce_24_pm054_6.jpg"
+    ],
+    "2024_ce_24_pm055": [
+      "2024_ce_24_pm055.jpg"
+    ],
+    "2024_ce_24_pm059": [
+      "2024_ce_24_pm059.jpg"
+    ],
+    "2024_ce_24_pm074": [
+      "2024_ce_24_pm074.jpg"
+    ],
+    "2024_ce_24_pm080": [
+      "2024_ce_24_pm080.jpg"
+    ],
+    "2024_ce_24_pm082": [
+      "2024_ce_24_pm082.jpg"
+    ],
+    "2024_ce_24_pm083": [
+      "2024_ce_24_pm083.jpg"
+    ],
+    "2024_ce_24_pm085": [
+      "2024_ce_24_pm085.jpg"
+    ]
+  },
+  "details": [
+    {
+      "question_id": "2024_ce_24_am028",
+      "filename": "2024_ce_24_am028.jpg",
+      "img_row": 191,
+      "q_start_row": 189
+    },
+    {
+      "question_id": "2024_ce_24_am043",
+      "filename": "2024_ce_24_am043.jpg",
+      "img_row": 297,
+      "q_start_row": 295
+    },
+    {
+      "question_id": "2024_ce_24_am046",
+      "filename": "2024_ce_24_am046.jpg",
+      "img_row": 319,
+      "q_start_row": 317
+    },
+    {
+      "question_id": "2024_ce_24_am046",
+      "filename": "2024_ce_24_am046_2.jpg",
+      "img_row": 321,
+      "q_start_row": 317
+    },
+    {
+      "question_id": "2024_ce_24_am046",
+      "filename": "2024_ce_24_am046_3.jpg",
+      "img_row": 323,
+      "q_start_row": 317
+    },
+    {
+      "question_id": "2024_ce_24_am046",
+      "filename": "2024_ce_24_am046_4.jpg",
+      "img_row": 325,
+      "q_start_row": 317
+    },
+    {
+      "question_id": "2024_ce_24_am046",
+      "filename": "2024_ce_24_am046_5.jpg",
+      "img_row": 327,
+      "q_start_row": 317
+    },
+    {
+      "question_id": "2024_ce_24_am046",
+      "filename": "2024_ce_24_am046_6.jpg",
+      "img_row": 329,
+      "q_start_row": 317
+    },
+    {
+      "question_id": "2024_ce_24_am047",
+      "filename": "2024_ce_24_am047.jpg",
+      "img_row": 332,
+      "q_start_row": 330
+    },
+    {
+      "question_id": "2024_ce_24_am048",
+      "filename": "2024_ce_24_am048.jpg",
+      "img_row": 340,
+      "q_start_row": 338
+    },
+    {
+      "question_id": "2024_ce_24_am049",
+      "filename": "2024_ce_24_am049.jpg",
+      "img_row": 348,
+      "q_start_row": 346
+    },
+    {
+      "question_id": "2024_ce_24_am050",
+      "filename": "2024_ce_24_am050.jpg",
+      "img_row": 356,
+      "q_start_row": 354
+    },
+    {
+      "question_id": "2024_ce_24_am055",
+      "filename": "2024_ce_24_am055.jpg",
+      "img_row": 392,
+      "q_start_row": 390
+    },
+    {
+      "question_id": "2024_ce_24_am057",
+      "filename": "2024_ce_24_am057.jpg",
+      "img_row": 408,
+      "q_start_row": 405
+    },
+    {
+      "question_id": "2024_ce_24_am057",
+      "filename": "2024_ce_24_am057_2.jpg",
+      "img_row": 410,
+      "q_start_row": 405
+    },
+    {
+      "question_id": "2024_ce_24_am057",
+      "filename": "2024_ce_24_am057_3.jpg",
+      "img_row": 412,
+      "q_start_row": 405
+    },
+    {
+      "question_id": "2024_ce_24_am057",
+      "filename": "2024_ce_24_am057_4.jpg",
+      "img_row": 414,
+      "q_start_row": 405
+    },
+    {
+      "question_id": "2024_ce_24_am057",
+      "filename": "2024_ce_24_am057_5.jpg",
+      "img_row": 416,
+      "q_start_row": 405
+    },
+    {
+      "question_id": "2024_ce_24_am063",
+      "filename": "2024_ce_24_am063.jpg",
+      "img_row": 455,
+      "q_start_row": 452
+    },
+    {
+      "question_id": "2024_ce_24_am063",
+      "filename": "2024_ce_24_am063_2.jpg",
+      "img_row": 457,
+      "q_start_row": 452
+    },
+    {
+      "question_id": "2024_ce_24_am063",
+      "filename": "2024_ce_24_am063_3.jpg",
+      "img_row": 459,
+      "q_start_row": 452
+    },
+    {
+      "question_id": "2024_ce_24_am063",
+      "filename": "2024_ce_24_am063_4.jpg",
+      "img_row": 461,
+      "q_start_row": 452
+    },
+    {
+      "question_id": "2024_ce_24_am063",
+      "filename": "2024_ce_24_am063_5.jpg",
+      "img_row": 463,
+      "q_start_row": 452
+    },
+    {
+      "question_id": "2024_ce_24_am070",
+      "filename": "2024_ce_24_am070.jpg",
+      "img_row": 509,
+      "q_start_row": 506
+    },
+    {
+      "question_id": "2024_ce_24_am070",
+      "filename": "2024_ce_24_am070_2.jpg",
+      "img_row": 511,
+      "q_start_row": 506
+    },
+    {
+      "question_id": "2024_ce_24_am070",
+      "filename": "2024_ce_24_am070_3.jpg",
+      "img_row": 513,
+      "q_start_row": 506
+    },
+    {
+      "question_id": "2024_ce_24_am070",
+      "filename": "2024_ce_24_am070_4.jpg",
+      "img_row": 515,
+      "q_start_row": 506
+    },
+    {
+      "question_id": "2024_ce_24_am070",
+      "filename": "2024_ce_24_am070_5.jpg",
+      "img_row": 517,
+      "q_start_row": 506
+    },
+    {
+      "question_id": "2024_ce_24_am074",
+      "filename": "2024_ce_24_am074.jpg",
+      "img_row": 541,
+      "q_start_row": 539
+    },
+    {
+      "question_id": "2024_ce_24_am077",
+      "filename": "2024_ce_24_am077.jpg",
+      "img_row": 563,
+      "q_start_row": 561
+    },
+    {
+      "question_id": "2024_ce_24_am082",
+      "filename": "2024_ce_24_am082.jpg",
+      "img_row": 599,
+      "q_start_row": 597
+    },
+    {
+      "question_id": "2024_ce_24_pm026",
+      "filename": "2024_ce_24_pm026.jpg",
+      "img_row": 177,
+      "q_start_row": 175
+    },
+    {
+      "question_id": "2024_ce_24_pm038",
+      "filename": "2024_ce_24_pm038.jpg",
+      "img_row": 262,
+      "q_start_row": 260
+    },
+    {
+      "question_id": "2024_ce_24_pm040",
+      "filename": "2024_ce_24_pm040.jpg",
+      "img_row": 277,
+      "q_start_row": 275
+    },
+    {
+      "question_id": "2024_ce_24_pm047",
+      "filename": "2024_ce_24_pm047.jpg",
+      "img_row": 327,
+      "q_start_row": 325
+    },
+    {
+      "question_id": "2024_ce_24_pm049",
+      "filename": "2024_ce_24_pm049.jpg",
+      "img_row": 342,
+      "q_start_row": 340
+    },
+    {
+      "question_id": "2024_ce_24_pm050",
+      "filename": "2024_ce_24_pm050.jpg",
+      "img_row": 350,
+      "q_start_row": 348
+    },
+    {
+      "question_id": "2024_ce_24_pm051",
+      "filename": "2024_ce_24_pm051.jpg",
+      "img_row": 358,
+      "q_start_row": 356
+    },
+    {
+      "question_id": "2024_ce_24_pm052",
+      "filename": "2024_ce_24_pm052.jpg",
+      "img_row": 366,
+      "q_start_row": 364
+    },
+    {
+      "question_id": "2024_ce_24_pm054",
+      "filename": "2024_ce_24_pm054.jpg",
+      "img_row": 381,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2024_ce_24_pm054",
+      "filename": "2024_ce_24_pm054_2.jpg",
+      "img_row": 383,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2024_ce_24_pm054",
+      "filename": "2024_ce_24_pm054_3.jpg",
+      "img_row": 385,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2024_ce_24_pm054",
+      "filename": "2024_ce_24_pm054_4.jpg",
+      "img_row": 387,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2024_ce_24_pm054",
+      "filename": "2024_ce_24_pm054_5.jpg",
+      "img_row": 389,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2024_ce_24_pm054",
+      "filename": "2024_ce_24_pm054_6.jpg",
+      "img_row": 391,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2024_ce_24_pm055",
+      "filename": "2024_ce_24_pm055.jpg",
+      "img_row": 394,
+      "q_start_row": 392
+    },
+    {
+      "question_id": "2024_ce_24_pm059",
+      "filename": "2024_ce_24_pm059.jpg",
+      "img_row": 423,
+      "q_start_row": 421
+    },
+    {
+      "question_id": "2024_ce_24_pm074",
+      "filename": "2024_ce_24_pm074.jpg",
+      "img_row": 529,
+      "q_start_row": 527
+    },
+    {
+      "question_id": "2024_ce_24_pm080",
+      "filename": "2024_ce_24_pm080.jpg",
+      "img_row": 572,
+      "q_start_row": 570
+    },
+    {
+      "question_id": "2024_ce_24_pm082",
+      "filename": "2024_ce_24_pm082.jpg",
+      "img_row": 587,
+      "q_start_row": 585
+    },
+    {
+      "question_id": "2024_ce_24_pm083",
+      "filename": "2024_ce_24_pm083.jpg",
+      "img_row": 595,
+      "q_start_row": 593
+    },
+    {
+      "question_id": "2024_ce_24_pm085",
+      "filename": "2024_ce_24_pm085.jpg",
+      "img_row": 610,
+      "q_start_row": 608
+    }
+  ]
+}

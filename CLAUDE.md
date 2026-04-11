@@ -326,6 +326,22 @@ error_typeに応じた出題方針:
 - テスト: Vitest + React Testing Library
 - コミットメッセージ: 日本語OK、Conventional Commits形式
 
+## スクリプト・ツール
+
+### 国試問題抽出パイプライン（`scripts/ce_exam_pipeline.py`）
+- 詳細: `scripts/SKILL-ce-exam-pipeline.md`
+- 国家試験過去問xlsxから問題を抽出→AI分類・解説生成→画像抽出→xlsx出力
+- コマンド: `extract`, `images`, `output`, `verify`, `merge`, `all`
+- CE国試data/classification_tree.json に出題基準の分類体系を保持
+- CO国試data/classification_tree.json に視能訓練士の分類体系を保持
+- 新しい学科や年度の追加時はこのパイプラインを使用
+- 処理済み: CE（臨床工学技士）1,980問、CO（視能訓練士）1,800問
+
+### GASバックエンドコード（`gas-backend/src/`）
+- Config.gs, GeminiService.gs, DashboardService.gs 等
+- Gemini APIモデル: gemini-2.5-flash
+- AI分析の差分更新（totalQuestions未変更時はスキップ）
+
 ## 既知の注意点
 
 - GASのWebアプリは `script.google.com` ドメインからレスポンスを返す

@@ -1,0 +1,479 @@
+{
+  "year": 2017,
+  "total_images": 59,
+  "am_images": 27,
+  "pm_images": 32,
+  "image_map": {
+    "2017_ce_17_am002": [
+      "2017_ce_17_am002.jpg"
+    ],
+    "2017_ce_17_am041（不備問題複数回答）": [
+      "2017_ce_17_am041（不備問題複数回答）.jpg"
+    ],
+    "2017_ce_17_am042": [
+      "2017_ce_17_am042.jpg"
+    ],
+    "2017_ce_17_am043": [
+      "2017_ce_17_am043.jpg",
+      "2017_ce_17_am043_2.jpg",
+      "2017_ce_17_am043_3.jpg",
+      "2017_ce_17_am043_4.jpg",
+      "2017_ce_17_am043_5.jpg"
+    ],
+    "2017_ce_17_am049": [
+      "2017_ce_17_am049.jpg"
+    ],
+    "2017_ce_17_am051": [
+      "2017_ce_17_am051.jpg"
+    ],
+    "2017_ce_17_am052": [
+      "2017_ce_17_am052.jpg"
+    ],
+    "2017_ce_17_am054": [
+      "2017_ce_17_am054.jpg"
+    ],
+    "2017_ce_17_am055": [
+      "2017_ce_17_am055.jpg"
+    ],
+    "2017_ce_17_am057": [
+      "2017_ce_17_am057.jpg"
+    ],
+    "2017_ce_17_am062": [
+      "2017_ce_17_am062.jpg",
+      "2017_ce_17_am062_2.jpg",
+      "2017_ce_17_am062_3.jpg",
+      "2017_ce_17_am062_4.jpg",
+      "2017_ce_17_am062_5.jpg"
+    ],
+    "2017_ce_17_am080": [
+      "2017_ce_17_am080.jpg"
+    ],
+    "2017_ce_17_am082": [
+      "2017_ce_17_am082.jpg",
+      "2017_ce_17_am082_2.jpg",
+      "2017_ce_17_am082_3.jpg",
+      "2017_ce_17_am082_4.jpg",
+      "2017_ce_17_am082_5.jpg",
+      "2017_ce_17_am082_6.jpg"
+    ],
+    "2017_ce_17_am083": [
+      "2017_ce_17_am083.jpg"
+    ],
+    "2017_ce_17_pm002": [
+      "2017_ce_17_pm002.jpg",
+      "2017_ce_17_pm002_2.jpg",
+      "2017_ce_17_pm002_3.jpg",
+      "2017_ce_17_pm002_4.jpg",
+      "2017_ce_17_pm002_5.jpg"
+    ],
+    "2017_ce_17_pm005": [
+      "2017_ce_17_pm005.jpg"
+    ],
+    "2017_ce_17_pm041": [
+      "2017_ce_17_pm041.jpg",
+      "2017_ce_17_pm041_2.jpg",
+      "2017_ce_17_pm041_3.jpg",
+      "2017_ce_17_pm041_4.jpg",
+      "2017_ce_17_pm041_5.jpg"
+    ],
+    "2017_ce_17_pm045": [
+      "2017_ce_17_pm045.jpg"
+    ],
+    "2017_ce_17_pm048": [
+      "2017_ce_17_pm048.jpg"
+    ],
+    "2017_ce_17_pm050": [
+      "2017_ce_17_pm050.jpg"
+    ],
+    "2017_ce_17_pm052": [
+      "2017_ce_17_pm052.jpg"
+    ],
+    "2017_ce_17_pm053": [
+      "2017_ce_17_pm053.jpg",
+      "2017_ce_17_pm053_2.jpg",
+      "2017_ce_17_pm053_3.jpg",
+      "2017_ce_17_pm053_4.jpg",
+      "2017_ce_17_pm053_5.jpg",
+      "2017_ce_17_pm053_6.jpg"
+    ],
+    "2017_ce_17_pm054": [
+      "2017_ce_17_pm054.jpg"
+    ],
+    "2017_ce_17_pm056": [
+      "2017_ce_17_pm056.jpg"
+    ],
+    "2017_ce_17_pm058": [
+      "2017_ce_17_pm058.jpg"
+    ],
+    "2017_ce_17_pm080": [
+      "2017_ce_17_pm080.jpg"
+    ],
+    "2017_ce_17_pm082": [
+      "2017_ce_17_pm082.jpg",
+      "2017_ce_17_pm082_2.jpg",
+      "2017_ce_17_pm082_3.jpg",
+      "2017_ce_17_pm082_4.jpg",
+      "2017_ce_17_pm082_5.jpg",
+      "2017_ce_17_pm082_6.jpg"
+    ],
+    "2017_ce_17_pm084": [
+      "2017_ce_17_pm084.jpg"
+    ]
+  },
+  "details": [
+    {
+      "question_id": "2017_ce_17_am002",
+      "filename": "2017_ce_17_am002.jpg",
+      "img_row": 9,
+      "q_start_row": 7
+    },
+    {
+      "question_id": "2017_ce_17_am041（不備問題複数回答）",
+      "filename": "2017_ce_17_am041（不備問題複数回答）.jpg",
+      "img_row": 283,
+      "q_start_row": 281
+    },
+    {
+      "question_id": "2017_ce_17_am042",
+      "filename": "2017_ce_17_am042.jpg",
+      "img_row": 291,
+      "q_start_row": 289
+    },
+    {
+      "question_id": "2017_ce_17_am043",
+      "filename": "2017_ce_17_am043.jpg",
+      "img_row": 300,
+      "q_start_row": 297
+    },
+    {
+      "question_id": "2017_ce_17_am043",
+      "filename": "2017_ce_17_am043_2.jpg",
+      "img_row": 302,
+      "q_start_row": 297
+    },
+    {
+      "question_id": "2017_ce_17_am043",
+      "filename": "2017_ce_17_am043_3.jpg",
+      "img_row": 304,
+      "q_start_row": 297
+    },
+    {
+      "question_id": "2017_ce_17_am043",
+      "filename": "2017_ce_17_am043_4.jpg",
+      "img_row": 306,
+      "q_start_row": 297
+    },
+    {
+      "question_id": "2017_ce_17_am043",
+      "filename": "2017_ce_17_am043_5.jpg",
+      "img_row": 308,
+      "q_start_row": 297
+    },
+    {
+      "question_id": "2017_ce_17_am049",
+      "filename": "2017_ce_17_am049.jpg",
+      "img_row": 346,
+      "q_start_row": 344
+    },
+    {
+      "question_id": "2017_ce_17_am051",
+      "filename": "2017_ce_17_am051.jpg",
+      "img_row": 361,
+      "q_start_row": 359
+    },
+    {
+      "question_id": "2017_ce_17_am052",
+      "filename": "2017_ce_17_am052.jpg",
+      "img_row": 369,
+      "q_start_row": 367
+    },
+    {
+      "question_id": "2017_ce_17_am054",
+      "filename": "2017_ce_17_am054.jpg",
+      "img_row": 384,
+      "q_start_row": 382
+    },
+    {
+      "question_id": "2017_ce_17_am055",
+      "filename": "2017_ce_17_am055.jpg",
+      "img_row": 392,
+      "q_start_row": 390
+    },
+    {
+      "question_id": "2017_ce_17_am057",
+      "filename": "2017_ce_17_am057.jpg",
+      "img_row": 407,
+      "q_start_row": 405
+    },
+    {
+      "question_id": "2017_ce_17_am062",
+      "filename": "2017_ce_17_am062.jpg",
+      "img_row": 444,
+      "q_start_row": 441
+    },
+    {
+      "question_id": "2017_ce_17_am062",
+      "filename": "2017_ce_17_am062_2.jpg",
+      "img_row": 446,
+      "q_start_row": 441
+    },
+    {
+      "question_id": "2017_ce_17_am062",
+      "filename": "2017_ce_17_am062_3.jpg",
+      "img_row": 448,
+      "q_start_row": 441
+    },
+    {
+      "question_id": "2017_ce_17_am062",
+      "filename": "2017_ce_17_am062_4.jpg",
+      "img_row": 450,
+      "q_start_row": 441
+    },
+    {
+      "question_id": "2017_ce_17_am062",
+      "filename": "2017_ce_17_am062_5.jpg",
+      "img_row": 452,
+      "q_start_row": 441
+    },
+    {
+      "question_id": "2017_ce_17_am080",
+      "filename": "2017_ce_17_am080.jpg",
+      "img_row": 574,
+      "q_start_row": 572
+    },
+    {
+      "question_id": "2017_ce_17_am082",
+      "filename": "2017_ce_17_am082.jpg",
+      "img_row": 589,
+      "q_start_row": 587
+    },
+    {
+      "question_id": "2017_ce_17_am082",
+      "filename": "2017_ce_17_am082_2.jpg",
+      "img_row": 591,
+      "q_start_row": 587
+    },
+    {
+      "question_id": "2017_ce_17_am082",
+      "filename": "2017_ce_17_am082_3.jpg",
+      "img_row": 593,
+      "q_start_row": 587
+    },
+    {
+      "question_id": "2017_ce_17_am082",
+      "filename": "2017_ce_17_am082_4.jpg",
+      "img_row": 595,
+      "q_start_row": 587
+    },
+    {
+      "question_id": "2017_ce_17_am082",
+      "filename": "2017_ce_17_am082_5.jpg",
+      "img_row": 597,
+      "q_start_row": 587
+    },
+    {
+      "question_id": "2017_ce_17_am082",
+      "filename": "2017_ce_17_am082_6.jpg",
+      "img_row": 599,
+      "q_start_row": 587
+    },
+    {
+      "question_id": "2017_ce_17_am083",
+      "filename": "2017_ce_17_am083.jpg",
+      "img_row": 602,
+      "q_start_row": 600
+    },
+    {
+      "question_id": "2017_ce_17_pm002",
+      "filename": "2017_ce_17_pm002.jpg",
+      "img_row": 10,
+      "q_start_row": 7
+    },
+    {
+      "question_id": "2017_ce_17_pm002",
+      "filename": "2017_ce_17_pm002_2.jpg",
+      "img_row": 12,
+      "q_start_row": 7
+    },
+    {
+      "question_id": "2017_ce_17_pm002",
+      "filename": "2017_ce_17_pm002_3.jpg",
+      "img_row": 14,
+      "q_start_row": 7
+    },
+    {
+      "question_id": "2017_ce_17_pm002",
+      "filename": "2017_ce_17_pm002_4.jpg",
+      "img_row": 16,
+      "q_start_row": 7
+    },
+    {
+      "question_id": "2017_ce_17_pm002",
+      "filename": "2017_ce_17_pm002_5.jpg",
+      "img_row": 18,
+      "q_start_row": 7
+    },
+    {
+      "question_id": "2017_ce_17_pm005",
+      "filename": "2017_ce_17_pm005.jpg",
+      "img_row": 35,
+      "q_start_row": 33
+    },
+    {
+      "question_id": "2017_ce_17_pm041",
+      "filename": "2017_ce_17_pm041.jpg",
+      "img_row": 289,
+      "q_start_row": 286
+    },
+    {
+      "question_id": "2017_ce_17_pm041",
+      "filename": "2017_ce_17_pm041_2.jpg",
+      "img_row": 291,
+      "q_start_row": 286
+    },
+    {
+      "question_id": "2017_ce_17_pm041",
+      "filename": "2017_ce_17_pm041_3.jpg",
+      "img_row": 293,
+      "q_start_row": 286
+    },
+    {
+      "question_id": "2017_ce_17_pm041",
+      "filename": "2017_ce_17_pm041_4.jpg",
+      "img_row": 295,
+      "q_start_row": 286
+    },
+    {
+      "question_id": "2017_ce_17_pm041",
+      "filename": "2017_ce_17_pm041_5.jpg",
+      "img_row": 297,
+      "q_start_row": 286
+    },
+    {
+      "question_id": "2017_ce_17_pm045",
+      "filename": "2017_ce_17_pm045.jpg",
+      "img_row": 321,
+      "q_start_row": 319
+    },
+    {
+      "question_id": "2017_ce_17_pm048",
+      "filename": "2017_ce_17_pm048.jpg",
+      "img_row": 343,
+      "q_start_row": 341
+    },
+    {
+      "question_id": "2017_ce_17_pm050",
+      "filename": "2017_ce_17_pm050.jpg",
+      "img_row": 358,
+      "q_start_row": 356
+    },
+    {
+      "question_id": "2017_ce_17_pm052",
+      "filename": "2017_ce_17_pm052.jpg",
+      "img_row": 373,
+      "q_start_row": 371
+    },
+    {
+      "question_id": "2017_ce_17_pm053",
+      "filename": "2017_ce_17_pm053.jpg",
+      "img_row": 381,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2017_ce_17_pm053",
+      "filename": "2017_ce_17_pm053_2.jpg",
+      "img_row": 383,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2017_ce_17_pm053",
+      "filename": "2017_ce_17_pm053_3.jpg",
+      "img_row": 385,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2017_ce_17_pm053",
+      "filename": "2017_ce_17_pm053_4.jpg",
+      "img_row": 387,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2017_ce_17_pm053",
+      "filename": "2017_ce_17_pm053_5.jpg",
+      "img_row": 389,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2017_ce_17_pm053",
+      "filename": "2017_ce_17_pm053_6.jpg",
+      "img_row": 391,
+      "q_start_row": 379
+    },
+    {
+      "question_id": "2017_ce_17_pm054",
+      "filename": "2017_ce_17_pm054.jpg",
+      "img_row": 394,
+      "q_start_row": 392
+    },
+    {
+      "question_id": "2017_ce_17_pm056",
+      "filename": "2017_ce_17_pm056.jpg",
+      "img_row": 409,
+      "q_start_row": 407
+    },
+    {
+      "question_id": "2017_ce_17_pm058",
+      "filename": "2017_ce_17_pm058.jpg",
+      "img_row": 424,
+      "q_start_row": 422
+    },
+    {
+      "question_id": "2017_ce_17_pm080",
+      "filename": "2017_ce_17_pm080.jpg",
+      "img_row": 579,
+      "q_start_row": 577
+    },
+    {
+      "question_id": "2017_ce_17_pm082",
+      "filename": "2017_ce_17_pm082.jpg",
+      "img_row": 594,
+      "q_start_row": 592
+    },
+    {
+      "question_id": "2017_ce_17_pm082",
+      "filename": "2017_ce_17_pm082_2.jpg",
+      "img_row": 596,
+      "q_start_row": 592
+    },
+    {
+      "question_id": "2017_ce_17_pm082",
+      "filename": "2017_ce_17_pm082_3.jpg",
+      "img_row": 598,
+      "q_start_row": 592
+    },
+    {
+      "question_id": "2017_ce_17_pm082",
+      "filename": "2017_ce_17_pm082_4.jpg",
+      "img_row": 600,
+      "q_start_row": 592
+    },
+    {
+      "question_id": "2017_ce_17_pm082",
+      "filename": "2017_ce_17_pm082_5.jpg",
+      "img_row": 602,
+      "q_start_row": 592
+    },
+    {
+      "question_id": "2017_ce_17_pm082",
+      "filename": "2017_ce_17_pm082_6.jpg",
+      "img_row": 604,
+      "q_start_row": 592
+    },
+    {
+      "question_id": "2017_ce_17_pm084",
+      "filename": "2017_ce_17_pm084.jpg",
+      "img_row": 614,
+      "q_start_row": 612
+    }
+  ]
+}
