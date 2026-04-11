@@ -8,7 +8,7 @@ export const DEPARTMENT_LABELS: Record<Department, string> = {
   orthoptist: '視能訓練士学科',
 };
 
-export const DEPARTMENTS: Department[] = ['nursing', 'clinical_eng', 'dental_hyg', 'orthoptist'];
+export const DEPARTMENTS: Department[] = ['nursing', 'orthoptist', 'dental_hyg', 'clinical_eng'];
 export const GRADES = [1, 2, 3] as const;
 
 // 問題

@@ -113,7 +113,7 @@ function computeMemoriaState(
 }
 
 export function useQuiz() {
-  const { triggerSync } = useApp();
+  const { state: appState, triggerSync } = useApp();
   const [state, setState] = useState<QuizState>({
     questions: [],
     currentIndex: 0,
@@ -154,9 +154,13 @@ export function useQuiz() {
       return q.choices.some(c => c.trim() !== '' && c !== '\u00A0' && !c.match(/^&#\d+;$/));
     };
 
+    // プロフィールの学科でフィルタ（必須）
+    const profileDept = appState.profile?.department;
+
     // フィルター条件に合致するかチェック
     const matchesFilter = (q: Question): boolean => {
       if (!hasValidChoices(q)) return false; // 選択肢が画像のみの問題を除外
+      if (profileDept && q.department !== profileDept) return false; // 学科フィルタ
       if (filters?.category && q.category !== filters.category) return false;
       if (filters?.subcategory && q.subcategory !== filters.subcategory) return false;
       if (filters?.year && q.exam_year !== filters.year) return false;

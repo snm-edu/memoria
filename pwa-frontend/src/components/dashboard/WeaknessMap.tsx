@@ -10,13 +10,17 @@ interface CategoryStat {
 }
 
 export function WeaknessMap() {
-  const { dispatch } = useApp();
+  const { state: appState, dispatch } = useApp();
+  const profileDept = appState.profile?.department;
 
   const stats = useLiveQuery(async (): Promise<CategoryStat[]> => {
     const logs = await db.answerLog.toArray();
     if (logs.length === 0) return [];
 
-    const questions = await db.questionCache.toArray();
+    const allQuestions = await db.questionCache.toArray();
+    const questions = profileDept
+      ? allQuestions.filter((q) => q.department === profileDept)
+      : allQuestions;
     const catMap = new Map(questions.map((q) => [q.question_id, q.category]));
 
     const acc: Record<string, { correct: number; total: number }> = {};

@@ -64,7 +64,10 @@ export function HomeScreen() {
     const logs = await db.answerLog.toArray();
     if (logs.length === 0) return [];
 
-    const questions = await db.questionCache.toArray();
+    const allQuestions = await db.questionCache.toArray();
+    const questions = profile
+      ? allQuestions.filter((q) => q.department === profile.department)
+      : allQuestions;
     const categoryMap = new Map(questions.map((q) => [q.question_id, q.category]));
 
     const stats: Record<string, { correct: number; total: number }> = {};
@@ -103,7 +106,7 @@ export function HomeScreen() {
   const gradeQuestionCount = useLiveQuery(async () => {
     if (!profile) return 0;
     const all = await db.questionCache.toArray();
-    return all.filter(q => gradeCategories.includes(q.category)).length;
+    return all.filter(q => q.department === profile.department && gradeCategories.includes(q.category)).length;
   }, [profile?.grade], 0);
 
   // ゲーミフィケーションデータ取得

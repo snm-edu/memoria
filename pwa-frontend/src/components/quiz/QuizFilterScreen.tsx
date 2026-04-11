@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { db } from '../../services/db';
+import { useApp } from '../../context/AppContext';
 
 export interface QuizFilters {
   category?: string;
@@ -12,6 +13,8 @@ interface Props {
 }
 
 export function QuizFilterScreen({ onStart, onCancel }: Props) {
+  const { state: appState } = useApp();
+  const profileDept = appState.profile?.department;
   const [categories, setCategories] = useState<string[]>([]);
   const [years, setYears] = useState<number[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -21,7 +24,11 @@ export function QuizFilterScreen({ onStart, onCancel }: Props) {
   useEffect(() => {
     async function loadFilterOptions() {
       try {
-        const questions = await db.questionCache.toArray();
+        const allQuestions = await db.questionCache.toArray();
+        // プロフィールの学科でフィルタ
+        const questions = profileDept
+          ? allQuestions.filter((q) => q.department === profileDept)
+          : allQuestions;
 
         // ユニークなカテゴリを抽出（空文字を除外）
         const uniqueCategories = [
