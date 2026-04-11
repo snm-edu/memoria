@@ -1,14 +1,13 @@
 /**
  * メモリア GAS — 問題データ一括インポートサービス
  *
- * 使い方:
- * 1. Google Sheetsを開く → メニュー「メモリア管理」→「CE問題をインポート」
- *
- * または手動手順:
- * 1. CE_questions_for_sheets.csv を Googleドライブにアップロード
- * 2. スプレッドシートを開き「ce_import」シートを作成してCSVの内容を貼り付け
- * 3. GASエディタからimportFromStagingSheet()を実行
+ * GitHub Pages上のquestions.jsonを直接フェッチして
+ * questionsシートに自動インポートする。
+ * CSVファイルの手動操作は不要。
  */
+
+// GitHub Pages の questions.json URL
+const QUESTIONS_JSON_URL = 'https://snm-edu.github.io/memoria/data/questions.json';
 
 /**
  * スプレッドシートを開いたときにカスタムメニューを追加
@@ -18,149 +17,179 @@ function onOpen() {
     .createMenu('メモリア管理')
     .addItem('AIダッシュボード更新', 'updateAllDashboards')
     .addSeparator()
-    .addItem('📥 CE問題をインポート（ce_importシートから）', 'importFromStagingSheet')
-    .addItem('📥 CO問題をインポート（co_importシートから）', 'importCOFromStagingSheet')
+    .addItem('📥 CE問題を自動インポート', 'importCEQuestions')
+    .addItem('📥 CO問題を自動インポート', 'importCOQuestions')
+    .addItem('📥 DH問題を自動インポート', 'importDHQuestions')
+    .addItem('📥 NRS問題を自動インポート', 'importNRSQuestions')
     .addSeparator()
     .addItem('🔍 questions件数を確認', 'countQuestions')
     .addToUi();
 }
 
-/**
- * ステージングシート（ce_import）からquestionsシートへデータをインポート
- *
- * 手順:
- * 1. CE_questions_for_sheets.csv の内容をスプレッドシートの「ce_import」シートに貼り付ける
- *    （ファイル→インポート→アップロード→既存のシートに置き換え→シート名:ce_import）
- * 2. このメニュー「CE問題をインポート」を実行する
- */
-function importFromStagingSheet() {
-  importDepartmentFromStagingSheet_('ce_import', 'CE');
+/** CE（臨床工学技士）問題をインポート */
+function importCEQuestions() {
+  importDepartmentFromGitHub_('clinical_eng', 'CE（臨床工学技士）');
+}
+
+/** CO（視能訓練士）問題をインポート */
+function importCOQuestions() {
+  importDepartmentFromGitHub_('orthoptist', 'CO（視能訓練士）');
+}
+
+/** DH（歯科衛生士）問題をインポート */
+function importDHQuestions() {
+  importDepartmentFromGitHub_('dental_hyg', 'DH（歯科衛生士）');
+}
+
+/** NRS（看護師）問題をインポート */
+function importNRSQuestions() {
+  importDepartmentFromGitHub_('nursing', 'NRS（看護師）');
 }
 
 /**
- * co_importシートからCO問題をインポート
+ * GitHub Pages の questions.json から指定学科の問題をインポート
+ * @param {string} department - 'clinical_eng' | 'orthoptist' | 'nursing' | 'dental_hyg'
+ * @param {string} label - 表示用学科名
  */
-function importCOFromStagingSheet() {
-  importDepartmentFromStagingSheet_('co_import', 'CO');
-}
-
-/**
- * 内部関数: 指定ステージングシートからquestionsシートへインポート
- */
-function importDepartmentFromStagingSheet_(stagingSheetName, prefix) {
-  const ss = getSpreadsheet();
+function importDepartmentFromGitHub_(department, label) {
   const ui = SpreadsheetApp.getUi();
 
-  // ステージングシートの確認
-  const stagingSheet = ss.getSheetByName(stagingSheetName);
-  if (!stagingSheet) {
-    ui.alert(
-      'シートが見つかりません',
-      `「${stagingSheetName}」シートが存在しません。\n\n` +
-      `手順:\n` +
-      `1. ファイル > インポート > アップロード\n` +
-      `2. ${prefix === 'CE' ? 'CE' : 'CO'}_questions_for_sheets.csv を選択\n` +
-      `3. 「既存のシートを置き換える」を選び、シート名を「${stagingSheetName}」に設定\n` +
-      `4. インポート完了後、再度このメニューを実行してください。`,
-      ui.ButtonSet.OK
-    );
-    return;
-  }
-
-  // questionsシートを取得
-  const questSheet = getOrCreateSheet(CONFIG.SHEETS.QUESTIONS);
-  const questHeaders = questSheet.getRange(1, 1, 1, questSheet.getLastColumn()).getValues()[0];
-
-  // ステージングシートのヘッダー確認
-  const stagingHeaders = stagingSheet.getRange(1, 1, 1, stagingSheet.getLastColumn()).getValues()[0];
-
-  // ヘッダーが一致しているか確認
-  const expectedHeaders = getSheetHeaders(CONFIG.SHEETS.QUESTIONS);
-  const headersMatch = expectedHeaders.every((h, i) => stagingHeaders[i] === h);
-  if (!headersMatch) {
-    ui.alert(
-      'ヘッダー不一致',
-      `ステージングシートのヘッダーがquestionsシートと異なります。\n` +
-      `期待値: ${expectedHeaders.slice(0, 5).join(', ')}...\n` +
-      `実際値: ${stagingHeaders.slice(0, 5).join(', ')}...`,
-      ui.ButtonSet.OK
-    );
-    return;
-  }
-
-  // 既存のquestion_idセットを作成（重複防止）
-  const questLastRow = questSheet.getLastRow();
-  const existingIds = new Set();
-  if (questLastRow > 1) {
-    const idCol = questHeaders.indexOf('question_id') + 1;
-    const existingIdValues = questSheet.getRange(2, idCol, questLastRow - 1, 1).getValues();
-    existingIdValues.forEach(([id]) => { if (id) existingIds.add(String(id)); });
-  }
-  console.log(`既存問題数: ${existingIds.size}`);
-
-  // ステージングシートからデータを読み込み
-  const stagingLastRow = stagingSheet.getLastRow();
-  if (stagingLastRow < 2) {
-    ui.alert('データなし', 'ステージングシートにデータがありません。', ui.ButtonSet.OK);
-    return;
-  }
-
-  const stagingData = stagingSheet.getRange(2, 1, stagingLastRow - 1, stagingHeaders.length).getValues();
-  const idColIdx = stagingHeaders.indexOf('question_id');
-
-  // 重複を除いた新規データのみ抽出
-  const newRows = stagingData.filter(row => {
-    const id = String(row[idColIdx] || '');
-    return id && !existingIds.has(id);
-  });
-
-  console.log(`新規インポート対象: ${newRows.length}問（重複スキップ: ${stagingData.length - newRows.length}問）`);
-
-  if (newRows.length === 0) {
-    ui.alert(
-      'インポート不要',
-      `すべての${prefix}問題（${stagingData.length}問）は既にインポート済みです。`,
-      ui.ButtonSet.OK
-    );
-    return;
-  }
-
-  // 確認ダイアログ
-  const result = ui.alert(
-    'インポート確認',
-    `${prefix}問題を${newRows.length}問インポートします。\n（重複スキップ: ${stagingData.length - newRows.length}問）\n\n続けますか？`,
-    ui.ButtonSet.YES_NO
-  );
-  if (result !== ui.Button.YES) return;
-
-  // questionsシートに追記（500行ずつバッチ処理）
-  const BATCH_SIZE = 500;
-  const targetStartRow = questLastRow + 1;
-
-  for (let i = 0; i < newRows.length; i += BATCH_SIZE) {
-    const batch = newRows.slice(i, i + BATCH_SIZE);
-    questSheet.getRange(
-      targetStartRow + i,
-      1,
-      batch.length,
-      expectedHeaders.length
-    ).setValues(batch);
-
-    // レート制限対策
-    if (i + BATCH_SIZE < newRows.length) {
-      Utilities.sleep(500);
-    }
-  }
-
-  // 完了通知
+  // 進行中メッセージ
   ui.alert(
-    'インポート完了 ✅',
-    `${prefix}問題を${newRows.length}問インポートしました。\n` +
-    `questionsシート総件数: ${questLastRow - 1 + newRows.length}問`,
+    `${label}問題インポート開始`,
+    `GitHub Pagesからデータを取得しています...\nしばらくお待ちください（30秒〜1分程度）`,
     ui.ButtonSet.OK
   );
 
-  console.log(`インポート完了: ${newRows.length}問を追加（合計 ${questLastRow - 1 + newRows.length}問）`);
+  try {
+    // questions.json を GitHub Pages からフェッチ
+    console.log(`フェッチ開始: ${QUESTIONS_JSON_URL}`);
+    const response = UrlFetchApp.fetch(QUESTIONS_JSON_URL, {
+      muteHttpExceptions: true,
+      headers: { 'Cache-Control': 'no-cache' }
+    });
+
+    if (response.getResponseCode() !== 200) {
+      ui.alert('取得エラー', `GitHub Pages からの取得に失敗しました（HTTP ${response.getResponseCode()}）\nしばらく待ってから再試行してください。`, ui.ButtonSet.OK);
+      return;
+    }
+
+    const allQuestions = JSON.parse(response.getContentText());
+    console.log(`全問題数: ${allQuestions.length}`);
+
+    // 対象学科のみフィルタ
+    const deptQuestions = allQuestions.filter(q => q.department === department);
+    console.log(`${label}問題数: ${deptQuestions.length}`);
+
+    if (deptQuestions.length === 0) {
+      ui.alert('データなし', `${label}の問題が見つかりませんでした。\nquestions.jsonに${department}のデータが含まれているか確認してください。`, ui.ButtonSet.OK);
+      return;
+    }
+
+    // questionsシートを取得
+    const questSheet = getOrCreateSheet(CONFIG.SHEETS.QUESTIONS);
+    const questLastRow = questSheet.getLastRow();
+    const expectedHeaders = getSheetHeaders(CONFIG.SHEETS.QUESTIONS);
+
+    // 既存のquestion_idセット（重複防止）
+    const existingIds = new Set();
+    if (questLastRow > 1) {
+      const idValues = questSheet.getRange(2, 1, questLastRow - 1, 1).getValues();
+      idValues.forEach(([id]) => { if (id) existingIds.add(String(id)); });
+    }
+    console.log(`既存問題数: ${existingIds.size}`);
+
+    // questions.json形式 → Sheets行形式に変換（重複除外）
+    const newRows = [];
+    for (const q of deptQuestions) {
+      if (existingIds.has(String(q.question_id))) continue;
+
+      // choices配列 → choice_a〜choice_e
+      const choices = q.choices || [];
+      const choice_a = choices[0] || '';
+      const choice_b = choices[1] || '';
+      const choice_c = choices[2] || '';
+      const choice_d = choices[3] || '';
+      const choice_e = choices[4] || '';
+
+      // correct_answer配列 → カンマ区切り文字列
+      const correct_answer = Array.isArray(q.correct_answer)
+        ? q.correct_answer.join(',')
+        : (q.correct_answer || '');
+
+      // Sheetsヘッダー順に並べた行データ
+      // ['question_id','department','exam_year','exam_number','category','subcategory',
+      //  'subtopic','difficulty','question_text','choice_a'〜'choice_e',
+      //  'correct_answer','explanation','has_image','image_url','is_multi_select','source','created_at']
+      newRows.push([
+        q.question_id   || '',
+        q.department    || department,
+        q.exam_year     || '',
+        q.exam_number   || '',
+        q.category      || '',
+        q.subcategory   || '',
+        q.subtopic      || '',
+        q.difficulty    || 3,
+        q.question_text || '',
+        choice_a,
+        choice_b,
+        choice_c,
+        choice_d,
+        choice_e,
+        correct_answer,
+        q.explanation   || '',
+        q.has_image     ? 'True' : 'False',
+        q.image_url     || '',
+        q.is_multi_select ? 'True' : 'False',
+        q.source        || 'past_exam',
+        q.created_at    || new Date().toISOString(),
+      ]);
+    }
+
+    console.log(`新規インポート対象: ${newRows.length}問（重複スキップ: ${deptQuestions.length - newRows.length}問）`);
+
+    if (newRows.length === 0) {
+      ui.alert(
+        'インポート不要',
+        `${label}の全問題（${deptQuestions.length}問）はすでにインポート済みです。`,
+        ui.ButtonSet.OK
+      );
+      return;
+    }
+
+    // 確認ダイアログ
+    const result = ui.alert(
+      'インポート確認',
+      `${label}の問題を ${newRows.length}問 インポートします。\n` +
+      `（重複スキップ: ${deptQuestions.length - newRows.length}問）\n\n続けますか？`,
+      ui.ButtonSet.YES_NO
+    );
+    if (result !== ui.Button.YES) return;
+
+    // 500行ずつバッチ書き込み（GASのタイムアウト対策）
+    const BATCH_SIZE = 500;
+    const startRow = questLastRow + 1;
+
+    for (let i = 0; i < newRows.length; i += BATCH_SIZE) {
+      const batch = newRows.slice(i, i + BATCH_SIZE);
+      questSheet.getRange(startRow + i, 1, batch.length, expectedHeaders.length)
+        .setValues(batch);
+      if (i + BATCH_SIZE < newRows.length) Utilities.sleep(300);
+    }
+
+    ui.alert(
+      'インポート完了 ✅',
+      `${label}の問題を ${newRows.length}問 インポートしました。\n` +
+      `questionsシート総件数: ${questLastRow - 1 + newRows.length}問`,
+      ui.ButtonSet.OK
+    );
+
+    console.log(`完了: ${newRows.length}問追加（合計 ${questLastRow - 1 + newRows.length}問）`);
+
+  } catch (e) {
+    console.error('インポートエラー:', e);
+    ui.alert('エラー', `インポート中にエラーが発生しました:\n${e.message}`, ui.ButtonSet.OK);
+  }
 }
 
 /**
@@ -175,14 +204,10 @@ function countQuestions() {
     return;
   }
 
-  // department列のインデックス
   const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
   const deptCol = headers.indexOf('department') + 1;
-
-  // データ全取得
   const depts = sheet.getRange(2, deptCol, lastRow - 1, 1).getValues().flat();
 
-  // 集計
   const counts = {};
   depts.forEach(d => {
     const key = d || '(不明)';
@@ -190,9 +215,15 @@ function countQuestions() {
   });
 
   const total = lastRow - 1;
+  const labelMap = {
+    nursing: '看護学科',
+    clinical_eng: '臨床工学科',
+    dental_hyg: '歯科衛生学科',
+    orthoptist: '視能訓練学科',
+  };
   const summary = Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
-    .map(([dept, count]) => `  ${dept}: ${count}問`)
+    .map(([dept, count]) => `  ${labelMap[dept] || dept}: ${count}問`)
     .join('\n');
 
   SpreadsheetApp.getUi().alert(
@@ -203,9 +234,13 @@ function countQuestions() {
 }
 
 /**
- * AIダッシュボード手動更新（メニューから呼び出し）
+ * AIダッシュボード手動更新
  */
 function updateAllDashboards() {
   DashboardService.updateAll();
-  SpreadsheetApp.getUi().alert('AIダッシュボード更新完了', 'すべての学生のAIコメントを更新しました。', SpreadsheetApp.getUi().ButtonSet.OK);
+  SpreadsheetApp.getUi().alert(
+    'AIダッシュボード更新完了',
+    'すべての学生のAIコメントを更新しました。',
+    SpreadsheetApp.getUi().ButtonSet.OK
+  );
 }

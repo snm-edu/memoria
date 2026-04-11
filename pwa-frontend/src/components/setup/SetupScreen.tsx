@@ -4,7 +4,7 @@ import { useApp } from '../../context/AppContext';
 import { DEPARTMENTS, DEPARTMENT_LABELS, GRADES, type Department } from '../../types';
 
 // 現在問題データが用意されている学科
-const AVAILABLE_DEPARTMENTS: Department[] = ['nursing', 'clinical_eng'];
+const AVAILABLE_DEPARTMENTS: Department[] = ['nursing', 'clinical_eng', 'dental_hyg'];
 
 export function SetupScreen() {
   const { dispatch } = useApp();
