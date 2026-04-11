@@ -6,6 +6,14 @@ import { DEPARTMENTS, DEPARTMENT_LABELS, GRADES, type Department } from '../../t
 // 現在問題データが用意されている学科
 const AVAILABLE_DEPARTMENTS: Department[] = ['nursing', 'clinical_eng', 'dental_hyg', 'orthoptist'];
 
+// 学科カラー（学校公式サイト準拠・淡い色）
+const DEPT_COLORS: Record<Department, { bg: string; border: string; text: string; activeBg: string }> = {
+  nursing:      { bg: 'bg-orange-50',  border: 'border-orange-200', text: 'text-orange-700',  activeBg: 'bg-orange-100' },
+  orthoptist:   { bg: 'bg-pink-50',    border: 'border-pink-200',   text: 'text-pink-700',    activeBg: 'bg-pink-100' },
+  dental_hyg:   { bg: 'bg-emerald-50', border: 'border-emerald-200',text: 'text-emerald-700', activeBg: 'bg-emerald-100' },
+  clinical_eng: { bg: 'bg-blue-50',    border: 'border-blue-200',   text: 'text-blue-700',    activeBg: 'bg-blue-100' },
+};
+
 export function SetupScreen() {
   const { dispatch } = useApp();
   const [department, setDepartment] = useState<Department | null>(null);
@@ -56,17 +64,18 @@ export function SetupScreen() {
             <h2 className="text-lg font-bold text-center mb-4">学科を選択</h2>
             {DEPARTMENTS.map((dept) => {
               const isAvailable = AVAILABLE_DEPARTMENTS.includes(dept);
+              const colors = DEPT_COLORS[dept];
               return (
                 <button
                   key={dept}
                   onClick={() => { if (isAvailable) { setDepartment(dept); setStep('grade'); } }}
                   disabled={!isAvailable}
-                  className={`w-full p-4 rounded-xl text-center font-medium transition-all relative
+                  className={`w-full p-4 rounded-xl text-center font-semibold transition-all relative border-2
                     ${!isAvailable
-                      ? 'bg-slate-100 border-2 border-slate-200 text-slate-400 cursor-not-allowed opacity-60'
+                      ? 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed opacity-60'
                       : department === dept
-                        ? 'bg-primary-500 text-white shadow-lg'
-                        : 'bg-white border-2 border-slate-200 active:border-primary-400'
+                        ? `${colors.activeBg} ${colors.border} ${colors.text} shadow-lg ring-2 ring-offset-1`
+                        : `${colors.bg} ${colors.border} ${colors.text} active:${colors.activeBg}`
                     }`}
                 >
                   <span>{DEPARTMENT_LABELS[dept]}</span>
