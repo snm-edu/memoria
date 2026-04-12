@@ -13,19 +13,27 @@ const QUESTIONS_JSON_URL = 'https://memoria-flame.vercel.app/data/questions.json
  * スプレッドシートを開いたときにカスタムメニューを追加
  */
 function onOpen() {
-  SpreadsheetApp.getUi()
-    .createMenu('メモリア管理')
-    .addItem('AIダッシュボード更新', 'updateAllDashboards')
+  const ui = SpreadsheetApp.getUi();
+
+  const importMenu = ui.createMenu('📥 問題インポート')
+    .addItem('CE（臨床工学技士）', 'importCEQuestions')
+    .addItem('CO（視能訓練士）',   'importCOQuestions')
+    .addItem('DH（歯科衛生士）',   'importDHQuestions')
+    .addItem('NRS（看護師）',      'importNRSQuestions');
+
+  const updateMenu = ui.createMenu('🔄 カテゴリ一括更新')
+    .addItem('全学科を更新',         'updateAllCategories')
     .addSeparator()
-    .addItem('📥 CE問題を自動インポート', 'importCEQuestions')
-    .addItem('📥 CO問題を自動インポート', 'importCOQuestions')
-    .addItem('📥 DH問題を自動インポート', 'importDHQuestions')
-    .addItem('📥 NRS問題を自動インポート', 'importNRSQuestions')
+    .addItem('CE（臨床工学技士）',   'updateCECategories')
+    .addItem('CO（視能訓練士）',     'updateCOCategories')
+    .addItem('DH（歯科衛生士）',     'updateDHCategories')
+    .addItem('NRS（看護師）',        'updateNRSCategories');
+
+  ui.createMenu('メモリア管理')
+    .addItem('🤖 AIダッシュボード更新', 'updateAllDashboards')
     .addSeparator()
-    .addItem('🔄 DH問題カテゴリを更新', 'updateDHCategories')
-    .addItem('🔄 CE問題カテゴリを更新', 'updateCECategories')
-    .addItem('🔄 CO問題カテゴリを更新', 'updateCOCategories')
-    .addItem('🔄 NRS問題カテゴリを更新', 'updateNRSCategories')
+    .addSubMenu(importMenu)
+    .addSubMenu(updateMenu)
     .addSeparator()
     .addItem('🔍 questions件数を確認', 'countQuestions')
     .addToUi();
@@ -359,6 +367,88 @@ function updateCOCategories() {
 /** NRS問題のカテゴリを更新 */
 function updateNRSCategories() {
   updateCategoriesFromGitHub_('nursing', 'NRS（看護師）');
+}
+
+/** 全学科のカテゴリを一括更新 */
+function updateAllCategories() {
+  const ui = SpreadsheetApp.getUi();
+  const result = ui.alert(
+    '全学科カテゴリ一括更新',
+    '全学科（CE/CO/DH/NRS）のcategory/subcategory/subtopicを最新データで更新します。\n続けますか？',
+    ui.ButtonSet.YES_NO
+  );
+  if (result !== ui.Button.YES) return;
+
+  const depts = [
+    { code: 'clinical_eng', label: 'CE（臨床工学技士）' },
+    { code: 'orthoptist',   label: 'CO（視能訓練士）'   },
+    { code: 'dental_hyg',   label: 'DH（歯科衛生士）'   },
+    { code: 'nursing',      label: 'NRS（看護師）'       },
+  ];
+
+  // questions.json を1回だけ取得して使いまわす
+  const response = UrlFetchApp.fetch(QUESTIONS_JSON_URL, {
+    muteHttpExceptions: true,
+    headers: { 'Cache-Control': 'no-cache' }
+  });
+  if (response.getResponseCode() !== 200) {
+    ui.alert('取得エラー', `HTTP ${response.getResponseCode()}`, ui.ButtonSet.OK);
+    return;
+  }
+  const allQuestions = JSON.parse(response.getContentText());
+
+  const sheet = getOrCreateSheet(CONFIG.SHEETS.QUESTIONS);
+  const lastRow = sheet.getLastRow();
+  const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+  const colIdx = {};
+  headers.forEach((h, i) => { colIdx[h] = i + 1; });
+
+  const idCol  = colIdx['question_id'];
+  const deptCol= colIdx['department'];
+  const catCol = colIdx['category'];
+  const subCol = colIdx['subcategory'];
+  const topCol = colIdx['subtopic'];
+
+  const allData = sheet.getRange(2, 1, lastRow - 1, headers.length).getValues();
+
+  let totalUpdated = 0;
+  const summary = [];
+
+  depts.forEach(({ code, label }) => {
+    // この学科のJSONデータをlookup化
+    const lookup = {};
+    allQuestions.filter(q => q.department === code).forEach(q => {
+      lookup[String(q.question_id)] = {
+        category:    q.category    || '',
+        subcategory: q.subcategory || '',
+        subtopic:    q.subtopic    || '',
+      };
+    });
+
+    let count = 0;
+    allData.forEach((row, i) => {
+      if (String(row[deptCol - 1] || '') !== code) return;
+      const qid = String(row[idCol - 1] || '');
+      const newData = lookup[qid];
+      if (!newData) return;
+
+      const sheetRow = i + 2;
+      sheet.getRange(sheetRow, catCol).setValue(newData.category);
+      sheet.getRange(sheetRow, subCol).setValue(newData.subcategory);
+      sheet.getRange(sheetRow, topCol).setValue(newData.subtopic);
+      count++;
+      if (count % 100 === 0) Utilities.sleep(200);
+    });
+
+    summary.push(`${label}: ${count}問`);
+    totalUpdated += count;
+  });
+
+  ui.alert(
+    '全学科更新完了 ✅',
+    `合計 ${totalUpdated}問 を更新しました。\n\n${summary.join('\n')}`,
+    ui.ButtonSet.OK
+  );
 }
 
 /**
