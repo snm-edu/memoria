@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2015_dh_15_am001",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "外側面の一部を除去した顎骨の写真を別に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "歯槽孔",
+      "卵円孔",
+      "切歯管",
+      "下顎管"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "骨改造＜リモデリング＞で、脱灰して骨基質を吸収するのはどれか。",
+    "choices": [
+      "骨細胞",
+      "骨芽細胞",
+      "破骨細胞",
+      "マクロファージ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "口腔周囲の写真を別に示す。\n矢印で示す部位に存在する筋の運動を司るのはどれか。",
+    "choices": [
+      "三叉神経",
+      "顔面神経",
+      "舌咽神経",
+      "迷走神経"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am004",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "乳歯の頬側面と咬合面を図に示す。\n矢印で示す部位の名称はどれか。",
+    "choices": [
+      "介在結節",
+      "基底結節",
+      "臼歯結節",
+      "中心結節"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "体重65kgの成人男性の血液量はどれか。",
+    "choices": [
+      "1L",
+      "2L",
+      "5L",
+      "10L"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "（　）に入る語句の組合せで正しいのはどれか。\n\n体温は（①）が（②）よりも高い。",
+    "choices": [
+      "（①）食　前 -- （②）食　後",
+      "（①）小　児 -- （②）成　人",
+      "（①）男　性 -- （②）女　性",
+      "（①）朝　方 -- （②）夕　方"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am007",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "ペリクルで正しいのはどれか。",
+    "choices": [
+      "上皮細胞からなる。",
+      "厚さは10～20μmである。",
+      "細菌や有機物質を吸着しやすい。",
+      "酸に対する抵抗性を低下させる。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am008",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "ヒドロキシアパタイトのCaとPのモル比はどれか。",
+    "choices": [
+      "2:1",
+      "4:3",
+      "7:5",
+      "10:6"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am009",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "歯の異常と好発部位の組合せで正しいのはどれか。",
+    "choices": [
+      "矮小歯 -- 上顎中切歯",
+      "巨大歯 -- 下顎小臼歯",
+      "欠如歯 -- 上顎側切歯",
+      "癒合歯＜融合歯＞ -- 下顎大臼歯"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "平滑面う蝕におけるエナメル質う蝕を黒塗りで、象牙質う蝕を斜線で示す。\n正しいう蝕円錐の形態はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "球菌はどれか。",
+    "choices": [
+      "Streptococcus mutans",
+      "Fusobacterium nucleatum",
+      "Porphyromonas gingivalis",
+      "Aggregatibacter actinomycetemcomitans"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "免疫グロブリンの図を示す。\nこの免疫グロブリンの特徴はどれか。",
+    "choices": [
+      "胎盤通過能がある。",
+      "抗原感作後に最も早く出現する。",
+      "免疫グロブリンの中で血清中に最も多い。",
+      "アナフィラキシー型アレルギーの原因となる。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "プリオンの本体はどれか。",
+    "choices": [
+      "DNA",
+      "RNA",
+      "糖　質",
+      "タンパク質"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "全身性止血薬はどれか。",
+    "choices": [
+      "ヘパリン",
+      "トロンビン",
+      "アスコルビン酸",
+      "ワルファリンカリウム"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "歯質変色の副作用がある薬物はどれか。",
+    "choices": [
+      "アモキシシリン",
+      "セファレキシン",
+      "テトラサイクリン",
+      "クラリスロマイシン"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "知覚過敏に有効な歯磨剤の薬用成分はどれか。2つ選べ。",
+    "choices": [
+      "硝酸カリウム",
+      "乳酸アルミニウム",
+      "塩化ベンゼトニウム",
+      "アズレンスルホン酸ナトリウム"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am017",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "菌体外多糖類を合成するStreptococcus mutansの酵素はどれか。",
+    "choices": [
+      "アミラーゼ",
+      "トリプシン",
+      "ペルオキシダーゼ",
+      "グルコシルトランスフェラーゼ"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "食品として摂取されたフッ化物の体内での動態はどれか。2つ選べ。",
+    "choices": [
+      "脳に蓄積",
+      "骨に沈着",
+      "尿中に排泄",
+      "肝臓で分解"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "平成23年歯科疾患実態調査における年齢と歯肉の所見を表に示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "OHI-S＜Greene&Vermillion＞とPｌI＜Silness&Löe＞で、評価する歯種が同じなのはどれか。2つ選べ。",
+    "choices": [
+      "16",
+      "26",
+      "36",
+      "46"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "ある中学校1年生（30名）の学校歯科健康診断の結果を表に示す。\nDMFT指数はどれか。",
+    "choices": [
+      "0.05",
+      "1.2",
+      "2",
+      "6"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "健康増進法に基づく市町村の健康増進事業はどれか。2つ選べ。",
+    "choices": [
+      "特定健康診査",
+      "歯周疾患検診",
+      "特殊健康診断",
+      "骨粗鬆症検診"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "職業性歯科疾患で、原因物質と疾病・症状を表に示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "我が国における最近10年間の死因別粗死亡率で減少傾向を示しているのはどれか。",
+    "choices": [
+      "肺　炎",
+      "心疾患",
+      "脳血管疾患",
+      "悪性新生物"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "（　）に入る語句はどれか。\n\n大気汚染物質であるPM2.5は粒子の（　）によって規定される。",
+    "choices": [
+      "重　量",
+      "体　積",
+      "外　径",
+      "濃　度"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "新興感染症はどれか。2つ選べ。",
+    "choices": [
+      "結　核",
+      "マラリア",
+      "エボラ出血熱",
+      "重症急性呼吸器症候群＜SARS＞"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "身長160cmの女性。肥満の基準値＜BMI 25.0＞に最も近い体重はどれか。",
+    "choices": [
+      "54kg",
+      "59kg",
+      "64kg",
+      "69kg"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "法令を優先順位の高い順に左から示す。正しいのはどれか。",
+    "choices": [
+      "憲　法　　条　例　　法　律　　命　令＜政令・省令＞",
+      "法　律　　憲　法　　条　例　　命　令＜政令・省令＞",
+      "憲　法　　法　律　　命　令＜政令・省令＞　　条　例",
+      "法　律　　憲　法　　命　令＜政令・省令＞　　条　例"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "医療法における医療提供の理念で（　）に入る語句はどれか。\n\n医療の担い手は医療を提供するにあたり適切な説明を行い、医療を受ける者の（　）を得るように努めなければならない。",
+    "choices": [
+      "協　力",
+      "理　解",
+      "安　心",
+      "情　報"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "国民健康保険法で定める保険者はどれか。2つ選べ。",
+    "choices": [
+      "事業者",
+      "市町村",
+      "共済組合",
+      "国民健康保険組合"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  }
+]

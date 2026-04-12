@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2020_dh_20_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "84歳の女性。脳血管障害後遺症で胃瘻からの栄養を行っている。ADLは全介助である。口腔健康管理を行うことになった。\n栄養注入後に口腔清掃を行うとき、嘔吐しにくい体位はどれか。2つ選べ。",
+    "choices": [
+      "仰臥位",
+      "ファーラー位",
+      "セミファーラー位",
+      "左を下にした側臥位"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "11歳の男児。脳性麻痺の診断を受けている。家族が口腔清掃をしている写真を示す。\n矢印で示す器具の使用目的はどれか。2つ選べ。",
+    "choices": [
+      "防　湿",
+      "開口保持",
+      "視野確保",
+      "舌突出防止"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "経口から摂取されたフッ化物のうち、大部分は①食道から吸収され、②肝臓で分解される。フッ素は③腎臓から排出されるが、一部残ったフッ素は④軟組織に沈着する。\n下線部分で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "歯科衛生士が行う歯科予防処置はどれか。1つ選べ。",
+    "choices": [
+      "う蝕活動性の診断",
+      "摂食嚥下機能の指導",
+      "歯石除去後の歯面研磨",
+      "歯周ポケット内への薬物塗布"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "63歳の女性。歯の動揺を主訴として来院した。初診時のエックス線写真を示す。\nリスクと疑われる疾患はどれか。1つ選べ。",
+    "choices": [
+      "心内膜炎",
+      "2型糖尿病",
+      "慢性閉塞性肺疾患",
+      "特発性血小板減少性紫斑病"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "歯科用検査器具の写真Aとその先端を拡大した写真Bを示す。\n使用目的はどれか。2つ選べ。",
+    "choices": [
+      "歯石の触知",
+      "付着歯肉幅の測定",
+      "根面の滑沢化の確認",
+      "ポケット底の位置の確認"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "44歳の女性。歯周治療終了後、3か月後のSPTで来院した。歯周組織検査の結果を図に示す。\n検査後に行うのはどれか。2つ選べ。",
+    "choices": [
+      "SRP",
+      "歯面研磨",
+      "歯周ポケットの搔爬",
+      "歯根面へのフッ化物塗布"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "51歳の女性。歯周治療終了後、6か月後のメインテナンスで来院した。歯周組織検査後、歯科医師より歯科保健指導と歯面清掃を行うよう指示された。O’LearyのPCRの結果を図に示す。\n歯面清掃に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "ラバーチップ",
+      "研磨用ディスク",
+      "デンタルフロス",
+      "ポイント型ラバーカップ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "エックス線写真を示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "歯　石",
+      "歯根嚢胞",
+      "エナメル真珠",
+      "根分岐部病変"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "口腔内写真で観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "クレフト",
+      "エプーリス",
+      "歯肉の発赤",
+      "歯肉縁下歯石"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "この患者に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "ラバーカップ",
+      "超音波スケーラー",
+      "グレーシータイプキュレット",
+      "炭酸水素ナトリウム歯面清掃器"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "歯面に対する超音波スケーラーの基本的な操作角度はどれか。1つ選べ。",
+    "choices": [
+      "15度",
+      "45度",
+      "70度",
+      "90度"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "う蝕活動性試験で培地を利用するのはどれか。2つ選べ。",
+    "choices": [
+      "Snyderテスト",
+      "Dreizenテスト",
+      "Fosdickテスト",
+      "Hardleyテスト"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "小窩裂溝塡塞でレジン系シーラント材と比較して、グラスアイオノマー系シーラント材を用いた場合の特徴はどれか。2つ選べ。",
+    "choices": [
+      "フッ素徐放性がある。",
+      "歯面への接着性が強い。",
+      "半萌出歯に用いることができる。",
+      "リン酸エッチングが必要である。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "12歳の女児。う蝕予防のため定期的に来院している。初診時と1年後の再来院時の検査結果を表に示す。\n改善が必要なのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "小学校で全学年を対象にフッ化物洗口を実施することになった。\n教員への説明で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "洗口後10分間はうがいを控えてください。",
+      "洗口液1回分の使用量は一人当たり20mLです。",
+      "フッ化物歯面塗布を併用しても問題はありません。",
+      "洗口液を口に含み3分間ブクブクうがいを行います。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "体重18kgの男児にフッ化物応用を行う場合、見込み中毒量はどれか。1つ選べ。",
+    "choices": [
+      "2mgF",
+      "9mgF",
+      "90mgF",
+      "810mgF"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am078",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "80歳の男性。口腔乾燥を主訴として歯科訪問診療の依頼を受けた。1年前から介護保険施設に入所している。要介護度4、BDRは全介助であった。胃瘻を造設しており、口腔乾燥が認められるが、口腔清掃状態は良好であった。初診時の口腔内診査後、介護職員に口腔保湿剤の使用方法を指導することになった。\n適切なのはどれか。2つ選べ。",
+    "choices": [
+      "2時間ごとに塗布する。",
+      "口腔清掃前後に塗布する。",
+      "できるだけ多く塗布する。",
+      "乾燥の強い部位に使用する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am079",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "74歳の男性。介護保険施設に入所している。口腔健康管理を行うことになった。現在のバイタルサインおよび血液検査の結果を表に示す。\n疑われる状態はどれか。1つ選べ。",
+    "choices": [
+      "徐　脈",
+      "貧　血",
+      "過換気",
+      "高血圧"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "4歳の男児。保育士と一緒に来院した。歯科医師による口腔内診査の結果、多数歯う蝕が認められた。\n疑われるのはどれか。1つ選べ。",
+    "choices": [
+      "性的虐待",
+      "身体的虐待",
+      "心理的虐待",
+      "ネグレクト"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "過度の飲酒習慣がリスクファクターとなるのはどれか。2つ選べ。",
+    "choices": [
+      "精神病",
+      "血友病A",
+      "食道がん",
+      "慢性閉塞性肺疾患〈COPD〉"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "63歳の女性。義歯調整のため来院した。上顎右側中切歯の歯肉発赤と出血が認められた。動揺と排膿はない。BDR指標は全て自立している。歯科医師より歯科保健指導を行うよう指示を受けた。来院時の口腔内写真を示す。\nこの歯に対する適切な口腔清掃法はどれか。2つ選べ。",
+    "choices": [
+      "バス改良法",
+      "ローリング法",
+      "スティルマン法",
+      "1歯ずつの縦磨き法"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "70歳の女性。インプラント義歯のメインテナンスのため来院した。歯科医師より歯科保健指導を行うよう指示を受けた。口腔内写真を示す。\n矢印の部位の口腔清掃用具として推奨するのはどれか。1つ選べ。",
+    "choices": [
+      "粘膜ブラシ",
+      "義歯用ブラシ",
+      "タフトブラシ",
+      "スポンジブラシ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "地域支援事業で独居高齢者を対象に口腔機能管理について講話を行うことになった。事前に対象者へアンケート調査を行ったところ、軟らかい食品に偏った食事をしている高齢者が多かった。\n不足を注意するのはどれか。2つ選べ。",
+    "choices": [
+      "葉　酸",
+      "食物繊維",
+      "飽和脂肪酸",
+      "動物性タンパク質"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am085（不備問題全員加点）",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "24歳の女性。知覚過敏を訴えて来院した。脳神経内科で神経性過食症の治療を受けているが、頻繁に過食と嘔吐を繰り返しているという。DMF歯数は0である。\n推奨するのはどれか。2つ選べ。",
+    "choices": [
+      "フッ化物洗口",
+      "殺菌剤による含嗽",
+      "キシリトール配合タブレットの摂取",
+      "硝酸アルミニウム含有歯磨剤の使用"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "小学校の養護教諭より、小学6年生の児童を対象とした歯と口の健康に関する健康教育の依頼を受けた。\n適切な取組みはどれか。2つ選べ。",
+    "choices": [
+      "学校内で完結する内容にする。",
+      "歯科衛生士主導で授業を行う。",
+      "生活習慣に関する具体的内容を取り上げる。",
+      "「歯と口の健康週間」など社会的行事を関連させる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "自治体から地域支援事業における一般介護予防事業の講話を依頼された。事前に対象者へ行った口腔内状況の調査結果を表に示す。\n講話の内容として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "嚥下機能",
+      "義歯清掃方法",
+      "唾液腺マッサージ",
+      "定期的な歯科受診"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "水溶性ビタミンはどれか。2つ選べ。",
+    "choices": [
+      "ビタミンA",
+      "ビタミンB<sub>1</sub>",
+      "ビタミンC",
+      "ビタミンD"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "日本人の食事摂取基準で定められた指標の概念図を示す。\n推奨量はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "88歳の男性。食事中のむせが多いことを主訴として家族とともに来院した。特記すべき既往歴はない。\n適切な助言はどれか。1つ選べ。",
+    "choices": [
+      "右を向いて飲むとよいです。",
+      "むせたら食事をやめましょう。",
+      "なるべくむせは我慢しましょう。",
+      "とろみをつけるとむせづらくなります。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

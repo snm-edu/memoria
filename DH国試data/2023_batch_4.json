@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2023_dh_23_am091",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "歯間分離器の写真を示す。\n他の器材とは異なる原理で歯間分離効果を発揮するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am092",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "二次救命処置はどれか。2つ選べ。",
+    "choices": [
+      "気管挿管",
+      "人工呼吸",
+      "静脈路の確保",
+      "ハイムリック法"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am093",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "逆流性食道炎と関連するのはどれか。2つ選べ。",
+    "choices": [
+      "酸蝕症",
+      "歯周炎",
+      "嚥下障害",
+      "再発性アフタ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am094",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "抜歯に用いられる器具とその先端の写真を示す。\n掻爬に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am095",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "46歳の男性。①上顎右側第一大臼歯の痛みを主訴として来院した。②昨夜から痛みが強くなり、眠れなかったという。5年前にも来院しており、③その時は下顎左側第三大臼歯を抜去している。④高血圧症で服薬していることがお薬手帳から確認された。\n下線部分で現病歴はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "器材の写真を示す。\n無髄歯の漂白に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "上下顎全部床義歯製作中の口腔内写真（Ａ、Ｂ）を示す。\nこの時点で行われるのはどれか。2つ選べ。",
+    "choices": [
+      "筋圧形成",
+      "人工歯の選択",
+      "顎間関係の記録",
+      "ろう義歯の試適"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "カートリッジ式注射器の写真を示す。\n矢印で示す部分の目的はどれか。1つ選べ。",
+    "choices": [
+      "吸引操作",
+      "強圧での注入",
+      "注入量の規制",
+      "注入速度の調整"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "口内法エックス線画像を示す。\nこの撮影法の特徴はどれか。1つ選べ。",
+    "choices": [
+      "正放線投影する。",
+      "ロングコーンを用いて撮影する。",
+      "フィルムを咬んだ状態で撮影する。",
+      "臼歯部咬合平面に対して下方から投影する。"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "共同動作時の写真を示す。\n器材の受け渡しで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "72歳の男性。上顎右側第二大臼歯に全部金属冠を装着することになった。完成した全部金属冠の写真（Ａ）と使用する器材の写真（Ｂ）を示す。\n最初に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "矯正歯科治療時の模型の写真（Ａ）とプライヤーの写真（Ｂ）を示す。\nこの操作の後に使用するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "27歳の男性。上顎右側第二大臼歯全部金属冠製作のための精密印象採得が行われた。印象体を60秒間流水下で洗浄し、1.0％次亜塩素酸ナトリウム溶液に15分間浸漬した。さらに30分ほど待ってから石膏の注入を行った。\n使用したのはどれか。1つ選べ。",
+    "choices": [
+      "寒天印象材",
+      "モデリングコンパウンド",
+      "酸化亜鉛ユージノール印象材",
+      "付加型シリコーンゴム印象材"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "26歳の男性。上顎左側第一大臼歯が水にしみることを主訴として来院した。検査の結果、修復物下の象牙質う蝕と診断され、コンポジットレジン修復が行われることになった。まず、修復物を除去して、う蝕検知液で感染象牙質を染色することになった。初診時の口腔内写真（Ａ）、修復物除去後の口腔内写真（Ｂ）および器具の写真（Ｃ）を示す。\n次に準備するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "75歳の男性。加齢による聴覚機能の低下がみられ、「声は聞こえるが、話の内容が聞き取りづらい。」と訴えがあった。\nこの患者への医療面接で適切なのはどれか。1つ選べ。",
+    "choices": [
+      "高い声で話す。",
+      "一問一答で行う。",
+      "大きな声で話す。",
+      "文字盤を使用する。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "摂食嚥下のプロセスモデルにおいて、食塊の一部が嚥下前に中咽頭部に送り込まれる時期はどれか。1つ選べ。",
+    "choices": [
+      "咽頭期",
+      "食道期",
+      "第1期輸送＜Stage Ⅰ transport＞",
+      "第2期輸送＜Stage Ⅱ transport＞"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "73歳の男性。摂食嚥下困難を主訴として来院した。嚥下訓練を行っている写真を示す。\n改善が期待できるのはどれか。2つ選べ。",
+    "choices": [
+      "誤　嚥",
+      "咽頭残留",
+      "口腔内残留",
+      "嚥下反射遅延"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am108",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "55歳の男性。定期歯科健康診査のために来院した。その後、飲み込みづらさと話しづらさを訴えたので、口腔内観察を行った。舌の写真を示す。\nこれらの症状を特徴とするのはどれか。1つ選べ。",
+    "choices": [
+      "Sjögren症候群",
+      "再生不良性貧血",
+      "慢性関節リウマチ",
+      "筋萎縮性側索硬化症"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "87歳の女性。家族から、「最近食べこぼしが多く、食後しばらくするとむせていたり、喉がすっぱい感じがすると訴える。」との相談を受けた。3年前に左側大脳半球の脳梗塞を発症し、右片麻痺の後遺症があるが、体性感覚や味覚には異常はない。家族が食事介助を行っている。\n家族への適切な指導内容はどれか。2つ選べ。",
+    "choices": [
+      "複数回嚥下を促す。",
+      "患者の右側から介助する。",
+      "唇の閉鎖を指で介助する。",
+      "食後はすぐに横臥位にする。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "8歳の男児。定期歯科健康診査のため来院した。来院時の口腔内写真を示す。\nHellmannの歯齢はどれか。1つ選べ。",
+    "choices": [
+      "Ⅱ A",
+      "Ⅲ A",
+      "Ⅲ B",
+      "Ⅳ A"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "体内での酸素と二酸化炭素の運搬を模式図に示す。\n内呼吸はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "嚥下時、鼻咽腔閉鎖に最も役立つのはどれか。1つ選べ。",
+    "choices": [
+      "側頭筋",
+      "茎突舌筋",
+      "口蓋帆挙筋",
+      "耳管咽頭筋"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm003",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "消化時に胃で生じるのはどれか。1つ選べ。",
+    "choices": [
+      "総蠕動",
+      "振子運動",
+      "分節運動",
+      "受け入れ弛緩"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "唾液に含まれる鉄結合性タンパク質はどれか。1つ選べ。",
+    "choices": [
+      "ムチン",
+      "アミラーゼ",
+      "グロブリン",
+      "ラクトフェリン"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm005",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "下顎骨内面の写真の一部を示す。\n矢印で示す孔から下顎骨内部に進入するのはどれか。1つ選べ。",
+    "choices": [
+      "咬筋動脈",
+      "舌下動脈",
+      "下歯槽動脈",
+      "後上歯槽動脈"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "嘔吐に伴う生体反応はどれか。1つ選べ。",
+    "choices": [
+      "発　汗",
+      "顔面紅潮",
+      "瞳孔縮小",
+      "唾液分泌抑制"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm007",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "新産線がみられるのはどれか。1つ選べ。",
+    "choices": [
+      "側切歯",
+      "犬　歯",
+      "第二小臼歯",
+      "第一大臼歯"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm008",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "口腔乾燥症を生じるのはどれか。1つ選べ。",
+    "choices": [
+      "天疱瘡",
+      "白板症",
+      "口腔扁平苔癬",
+      "Sjögren症候群"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "口腔細菌のグラム染色像の模式図を示す。\nPorphyromonas gingivalisはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "炎症に関与する細胞の模式図を示す。\n急性化膿性歯髄炎の主体をなすのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

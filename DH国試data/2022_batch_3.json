@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2022_dh_22_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "障害児の誕生に対する親の反応の時間的変化を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "順　応",
+      "否　認",
+      "ショック",
+      "悲嘆と怒り"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am062",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "9歳の男児。口腔清掃指導を希望して来院した。重度脳性麻痺で歯口清掃は保護者が行っている。指導前の口腔内写真を示す。\n保護者に説明する事項はどれか。2つ選べ。",
+    "choices": [
+      "歯肉出血があります。",
+      "成長に伴い前歯は噛み合ってきます。",
+      "舌突出による歯列不正がみられます。",
+      "歯の根元までしっかり磨けています。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am063",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "38歳の男性。歯肉の着色を主訴として来院した。痛みなどの症状はないという。初診時の口腔内写真を示す。\n主訴の原因となる生活習慣はどれか。1つ選べ。",
+    "choices": [
+      "喫　煙",
+      "偏　食",
+      "過度の飲酒",
+      "甘味食品の摂取"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "シックルタイプスケーラーをシャープニングしている写真を示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "歯周組織検査で、歯が頰舌的に2mm、近遠心的に1.5mm動揺していた場合のMillerの分類はどれか。1つ選べ。",
+    "choices": [
+      "0度",
+      "1度",
+      "2度",
+      "3度"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am066",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "プラークリテンションファクターはどれか。2つ選べ。",
+    "choices": [
+      "歯　石",
+      "口呼吸",
+      "咬合性外傷",
+      "ブラキシズム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "う蝕活動性試験の写真を示す。\nこの試験で評価しているのはどれか。1つ選べ。",
+    "choices": [
+      "唾液の緩衝能",
+      "歯垢のpH変化",
+      "歯垢の酸産生能",
+      "レサズリン還元性菌の活性"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "17歳の女子。定期歯科健康診査のため来院した。歯科医師の指示により、歯肉の検査を行うことになった。来院時の口腔内写真を示す。\nPMA IndexのA部はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "55歳の女性。上顎右側前歯部の歯肉の腫脹を主訴として来院した。慢性歯周炎と診断された。初診時の口腔内写真を示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "クレフト",
+      "フェストゥーン",
+      "ブラックトライアングル",
+      "エナメルプロジェクション"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "7歳の女児。フッ化物の塗布を希望して保護者と来院した。歯科医師からトレー法でフッ化物溶液の塗布を行うよう指示があった。\n術式に含まれるのはどれか。2つ選べ。",
+    "choices": [
+      "防　湿",
+      "歯面乾燥",
+      "トレー試適",
+      "余剰薬剤除去"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "超音波スケーラーを用いた歯周ポケット内のイリゲーション操作で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "根面に圧接する。",
+      "先端2mmの側面を用いる。",
+      "歯面に対して45度で使用する。",
+      "水流が線状に出る状態に調整する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "日本人の成人のおおよそのフッ化物摂取量（mgF/日）はどれか。1つ選べ。",
+    "choices": [
+      "0.05～0.3",
+      "0.5～3.0",
+      "5.0～30",
+      "50～300"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "26歳の女性。定期歯科健康診査のため来院した。歯周組織検査時の写真と歯周組織検査結果の一部を示す。\nこの部位の付着歯肉幅はどれか。1つ選べ。",
+    "choices": [
+      "3mm",
+      "4mm",
+      "5mm",
+      "6mm"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "歯周治療の流れを図に示す。\n①へ移行する基準はどれか。2つ選べ。",
+    "choices": [
+      "BOP率20％以下",
+      "歯の動揺0.2mm以内",
+      "歯周ポケット4mm未満",
+      "O’LearyのPCR30％以下"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "破折防止のため小窩裂溝塡塞材を応用するのはどれか。1つ選べ。",
+    "choices": [
+      "基底結節",
+      "臼後結節",
+      "臼傍結節",
+      "中心結節"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "65歳の女性。定期歯科健康診査のため来院した。歯周組織検査後にスケーリングを行うことになった。口腔内写真（A）とスケーラーの写真（B）を示す。\n矢印で示す歯肉縁上歯石の除去に適したスケーラーはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am077",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "6歳の男児。う蝕予防処置を希望して保護者と来院した。歯科医師から小窩裂溝塡塞を行うよう指示された。初診時の口腔内写真を示す。\n矢印で示す歯の塡塞に使用する器具・器材はどれか。2つ選べ。",
+    "choices": [
+      "ロール綿",
+      "歯間分離器",
+      "バーニッシュ",
+      "ボンディング材"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am078",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "急性期病院に勤務する看護師を対象に口腔ケアの講話を依頼された。対象者の所属診療科を示す。\n\n血液内科：15人\n腫瘍外科：20人\n\n講話の内容で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "う蝕予防",
+      "嚥下訓練",
+      "疼痛管理",
+      "口腔アセスメントの方法"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am079",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "80歳の男性。口が乾くことを主訴として来院した。脳梗塞の既往があり、居宅療養中である。RSSTは3回/30秒、BDRはすべて自立である。歯科医師の指示で、液状タイプの保湿剤の使用方法を指導することになった。\n指導内容はどれか。1つ選べ。",
+    "choices": [
+      "使用後、水でうがいする。",
+      "適量を口に含ませ、20～30秒すすぐ。",
+      "自分で歯ブラシにつけて、口腔内になじませる。",
+      "介助者がスポンジブラシを用いて、口腔内全体に塗布する。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "5歳の男児。歯の変色を主訴として来院した。歯科医師から指示を受け、保護者へ洗口剤使用法の指導を行った。初診時の口腔内写真を示す。\n適切なのはどれか。2つ選べ。",
+    "choices": [
+      "歯磨き前に洗口する。",
+      "ガラガラうがいを行う。",
+      "洗口後の飲食を控える。",
+      "フッ化物配合のものを選ぶ。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "57歳の男性。1年前に①脳梗塞を発症し、軽度の左半身麻痺がある。②本人の意欲と③家族の支えもあり、先週から④仕事に復帰することができた。\n下線部分で国際生活機能分類＜ICF＞の環境因子はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "白血病で生じやすいのはどれか。2つ選べ。",
+    "choices": [
+      "う　蝕",
+      "口腔乾燥",
+      "出血傾向",
+      "免疫機能の低下"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "ヘルスリテラシーが高いと上昇するのはどれか。2つ選べ。",
+    "choices": [
+      "間食の回数",
+      "1日の喫煙本数",
+      "自分の口臭への関心度",
+      "定期歯科健康診査の受診頻度"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "60歳の女性。歯の疼痛を主訴として来院した。初診時の医療面接の一部を示す。\n\n患　者：いつも疲れているのに痛みでよく眠れないんです。\n歯科衛生士：お仕事が忙しいのですか。\n患　者：仕事もですが、両親の介護で時間に余裕がないから、できるだけ少ない受診回数で痛みを取る治療をして欲しいです。\n歯科衛生士：ご家族の介護で大変だったのですね。\n\n用いたコミュニケーションスキルはどれか。2つ選べ。",
+    "choices": [
+      "傾　聴",
+      "情報提供",
+      "共感的態度",
+      "ゼロポジション"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "A市から離乳食を開始する保護者を対象とした口腔機能の発達と食育に関する講話の依頼を受けた。離乳の時期と説明を表に示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "88歳の男性。食後に自身で歯磨きをしており、舌背に触ると痛みがあるという。介護保険施設から口腔衛生管理の依頼を受けた。歯科医師から、歯科保健指導を指示された。舌の写真を示す。\n舌清掃に適しているのはどれか。2つ選べ。",
+    "choices": [
+      "歯ブラシ",
+      "粘膜ブラシ",
+      "水流式清掃用具",
+      "スポンジブラシ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "Friedらのフレイルの5つの評価基準を示す。\n\n・体重減少\n・主観的疲労感\n・日常生活活動量の減少\n・身体能力（歩行速度）の減弱\n・筋量（握力）の低下\n\nフレイルに該当する最小項目数はどれか。1つ選べ。",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "2型糖尿病患者に対する食生活指導で特に摂取を勧めるのはどれか。1つ選べ。",
+    "choices": [
+      "塩　分",
+      "食物繊維",
+      "タンパク質",
+      "飽和脂肪酸"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "50歳の男性。入院中の口腔健康管理を行うことになった。5日前に化学療法が終了し、口腔内の痛みで食事摂取が困難であるという。受診時の写真を示す。\n現時点で、摂取しやすいのはどれか。2つ選べ。",
+    "choices": [
+      "冷　奴",
+      "ゼリー",
+      "クッキー",
+      "グレープフルーツ"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "特別用途食品および保健機能食品の概念図を示す。\n①と②の組合せで正しいのはどれか。1つ選べ。",
+    "choices": [
+      "①病者用食品 -- ②特定保健用食品",
+      "①病者用食品 -- ②えん下困難者用食品",
+      "①特定保健用食品 -- ②病者用食品",
+      "①特定保健用食品 -- ②機能性表示食品"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

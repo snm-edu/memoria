@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2022_dh_22_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "抗悪性腫瘍薬はどれか。1つ選べ。",
+    "choices": [
+      "アスピリン",
+      "シスプラチン",
+      "アセトアミノフェン",
+      "ジクロフェナクナトリウム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "口腔粘膜の病変を模式図（細胞性反応を除く）に示す。\n矢印の変化はどれか。1つ選べ。",
+    "choices": [
+      "潰瘍形成",
+      "色素沈着",
+      "上皮肥厚",
+      "水疱形成"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "温度計を概略図に示す。\n「日本薬局方通則」に定義される医薬品の保存温度で、「常温」に含まれるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "器官を模式図に示す。\n多形腺腫の好発部位はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "口腔微生物の電子顕微鏡写真を示す。\n正しいのはどれか。1つ選べ。",
+    "choices": [
+      "Candida albicans",
+      "Treponema denticola",
+      "Streptococcus mutans",
+      "Porphyromonas gingivalis"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "医療法に基づく医療計画で設定されたA県の医療圏を図に示す。\n①の医療圏域の説明で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "一般病床数の設定",
+      "高度専門的医療を提供",
+      "住民に密着した医療サービスを提供",
+      "保健所の所轄区域設定に考慮する区域"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm017",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "使用した乳酸量に違いが生じた要因はどれか。1つ選べ。",
+    "choices": [
+      "緩衝作用",
+      "抗菌作用",
+      "潤滑作用",
+      "歯質保護作用"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm018",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "使用した乳酸量の違いに作用した唾液成分はどれか。1つ選べ。",
+    "choices": [
+      "ムチン",
+      "重炭酸塩",
+      "糖タンパク質",
+      "ラクトフェリン"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm019",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "摂食嚥下運動の過程におけるある時期を図に示す。\n該当するのはどれか。1つ選べ。",
+    "choices": [
+      "準備期",
+      "口腔期",
+      "咽頭期",
+      "食道期"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm020",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "歯科衛生士法に規定されている業務従事者届出は何年ごとか。1つ選べ。",
+    "choices": [
+      "1年",
+      "2年",
+      "3年",
+      "5年"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "A県歯科衛生士会に同県B市の小学校から歯と口の健康週間に各学年へ歯科講話をしてほしいとの依頼があり、発達段階に合わせた歯科講話を行った。\n学校保健の領域構造を図に示す。\n本活動の該当する領域はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "歯周疾患検診で使用されるプローブの写真（A）とその先端の拡大写真（B）を示す。\nこのプローブを用いて歯周ポケットを測定したとき、スコア1とされる歯肉辺縁の位置はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "10歳の男児。脳性麻痺のため、福祉サービスを受給している。\nこのサービスの根拠法はどれか。1つ選べ。",
+    "choices": [
+      "児童福祉法",
+      "母子保健法",
+      "身体障害者福祉法",
+      "発達障害者支援法"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "プラークに糖質を加えた場合のpH変化を図に示す。\n正しいのはどれか。1つ選べ。",
+    "choices": [
+      "①ではキシリトールを加えた。",
+      "②ではプラーク中細菌が酸を産生している。",
+      "③では①に比べて3倍の酸が産生された。",
+      "④では唾液中のアミラーゼが作用している。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "25歳の女性。口臭が気になることを主訴として来院した。口臭検査を行った結果、明らかな口臭があるが、原因となる器質的異常、疾患は認められなかった。歯科医師から口臭予防についての指導を行うよう指示を受けた。\n適切な指導はどれか。2つ選べ。",
+    "choices": [
+      "舌苔の除去",
+      "フッ化物洗口の励行",
+      "塩化亜鉛洗口剤の利用",
+      "乳酸アルミニウム配合歯磨剤の利用"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "我が国の各種人口指数の年次推移を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "老年化指数",
+      "従属人口指数",
+      "年少人口指数",
+      "老年人口指数"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "順序尺度データの散布度の数値の位置関係を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "期待値",
+      "実測値",
+      "中央値",
+      "偏差値"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "国際保健活動の仕組みの概要を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "共　同",
+      "共　助",
+      "協　力",
+      "交　流"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "疾病の自然史を模式図に示す。\n①で行うのはどれか。2つ選べ。",
+    "choices": [
+      "小窩裂溝塡塞",
+      "初期う蝕治療",
+      "フッ化物洗口",
+      "フッ化ジアンミン銀塗布"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "歯磨剤の基本成分を作用別に表に示す。\nパラベンが該当するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm031（不備問題複数回答）",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "歯科診療所の医療安全管理体制で歯科衛生士が担当できるのはどれか。2つ選べ。",
+    "choices": [
+      "医療安全管理者",
+      "医薬品安全管理責任者",
+      "医療放射線安全管理責任者",
+      "特別管理産業廃棄物管理責任者"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "周術期における入院患者への口腔機能管理の目的はどれか。2つ選べ。",
+    "choices": [
+      "審美性の向上",
+      "合併症の予防",
+      "術後回復の促進",
+      "生活習慣の改善"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "患者の権利の行使を支援するのはどれか。2つ選べ。",
+    "choices": [
+      "アドボカシー",
+      "パターナリズム",
+      "コンプライアンス",
+      "インフォームド・アセント"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "70歳の男性。舌の異常を主訴として来院した。6か月前から気付いていたが放置していたところ、1か月前から違和感を自覚するようになったという。確定診断のために局所麻酔下で処置を行った。初診時の口腔内写真（A）と処置後に行った操作の写真（B）を示す。\n矢印で示す容器に入っているのはどれか。1つ選べ。",
+    "choices": [
+      "滅菌水",
+      "エタノール",
+      "ブドウ糖液",
+      "ホルマリン液"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "放射線感受性が最も高いのはどれか。1つ選べ。",
+    "choices": [
+      "肺",
+      "骨　髄",
+      "軟　骨",
+      "唾液腺"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "63歳の女性。下顎右側第一大臼歯部の歯肉腫脹と排膿を主訴として来院した。エックス線画像検査を行う直前の口腔内写真を示す。\n矢印で示す材料を用いる理由はどれか。1つ選べ。",
+    "choices": [
+      "可塑性",
+      "接着性",
+      "造影性",
+      "生体親和性"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "83歳の男性。食事時のむせがあるとのことで、家族の協力のもと摂食嚥下機能検査を行った。検査時の写真を示す。\nこの検査の特徴はどれか。2つ選べ。",
+    "choices": [
+      "侵襲が軽度である。",
+      "造影剤が必要である。",
+      "エックス線被曝がある。",
+      "訪問診療で利用できる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "ある操作中の口腔内写真を示す。\n使用できるのはどれか。2つ選べ。",
+    "choices": [
+      "0.2％NaF",
+      "6.0％NaOCl",
+      "15.0％EDTA",
+      "30.0％H<sub>2</sub>O<sub>2</sub>"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "48歳の男性。上顎左側側切歯の色が気になることを主訴として来院した。1年前に子供の頭がぶつかったが、痛みが引いたのでそのまま放置していたところ、最近になって変色してきたという。初診時の口腔内写真を示す。\n変色の理由で考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "加齢変化",
+      "歯髄壊死",
+      "抗菌薬の服用",
+      "食品に含まれる色素"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "41歳の女性。昨年より上顎左側中切歯に違和感を覚えていたが、この3か月くらいで急に歯が伸びてきたように感じることを主訴として来院した。慢性歯周炎と診断され、歯周基本治療後の再評価で、歯周外科治療を行うことになった。初診時の口腔内写真（A、B、C）と歯周外科処置時の口腔内写真（D）を示す。\nこの部位の歯周炎の発現に影響を与えたと考えられる局所性修飾因子はどれか。1つ選べ。",
+    "choices": [
+      "根面溝",
+      "樋状根",
+      "エナメル真珠",
+      "エナメル突起"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

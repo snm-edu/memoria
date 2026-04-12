@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2018_dh_18_am031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "「訪問歯科衛生指導」はどの業務にあたるか。",
+    "choices": [
+      "身体の介護",
+      "療養上の世話",
+      "歯科予防処置",
+      "歯科診療の補助"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "SOAPの「O」にあたるのはどれか。2つ選べ。",
+    "choices": [
+      "検査結果",
+      "相談内容",
+      "自覚症状",
+      "患者の動作"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "「患者の権利」を謳っているのはどれか。",
+    "choices": [
+      "リスボン宣言",
+      "ヘルシンキ宣言",
+      "ジュネーブ宣言",
+      "ヒポクラテスの誓い"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am034",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "NSTで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "情報を共有する。",
+      "診療科単位に組織する。",
+      "主な対象者は外来患者である。",
+      "患者の家族はチームの一員である。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "う蝕の進行を測定できるのはどれか。",
+    "choices": [
+      "触　診",
+      "温度診",
+      "透照診",
+      "インピーダンス"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "急性化膿性炎症の血液検査で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "白血球数の増加",
+      "血小板数の減少",
+      "赤血球数の減少",
+      "好中球の核の左方移動"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "根分岐部病変の分類で同じ状態を示す組合せはどれか。2つ選べ。\nただし、選択肢は【Glickmanの分類】 -- 【Lindhe & Nymanの分類】とする。",
+    "choices": [
+      "1級 -- 1度",
+      "2級 -- 2度",
+      "3級 -- 2度",
+      "4級 -- 3度"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "象牙質う蝕円錐の内層＜第二層＞の特徴で正しいのはどれか。",
+    "choices": [
+      "再石灰化する。",
+      "細菌が侵入している。",
+      "う蝕検知液で濃染される。",
+      "コラーゲン線維が崩壊している。"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "34歳の女性。下顎右側犬歯部の審美障害を主訴として来院した。診査の結果、う蝕症第2度と診断された。初診時の口腔内写真を別に示す。\n修復処置として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "レジン前装冠",
+      "メタルインレー修復",
+      "コンポジットレジン修復",
+      "グラスアイオノマーセメント修復"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "可逆性の歯髄疾患はどれか。2つ選べ。",
+    "choices": [
+      "歯髄充血",
+      "急性単純性歯髄炎",
+      "急性化膿性歯髄炎",
+      "慢性増殖性歯髄炎"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "ニッケルチタンロータリーファイルの特徴で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "超弾性を有する。",
+      "ISO規格に準じる。",
+      "手用操作で用いる。",
+      "大きなテーパーが付与されている。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "58歳の男性。下顎左側第一大臼歯の違和感を主訴として来院した。感染根管治療を行うことになった。初診時のエックス線写真を別に示す。\n矢印で示す破折ファイルの除去で用意するのはどれか。",
+    "choices": [
+      "EDTA",
+      "有鈎探針",
+      "スプレッダー",
+      "マセランキット"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "55歳の男性。下顎左側臼歯部の疼痛と腫脹を主訴として来院した。2日前から歯肉が腫れ、痛みがあったが放置していたという。LDDSを行うことになった。初診時の口腔内写真（A）と処置時の口腔内写真（B）を別に示す。\nこの処置で用いた薬剤はどれか。",
+    "choices": [
+      "アモキシシリン",
+      "ポビドンヨード",
+      "ミノサイクリン塩酸塩",
+      "ベンゼトニウム塩化物"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "46歳の男性。下顎右側犬歯の歯の動揺と歯肉退縮を主訴として来院した。検査時の口腔内写真（A）とポケット探針の写真（B）を別に示す。\nアタッチメントレベルはどれか。",
+    "choices": [
+      "3mm",
+      "5mm",
+      "8mm",
+      "10mm"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "63歳の女性。上顎左側臼歯部歯肉からの出血を主訴として来院した。ブラッシング指導とスケーリング後にSRPを行うことになった。口腔内写真（A）とグレーシータイプキュレットの写真（B）を別に示す。\n丸印で囲んだ部位に用いられるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am046（不備問題採点除外）",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "歯肉圧排時に使用する収斂剤はどれか。2つ選べ。",
+    "choices": [
+      "塩化第二鉄",
+      "アドレナリン",
+      "フッ化ナトリウム",
+      "塩化アルミニウム"
+    ],
+    "correct_answer": "",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "75歳の男性。義歯不適合を主訴として来院した。義歯製作過程の個人トレーの写真を別に示す。\n矢印で示す材料の目的はどれか。2つ選べ。",
+    "choices": [
+      "顎堤粘膜への圧力防止",
+      "印象採得時の軟組織の保護",
+      "顎堤粘膜への加圧形態の記録",
+      "機能運動に調和した辺縁形態の獲得"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "義歯の写真を別に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "パラタルバー",
+      "リンガルバー",
+      "ケネディバー",
+      "ラビアルバ―"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "矢印で示す器具はどれか。",
+    "choices": [
+      "破骨鉗子",
+      "剥離剪刀",
+      "眼科剪刀",
+      "モスキート鉗子"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "顎下隙の開放・排膿の直後に行う処置はどれか。",
+    "choices": [
+      "創面の縫合",
+      "試験的穿刺",
+      "ドレーン挿入",
+      "顎下隙の洗浄"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "36歳の女性。舌背部の異常を主訴として来院した。舌背部後方正中付近に舌乳頭が欠落した淡赤色の粘膜が認められる。疼痛などの不快事項はみられない。初診時の口腔内写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "舌　癌",
+      "溝状舌",
+      "地図状舌",
+      "正中菱形舌炎"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "12歳の男子。下唇粘膜の違和感を主訴として来院した。3か月前より同部に腫瘤が生じ、腫脹と消退を繰り返していたという。腫瘤は、境界明瞭な半球状で弾性軟を呈し、腫瘤被覆粘膜を透して内部に液体の貯留を疑わせた。口腔内写真を別に示す。\nこの腫瘤を摘出する際に用意するのはどれか。2つ選べ。",
+    "choices": [
+      "鋭　匙",
+      "メ　ス",
+      "剥離剪刀",
+      "ラスパトリウム"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "7歳の男児。咬み合わせの異常を主訴として来院した。初診時の口腔内写真（A）とエックス線画像（B）を別に示す。\n上顎左側第一大臼歯の位置異常はどれか。",
+    "choices": [
+      "移　転",
+      "低　位",
+      "埋　伏",
+      "舌側転位"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "口腔模型の写真を別に示す。\nAngleの不正咬合の分類はどれか。",
+    "choices": [
+      "Ⅰ　級",
+      "Ⅱ級１類",
+      "Ⅱ級2類",
+      "Ⅲ　級"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "矯正装置の写真を別に示す。\nこれを使用するのはどれか。",
+    "choices": [
+      "開　咬",
+      "翼状捻転",
+      "過蓋咬合",
+      "狭窄歯列弓"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "歯の異常と好発部位の組合せで正しいのはどれか。",
+    "choices": [
+      "癒合歯 -- 下顎前歯",
+      "歯内歯 -- 下顎側切歯",
+      "ターナー歯 -- 下顎大臼歯",
+      "タウロドント -- 下顎中切歯"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "Hellmanの歯齢ⅡA期で分化する情動はどれか。",
+    "choices": [
+      "恐　怖",
+      "不　快",
+      "嫉妬心",
+      "羞恥心"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "3歳6か月の男児。3歳児歯科健康診査で軟組織異常の指摘を受けて来院した。上唇を上方に牽引した初診時の口腔内写真を別に示す。\n今後注意すべきことはどれか。",
+    "choices": [
+      "開口障害",
+      "嚥下障害",
+      "構音障害",
+      "永久歯萌出時の位置異常"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "80歳の男性。家族から歯の付け根の白くなっているのが気になることを主訴として歯科訪問診療の依頼を受けた。進行性核上性麻痺により自宅療養中である。ADLは全介助、胃瘻にて禁食状態であり、唾液誤嚥による反復性の誤嚥性肺炎に罹患している。患者の口腔内写真を別に示す。\n適切な口腔衛生管理はどれか。2つ選べ。",
+    "choices": [
+      "洗口の指導",
+      "フッ化物塗布",
+      "超音波スケーラーの使用",
+      "家族への歯面清掃法の指導"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "77歳の男性。脳梗塞発症後にリハビリテーション病院に入院中である。今週のリハビリテーション週間スケジュールがベッドサイドに貼られている。それには「午前10時①歩行訓練、午前11時②構音障害の機能訓練、午後2時③利き手交換の訓練、午後3時 口腔衛生管理」と記載されている。\n下線部分の機能訓練を実施する専門職の組合せで正しいのはどれか。",
+    "choices": [
+      "（①）理学療法士 -- （②）作業療法士 -- （③）言語聴覚士",
+      "（①）理学療法士 -- （②）言語聴覚士 -- （③）作業療法士",
+      "（①）作業療法士 -- （②）理学療法士 -- （③）言語聴覚士",
+      "（①）作業療法士 -- （②）言語聴覚士 -- （③）理学療法士"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

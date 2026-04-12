@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2017_dh_17_pm041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "加圧根管充填時の術式の模式図を示す。\n矢印で示す器具の目的はどれか。",
+    "choices": [
+      "空隙を作る。",
+      "シーラーを塗布する。",
+      "根尖方向に圧接する。",
+      "根管壁に接着させる。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "27歳の男性。上顎左側側切歯の違和感と疼痛を訴えて来院した。同部の違和感は4日前から気付いていたという。同部に波動を触知した。初診時の口腔内写真Aとエックス線写真Bを別に示す。\n考えられる対応で、最初に行われるのはどれか。",
+    "choices": [
+      "膿瘍切開",
+      "根尖&#x6414;爬",
+      "根尖切除",
+      "歯根切断"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "20歳の女性。歯肉の腫脹、発赤、排膿および歯の動揺を主訴として来院した。10代の頃から腫脹や排膿があったという。プラークの付着はわずかであった。全身的には特記すべき事項はない。初診時の口腔内写真Aとエックス線写真Bを別に示す。\nこの疾患の特徴はどれか。2つ選べ。",
+    "choices": [
+      "上皮の&#21085;離",
+      "家族内集積",
+      "灰白色の偽膜形成",
+      "Aggregatibacter actinomycetemcomitansが関連"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "歯周病が影響を及ぼすと考えられる疾患はどれか。2つ選べ。",
+    "choices": [
+      "糖尿病",
+      "胃潰瘍",
+      "高血圧症",
+      "動脈硬化症"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "47歳の男性。上顎左側大臼歯部の歯肉の腫脹と疼痛を主訴として来院した。上顎左側第一大臼歯口蓋側中央部のプロービング深さは6mmであり、LDDSを適用することとした。初診時の口腔内写真を別に示す。\n用いた薬剤の特徴はどれか。2つ選べ。",
+    "choices": [
+      "徐放性を有する。",
+      "抗菌作用を有する。",
+      "バイオフィルムを破壊する。",
+      "歯周ポケット内を無菌化する。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "上顎模型を半調節性咬合器に装着するのに用いるのはどれか。",
+    "choices": [
+      "パントグラフ",
+      "チェックバイト",
+      "フェイスボウトランスファー",
+      "インターオクルーザルレコード"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "CAD/CAM装置を用いて製作できるのはどれか。2つ選べ。",
+    "choices": [
+      "陶材焼付冠",
+      "全部金属冠",
+      "レジン前装冠",
+      "オールセラミッククラウン"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "縮合型シリコーンラバー印象材と比較して付加型シリコーンラバー印象材の特徴はどれか。",
+    "choices": [
+      "硬化時間が長い。",
+      "寸法変化が小さい。",
+      "弾性ひずみが大きい。",
+      "室温の影響を受けない。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "65歳の男性。下顎舌側の腫瘤を訴えて来院した。30年前から気付いていたという。腫瘤は正常粘膜で被覆されており、骨様硬で疼痛はない。初診時の口腔内写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "線維腫",
+      "下顎隆起",
+      "エナメル上皮腫",
+      "ガマ腫〈ラヌーラ〉"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "末梢性顔面神経麻痺の症状はどれか。2つ選べ。",
+    "choices": [
+      "麻痺性兎眼",
+      "口唇知覚麻痺",
+      "鼻唇溝の消失",
+      "バレーの3圧痛点"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "抜歯後のドライソケットの特徴はどれか。2つ選べ。",
+    "choices": [
+      "&#x763B;孔の形成を伴う。",
+      "鋭い接触時痛を伴う。",
+      "異常出血を繰り返す。",
+      "窩壁の骨面が触知できる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "インプラント埋入窩形成中の口腔内写真を別に示す。\n矢印で示す器具の目的はどれか。",
+    "choices": [
+      "埋入窩の形成",
+      "埋入窩の止血",
+      "印象採得の準備",
+      "埋入方向の確認"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "初診時の口腔模型の写真を別に示す。\nAngleの分類はどれか。",
+    "choices": [
+      "&#x2160;級",
+      "&#x2161;級1類",
+      "&#x2161;級2類",
+      "&#x2162;級"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "矯正装置の写真を別に示す。\nこの矯正装置の作用する矯正力で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "器械的",
+      "持続的",
+      "機能的",
+      "間欠的"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "17歳の男子。動的治療中に装置の調整のために来院した。矯正装置にアーチワイヤーを装着したときの口腔内写真を別に示す。\n矢印の位置でアーチワイヤーを口腔内で切断するのに適している器具はどれか。",
+    "choices": [
+      "ワイヤーカッター",
+      "ライトワイヤープライヤー",
+      "ディスタルエンドカッター",
+      "ピンアンドリガチャーカッター"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "6か月の乳児で、保護者の情報から発達の遅れが推測されるのはどれか。",
+    "choices": [
+      "首が座らない。",
+      "歯が生えてこない。",
+      "はいはいができない。",
+      "つかまり立ちができない。"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "5歳の女児。歯並びが気になることを主訴として来院した。初診時の口腔内写真を別に示す。\n矢印で示す空隙ができる原因はどれか。",
+    "choices": [
+      "乳歯の先天欠如",
+      "顎骨の成長発育",
+      "対顎乳犬歯との咬合",
+      "下唇小帯の異常発育"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "4歳の男児。う蝕の治療を希望して来院した。上顎乳前歯の多歯面う蝕と診断され、コンポジットレジン冠修復を行うこととした。治療に用いる器材Aと使用器材に対して処理した写真Bを別に示す。\nこの処理の目的はどれか。2つ選べ。",
+    "choices": [
+      "切縁の位置確認",
+      "気泡の混入防止",
+      "試適時の落下防止",
+      "余剰レジンの流出"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "83歳の男性。上顎右側第一小臼歯の疼痛を主訴として来院した。化膿性歯髄炎と診断され、抜髄処置を行うこととした。患者は多発性脳梗塞の影響で体位の保持が困難である。処置中の写真を別に示す。\n矢印で示す器具の目的はどれか。",
+    "choices": [
+      "破折防止",
+      "穿孔防止",
+      "誤飲防止",
+      "感染防止"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "経鼻経管栄養の特徴として正しいのはどれか。2つ選べ。",
+    "choices": [
+      "嚥下機能を阻害する。",
+      "6週以上の留置が可能である。",
+      "消化管粘膜の萎縮を予防できる。",
+      "留置のための外科的手術が必要である。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "小児と障害児者が対象の歯科診療で、写真や絵カードなどを応用する行動調整法はどれか。",
+    "choices": [
+      "カウント法",
+      "TEACCH法",
+      "シェイピング法",
+      "フラッディング法"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "6歳の男児。う蝕の治療を希望して来院した。知的障害があり協力が得られず、拒否行動があるため、診査時に徒手抑制することとした。患者身体の模式図を示す。\n徒手抑制してはいけない部位はどれか。2つ選べ。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "3歳児歯科健康診査でう蝕罹患型がO型と判定された幼児に対するう蝕予防法で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "フッ化物洗口",
+      "フッ化物歯面塗布",
+      "フッ化ジアンミン銀塗布",
+      "フッ化物配合歯磨剤の利用"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "喫煙者の歯肉の特徴はどれか。2つ選べ。",
+    "choices": [
+      "出血傾向",
+      "浮腫性の腫脹",
+      "歯肉組織の線維化",
+      "メラニン色素の沈着"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "この日に行う適切な検査順序はどれか。\n①　BOP\n②　歯の動揺度\n③　O'LearyのPCR\n④　プロービングデプス",
+    "choices": [
+      "&#x2462;　→　&#x2463;　→　&#x2461;　→　&#x2460;",
+      "&#x2463;　→　&#x2460;　→　&#x2461;　→　&#x2462;",
+      "&#x2461;　→　&#x2460;　→　&#x2463;　→　&#x2462;",
+      "&#x2460;　→　&#x2461;　→　&#x2462;　→　&#x2463;"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "口腔衛生指導を実施し、1か月後にO'LearyのPCRが20％以下となった。処置を開始するよう歯科医師から指示された。\n使用するのはどれか。2つ選べ。",
+    "choices": [
+      "フッ化物塗布溶液",
+      "超音波スケーラー",
+      "シュガーマンファイル",
+      "ユニバーサルキュレット"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "歯周プローブを用いて評価するのはどれか。2つ選べ。",
+    "choices": [
+      "GI",
+      "OHI",
+      "GB Count",
+      "PMA Index"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "57歳の女性。歯周病の治療を希望して来院し、8か月間の治療を行った。初診時と歯周基本治療終了時の歯周組織検査結果の一部を表に示す。\n治療後の変化で考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "咬合性外傷の改善",
+      "アタッチメントロス",
+      "プロービングデプスの減少",
+      "歯周ポケット内の炎症の消失"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "模型の写真を別に示す。\n矢印の頬側部位に使用するグレーシータイプキュレットはどれか。",
+    "choices": [
+      "＃11",
+      "＃12",
+      "＃13",
+      "＃14"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "グレーシータイプキュレットのシャープニングで【　】に入る組合せで正しいのはどれか。\nキュレットの内面を床に平行にし、砥石を刃部の側面に【①】度傾けて合わせ、刃部内面と砥石のなす角度を【②】度にする。また、砥石は【③】cm程度の幅で上下運動させる。",
+    "choices": [
+      "【&#x2460;】30～40 -- 【&#x2461;】100～110 -- 【&#x2462;】2",
+      "【&#x2460;】10～20 -- 【&#x2461;】80～90 -- 【&#x2462;】5",
+      "【&#x2460;】10～20 -- 【&#x2461;】100～110 -- 【&#x2462;】2",
+      "【&#x2460;】30～40 -- 【&#x2461;】80～90 -- 【&#x2462;】5"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

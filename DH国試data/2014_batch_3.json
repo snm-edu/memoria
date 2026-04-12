@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2014_dh_14_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 61,
+    "question_text": "摂食嚥下障害患者に対する機能訓練の口腔内写真を示す。\n目的はどれか。",
+    "choices": [
+      "声帯の内転強化",
+      "唾液分泌の抑制",
+      "嚥下誘発の感受性向上",
+      "舌骨を拳上する筋の筋力増強"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am062",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 62,
+    "question_text": "35歳の女性。定期健康診査で来院した。口腔内写真を別に示す。\n観察できるのはどれか。",
+    "choices": [
+      "歯　石",
+      "食物残渣",
+      "色素沈着",
+      "マテリアアルバ"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 63,
+    "question_text": "38歳の女性。喉頭癌の放射線治療中である。主治医の指示により歯科を受診した。検査結果を表に示す。\n歯科医師の指示により行う処置はどれか。2つ選べ。",
+    "choices": [
+      "PTC",
+      "小窩裂溝塡塞",
+      "局所薬物配送システムの応用",
+      "2%フッ化ナトリウム溶液歯面塗布"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 64,
+    "question_text": "歯周病の発症リスクを示す検査結果はどれか。",
+    "choices": [
+      "BMI -- 20",
+      "血　圧 -- 160/100mmHg",
+      "HbAlc -- 7.3%",
+      "HBe抗原 -- 陽　性"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 65,
+    "question_text": "歯周炎再発の客観的評価で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "歯槽骨吸収量の減少",
+      "歯周ポケットの深化",
+      "アタッチメントレベルの増加",
+      "プロービング時の出血の減少"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 66,
+    "question_text": "付着歯肉幅を示すのはどれか。",
+    "choices": [
+      "歯肉辺縁からポケット底",
+      "歯肉辺縁から歯肉歯槽粘膜境",
+      "ポケット底から歯肉歯槽粘膜境",
+      "セメント-エナメル境からポケット底"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am067",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科保健指導の基礎",
+    "exam_number": 67,
+    "question_text": "GI＜LöeとSilness＞のプローブ操作法はどれか。",
+    "choices": [
+      "ポケット底に到達させる。",
+      "測定部位は6点法を用いる。",
+      "歯肉辺縁部に沿って擦過する。",
+      "ウォーキングストロークで行う。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 68,
+    "question_text": "検査時の口腔内写真を別に示す。\n検査項目はどれか。",
+    "choices": [
+      "歯間離開度",
+      "隣接面う蝕",
+      "歯髄の生死",
+      "アタッチメントレベル"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 69,
+    "question_text": "器具と歯面に対する操作角度との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "エアスケーラー -- 90度",
+      "超音波スケーラー -- 15度",
+      "グレーシータイプキュレット -- 70度",
+      "ユニバーサルタイプキュレット -- 55度"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 70,
+    "question_text": "超音波スケーラーで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "用途別のチップがある。",
+      "エアロゾルの発生を抑制する。",
+      "塩分摂取制限患者に使用できる。",
+      "ペースメーカー装着者に使用できる。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 71,
+    "question_text": "バックポジションでグレーシータイプキュレットを用いて34頰側近心面のSRPを行った。\n同じキュレットを用いて同じポジションで行うことができる部位はどれか。",
+    "choices": [
+      "15頰側近心",
+      "26口蓋側遠心",
+      "44舌側近心",
+      "47頰側遠心"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 72,
+    "question_text": "グレーシータイプキュレット＃11/12とテストスティックとの写真を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 73,
+    "question_text": "歯面清掃器に使用されるのはどれか。",
+    "choices": [
+      "水酸化ナトリウム",
+      "ケイ酸ナトリウム",
+      "フッ化ナトリウム",
+      "炭酸水素ナトリウム"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 74,
+    "question_text": "歯周治療後の再評価検査で、「6か月に1度のメインテナンス」に移行できるのはどれか。",
+    "choices": [
+      "PCRが30％である。",
+      "BOPが全部位の35％にある。",
+      "すべての歯の動揺が0.2mm以下である。",
+      "4mm以上の歯周ポケットが全部位の30％にある。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 75,
+    "question_text": "50歳女性。定期健康診査で来院し、下顎前歯部の冷水痛を訴えている。ポケット測定の結果を表に示す。BOP、動揺および歯の実質欠損はない。\n処置に使用すると考えられるのはどれか。",
+    "choices": [
+      "フッ化ジアンミン銀",
+      "接着性レジンセメント",
+      "フッ化物バーニッシュ",
+      "グラスアイオノマーセメント"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 76,
+    "question_text": "う蝕活動性を反映する宿主因子はどれか。",
+    "choices": [
+      "細菌数",
+      "間食頻度",
+      "唾液緩衝能",
+      "プラーク形成速度"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 77,
+    "question_text": "週1回法のフッ化物洗口液1mLに含まれるフッ素量はどれか。",
+    "choices": [
+      "0.25mg",
+      "0.45mg",
+      "0.90mg",
+      "1.80mg"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am078",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 78,
+    "question_text": "厚生労働省の「フッ化物洗口ガイドライン」による洗口の開始年齢はどれか。",
+    "choices": [
+      "1歳6か月",
+      "2歳",
+      "3歳",
+      "4歳"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am079",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 79,
+    "question_text": "レジン系小窩裂溝塡塞法の術式で誤っているのはどれか。",
+    "choices": [
+      "填塞後は咬合調整を行う。",
+      "ラバーダム防湿を行うのが望ましい。",
+      "歯面清掃にはフッ化物製剤を使用する。",
+      "酸処理剤の水洗・乾燥後に白濁を確認する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 80,
+    "question_text": "個人への食生活指導で誤っているのはどれか。",
+    "choices": [
+      "指導は画一的に実施する。",
+      "身体活動レベルを考慮する。",
+      "実践可能な目標を設定する。",
+      "指導前後の行動変容から評価する。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科保健指導の基礎",
+    "exam_number": 81,
+    "question_text": "9歳の男児。未処置歯が多数あり、歯垢の付着が著明で歯肉に腫脹と出血がみられる。髪や服装も異臭がするほど明らかに不潔である。また極端に痩せている。歯や粘膜の損傷や身体のアザなどは認められないが、母親の男児に対する拒絶的な態度がしばしばみられる。\n疑われるのはどれか。2つ選べ。",
+    "choices": [
+      "性的虐待",
+      "心理的虐待",
+      "身体的虐待",
+      "ネグレクト"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am082",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 82,
+    "question_text": "高齢者の基本的日常生活動作を評価する「機能的自立度評価表＜FIM＞」の評価項目はどれか。2つ選べ。",
+    "choices": [
+      "買物をしている。",
+      "着替えをしている。",
+      "薬を服用している。",
+      "ベッドへ移乗している。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 83,
+    "question_text": "歯ブラシの毛先の模式図を示す。\nテーパードタイプはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 84,
+    "question_text": "離乳初期の食事の与え方で正しいのはどれか。",
+    "choices": [
+      "水分は流し入れるようにする。",
+      "小さくて浅いスプーンを使用する。",
+      "スプーンは舌中央より奥に入れる。",
+      "乳児の上体は床に対して約30度に支える。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 85,
+    "question_text": "57歳の女性。定期健康診査で来院した。日常のブラッシングは、1日2回、ヘッドの大きさが18mmでナイロン毛の歯ブラシを使用している。歯垢染色後の口腔内写真を別に示す。\n口腔清掃指導で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "チャーターズ法を指導する。",
+      "歯間部清掃用具の使用を指導する。",
+      "1歯ずつの縦磨き法の併用を指導する。",
+      "歯ブラシのヘッドを大きいものに変更するよう指導する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 86,
+    "question_text": "口腔内写真（A）と口腔清掃用具の写真（B）とを別に示す。\n点線で囲まれた部位の清掃に適するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 87,
+    "question_text": "保育所より依頼され、幼児の保護者へ間食指導を行うこととなった。指導に用いる図を示す。\n図から説明できる歯科保健指導の内容で適切なのはどれか。",
+    "choices": [
+      "回数を減らす。",
+      "時間を決める。",
+      "粘着性食品を控える。",
+      "非発酵性糖質の食品を選ぶ。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 88,
+    "question_text": "この「保護者の記録」に該当する年齢はどれか。",
+    "choices": [
+      "6～7か月",
+      "1歳0か月",
+      "1歳6か月",
+      "3歳0か月"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 89,
+    "question_text": "上顎乳前歯の唇側歯頸部に歯質の脱灰と一部実質欠損が認められた。\n「保護者の記録」の記録をふまえ、保護者へ行う歯科保健指導の内容で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "歯科医院の受診を勧める。",
+      "ガーゼによる歯の清拭を指導する。",
+      "食事や間食を規則正しくとるよう指導する。",
+      "哺乳ビンの使用はお茶の飲用に限るよう指導する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科保健指導の基礎",
+    "exam_number": 90,
+    "question_text": "観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "上顎両側中切歯 -- 水平性歯槽骨吸収",
+      "上顎右側側切歯 -- フェストゥーン",
+      "下顎右側側切歯 -- 歯肉退縮",
+      "下顎左側中切歯 -- 歯肉クレフト"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

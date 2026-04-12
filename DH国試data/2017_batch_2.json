@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2017_dh_17_am031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "我が国における歯科衛生士に関わる事項で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "昭和23年に歯科衛生士法が制定された。",
+      "昭和30年に歯科保健指導が法制化された。",
+      "平成元年に資格試験が国家試験となった。",
+      "平成22年に全養成機関での修業年限が3年以上となった。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "初診の患者をデンタルチェアへ誘導し、医療面接を行うよう歯科医師から指示された。\n情報収集時のコミュニケーション技法で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "患者の横に立つ。",
+      "共感的態度で接する。",
+      "患者の理解度に合わせて話す。",
+      "「閉ざされた質問」を主体に進める。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "認知症患者とその家族に対するインフォームド・コンセントで適切なのはどれか。2つ選べ。",
+    "choices": [
+      "患者が拒否した場合は説明を省略できる。",
+      "意思表示がない場合は黙示の同意とする。",
+      "説明の不明点を確認して明確な同意を得る。",
+      "本人に同意能力がない場合は代理同意を得る。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am034",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "歯科診療所において、歯科衛生士が担うことができないのはどれか。",
+    "choices": [
+      "歯科診療所の管理者",
+      "医薬品安全管理責任者",
+      "医療機器安全管理責任者",
+      "特別管理産業廃棄物管理責任者"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "【　】に入る組合せで正しいのはどれか。\n摂食機能に対する改訂水飲みテストは、冷水【①】mLを口腔底に注ぎ、嚥下するように指示する。可能ならば追加して【②】回嚥下運動をしてもらい、最も悪い嚥下活動を評価する。評価が【③】以上の場合は問題なしとする。",
+    "choices": [
+      "【&#x2460;】1 -- 【&#x2461;】1 -- 【&#x2462;】2",
+      "【&#x2460;】1 -- 【&#x2461;】2 -- 【&#x2462;】4",
+      "【&#x2460;】3 -- 【&#x2461;】1 -- 【&#x2462;】2",
+      "【&#x2460;】3 -- 【&#x2461;】2 -- 【&#x2462;】4"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "下顎運動の記録を目的とするのはどれか。",
+    "choices": [
+      "サベイング",
+      "フェイスボウ",
+      "パラトグラム",
+      "ゴシックアーチ"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "化膿性炎症のスクリーニング検査はどれか。2つ選べ。",
+    "choices": [
+      "白血球数",
+      "C反応性タンパク",
+      "ヘモグロビン濃度",
+      "尿中クレアチニン"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "セルフエッチングプライマーに含まれるのはどれか。",
+    "choices": [
+      "フィラー",
+      "接着性モノマー",
+      "カンファーキノン",
+      "過酸化ベンゾイル"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "27歳の女性。下顎右側大臼歯の食片圧入を主訴として来院した。第一大臼歯と第二大臼歯の間にう蝕を認めたため修復処置を行うことになった。製作した修復物の写真を別に示す。\n直接修復と比較した利点はどれか。2つ選べ。",
+    "choices": [
+      "来院回数が少ない。",
+      "歯質削除量が少ない。",
+      "接触点の回復が容易である。",
+      "コントラクションギャップが抑制できる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "根管治療で単一で仮封に用いる材料に適していないのはどれか。",
+    "choices": [
+      "水硬性仮封材",
+      "テンポラリーストッピング",
+      "グラスアイオノマーセメント",
+      "ポリカルボキシレートセメント"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "62歳の女性。下顎左側犬歯の咬合痛と歯肉腫脹を訴えて来院した。慢性根尖性歯周炎と診断され治療を開始した。ポストコア除去時に破折の可能性があるため、外科処置を行った。初診時のエックス線写真Aと外科処置時の口腔内写真Bを別に示す。\n矢印で示す部位の封鎖に用いるのはどれか。",
+    "choices": [
+      "EBAセメント",
+      "水硬性セメント",
+      "リン酸亜鉛セメント",
+      "カルボキシレートセメント"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "根面う蝕の特徴はどれか。2つ選べ。",
+    "choices": [
+      "環状に拡大する。",
+      "歯肉退縮を伴う。",
+      "穿通性に進行する。",
+      "う蝕円錐を形成する。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "42歳の女性。上顎前歯部歯肉の不快感を主訴として来院した。数年前から前歯部に排膿と出血が認められ、咬合時に動揺するという。プロービング深さは5～8mmであり、慢性歯周炎と診断された。全身的には特記すべき事項はない。初診時の口腔内写真Aとエックス線写真Bを別に示す。\nリスクファクターとして考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "歯石",
+      "小帯異常",
+      "外傷性咬合",
+      "歯の形態異常"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "48歳の女性。歯肉の腫脹、発赤および歯の離開を主訴として来院した。数年前より自覚していたが放置していたという。口唇の乾燥を認める。プロービング深さは全顎的に4～5mmであり、動揺は認めない。初診時の口腔内写真を別に示す。\n考えられる対応はどれか。",
+    "choices": [
+      "暫間固定",
+      "矯正治療",
+      "ナイトガード装着",
+      "オーラルスクリーン装着"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "支台歯が生活歯である場合、ブリッジを仮着するのに用いるのはどれか。",
+    "choices": [
+      "リン酸亜鉛セメント",
+      "接着性レジンセメント",
+      "グラスアイオノマーセメント",
+      "酸化亜鉛ユージノールセメント"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "全部床義歯と部分床義歯に共通した構成要素はどれか。2つ選べ。",
+    "choices": [
+      "人工歯",
+      "連結子",
+      "義歯床",
+      "支台装置"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "丸印で示した患部の原因として考えられるのはどれか。",
+    "choices": [
+      "骨鋭縁",
+      "床用材料",
+      "義歯床縁の不良",
+      "人工歯排列の不良"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "新義歯製作にあたり、前処置として考えられるのはどれか。",
+    "choices": [
+      "粘膜調整",
+      "歯槽骨整形術",
+      "唾液腺マッサージ",
+      "プラークコントロール"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "口唇・口蓋裂の治療法と治療時期の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "口唇形成術 -- 生後3～4か月頃",
+      "口蓋形成術 -- 生後1歳6か月頃",
+      "顎裂部骨移植術 -- 生後1～2歳頃",
+      "スピーチエイド -- 出生直後"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "ビスホスホネート系薬物が投与されている可能性がある疾患はどれか。",
+    "choices": [
+      "心筋梗塞",
+      "高血圧症",
+      "骨粗鬆症",
+      "閉塞性肺炎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "29歳の男性。右側下頬部の腫脹と疼痛を訴えて来院した。3週前から同部の腫脹に気付いていたが3日前から腫脹が増大し、自発痛も強くなったという。同部は触診によって波動を触知した。白血球数は10,000/μLであった。初診時の写真Aと処置直後の写真Bを別に示す。\n矢印で示す材料の目的はどれか。",
+    "choices": [
+      "止血効果",
+      "細菌検査",
+      "術後浮腫防止",
+      "排膿路の確保"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "下顎歯列模型の咬合面観の写真を別に示す。\n正常な咬合関係で上顎第一大臼歯の近心頬側咬頭の三角隆線が接触するのはどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "8歳の女児。上顎前歯の位置異常を主訴として来院した。萌出開始時から気になっていたという。初診時の口腔内写真を別に示す。\n上顎右側中切歯の位置異常はどれか。",
+    "choices": [
+      "捻転",
+      "転位",
+      "移転",
+      "回転"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "9歳の女児。学校歯科健康診断で前歯の咬み合わせの異常を指摘されて来院した。初診時の口腔内写真を別に示す。\n放置したときに下顎中切歯に予想されるのはどれか。2つ選べ。",
+    "choices": [
+      "挺出",
+      "動揺",
+      "舌側傾斜",
+      "歯肉退縮"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "矯正装置の写真を別に示す。\n固定の種類はどれか。",
+    "choices": [
+      "顎間固定",
+      "顎内固定",
+      "顎外固定",
+      "相反固定"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "4歳の男児。口腔内写真を別に示す。矢印で示す歯が交換する時期はどれか。",
+    "choices": [
+      "7歳頃",
+      "9歳頃",
+      "11歳頃",
+      "15歳頃"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "5歳の男児。上顎第二乳臼歯の咀嚼時痛を主訴として来院した。一部性の歯髄炎と診断され、生活歯髄切断法を行うことになった。処置の手順を図に示す。\n①の処置で使用するのはどれか。",
+    "choices": [
+      "Kファイル",
+      "ラウンドバー",
+      "根管長測定器",
+      "70％アルコール"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "75歳の女性。1年前の脳梗塞により右片麻痺があり車椅子を利用している。今回、認知症と診断された。認知症の症状はまだらである。\n考えられるのはどれか。",
+    "choices": [
+      "血管性認知症",
+      "前頭側頭型認知症",
+      "レビー小体型認知症",
+      "アルツハイマー型認知症"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "高齢者に多い口腔疾患はどれか。2つ選べ。",
+    "choices": [
+      "口腔癌",
+      "手足口病",
+      "口腔カンジダ症",
+      "エナメル上皮腫"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "ADLの評価法であるBarthel Indexの項目はどれか。2つ選べ。",
+    "choices": [
+      "食事",
+      "入浴",
+      "体操",
+      "洗濯"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

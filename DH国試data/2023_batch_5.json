@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2023_dh_23_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "アムホテリシンBが有効なのはどれか。1つ選べ。",
+    "choices": [
+      "頭頸部癌",
+      "抜歯後疼痛",
+      "口腔カンジダ症",
+      "ヘルペス性口内炎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "薬物による副作用の一部を表に示す。\n①はどれか。1つ選べ。\nただし、①～④はa～dのいずれかに該当する。",
+    "choices": [
+      "アスピリン",
+      "ジアゼパム",
+      "アセトアミノフェン",
+      "ワルファリンカリウム"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "子宮頸がんの病原体はどれか。1つ選べ。",
+    "choices": [
+      "ムンプスウイルス",
+      "コクサッキーウイルス",
+      "単純ヘルペスウイルス",
+      "ヒトパピローマウイルス"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "先天性梅毒でみられるのはどれか。1つ選べ。",
+    "choices": [
+      "双生歯",
+      "斑状歯",
+      "Turner＜ターナー＞歯",
+      "Hutchinson＜ハッチンソン＞歯"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "以下の問いに答えよ。",
+    "choices": [
+      "ヒスタミン",
+      "アドレナリン",
+      "アセチルコリン",
+      "GABA（γ-アミノ酪酸）"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "精神保健福祉センターを設置できるのはどれか。2つ選べ。",
+    "choices": [
+      "指定都市",
+      "都道府県",
+      "厚生労働省",
+      "全国健康保険協会"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "口腔清掃用具の写真を示す。\n清掃用具と使用目的の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "① -- 義歯清掃",
+      "② -- 口腔粘膜清掃",
+      "③ -- 舌苔除去",
+      "④ -- 最後臼歯遠心面の清掃"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "この調査に用いる研究方法はどれか。1つ選べ。",
+    "choices": [
+      "地域研究",
+      "症例対照研究",
+      "生態学的研究",
+      "ランダム化比較試験"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "この研究方法から算出できるのはどれか。1つ選べ。",
+    "choices": [
+      "罹患率",
+      "オッズ比",
+      "寄与危険度",
+      "相対危険度"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "衛生行政の体系を図に示す。\nこの体系の下で行われる保健事業はどれか。2つ選べ。",
+    "choices": [
+      "健康増進法に基づく歯周疾患検診",
+      "母子保健法に基づく妊産婦健康診査",
+      "学校保健安全法に基づく定期健康診断",
+      "労働安全衛生法に基づく特殊健康診断"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "洗口により除去できるのはどれか。1つ選べ。",
+    "choices": [
+      "ステイン",
+      "プラーク",
+      "ペリクル",
+      "マテリアアルバ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "歯科疾患実態調査のある項目の結果を図に示す。\nこの図が示すのはどれか。1つ選べ。",
+    "choices": [
+      "喪失歯を有する者",
+      "20歯以上の現役歯を有する者",
+      "4mm以上の歯周ポケットを有する者",
+      "永久歯の未処置歯または処置歯を保有する者"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "口臭の原因物質で硫黄を含むのはどれか。1つ選べ。",
+    "choices": [
+      "アセトン",
+      "インドール",
+      "メチルアミン",
+      "メチルメルカプタン"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "トータルヘルスプロモーションプラン＜THP＞における歯科衛生士の役割はどれか。1つ選べ。",
+    "choices": [
+      "過重労働解消の推進",
+      "ストレスチェックの実施",
+      "運動指導プログラムの作成",
+      "勤務形態に配慮した口腔保健指導"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "13歳の女子。学校における定期健康診断（歯・口腔）の結果の一部を図に示す。\n事後措置として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "う蝕の治療",
+      "スケーリング",
+      "フッ化物歯面塗布",
+      "ブラッシング指導"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "南・中央アジアで口腔癌の有病率が高い原因はどれか。1つ選べ。",
+    "choices": [
+      "飲料水",
+      "マラリア",
+      "かみタバコ",
+      "年間日照時間"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "CPI（2013年、WHO）による診査の様子を模式図に示す。\n歯周ポケットスコアはどれか。1つ選べ。",
+    "choices": [
+      "（図参照：選択肢1）",
+      "1",
+      "2",
+      "9"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "Leavell & Clarkの予防の3相5段階における歯周病の特異的予防はどれか。1つ選べ。",
+    "choices": [
+      "禁煙指導",
+      "歯科検診",
+      "機械的歯面清掃",
+      "スケーリング・ルートプレーニング"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "小児期の歯の形成と萌出の過程を図に示す。\n定型発達児の3歳はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "洗口剤の基本成分はどれか。2つ選べ。",
+    "choices": [
+      "グリセリン",
+      "無水ケイ酸",
+      "キシリトール",
+      "アルギン酸ナトリウム"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "標準予防策に含まれるのはどれか。2つ選べ。",
+    "choices": [
+      "滅菌手袋の使用",
+      "歯面清掃時のゴーグル装着",
+      "クリーンルームでの歯科治療",
+      "スクラブと流水による手洗いの実施"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm032",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "地域包括ケアシステムにおける5つの視点での取組みに含まれるのはどれか。2つ選べ。\n",
+    "choices": [
+      "教　育",
+      "就　労",
+      "予　防",
+      "生活支援"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "歯科診療所において診療中に針刺し事故を起こした際の対応を図に示す。\n①で適切なのはどれか。1つ選べ。",
+    "choices": [
+      "抗菌薬の塗布",
+      "オキシドールでの洗浄",
+      "ポビドンヨードでの消毒",
+      "インシデントレポートの作成"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "抗原抗体反応を利用する検査項目はどれか。2つ選べ。",
+    "choices": [
+      "尿素窒素＜BUN＞",
+      "リウマトイド因子＜RF＞",
+      "C反応性タンパク＜CRP＞",
+      "コリンエステラーゼ＜ChE＞"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "顎口腔機能検査法と用いる器材の組合せで正しいのはどれか。1つ選べ。",
+    "choices": [
+      "咬合圧検査 -- フェイスボウ",
+      "下顎運動検査 -- パントグラフ",
+      "構音機能検査 -- チェックバイト",
+      "咀嚼機能検査 -- マイオモニター"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "睡眠時無呼吸症候群患者の睡眠中に低下するのはどれか。1つ選べ。",
+    "choices": [
+      "血　圧",
+      "脈拍数",
+      "無呼吸低呼吸指数",
+      "経皮的動脈血酸素飽和度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "83歳の女性。飲み込みづらくなってきたことを主訴として来院した。口腔機能検査時の写真（A）と検査に使用する器具の写真（B）を示す。\nこの検査で評価できるのはどれか。1つ選べ。",
+    "choices": [
+      "舌の可動域",
+      "舌の巧緻性",
+      "舌の運動速度",
+      "舌の力の強さ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "65歳の女性。上顎右側犬歯の違和感を主訴として来院した。3か月前から咬合痛があり、他院で治療をしたが改善しなかったため、外科的歯内療法が行われることになった。レトロチップを用いて根尖部の窩洞形成を行っている時のマイクロスコープ写真を示す。\n次の操作に使用する材料はどれか。1つ選べ。",
+    "choices": [
+      "水硬性仮封材",
+      "水酸化カルシウム製剤",
+      "ガッタパーチャポイント",
+      "強化型酸化亜鉛ユージノールセメント＜EBAセメント＞"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "66歳の男性。下顎前歯部の歯肉の腫脹を主訴として来院した。現在、糖尿病と高血圧症に対する治療薬を服用している。歯肉の腫脹は服用を始めてから顕著になったという。初診時の口腔内写真を示す。\n初診時の対応で考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "歯肉の切除",
+      "服用薬の中止",
+      "内科主治医への対診",
+      "プラークコントロール"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "28歳の男性。上顎左側第一小臼歯の軽度の冷水痛を主訴として来院した。う蝕症第2度と診断され、コンポジットレジン修復が行われるようになった。処置中の口腔内写真を示す。\n矢印で示す器具を使用する目的はどれか。1つ選べ。",
+    "choices": [
+      "術野の明示",
+      "唾液の排除",
+      "マトリックスの保持",
+      "窩洞形成時の歯肉損傷防止"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

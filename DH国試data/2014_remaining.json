@@ -1,0 +1,642 @@
+[
+  {
+    "question_id": "2014_dh_14_pm071",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 71,
+    "question_text": "スケーラーのシャープニングで砥石の名称、材料および潤滑材の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "ルビーストーン -- 天然石 -- 水",
+      "セラミックストーン -- 人工石 -- 水",
+      "インディアナストーン -- 人工石 -- 水",
+      "アーカンサスストーン -- 天然石 -- オイル"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm072",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 72,
+    "question_text": "プローブの写真を別に示す。\nCPI検査に用いられるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm073",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 73,
+    "question_text": "グレーシータイプキュレット＃11/12を操作している写真を別に示す。\n操作で正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "歯頸部の外来性色素沈着物を除去するための歯面研磨で正しいのはどれか。",
+    "choices": [
+      "ラバーダム防湿を行う。",
+      "各種研磨剤を使い分ける。",
+      "歯面を乾燥した状態に保つ。",
+      "高速回転＜30,000rpm＞で行う。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm075",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 75,
+    "question_text": "う蝕の第一次予防に用いるフッ化物はどれか。",
+    "choices": [
+      "フッ化水素酸",
+      "フルオロアパタイト",
+      "フッ化ジアンミン銀",
+      "モノフルオロリン酸ナトリウム"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm076",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 76,
+    "question_text": "う蝕活動性試験の結果、唾液中のLactobacilliが多いと判定された。\n考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "う窩がある。",
+      "唾液粘稠度が低い。",
+      "唾液緩衝能が高い。",
+      "間食の摂取回数が多い。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm077",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 77,
+    "question_text": "フッ化物歯面塗布法でないのはどれか。",
+    "choices": [
+      "綿球法",
+      "トレー法",
+      "スプレー法",
+      "イオン導入法"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm078",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 78,
+    "question_text": "使用するフッ化物洗口液のフッ素イオン濃度はどれか。",
+    "choices": [
+      "50ppm",
+      "250ppm",
+      "900ppm",
+      "9,000ppm"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm079",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 79,
+    "question_text": "職員への説明内容で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "1回の洗口液量は一人当たり30mLずつ用意してください。",
+      "10秒間うがいをさせたら吐き出させてください。",
+      "洗口後30分間は飲食やうがいを控えてください。",
+      "洗口液を1回量誤って飲んだとしても急性中毒の心配はありません。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm080",
+    "category": "歯科保健指導論",
+    "subcategory": "総論",
+    "exam_number": 80,
+    "question_text": "プライマリーヘルスケアに該当するのはどれか。2つ選べ。",
+    "choices": [
+      "感染症のコントロール",
+      "健康的な公共政策の確立",
+      "バリアフリー社会の実現",
+      "身近な場所への医療施設の設置"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm081",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 81,
+    "question_text": "医療面接の際に注意すべきことはどれか。2つ選べ。",
+    "choices": [
+      "同情的態度で接する。",
+      "話を最後までよく聞く。",
+      "患者の訴えを明確化する。",
+      "会話の間があかないようにする。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm082",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 82,
+    "question_text": "45歳の男性。口臭を訴えて来院した。歯科衛生士との会話を下に示す。\n「開かれた質問」はどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm083",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 83,
+    "question_text": "「健康な高齢者の老化による物忘れ」と「認知症の高齢者の物忘れ」との特徴を比較した表を示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm084",
+    "category": "歯科保健指導論",
+    "subcategory": "総論",
+    "exam_number": 84,
+    "question_text": "Keyesの輪を図に示す。う蝕のリスクとして、①は唾液緩衝能、②はスクロースが該当する。\n③はどれか。",
+    "choices": [
+      "時　間",
+      "宿　主",
+      "細菌叢",
+      "食餌性基質"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm085",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科保健指導の基礎",
+    "exam_number": 85,
+    "question_text": "唇面に古いプラークが最も多く観察されるのはどれか。",
+    "choices": [
+      "上顎左側中切歯",
+      "上顎左側側切歯",
+      "下顎左側中切歯",
+      "下顎左側側切歯"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm086",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 86,
+    "question_text": "この女児へ指導する適切な口腔清掃法はどれか。2つ選べ。",
+    "choices": [
+      "バス改良法",
+      "チャーターズ法",
+      "スクラビング法",
+      "1歯ずつの縦磨き法"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm087",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 87,
+    "question_text": "ガスクロマトグラフィー検査で認知閾値を超えて検出されたと考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "硫化水素",
+      "アセトン",
+      "トリメチルアミン",
+      "メチルメルカプタン"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm088",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 88,
+    "question_text": "歯科医師から、口臭改善のための歯科保健指導を指示された。\nブラッシング指導に加えて行う指導で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "頻回の水分摂取を勧める。",
+      "間食を摂らないよう指導する。",
+      "舌ブラシによる舌清掃を指導する。",
+      "専門家による機械的歯面清掃を勧める。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm089",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 89,
+    "question_text": "70歳の女性。肺癌で入院加療中である。意識障害があり、常時口呼吸をしている。本人による口腔清掃は困難な状態であり、1日1回の口腔清掃を受けている。口腔周囲の写真（A、B）を別に示す。\n歯科衛生士による口腔ケアで適切なのはどれか。2つ選べ。",
+    "choices": [
+      "本人への声かけは必要ない。",
+      "鼻カニューレは外して行う。",
+      "口唇部を保湿してから行う。",
+      "隣接面部に歯間ブラシを使用する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm090",
+    "category": "臨床歯科医学",
+    "subcategory": "障害者の理解と歯科治療",
+    "exam_number": 90,
+    "question_text": "85歳の要介護高齢者。食事中に疲れて食事ペースが落ちてくるという。\nこの高齢者への介助で適切なのはどれか。",
+    "choices": [
+      "一口量を増やす。",
+      "間食で必要栄養量を補う。",
+      "1回の食事時間を長くする。",
+      "少量低カロリーの食事にする。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm091",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 91,
+    "question_text": "地域住民のニーズに基づき保健活動の計画を作成することとなった。\n最初に設定するのはどれか。",
+    "choices": [
+      "方　法",
+      "目　標",
+      "内　容",
+      "期　間"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm092",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 92,
+    "question_text": "A幼稚園では「健康な子供を育てるための勉強会」を保護者対象に行っている。歯科保健について30分間の講話を依頼された。\n内容として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "口呼吸による弊害",
+      "第二大臼歯のう蝕予防",
+      "ショ糖とう蝕の関係",
+      "側方歯群の交換と歯列不正"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm093",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 93,
+    "question_text": "ある事業所の男性社員50名を対象として「歯周病と喫煙」をテーマとした40分の健康教室を依頼され、衛生管理者とともに行うこととなった。\n健康教室の実施方法で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "個別相談を組み入れる。",
+      "自由に発言できる雰囲気をつくる。",
+      "衛生管理者との事前打ち合わせを行う。",
+      "都道府県別喫煙率の数値を読み上げて説明する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm094",
+    "category": "歯科診療補助論",
+    "subcategory": "総論",
+    "exam_number": 94,
+    "question_text": "車椅子を使用している要介護高齢者への対応で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "移乗する前にブレーキをかける。",
+      "移乗する時はフットレストをおろしておく。",
+      "立位が可能な場合は自分で移乗してもらう。",
+      "移乗後は浅く座ってもらう。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm095",
+    "category": "歯科診療補助論",
+    "subcategory": "総論",
+    "exam_number": 95,
+    "question_text": "消毒薬の適応を表に示す。\nポビドンヨードはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm096",
+    "category": "歯科診療補助論",
+    "subcategory": "主要歯科材料の種類、取扱いと管理 ",
+    "exam_number": 96,
+    "question_text": "寒天印象材について正しいのはどれか。",
+    "choices": [
+      "天然モノマーである。",
+      "人工ポリマーである。",
+      "加熱によりゾル化する。",
+      "振動によりゲル化する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm097",
+    "category": "歯科診療補助論",
+    "subcategory": "主要歯科材料の種類、取扱いと管理 ",
+    "exam_number": 97,
+    "question_text": "歯髄鎮静の目的で用いる仮封材はどれか。",
+    "choices": [
+      "水硬性仮封材",
+      "カルボキシレートセメント",
+      "仮封用軟質レジン＜常温重合型＞",
+      "酸化亜鉛ユージノールセメント"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm098",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 98,
+    "question_text": "リーマー・ファイルのサイズとカラーコードとの組合せで正しいのはどれか。",
+    "choices": [
+      "15番 -- 黄",
+      "30番 -- 緑",
+      "55番 -- 赤",
+      "70番 -- 黒"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm099",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 99,
+    "question_text": "器具の写真を別に示す。\n側方加圧充填時に挿入しガッタパーチャポイントの圧接に使用するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm100",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 100,
+    "question_text": "器具の写真を別に示す。\nフラップ手術で粘膜骨膜弁形成後に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm101",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 101,
+    "question_text": "シリンジの写真を別に示す。\nシリコーン印象材を用いて印象採得を行う時に使用するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm102",
+    "category": "歯科診療補助論",
+    "subcategory": "補綴治療時の診療補助",
+    "exam_number": 102,
+    "question_text": "完成した補綴装置の写真を別に示す。\n試適時に準備する器材はどれか。2つ選べ。",
+    "choices": [
+      "咬合紙",
+      "平行測定器",
+      "シェードガイド",
+      "コンタクトゲージ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm103",
+    "category": "歯科診療補助論",
+    "subcategory": "口腔外科治療時の診療補助",
+    "exam_number": 103,
+    "question_text": "永久止血法はどれか。2つ選べ。",
+    "choices": [
+      "結紮法",
+      "焼灼法",
+      "タンポン法",
+      "圧迫包帯法"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm104",
+    "category": "歯科診療補助論",
+    "subcategory": "矯正歯科治療時の診療補助",
+    "exam_number": 104,
+    "question_text": "器具の写真を別に示す。\n矯正用バンドの装着に使用しないのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm105",
+    "category": "歯科診療補助論",
+    "subcategory": "小児歯科治療時の診療補助",
+    "exam_number": 105,
+    "question_text": "フッ化ジアンミン銀の特徴はどれか。2つ選べ。",
+    "choices": [
+      "無味無臭である。",
+      "塗布面は黒変する。",
+      "劇薬に指定されている。",
+      "38％のフッ素イオンを含む。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm106",
+    "category": "歯科診療補助論",
+    "subcategory": "高齢者治療時の診療補助",
+    "exam_number": 106,
+    "question_text": "81歳の女性。感音性難聴である。\n話しかける際の配慮で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "耳元で大きな声で話す。",
+      "静かな場所で説明する。",
+      "声のトーンを抑えて話す。",
+      "マスクをつけたままで話す。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm107",
+    "category": "歯科診療補助論",
+    "subcategory": "高齢者治療時の診療補助",
+    "exam_number": 107,
+    "question_text": "パーキンソン病で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "可逆性疾患である。",
+      "神経変性疾患である。",
+      "脳内のドーパミン過剰がみられる。",
+      "安静時の振戦がみられることが多い。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm108",
+    "category": "歯科診療補助論",
+    "subcategory": "障害者治療時の診療補助",
+    "exam_number": 108,
+    "question_text": "障害の種類とコミュニケーションの方法との組合せで適切なのはどれか。",
+    "choices": [
+      "言語障害 -- 点　字",
+      "視覚障害 -- 模　型",
+      "精神遅滞 -- ジェスチャー",
+      "自閉性障害 -- 文字盤"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm109",
+    "category": "歯科診療補助論",
+    "subcategory": "臨床検査法",
+    "exam_number": 109,
+    "question_text": "検査装置の写真を別に示す。\nこの装置で測定するのはどれか。2つ選べ。",
+    "choices": [
+      "血糖値",
+      "脈拍数",
+      "拡張期血圧",
+      "経皮的動脈血酸素飽和度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm110",
+    "category": "歯科診療補助論",
+    "subcategory": "救急救命処置",
+    "exam_number": 110,
+    "question_text": "Japan Coma Scale＜3-3-9度方式＞で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "心疾患の重症度分類である。",
+      "9段階で判定する。",
+      "刺激に対する反応を観察する。",
+      "数値が小さいほど状態は重い。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2014_dh_14_pm041",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 41,
+    "question_text": "根管の機械的拡大に用いられるのはどれか。",
+    "choices": [
+      "EDTA",
+      "グアヤコール",
+      "過酸化水素水",
+      "次亜塩素酸ナトリウム溶液"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm042",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "総論",
+    "exam_number": 42,
+    "question_text": "歯面の付着物のうち、歯ブラシで除去できるのはどれか。2つ選べ。",
+    "choices": [
+      "ステイン",
+      "プラーク",
+      "ペリクル",
+      "マテリアアルバ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 43,
+    "question_text": "48歳の女性。歯の動揺を訴えて来院した。歯周基本治療時の口腔内写真を別に示す。\n矢印に示す処置の目的はどれか。",
+    "choices": [
+      "う蝕予防",
+      "咬合力の分散",
+      "歯間部清掃性の向上",
+      "象牙質知覚過敏の軽減"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm044",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の構造",
+    "exam_number": 44,
+    "question_text": "歯肉歯槽粘膜境を確認する方法はどれか。2つ選べ。",
+    "choices": [
+      "歯槽粘膜に浸潤麻酔を行う。",
+      "ヨードチンキで粘膜を染色する。",
+      "歯周プローブで歯槽粘膜を押し上げる。",
+      "クレーンカプランのピンセットでマーキングする。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 45,
+    "question_text": "カンペル平面に含まれるのはどれか。",
+    "choices": [
+      "眼　窩",
+      "鼻　翼",
+      "耳　朶",
+      "切歯点"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm046",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 46,
+    "question_text": "67歳の男性。前歯に根面板を装着後、左側臼歯を抜歯し、補綴装置を装着した。抜歯前の口腔内写真（A）、装置装着後の口腔内写真（B）および装置の写真（C）を別に示す。\nこの装置の名称はどれか。",
+    "choices": [
+      "顎義歯",
+      "塞栓子",
+      "スピーチエイド",
+      "オーバーデンチャー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 47,
+    "question_text": "上顎全部床義歯の写真（A、B）を別に示す。\n部位と名称との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "① -- 粘膜面",
+      "② -- 咬合面",
+      "③ -- 研磨面",
+      "④ -- 床　縁"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 48,
+    "question_text": "CAD/CAM装置を用いて製作できるのはどれか。2つ選べ。",
+    "choices": [
+      "ピンレッジ",
+      "陶材焼付金属冠",
+      "レジンジャケット冠",
+      "オールセラミッククラウン"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 49,
+    "question_text": "58歳の男性。舌の異常を訴えて来院した。口腔内写真を別に示す。\n疑われるのはどれか。",
+    "choices": [
+      "溝状舌",
+      "白板症",
+      "真菌感染症",
+      "ハンター舌炎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm050",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 50,
+    "question_text": "52歳の男性。上顎右側第一大臼歯部歯肉の異常を訴えて来院した。2か月前に異常に気づき徐々に大きくなってきたという。口腔内写真を別に示す。\n主訴に対して考えられる検査はどれか。2つ選べ。",
+    "choices": [
+      "細胞診",
+      "歯髄電気診",
+      "プロービング",
+      "エックス線検査"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm051",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 51,
+    "question_text": "中枢性顔面神経麻痺で運動可能な部位はどれか。",
+    "choices": [
+      "前額部",
+      "頬骨部",
+      "下唇部",
+      "頸　部"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 52,
+    "question_text": "口腔内写真（A、B）を別に示す。\n考えられる不正咬合はどれか。",
+    "choices": [
+      "叢　生",
+      "交叉咬合",
+      "切端咬合",
+      "正中離開"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 53,
+    "question_text": "矯正装置装着の準備段階の口腔内写真を別に示す。\n矢印で示す材料の装着に用いるのはどれか。",
+    "choices": [
+      "バンドプッシャー",
+      "バンドリムーバー",
+      "ヤングプライヤー",
+      "セパレーティングプライヤー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 54,
+    "question_text": "器具の写真を別に示す。\n使用目的はどれか。",
+    "choices": [
+      "結紮線の切断",
+      "保定装置の調整",
+      "ブラケットの撤去",
+      "アーチワイヤーの着脱"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 55,
+    "question_text": "発育期の分類とその特徴との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "乳児期 -- 歩行開始",
+      "幼児期 -- 自我の芽生え",
+      "学童期 -- 第一次反抗期",
+      "思春期 -- 第二次性徴"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm056",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 56,
+    "question_text": "唇顎口蓋裂児にみられる特徴はどれか。2つ選べ。",
+    "choices": [
+      "溝状舌",
+      "上顎劣成長",
+      "鼻咽腔閉鎖不全",
+      "下顎の歯列不正"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 57,
+    "question_text": "小児の粘膜疾患とその原因との組合せで正しいのはどれか。",
+    "choices": [
+      "手足口病 -- 単純ヘルペスウイルス",
+      "コプリック斑 -- 麻疹ウイルス",
+      "ベドナーアフタ -- 先天歯",
+      "ヘルパンギーナ -- 硬いゴム乳首"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm058",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 58,
+    "question_text": "4歳の女児。下顎右側第一乳臼歯が保存不可能となり、局所麻酔下で抜歯を行った。\n抜歯後の注意として適切でないのはどれか。",
+    "choices": [
+      "よくうがいをさせる。",
+      "2時間は飲食を避ける。",
+      "口唇を咬まないようにさせる。",
+      "止血を確認した後帰宅させる。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm059",
+    "category": "臨床歯科医学",
+    "subcategory": "障害者の理解と歯科治療",
+    "exam_number": 59,
+    "question_text": "75歳の男性。右片麻痺と失語症がみられる。抗血栓薬を服用しているという。\n既往歴として考えられるのはどれか。",
+    "choices": [
+      "骨　折",
+      "脳梗塞",
+      "パーキンソン病",
+      "慢性関節リウマチ"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 60,
+    "question_text": "77歳の男性。10か月前に脳出血を発症した。摂食・嚥下障害がみられた。患者の口腔内写真を示す。\n障害されている摂食・嚥下の過程はどれか。",
+    "choices": [
+      "先行期",
+      "準備期",
+      "咽頭期",
+      "食道期"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 61,
+    "question_text": "88歳の女性。歯科訪問診療の依頼を受けた。食後、ブラッシングのため洗面台に向かっている写真を別に示す。\n障害高齢者日常生活自立度の判定基準のランクとして考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "ランクJ",
+      "ランクA",
+      "ランクB",
+      "ランクC"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm062",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 62,
+    "question_text": "90歳の男性。無歯顎で全部床義歯を使用している。片麻痺があり、ペースメーカーを装着している。食後、食渣の滞留と舌苔とを認める。\n口腔ケアに用いられないのはどれか。",
+    "choices": [
+      "舌ブラシ",
+      "歯ブラシ",
+      "音波ブラシ",
+      "スポンジブラシ"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 63,
+    "question_text": "歯の付着物・沈着物と構成成分との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "白　質 -- 剥離上皮",
+      "歯　石 -- 唾液タンパク質",
+      "獲得被膜 -- 細　菌",
+      "色素沈着 -- 有機性薄膜"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm064",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 64,
+    "question_text": "エックス線写真を別に示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "骨吸収",
+      "根管充填",
+      "歯石沈着",
+      "歯根囊胞"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 65,
+    "question_text": "スケーリング時の脳貧血の予防で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "疼痛管理",
+      "水平側臥位",
+      "空腹時の処置",
+      "処置内容の説明と理解"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm066",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 66,
+    "question_text": "歯周病のスクリーニングに用いられる唾液検査はどれか。",
+    "choices": [
+      "潜血反応",
+      "唾液緩衝能",
+      "細菌の酸産生能",
+      "グルコースクリアランス"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 67,
+    "question_text": "口腔内写真を示す。\n歯肉歯槽粘膜境はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 68,
+    "question_text": "ファーケーションプローブで検査するのはどれか。",
+    "choices": [
+      "歯肉出血",
+      "歯根破折",
+      "歯周ポケット",
+      "根分岐部病変"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm069",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 69,
+    "question_text": "スケーリングの術式で、施術部の消毒後の適切な手順はどれか。",
+    "choices": [
+      "歯面研磨　→　口腔内観察　→　歯石除去",
+      "口腔内観察　→　歯石除去　→　歯面研磨",
+      "口腔内観察　→　歯面研磨　→　歯石除去",
+      "歯面研磨　→　歯石除去　→　口腔内観察"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 70,
+    "question_text": "歯の動揺度検査の写真を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2018_dh_18_am091",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "介護保険施設におけるミールラウンドで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "味覚を評価する。",
+      "食事場面を観察する。",
+      "多職種と協働で行う。",
+      "経管栄養の適否を評価する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am092",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "87歳の女性。むせることがあることを主訴として歯科診療所に来院した。1か月前に友人と会話中に意識を消失し、救急搬送されたが、次の日には歩いて退院したという。退院後に気息性嗄声が発生し、食事の際にむせるのが気になっているという。\n麻痺が考えられるのはどれか。",
+    "choices": [
+      "顔面神経",
+      "舌下神経",
+      "舌咽神経",
+      "迷走神経"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am093",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "要介護高齢者に対する摂食嚥下の段階と食事介助の組合せを表に示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am094",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "18歳の女性。舌がいつも前に出てきていることを主訴として来院した。口腔筋機能療法＜MFT＞で舌尖を固定する位置＜スポット＞の指導を行うことになった。初診時の口腔内写真を別に示す。\n固定する位置はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am095",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "3歳の男児。脳性麻痺があり食事の際に過開口になり、スプーンを咬んだり、食べこぼしもみられる。\nまず獲得すべき摂食機能はどれか。",
+    "choices": [
+      "捕食機能",
+      "自食機能",
+      "押しつぶし機能",
+      "すりつぶし機能"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "口腔外バキューム装置を使用して吸引するのはどれか。2つ選べ。",
+    "choices": [
+      "注水噴霧",
+      "エアロゾル",
+      "切開時出血",
+      "切削時注水"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "インシデント事例報告で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "医療安全管理の取組みである。",
+      "原因を追求するためのものである。",
+      "当事者の責任を追求するものである。",
+      "インシデント事例はアクシデント事例より少ない。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "歯科医師からの指示で、シリコーンゴム質印象材を用いた一次印象採得を行うことになった。①プラスチックグローブを装着してパテタイプを計量し、ベースとキャタリストを②スパチュラを用いて練和した。次にロール状にしたパテをトレーに盛り上げ、③ポリエチレンシートをかぶせて歯列に圧接した。パテの硬化後、表面に④接着剤を塗布した。\n下線部で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "バー・ポイントの写真を別に示す。\nマイクロモーターコントラアングルに用いるのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "23歳の女性。上顎右側第一大臼歯のう蝕治療を希望して来院した。レジンインレーの装着を予定している。作製したレジンインレーの写真（A）と器具の写真（B）を別に示す。\nセメント合着後、最初に使用するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "全部床義歯製作過程で咬合採得時に使用するのはどれか。",
+    "choices": [
+      "常温重合レジン",
+      "パラフィンワックス",
+      "モデリングコンパウンド",
+      "ユーティリティーワックス"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "全部床義歯製作過程で垂直的顎間関係の記録に用いるのはどれか。",
+    "choices": [
+      "咬合紙",
+      "バイトゲージ",
+      "フェイスボウ",
+      "ゴシックアーチ"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "抜歯鉗子の写真を別に示す。\n使用する部位はどれか。",
+    "choices": [
+      "上顎右側第一大臼歯",
+      "上顎左側第一大臼歯",
+      "下顎右側第一大臼歯",
+      "下顎左側第一大臼歯"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "外科用器具の写真を別に示す。\n歯槽骨整形術で骨を削除するのに使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "矯正装置で患者自身が調整するのはどれか。",
+    "choices": [
+      "咬合挙上板",
+      "バイオネーター",
+      "急速拡大床装置",
+      "マルチブラケット装置"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "トークンエコノミー法はどれか。",
+    "choices": [
+      "身体の動きを物理的に抑制する。",
+      "兄妹が上手に治療を受けている場面を観察させる。",
+      "これから行うことをわかりやすい言葉で説明する。",
+      "治療後に上手に治療を受けたことへの褒美を与える。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "高齢者の病態の特徴はどれか。2つ選べ。",
+    "choices": [
+      "個人差が少ない。",
+      "症状が定型的である。",
+      "複数の疾患を有している。",
+      "電解質異常を起こしやすい。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am108",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "自発開口が困難な脳卒中患者の開口を誘導するのはどれか。2つ選べ。",
+    "choices": [
+      "鼻呼吸の抑制",
+      "タイムアウト法",
+      "Kポイントの圧迫",
+      "下顎を押し下げる方法"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "31歳の女性。上下顎右側第一大臼歯のう蝕の診査を希望して来院した。歯科医師より咬翼法のエックス線写真撮影の準備を指示された。撮影に必要な器具の写真を別に示す。\n準備するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "胸郭の図を示す。\n心肺蘇生＜CPR＞で圧迫するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "神経細胞＜ニューロン＞の図を示す。斜線はシュワン細胞を示す。\n矢印が示すのはどれか。",
+    "choices": [
+      "軸　索",
+      "細胞体",
+      "神経終末",
+      "樹状突起"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "心筋層が最も厚いのはどれか。",
+    "choices": [
+      "右心房",
+      "左心房",
+      "右心室",
+      "左心室"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "顔面の写真を別に示す。\n矢印で示す部位を強く押すと痛みを生じるのはどれか。",
+    "choices": [
+      "眼窩下神経",
+      "鼻口蓋神経",
+      "顔面神経頬筋枝",
+      "顔面神経頬骨枝"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "上顎第一大臼歯の咬合面観と舌側面観の図を示す。灰色の領域は咬合面、黒丸は咬頭頂、点線は主要な隆線を示す。\n矢印が示すのはどれか。",
+    "choices": [
+      "臼歯結節",
+      "基底結節",
+      "中心結節",
+      "カラベリー結節"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "転写の際にメッセンジャーRNA＜伝令RNA＞のウラシルと対をなすDNAの塩基はどれか。",
+    "choices": [
+      "チミン",
+      "アデニン",
+      "グアニン",
+      "シトシン"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "細胞外に比べて細胞内に多いのはどれか。",
+    "choices": [
+      "Ca<sup>2+</sup>",
+      "Cl<sup>-</sup>",
+      "K<sup>+</sup>",
+      "Na<sup>+</sup>"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "動脈内の血圧変化を図に示す。\n収縮期血圧はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm008",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "ウイルスが原因で口腔粘膜に水疱を形成するのはどれか。",
+    "choices": [
+      "天疱瘡",
+      "手足口病",
+      "口腔扁平苔癬",
+      "口腔カンジダ症"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "正常な染色体と染色体異常を模式図に示す。\n生じた染色体の異常はどれか。",
+    "choices": [
+      "逆　位",
+      "欠　失",
+      "重　複",
+      "転　座"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "正常な循環と循環障害を模式図に示す。\n循環障害が生じた組織にみられるのはどれか。",
+    "choices": [
+      "虚　血",
+      "出　血",
+      "充　血",
+      "うっ血"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

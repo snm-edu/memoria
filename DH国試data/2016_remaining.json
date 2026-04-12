@@ -1,0 +1,642 @@
+[
+  {
+    "question_id": "2016_dh_16_pm071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "60歳の男性。歯根の露出、冷水痛および義歯の不具合を訴えて来院した。\n口腔診査終了後に検査を行い、次の結果を得た。\nこの結果から考えられるのはどれか。",
+    "choices": [
+      "口腔乾燥",
+      "味覚障害",
+      "重度歯周炎",
+      "義歯の清掃不良"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm072",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "慢性歯周炎と比較した場合の侵襲性歯周炎の特徴はどれか。2つ選べ。",
+    "choices": [
+      "老年期に発症する。",
+      "組織破壊の進行が速い。",
+      "水平性骨吸収が認められる。",
+      "組織破壊量と比較して歯石沈着量が少ない。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "歯周病と双方向のリスクが考えられるのはどれか。",
+    "choices": [
+      "糖尿病",
+      "誤嚥性肺炎",
+      "虚血性心疾患",
+      "低体重児出産"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "メインテナンス移行の基準を満たしているのはどれか。",
+    "choices": [
+      "PCR30%",
+      "BOP率20%",
+      "歯周ポケット4mm未満",
+      "歯の動揺は近遠心方向2mm以内"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "シャープニングの目的はどれか。2つ選べ。",
+    "choices": [
+      "刃部の形態を変える。",
+      "患者の不快感を軽減する。",
+      "スケーラーの摩耗を防ぐ。",
+      "鋭利なカッティングエッジを作る。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "フッ化物歯面塗布法はどれか。2つ選べ。",
+    "choices": [
+      "噴霧法",
+      "綿球法",
+      "トレー法",
+      "イオン電極法"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "ユニバーサルキュレットの操作で誤っているのはどれか。",
+    "choices": [
+      "Pullストロークを用いる。",
+      "第1シャンクを歯軸と平行にして操作する。",
+      "刃部内面と歯面のなす角度は45°～90°とする。",
+      "挿入時は歯面と刃部内面のなす角度を0°に近づける。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm078",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "歯周治療の標準的な進め方を図に示す。\n①はどれか。",
+    "choices": [
+      "再評価",
+      "薬物療法",
+      "咬合調整",
+      "口腔衛生指導"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm079",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "器具の写真を別に示す。\nこの器具で計測する2度はどれか。",
+    "choices": [
+      "計測時に出血がある。",
+      "頬舌的、近遠心的に1～2mm動く。",
+      "歯肉辺縁部にプラークを確認できる。",
+      "骨吸収が1/3以上で反対側に貫通していない。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "ヘルスプロモーションの概念に基づいたブラッシング指導はどれか。",
+    "choices": [
+      "ご自分だけでは取れない汚れもあります。",
+      "残った汚れは私（歯科衛生士）が取りますね。",
+      "お口をしっかり開けてください、すぐに終わります。",
+      "鏡を見ながら歯ブラシの当て方を確認して磨くと良いです。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "68歳の女性。①口の臭いが気になると訴え来院した。②5年前に脳梗塞を発症し、左半身は麻痺があるという。③含嗽を指示すると問題なくできる。④口腔内全体にプラークと食物残渣の付着があり、舌は乾燥して舌苔もみられる。歯肉は発赤・腫脹している。\n下線部分で客観的データはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "口臭の原因を明らかにするために、口臭測定に加えて測定するのはどれか。2つ選べ。",
+    "choices": [
+      "唾液分泌量",
+      "唾液緩衝能",
+      "プラーク中のpH",
+      "プロービングデプス"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm083",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "67歳の男性。入院中の口腔衛生管理を行うことになった。食道癌の診断で2週前より放射線治療と化学療法を行っており、4日後に手術が行われるという。口腔内の評価では、う蝕や歯周病は無かったが口が渇くと訴えていた。評価時の舌の写真を別に示す。\n歯科衛生士が行う口腔衛生管理によって期待される効果はどれか。2つ選べ。",
+    "choices": [
+      "入院期間の短縮",
+      "原発病巣の縮小",
+      "創部感染の予防",
+      "安静時唾液の増加"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "65歳の男性。定期健康診査で来院した。口腔内写真を別に示す。ブリッジ部にプラークの付着が認められた。保健指導を行うよう指示を受けた。\n丸印で囲んだ部位の清掃に適するのはどれか。2つ選べ。",
+    "choices": [
+      "歯間ブラシ",
+      "タフトブラシ",
+      "ラバーチップ",
+      "デンタルフロス"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "45歳の女性。定期健康診査を目的に来院した。歯科保健指導は5回目となる。指導時の会話を以下に示す。\n\n歯科衛生士：自宅での歯磨きはいかがですか。\n患　者：教えていただいたように行えていると思います。最初1か月は、歯間ブラシを使うのは面倒でしたが、4か月経ってみると、使わないとすっきりしない気がします。\n歯科衛生士：歯間ブラシは毎日使っていますか。\n患　者：はい。1日2回、昼食後と夕食後の歯磨きの時に使用しています。\n職場の人にも勧めているのですよ。\n歯科衛生士：それはすばらしいです。このまま続けていけそうですね。\n患　者：はい。気持ちがよいので続けられると思います。\n\n保健行動変容の段階はどれか。",
+    "choices": [
+      "無関心期",
+      "関心期",
+      "準備期",
+      "行動期"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "87歳の男性。5年前から認知症が悪化し、施設に入居して全介助であるという。施設職員からよくむせることを主訴として歯科訪問診療を依頼された。食事はおかゆと刻んだおかずを食べているという。誤嚥性肺炎はこれまで発症していない。食後の義歯の写真を別に示す。\n最初に行う対応はどれか。",
+    "choices": [
+      "禁食の指示",
+      "義歯のリベース",
+      "食物残渣の確認",
+      "RSSTによる嚥下評価"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "歯の喪失により、摂取しにくくなるのはどれか。2つ選べ。",
+    "choices": [
+      "肉",
+      "い　も",
+      "めん類",
+      "生野菜"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "非う蝕性甘味料はどれか。2つ選べ。",
+    "choices": [
+      "ラクトース",
+      "フルクトース",
+      "スクラロース",
+      "アスパルテーム"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "7歳の女児。小学校での保健指導で担任から相談を受けた。女児は給食で口に食物を詰め込むことが多くなり、何度か窒息しそうになったという。全身疾患は特に無い。口腔内写真を別に示す。\n担任に対する適切な助言はどれか。2つ選べ。",
+    "choices": [
+      "ペースト食に変更したほうが良いです。",
+      "摂食嚥下の専門外来を受診すると良いです。",
+      "歯科医院で子供用の入れ歯を作ると良いです。",
+      "前歯が生えるまで食物を小さくして食べると良いです。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "85歳の女性。同居している家族から、「これまでは家族と同じように食べられましたが、最近はむせることが多くなってきました。献立で工夫できることはありますか。」との相談を受けた。\n適切な助言はどれか。2つ選べ。",
+    "choices": [
+      "野菜は細かく刻むと良いです。",
+      "ジュースよりゼリーの方がむせにくいです。",
+      "ひき肉を使った料理はとろみをつけると良いです。",
+      "クリームスープよりコンソメスープの方がむせにくいです。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm091",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "82歳の女性。義歯が時々はずれると家族より相談を受けた。5年前にパーキンソン病を発症しパーキンソン病治療薬を服用している。歯科医師の診察の結果、オーラルジスキネジアが頻繁にみられたが、義歯の適合は良好であった。\n家族への指導で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "服用薬剤はなるべく早めに休薬する。",
+      "定期的に義歯の適合を診察してもらう。",
+      "不随意運動が出たら口を閉じるようにする。",
+      "口腔ケアを行う際は軟らかめの歯ブラシを使用する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm092",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "6か月の乳児。保育園で保護者を対象とした歯科保健指導で口腔清掃方法について質問を受けた。保護者は口腔清掃をまだ何もしていないという。全身疾患や口腔粘膜の異常はない。口腔内写真を別に示す。\n適切な助言はどれか。2つ選べ。",
+    "choices": [
+      "就寝前に歯ブラシで磨いてください。",
+      "小さなおもちゃをしゃぶらせましょう。",
+      "ガーゼで汚れを拭う準備を始めましょう。",
+      "指で口の中を触れることに慣れさせましょう。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm093",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "74歳の男性。狭心症の既往歴がある。6か月間は発作もなく安定した状態であるが、発作に備え常時薬剤を携帯している。スケーリング中に突然、胸痛を訴えた。\n歯科衛生士が行う対応で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "上体を起こす。",
+      "血圧測定を行う。",
+      "亜硝酸製剤貼付薬を出してもらう。",
+      "ニトログリセリン舌下錠を出してもらう。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm094",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "ハインリッヒの法則を示す。（　）に入る組合せで正しいのはどれか。\n\n1件の重大な事故の背景には（①）件の軽微な事故と、さらに（②）件の傷害には至らなかった事故＜インシデント＞がある。",
+    "choices": [
+      "①19 -- ②200",
+      "①29 -- ②300",
+      "①39 -- ②400",
+      "①49 -- ②500"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm095",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "セラミックインレーの合着に使用するデュアルキュア型レジンセメントの取扱いで正しいのはどれか。",
+    "choices": [
+      "金属スパチュラで練和する。",
+      "セメントを窩洞に直接填入する。",
+      "光照射を行う。",
+      "余剰セメントは完全に硬化してから除去する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm096",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "セラミックインレー修復で、削り出し法＜ミリング法＞を応用してインレー体を製作する方法はどれか。",
+    "choices": [
+      "焼成法",
+      "CAD/CAM法",
+      "加圧法＜押し込み法＞",
+      "鋳造法＜キャスタブルセラミックス＞"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "歯科用ワックスの種類と用途の組合せで正しいのはどれか。",
+    "choices": [
+      "シートワックス -- 金属床の原型",
+      "インレーワックス -- スプルー",
+      "パラフィンワックス -- 義歯製作のための印象採得",
+      "ユーティリティワックス -- 咬合採得"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "器材の写真を別に示す。\nメタルインレー体をMO窩洞に試適する際に準備するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "オフィスブリーチ法で正しいのはどれか。",
+    "choices": [
+      "カスタムトレーを作製する。",
+      "光照射器を用いて漂白剤を活性化させる。",
+      "漂白剤は10～20%の過酸化尿素が主成分である。",
+      "漂白前の歯面研磨はフッ化物配合研磨剤を使用する。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "27歳の女性。妊娠8か月である。下顎左側臼歯部の咬合痛を主訴として来院した。プロービングを行うために水平位にしたところ、悪心を訴え、冷汗、血圧低下がみられた。\n正しい対応はどれか。",
+    "choices": [
+      "頭部を下肢より低くする。",
+      "下肢を腹部より高くする。",
+      "仰臥位のまま安静を保つ。",
+      "左を下にした側臥位にする。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "80歳の女性。部分床義歯の印象採得のため個人トレーを作製した。模型の写真（A）と個人トレーの写真（B）を別に示す。\n模型に適合するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "咬合採得時に必要な器材の写真を別に示す。\n下顎安静位を利用して咬合高径の決定を行う際に使用する器具はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "器具の写真を別に示す。\n腐骨除去の際に用いるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "アーチワイヤーをブラケットのスロットに着脱するのに用いるのはどれか。",
+    "choices": [
+      "モスキートフォーセップス",
+      "リガチャーインスツルメント",
+      "ユーティリティープライヤー",
+      "リガチャータイイングプライヤー"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "8歳の男児。下顎右側第一大臼歯が歯髄壊死となり、根管治療を行った。本日、根管充填を行う予定である。\n準備するのはどれか。",
+    "choices": [
+      "EBAセメント",
+      "ホルムクレゾール",
+      "水酸化カルシウム製剤",
+      "ガッタパーチャポイント"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "高齢者の認知機能を評価するのはどれか。",
+    "choices": [
+      "SGA",
+      "BDR",
+      "MMSE",
+      "IADL"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "82歳の男性。5年前に脳梗塞を起こし麻痺があるため、車椅子を利用している。診療室内移動時の写真を別に示す。義歯作製のための口腔内診査を行うことになった。\nデンタルチェアに移乗する際の介助で正しいのはどれか。",
+    "choices": [
+      "デンタルチェアを水平にしておく。",
+      "患者の内側にデンタルチェアがくるように車椅子を寄せる。",
+      "両手を持って立ち上がらせる。",
+      "患者の左足を軸にしてデンタルチェアへの移乗を行う。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm108",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "金属アレルギーのパッチテストを受ける患者への注意事項で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "パッチは毎日交換する。",
+      "運動を控えるようにする。",
+      "清潔に保つために毎日入浴する。",
+      "痒みがひどくなったら検査を中止する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "SpO2が90%以下になった場合、考えられるのはどれか。",
+    "choices": [
+      "頻　脈",
+      "高血圧",
+      "過呼吸",
+      "低酸素"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "幼児に対する胸骨圧迫で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "1分間に70回圧迫する。",
+      "呼吸の確認は20秒間行う。",
+      "片手で圧迫する場合がある。",
+      "胸の厚さの1/3まで圧迫する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  }
+]

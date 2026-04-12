@@ -1,0 +1,3522 @@
+[
+  {
+    "question_id": "2014_dh_14_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の構造",
+    "exam_number": 1,
+    "question_text": "7個の椎骨から構成されるのはどれか。",
+    "choices": [
+      "頸　椎",
+      "胸　椎",
+      "腰　椎",
+      "仙　椎"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の機能・組成",
+    "exam_number": 2,
+    "question_text": "舌の模式図を示す。\nグレーの領域の味覚を伝えるのはどれか。",
+    "choices": [
+      "三叉神経",
+      "顔面神経",
+      "舌咽神経",
+      "迷走神経"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の機能・組成",
+    "exam_number": 3,
+    "question_text": "嚥下と呼吸の経路が交叉するのはどれか。",
+    "choices": [
+      "鼻　腔",
+      "上咽頭＜咽頭鼻部＞",
+      "中咽頭＜咽頭口部＞",
+      "下咽頭＜咽頭喉頭部＞"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の構造",
+    "exam_number": 4,
+    "question_text": "上顎第一大臼歯咬合面の模式図を示す。\n遠心頰側咬頭はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 5,
+    "question_text": "（　　）に入るのはどれか。\n\nアミノ酸を構成する必須元素はC、H、Oおよび（　　）である。",
+    "choices": [
+      "N",
+      "F",
+      "Na",
+      "Mg"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の機能・組成",
+    "exam_number": 6,
+    "question_text": "（　　）に入るのはどれか。\n\nエナメル質に含まれる少量無機質成分で、（　　）はエナメル質表層の濃度が内部よりも高い。",
+    "choices": [
+      "炭　酸",
+      "フッ素",
+      "ナトリウム",
+      "マグネシウム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am007",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 7,
+    "question_text": "消化器系の模式図を示す。\npHの最も低い消化液が分泌されるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am008",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の機能・組成",
+    "exam_number": 8,
+    "question_text": "唾液で正しいのはどれか。",
+    "choices": [
+      "比重は血漿よりも大きい。",
+      "浸透圧は血漿よりも高い。",
+      "安静時は弱アルカリ性である。",
+      "浸透圧は分泌速度が速くなると上昇する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "病因と病態",
+    "exam_number": 9,
+    "question_text": "歯肉腫瘍の病理組織の模式図を示す。黒塗りは腫瘍細胞の分布を示す。\nこの腫瘍はどれか。",
+    "choices": [
+      "乳頭腫",
+      "線維腫",
+      "線維肉腫",
+      "扁平上皮癌"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "病因と病態",
+    "exam_number": 10,
+    "question_text": "歯牙腫で正しいのはどれか。",
+    "choices": [
+      "高齢者に好発する。",
+      "セメント質は含まれない。",
+      "歯の萌出障害の原因となる。",
+      "顎骨を破壊して浸潤増殖する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 11,
+    "question_text": "細菌の運動にかかわる構造物はどれか。",
+    "choices": [
+      "芽　胞",
+      "莢　膜",
+      "鞭　毛",
+      "細胞壁"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 12,
+    "question_text": "抗体＜IgG＞の基本構造の模式図を示す。\n矢印が示すのはどれか。",
+    "choices": [
+      "ヒンジ部",
+      "抗原結合部",
+      "補体結合部",
+      "Fcレセプター結合部"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 13,
+    "question_text": "薬剤感受性試験の拡散法＜感受性ディスク法＞の写真を別に示す。矢印で示した黒丸は薬剤を含んだディスクである。\n最も効果のあるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 14,
+    "question_text": "ロキソプロフェンナトリウムが阻害するのはどれか。",
+    "choices": [
+      "コリンエステラーゼ",
+      "シクロオキシゲナーゼ",
+      "トランスペプチダーゼ",
+      "ホスホジエステラーゼ"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 15,
+    "question_text": "薬物を経口投与と静脈内投与した時の血中薬物濃度－時間曲線を図に示す。\n斜線部面積と点状部面積の2つの比から求められるのはどれか。",
+    "choices": [
+      "分布容積",
+      "生物学的利用能",
+      "生物学的半減期",
+      "全身クリアランス"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "う蝕の予防",
+    "exam_number": 16,
+    "question_text": "ショ糖から不溶性の多糖類を作るのはどれか。2つ選べ。",
+    "choices": [
+      "Streptococcus mitis",
+      "Streptococcus mutans",
+      "Streptococcus sanguinis",
+      "Streptococcus sobrinus"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "総論",
+    "exam_number": 17,
+    "question_text": "舌苔を主に構成するのはどれか。2つ選べ。",
+    "choices": [
+      "味　蕾",
+      "微生物",
+      "獲得被膜",
+      "剥落角化上皮"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "口腔清掃",
+    "exam_number": 18,
+    "question_text": "我が国におけるフッ化物配合歯磨剤で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "高齢者のう蝕予防に推奨される。",
+      "歯みがき後は水で頻回に洗口する。",
+      "近年の市場占有率は約70％である。",
+      "フッ素イオン濃度は0.1％以下である。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "地域歯科保健活動",
+    "exam_number": 19,
+    "question_text": "ある地域の1歳6か月児歯科健康診査の結果を表に示す。\nう蝕有病者率はどれか。",
+    "choices": [
+      "20％",
+      "25％",
+      "35％",
+      "75％"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "歯科疾患の疫学と歯科保健統計",
+    "exam_number": 20,
+    "question_text": "歯垢と歯石の付着状態を図に示す。\nOHIの値はどれか。",
+    "choices": [
+      "0.5",
+      "1.75",
+      "3.5",
+      "4.5"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "歯科疾患の疫学と歯科保健統計",
+    "exam_number": 21,
+    "question_text": "歯科疾患実態調査結果で近年増加しているのはどれか。2つ選べ。",
+    "choices": [
+      "1日1回歯をみがく者の割合＜1歳以上＞",
+      "フッ化物塗布経験者率＜1～14歳＞",
+      "未処置歯保有者率＜10～14歳＞",
+      "20歯以上を有する者の割合＜65歳以上＞"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 22,
+    "question_text": "学校保健活動の企画立案や調整で中心的な役割を担うのはどれか。",
+    "choices": [
+      "学級担任",
+      "教務主任",
+      "保健主事",
+      "学校歯科医"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 23,
+    "question_text": "人口ピラミッドの模式図を示す。\n平成22年10月1日現在の我が国の人口構成の特徴を示すのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 24,
+    "question_text": "非電離放射線はどれか。2つ選べ。",
+    "choices": [
+      "赤外線",
+      "ベータ線",
+      "ガンマ線",
+      "マイクロ波"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 25,
+    "question_text": "デング熱を媒介するのはどれか。",
+    "choices": [
+      "蚊",
+      "蛾",
+      "ダ　ニ",
+      "ゴキブリ"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 26,
+    "question_text": "特定健康診査・特定保健指導の実施義務があるのはどれか。",
+    "choices": [
+      "事業主",
+      "保健所",
+      "都道府県",
+      "医療保険者"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "地域歯科保健活動",
+    "exam_number": 27,
+    "question_text": "母子保健法で歯科健康診査の実施が義務づけられているのはどれか。",
+    "choices": [
+      "妊婦健康診査",
+      "乳児健康診査",
+      "3歳児健康診査",
+      "就学時健康診断"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 28,
+    "question_text": "地域包括支援センターの業務はどれか。2つ選べ。",
+    "choices": [
+      "高齢者の権利擁護",
+      "介護事業者の指定",
+      "生活保護の要否判定",
+      "介護予防ケアマネジメント"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "保健・医療・福祉の制度",
+    "exam_number": 29,
+    "question_text": "健康増進法に規定されているのはどれか。2つ選べ。",
+    "choices": [
+      "食中毒の予防",
+      "受動喫煙の防止",
+      "国民健康・栄養調査の実施",
+      "市町村保健センターの設置"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "保健・医療・福祉の制度",
+    "exam_number": 30,
+    "question_text": "我が国の社会保険において現物給付を主としているのはどれか。2つ選べ。",
+    "choices": [
+      "年金保険",
+      "医療保険",
+      "雇用保険",
+      "介護保険"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am031",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "栄養・食生活の基礎",
+    "exam_number": 31,
+    "question_text": "食品の六分類＜六つの基礎食品群＞における食品と供給される主な栄養素との組合せで正しいのはどれか。",
+    "choices": [
+      "そ　ば -- ビタミンC",
+      "こんぶ -- カルシウム",
+      "きゅうり -- カロテン",
+      "マヨネーズ -- タンパク質"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am032",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "栄養・食生活の基礎",
+    "exam_number": 32,
+    "question_text": "国民健康・栄養調査による女性の朝食欠食率＜年齢階級別＞の年次推移を図に示す。\n矢印が示す年齢階級はどれか。",
+    "choices": [
+      "15～19歳",
+      "20～29歳",
+      "30～39歳",
+      "40～49歳"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am033",
+    "category": "歯科診療補助論",
+    "subcategory": "総論",
+    "exam_number": 33,
+    "question_text": "歯科診療時にみられるヒヤリ・ハット事例はどれか。",
+    "choices": [
+      "37に行うはずのSRPを47に行った。",
+      "歯垢染色剤を患者の衣服に付着させた。",
+      "浸潤麻酔に使用した注射針の先端を指に刺した。",
+      "車椅子での移乗介助時に患者が壁にぶつかりそうになった。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am034",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 34,
+    "question_text": "健常者と比較して糖尿病患者の歯石除去で特に留意すべきことはどれか。2つ選べ。",
+    "choices": [
+      "低血糖",
+      "診療体位",
+      "術後感染",
+      "気道閉塞"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am035",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 35,
+    "question_text": "肝機能検査の項目はどれか。",
+    "choices": [
+      "BUN",
+      "CRP",
+      "HbAlc",
+      "γ-GTP"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am036",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 36,
+    "question_text": "根管治療に使用する器具の写真を別に示す。\n用途はどれか。",
+    "choices": [
+      "髄室開拡",
+      "根管長測定",
+      "漏斗状拡大",
+      "軟化象牙質除去"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am037",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 37,
+    "question_text": "根管充塡時の術式を写真に示す。\n矢印で示す材料の作用はどれか。2つ選べ。",
+    "choices": [
+      "鎮　痛",
+      "封　鎖",
+      "殺　菌",
+      "接　着"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am038",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 38,
+    "question_text": "くさび状欠損の原因はどれか。",
+    "choices": [
+      "口呼吸",
+      "弄舌癖",
+      "ブラキシズム",
+      "口腔清掃不良"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am039",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 39,
+    "question_text": "第二小臼歯にコンポジットレジン修復を行うこととなった。処置時の口腔内写真を別に示す。\n矢印で示す器材の使用目的はどれか。2つ選べ。",
+    "choices": [
+      "接触点の回復",
+      "小窩裂溝の形成",
+      "隣接面の形態付与",
+      "辺縁隆線の形態付与"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am040",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 40,
+    "question_text": "歯髄の生死を判断できる検査はどれか。2つ選べ。",
+    "choices": [
+      "打　診",
+      "温度診",
+      "電気診",
+      "インピーダンス測定検査"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am041",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 41,
+    "question_text": "36歳の女性。臼歯部の鋭い自発痛を訴えて来院した。温刺激および打診に対して強く反応する。初診時の口腔内写真（A）とエックス線写真（B）とを別に示す。\n考えられる処置はどれか。",
+    "choices": [
+      "間接覆髄法",
+      "麻酔抜髄法",
+      "生活歯髄切断法",
+      "アペキソゲネーシス"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am042",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 42,
+    "question_text": "38歳の女性。上顎左側中切歯部の腫脹と疼痛とを訴えて来院し、根尖性歯周炎と診断された。術中の口腔内写真を別に示す。\n矢印で示す材料として考えられるのはどれか。",
+    "choices": [
+      "MTAセメント",
+      "リン酸亜鉛セメント",
+      "カルボキシレートセメント",
+      "酸化亜鉛ユージノールセメント"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am043",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 43,
+    "question_text": "47歳の女性。歯周治療後のメインテナンス時の口腔内写真（A、B、C）と歯周組織検査結果とを別に示す。\n対応で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "PTC",
+      "臼歯部の清掃指導",
+      "歯周ポケット搔爬",
+      "局所薬物配送システムの応用"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am044",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 44,
+    "question_text": "42歳の女性。歯の動揺を訴えて来院した。検査の結果、小臼歯から大臼歯にかけて2度の動揺を認めたため暫間固定を行った。固定後の口腔内写真を別に示す。\n固定法の種類はどれか。",
+    "choices": [
+      "A-スプリント",
+      "ホーレー型固定",
+      "オクルーザルスプリント",
+      "エナメルボンディング固定"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am045",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 45,
+    "question_text": "80歳の女性。上顎が無歯顎であり義歯を使用しているが、適合が悪く前歯部粘膜に軟らかい可動性組織がある。前処置を行った後、新たに全部床義歯を製作する予定である。\n前処置として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "粘膜調整",
+      "レストシートの付与",
+      "フラビーガムの切除",
+      "ガイドプレーンの形成"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am046",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 46,
+    "question_text": "チェックバイト法で検査する項目はどれか。",
+    "choices": [
+      "開口量",
+      "咬合音",
+      "下顎運動路",
+      "咀嚼筋活動"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am047",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 47,
+    "question_text": "47歳の男性。部分床義歯を装着した。口腔内写真（A）と義歯の写真（B）とを別に示す。\nこの義歯の咬合圧支持による分類はどれか。",
+    "choices": [
+      "顎骨支持",
+      "歯牙支持",
+      "粘膜支持",
+      "歯牙粘膜支持"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am048",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 48,
+    "question_text": "58歳の女性。上顎左側前歯部の顎骨嚢胞摘出術において、粘膜骨膜弁を形成し、嚢胞を明示した術中写真を別に示す。\n次に行う処置で用いるのはどれか。2つ選べ。",
+    "choices": [
+      "鋭　匙",
+      "持針器",
+      "剥離子",
+      "骨ヤスリ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am049",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 49,
+    "question_text": "口腔にみられる悪性腫瘍のうち、発生頻度が最も高いのはどれか。",
+    "choices": [
+      "腺　癌",
+      "骨肉腫",
+      "悪性黒色腫",
+      "扁平上皮癌"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am050",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 50,
+    "question_text": "血友病患者の抜歯で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "伝達麻酔を行う。",
+      "創縁縫合法を行う。",
+      "局所止血薬を用いる。",
+      "抗菌薬を術前投与する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am051",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 51,
+    "question_text": "健常成人に対する吸入鎮静法における至適鎮静状態で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "術者の指示に従う。",
+      "身体全体が冷える。",
+      "まばたきが増加する。",
+      "呼吸数は正常である。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am052",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 52,
+    "question_text": "口腔内写真を別に示す。\n両側中切歯の状態を表すのはどれか。",
+    "choices": [
+      "移　転",
+      "正中離開",
+      "舌側転位",
+      "翼状捻転"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am053",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 53,
+    "question_text": "口腔模型の写真を別に示す。\nAngleの分類はどれか。",
+    "choices": [
+      "Ⅰ　級",
+      "Ⅱ級1類",
+      "Ⅱ級2類",
+      "Ⅲ　級"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am054",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 54,
+    "question_text": "矯正装置を装着した口腔内写真を別に示す。\n矢印で示す材料の名称はどれか。",
+    "choices": [
+      "エラストメリックチェーン",
+      "オープンコイルスプリング",
+      "エラストメリックモジュール",
+      "エキスパンジョンスクリュー"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am055",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 55,
+    "question_text": "矯正装置を装着した口腔内写真を別に示す。\n装置の名称はどれか。",
+    "choices": [
+      "床矯正装置",
+      "急速拡大装置",
+      "バイオネーター",
+      "ホーレーリテーナー"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am056",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 56,
+    "question_text": "7歳の男児。歯の生え方が気になることを訴えて来院した。口腔内写真を別に示す。\n原因として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "吸指癖",
+      "埋伏過剰歯",
+      "上唇小帯付着異常",
+      "側切歯の先天欠如"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am057",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 57,
+    "question_text": "3歳の女児。歯の形の異常を訴えて来院した。口腔内写真を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "切歯結節",
+      "中心結節",
+      "エナメル滴",
+      "カラベリー結節"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am058",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 58,
+    "question_text": "2歳児の歯科治療時に留意すべきことはどれか。2つ選べ。",
+    "choices": [
+      "自己中心的である。",
+      "母子分離が有効である。",
+      "視覚からの恐怖心が強い。",
+      "言葉による説明で理解が得られる。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am059",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 59,
+    "question_text": "口腔から食道までの食塊の流れと諸器官の運動とを評価できる方法はどれか。",
+    "choices": [
+      "嚥下造影検査",
+      "嚥下内視鏡検査",
+      "反復唾液嚥下テスト",
+      "段階的フードテスト"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am060",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 60,
+    "question_text": "（　　）に入る語句の組合せで正しいのはどれか。\nメンデルソン手技は（➀）を改善し、輪状咽頭筋による（②）を促す。",
+    "choices": [
+      "➀軟口蓋拳上 -- ②鼻咽腔閉鎖",
+      "➀喉頭拳上 -- ②食道入口部の開大",
+      "➀声帯の内転 -- ②喉頭蓋の反転",
+      "➀声門閉鎖 -- ②構音の明瞭化"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 61,
+    "question_text": "摂食嚥下障害患者に対する機能訓練の口腔内写真を示す。\n目的はどれか。",
+    "choices": [
+      "声帯の内転強化",
+      "唾液分泌の抑制",
+      "嚥下誘発の感受性向上",
+      "舌骨を拳上する筋の筋力増強"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am062",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 62,
+    "question_text": "35歳の女性。定期健康診査で来院した。口腔内写真を別に示す。\n観察できるのはどれか。",
+    "choices": [
+      "歯　石",
+      "食物残渣",
+      "色素沈着",
+      "マテリアアルバ"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 63,
+    "question_text": "38歳の女性。喉頭癌の放射線治療中である。主治医の指示により歯科を受診した。検査結果を表に示す。\n歯科医師の指示により行う処置はどれか。2つ選べ。",
+    "choices": [
+      "PTC",
+      "小窩裂溝塡塞",
+      "局所薬物配送システムの応用",
+      "2%フッ化ナトリウム溶液歯面塗布"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 64,
+    "question_text": "歯周病の発症リスクを示す検査結果はどれか。",
+    "choices": [
+      "BMI -- 20",
+      "血　圧 -- 160/100mmHg",
+      "HbAlc -- 7.3%",
+      "HBe抗原 -- 陽　性"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 65,
+    "question_text": "歯周炎再発の客観的評価で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "歯槽骨吸収量の減少",
+      "歯周ポケットの深化",
+      "アタッチメントレベルの増加",
+      "プロービング時の出血の減少"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 66,
+    "question_text": "付着歯肉幅を示すのはどれか。",
+    "choices": [
+      "歯肉辺縁からポケット底",
+      "歯肉辺縁から歯肉歯槽粘膜境",
+      "ポケット底から歯肉歯槽粘膜境",
+      "セメント-エナメル境からポケット底"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am067",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科保健指導の基礎",
+    "exam_number": 67,
+    "question_text": "GI＜LöeとSilness＞のプローブ操作法はどれか。",
+    "choices": [
+      "ポケット底に到達させる。",
+      "測定部位は6点法を用いる。",
+      "歯肉辺縁部に沿って擦過する。",
+      "ウォーキングストロークで行う。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 68,
+    "question_text": "検査時の口腔内写真を別に示す。\n検査項目はどれか。",
+    "choices": [
+      "歯間離開度",
+      "隣接面う蝕",
+      "歯髄の生死",
+      "アタッチメントレベル"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 69,
+    "question_text": "器具と歯面に対する操作角度との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "エアスケーラー -- 90度",
+      "超音波スケーラー -- 15度",
+      "グレーシータイプキュレット -- 70度",
+      "ユニバーサルタイプキュレット -- 55度"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 70,
+    "question_text": "超音波スケーラーで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "用途別のチップがある。",
+      "エアロゾルの発生を抑制する。",
+      "塩分摂取制限患者に使用できる。",
+      "ペースメーカー装着者に使用できる。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 71,
+    "question_text": "バックポジションでグレーシータイプキュレットを用いて34頰側近心面のSRPを行った。\n同じキュレットを用いて同じポジションで行うことができる部位はどれか。",
+    "choices": [
+      "15頰側近心",
+      "26口蓋側遠心",
+      "44舌側近心",
+      "47頰側遠心"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 72,
+    "question_text": "グレーシータイプキュレット＃11/12とテストスティックとの写真を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 73,
+    "question_text": "歯面清掃器に使用されるのはどれか。",
+    "choices": [
+      "水酸化ナトリウム",
+      "ケイ酸ナトリウム",
+      "フッ化ナトリウム",
+      "炭酸水素ナトリウム"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 74,
+    "question_text": "歯周治療後の再評価検査で、「6か月に1度のメインテナンス」に移行できるのはどれか。",
+    "choices": [
+      "PCRが30％である。",
+      "BOPが全部位の35％にある。",
+      "すべての歯の動揺が0.2mm以下である。",
+      "4mm以上の歯周ポケットが全部位の30％にある。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 75,
+    "question_text": "50歳女性。定期健康診査で来院し、下顎前歯部の冷水痛を訴えている。ポケット測定の結果を表に示す。BOP、動揺および歯の実質欠損はない。\n処置に使用すると考えられるのはどれか。",
+    "choices": [
+      "フッ化ジアンミン銀",
+      "接着性レジンセメント",
+      "フッ化物バーニッシュ",
+      "グラスアイオノマーセメント"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 76,
+    "question_text": "う蝕活動性を反映する宿主因子はどれか。",
+    "choices": [
+      "細菌数",
+      "間食頻度",
+      "唾液緩衝能",
+      "プラーク形成速度"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 77,
+    "question_text": "週1回法のフッ化物洗口液1mLに含まれるフッ素量はどれか。",
+    "choices": [
+      "0.25mg",
+      "0.45mg",
+      "0.90mg",
+      "1.80mg"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am078",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 78,
+    "question_text": "厚生労働省の「フッ化物洗口ガイドライン」による洗口の開始年齢はどれか。",
+    "choices": [
+      "1歳6か月",
+      "2歳",
+      "3歳",
+      "4歳"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am079",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 79,
+    "question_text": "レジン系小窩裂溝塡塞法の術式で誤っているのはどれか。",
+    "choices": [
+      "填塞後は咬合調整を行う。",
+      "ラバーダム防湿を行うのが望ましい。",
+      "歯面清掃にはフッ化物製剤を使用する。",
+      "酸処理剤の水洗・乾燥後に白濁を確認する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 80,
+    "question_text": "個人への食生活指導で誤っているのはどれか。",
+    "choices": [
+      "指導は画一的に実施する。",
+      "身体活動レベルを考慮する。",
+      "実践可能な目標を設定する。",
+      "指導前後の行動変容から評価する。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科保健指導の基礎",
+    "exam_number": 81,
+    "question_text": "9歳の男児。未処置歯が多数あり、歯垢の付着が著明で歯肉に腫脹と出血がみられる。髪や服装も異臭がするほど明らかに不潔である。また極端に痩せている。歯や粘膜の損傷や身体のアザなどは認められないが、母親の男児に対する拒絶的な態度がしばしばみられる。\n疑われるのはどれか。2つ選べ。",
+    "choices": [
+      "性的虐待",
+      "心理的虐待",
+      "身体的虐待",
+      "ネグレクト"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am082",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 82,
+    "question_text": "高齢者の基本的日常生活動作を評価する「機能的自立度評価表＜FIM＞」の評価項目はどれか。2つ選べ。",
+    "choices": [
+      "買物をしている。",
+      "着替えをしている。",
+      "薬を服用している。",
+      "ベッドへ移乗している。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 83,
+    "question_text": "歯ブラシの毛先の模式図を示す。\nテーパードタイプはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 84,
+    "question_text": "離乳初期の食事の与え方で正しいのはどれか。",
+    "choices": [
+      "水分は流し入れるようにする。",
+      "小さくて浅いスプーンを使用する。",
+      "スプーンは舌中央より奥に入れる。",
+      "乳児の上体は床に対して約30度に支える。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 85,
+    "question_text": "57歳の女性。定期健康診査で来院した。日常のブラッシングは、1日2回、ヘッドの大きさが18mmでナイロン毛の歯ブラシを使用している。歯垢染色後の口腔内写真を別に示す。\n口腔清掃指導で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "チャーターズ法を指導する。",
+      "歯間部清掃用具の使用を指導する。",
+      "1歯ずつの縦磨き法の併用を指導する。",
+      "歯ブラシのヘッドを大きいものに変更するよう指導する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 86,
+    "question_text": "口腔内写真（A）と口腔清掃用具の写真（B）とを別に示す。\n点線で囲まれた部位の清掃に適するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 87,
+    "question_text": "保育所より依頼され、幼児の保護者へ間食指導を行うこととなった。指導に用いる図を示す。\n図から説明できる歯科保健指導の内容で適切なのはどれか。",
+    "choices": [
+      "回数を減らす。",
+      "時間を決める。",
+      "粘着性食品を控える。",
+      "非発酵性糖質の食品を選ぶ。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 88,
+    "question_text": "この「保護者の記録」に該当する年齢はどれか。",
+    "choices": [
+      "6～7か月",
+      "1歳0か月",
+      "1歳6か月",
+      "3歳0か月"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 89,
+    "question_text": "上顎乳前歯の唇側歯頸部に歯質の脱灰と一部実質欠損が認められた。\n「保護者の記録」の記録をふまえ、保護者へ行う歯科保健指導の内容で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "歯科医院の受診を勧める。",
+      "ガーゼによる歯の清拭を指導する。",
+      "食事や間食を規則正しくとるよう指導する。",
+      "哺乳ビンの使用はお茶の飲用に限るよう指導する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科保健指導の基礎",
+    "exam_number": 90,
+    "question_text": "観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "上顎両側中切歯 -- 水平性歯槽骨吸収",
+      "上顎右側側切歯 -- フェストゥーン",
+      "下顎右側側切歯 -- 歯肉退縮",
+      "下顎左側中切歯 -- 歯肉クレフト"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am091",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 91,
+    "question_text": "歯周基本治療を行うこととなった。歯科医師から歯科保健指導を指示された。\n適切でないのはどれか。",
+    "choices": [
+      "歯間部の清掃方法を指導する。",
+      "鏡で自分の口腔内を観察させる。",
+      "ニコチン代替療法を選択させる。",
+      "歯周病と喫煙との関係について説明する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am092",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 92,
+    "question_text": "特別養護老人ホームにおける保健活動で、ポピュレーションアプローチはどれか。2つ選べ。",
+    "choices": [
+      "入所者が食事の前にパタカラ発音訓練をする。",
+      "歯石沈着が認められる入所者に歯石除去を行う。",
+      "介護職員に対して誤嚥性肺炎予防の講習を行う。",
+      "嚥下障害の兆候がある入所者に嚥下機能訓練をする。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am093",
+    "category": "歯科診療補助論",
+    "subcategory": "総論",
+    "exam_number": 93,
+    "question_text": "相対的歯科医行為でないのはどれか。",
+    "choices": [
+      "暫間被覆冠の除去",
+      "歯冠修復物の咬合調整",
+      "アタッチメントレベルの測定",
+      "歯科エックス線写真撮影の準備"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am094",
+    "category": "歯科診療補助論",
+    "subcategory": "総論",
+    "exam_number": 94,
+    "question_text": "医療用酸素吸入器の管理項目と方法との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "酸素残量の把握 -- ガス使用量を記録する。",
+      "ボンベの保管温度 -- 40℃以下で保管する。",
+      "バルブの潤滑維持 -- 油脂類を厚めに塗る。",
+      "保湿用タンクの水交換 -- 3か月に1回行う。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am095",
+    "category": "歯科診療補助論",
+    "subcategory": "総論",
+    "exam_number": 95,
+    "question_text": "下顎左側第一大臼歯の治療時における「ヘッドレスト」と「ライトの照射位置」とを図に示す。術者の位置は12時である。\n正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "主要歯科材料の種類、取扱いと管理 ",
+    "exam_number": 96,
+    "question_text": "カルボキシレートセメントの取扱いで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "液の滴下口を拭き取ってから密栓する。",
+      "粉末は一括または2分割して練和する。",
+      "練和は1分30秒を目安とする。",
+      "練和後に余った粉末は容器に戻す。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "主要歯科材料の種類、取扱いと管理 ",
+    "exam_number": 97,
+    "question_text": "ストッピングキャリアの写真を別に示す。\n口腔内操作時のカバーの位置で正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 98,
+    "question_text": "歯根膜炎が認められる歯の金属冠を除去することになった。\n準備する器具はどれか。",
+    "choices": [
+      "カーバイドバー",
+      "ホワイトポイント",
+      "シリコーンポイント",
+      "フィニッシングバー"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 99,
+    "question_text": "歯髄保護の処置と薬剤・セメントとの組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "裏　層 -- リン酸亜鉛セメント",
+      "間接覆髄 -- HY剤配合カルボキシレートセメント",
+      "直接覆髄 -- 酸化亜鉛ユージノールセメント",
+      "歯髄鎮痛消炎法 -- 水酸化カルシウム製剤"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 100,
+    "question_text": "根管治療時に用いる器具の写真を別に示す。\n電気的根管長測定器を用いた測定時に使用するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "補綴治療時の診療補助",
+    "exam_number": 101,
+    "question_text": "78歳の女性。有歯顎である。チェックバイトを採得することとなった。咬合記録材として準備するのはどれか。2つ選べ。",
+    "choices": [
+      "石　膏",
+      "記録用クレヨン",
+      "シリコーンラバー",
+      "パラフィンワックス"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am102",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 102,
+    "question_text": "支台歯形成が終了した写真（A）と、次に使用する材料の写真（B）とを別に示す。\nBを使用するときに用いるのはどれか。",
+    "choices": [
+      "ワックス",
+      "適合試験材",
+      "合着用セメント",
+      "常温重合レジン"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "口腔外科治療時の診療補助",
+    "exam_number": 103,
+    "question_text": "術中の口腔内写真を別に示す。\n下顎隆起の除去に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "剪　刃",
+      "挺　子",
+      "骨ノミ",
+      "マレット"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "口腔外科治療時の診療補助",
+    "exam_number": 104,
+    "question_text": "歯科治療恐怖症患者の歯科治療時に用いる機器の写真を別に示す。\nこの機器を用いて投与するのはどれか。2つ選べ。",
+    "choices": [
+      "酸　素",
+      "笑　気",
+      "二酸化炭素",
+      "セボフルラン"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "矯正歯科治療時の診療補助",
+    "exam_number": 105,
+    "question_text": "18歳の女性。頬粘膜に傷ができて痛いと訴えて来院した。バッカルチューブの遠心端からアーチワイヤーが3mm程度突出している。プライヤーの写真を別に示す。\n突出部の処理に使用するプライヤーはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 106,
+    "question_text": "上顎乳切歯3級窩洞のコンポジットレジン修復に使用する器材はどれか。",
+    "choices": [
+      "クラウンフォーム",
+      "マトリックスバンド",
+      "サービカルマトリックス",
+      "セルロイドストリップス"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am107",
+    "category": "臨床歯科医学",
+    "subcategory": "障害者の理解と歯科治療",
+    "exam_number": 107,
+    "question_text": "摂食嚥下障害者に対する食環境指導で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "摂食の姿勢",
+      "自食の訓練",
+      "食器の工夫",
+      "鼻呼吸の訓練"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am108",
+    "category": "歯科診療補助論",
+    "subcategory": "エックス線写真撮影時の診療補助",
+    "exam_number": 108,
+    "question_text": "個体半導体センサー＜CCD＞を用いたデジタルエックス線撮影システムの特徴で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "解像度が高い。",
+      "暗室が必要である。",
+      "感染予防が不要である。",
+      "撮影後すぐに画像を確認できる。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "臨床検査法",
+    "exam_number": 109,
+    "question_text": "68歳の男性。口腔乾燥を訴えて来院した。シェーグレン症候群が疑われたため、検査を行うこととなった。\n適切でない検査はどれか。",
+    "choices": [
+      "血液検査",
+      "唾液緩衝能検査",
+      "唾液腺造影検査",
+      "刺激時唾液分泌量検査"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "救急救命処置",
+    "exam_number": 110,
+    "question_text": "成人の心肺蘇生＜CPR＞の胸骨圧迫で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "胸骨圧迫は片手で行う。",
+      "少なくとも1分間に100回行う。",
+      "胸骨圧迫50回に対し人工呼吸を2回行う。",
+      "AEDを装着するまで行う。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の構造",
+    "exam_number": 1,
+    "question_text": "左右で対になっているのはどれか。",
+    "choices": [
+      "肝　臓",
+      "心　臓",
+      "腎　臓",
+      "膵　臓"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の構造",
+    "exam_number": 2,
+    "question_text": "口腔内写真を別に示す。\n矢印で示す部位に開口する唾液腺の導管が貫くのはどれか。",
+    "choices": [
+      "咬　筋",
+      "頰　筋",
+      "口輪筋",
+      "内側翼突筋"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm003",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 3,
+    "question_text": "心臓から口腔へ向かう動脈経路で、体表から脈拍を触れるのはどれか。",
+    "choices": [
+      "顎動脈",
+      "内頸動脈",
+      "総頸動脈",
+      "鎖骨下動脈"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm004",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 4,
+    "question_text": "細胞の模式図を示す。\n矢印で示す細胞内小器官で産生されるのはどれか。",
+    "choices": [
+      "ATP",
+      "酸　素",
+      "脂肪酸",
+      "グリコーゲン"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm005",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 5,
+    "question_text": "Ⅰ型コラーゲンの特徴で正しいのはどれか。",
+    "choices": [
+      "3本鎖らせん構造である。",
+      "加熱しても形状が安定している。",
+      "生体では希少なタンパク質である。",
+      "最も多く含まれるアミノ酸はグルタミン酸である。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm006",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 6,
+    "question_text": "副交感神経の活動が亢進すると起こるのはどれか。",
+    "choices": [
+      "瞳孔散大",
+      "発汗増加",
+      "心拍数増加",
+      "胃酸分泌亢進"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm007",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 7,
+    "question_text": "（　　）に入るのはどれか。\n腸管で吸収された（　　）はリンパ管に入った後、静脈で血管系に流入して肝臓に運ばれる。",
+    "choices": [
+      "果　糖",
+      "脂肪酸",
+      "アミノ酸",
+      "ブドウ糖"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm008",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 8,
+    "question_text": "慢性炎症時に出現し、抗体を産生するのはどれか。",
+    "choices": [
+      "好中球",
+      "形質細胞",
+      "マクロファージ",
+      "T細胞＜Tリンパ球＞"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "病因と病態",
+    "exam_number": 9,
+    "question_text": "（　　）に入る語句の組合せで正しいのはどれか。\nエナメル質の初期う蝕には（➀）がみられ、さらに進行すると（②）が起こる。",
+    "choices": [
+      "➀表層下脱灰 -- ②再石灰化",
+      "➀表層下脱灰 -- ②実質欠損",
+      "➀生活反応層 -- ②再石灰化",
+      "➀生活反応層 -- ②実質欠損"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "病因と病態",
+    "exam_number": 10,
+    "question_text": "波動を触れる腫瘤の写真を別に示す。\n腫瘤の主体をなす病理組織所見はどれか。",
+    "choices": [
+      "骨形成",
+      "粘液貯留",
+      "角化物＜角質物＞",
+      "メラニン色素沈着"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 11,
+    "question_text": "多剤耐性細菌のグラム染色像の写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "Escherichia coli",
+      "Mycobacterium tuberculosis",
+      "Pseudomonas aeruginosa",
+      "Staphylococcus aureus"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 12,
+    "question_text": "遅延型アレルギーはどれか。",
+    "choices": [
+      "金属アレルギー",
+      "アレルギー性鼻炎",
+      "アトピー性皮膚炎",
+      "ペニシリンショック"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 13,
+    "question_text": "リドカインが阻害するのはどれか。",
+    "choices": [
+      "K<sup>+</sup>チャネル",
+      "Cl<sup>-</sup>チャネル",
+      "Na<sup>+</sup>チャネル",
+      "Ca<sup>2+</sup>チャネル"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 14,
+    "question_text": "低用量アスピリンの使用目的はどれか。",
+    "choices": [
+      "歯痛の緩和",
+      "耳鳴りの抑制",
+      "皮膚角質の溶解",
+      "血栓形成の予防"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 15,
+    "question_text": "交感・副交感神経系の模式図を示す。\nノルアドレナリンが使用する部位はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "総論",
+    "exam_number": 16,
+    "question_text": "ペリクルで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "有機物を含まない。",
+      "形成に数日を要する。",
+      "歯面を物理的に保護する。",
+      "微生物の歯面への付着を促進する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "総論",
+    "exam_number": 17,
+    "question_text": "歯肉縁下歯石で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "歯肉へ物理的刺激を与える。",
+      "有機成分が80％を超えている。",
+      "歯垢のpHが低いと形成されやすい。",
+      "血漿成分中のカルシウムで形成される。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "口腔清掃",
+    "exam_number": 18,
+    "question_text": "歯磨剤の基本成分はどれか。",
+    "choices": [
+      "塩化ナトリウム",
+      "アルギン酸ナトリウム",
+      "ポリリン酸ナトリウム",
+      "アズレンスルホン酸ナトリウム"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "う蝕の予防",
+    "exam_number": 19,
+    "question_text": "体重15kgの3歳の女児。リン酸酸性フッ化ナトリウム溶液＜2％NaF配合＞を使用しフッ化物歯面塗布を行うこととなった。急性中毒発現量は2mgF/体重kgとする。\n使用可能な溶液の上限量はどれか。",
+    "choices": [
+      "1.5mL",
+      "3.3mL",
+      "15.0mL",
+      "33.0mL"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "歯科疾患の疫学と歯科保健統計",
+    "exam_number": 20,
+    "question_text": "ある小学校の5年生の学校歯科健康診断の結果を表に示す。\nDMF歯率（％）はどれか。",
+    "choices": [
+      "1",
+      "4",
+      "40",
+      "95"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "歯科疾患の疫学と歯科保健統計",
+    "exam_number": 21,
+    "question_text": "ある集団の調査結果の一部を表に示す。\n正しい組合せはどれか。",
+    "choices": [
+      "被験者ID -- 比率尺度",
+      "性　別 -- 名義尺度",
+      "口腔の健康度 -- 間隔尺度",
+      "DMF歯数 -- 順序尺度"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm022",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 22,
+    "question_text": "重度歯周炎に関連する「Red Complex」に含まれるのはどれか。2つ選べ。",
+    "choices": [
+      "Aggregatibacter actinomycetemcomitans",
+      "Prevotella intermedia",
+      "Tannerella forsythensis＜forsythia＞",
+      "Treponema denticola"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 23,
+    "question_text": "労働安全衛生法で、特定の有害な業務に従事する労働者に対して、歯科医師が行うことを事業主に義務づけているのはどれか。",
+    "choices": [
+      "臨時健康診断",
+      "一般健康診断",
+      "特殊健康診断",
+      "特定健康診査"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 24,
+    "question_text": "ヘルスプロモーションの取組みで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "先進医療の導入",
+      "健康診査の精度向上",
+      "健康づくりグループの育成",
+      "ウォーキングコースの整備"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 25,
+    "question_text": "1年間における食中毒患者の発生割合を示すのはどれか。",
+    "choices": [
+      "受診率",
+      "有病率",
+      "罹患率",
+      "受療率"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 26,
+    "question_text": "定期の予防接種の対象疾病はどれか。2つ選べ。",
+    "choices": [
+      "ポリオ",
+      "破傷風",
+      "B型肝炎",
+      "流行性耳下腺炎"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 27,
+    "question_text": "保健所の業務はどれか。2つ選べ。",
+    "choices": [
+      "保険医の指導",
+      "HIV検査の実施",
+      "業務上疾病の認定",
+      "精神障害者の相談"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 28,
+    "question_text": "学校保健で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "定期健康診断は毎年6月末までに行う。",
+      "感染症の予防のための措置が含まれる。",
+      "教科で行う保健学習は保健管理に含まれる。",
+      "大学は学校歯科医を配置しなければならない。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "保健・医療・福祉の制度",
+    "exam_number": 29,
+    "question_text": "歯科衛生士法に規定されていないのはどれか。",
+    "choices": [
+      "療養上の世話",
+      "免許の取消し",
+      "秘密保持義務",
+      "名称の使用制限"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "保健・医療・福祉の制度",
+    "exam_number": 30,
+    "question_text": "歯科診療所1施設あたりの職種別従事者数の推移を図に示す。\n矢印が示すのはどれか。",
+    "choices": [
+      "事務職員",
+      "歯科衛生士",
+      "歯科技工士",
+      "歯科業務補助者"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm031",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "栄養・食生活の基礎",
+    "exam_number": 31,
+    "question_text": "ビタミンB2の欠乏でみられるのはどれか。",
+    "choices": [
+      "夜盲症",
+      "口角炎",
+      "壊血病",
+      "骨粗鬆症"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm032",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "栄養・食生活の基礎",
+    "exam_number": 32,
+    "question_text": "日本人の食事摂取基準で正しいのはどれか。",
+    "choices": [
+      "疾患の治療を目的としている。",
+      "6年ごとに改定が行われている。",
+      "必要エネルギー推定量を示している。",
+      "食育基本法に基づいて作成されている。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "歯科衛生士とその業務 ",
+    "exam_number": 33,
+    "question_text": "SOAPによる歯科衛生業務記録で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "「S」は対象者の主観的情報を書く。",
+      "「O」は歯科衛生介入の計画を書く。",
+      "「A」歯科衛生士の判断を書く。",
+      "「P」は対象者の反応を書く。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 34,
+    "question_text": "人体に影響を及ぼすエックス線の作用はどれか。",
+    "choices": [
+      "散　乱",
+      "電　離",
+      "透　過",
+      "回　析"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 35,
+    "question_text": "刺激時唾液分泌量の検査はどれか。2つ選べ。",
+    "choices": [
+      "ガムテスト",
+      "パッチテスト",
+      "フードテスト",
+      "サクソンテスト"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm036",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 36,
+    "question_text": "根管治療に使用する器具の断面図と拡大図とを示す。\n用途はどれか。2つ選べ。",
+    "choices": [
+      "根管形成",
+      "根管充填",
+      "根管貼薬",
+      "根管長測定"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 37,
+    "question_text": "38歳の女性。上顎左側第二小臼歯の冷水痛を訴えて来院した。う蝕の有無を検査することとなった。初診時の口腔内写真を別に示す。\n考えられる検査はどれか。",
+    "choices": [
+      "透照診",
+      "歯髄電気診",
+      "レーザー蛍光強度測定",
+      "インピーダンス測定検査"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 38,
+    "question_text": "ブラックの窩洞分類で隣接面を含むのはどれか。2つ選べ。",
+    "choices": [
+      "1級",
+      "2級",
+      "4級",
+      "5級"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm039",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 39,
+    "question_text": "オフィスブリーチで起こる可能性が最も高いのはどれか。",
+    "choices": [
+      "酸蝕症",
+      "歯髄壊死",
+      "歯肉退縮",
+      "象牙質知覚過敏症"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 40,
+    "question_text": "19歳の女性。冷水痛を訴えて来院した。下顎左側第一大臼歯の実質欠損を認めるが自発痛はない。軟化象牙質を一部残して薬物を貼付し経過を観察することとした。\n行った処置はどれか。",
+    "choices": [
+      "IPC法",
+      "直接覆髄法",
+      "間接覆髄法",
+      "生活断髄法"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm041",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 41,
+    "question_text": "根管の機械的拡大に用いられるのはどれか。",
+    "choices": [
+      "EDTA",
+      "グアヤコール",
+      "過酸化水素水",
+      "次亜塩素酸ナトリウム溶液"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm042",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "総論",
+    "exam_number": 42,
+    "question_text": "歯面の付着物のうち、歯ブラシで除去できるのはどれか。2つ選べ。",
+    "choices": [
+      "ステイン",
+      "プラーク",
+      "ペリクル",
+      "マテリアアルバ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 43,
+    "question_text": "48歳の女性。歯の動揺を訴えて来院した。歯周基本治療時の口腔内写真を別に示す。\n矢印に示す処置の目的はどれか。",
+    "choices": [
+      "う蝕予防",
+      "咬合力の分散",
+      "歯間部清掃性の向上",
+      "象牙質知覚過敏の軽減"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm044",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の構造",
+    "exam_number": 44,
+    "question_text": "歯肉歯槽粘膜境を確認する方法はどれか。2つ選べ。",
+    "choices": [
+      "歯槽粘膜に浸潤麻酔を行う。",
+      "ヨードチンキで粘膜を染色する。",
+      "歯周プローブで歯槽粘膜を押し上げる。",
+      "クレーンカプランのピンセットでマーキングする。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 45,
+    "question_text": "カンペル平面に含まれるのはどれか。",
+    "choices": [
+      "眼　窩",
+      "鼻　翼",
+      "耳　朶",
+      "切歯点"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm046",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 46,
+    "question_text": "67歳の男性。前歯に根面板を装着後、左側臼歯を抜歯し、補綴装置を装着した。抜歯前の口腔内写真（A）、装置装着後の口腔内写真（B）および装置の写真（C）を別に示す。\nこの装置の名称はどれか。",
+    "choices": [
+      "顎義歯",
+      "塞栓子",
+      "スピーチエイド",
+      "オーバーデンチャー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 47,
+    "question_text": "上顎全部床義歯の写真（A、B）を別に示す。\n部位と名称との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "① -- 粘膜面",
+      "② -- 咬合面",
+      "③ -- 研磨面",
+      "④ -- 床　縁"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "歯の欠損と治療",
+    "exam_number": 48,
+    "question_text": "CAD/CAM装置を用いて製作できるのはどれか。2つ選べ。",
+    "choices": [
+      "ピンレッジ",
+      "陶材焼付金属冠",
+      "レジンジャケット冠",
+      "オールセラミッククラウン"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 49,
+    "question_text": "58歳の男性。舌の異常を訴えて来院した。口腔内写真を別に示す。\n疑われるのはどれか。",
+    "choices": [
+      "溝状舌",
+      "白板症",
+      "真菌感染症",
+      "ハンター舌炎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm050",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 50,
+    "question_text": "52歳の男性。上顎右側第一大臼歯部歯肉の異常を訴えて来院した。2か月前に異常に気づき徐々に大きくなってきたという。口腔内写真を別に示す。\n主訴に対して考えられる検査はどれか。2つ選べ。",
+    "choices": [
+      "細胞診",
+      "歯髄電気診",
+      "プロービング",
+      "エックス線検査"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm051",
+    "category": "臨床歯科医学",
+    "subcategory": "顎・口腔領域の疾患と治療",
+    "exam_number": 51,
+    "question_text": "中枢性顔面神経麻痺で運動可能な部位はどれか。",
+    "choices": [
+      "前額部",
+      "頬骨部",
+      "下唇部",
+      "頸　部"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 52,
+    "question_text": "口腔内写真（A、B）を別に示す。\n考えられる不正咬合はどれか。",
+    "choices": [
+      "叢　生",
+      "交叉咬合",
+      "切端咬合",
+      "正中離開"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 53,
+    "question_text": "矯正装置装着の準備段階の口腔内写真を別に示す。\n矢印で示す材料の装着に用いるのはどれか。",
+    "choices": [
+      "バンドプッシャー",
+      "バンドリムーバー",
+      "ヤングプライヤー",
+      "セパレーティングプライヤー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "不正咬合と治療",
+    "exam_number": 54,
+    "question_text": "器具の写真を別に示す。\n使用目的はどれか。",
+    "choices": [
+      "結紮線の切断",
+      "保定装置の調整",
+      "ブラケットの撤去",
+      "アーチワイヤーの着脱"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 55,
+    "question_text": "発育期の分類とその特徴との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "乳児期 -- 歩行開始",
+      "幼児期 -- 自我の芽生え",
+      "学童期 -- 第一次反抗期",
+      "思春期 -- 第二次性徴"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm056",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 56,
+    "question_text": "唇顎口蓋裂児にみられる特徴はどれか。2つ選べ。",
+    "choices": [
+      "溝状舌",
+      "上顎劣成長",
+      "鼻咽腔閉鎖不全",
+      "下顎の歯列不正"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 57,
+    "question_text": "小児の粘膜疾患とその原因との組合せで正しいのはどれか。",
+    "choices": [
+      "手足口病 -- 単純ヘルペスウイルス",
+      "コプリック斑 -- 麻疹ウイルス",
+      "ベドナーアフタ -- 先天歯",
+      "ヘルパンギーナ -- 硬いゴム乳首"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm058",
+    "category": "臨床歯科医学",
+    "subcategory": "小児の理解と歯科治療",
+    "exam_number": 58,
+    "question_text": "4歳の女児。下顎右側第一乳臼歯が保存不可能となり、局所麻酔下で抜歯を行った。\n抜歯後の注意として適切でないのはどれか。",
+    "choices": [
+      "よくうがいをさせる。",
+      "2時間は飲食を避ける。",
+      "口唇を咬まないようにさせる。",
+      "止血を確認した後帰宅させる。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm059",
+    "category": "臨床歯科医学",
+    "subcategory": "障害者の理解と歯科治療",
+    "exam_number": 59,
+    "question_text": "75歳の男性。右片麻痺と失語症がみられる。抗血栓薬を服用しているという。\n既往歴として考えられるのはどれか。",
+    "choices": [
+      "骨　折",
+      "脳梗塞",
+      "パーキンソン病",
+      "慢性関節リウマチ"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 60,
+    "question_text": "77歳の男性。10か月前に脳出血を発症した。摂食・嚥下障害がみられた。患者の口腔内写真を示す。\n障害されている摂食・嚥下の過程はどれか。",
+    "choices": [
+      "先行期",
+      "準備期",
+      "咽頭期",
+      "食道期"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 61,
+    "question_text": "88歳の女性。歯科訪問診療の依頼を受けた。食後、ブラッシングのため洗面台に向かっている写真を別に示す。\n障害高齢者日常生活自立度の判定基準のランクとして考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "ランクJ",
+      "ランクA",
+      "ランクB",
+      "ランクC"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm062",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 62,
+    "question_text": "90歳の男性。無歯顎で全部床義歯を使用している。片麻痺があり、ペースメーカーを装着している。食後、食渣の滞留と舌苔とを認める。\n口腔ケアに用いられないのはどれか。",
+    "choices": [
+      "舌ブラシ",
+      "歯ブラシ",
+      "音波ブラシ",
+      "スポンジブラシ"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 63,
+    "question_text": "歯の付着物・沈着物と構成成分との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "白　質 -- 剥離上皮",
+      "歯　石 -- 唾液タンパク質",
+      "獲得被膜 -- 細　菌",
+      "色素沈着 -- 有機性薄膜"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm064",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 64,
+    "question_text": "エックス線写真を別に示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "骨吸収",
+      "根管充填",
+      "歯石沈着",
+      "歯根囊胞"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 65,
+    "question_text": "スケーリング時の脳貧血の予防で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "疼痛管理",
+      "水平側臥位",
+      "空腹時の処置",
+      "処置内容の説明と理解"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm066",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 66,
+    "question_text": "歯周病のスクリーニングに用いられる唾液検査はどれか。",
+    "choices": [
+      "潜血反応",
+      "唾液緩衝能",
+      "細菌の酸産生能",
+      "グルコースクリアランス"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 67,
+    "question_text": "口腔内写真を示す。\n歯肉歯槽粘膜境はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 68,
+    "question_text": "ファーケーションプローブで検査するのはどれか。",
+    "choices": [
+      "歯肉出血",
+      "歯根破折",
+      "歯周ポケット",
+      "根分岐部病変"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm069",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 69,
+    "question_text": "スケーリングの術式で、施術部の消毒後の適切な手順はどれか。",
+    "choices": [
+      "歯面研磨　→　口腔内観察　→　歯石除去",
+      "口腔内観察　→　歯石除去　→　歯面研磨",
+      "口腔内観察　→　歯面研磨　→　歯石除去",
+      "歯面研磨　→　歯石除去　→　口腔内観察"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 70,
+    "question_text": "歯の動揺度検査の写真を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm071",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 71,
+    "question_text": "スケーラーのシャープニングで砥石の名称、材料および潤滑材の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "ルビーストーン -- 天然石 -- 水",
+      "セラミックストーン -- 人工石 -- 水",
+      "インディアナストーン -- 人工石 -- 水",
+      "アーカンサスストーン -- 天然石 -- オイル"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm072",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 72,
+    "question_text": "プローブの写真を別に示す。\nCPI検査に用いられるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm073",
+    "category": "歯科予防処置論",
+    "subcategory": "退行性病変",
+    "exam_number": 73,
+    "question_text": "グレーシータイプキュレット＃11/12を操作している写真を別に示す。\n操作で正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "歯頸部の外来性色素沈着物を除去するための歯面研磨で正しいのはどれか。",
+    "choices": [
+      "ラバーダム防湿を行う。",
+      "各種研磨剤を使い分ける。",
+      "歯面を乾燥した状態に保つ。",
+      "高速回転＜30,000rpm＞で行う。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm075",
+    "category": "歯科予防処置論",
+    "subcategory": "総論",
+    "exam_number": 75,
+    "question_text": "う蝕の第一次予防に用いるフッ化物はどれか。",
+    "choices": [
+      "フッ化水素酸",
+      "フルオロアパタイト",
+      "フッ化ジアンミン銀",
+      "モノフルオロリン酸ナトリウム"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm076",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 76,
+    "question_text": "う蝕活動性試験の結果、唾液中のLactobacilliが多いと判定された。\n考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "う窩がある。",
+      "唾液粘稠度が低い。",
+      "唾液緩衝能が高い。",
+      "間食の摂取回数が多い。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm077",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 77,
+    "question_text": "フッ化物歯面塗布法でないのはどれか。",
+    "choices": [
+      "綿球法",
+      "トレー法",
+      "スプレー法",
+      "イオン導入法"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm078",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 78,
+    "question_text": "使用するフッ化物洗口液のフッ素イオン濃度はどれか。",
+    "choices": [
+      "50ppm",
+      "250ppm",
+      "900ppm",
+      "9,000ppm"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm079",
+    "category": "歯科予防処置論",
+    "subcategory": "う蝕予防処置",
+    "exam_number": 79,
+    "question_text": "職員への説明内容で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "1回の洗口液量は一人当たり30mLずつ用意してください。",
+      "10秒間うがいをさせたら吐き出させてください。",
+      "洗口後30分間は飲食やうがいを控えてください。",
+      "洗口液を1回量誤って飲んだとしても急性中毒の心配はありません。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm080",
+    "category": "歯科保健指導論",
+    "subcategory": "総論",
+    "exam_number": 80,
+    "question_text": "プライマリーヘルスケアに該当するのはどれか。2つ選べ。",
+    "choices": [
+      "感染症のコントロール",
+      "健康的な公共政策の確立",
+      "バリアフリー社会の実現",
+      "身近な場所への医療施設の設置"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm081",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 81,
+    "question_text": "医療面接の際に注意すべきことはどれか。2つ選べ。",
+    "choices": [
+      "同情的態度で接する。",
+      "話を最後までよく聞く。",
+      "患者の訴えを明確化する。",
+      "会話の間があかないようにする。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm082",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 82,
+    "question_text": "45歳の男性。口臭を訴えて来院した。歯科衛生士との会話を下に示す。\n「開かれた質問」はどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm083",
+    "category": "臨床歯科医学",
+    "subcategory": "高齢者の理解と歯科治療",
+    "exam_number": 83,
+    "question_text": "「健康な高齢者の老化による物忘れ」と「認知症の高齢者の物忘れ」との特徴を比較した表を示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm084",
+    "category": "歯科保健指導論",
+    "subcategory": "総論",
+    "exam_number": 84,
+    "question_text": "Keyesの輪を図に示す。う蝕のリスクとして、①は唾液緩衝能、②はスクロースが該当する。\n③はどれか。",
+    "choices": [
+      "時　間",
+      "宿　主",
+      "細菌叢",
+      "食餌性基質"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm085",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科保健指導の基礎",
+    "exam_number": 85,
+    "question_text": "唇面に古いプラークが最も多く観察されるのはどれか。",
+    "choices": [
+      "上顎左側中切歯",
+      "上顎左側側切歯",
+      "下顎左側中切歯",
+      "下顎左側側切歯"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm086",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 86,
+    "question_text": "この女児へ指導する適切な口腔清掃法はどれか。2つ選べ。",
+    "choices": [
+      "バス改良法",
+      "チャーターズ法",
+      "スクラビング法",
+      "1歯ずつの縦磨き法"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm087",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 87,
+    "question_text": "ガスクロマトグラフィー検査で認知閾値を超えて検出されたと考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "硫化水素",
+      "アセトン",
+      "トリメチルアミン",
+      "メチルメルカプタン"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm088",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 88,
+    "question_text": "歯科医師から、口臭改善のための歯科保健指導を指示された。\nブラッシング指導に加えて行う指導で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "頻回の水分摂取を勧める。",
+      "間食を摂らないよう指導する。",
+      "舌ブラシによる舌清掃を指導する。",
+      "専門家による機械的歯面清掃を勧める。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm089",
+    "category": "歯科保健指導論",
+    "subcategory": "口腔清掃指導法 ",
+    "exam_number": 89,
+    "question_text": "70歳の女性。肺癌で入院加療中である。意識障害があり、常時口呼吸をしている。本人による口腔清掃は困難な状態であり、1日1回の口腔清掃を受けている。口腔周囲の写真（A、B）を別に示す。\n歯科衛生士による口腔ケアで適切なのはどれか。2つ選べ。",
+    "choices": [
+      "本人への声かけは必要ない。",
+      "鼻カニューレは外して行う。",
+      "口唇部を保湿してから行う。",
+      "隣接面部に歯間ブラシを使用する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm090",
+    "category": "臨床歯科医学",
+    "subcategory": "障害者の理解と歯科治療",
+    "exam_number": 90,
+    "question_text": "85歳の要介護高齢者。食事中に疲れて食事ペースが落ちてくるという。\nこの高齢者への介助で適切なのはどれか。",
+    "choices": [
+      "一口量を増やす。",
+      "間食で必要栄養量を補う。",
+      "1回の食事時間を長くする。",
+      "少量低カロリーの食事にする。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm091",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 91,
+    "question_text": "地域住民のニーズに基づき保健活動の計画を作成することとなった。\n最初に設定するのはどれか。",
+    "choices": [
+      "方　法",
+      "目　標",
+      "内　容",
+      "期　間"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm092",
+    "category": "歯科保健指導論",
+    "subcategory": "歯科衛生教育活動",
+    "exam_number": 92,
+    "question_text": "A幼稚園では「健康な子供を育てるための勉強会」を保護者対象に行っている。歯科保健について30分間の講話を依頼された。\n内容として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "口呼吸による弊害",
+      "第二大臼歯のう蝕予防",
+      "ショ糖とう蝕の関係",
+      "側方歯群の交換と歯列不正"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm093",
+    "category": "歯科保健指導論",
+    "subcategory": "生活指導",
+    "exam_number": 93,
+    "question_text": "ある事業所の男性社員50名を対象として「歯周病と喫煙」をテーマとした40分の健康教室を依頼され、衛生管理者とともに行うこととなった。\n健康教室の実施方法で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "個別相談を組み入れる。",
+      "自由に発言できる雰囲気をつくる。",
+      "衛生管理者との事前打ち合わせを行う。",
+      "都道府県別喫煙率の数値を読み上げて説明する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm094",
+    "category": "歯科診療補助論",
+    "subcategory": "総論",
+    "exam_number": 94,
+    "question_text": "車椅子を使用している要介護高齢者への対応で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "移乗する前にブレーキをかける。",
+      "移乗する時はフットレストをおろしておく。",
+      "立位が可能な場合は自分で移乗してもらう。",
+      "移乗後は浅く座ってもらう。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm095",
+    "category": "歯科診療補助論",
+    "subcategory": "総論",
+    "exam_number": 95,
+    "question_text": "消毒薬の適応を表に示す。\nポビドンヨードはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm096",
+    "category": "歯科診療補助論",
+    "subcategory": "主要歯科材料の種類、取扱いと管理 ",
+    "exam_number": 96,
+    "question_text": "寒天印象材について正しいのはどれか。",
+    "choices": [
+      "天然モノマーである。",
+      "人工ポリマーである。",
+      "加熱によりゾル化する。",
+      "振動によりゲル化する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm097",
+    "category": "歯科診療補助論",
+    "subcategory": "主要歯科材料の種類、取扱いと管理 ",
+    "exam_number": 97,
+    "question_text": "歯髄鎮静の目的で用いる仮封材はどれか。",
+    "choices": [
+      "水硬性仮封材",
+      "カルボキシレートセメント",
+      "仮封用軟質レジン＜常温重合型＞",
+      "酸化亜鉛ユージノールセメント"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm098",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 98,
+    "question_text": "リーマー・ファイルのサイズとカラーコードとの組合せで正しいのはどれか。",
+    "choices": [
+      "15番 -- 黄",
+      "30番 -- 緑",
+      "55番 -- 赤",
+      "70番 -- 黒"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm099",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 99,
+    "question_text": "器具の写真を別に示す。\n側方加圧充填時に挿入しガッタパーチャポイントの圧接に使用するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm100",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 100,
+    "question_text": "器具の写真を別に示す。\nフラップ手術で粘膜骨膜弁形成後に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm101",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 101,
+    "question_text": "シリンジの写真を別に示す。\nシリコーン印象材を用いて印象採得を行う時に使用するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm102",
+    "category": "歯科診療補助論",
+    "subcategory": "補綴治療時の診療補助",
+    "exam_number": 102,
+    "question_text": "完成した補綴装置の写真を別に示す。\n試適時に準備する器材はどれか。2つ選べ。",
+    "choices": [
+      "咬合紙",
+      "平行測定器",
+      "シェードガイド",
+      "コンタクトゲージ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm103",
+    "category": "歯科診療補助論",
+    "subcategory": "口腔外科治療時の診療補助",
+    "exam_number": 103,
+    "question_text": "永久止血法はどれか。2つ選べ。",
+    "choices": [
+      "結紮法",
+      "焼灼法",
+      "タンポン法",
+      "圧迫包帯法"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm104",
+    "category": "歯科診療補助論",
+    "subcategory": "矯正歯科治療時の診療補助",
+    "exam_number": 104,
+    "question_text": "器具の写真を別に示す。\n矯正用バンドの装着に使用しないのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm105",
+    "category": "歯科診療補助論",
+    "subcategory": "小児歯科治療時の診療補助",
+    "exam_number": 105,
+    "question_text": "フッ化ジアンミン銀の特徴はどれか。2つ選べ。",
+    "choices": [
+      "無味無臭である。",
+      "塗布面は黒変する。",
+      "劇薬に指定されている。",
+      "38％のフッ素イオンを含む。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm106",
+    "category": "歯科診療補助論",
+    "subcategory": "高齢者治療時の診療補助",
+    "exam_number": 106,
+    "question_text": "81歳の女性。感音性難聴である。\n話しかける際の配慮で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "耳元で大きな声で話す。",
+      "静かな場所で説明する。",
+      "声のトーンを抑えて話す。",
+      "マスクをつけたままで話す。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm107",
+    "category": "歯科診療補助論",
+    "subcategory": "高齢者治療時の診療補助",
+    "exam_number": 107,
+    "question_text": "パーキンソン病で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "可逆性疾患である。",
+      "神経変性疾患である。",
+      "脳内のドーパミン過剰がみられる。",
+      "安静時の振戦がみられることが多い。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm108",
+    "category": "歯科診療補助論",
+    "subcategory": "障害者治療時の診療補助",
+    "exam_number": 108,
+    "question_text": "障害の種類とコミュニケーションの方法との組合せで適切なのはどれか。",
+    "choices": [
+      "言語障害 -- 点　字",
+      "視覚障害 -- 模　型",
+      "精神遅滞 -- ジェスチャー",
+      "自閉性障害 -- 文字盤"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm109",
+    "category": "歯科診療補助論",
+    "subcategory": "臨床検査法",
+    "exam_number": 109,
+    "question_text": "検査装置の写真を別に示す。\nこの装置で測定するのはどれか。2つ選べ。",
+    "choices": [
+      "血糖値",
+      "脈拍数",
+      "拡張期血圧",
+      "経皮的動脈血酸素飽和度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm110",
+    "category": "歯科診療補助論",
+    "subcategory": "救急救命処置",
+    "exam_number": 110,
+    "question_text": "Japan Coma Scale＜3-3-9度方式＞で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "心疾患の重症度分類である。",
+      "9段階で判定する。",
+      "刺激に対する反応を観察する。",
+      "数値が小さいほど状態は重い。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  }
+]

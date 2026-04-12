@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2023_dh_23_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "細胞膜内外のイオンの移動を模式図に示す。\nこの移動はどれか。1つ選べ。",
+    "choices": [
+      "拡　散",
+      "浸　透",
+      "濾　過",
+      "能動輸送"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "2根を有する歯（FDI歯式）はどれか。1つ選べ。",
+    "choices": [
+      "24",
+      "45",
+      "54",
+      "65"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am003",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "消化器系を模式図に示す。\n①から分泌されるのはどれか。1つ選べ。",
+    "choices": [
+      "アミラーゼ",
+      "トリプシン",
+      "キモトリプシン",
+      "ペプシノーゲン"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "歯乳頭由来の細胞が形成するのはどれか。1つ選べ。",
+    "choices": [
+      "歯　髄",
+      "歯根膜",
+      "エナメル質",
+      "セメント質"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "全身骨格の写真の一部を示す。\n寛骨はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "下顔面の写真を示す。\n矢印で示す部位の触覚を伝えるのはどれか。1つ選べ。",
+    "choices": [
+      "頰神経",
+      "舌神経",
+      "眼窩下神経",
+      "オトガイ神経"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "血漿タンパク質はどれか。1つ選べ。",
+    "choices": [
+      "ケラチン",
+      "アルブミン",
+      "コラーゲン",
+      "ヘモグロビン"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am008",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "単純脂質はどれか。1つ選べ。",
+    "choices": [
+      "胆汁酸",
+      "中性脂肪",
+      "リン脂質",
+      "コレステロール"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "ワルファリンカリウムの薬理作用により減少するのはどれか。1つ選べ。",
+    "choices": [
+      "血小板",
+      "赤血球",
+      "白血球",
+      "血液凝固因子"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "歯垢細菌の共凝集の模式図を示す。\n①のグラム陰性菌はどれか。1つ選べ。",
+    "choices": [
+      "Treponema denticola",
+      "Streptococcus mutans",
+      "Fusobacterium nucleatum",
+      "Porphyromonas gingivalis"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "COVID-19の病原体はどれか。1つ選べ。",
+    "choices": [
+      "細　菌",
+      "真　菌",
+      "ウイルス",
+      "プリオン"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "生体防御に関わる分子の模式図を示す。\n産生細胞はどれか。1つ選べ。",
+    "choices": [
+      "T細胞",
+      "好中球",
+      "形質細胞",
+      "樹状細胞"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "下顎小臼歯の模式図を示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "臼後結節",
+      "臼傍結節",
+      "中心結節",
+      "Carabelli＜カラベリー＞結節"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "失活歯の根尖に生じるのはどれか。1つ選べ。",
+    "choices": [
+      "歯根嚢胞",
+      "含歯性嚢胞",
+      "鼻口蓋管嚢胞",
+      "菌原性角化嚢胞"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "心不全の治療に使用される薬物Aの薬理効果を図に示す。\n①が示す薬理作用はどれか。1つ選べ。",
+    "choices": [
+      "間接作用",
+      "協力作用",
+      "補充作用",
+      "抑制作用"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "「すべての人が適切な予防、治療、リハビリテーション等の保健医療サービスを、支払い可能な費用で受けられる状態」を指すのはどれか。1つ選べ。",
+    "choices": [
+      "持続可能な開発目標＜SDGs＞",
+      "ヘルスプロモーション＜HP＞",
+      "プライマリーヘルスケア＜PHC＞",
+      "ユニバーサル・ヘルス・カバレッジ＜UHC＞"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "フッ化ナトリウム、正リン酸および蒸留水からなる薬剤を用いるのはどれか。1つ選べ。",
+    "choices": [
+      "フッ化物洗口",
+      "フッ化物歯面塗布",
+      "フッ化物配合歯磨剤",
+      "フッ化物バーニッシュ"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "2名の被験者の唾液に同量の乳酸を添加する前後のpHを表に示す。\n添加前後のpHの変化に影響したと考えられる唾液成分はどれか。1つ選べ。",
+    "choices": [
+      "ムチン",
+      "重炭酸塩",
+      "アミラーゼ",
+      "リゾチーム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "児童虐待の相談種別（相談内容別）件数の推移の図を示す。\n①はどれか。1つ選べ。\nただし、①～④はa～dのいずれかに該当する。",
+    "choices": [
+      "a：性的虐待",
+      "b：身体的虐待",
+      "c：心理的虐待",
+      "d：ネグレクト"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "歯磨剤の薬用成分のうち、歯周病予防を目的に配合されるのはどれか。1つ選べ。",
+    "choices": [
+      "硝酸カリウム",
+      "トラネキサム酸",
+      "乳酸アルミニウム",
+      "モノフルオロリン酸ナトリウム"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "歯科衛生士法に規定されているのはどれか。2つ選べ。",
+    "choices": [
+      "医療提供の理念",
+      "処方せんの交付",
+      "秘密保持の義務",
+      "名称の使用制限"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "Fejerskovによるう蝕の発生要因を図に示す。\n①に該当する要因はどれか。2つ選べ。",
+    "choices": [
+      "所　得",
+      "家族形態",
+      "歯列不正",
+      "咬合面形態"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "小学校の定期健康診断で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "組織活動の一部として行われる。",
+      "保健調査は健康診断の前に行う。",
+      "毎学年6月30日までに実施する。",
+      "1か月後に結果を本人に通知する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "口腔の自然的清掃に関係するのはどれか。2つ選べ。",
+    "choices": [
+      "呼　吸",
+      "洗　口",
+      "咀　嚼",
+      "唾　液"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "食品を十分に加熱して食べたところ、3時間後に悪心が生じ、嘔吐した。\n食中毒の原因菌として考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "腸炎ビブリオ",
+      "黄色ブドウ球菌",
+      "サルモネラ属菌",
+      "腸管出血性大腸菌"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "ある町の人口構成を表に示す。\n従属人口数はどれか。1つ選べ。",
+    "choices": [
+      "9,000人",
+      "11,000人",
+      "14,000人",
+      "16,000人"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "医療法に基づき二次医療圏を単位として整備されるのはどれか。1つ選べ。",
+    "choices": [
+      "介護医療院",
+      "特定機能病院",
+      "地域医療支援病院",
+      "臨床研究中核病院"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "水道法に基づく水質基準で「フッ素及びその化合物」の基準値はどれか。1つ選べ。",
+    "choices": [
+      "0.4mg/L以下",
+      "0.8mg/L以下",
+      "1.2mg/L以下",
+      "1.6mg/L以下"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "あるブラッシング法の開始時点における歯と歯ブラシの位置関係を図に示す。\nブラッシング法はどれか。1つ選べ。",
+    "choices": [
+      "フォーンズ法",
+      "ローリング法",
+      "スティルマン法",
+      "チャーターズ法"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "地域保健法第18条で、地域住民に対して健康相談、保健指導、健康診査などの対人保健サービスを行うことを目的とする施設はどれか。1つ選べ。",
+    "choices": [
+      "保健所",
+      "市町村保健センター",
+      "地域医療支援センター",
+      "地域包括支援センター"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

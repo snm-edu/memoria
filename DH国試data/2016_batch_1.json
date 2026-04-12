@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2016_dh_16_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "成人の気管、気管支および肺を正面から見た位置関係を図に示す。\n正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "頭蓋骨の正中矢状断面の写真を別に示す。\n矢印が示すのはどれか。",
+    "choices": [
+      "上顎洞",
+      "前頭洞",
+      "篩骨洞",
+      "蝶形骨洞"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "固有口腔にある小唾液腺はどれか。",
+    "choices": [
+      "頬　腺",
+      "舌下腺",
+      "口蓋腺",
+      "口唇腺"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "上顎前歯の舌側面を図に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "臼歯結節",
+      "基底結節",
+      "介在結節",
+      "カラベリー結節"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "電子伝達系が存在するのはどれか。",
+    "choices": [
+      "細胞膜",
+      "核小体",
+      "ゴルジ装置",
+      "ミトコンドリア"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "中枢神経を図に示す。\n呼吸中枢が存在するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "消化器系を図に示す。\n矢印で示す臓器から出る液体の役割はどれか。",
+    "choices": [
+      "脂肪の乳化",
+      "腸粘膜の保護",
+      "炭水化物の分解",
+      "タンパク質の分解"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am008",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "舌を図に示す。\n二点弁別閾が最も小さいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "エイズの発症機序に関与するのはどれか。",
+    "choices": [
+      "自己抗体の産生",
+      "IgE抗体の産生",
+      "補体依存性細胞傷害",
+      "ヘルパーT細胞の減少"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "歯根肉芽腫のエックス線写真を別に示す。\n矢印が示すエックス線透過部で増殖する上皮の由来はどれか。",
+    "choices": [
+      "歯肉外縁上皮",
+      "付着＜接合＞上皮",
+      "退縮エナメル上皮",
+      "Malassezの上皮遺残"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "中枢リンパ組織＜一次リンパ組織＞はどれか。",
+    "choices": [
+      "脾　臓",
+      "胸　腺",
+      "扁桃腺",
+      "リンパ節"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "歯肉縁上プラークの形成過程における細菌の構成比の経日変化を図に示す。縦軸は対数目盛で表示する。\n矢印が示すのはどれか。",
+    "choices": [
+      "Neisseria属",
+      "Actinomyces属",
+      "Streptococcus属",
+      "Fusobacterium属"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am013",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "う蝕発症に関わる糖の構造を図に示す。\nこの糖はどれか。",
+    "choices": [
+      "グルカン",
+      "グルコース",
+      "スクロール",
+      "フルクトース"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "有害作用の発現率が最も高い投与法はどれか。",
+    "choices": [
+      "舌下投与",
+      "経口投与",
+      "筋肉内投与",
+      "静脈内投与"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "口腔カンジダ症の治療に用いられる抗菌薬はどれか。",
+    "choices": [
+      "セフェム系",
+      "ペニシリン系",
+      "イミダゾール系",
+      "テトラサイクリン系"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "第三次予防はどれか。2つ選べ。",
+    "choices": [
+      "抜　歯",
+      "栄養指導",
+      "義歯装着",
+      "摂食嚥下訓練"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "口腔清掃法とその関連事項の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "自然的 -- 咀　嚼",
+      "人工的 -- 洗　口",
+      "化学的 -- 唾　液",
+      "手術的 -- 食物の性状"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "ステファン曲線を実線で図に示す。\n矢印の方向に変化させるのはどれか。2つ選べ。",
+    "choices": [
+      "F<sup>‐</sup>",
+      "Cl<sup>‐</sup>",
+      "NO<sub>3</sub><sup>‐</sup>",
+      "HCO<sub>3</sub><sup>‐</sup>"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "2000年にFDIが提唱したう蝕のMinimal Intervention＜MI＞はどれか。2つ選べ。",
+    "choices": [
+      "充填部位の予防拡大",
+      "口腔内細菌叢の改善",
+      "歯面の白斑の再石灰化処置",
+      "支台装置が金属冠のブリッジ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "成人の歯科健診結果を表に示す。\nこの集団のう蝕有病者率（%）はどれか。",
+    "choices": [
+      "20",
+      "30",
+      "60",
+      "70"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "ある集団を対象に質問紙調査を行った結果を表に示す。\n男女の喫煙率の有意差を調べる方法はどれか。",
+    "choices": [
+      "t検定",
+      "相関分析",
+      "分散分析",
+      "カイ二乗検定"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "健康日本21（第二次）の「歯・口腔の健康」の項目と目標値の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "20歳代における歯肉に炎症所見を有する者の減少 -- 25%",
+      "40歳代における進行した歯周炎を有する者の減少 -- 40%",
+      "60歳で24歯以上の自分の歯を有する者の増加 -- 60%",
+      "80歳で20歯以上の自分の歯を有する者の増加 -- 50%"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "市町村が行う歯周疾患検診の根拠となる法律はどれか。",
+    "choices": [
+      "地域保健法",
+      "健康増進法",
+      "歯科口腔保健の推進に関する法律",
+      "高齢者の医療の確保に関する法律"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am024",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "プライマリヘルスケアの理念が採択されたのはどれか。",
+    "choices": [
+      "シドニー宣言",
+      "リスボン宣言",
+      "ヘルシンキ宣言",
+      "アルマ・アタ宣言"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "光化学オキシダントの原因物質となるのはどれか。",
+    "choices": [
+      "二酸化窒素",
+      "二酸化炭素",
+      "二酸化硫黄",
+      "二酸化ケイ素"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "平成25年国民生活基礎調査における介護が必要となった原因とその割合を図に示す。\n①はどれか。",
+    "choices": [
+      "認知症",
+      "骨折・転倒",
+      "脳血管疾患",
+      "高齢による衰弱"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "母子健康手帳で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "市町村が交付する。",
+      "予防接種歴を記載する。",
+      "児童福祉法に基づいている。",
+      "出産の届け出時に交付される。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "特定健康診査における基本的な健診項目はどれか。",
+    "choices": [
+      "心電図",
+      "眼底検査",
+      "貧血検査",
+      "血糖検査"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "大規模災害や突発事故などから生じた精神疾患はどれか。",
+    "choices": [
+      "PTSD",
+      "自閉症",
+      "精神遅滞",
+      "アルツハイマー型認知症"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "就学時健康診断を定めている法律はどれか。",
+    "choices": [
+      "学校教育法",
+      "教育基本法",
+      "児童福祉法",
+      "学校保健安全法"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

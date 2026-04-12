@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2018_dh_18_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "間接感染はどれか。",
+    "choices": [
+      "経口感染",
+      "垂直感染",
+      "接触感染",
+      "飛沫感染"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "菌数の割合で成熟プラークに比べて初期プラークに多いのはどれか。",
+    "choices": [
+      "運動性菌",
+      "紡錘状菌",
+      "偏性嫌気性菌",
+      "グラム陽性球菌"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "偽薬により出現する薬理学的効果はどれか。",
+    "choices": [
+      "天上効果",
+      "予防効果",
+      "プラセボ効果",
+      "オフターゲット効果"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "薬用量の用語を用量順に並べて図に示す。\n50％有効量はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "筋肉内投与、経口投与、静脈内投与および皮下投与の血中薬物濃度-時間曲線を図に示す。\n経口投与はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "う蝕発生に関与する3つの因子（Keyesの輪）を図に示す。\n①に対する特異的防御法はどれか。",
+    "choices": [
+      "栄養指導",
+      "フッ化物の応用",
+      "代用甘味料の使用",
+      "プラークコントロール"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "歯石により増加する歯周病のリスクはどれか。",
+    "choices": [
+      "食片圧入",
+      "色素沈着",
+      "外傷性咬合",
+      "プラーク付着"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "児童Aと児童Bのう蝕活動性試験の結果の写真を別に示す。\n児童Bで高いのはどれか。",
+    "choices": [
+      "唾液の緩衝能",
+      "歯質の耐酸性",
+      "歯垢の酸産生能",
+      "唾液中の乳酸桿菌数"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "フッ化物によるう蝕予防機序を図に示す。\n①はどれか。",
+    "choices": [
+      "細菌の酵素作用",
+      "細菌の歯面付着",
+      "不溶性グルカン合成",
+      "菌体内への糖の取り込み"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "25歳の女性。健康相談会場で、上顎前歯の形態異常を相談された。口腔内を観察したところ、前歯部に歯の損耗＜Tooth wear＞がみられた。う蝕は認められなかった。\n原因として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "口呼吸",
+      "歯ぎしり",
+      "抗菌薬の服用",
+      "管楽器の演奏"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "歯科疾患実態調査による歯磨き回数の年次推移を図に示す。\n①はどれか。",
+    "choices": [
+      "時々みがく",
+      "1日1回",
+      "1日2回",
+      "1日3回以上"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm022",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "PDCAサイクルを図に示す。\n①はどれか。",
+    "choices": [
+      "目　標＜Aim＞",
+      "改　善＜Action＞",
+      "能　力＜Ability＞",
+      "分　析＜Analysis＞"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "大規模災害時に避難所を中心とした口腔保健支援を開始すべき時期はどれか。",
+    "choices": [
+      "発災12時間以内",
+      "発災後1～3日",
+      "発災後2～4週",
+      "発災3か月以降"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "観察的疫学研究法の流れを図に示す。\nこの方法はどれか。",
+    "choices": [
+      "横断研究",
+      "生態学的研究",
+      "患者対照研究",
+      "コホート研究"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "予防接種法による定期予防接種はどれか。2つ選べ。",
+    "choices": [
+      "麻　疹",
+      "狂犬病",
+      "B型肝炎",
+      "流行性耳下腺炎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "食品に表示されているマークを示す。\n根拠となる法律はどれか。",
+    "choices": [
+      "食品表示法",
+      "食品衛生法",
+      "健康増進法",
+      "食育基本法"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "健康増進法に基づく事業はどれか。2つ選べ。",
+    "choices": [
+      "特殊健康診査",
+      "歯周疾患検診",
+      "生活機能評価",
+      "骨粗しょう症検診"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "作業環境管理の目的はどれか。2つ選べ。",
+    "choices": [
+      "障害の予防",
+      "有害物の除去",
+      "有害物の発生の抑制",
+      "有害物の体内侵入の抑制"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "国会の議決により制定されるのはどれか。",
+    "choices": [
+      "政　令",
+      "省　令",
+      "法　律",
+      "条　例"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "定期的に歯科検診を受けることを勧奨しているのはどれか。",
+    "choices": [
+      "健康増進法",
+      "健康保険法",
+      "歯科口腔保健の推進に関する法律",
+      "高齢者の医療の確保に関する法律"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "歯科衛生士法で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "歯科予防処置は歯科衛生士の業務独占である。",
+      "業務に従事する歯科衛生士は2年毎に届け出る。",
+      "歯科衛生士業務は歯科衛生士国家試験合格日から行える。",
+      "歯科衛生士名簿の登録事項に業務従事先の名称が登録される。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm032",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "対象者の問題解決に向けた目標設定の留意点で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "理想的なものにする。",
+      "目標は多いほうがよい。",
+      "観察と測定が可能である。",
+      "達成までの期限を設定する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm033",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "ヒューマンエラー対策で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "直感的に対応する。",
+      "障害に至らない仕組みづくりを行う。",
+      "標準化したマニュアルの作成は避ける。",
+      "フールプルーフを応用した医療機器を導入する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "下顎限界運動路の図を示す。\n下顎安静位はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "バイタルサインのモニタリング項目と成人の正常値の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "SpO<sub>2</sub> -- 87～90％",
+      "血　圧 -- 160～179/100～109mmHg",
+      "脈　拍 -- 60～100回/分",
+      "呼吸数 -- 12～20回/分"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "3歳児の口腔模型の観察で確認できるのはどれか。2つ選べ。",
+    "choices": [
+      "霊長空隙",
+      "歯冠歯根比",
+      "ターミナルプレーン",
+      "リーウェイスペース"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "鼻咽腔閉鎖不全が明確となる発音はどれか。",
+    "choices": [
+      "パ",
+      "タ",
+      "カ",
+      "ラ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "16歳の男子。歯肉の違和感を主訴として来院した。診査の結果、う蝕は認められず、最深部のプロービング深さは4mmであった。初診時の口腔内写真を別に示す。\n最初に行うのはどれか。",
+    "choices": [
+      "スケーリング",
+      "歯間ブラシの指導",
+      "ブラッシング指導",
+      "ルートプレーニング"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "34歳の女性。上顎左側犬歯の冷水痛を主訴として来院した。う蝕症第2度と診断され、コンポジットレジン修復を行うことになった。処置中の口腔内写真を別に示す。\n使用している器具の目的はどれか。",
+    "choices": [
+      "レジンの付形",
+      "残存歯質の補強",
+      "色調適合性の向上",
+      "レジンの重合度向上"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "38歳の女性。下顎右側臼歯部の冷水痛を主訴として来院した。小臼歯および大臼歯にう蝕を認めたため間接修復を行うことになった。完成した修復物の写真を別に示す。\n合着に適するセメントはどれか。",
+    "choices": [
+      "レジンセメント",
+      "リン酸亜鉛セメント",
+      "カルボキシレートセメント",
+      "グラスアイオノマーセメント"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

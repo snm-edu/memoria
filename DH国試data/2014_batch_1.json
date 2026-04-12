@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2014_dh_14_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の構造",
+    "exam_number": 1,
+    "question_text": "7個の椎骨から構成されるのはどれか。",
+    "choices": [
+      "頸　椎",
+      "胸　椎",
+      "腰　椎",
+      "仙　椎"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の機能・組成",
+    "exam_number": 2,
+    "question_text": "舌の模式図を示す。\nグレーの領域の味覚を伝えるのはどれか。",
+    "choices": [
+      "三叉神経",
+      "顔面神経",
+      "舌咽神経",
+      "迷走神経"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の機能・組成",
+    "exam_number": 3,
+    "question_text": "嚥下と呼吸の経路が交叉するのはどれか。",
+    "choices": [
+      "鼻　腔",
+      "上咽頭＜咽頭鼻部＞",
+      "中咽頭＜咽頭口部＞",
+      "下咽頭＜咽頭喉頭部＞"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の構造",
+    "exam_number": 4,
+    "question_text": "上顎第一大臼歯咬合面の模式図を示す。\n遠心頰側咬頭はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 5,
+    "question_text": "（　　）に入るのはどれか。\n\nアミノ酸を構成する必須元素はC、H、Oおよび（　　）である。",
+    "choices": [
+      "N",
+      "F",
+      "Na",
+      "Mg"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の機能・組成",
+    "exam_number": 6,
+    "question_text": "（　　）に入るのはどれか。\n\nエナメル質に含まれる少量無機質成分で、（　　）はエナメル質表層の濃度が内部よりも高い。",
+    "choices": [
+      "炭　酸",
+      "フッ素",
+      "ナトリウム",
+      "マグネシウム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am007",
+    "category": "人体の構造と機能",
+    "subcategory": "人体の機能・構成成分",
+    "exam_number": 7,
+    "question_text": "消化器系の模式図を示す。\npHの最も低い消化液が分泌されるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am008",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "歯・口腔の機能・組成",
+    "exam_number": 8,
+    "question_text": "唾液で正しいのはどれか。",
+    "choices": [
+      "比重は血漿よりも大きい。",
+      "浸透圧は血漿よりも高い。",
+      "安静時は弱アルカリ性である。",
+      "浸透圧は分泌速度が速くなると上昇する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "病因と病態",
+    "exam_number": 9,
+    "question_text": "歯肉腫瘍の病理組織の模式図を示す。黒塗りは腫瘍細胞の分布を示す。\nこの腫瘍はどれか。",
+    "choices": [
+      "乳頭腫",
+      "線維腫",
+      "線維肉腫",
+      "扁平上皮癌"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "病因と病態",
+    "exam_number": 10,
+    "question_text": "歯牙腫で正しいのはどれか。",
+    "choices": [
+      "高齢者に好発する。",
+      "セメント質は含まれない。",
+      "歯の萌出障害の原因となる。",
+      "顎骨を破壊して浸潤増殖する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 11,
+    "question_text": "細菌の運動にかかわる構造物はどれか。",
+    "choices": [
+      "芽　胞",
+      "莢　膜",
+      "鞭　毛",
+      "細胞壁"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 12,
+    "question_text": "抗体＜IgG＞の基本構造の模式図を示す。\n矢印が示すのはどれか。",
+    "choices": [
+      "ヒンジ部",
+      "抗原結合部",
+      "補体結合部",
+      "Fcレセプター結合部"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 13,
+    "question_text": "薬剤感受性試験の拡散法＜感受性ディスク法＞の写真を別に示す。矢印で示した黒丸は薬剤を含んだディスクである。\n最も効果のあるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 14,
+    "question_text": "ロキソプロフェンナトリウムが阻害するのはどれか。",
+    "choices": [
+      "コリンエステラーゼ",
+      "シクロオキシゲナーゼ",
+      "トランスペプチダーゼ",
+      "ホスホジエステラーゼ"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 15,
+    "question_text": "薬物を経口投与と静脈内投与した時の血中薬物濃度－時間曲線を図に示す。\n斜線部面積と点状部面積の2つの比から求められるのはどれか。",
+    "choices": [
+      "分布容積",
+      "生物学的利用能",
+      "生物学的半減期",
+      "全身クリアランス"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "う蝕の予防",
+    "exam_number": 16,
+    "question_text": "ショ糖から不溶性の多糖類を作るのはどれか。2つ選べ。",
+    "choices": [
+      "Streptococcus mitis",
+      "Streptococcus mutans",
+      "Streptococcus sanguinis",
+      "Streptococcus sobrinus"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "総論",
+    "exam_number": 17,
+    "question_text": "舌苔を主に構成するのはどれか。2つ選べ。",
+    "choices": [
+      "味　蕾",
+      "微生物",
+      "獲得被膜",
+      "剥落角化上皮"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "口腔清掃",
+    "exam_number": 18,
+    "question_text": "我が国におけるフッ化物配合歯磨剤で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "高齢者のう蝕予防に推奨される。",
+      "歯みがき後は水で頻回に洗口する。",
+      "近年の市場占有率は約70％である。",
+      "フッ素イオン濃度は0.1％以下である。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "地域歯科保健活動",
+    "exam_number": 19,
+    "question_text": "ある地域の1歳6か月児歯科健康診査の結果を表に示す。\nう蝕有病者率はどれか。",
+    "choices": [
+      "20％",
+      "25％",
+      "35％",
+      "75％"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "歯科疾患の疫学と歯科保健統計",
+    "exam_number": 20,
+    "question_text": "歯垢と歯石の付着状態を図に示す。\nOHIの値はどれか。",
+    "choices": [
+      "0.5",
+      "1.75",
+      "3.5",
+      "4.5"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "歯科疾患の疫学と歯科保健統計",
+    "exam_number": 21,
+    "question_text": "歯科疾患実態調査結果で近年増加しているのはどれか。2つ選べ。",
+    "choices": [
+      "1日1回歯をみがく者の割合＜1歳以上＞",
+      "フッ化物塗布経験者率＜1～14歳＞",
+      "未処置歯保有者率＜10～14歳＞",
+      "20歯以上を有する者の割合＜65歳以上＞"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 22,
+    "question_text": "学校保健活動の企画立案や調整で中心的な役割を担うのはどれか。",
+    "choices": [
+      "学級担任",
+      "教務主任",
+      "保健主事",
+      "学校歯科医"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 23,
+    "question_text": "人口ピラミッドの模式図を示す。\n平成22年10月1日現在の我が国の人口構成の特徴を示すのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 24,
+    "question_text": "非電離放射線はどれか。2つ選べ。",
+    "choices": [
+      "赤外線",
+      "ベータ線",
+      "ガンマ線",
+      "マイクロ波"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 25,
+    "question_text": "デング熱を媒介するのはどれか。",
+    "choices": [
+      "蚊",
+      "蛾",
+      "ダ　ニ",
+      "ゴキブリ"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 26,
+    "question_text": "特定健康診査・特定保健指導の実施義務があるのはどれか。",
+    "choices": [
+      "事業主",
+      "保健所",
+      "都道府県",
+      "医療保険者"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "地域歯科保健活動",
+    "exam_number": 27,
+    "question_text": "母子保健法で歯科健康診査の実施が義務づけられているのはどれか。",
+    "choices": [
+      "妊婦健康診査",
+      "乳児健康診査",
+      "3歳児健康診査",
+      "就学時健康診断"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 28,
+    "question_text": "地域包括支援センターの業務はどれか。2つ選べ。",
+    "choices": [
+      "高齢者の権利擁護",
+      "介護事業者の指定",
+      "生活保護の要否判定",
+      "介護予防ケアマネジメント"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "保健・医療・福祉の制度",
+    "exam_number": 29,
+    "question_text": "健康増進法に規定されているのはどれか。2つ選べ。",
+    "choices": [
+      "食中毒の予防",
+      "受動喫煙の防止",
+      "国民健康・栄養調査の実施",
+      "市町村保健センターの設置"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "保健・医療・福祉の制度",
+    "exam_number": 30,
+    "question_text": "我が国の社会保険において現物給付を主としているのはどれか。2つ選べ。",
+    "choices": [
+      "年金保険",
+      "医療保険",
+      "雇用保険",
+      "介護保険"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  }
+]

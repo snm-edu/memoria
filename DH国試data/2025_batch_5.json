@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2025_dh_25_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "潜伏感染を特徴とするのはどれか。1つ選べ。",
+    "choices": [
+      "風疹ウイルス",
+      "ムンプスウイルス",
+      "インフルエンザウイルス",
+      "単純ヘルペスウイルス1型"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "パイエル板が存在するのはどれか。1つ選べ。",
+    "choices": [
+      "胸　腺",
+      "骨　髄",
+      "小　腸",
+      "リンパ節"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "初回通過効果を受ける薬物の投与方法はどれか。1つ選べ。",
+    "choices": [
+      "内　服",
+      "静脈注射",
+      "舌下投与",
+      "皮下注射"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "ステロイド性抗炎症薬はどれか。1つ選べ。",
+    "choices": [
+      "イブプロフェン",
+      "インドメタシン",
+      "デキサメタゾン",
+      "ジクロフェナクナトリウム"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "抗血小板療法に用いられるのはどれか。1つ選べ。",
+    "choices": [
+      "アスピリン",
+      "リバーロキサバン",
+      "ヘパリンナトリウム",
+      "ワルファリンカリウム"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "「医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律」に基づく洗口液・洗口剤の分類の一部を図に示す。\nフッ化物洗口剤が該当するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "ノーマライゼーションの概念を具体化するのはどれか。2つ選べ。",
+    "choices": [
+      "バリアフリーの促進",
+      "ユニバーサルデザインの普及",
+      "スタンダードプレコーションの励行",
+      "トータルヘルスプロモーションの実施"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "生活保護法に基づく医療扶助の給付手順を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "保健所",
+      "福祉事務所",
+      "市町村保健センター",
+      "地域包括支援センター"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "児童生徒健康診断票（歯・口腔）で「保存の適否を慎重に考慮する必要があると認められる乳歯」を示す記号はどれか。1つ選べ。",
+    "choices": [
+      "C",
+      "○",
+      "△",
+      "×"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "小臼歯の近心面観を模式図に示す。\nアブフラクションが生じやすい部位はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "疫学の研究方法を図に示す。\nコホート研究はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "労働安全衛生法に基づく一般健康診断はどれか。2つ選べ。",
+    "choices": [
+      "石綿健康診断",
+      "雇入時の健康診断",
+      "歯科医師による健康診断",
+      "海外派遣労働者の健康診断"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "人口統計における出生に関する指標の算出式を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "粗出生率",
+      "純再生産率",
+      "総再生産率",
+      "合計特殊出生率"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "歯の形成で出生時にみられるのはどれか。1つ選べ。",
+    "choices": [
+      "中切歯の歯根の完成",
+      "第二乳臼歯の歯冠の完成",
+      "第一大臼歯の石灰化の開始",
+      "第二大臼歯の歯胚の形成開始"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "「感染症の予防及び感染症の患者に対する医療に関する法律」に基づく感染症の分類で5類はどれか。2つ選べ。",
+    "choices": [
+      "A型肝炎",
+      "B型肝炎",
+      "C型肝炎",
+      "E型肝炎"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "ある集団におけるCPI（2013年、WHO）の各コードが占める割合を示すのに適しているのはどれか。1つ選べ。",
+    "choices": [
+      "散布図",
+      "円グラフ",
+      "箱ひげ図",
+      "折れ線グラフ"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "唾液中のペルオキシダーゼの作用はどれか。1つ選べ。",
+    "choices": [
+      "緩衝作用",
+      "抗菌作用",
+      "湿潤作用",
+      "浄化作用"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "不正咬合の後天的な原因はどれか。1つ選べ。",
+    "choices": [
+      "過剰歯の萌出",
+      "口蓋裂の存在",
+      "永久歯胚の欠如",
+      "乳歯の晩期残存"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "ユニバーサル・ヘルス・カバレッジ＜UHC＞に主に関与する国際機関はどれか。1つ選べ。",
+    "choices": [
+      "WHO",
+      "JICA",
+      "UNFPA",
+      "UNICEF"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "厚生労働省が実施する患者調査から得られるのはどれか。1つ選べ。",
+    "choices": [
+      "喫煙率",
+      "受療率",
+      "発病率",
+      "有訴者率"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "歯科医療現場にみられるインシデント事例はどれか。2つ選べ。",
+    "choices": [
+      "受診後に患者が歯科診療所の出口で転倒した。",
+      "スケーリング時にスケーラーで患者の口唇を傷つけた。",
+      "セメント除去に際し患者の顔に探針を落としそうになった。",
+      "口腔外でのハンドピースの事前確認時に研磨用ブラシが外れた。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "歯科衛生士法に定められている業務を図に示す。\n法制化された順序はどれか。1つ選べ。",
+    "choices": [
+      "①　→　②　→　③",
+      "②　→　①　→　③",
+      "②　→　③　→　①",
+      "③　→　①　→　②"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "歯科診療所の医薬品安全管理責任者を担当できるのはどれか。2つ選べ。",
+    "choices": [
+      "看護師",
+      "管理栄養士",
+      "歯科衛生士",
+      "歯科技工士"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "病理組織検査で、検体の採取直後に浸漬する液体はどれか。1つ選べ。",
+    "choices": [
+      "蒸留水",
+      "キシレン",
+      "ホルマリン",
+      "メタノール"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "唾液検査で評価するのはどれか。2つ選べ。",
+    "choices": [
+      "pH",
+      "色　調",
+      "芳　香",
+      "分泌量"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "患者に装着した機器の一部を模式図に示す。\n図示した部分で測定できるのはどれか。2つ選べ。",
+    "choices": [
+      "血　圧",
+      "不整脈",
+      "脈拍数",
+      "経皮的酸素飽和度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "う窩から分離された細菌をグラム染色し、観察した。光学顕微鏡による観察像を示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "紡錘菌",
+      "らせん菌",
+      "ブドウ球菌",
+      "レンサ球菌"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "セルフエッチングプライマーを用いる接着システムで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "酸性モノマーで歯質を脱灰する。",
+      "3ステップシステムに比べ処理時間は短縮する。",
+      "セルフエッチングプライマーを塗布直後に光照射する。",
+      "プライミングとボンディングの同時処理が可能である。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "従来型グラスアイオノマーセメント修復の流れを図に示す。\n①の目的はどれか。1つ選べ。",
+    "choices": [
+      "研磨性の向上",
+      "水分の吸収防止",
+      "歯質接着性の強化",
+      "フッ化物イオンの徐放促進"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "行われた手術はどれか。1つ選べ。",
+    "choices": [
+      "歯肉切除術",
+      "小帯切除術",
+      "フラップ手術",
+      "歯肉弁根尖側移動術"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

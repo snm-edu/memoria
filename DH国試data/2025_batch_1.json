@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2025_dh_25_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "全身骨格標本（背面）の一部の写真を示す。\n矢印で示す骨と関節を形成するのはどれか。1つ選べ。",
+    "choices": [
+      "鎖　骨",
+      "尺　骨",
+      "橈　骨",
+      "第10肋骨"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "リンパ性器官はどれか。1つ選べ。",
+    "choices": [
+      "心　臓",
+      "腎　臓",
+      "扁　桃",
+      "甲状腺"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "咬合面にドリオピテクス型がみられる歯（FDI歯式）はどれか。1つ選べ。",
+    "choices": [
+      "14",
+      "26",
+      "35",
+      "46"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "口腔内写真を示す。\n矢印で示す領域の感覚を支配するのはどれか。1つ選べ。",
+    "choices": [
+      "顔面神経",
+      "三叉神経",
+      "舌咽神経",
+      "迷走神経"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "神経細胞を模式図に示す。\n有髄神経に特異的に存在するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "分泌量の減少が骨粗鬆症の要因となるのはどれか。1つ選べ。",
+    "choices": [
+      "エストロゲン",
+      "オキシトシン",
+      "テストステロン",
+      "プロゲステロン"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am007",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "唾液に粘性を付与する成分はどれか。1つ選べ。",
+    "choices": [
+      "ムチン",
+      "アミラーゼ",
+      "リゾチーム",
+      "ラクトフェリン"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am008",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "体温を超える環境温度の上昇にさらされた際の生体反応はどれか。1つ選べ。",
+    "choices": [
+      "発　汗",
+      "ふるえ",
+      "アドレナリン分泌",
+      "皮膚毛細血管の収縮"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "リガ・フェーデ病の原因となるのはどれか。1つ選べ。",
+    "choices": [
+      "斑状歯",
+      "先天性歯",
+      "ターナーの歯",
+      "ハッチンソンの歯"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "浸潤性発育を示すのはどれか。1つ選べ。",
+    "choices": [
+      "線維腫",
+      "乳頭腫",
+      "多形腺腫",
+      "扁平上皮癌"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "内毒素を持つのはどれか。1つ選べ。",
+    "choices": [
+      "大腸菌",
+      "ボツリヌス菌",
+      "化膿レンサ球菌",
+      "肺炎マイコプラズマ"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "消毒用エタノールが有効なのはどれか。1つ選べ。",
+    "choices": [
+      "ノロウイルス",
+      "ライノウイルス",
+      "ヒトアデノウイルス",
+      "インフルエンザウイルス"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "歯周ポケットから採取され純培養された細菌のグラム染色像を示す。\nこの細菌はどれか。1つ選べ。",
+    "choices": [
+      "Tannerella forsythia",
+      "Treponema denticola",
+      "Streptococcus mutans",
+      "Staphylococcus aureus"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "金属腐食作用のある消毒薬はどれか。1つ選べ。",
+    "choices": [
+      "エタノール",
+      "グルタールアルデヒド",
+      "次亜塩素酸ナトリウム",
+      "ベンゼトニウム塩化物"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "ペニシリン系抗菌薬が分類されるのはどれか。1つ選べ。",
+    "choices": [
+      "β-ラクタム系",
+      "グリコペプチド系",
+      "ニューキノロン系",
+      "アミノグリコシド系"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "口腔バイオフィルムの特徴はどれか。1つ選べ。",
+    "choices": [
+      "細菌が単層である。",
+      "細菌の密度を調節する。",
+      "深部ほど酸素分圧が高い。",
+      "洗口剤で容易に除去できる。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "湿球黒球温度＜WBGT＞の値が発症予防の指標となるのはどれか。1つ選べ。",
+    "choices": [
+      "凍　傷",
+      "過呼吸",
+      "高山病",
+      "熱中症"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "介護保険法に基づき設置されている地域ケア会議の機能はどれか。1つ選べ。",
+    "choices": [
+      "地域の健康危機管理の拠点",
+      "地域密着型サービスの提供",
+      "地域支援ネットワークの構築",
+      "地域保健に関する思想の普及"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "酸を取扱う職場で発生する歯の酸蝕症の好発部位はどれか。1つ選べ。",
+    "choices": [
+      "下顎臼歯舌側面",
+      "下顎前歯唇側面",
+      "上顎臼歯咬合面",
+      "上顎前歯口蓋側面"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "母子健康手帳の「妊娠中と産後の歯の状態」に記載されている注意事項の一部を図に示す。\n①に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "う　蝕",
+      "歯周病",
+      "口腔乾燥症",
+      "口腔機能低下症"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "歯面の化学的清掃法に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "スケーリング",
+      "唾液による自浄作用",
+      "デキストラナーゼ配合歯磨剤の使用",
+      "電動歯ブラシを用いるブラッシング"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "保健所の業務はどれか。2つ選べ。",
+    "choices": [
+      "労働災害の認定",
+      "食中毒の届出の受理",
+      "医療保険に関する業務",
+      "人口動態統計に関する事項"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "特定健康診査および特定保健指導の根拠法はどれか。1つ選べ。",
+    "choices": [
+      "健康増進法",
+      "地域保健法",
+      "労働安全衛生法",
+      "高齢者の医療の確保に関する法律"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "根拠に基づいた医療＜EBM＞を実践する過程を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "情報の集計",
+      "患者満足度の収集",
+      "情報の批判的吟味",
+      "情報収集に基づく基礎実験"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "Streptococcus mutansによる不溶性多糖体合成の基質になるのはどれか。1つ選べ。",
+    "choices": [
+      "lactose＜乳　糖＞",
+      "maltose＜麦芽糖＞",
+      "sucrose＜ショ糖＞",
+      "fructose＜果　糖＞"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "母子保健法に基づき市町村に届け出るのはどれか。2つ選べ。",
+    "choices": [
+      "妊　娠",
+      "死児の出産",
+      "低体重児の出生",
+      "乳幼児の結核感染"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "スクリーニング検査の有効性の指標で敏感度はどれか。1つ選べ。",
+    "choices": [
+      "検査陰性の者のうち疾病のない者の割合",
+      "検査陽性の者のうち疾病のある者の割合",
+      "疾病のある者のうち検査陽性の者の割合",
+      "疾病のない者のうち検査陰性の者の割合"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "ある歯磨剤の成分を表に示す。\n特徴はどれか。1つ選べ。",
+    "choices": [
+      "剤型は潤性である。",
+      "歯面清掃性が高い。",
+      "再石灰化を促進する。",
+      "知覚過敏を抑制する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "児童福祉法に規定されているのはどれか。1つ選べ。",
+    "choices": [
+      "教育扶助の給付",
+      "児童虐待の定義",
+      "児童相談所の設置",
+      "3歳児健康診査の実施"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "学校歯科健康診断の「児童生徒健康診断票（歯・口腔）」に記載された結果の一部を図に示す。\n説明で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "顎関節は開口訓練が必要である。",
+      "歯列・咬合は専門医による診断が必要である。",
+      "歯垢の状態は付着量が歯面の1/3を超えている。",
+      "歯肉の状態は定期的な観察が必要である。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

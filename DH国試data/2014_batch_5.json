@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2014_dh_14_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 11,
+    "question_text": "多剤耐性細菌のグラム染色像の写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "Escherichia coli",
+      "Mycobacterium tuberculosis",
+      "Pseudomonas aeruginosa",
+      "Staphylococcus aureus"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 12,
+    "question_text": "遅延型アレルギーはどれか。",
+    "choices": [
+      "金属アレルギー",
+      "アレルギー性鼻炎",
+      "アトピー性皮膚炎",
+      "ペニシリンショック"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 13,
+    "question_text": "リドカインが阻害するのはどれか。",
+    "choices": [
+      "K<sup>+</sup>チャネル",
+      "Cl<sup>-</sup>チャネル",
+      "Na<sup>+</sup>チャネル",
+      "Ca<sup>2+</sup>チャネル"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 14,
+    "question_text": "低用量アスピリンの使用目的はどれか。",
+    "choices": [
+      "歯痛の緩和",
+      "耳鳴りの抑制",
+      "皮膚角質の溶解",
+      "血栓形成の予防"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "生体と薬物",
+    "exam_number": 15,
+    "question_text": "交感・副交感神経系の模式図を示す。\nノルアドレナリンが使用する部位はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "総論",
+    "exam_number": 16,
+    "question_text": "ペリクルで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "有機物を含まない。",
+      "形成に数日を要する。",
+      "歯面を物理的に保護する。",
+      "微生物の歯面への付着を促進する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "総論",
+    "exam_number": 17,
+    "question_text": "歯肉縁下歯石で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "歯肉へ物理的刺激を与える。",
+      "有機成分が80％を超えている。",
+      "歯垢のpHが低いと形成されやすい。",
+      "血漿成分中のカルシウムで形成される。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "口腔清掃",
+    "exam_number": 18,
+    "question_text": "歯磨剤の基本成分はどれか。",
+    "choices": [
+      "塩化ナトリウム",
+      "アルギン酸ナトリウム",
+      "ポリリン酸ナトリウム",
+      "アズレンスルホン酸ナトリウム"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "う蝕の予防",
+    "exam_number": 19,
+    "question_text": "体重15kgの3歳の女児。リン酸酸性フッ化ナトリウム溶液＜2％NaF配合＞を使用しフッ化物歯面塗布を行うこととなった。急性中毒発現量は2mgF/体重kgとする。\n使用可能な溶液の上限量はどれか。",
+    "choices": [
+      "1.5mL",
+      "3.3mL",
+      "15.0mL",
+      "33.0mL"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "歯科疾患の疫学と歯科保健統計",
+    "exam_number": 20,
+    "question_text": "ある小学校の5年生の学校歯科健康診断の結果を表に示す。\nDMF歯率（％）はどれか。",
+    "choices": [
+      "1",
+      "4",
+      "40",
+      "95"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "歯科疾患の疫学と歯科保健統計",
+    "exam_number": 21,
+    "question_text": "ある集団の調査結果の一部を表に示す。\n正しい組合せはどれか。",
+    "choices": [
+      "被験者ID -- 比率尺度",
+      "性　別 -- 名義尺度",
+      "口腔の健康度 -- 間隔尺度",
+      "DMF歯数 -- 順序尺度"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm022",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "感染と免疫",
+    "exam_number": 22,
+    "question_text": "重度歯周炎に関連する「Red Complex」に含まれるのはどれか。2つ選べ。",
+    "choices": [
+      "Aggregatibacter actinomycetemcomitans",
+      "Prevotella intermedia",
+      "Tannerella forsythensis＜forsythia＞",
+      "Treponema denticola"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 23,
+    "question_text": "労働安全衛生法で、特定の有害な業務に従事する労働者に対して、歯科医師が行うことを事業主に義務づけているのはどれか。",
+    "choices": [
+      "臨時健康診断",
+      "一般健康診断",
+      "特殊健康診断",
+      "特定健康診査"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 24,
+    "question_text": "ヘルスプロモーションの取組みで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "先進医療の導入",
+      "健康診査の精度向上",
+      "健康づくりグループの育成",
+      "ウォーキングコースの整備"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 25,
+    "question_text": "1年間における食中毒患者の発生割合を示すのはどれか。",
+    "choices": [
+      "受診率",
+      "有病率",
+      "罹患率",
+      "受療率"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 26,
+    "question_text": "定期の予防接種の対象疾病はどれか。2つ選べ。",
+    "choices": [
+      "ポリオ",
+      "破傷風",
+      "B型肝炎",
+      "流行性耳下腺炎"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 27,
+    "question_text": "保健所の業務はどれか。2つ選べ。",
+    "choices": [
+      "保険医の指導",
+      "HIV検査の実施",
+      "業務上疾病の認定",
+      "精神障害者の相談"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "環境・社会と健康",
+    "exam_number": 28,
+    "question_text": "学校保健で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "定期健康診断は毎年6月末までに行う。",
+      "感染症の予防のための措置が含まれる。",
+      "教科で行う保健学習は保健管理に含まれる。",
+      "大学は学校歯科医を配置しなければならない。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "保健・医療・福祉の制度",
+    "exam_number": 29,
+    "question_text": "歯科衛生士法に規定されていないのはどれか。",
+    "choices": [
+      "療養上の世話",
+      "免許の取消し",
+      "秘密保持義務",
+      "名称の使用制限"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "保健・医療・福祉の制度",
+    "exam_number": 30,
+    "question_text": "歯科診療所1施設あたりの職種別従事者数の推移を図に示す。\n矢印が示すのはどれか。",
+    "choices": [
+      "事務職員",
+      "歯科衛生士",
+      "歯科技工士",
+      "歯科業務補助者"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm031",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "栄養・食生活の基礎",
+    "exam_number": 31,
+    "question_text": "ビタミンB2の欠乏でみられるのはどれか。",
+    "choices": [
+      "夜盲症",
+      "口角炎",
+      "壊血病",
+      "骨粗鬆症"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm032",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "栄養・食生活の基礎",
+    "exam_number": 32,
+    "question_text": "日本人の食事摂取基準で正しいのはどれか。",
+    "choices": [
+      "疾患の治療を目的としている。",
+      "6年ごとに改定が行われている。",
+      "必要エネルギー推定量を示している。",
+      "食育基本法に基づいて作成されている。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "歯科衛生士とその業務 ",
+    "exam_number": 33,
+    "question_text": "SOAPによる歯科衛生業務記録で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "「S」は対象者の主観的情報を書く。",
+      "「O」は歯科衛生介入の計画を書く。",
+      "「A」歯科衛生士の判断を書く。",
+      "「P」は対象者の反応を書く。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 34,
+    "question_text": "人体に影響を及ぼすエックス線の作用はどれか。",
+    "choices": [
+      "散　乱",
+      "電　離",
+      "透　過",
+      "回　析"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 35,
+    "question_text": "刺激時唾液分泌量の検査はどれか。2つ選べ。",
+    "choices": [
+      "ガムテスト",
+      "パッチテスト",
+      "フードテスト",
+      "サクソンテスト"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm036",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 36,
+    "question_text": "根管治療に使用する器具の断面図と拡大図とを示す。\n用途はどれか。2つ選べ。",
+    "choices": [
+      "根管形成",
+      "根管充填",
+      "根管貼薬",
+      "根管長測定"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "歯科臨床の基礎",
+    "exam_number": 37,
+    "question_text": "38歳の女性。上顎左側第二小臼歯の冷水痛を訴えて来院した。う蝕の有無を検査することとなった。初診時の口腔内写真を別に示す。\n考えられる検査はどれか。",
+    "choices": [
+      "透照診",
+      "歯髄電気診",
+      "レーザー蛍光強度測定",
+      "インピーダンス測定検査"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 38,
+    "question_text": "ブラックの窩洞分類で隣接面を含むのはどれか。2つ選べ。",
+    "choices": [
+      "1級",
+      "2級",
+      "4級",
+      "5級"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2014_dh_14_pm039",
+    "category": "歯科診療補助論",
+    "subcategory": "保存治療時の診療補助",
+    "exam_number": 39,
+    "question_text": "オフィスブリーチで起こる可能性が最も高いのはどれか。",
+    "choices": [
+      "酸蝕症",
+      "歯髄壊死",
+      "歯肉退縮",
+      "象牙質知覚過敏症"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2014_dh_14_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "歯・歯髄・歯周組織の疾患と治療",
+    "exam_number": 40,
+    "question_text": "19歳の女性。冷水痛を訴えて来院した。下顎左側第一大臼歯の実質欠損を認めるが自発痛はない。軟化象牙質を一部残して薬物を貼付し経過を観察することとした。\n行った処置はどれか。",
+    "choices": [
+      "IPC法",
+      "直接覆髄法",
+      "間接覆髄法",
+      "生活断髄法"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2015_dh_15_am091",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "73歳の男性。食事がうまく摂れないと相談を受け、歯科医師とともに訪問した。1年前に脳出血を発症し、現在、在宅療養中であるという。\n最近の栄養アセスメント結果を表に示す。\n低栄養を疑うのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am092",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "ビタミン欠乏と疾患の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "ビタミンA -- エナメル質形成不全",
+      "ビタミンD -- 骨軟化症",
+      "ビタミンE -- 象牙質形成不全",
+      "ビタミンK -- 口角炎"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am093",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "特別支援学校における歯科衛生士の役割で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "健康診断の実施",
+      "嚥下機能に応じた献立の作成",
+      "口腔機能育成のための摂食指導",
+      "障害の程度に応じた口腔清掃用具の選択"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am094",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "全部床義歯の印象採得で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "翼突下顎ヒダは下顎印象域に含まれる。",
+      "既製トレーの修正は試適してから行う。",
+      "筋圧形成は口蓋隆起部の精密印象を目的に行う。",
+      "精密印象で得られた陰型から作業用模型を製作する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am095",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "石膏の硬化時間を短くするのはどれか。",
+    "choices": [
+      "水量を多くする。",
+      "水温を低くする。",
+      "練和時間を短くする。",
+      "練和速度を速くする。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "歯肉排除用綿糸に浸透させるのはどれか。2つ選べ。",
+    "choices": [
+      "血管収縮薬",
+      "血流改善薬",
+      "血管拡張薬",
+      "血管収斂薬"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "ノロウイルス感染者の吐物の処理の手順を示す。\n\n①使い捨ての防護具を着用する。\n②吐物をペーパータオルで拭き取る。\n③拭き取った吐物は便器に流す。\n④拭き取った後の床は次亜塩素酸ナトリウムで消毒する。\n\n適切でないのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "抜歯鉗子の写真を別に示す。\n適用部位で正しいのはどれか。",
+    "choices": [
+      "上顎右側大臼歯",
+      "下顎右側大臼歯",
+      "上顎左側大臼歯",
+      "下顎左側大臼歯"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "不顕性誤嚥で正しいのはどれか。",
+    "choices": [
+      "誤嚥の自覚がある。",
+      "就寝時にもみられる。",
+      "肺炎のリスクは低い。",
+      "むせなどの反射が起きる。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am100",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "パノラマエックス線写真のトレースを示す。\n咬合平面が山型になった原因と考えられる患者の位置づけはどれか。",
+    "choices": [
+      "顔が下を向いていた。",
+      "顔が上を向いていた。",
+      "適切な断層域より前に位置していた。",
+      "適切な断層域より後ろに位置していた。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "ABO式血液型の説明で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "A型の赤血球にはB抗原がある。",
+      "B型の血清中には抗B抗体がある。",
+      "O型の血清中には抗A抗体がある。",
+      "AB型の赤血球にはA抗原がある。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "器具の写真を別に示す。\n器具の用途で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "① -- 軟化象牙質の除去",
+      "② -- 金属鋳造冠の除去",
+      "③ -- コンポジットレジンの咬合調整",
+      "④ -- 根管充塡用の糊剤の挿入"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "58歳の男性。上顎左側臼歯部頬側の歯肉切除術を行うことになった。器具の写真を別に示す。\nポケット底の位置を確認するための器具はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "リッジラップ型ポンティックのブリッジ装着後に、基底面のセメント除去に用いるのに適切なのはどれか。",
+    "choices": [
+      "綿　棒",
+      "分離材",
+      "タフトブラシ",
+      "スーパーフロス"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "障害者の歯科治療時における行動調整で誤っているのはどれか。",
+    "choices": [
+      "患者の権利や尊厳を守る。",
+      "静脈内鎮静法は有意識下で行う。",
+      "行動変容法を併用して進めると効果的である。",
+      "協力度が向上しても抑制器具や開口器は外さない。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "主に嵌合力で合着する材料はどれか。",
+    "choices": [
+      "レジンセメント",
+      "リン酸亜鉛セメント",
+      "カルボキシレートセメント",
+      "グラスアイオノマーセメント"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "4-META/MMA-TBB系接着性レジンセメントについて正しいのはどれか。2つ選べ。",
+    "choices": [
+      "フィラーが配合されている。",
+      "筆積み法で使用することができる。",
+      "非貴金属には金属処理剤を使用する。",
+      "モノマー液にキャタリストを含んだ状態で使用する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am108",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "矯正用プライヤーの写真を別に示す。\nプライヤーと用途の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "① -- 結　紮",
+      "② -- ワイヤーの屈曲",
+      "③ -- ワイヤーの着脱",
+      "④ -- ワイヤーの切断"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "咬合採得時の写真を別に示す。\n準備する器材はどれか。2つ選べ。",
+    "choices": [
+      "適合試験材",
+      "人工歯モールドガイド",
+      "アルコールトーチランプ",
+      "モデリングコンパウンド"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "5歳の男児。外傷による歯の破折を主訴として来院した。上顎両側乳中切歯の抜歯を行うために浸潤麻酔を行うことになったが、号泣して体動がある。\n注射筒を受け渡す経路を図の①～④に示す。\n適切なのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "消化管で、胆汁が流入するのはどれか。",
+    "choices": [
+      "食　道",
+      "胃",
+      "十二指腸",
+      "空　腸"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "口腔内写真を別に示す。\n矢印で示す部位に開口する唾液腺はどれか。",
+    "choices": [
+      "耳下腺",
+      "前舌腺",
+      "舌下腺",
+      "顎下腺"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "オトガイ孔から出る神経が走行中に通過するのはどれか。",
+    "choices": [
+      "歯槽孔",
+      "切歯孔",
+      "下顎孔",
+      "眼窩下孔"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "下顎骨の写真を別に示す。\n内側翼突筋の付着部はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "細胞膜を構成するリン脂質二重層を容易に通過するのはどれか。",
+    "choices": [
+      "脂肪酸",
+      "グルコース",
+      "ヘモグロビン",
+      "ナトリウムイオン"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm006",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "炭水化物はどれか。",
+    "choices": [
+      "グアニン",
+      "グリシン",
+      "グルコース",
+      "グリセロール"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "シナプスの図を示す。\nA-B間を伝わるのはどれか。",
+    "choices": [
+      "活動電位",
+      "神経伝達物質",
+      "シナプス後電位",
+      "カルシウムイオン"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm008",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "細胞死について（　）に入る語句の組合せで正しいのはどれか。\n\n（①）は成長に伴う胸腺の消失に関与し、炎症反応を（②）。",
+    "choices": [
+      "（①）壊　死 -- （②）引き起こす",
+      "（①）壊　死 -- （②）引き起こさない",
+      "（①）アポトーシス -- （②）引き起こす",
+      "（①）アポトーシス -- （②）引き起こさない"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "擦過により除去できない白色病変の写真を別に示す。\n白色病変の主体をなす病理組織所見はどれか。",
+    "choices": [
+      "線維増生",
+      "血管増殖",
+      "上皮肥厚",
+      "メラニン色素沈着"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "下顎骨に発生する嚢胞と歯の位置を図に示す。灰色部は嚢胞を示す。\n歯根嚢胞はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

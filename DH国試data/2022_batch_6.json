@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2022_dh_22_pm041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "歯内治療に使用する水酸化カルシウム製剤の用途はどれか。2つ選べ。",
+    "choices": [
+      "仮　封",
+      "覆　髄",
+      "根管消毒",
+      "歯髄鎮痛消炎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "45歳の男性。下顎歯肉の腫脹と出血を主訴として来院した。検査の結果、慢性歯周炎と診断され、歯周治療を行うことになった。初診時の正面観の口腔内写真（A）と下顎前歯部舌側面観の口腔内写真（B）を示す。\n歯周基本治療開始前に説明すべきリスクはどれか。2つ選べ。",
+    "choices": [
+      "歯根破折",
+      "食片圧入",
+      "歯の変色",
+      "象牙質知覚過敏症"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "17歳の男子。上顎左側中切歯の歯冠破折を主訴として来院した。直前に自転車で転倒したという。自発痛はない。浸潤麻酔後、直接覆髄を行うことになった。初診時の口腔内写真（A）とエックス線画像（B）を示す。\n最初に行うのはどれか。1つ選べ。",
+    "choices": [
+      "覆髄薬の貼付",
+      "露髄部の止血",
+      "ラバーダム防湿",
+      "次亜塩素酸ナトリウムによる清掃"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "73歳の女性。舌感の不良を主訴として来院した。診察の結果、下顎左側第一大臼歯の舌側根面う蝕に対してグラスアイオノマーセメント修復を行うことになった。術前の口腔内写真を示す。\nこの材料を選択した理由はどれか。2つ選べ。",
+    "choices": [
+      "審美性の向上",
+      "防湿の困難性",
+      "機械的強度の維持",
+      "二次う蝕予防効果の期待"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "70歳の男性。下顎左側臼歯部欠損による咀嚼困難を主訴として来院した。診察の結果、部分床義歯を製作することになった。義歯の精密印象採得前に行ったある操作の口腔内写真を示す。\n矢印で示す操作の目的はどれか。1つ選べ。",
+    "choices": [
+      "印象圧を均等にする。",
+      "印象時の沈下を防ぐ。",
+      "印象材の流動性をよくする。",
+      "印象体の撤去を容易にする。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "47歳の男性。上顎右側第一大臼歯部のクラウン破折による咀嚼困難を主訴として来院した。診察の結果、CAD/CAMシステムによるクラウンを製作することになった。支台歯形成後に行った印象採得時の写真（A）と使用した器具の写真（B）を示す。\n従来の精密印象採得法と比較したこの方法の特徴はどれか。2つ選べ。",
+    "choices": [
+      "咬合採得材を用いる。",
+      "専用のトレーを使用する。",
+      "画像データとして保存できる。",
+      "口腔内を光学的に直接スキャンができる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "67歳の男性。上顎前歯部の欠損による審美不良を主訴として来院した。ブリッジ製作過程における作業用模型の写真（A、B）と試適時の口腔内写真（C）を示す。\n口腔内での操作の目的はどれか。2つ選べ。",
+    "choices": [
+      "咬合の採得",
+      "適合性の確認",
+      "咬合関係の検査",
+      "口唇豊隆度の調整"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "70歳の男性。上下顎義歯の不適合による咀嚼困難を主訴として来院した。診察の結果、上下顎全部床義歯を製作することになった。完成した上下顎新義歯試適時の口腔内写真（A）とその後に行ったある検査時の口腔内写真（B）を示す。\nこの検査で確認できるのはどれか。1つ選べ。",
+    "choices": [
+      "義歯床縁の長さ",
+      "義歯の咬合接触状態",
+      "義歯床研磨面の適合状態",
+      "義歯床粘膜面の適合状態"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "8歳の男児。舌下面の異常を主訴として来院した。1年前から同症状の再発と消失を繰り返しているという。腫瘤は無痛性である。初診時の口腔内写真を示す。\n本病変の内部に含まれるものとして考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "血　液",
+      "粘　液",
+      "角化物",
+      "線維組織"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "45歳の女性。左側顔面の疼痛を主訴として来院した。1か月前から数日に1～2回の頻度で激しい疼痛が出現するようになったという。疼痛はいつも十数秒で消失するという。顔貌は左右対称で異常はみられず、開口障害や顎下リンパ節の腫脹は認められない。歯科医師が顔面を触診したところ、強い疼痛を訴えた。触診時の写真を示す。\n疼痛の原因はどれか。1つ選べ。",
+    "choices": [
+      "副神経",
+      "顔面神経",
+      "三叉神経",
+      "迷走神経"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "72歳の女性。口腔内の白斑を心配して歯科訪問診療の依頼があった。多発性脳梗塞により2年前から自宅で寝たきりとなっているという。検査の結果、真菌の感染であることがわかった。初診時の口腔内写真を示す。\n対処法はどれか。1つ選べ。",
+    "choices": [
+      "切　除",
+      "口腔清掃",
+      "消炎鎮痛剤の内服",
+      "ステロイド含有軟膏の塗布"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "8歳の男児。前歯部で食物が噛み切れないことを主訴として来院した。初診時の口腔内写真を示す。\n考えられる原因はどれか。1つ選べ。",
+    "choices": [
+      "咬唇癖",
+      "咬爪癖",
+      "弄唇癖",
+      "舌突出癖"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "マイナスのアーチレングスディスクレパンシーで生じる不正咬合はどれか。1つ選べ。",
+    "choices": [
+      "叢　生",
+      "過蓋咬合",
+      "下顎前突",
+      "空隙歯列弓"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "作業用模型上で製作された装置の口蓋側面観の写真（A）と側方面観の写真（B）を示す。\nこの装置の使用目的はどれか。1つ選べ。",
+    "choices": [
+      "保　隙",
+      "保　定",
+      "歯列の側方拡大",
+      "切歯の舌側移動"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "20歳の男性。前歯の咬み合わせが気になることを主訴として来院した。患者の初診時の口腔内写真を示す。\n口腔内の特徴はどれか。2つ選べ。",
+    "choices": [
+      "オーバーバイトは過大である。",
+      "大臼歯関係はAngle Ⅱ級である。",
+      "上顎右側中切歯は唇側傾斜を示す。",
+      "オーバージェットはマイナスである。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm056",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "10歳の男児。学校歯科健康診断で歯の形態異常を指摘され来院した。診察の結果、下顎左側第二小臼歯に突起を認めた。口腔内写真を示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "臼傍結節",
+      "中心結節",
+      "カラベリー結節",
+      "プロトスタイリッド"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "8歳の男児。歯並びが気になることを主訴として来院した。初診時の口腔内写真を示す。\n上顎中切歯間の空隙の原因として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "前歯部叢生",
+      "正中埋伏過剰歯",
+      "中切歯の異所萌出",
+      "側切歯の先天性欠如"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "摂食嚥下障害により長期にわたり経口による栄養摂取が不可能と考えられる患者で消化管に問題がない場合、適切な経管栄養法はどれか。1つ選べ。",
+    "choices": [
+      "胃　瘻",
+      "経鼻経管栄養",
+      "中心静脈栄養",
+      "末梢静脈栄養"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "71歳の男性。脳梗塞後の後遺症があるという。麻痺症状がみられる写真を示す。\nこの症状を起こすのはどれか。1つ選べ。",
+    "choices": [
+      "顔面神経",
+      "三叉神経",
+      "舌下神経",
+      "迷走神経"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "バイタルサインの測定に用いられる機器の写真を示す。\nこの機器で測定するのはどれか。1つ選べ。",
+    "choices": [
+      "SpO<sub>2</sub>",
+      "血　圧",
+      "体　温",
+      "呼吸数"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "8歳の男児。保護者がうまく歯磨きできないことを主訴として来院した。重度脳性麻痺を有する。口腔内診査の結果、臼歯部咬合面にう蝕の多発が認められた。\n原因と考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "口呼吸",
+      "舌突出嚥下",
+      "咬反射の残存",
+      "象牙質形成不全"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "薬物的行動調整法で使用する器械の一部の写真（A）と装着時の写真（B）を示す。\n適応となるのはどれか。1つ選べ。",
+    "choices": [
+      "口呼吸のある患者",
+      "体動が激しい患者",
+      "当日の処置本数が多い患者",
+      "治療に理解はあるが恐怖心が強い患者"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "フッ化物によるう蝕予防機序を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "細胞壁の破壊",
+      "酸産生の抑制",
+      "歯石形成の阻害",
+      "プラークの分解"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "歯周治療のメインテナンスで評価するのはどれか。2つ選べ。",
+    "choices": [
+      "歯の動揺度",
+      "小帯付着位置",
+      "歯石の付着程度",
+      "修復物の適合度"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "30歳の女性。歯垢染め出し後の口腔内写真を示す。\nPHPで評価したときの上顎前歯のスコアはどれか。1つ選べ。",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "40歳の女性。地域の歯周疾患検診で歯科受診を勧められて来院した。初診時の口腔内写真を示す。\n矢印で示す付着物の主成分はどれか。1つ選べ。",
+    "choices": [
+      "硝酸カルシウム",
+      "乳酸カルシウム",
+      "リン酸カルシウム",
+      "シュウ酸カルシウム"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "62歳の男性。初診時と歯周基本治療後の歯周組織検査結果の一部を表に示す。\n付着の獲得が認められたのはどれか。2つ選べ。",
+    "choices": [
+      "下顎第一大臼歯頰側遠心部",
+      "下顎第一大臼歯舌側中央部",
+      "下顎第二大臼歯舌側中央部",
+      "下顎第二大臼歯頰側近心部"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "フッ化物ゲル歯面塗布法の手順の写真を示す。\n正しい順序はどれか。1つ選べ。",
+    "choices": [
+      "③→④→①→②",
+      "③→②→④→①",
+      "④→②→①→③",
+      "④→③→②→①"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm069",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "38歳の女性。臼歯部歯肉の違和感を主訴として来院した。食物がはさまったり、フロッシング時に出血したりするという。初診時の口腔内写真（A）とエックス線画像（B）を示す。\n修復物にみられる、主訴に関連する所見はどれか。2つ選べ。",
+    "choices": [
+      "破　折",
+      "脱　離",
+      "辺縁不適合",
+      "接触点の不良"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "36歳の女性。う蝕と歯周病の治療と管理を希望して来院した。初診時の口腔内検査結果の一部を表に示す。\n歯科衛生士による口腔清掃指導とPTCで改善が期待できるのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

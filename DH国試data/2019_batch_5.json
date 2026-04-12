@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2019_dh_19_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "C型肝炎で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "血液を介して感染する。",
+      "DNAウイルスが病原体である。",
+      "予防にはワクチン接種が有効である。",
+      "わが国のキャリアは約2万人と推定される。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "Porphyromonas gingivalisの特徴はどれか。1つ選べ。",
+    "choices": [
+      "莢膜をもつ。",
+      "非溶血性を示す。",
+      "通性嫌気性菌である。",
+      "ロイコトキシンを産生する。"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "タンパク質合成の過程を図に示す。\n①の過程を阻害する抗菌薬はどれか。1つ選べ。",
+    "choices": [
+      "サルファ薬",
+      "ペニシリン系抗菌薬",
+      "マクロライド系抗菌薬",
+      "ニューキノロン系抗菌薬"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "花粉症による鼻水症状に対する薬物治療を図に示す。\n①の薬理作用はどれか。1つ選べ。",
+    "choices": [
+      "主作用",
+      "副作用",
+      "間接作用",
+      "興奮作用"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "ジアゼパムを使用した時の細胞内外のイオンの動きを模式図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "K<sup>＋</sup>",
+      "Cl<sup>－</sup>",
+      "Na<sup>＋</sup>",
+      "Ca<sup>2＋</sup>"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "摂食嚥下運動の流れの一時期を図に示す。\nこの時期はどれか。1つ選べ。",
+    "choices": [
+      "準備期",
+      "口腔期",
+      "咽頭期",
+      "食道期"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "12歳の男児。定期健康診査で来院した。来院時の口腔内写真を示す。\n矢印が示す部位の清掃に適するのはどれか。1つ選べ。",
+    "choices": [
+      "歯間ブラシ",
+      "タフトブラシ",
+      "ラバーチップ",
+      "デンタルフロス"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "歯垢染色剤に使用されるのはどれか。2つ選べ。",
+    "choices": [
+      "フロキシン",
+      "メチルレッド",
+      "ブリリアントブルー",
+      "クリスタルバイオレット"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "ある2つの地域における飲料水中のフッ化物イオン濃度と地域フッ素症指数との関連を図に示す。\nA地域とB地域で異なっていると考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "人口性比",
+      "年齢構成",
+      "年間降水量",
+      "年間平均気温"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "歯周病の第二次予防はどれか。2つ選べ。",
+    "choices": [
+      "PMTC",
+      "食生活指導",
+      "定期歯科検診",
+      "ルートプレーニング"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "ある全国的な調査（2005年）による年齢階級別歯の喪失原因を図に示す。\n歯周病はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "スクリーニング検査結果の分類で、有病者はどれか。2つ選べ。",
+    "choices": [
+      "真陽性",
+      "偽陽性",
+      "真陰性",
+      "偽陰性"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "健康日本21（第二次）における高齢者の低栄養傾向の指標はどれか。1つ選べ。",
+    "choices": [
+      "BMI",
+      "HbA1c",
+      "腹　囲",
+      "血中アルブミン"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "ICF〈国際生活機能分類〉の構成要素を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "学校教育",
+      "痛みの感覚",
+      "家族の態度",
+      "セルフケア"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "有害な作用を発現する気中濃度が最も高いのはどれか。1つ選べ。",
+    "choices": [
+      "一酸化炭素",
+      "二酸化硫黄",
+      "二酸化炭素",
+      "二酸化窒素"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "EBM実践の手順で、最初のステップはどれか。1つ選べ。",
+    "choices": [
+      "情報の適用",
+      "問題の定式化",
+      "情報の収集と選択",
+      "情報の批判的吟味"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "生活習慣病の予防に有効なのはどれか。1つ選べ。",
+    "choices": [
+      "行動変容",
+      "食品衛生",
+      "流行監視",
+      "予防接種"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "第二種学校感染症はどれか。1つ選べ。",
+    "choices": [
+      "水　痘",
+      "コレラ",
+      "ジフテリア",
+      "流行性結膜炎"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "常時50人以上の従業員が働く事業所において、労働安全衛生法に基づいて選任が義務付けられているのはどれか。2つ選べ。",
+    "choices": [
+      "産業医",
+      "衛生管理者",
+      "産業歯科医",
+      "労働衛生コンサルタント"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "わが国の社会保険の分類を図に示す。\n①で給付されるのはどれか。1つ選べ。",
+    "choices": [
+      "年　金",
+      "予　防",
+      "療　養",
+      "休業補償"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm031",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "歯科衛生士法に基づく歯科衛生士の義務はどれか。2つ選べ。",
+    "choices": [
+      "守秘義務",
+      "2年間の業務記録の保管",
+      "5年ごとの業務従事者届の提出",
+      "歯科衛生士名簿の登録事項変更の申請"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "48歳の女性。①ブラッシング時の疼痛を訴えて来院した。②全顎的にプラークの付着および歯肉退縮が認められ、歯科医師より歯科保健指導を行うよう指示された。ブラッシング方法を確認したところ、③水平法を行っていたため、④スクラッビング法に変更することが望ましいと考えた。\n歯科衛生士の業務記録を示す。\n下線部分で「計画」欄に記録する内容はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm033",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "医療法で、医療機関に義務付けられているのはどれか。1つ選べ。",
+    "choices": [
+      "医療安全管理者の配置",
+      "厚生労働省へのインシデント報告",
+      "患者・家族への医療安全指導の実施",
+      "医療安全支援センターへの医療事故報告"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "Hellmanの歯齢ⅣAはどれか。1つ選べ。",
+    "choices": [
+      "第一大臼歯の萌出完了",
+      "第二大臼歯の萌出開始",
+      "第二大臼歯の萌出完了",
+      "第三大臼歯の萌出開始"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "体温測定時間が最も短いのはどれか。1つ選べ。",
+    "choices": [
+      "鼓膜温",
+      "口腔温",
+      "腋窩温",
+      "直腸温"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "電離放射線による確率的影響でみられるのはどれか。1つ選べ。",
+    "choices": [
+      "脱　毛",
+      "白内障",
+      "白血病",
+      "皮膚発赤"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "ある検査画像を示す。\nこの検査はどれか。1つ選べ。",
+    "choices": [
+      "嚥下圧検査",
+      "超音波検査",
+      "嚥下造影検査",
+      "嚥下内視鏡検査"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "68歳の女性。上顎前歯部の一過性の冷水痛を主訴として来院した。初診時の口腔内写真を示す。\n適切と考えられる処置はどれか。2つ選べ。",
+    "choices": [
+      "フッ化物歯面塗布",
+      "ラミネートべニア修復",
+      "コンポジットレジン修復",
+      "グラスアイオノマーセメント修復"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "上顎中切歯の模式図を示す。\n斜線で示す窩洞はBlack分類でどれか。1つ選べ。",
+    "choices": [
+      "Ⅰ　級",
+      "Ⅱ　級",
+      "Ⅲ　級",
+      "Ⅳ　級"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "45歳の女性。下顎前歯の痛みを主訴として来院した。昨夜から激しい拍動性疼痛と温熱痛があるという。初診時の口腔内写真（A）、エックス線写真（B）を示す。\n考えられる対応はどれか。2つ選べ。",
+    "choices": [
+      "SRP",
+      "LDDS",
+      "咬合調整",
+      "麻酔抜髄"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

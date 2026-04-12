@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2024_dh_24_pm041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "上顎右側側切歯に対して、歯根尖切除と逆根管充塡が行われることになった。治療過程を図に、使用する器具を写真に示す。\nこの器具を使用するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "32歳の男性。上顎左側側切歯の違和感を主訴として来院した。診察の結果、感染根管治療および根管内の異物の除去が行われることになった。初診時のエックス線画像（A）と仮封材除去後のマイクロスコープ写真（B）を別に示す。\n異物の除去に使用するのはどれか。1つ選べ。",
+    "choices": [
+      "有鉤探針",
+      "スプレッダー",
+      "超音波チップ",
+      "ニッケルチタンロータリーファイル"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "フラップ手術の手順の口腔内写真を示す。\n粘膜骨膜剥離をしているのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "45歳の女性。下顎左側小臼歯部の歯が伸びて見えることを主訴として来院した。歯周基本治療後に、下顎左側第一小臼歯の歯根露出に対して根面被覆を目的に歯周形成術を行うことになった。手術中の口腔内写真を示す。\n行った手術はどれか。1つ選べ。",
+    "choices": [
+      "歯肉剥離掻爬術",
+      "遊離歯肉移植術",
+      "歯肉弁側方移動術",
+      "歯肉弁歯冠側移動術"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "1歯欠損に応用される2種類の補綴装置の写真（A、B）を示す。\nAと比較したBの特徴はどれか。2つ選べ。",
+    "choices": [
+      "違和感が少ない。",
+      "侵襲性が小さい。",
+      "咀嚼能率が高い。",
+      "取り外しが容易である。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "25歳の女性。前歯部の審美不良を主訴として来院した。上顎左側側切歯の欠損に対してインプラント治療を行うことになった。補綴装置の製作過程の写真を示す。\n矢印で示す開口部分の目的はどれか。1つ選べ。",
+    "choices": [
+      "印象材の注入",
+      "印象材の剥離防止",
+      "印象圧のコントロール",
+      "印象用コーピングの操作"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "下顎部分床義歯の写真を示す。\n矢印で示す部位について正しいのはどれか。1つ選べ。",
+    "choices": [
+      "大連結子である。",
+      "支持機能を有する。",
+      "クラスプと床をつなぐ。",
+      "断面形態は円形である。"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "54歳の女性。下顎左側の咀嚼困難を主訴として来院した。インプラントを埋入し、上部構造を製作した。製作物の写真（A)と装着時の口腔内写真（ミラー像）（B）を示す。\n製作物の特徴はどれか。2つ選べ。",
+    "choices": [
+      "セメントで合着する。",
+      "患者が取り外しできる。",
+      "スクリュー固定である。",
+      "アクセスホールが存在する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "19歳の男性。口腔内の腫脹を主訴として来院した。1週前から腫脹に気付いていたが、痛みがないため様子をみていたところ、次第に増大してきたという。特記すべき既往歴はない。ラヌーラと診断された。初診時の口腔内写真を示す。\nこの疾患の特徴はどれか。2つ選べ。",
+    "choices": [
+      "弾性軟である。",
+      "内部に唾液が貯留している。",
+      "境界不明瞭で浸潤性発育を示す。",
+      "胎生期に迷入した上皮に由来する。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "三叉神経痛の特徴はどれか。2つ選べ。",
+    "choices": [
+      "片側性に生じる。",
+      "嚥下が誘因となる。",
+      "顔面に特定の圧痛点がみられる。",
+      "電撃様疼痛が5分以上持続する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "口腔扁平苔癬の写真と病変の特徴に関する所見を示す。\n下線部で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "下顎骨の写真を示す。\n成長過程で吸収するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "矯正歯科診断用の資料の写真を示す。\nこの資料で分析できるのはどれか。2つ選べ。",
+    "choices": [
+      "オーバーバイト",
+      "咬合平面の傾斜度",
+      "上下顎骨の前後的位置関係",
+      "アーチレングスディスクレパンシー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "矯正装置による上顎中切歯の移動様式を図に示す。\nこの移動に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "咬合挙上板",
+      "アクチバトール",
+      "リンガルアーチ",
+      "マルチブラケット装置"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "矯正装置製作のための前処置の写真（A、B）を示す。\nこれらの処置が必要なのはどれか。2つ選べ。",
+    "choices": [
+      "舌側弧線装置",
+      "タングクリブ",
+      "ホーレーの保定装置",
+      "トゥースポジショナー"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "3歳の男児。3歳児歯科健康診査で軟組織異常の指摘を受けて来院した。初診時の口腔内写真（A、B）を示す。\nこれによって生じるのはどれか。1つ選べ。",
+    "choices": [
+      "開口障害",
+      "構音障害",
+      "萌出障害",
+      "唾液の分泌障害"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "4歳の女児。転倒による上顎左側乳中切歯の脱落を主訴として来院した。欠損部に対して装置を製作することとした。装置装着時の口腔内写真を示す。\nこの装置の特徴はどれか。2つ選べ。",
+    "choices": [
+      "審美性の改善",
+      "鼻呼吸の促進",
+      "咀嚼機能の回復",
+      "後継歯の萌出促進"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "70歳の女性。脳血管疾患の既往があり誤嚥性肺炎を繰り返すため経管栄養を行うこととなった。経鼻経管が留置されている写真を示す。\n管の先端が留置されている部位はどれか。1つ選べ。",
+    "choices": [
+      "鼻　腔",
+      "咽　頭",
+      "食　道",
+      "胃"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "75歳の男性。家族から「脳梗塞により意思疎通が難しく、右麻痺があり、自身での口腔清掃は困難で食物残渣が多量に停留している。」と相談を受けた。発語は困難であるが、認知機能には問題がないという。適切な助言はどれか。2つ選べ。",
+    "choices": [
+      "仰臥位での口腔清掃",
+      "低発泡性歯磨剤の推奨",
+      "コミュニケーションボードの使用",
+      "十分に水分を含ませたスポンジブラシでの口腔清掃"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "パーキンソン病の四大症状に含まれるのはどれか。2つ選べ。",
+    "choices": [
+      "幻　視",
+      "強　剛",
+      "失　認",
+      "振　戦"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "デュシェンヌ型筋ジストロフィーの遺伝様式の模式図を示す。□が男性、○が女性、X’が保因染色体である。\n発症するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "3歳の男児。異常構音があるため言語治療を受けている。口腔内写真を示す。\n考えられる構音障害の種類はどれか。1つ選べ。",
+    "choices": [
+      "器質性",
+      "機能性",
+      "聴覚性",
+      "運動障害性"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "令和4年歯科疾患実態調査における「フッ化物応用の経験の有無」の結果を図に示す。\n④はどれか。1つ選べ。\nただし、①～④は選択肢のいずれかに該当する。",
+    "choices": [
+      "経験無し",
+      "フッ化物洗口",
+      "フッ化物塗布",
+      "フッ化物配合歯磨剤の使用"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "生活習慣と関連する疾患の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "飲　酒 -- 慢性閉塞性肺疾患＜COPD＞",
+      "喫　煙 -- 歯周病",
+      "食生活 -- 脂質異常症",
+      "運動習慣 -- Sjögren症候群"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "歯周病が原因で抜去した歯の写真を示す。\n矢印で示す付着物の成分で最も多いのはどれか。1つ選べ。",
+    "choices": [
+      "赤血球",
+      "菌体成分",
+      "唾液タンパク質",
+      "リン酸カルシウム"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "55歳の男性。ブラッシング時の歯肉からの出血と口臭を主訴として来院した。歯磨きは1日に1回行っているという。歯周組織検査実施後に歯周ポケットからプラークを採取し、位相差顕微鏡で観察した際の写真を示す。\n矢印で示す形態を呈するのはどれか。1つ選べ。",
+    "choices": [
+      "Treponema denticola",
+      "Prevotella intermedia",
+      "Porphyromonas gingivalis",
+      "Aggregatibacter actinomycetemcomitans"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "歯垢染色後の歯の模式図を示す。\nPHPの値はどれか。1つ選べ。",
+    "choices": [
+      "2.5",
+      "3",
+      "3.17",
+      "4.33"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "67歳の女性。下顎右側第一大臼歯のブラッシング時の出血を主訴として来院した。歯周組織検査の結果の一部を図に示す。\n歯と歯周組織の状態で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "歯槽骨吸収を認める。",
+      "歯が垂直的に動揺する。",
+      "頰側に歯肉退縮を認める。",
+      "プローブが根分岐部を貫通する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "58歳の女性。歯石除去を希望して来院した。ペースメーカーを装着しているという。歯科医師から歯石除去の指示を受けた。口腔内写真を示す。\n使用する器具はどれか。1つ選べ。",
+    "choices": [
+      "音波歯ブラシ",
+      "超音波スケーラー",
+      "Nd：YAGレーザー",
+      "シックルタイプスケーラー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "歯周組織検査項目とその状態を表に示す。\n歯周基本治療後、SPTへ移行するために求められる条件はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

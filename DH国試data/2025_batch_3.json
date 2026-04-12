@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2025_dh_25_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "歯科診療時の刺激で脳性麻痺のある患者に生じた体動を模式図に示す。\n認められたのはどれか。1つ選べ。",
+    "choices": [
+      "鉛管現象",
+      "緊張性迷路反射",
+      "ジャックナイフ現象",
+      "非対称性緊張性頸反射"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "20歳の女性。自分で上手く歯磨きができないことを主訴として来院した。アテトーゼ型の脳性麻痺があるという。知的障害はなく、筋緊張が認められる。歯科医師からセルフケア向上のための支援を行うよう指示された。初診時の口腔内写真を示す。\n優先して行うのはどれか。1つ選べ。",
+    "choices": [
+      "フッ化物洗口の訓練",
+      "歯間ブラシによる歯間部の清掃指導",
+      "ワンタフトブラシによる叢生部の清掃励行",
+      "スポンジハンドルの装着による歯ブラシの安定化"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "58歳の男性。歯肉の腫れと出血を主訴として来院した。慢性歯周炎と診断され、歯周基本治療を実施後にSPTに移行し、3か月間隔で来院している。歯科医師から歯周組織検査とスケーリングを行うよう指示された。生活習慣病の治療のために定期的に内科を受診しているという。患者が持参した検査結果の一部を表に示す。\n事前に確認するのはどれか。2つ選べ。",
+    "choices": [
+      "基礎体温",
+      "脱力感の有無",
+      "経皮的酸素飽和度",
+      "食事からの経過時間"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "獲得被膜の特徴はどれか。2つ選べ。",
+    "choices": [
+      "色調は黄白色である。",
+      "無機性の被膜である。",
+      "厚さは1μmである。",
+      "歯の脱灰抑制作用がある。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "歯肉縁下に付着したプラーク除去に適しているのはどれか。2つ選べ。",
+    "choices": [
+      "エバチップ",
+      "研磨用コーン",
+      "超音波スケーラー",
+      "グレーシータイプキュレット"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "歯周病のリスクファクターを図に示す。\n①に該当するのはどれか。2つ選べ。",
+    "choices": [
+      "喫　煙",
+      "口呼吸",
+      "食習慣",
+      "ブラキシズム"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "48歳の男性。奥歯の歯肉の腫脹を主訴として来院した。ブラッシング時に歯肉からの出血があるという。診察の結果、全顎的に歯周組織の炎症が確認された。歯周組織の状態を確認するためエックス線画像検査を行った。その画像を示す。\n部位と所見の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "上顎前歯部 -- 水平性骨吸収",
+      "下顎前歯部 -- 根尖病巣",
+      "上顎大臼歯部 -- 垂直性骨吸収",
+      "下顎大臼歯部 -- 根分岐部病変"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "歯周組織の状態を評価する項目で歯周組織破壊の程度を示すのはどれか。1つ選べ。",
+    "choices": [
+      "BOP",
+      "付着歯肉幅",
+      "GI＜Löe & Silness＞",
+      "アタッチメントレベル"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "下顎右側第一大臼歯の根分岐部病変をファーケーションプローブで検査したところ、根分岐部が口腔内に露出しており、プローブが貫通した。\nGlickmanの分類はどれか。1つ選べ。",
+    "choices": [
+      "1級",
+      "2級",
+      "3級",
+      "4級"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "歯周基本治療の継続を判断する根拠となった歯の数はどれか。1つ選べ。",
+    "choices": [
+      "2歯",
+      "3歯",
+      "5歯",
+      "6歯"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "根拠となった歯に対してSRPを実施する際に使用するグレーシータイプキュレットはどれか。2つ選べ。",
+    "choices": [
+      "＃1/2",
+      "＃7/8",
+      "＃11/12",
+      "＃13/14"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "歯面研磨の操作で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "歯面を湿潤状態に保つ。",
+      "研磨用カップを歯面に断続的に圧接する。",
+      "仕上げにRDA値250の研磨剤を使用する。",
+      "コントラアングルハンドピースの回転数を30,000rpmに設定する。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "歯周ポケット内の洗浄に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "ポビドンヨード",
+      "消毒用エタノール",
+      "次亜塩素酸ナトリウム",
+      "ベンゼトニウム塩化物"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "シックルタイプスケーラーのラテラルサーフェイスのシャープニングにおける砥石とフェイスの角度はどれか。1つ選べ。",
+    "choices": [
+      "10～20度",
+      "45度",
+      "90度",
+      "100～110度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "5歳の女児。う蝕予防を希望して保護者と来院した。歯科医師からフッ化物歯面塗布を指示された。準備する器材の写真を示す。\n適切な使用法はどれか。2つ選べ。",
+    "choices": [
+      "薬剤を10mL使用する。",
+      "薬剤は3～4分間歯面に停滞させる。",
+      "歯面の余剰薬剤を拭き取る。",
+      "塗布後に水で洗浄する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "定期歯科健康診査のために来院した男児の口腔内写真を示す。\n保護者へのフッ化物配合歯磨剤の説明で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "就寝前に毎日使用する。",
+      "1,400～1,500ppmFの歯磨剤を選択する。",
+      "ブラッシング後、5～15mLの水で1回洗口する。",
+      "歯ブラシ植毛部全体（2cm程度）を覆う歯磨剤を使用する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "小窩裂溝塡塞の術式で、レジン系塡塞材の塡塞後に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "咬合紙",
+      "酸処理材",
+      "光照射器",
+      "ポリッシングブラシ"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am078",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "初診時の医療面接で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "話の途中で話題を変える。",
+      "患者の理解を随時確認する。",
+      "専門用語を使って説明する。",
+      "開かれた質問を取り入れる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am079",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "口腔内写真を示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "クレフト",
+      "根面露出",
+      "フィステル",
+      "くさび状欠損"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "A市住民を対象に行われた「健康フェスティバル」で口腔機能評価を実施した。65歳以上の住民に口腔機能が低下している者が多くみられたことから、改めて健康教室を行うことになった。健康教室の参加者20名の口腔機能評価の結果を表に示す。\n参加者に対して優先して実施するのはどれか。1つ選べ。",
+    "choices": [
+      "開口訓練",
+      "パタカラ体操",
+      "唾液腺マッサージ",
+      "30秒噛み噛み体操"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "40歳の男性。急性リンパ性白血病の診断を受け、入院治療中である。口腔清掃困難と口腔内の疼痛のため主治医から周術期等口腔機能管理の依頼があった。診察の結果、口腔衛生状態不良であり、歯科医師から口腔衛生管理と病棟看護師が行う口腔ケアへの助言を指示された。初診時の口腔内写真を示す。\n看護師への助言で適切な内容はどれか。2つ選べ。",
+    "choices": [
+      "口腔清掃前に保湿を行ってください。",
+      "研磨剤配合の歯磨剤を使用してください。",
+      "アルコールを含む洗口剤を使用してください。",
+      "ヘッドの小さい歯ブラシを選択してください。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "地域保健事業で40歳代の住民を対象に定期的な歯科健康診査の重要性について講話を行った。事業報告書の一部を表に示す。\n評価できるのはどれか。2つ選べ。",
+    "choices": [
+      "プロセス評価",
+      "アウトカム評価",
+      "アウトプット評価",
+      "ストラクチャー評価"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "観察式の認知機能評価方法はどれか。1つ選べ。",
+    "choices": [
+      "FAST",
+      "MMSE",
+      "HDS-R",
+      "MoCA-J"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "口腔衛生状態の指数の特徴を図に示す。\n該当するのはどれか。1つ選べ。",
+    "choices": [
+      "PHP",
+      "OHI-S",
+      "O’LearyのPCR",
+      "Silness & LöeのPℓI"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "スプレータイプと比較したジェルタイプの口腔保湿剤の特徴はどれか。2つ選べ。",
+    "choices": [
+      "水分の不足を補う。",
+      "蒸発防止効果が高い。",
+      "口腔内の停滞時間が短い。",
+      "咽頭への垂れ込みが少ない。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "B小学校の児童を対象とする「口腔に関する健康教育」を依頼された。対象者、学校歯科健康診断の結果および給食時の様子について、養護教諭から聞き取った内容を図に示す。\n適切な指導内容はどれか。2つ選べ。",
+    "choices": [
+      "第二大臼歯の磨き方",
+      "口臭の原因と予防方法",
+      "よく噛んで食べる習慣づくり",
+      "歯の交換期に対応した食形態の工夫"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "42歳の女性。定期歯科健康診査のため来院した。口腔内観察の結果、多量の歯垢付着が確認されたため、歯科医師から歯科保健指導を指示された。歯科保健指導時の会話の一部を図に示す。\n下線部でストレス対処法の問題焦点コーピングに該当するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "58歳の男性。歯ぐきからの出血を主訴として来院した。診察の結果、多量のプラーク付着と歯肉炎を認めたため、歯科医師から食生活習慣の聞き取りと食生活指導を指示された。現在、在宅勤務であり、休日も自宅で過ごすことが多いという。ある日の食事内容を食事バランスガイドで評価した結果を表に示す。\n摂取量を増やすことで食事バランスが向上するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "79歳の男性。飲み込みにくいことを主訴として来院した。上下顎全部床義歯を装着しており、適合は良好である。半年前から飲水時の「むせ」や食後の喉の残留感を自覚しており、食事摂取量も減少しているという。改訂水飲みテストは2点であった。歯科医師から食事に関する指導を行うよう指示された。\n指導内容で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "食品を細かく刻む。",
+      "水分にとろみを付ける。",
+      "酸味が強い味付けにする。",
+      "咽頭への付着性が低い食品を選ぶ。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "85歳の女性。よく噛めなくて食事を嫌がることを主訴として家族から歯科訪問診療の依頼があった。診察の結果、義歯を再製作することになった。現在の身長は152cm、体重は40kgであり、低栄養と診断されているという。日中は座って過ごすことが多く、歩行速度の低下が認められる。歯科治療と並行して、管理栄養士とともに栄養指導を行うことになった。食事摂取状況の一部を表に示す。\n改善が必要なのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

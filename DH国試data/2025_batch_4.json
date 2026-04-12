@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2025_dh_25_am091",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "器具の写真を示す。\n診療での使用後から次回の使用時までに行うメインテナンスの手順はどれか。1つ選べ。",
+    "choices": [
+      "残留水の排出　→　注　油　→　洗　浄　→　滅　菌",
+      "洗　浄　→　注　油　→　滅　菌　→　残留水の排出",
+      "注　油　→　洗　浄　→　残留水の排出　→　滅　菌",
+      "滅　菌　→　注　油　→　洗　浄　→　残留水の排出"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am092",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "普通石膏の練和に適する水温はどれか。1つ選べ。",
+    "choices": [
+      "5℃",
+      "15℃",
+      "30℃",
+      "45℃"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am093",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "歯面処理材の準備が必要なのはどれか。2つ選べ。",
+    "choices": [
+      "リン酸亜鉛セメント",
+      "接着性レジンセメント",
+      "酸化亜鉛ユージノールセメント",
+      "光重合型グラスアイオノマーセメント"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am094",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "30歳の男性。右側で甘い物を噛むと上の歯がしみることを主訴として来院した。2週前から気付いていたが痛みがないため様子をみていたという。診察の結果、象牙質う蝕と診断され、間接修復を行うことになった。完成した修復物の写真（A、B）と仮封材除去後の口腔内写真（C）を示す。\n修復物を装着する際に準備するのはどれか。1つ選べ。",
+    "choices": [
+      "光照射器",
+      "仕上げ用スチールバー",
+      "エリオットのセパレーター",
+      "プラスチックマトリックス"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am095",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "19歳の男性。下顎右側第二大臼歯の一過性の冷水痛を主訴として来院した。2か月前に歯がかけたという。診察の結果、深在性う蝕と診断され、露髄を避けるため2回に分けてう蝕処置を行うことになった。初診時とう蝕除去中の口腔内写真（A、B）を示す。\n矢印で示す部分に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "水酸化カルシウム製剤",
+      "酸化亜鉛ユージノールセメント",
+      "従来型グラスアイオノマーセメント",
+      "タンニン・フッ化物合剤配合ポリカルボキシレートセメント"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "検査法と器材の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "咬合圧検査 -- ピーナッツ",
+      "下顎運動検査 -- パントグラフ",
+      "咬合接触検査 -- 咬合紙",
+      "咀嚼能力検査 -- 感圧フィルム"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am097（不備問題複数回答）",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "全部床義歯を製作するために研究用模型の印象採得を行うことになった。印象用器材の写真を示す。\n使用するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "7歳の男児。下顎乳前歯部の違和感を主訴として保護者と来院した。診察の結果、下顎右側乳側切歯の舌側に永久歯の萌出が認められた。先行歯に動揺がないため局所麻酔下で抜歯を行うことになった。\n抜歯後の注意事項はどれか。2つ選べ。",
+    "choices": [
+      "頻回に含嗽する。",
+      "咬傷に気をつける。",
+      "食事はペースト食にする。",
+      "抜歯創を指や舌で触れない。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "観血処置後の止血法と用いる器材の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "挫滅法 -- ガーゼ",
+      "焼灼法 -- 電気メス",
+      "塞栓法 -- 骨ろう＜ボーンワックス＞",
+      "圧迫包帯法 -- 弾性包帯"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "器具の写真を示す。\nこの器具の用途はどれか。1つ選べ。",
+    "choices": [
+      "結紮線の切断",
+      "バンドの撤去",
+      "ブラケットの撤去",
+      "アーチワイヤーの切断"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "85歳の女性。口腔内の衛生状態が悪いため、介護支援専門員から歯科訪問診療の依頼があった。患者は意思の疎通が難しく脳梗塞で右側に麻痺がある。主たる介護者は家族であるという。歯科医師の診察後、ベッド上で口腔清掃を行うよう指示された。\n適切な対応はどれか。2つ選べ。",
+    "choices": [
+      "左側を下にした側臥位で行う。",
+      "薬物を用いた行動調整を行う。",
+      "コミュニケーションには筆談を用いる。",
+      "日常使用している口腔清掃用具を確認する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "70歳の男性。上顎左側第一大臼歯の痛みを主訴として来院した。50年前に直接修復処置を受け問題なく経過していたが、1か月前から気になっていたという。診察の結果、二次う蝕と診断されコンポジットレジン修復を行うことになった。処置中の口腔内写真を示す。\n修復物を除去する際の対応で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "無注水下で除去する。",
+      "診療室内の換気を行う。",
+      "口腔外バキュームを用いる。",
+      "撤去した修復物はリサイクルする。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "個人モニタリング用線量計で適切なのはどれか。1つ選べ。",
+    "choices": [
+      "患者が装着する。",
+      "1年ごとに交換する。",
+      "女性は腹部に装着する。",
+      "放射線被曝を直接防ぐことができる。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "脈拍測定の写真を示す。\n正しい測定方法はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "歯科診療所の待合室で患者が突然、床に倒れこんだ場合、最初に行うのはどれか。1つ選べ。",
+    "choices": [
+      "救急車を呼ぶ。",
+      "意識を確認する。",
+      "AEDを持ってくる。",
+      "バイタルサインを確認する。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "摂食嚥下のある段階を模式図に示す。\nこの段階はどれか。1つ選べ。",
+    "choices": [
+      "咽頭期",
+      "口腔期",
+      "準備期",
+      "先行期"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "唾液分泌機能が低下する原因で唾液腺に傷害を認めるのはどれか。1つ選べ。",
+    "choices": [
+      "降圧薬",
+      "糖尿病",
+      "ラヌーラ",
+      "放射線治療"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am108",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "4歳の女児。滑舌が悪いことを主訴として保護者と来院した。2歳頃から不明瞭な発音があることに気づいていたが経過を見ていたという。口腔内を観察したところ、舌尖がハート状に陥凹するのが認められた。歯科医師から構音訓練を行うよう指示された。\n訓練が必要なのはどれか。2つ選べ。",
+    "choices": [
+      "ウ",
+      "タ",
+      "パ",
+      "ラ"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "口腔機能低下症の検査項目はどれか。2つ選べ。",
+    "choices": [
+      "口　臭",
+      "味　覚",
+      "咬合力",
+      "口腔粘膜湿潤度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "8歳の女児。食べ物がうまく飲み込めないことを主訴として保護者と来院した。口呼吸があり、口を開けていることが多いという。嚥下時の口腔内写真を示す。\nこの状態が生じる原因として考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "胃食道逆流",
+      "クレンチング",
+      "乳児型嚥下残存",
+      "鼻咽腔閉鎖不全"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm001",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "頭蓋骨の一部の写真を示す。\n矢印で示す部位に付着するのはどれか。1つ選べ。",
+    "choices": [
+      "頰　筋",
+      "咬　筋",
+      "笑　筋",
+      "口輪筋"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "第一鰓弓由来の組織はどれか。1つ選べ。",
+    "choices": [
+      "舌　骨",
+      "眼輪筋",
+      "広頸筋",
+      "顎舌骨筋"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "下唇の感覚を支配する神経が通過するのはどれか。1つ選べ。",
+    "choices": [
+      "下顎孔",
+      "歯槽孔",
+      "正円孔",
+      "蝶口蓋孔"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm004",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "心電図波形を図に示す。\n心室筋の収縮が生じたときに現れるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "大腸を模式図に示す。\n壁が伸展することで排便反射の起点となるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm006",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "嘔吐物由来の酸蝕症の要因はどれか。1つ選べ。",
+    "choices": [
+      "胃　液",
+      "膵　液",
+      "胆　汁",
+      "腸　液"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm007",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "口唇が構音点となるのはどれか。1つ選べ。",
+    "choices": [
+      "カ",
+      "サ",
+      "タ",
+      "パ"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm008",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "唾石が生じる頻度が最も高いのはどれか。1つ選べ。",
+    "choices": [
+      "顎下腺",
+      "口蓋腺",
+      "耳下腺",
+      "舌下腺"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "新生児の顔面披裂を模式図に示す。\n矢印で示す披裂の癒合不全が生じる部位の組合せで正しいのはどれか。1つ選べ。",
+    "choices": [
+      "上顎突起 -- 下顎突起",
+      "上顎突起 -- 内側鼻突起",
+      "上顎突起 -- 外側鼻突起",
+      "内側鼻突起 -- 外側鼻突起"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "粥状動脈硬化症で血管壁に蓄積するのはどれか。1つ選べ。",
+    "choices": [
+      "尿　酸",
+      "ビリルビン",
+      "グリコーゲン",
+      "コレステロール"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

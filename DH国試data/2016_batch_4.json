@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2016_dh_16_am091",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "ある市の保健センターで行った1歳6か月児歯科健康診査におけるう蝕罹患型の内訳を表に示す。\nう蝕を有する者の割合はどれか。",
+    "choices": [
+      "10%",
+      "20%",
+      "30%",
+      "40%"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am092",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "歯科衛生教育活動に用いる媒体を別に示す。\n利用する媒体と対象者の組合せで適切なのはどれか。2つ選べ。",
+    "choices": [
+      "① -- 小学校1年の児童",
+      "② -- 保育園児の保護者",
+      "③ -- 幼稚園児",
+      "④ -- 中学校1年の生徒"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am093",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "摂食嚥下障害の間接訓練として行うガムラビングで正しいのはどれか。",
+    "choices": [
+      "上下の歯は咬合させる。",
+      "出てきた唾液は最後まで嚥下しないよう指示する。",
+      "臼歯部から前歯部に向かって歯頸部歯肉をこする。",
+      "3秒に1往復程度の速さで行う。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am094",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "5年間の保管が規定されているのはどれか。2つ選べ。",
+    "choices": [
+      "診療録",
+      "歯科技工指示書",
+      "産業廃棄物管理票",
+      "歯科衛生士業務記録"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am095",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "歯を切削できるのはどれか。",
+    "choices": [
+      "CO<sub>2</sub>レーザー",
+      "半導体レーザー",
+      "Er：YAGレーザー",
+      "Nd：YAGレーザー"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "56歳の男性。感染症についての既往は不明である。診療後に、歯科衛生士が使用済みの注射針を誤って左示指に刺してしまい、出血を認めた。歯科衛生士はB型肝炎ワクチンを接種しておりHBS抗体を持っている。\n直ちに行うのはどれか。",
+    "choices": [
+      "院長に報告する。",
+      "アルコールで指を清拭する。",
+      "大量の流水で十分に洗い流す。",
+      "患者に血液検査をお願いする。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "アルジネートを用いた印象体を次亜塩素酸ナトリウムで消毒する場合の濃度と浸潰時間の組合せで正しいのはどれか。",
+    "choices": [
+      "0.01% -- 30分",
+      "0.5% -- 20分",
+      "5.0% -- 10分",
+      "10.0% -- 5分"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "レジンインレー窩洞の仮封材として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "ストッピング",
+      "水硬性セメント",
+      "水酸化カルシウム製剤",
+      "酸化亜鉛ユージノールセメント"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "器具の写真を別に示す。\n使用に際し、歯と窩洞の組合せで正しいのはどれか。",
+    "choices": [
+      "上顎小臼歯 -- Ⅰ　級",
+      "下顎大臼歯 -- Ⅱ　級",
+      "上顎犬歯 -- Ⅲ　級",
+      "下顎中切歯 -- Ⅴ　級"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "コンポジットレジン修復のシェードテイキングの留意点はどれか。2つ選べ。",
+    "choices": [
+      "白色室内灯下で行う。",
+      "患歯と隣在歯を濡らす。",
+      "シェードガイドを濡らす。",
+      "ラバーダム装着後に行う。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "直接抜髄法に使用する器具の写真を別に示す。\n根管内歯髄の除去に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "下顎大臼歯のⅡ級メタルインレー窩洞の連合印象採得を行うことになった。印象材の準備を行っている写真を別に示す。\nこの後に使用する印象材はどれか。",
+    "choices": [
+      "石　膏",
+      "アルジネート",
+      "シリコーンラバー",
+      "酸化亜鉛ユージノール"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "部分床義歯の咬合床の写真を別に示す。\n矢印が示す材料はどれか。",
+    "choices": [
+      "常温重合レジン",
+      "トレーコンパウンド",
+      "モデリングコンパウンド",
+      "ユーティリティワックス"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "膿瘍切開後にドレーンを使用する目的はどれか。",
+    "choices": [
+      "止　血",
+      "鎮　痛",
+      "膿汁排出",
+      "感染防止"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "28歳の女性。下顎左側第三大臼歯の抜歯を行った。帰宅後に抜歯窩からの出血が止まらないため再度来院した。診察の結果、止血処置を行うことになった。\n準備するのはどれか。2つ選べ。",
+    "choices": [
+      "骨　蠟",
+      "骨バー",
+      "骨ヤスリ",
+      "ゼラチンスポンジ"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "矯正歯科治療における顔面写真の撮影で正しいのはどれか。",
+    "choices": [
+      "口角鉤を使用する。",
+      "開口状態で撮影する。",
+      "限耳平面を床と平行にする。",
+      "カメラレンズの高さを口の高さに合わせる。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "舌小帯切除術を行う際に準備する器具はどれか。2つ選べ。",
+    "choices": [
+      "鋭　匙",
+      "尖刃刀",
+      "扁平鉤",
+      "モスキート鉗子"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am108",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "口腔機能訓練時の写真を別に示す。\nこの訓練はどれか。2つ選べ。",
+    "choices": [
+      "開口訓練",
+      "咳嗽訓練",
+      "筋機能訓練",
+      "ROM＜可動域＞訓練"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "8歳の女児。脳性麻痺と診断されている。摂食嚥下障害を主訴として来院した。診察の結果、呼吸と嚥下機能の協調不全による誤嚥や窒息の危険性があり、過開口、咬反射、丸飲み込み及び食べこぼし等の症状がみられた。\n摂食機能療法を行うにあたり必要な対応はどれか。2つ選べ。",
+    "choices": [
+      "食形態の確認をする。",
+      "安定した摂食姿勢を確保する。",
+      "食前にアイスマッサージを行う。",
+      "摂食中は血圧のモニタリングを行う。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "下顎の口内法エックス線写真撮影時の写真を別に示す。\n下顎の咬合平面の設定が正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "心臓の構造を図に示す。\n肺からの血液が流入するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "食道と胃の境界部はどれか。",
+    "choices": [
+      "肝　門",
+      "噴　門",
+      "幽　門",
+      "肛　門"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "頭蓋骨側面の写真を別に示す。\n矢印の部位から起始するのはどれか。",
+    "choices": [
+      "咬　筋",
+      "側頭筋",
+      "内側翼突筋",
+      "外側翼突筋"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "歯と歯周組織の両者に属するのはどれか。",
+    "choices": [
+      "歯　髄",
+      "象牙質",
+      "歯根膜",
+      "セメント質"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "O型血液で正しいのはどれか。\nただし、選択肢は【抗A抗体】 -- 【抗B抗体】とする。",
+    "choices": [
+      "あり -- あり",
+      "なし -- あり",
+      "あり -- なし",
+      "なし -- なし"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "内耳を図に示す。\n内部に聴覚の受容器があるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "破骨細胞の活性を抑制するのはどれか。",
+    "choices": [
+      "カルシトニン",
+      "バソプレッシン",
+      "活性型ビタミンD",
+      "副甲状腺ホルモン"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm008",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "（　）に入るのはどれか。\n\n下肢静脈内の血栓が血流により運ばれると、（　）に塞栓症を起こしやすい。",
+    "choices": [
+      "脳",
+      "肝",
+      "肺",
+      "腎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "摩耗症の小臼歯の断面図を示す。\n矢印で示す灰色部の硬組織はどれか。",
+    "choices": [
+      "象牙質橋",
+      "原生象牙質",
+      "第二象牙質",
+      "第三象牙質"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "軟組織に発生する嚢胞はどれか。",
+    "choices": [
+      "歯根嚢胞",
+      "萌出嚢胞",
+      "含歯性嚢胞",
+      "鼻口蓋管嚢胞"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

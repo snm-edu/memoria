@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2019_dh_19_pm041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "歯髄鎮痛消炎療法で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "KNO<sub>3</sub>で象牙細管を封鎖する。",
+      "修復象牙質形成を目的とする。",
+      "急性根尖性歯周炎が適応である。",
+      "ユージノールの鎮静効果を利用している。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "54歳の男性。上顎右側第一大臼歯の拍動性の疼痛を主訴として来院した。急性化膿性根尖性歯周炎と診断され、感染根管治療が行われたところ、多量の排膿と出血が認められた。処置中の口腔内写真を示す。\n処置後に行う仮封の方法で考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "レジン系仮封材による単一仮封",
+      "サンダラック綿球による穿通仮封",
+      "カルボン酸系セメントによる単一仮封",
+      "ストッピングと酸化亜鉛ユージノールセメントによる二重仮封"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "20歳の女性。下顎前歯部歯肉からの出血を主訴として来院した。6か月前からブラッシング時に自覚していたが痛みがないため放置していたという。歯周組織検査後、TBIとスケーリングを行うよう指示を受けた。初診時の口腔内写真（A、B）とエックス線写真の一部（C）を示す。\n歯周基本治療終了後の再評価時にみられると考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "露出歯根面",
+      "スティップリング",
+      "象牙質知覚過敏症",
+      "プロービング深さの減少"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "53歳の男性。歯肉の腫脹を主訴として来院した。検査の結果、慢性歯周炎と診断され、歯周基本治療後に歯周組織再生療法が行われることになった。歯周外科治療時の口腔内写真（A）とその一部を拡大した写真（B）を示す。\n次に行う処置で考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "SRP",
+      "縫　合",
+      "歯槽骨整形",
+      "歯周組織再生治療剤の塗布"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "46歳の女性。上顎右側第二小臼歯の違和感を主訴として来院した。慢性歯周炎と診断され、歯周基本治療を行った。再評価時のエックス線写真と歯周組織検査結果の一部を示す。歯周外科治療を行うことになった。\n考えられる術式はどれか。1つ選べ。",
+    "choices": [
+      "ENAP",
+      "フラップ手術",
+      "遊離歯肉移植術",
+      "歯肉弁根尖側移動術"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "75歳の女性。咀嚼困難を主訴として来院した。上下顎精密印象採得後に製作した装置の写真を示す。\nこの装置の目的はどれか。2つ選べ。",
+    "choices": [
+      "咬合圧の測定",
+      "人工歯の排列",
+      "咀嚼機能の検査",
+      "顎間関係の記録"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "下顎部分床義歯の写真（A）とその一部を拡大した写真（B）を示す。\n丸で囲んだ部分の役割はどれか。1つ選べ。",
+    "choices": [
+      "沈下の防止",
+      "離脱の防止",
+      "水平的動揺の防止",
+      "咬合力伝達の防止"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "上顎前歯部の支台歯形成終了後、治療に用いた装置の写真を示す。\n本装置の目的はどれか。2つ選べ。",
+    "choices": [
+      "色調の選択",
+      "支台歯の保護",
+      "審美性の確保",
+      "精密印象の採得"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "血球検査において、血小板の減少がみられるのはどれか。1つ選べ。",
+    "choices": [
+      "血友病",
+      "血小板無力症",
+      "播種性血管内凝固症候群",
+      "von Willebrand病〈フォン　ウィルブランド病〉"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "55歳の男性。上顎右側第一大臼歯の疼痛を主訴として来院した。歯根破折が認められたため、局所麻酔下に近心頰側根の抜歯が行われたところ、抜歯窩からの持続的出血を認めたため、止血剤を抜歯窩に挿入した。挿入後の口腔内写真を示す。\n止血のために使用できるのはどれか。2つ選べ。",
+    "choices": [
+      "酸化セルロース",
+      "トラネキサム酸",
+      "ゼラチンスポンジ",
+      "塩化ベンゼトニウム"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "65歳の男性。下顎右側第一大臼歯の疼痛を主訴として来院した。既往歴として慢性閉塞性肺疾患があるという。急性化膿性歯髄炎と診断され、局所麻酔下にて抜髄が行われることになった。処置中に患者に装着した機器の写真を示す。\n測定しているのはどれか。2つ選べ。",
+    "choices": [
+      "脈　拍",
+      "脈　圧",
+      "収縮期血圧",
+      "経皮的動脈血酸素飽和度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "45歳の女性。右側頬粘膜部の痛みを主訴として来院した。2週前に頬粘膜の異常に気付き、接触痛を自覚するようになったという。両側の頬粘膜部に網状の白色病変を認めた。口腔内写真を示す。\n考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "天疱瘡",
+      "帯状疱疹",
+      "扁平苔癬",
+      "ヘルパンギーナ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "矯正歯科治療で撮影されたエックス線写真を示す。\n評価できるのはどれか。1つ選べ。",
+    "choices": [
+      "歯数の異常",
+      "上下顎骨の左右的対称性",
+      "上下顎骨の前後的位置関係",
+      "アーチレングスディスクレパンシー"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "上顎歯列模型側面観の写真を示す。\nAngleの不正咬合の分類で基準となるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "口腔内写真を示す。\n上下顎前歯の前後的、垂直的被蓋関係の評価で正しいのはどれか。1つ選べ。\nただし、選択肢は【前後的関係】 -- 【垂直的関係】とする。",
+    "choices": [
+      "（＋） -- （＋）",
+      "（－） -- （＋）",
+      "（＋） -- （－）",
+      "（－） -- （－）"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "カウプ指数の計算式はどれか。1つ選べ。",
+    "choices": [
+      "［体重（g）/身長（m）<sup>2</sup>］×10",
+      "［体重（g）/身長（cm）<sup>2</sup>］×10",
+      "［体重（kg）/身長（m）<sup>2</sup>］×10",
+      "［体重（kg）/身長（cm）<sup>2</sup>］×10"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "4歳の男児。う蝕治療を目的として来院した。保存不可能な乳臼歯が抜去され、装置が装着された。装置装着時の口腔内写真を示す。\nこの装置の目的はどれか。1つ選べ。",
+    "choices": [
+      "垂直的保隙",
+      "近遠心的保隙",
+      "歯の歯体移動",
+      "咀嚼機能の回復"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "3歳の男児。上顎右側乳中切歯唇側歯肉の腫脹を主訴として来院した。う蝕の進行による化膿性根尖性歯周炎と診断され、根管治療が行われた。症状が軽快し根管充塡が行われることになった。\n根管充塡材を選択するうえで最も留意するのはどれか。1つ選べ。",
+    "choices": [
+      "易感染性",
+      "歯根が未完成",
+      "高い歯髄活性",
+      "生理的な歯根吸収"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "75歳の女性。食べにくいことを主訴として来院した。脳幹梗塞の後遺症により右側の舌に麻痺が生じたため、舌接触補助床が製作された。口腔内に装着した写真を示す。\n改善できるのはどれか。1つ選べ。",
+    "choices": [
+      "口腔への取り込み",
+      "口腔から咽頭への送り込み",
+      "咽頭から食道への送り込み",
+      "食道から胃への送り込み"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "パーキンソン病の主症状はどれか。2つ選べ。",
+    "choices": [
+      "多　弁",
+      "無表情",
+      "筋肉の弛緩",
+      "手足の震え"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "8歳の男児。自閉スペクトラム症であるという。小児歯科外来で歯科衛生士が口腔清掃を行っている場面の写真を示す。\n患児が口腔清掃中にヘッドホンにより遮断しているのはどれか。2つ選べ。",
+    "choices": [
+      "指　示",
+      "説　明",
+      "子どもの泣き声",
+      "治療用機器の音"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "32歳の男性。知的能力障害があって障害者の施設に通所している。歯科健診で歯肉の腫脹と口臭を指摘され、施設職員と一緒に来院した。初診時の口腔内写真を示す。\n服用を疑う薬はどれか。1つ選べ。",
+    "choices": [
+      "アスピリン",
+      "メチシリン",
+      "フェニトイン",
+      "ワルファリンカリウム"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "歯の付着物で生体防御作用をもつのはどれか。1つ選べ。",
+    "choices": [
+      "歯　石",
+      "ステイン",
+      "プラーク",
+      "ペリクル"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm064",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "口臭の官能試験で「かろうじて悪臭と認識できる」のはどれか。1つ選べ。",
+    "choices": [
+      "スコア0",
+      "スコア1",
+      "スコア2",
+      "スコア3"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "喫煙者にみられる歯周組織の特徴はどれか。2つ選べ。",
+    "choices": [
+      "歯肉辺縁部の浮腫",
+      "口蓋側の深い歯周ポケット",
+      "歯肉へのメラニン色素沈着",
+      "歯肉辺縁部からの出血増加"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "歯周病のリスク評価に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "唾液pH",
+      "唾液緩衝能",
+      "唾液粘稠度",
+      "唾液中潜血反応"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "歯周プローブを使用するのはどれか。2つ選べ。",
+    "choices": [
+      "CPI",
+      "GBI",
+      "PHP",
+      "PMA Index"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "SRP後の歯面研磨で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "粗糙面の滑沢化",
+      "歯肉の再付着を促進",
+      "プラークの再付着を予防",
+      "象牙質知覚過敏症の抑制"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2019_dh_19_pm069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "ペリオドンタルキュレットの写真（A、B）を示す。\nBに比較してAの特徴はどれか。1つ選べ。",
+    "choices": [
+      "仕上げ用に用いる。",
+      "刃部内角が鋭角である。",
+      "オフセットブレードを有している。",
+      "刃部の両側にカッティングエッジがある。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2019_dh_19_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "スケーラーを把持した写真を示す。\nフィンガーレストを設定するのはどれか。1つ選べ。",
+    "choices": [
+      "拇　指",
+      "示　指",
+      "中　指",
+      "薬　指"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

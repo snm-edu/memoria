@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2022_dh_22_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "心電図波形を図に示す。\n心室筋に再分極が生じたときに現れるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "下顔面の写真を示す。\n矢印で示す部位の触覚を支配するのはどれか。1つ選べ。",
+    "choices": [
+      "三叉神経",
+      "舌咽神経",
+      "迷走神経",
+      "舌下神経"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "象牙質にみられるのはどれか。1つ選べ。",
+    "choices": [
+      "周波条",
+      "Retzius＜レチウス＞線",
+      "Schreger＜シュレーゲル＞条",
+      "Andresen＜アンドレーゼン＞線"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am004",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "神経細胞を模式図に示す。\n神経伝達物質が放出されるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "食塊が胃から排泄されるまでの経路で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "空　腸→十二指腸→回　腸→結　腸→直　腸",
+      "十二指腸→回　腸→空　腸→結　腸→直　腸",
+      "十二指腸→空　腸→回　腸→直　腸→結　腸",
+      "十二指腸→空　腸→回　腸→結　腸→直　腸"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "頭蓋骨模型の写真を示す。\n矢印で示す孔を通過するのはどの動脈の分枝か。1つ選べ。",
+    "choices": [
+      "顎動脈",
+      "顔面動脈",
+      "浅側頭動脈",
+      "上行咽頭動脈"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "あるアミノ酸の構造を図に示す。\nカルボキシル基はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am008",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "有毛細胞が受容器なのはどれか。1つ選べ。",
+    "choices": [
+      "嗅　覚",
+      "聴　覚",
+      "痛　覚",
+      "冷　覚"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "グラム陰性菌の表層構造を模式図に示す。\nリポ多糖はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "歯科用局所麻酔薬に添加するアドレナリンの薬理作用はどれか。1つ選べ。",
+    "choices": [
+      "鎮　静",
+      "筋弛緩",
+      "血管収縮",
+      "血糖値降下"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "口腔扁平苔癬の特徴はどれか。1つ選べ。",
+    "choices": [
+      "無痛性",
+      "日和見感染",
+      "頰粘膜に両側性に発現",
+      "再発性アフタ性潰瘍の形成"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "アレルギーの発症機序を模式図に示す。\n生じるアレルギーの型はどれか。1つ選べ。",
+    "choices": [
+      "Ⅰ　型",
+      "Ⅱ　型",
+      "Ⅲ　型",
+      "Ⅳ　型"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "口腔細菌を歯周病への関連が高い順に分類しピラミッド状にしたものを模式図に示す。\n矢印で示す部位に含まれるのはどれか。1つ選べ。",
+    "choices": [
+      "Streptococcus mutans",
+      "Fusobacterium nucleatum",
+      "Porphyromonas gingivalis",
+      "Aggregatibacter actinomycetemcomitans"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "対象者、適用薬物および薬物療法の種類の組合せを表に示す。\n正しいのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "血管障害、出血および止血・血液凝固の過程を示す。\n\n血管壁の障害\n↓\n出　血\n↓\n血管の収縮\n↓\n血小板の粘着・凝集\n↓\n①凝固因子の活性化\n↓\n不可逆的な血栓形成\n\n①の異常を示すのはどれか。1つ選べ。",
+    "choices": [
+      "壊血病",
+      "血友病",
+      "再生不良性貧血",
+      "特発性血小板減少性紫斑病"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "ソーシャルキャピタルはどれか。1つ選べ。",
+    "choices": [
+      "自らの意思決定により自発的に行動できるようにする。",
+      "社会の信頼関係、規範などの社会組織を説く概念である。",
+      "健康情報に基づく意思決定で自身の健康を決める能力である。",
+      "地域社会で障害をもつ人が健常者と同様の生活ができるようにする。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am017",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "口腔癌の発生部位で最も多いのはどれか。1つ選べ。",
+    "choices": [
+      "舌",
+      "口　蓋",
+      "口　唇",
+      "口腔底"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "フッ化物洗口を実施しているA小学校と実施していないB小学校の追跡調査を行った。1年時と6年時の一人平均DMF歯数を図に示す。\nフッ化物洗口によるう蝕抑制率はどれか。1つ選べ。",
+    "choices": [
+      "30％",
+      "43％",
+      "57％",
+      "70％"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "歯周病の第一次予防と第二次予防の両方で行うのはどれか。1つ選べ。",
+    "choices": [
+      "暫間固定",
+      "歯周外科治療",
+      "スケーリング",
+      "ルートプレーニング"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "特定の有害業務に従事する労働者に対して、歯科医師による健康診断の実施が義務付けられている。有害業務の対象となる物質として、法令に明記されているのはどれか。2つ選べ。",
+    "choices": [
+      "水　銀",
+      "亜硫酸",
+      "二酸化硫黄",
+      "フッ化水素"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "歯頸部に付着したプラークの模式図を示す。\n①と比べて②で多い細菌の特徴はどれか。2つ選べ。",
+    "choices": [
+      "好気性である。",
+      "内毒素を含む。",
+      "糖発酵性をもつ。",
+      "タンパク分解酵素を産生する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "エナメル質のハイドロキシアパタイトが酸によって溶解するときのカルシウムとリン酸の溶液中の化学反応を示す。\n\nHA＋①→Ca2+＋HPO42-\nHA：ハイドロキシアパタイト\n\n①はどれか。1つ選べ。",
+    "choices": [
+      "F<sup>-</sup>",
+      "H<sup>+</sup>",
+      "Cl<sup>-</sup>",
+      "Na<sup>+</sup>"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "地域包括ケアシステムにおける基本的な活動圏域はどれか。1つ選べ。",
+    "choices": [
+      "市町村",
+      "中学校区",
+      "都道府県",
+      "二次医療圏"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "OHIのDIの診査基準と点数を図に示す。\nこの尺度はどれか。1つ選べ。",
+    "choices": [
+      "間隔尺度",
+      "順序尺度",
+      "比率尺度",
+      "名義尺度"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "国際連合が2015年に採択した、すべての国に適用される普遍的な目標はどれか。1つ選べ。",
+    "choices": [
+      "持続可能な開発目標＜SDGs＞",
+      "ミレニアム開発目標＜MDGs＞",
+      "ヘルスプロモーション＜HP＞",
+      "プライマリーヘルスケア＜PHC＞"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "消炎作用を期待して洗口剤に配合される成分はどれか。1つ選べ。",
+    "choices": [
+      "ポリグルタミン酸",
+      "プロピレングリコール",
+      "塩化セチルピリジニウム",
+      "グリチルリチン酸二カリウム"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "ある社会保険制度の給付までの流れを図に示す。\n①を行うのはどれか。1つ選べ。",
+    "choices": [
+      "保健所",
+      "健康保険組合",
+      "介護認定審査会",
+      "地域包括支援センター"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "①の設置の根拠となる法律はどれか。1つ選べ。",
+    "choices": [
+      "介護保険法",
+      "健康増進法",
+      "健康保険法",
+      "高齢者の医療の確保に関する法律"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "歯肉の炎症の急性期に歯肉溝滲出液で多くみられるのはどれか。1つ選べ。",
+    "choices": [
+      "好中球",
+      "破骨細胞",
+      "リンパ球",
+      "マクロファージ"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am030",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "水に難溶性の多糖はどれか。1つ選べ。",
+    "choices": [
+      "ムタン",
+      "レバン",
+      "イヌリン",
+      "デキストラン"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

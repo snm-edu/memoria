@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2015_dh_15_pm041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "下顎左側第二小臼歯の根管拡大中に根管をエアシリンジで乾燥させたところ、頬部の腫脹が生じ、触診すると捻髪音を発した。\n生じたのは何か。",
+    "choices": [
+      "皮下気腫",
+      "薬物アレルギー",
+      "シーラーの逸出",
+      "リーマーの破折"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "10歳の男児。歯肉からの出血を訴えて来院した。3日前から38℃の発熱があるという。全顎的に歯肉の腫脹と出血がみられた。\n疑われる全身疾患はどれか。",
+    "choices": [
+      "肺　炎",
+      "白血病",
+      "心内膜炎",
+      "ネフローゼ症候群"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "51歳の女性。下顎右側前歯の動揺を訴えて来院した。下顎右側側切歯遠心部に深い歯周ポケットを認めた。歯周基本治療後、同部に歯周外科処置を行うことになった。初診時のエックス線写真（A）、不良肉芽組織除去後の口腔内写真（B）及び縫合直前の口腔内写真（C）を別に示す。\nこの手術で再生するのはどれか。2つ選べ。",
+    "choices": [
+      "歯槽骨",
+      "象牙質",
+      "エナメル質",
+      "セメント質"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm044",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "55歳の男性。下顎右側臼歯部の歯肉からの出血を訴えて来院した。1か月前から自覚していたが痛みがないためそのままにしていたという。歯周組織検査の結果、検査器具の先端が舌側まで貫通しているのが確認できた。歯周組織検査時の口腔内写真を別に示す。\n貫通部位の清掃に有効なのはどれか。2つ選べ。",
+    "choices": [
+      "歯間ブラシ",
+      "口腔洗浄器",
+      "ラバーチップ",
+      "スーパーフロス"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "62歳の男性。補綴治療前の口腔内写真を別に示す。\n矢印が示す所見の原因として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "低位咬合",
+      "慢性歯周炎",
+      "ブラキシズム",
+      "対合歯の誘導"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm046",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "アルジネートによる印象採得において、印象材の保持に適するのはどれか。",
+    "choices": [
+      "網トレー",
+      "水冷式トレー",
+      "レジン個歯トレー",
+      "リムロックトレー"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "全部床義歯の仮想咬合平面と平行になるのはどれか。2つ選べ。",
+    "choices": [
+      "口唇線",
+      "正中線",
+      "鼻聴道線",
+      "瞳孔間線"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "31歳の男性。「右上の歯が動いてきた」と訴えて来院した。3年前から上顎右側犬歯と第一小臼歯の歯間乳頭歯肉が徐々に腫大してきたという。口腔内写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "内歯瘻",
+      "エプーリス",
+      "薬物性歯肉増殖症",
+      "遺伝性歯肉線維腫症"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "64歳の女性。口を閉じることができないと訴えて来院した。食事中に突然咬めなくなったという。左側顎関節脱臼と診断され徒手整復を行うことになった。エックス線写真を別に示す。\n下顎頭を誘導する正しい方向はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm050",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "嚥下機能の賦活を目的とするのはどれか。2つ選べ。",
+    "choices": [
+      "舌負荷訓練",
+      "喉頭挙上訓練",
+      "義歯床のリライニング",
+      "ティッシュコンディショニング"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "局所麻酔の注射後に生じる偶発症はどれか。",
+    "choices": [
+      "ワンサン氏症状",
+      "キューンの貧血帯",
+      "ニコルスキー現象",
+      "パトリックの発痛帯"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "14歳の女子。歯並びが悪いことを訴えて来院した。初診時の口腔内写真（A、B、C）を別に示す。\n上顎右側犬歯の位置異常はどれか。2つ選べ。",
+    "choices": [
+      "低　位",
+      "遠心傾斜",
+      "唇側転位",
+      "交叉咬合"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "8歳の女児。前歯の咬み合わせの異常を訴えて来院した。初診時のエックス線写真を別に示す。\nこの検査の目的はどれか。2つ選べ。",
+    "choices": [
+      "下顎偏位の検査",
+      "乳歯歯根の吸収度の観察",
+      "下顎骨の成長方向の判定",
+      "上顎中切歯の唇舌的傾斜の評価"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "矯正用器具の写真を別に示す。\n適切な用途はどれか。",
+    "choices": [
+      "バンドの撤去",
+      "トルクの付与",
+      "補助弾線の屈曲",
+      "アーチワイヤーの結紮"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "生後8か月頃にみられるようになるのはどれか。",
+    "choices": [
+      "ハイハイ",
+      "首のすわり",
+      "ひとり歩き",
+      "ひとり立ち"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "Hellmanの咬合発育段階ⅠA期にみられるのはどれか。",
+    "choices": [
+      "霊長空隙",
+      "発育空隙",
+      "顎間空隙",
+      "鼓形空隙"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "手づかみ食べ機能を獲得する時期に萌出するのはどれか。",
+    "choices": [
+      "乳中切歯",
+      "乳側切歯",
+      "第一乳臼歯",
+      "第二乳臼歯"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm058",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "5歳の男児。上顎右側第二乳臼歯の多歯面う蝕に対し、既製乳歯冠修復を行うことにした。既製乳歯冠を試適していたところ、口腔内に落下させた。\n直ちに行うのはどれか。",
+    "choices": [
+      "上半身を起こす。",
+      "顔を横に向かせる。",
+      "ハイムリック法を実施する。",
+      "バキュームを口腔内に挿入する。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "摂食嚥下機能検査の写真（A、B）を別に示す。\nこの検査について正しいのはどれか。2つ選べ。",
+    "choices": [
+      "唾液の誤嚥が観察できる。",
+      "長時間の検査が可能である。",
+      "口腔、咽頭および食道の機能が評価できる。",
+      "造影性のある検査用模擬食品が必要である。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "嚥下反射の惹起が遅延している場合に有効な機能訓練はどれか。",
+    "choices": [
+      "構音訓練",
+      "冷圧刺激法",
+      "シャキア訓練",
+      "プッシング訓練"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "加齢にともない減少あるいは低下するのはどれか。",
+    "choices": [
+      "咬合高径",
+      "味覚閾値",
+      "第二象牙質の量",
+      "セメント質の厚さ"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "唾液分泌量の減少を主症状とする疾患はどれか。",
+    "choices": [
+      "肥満症",
+      "うつ病",
+      "パーキンソン病",
+      "シェーグレン症候群"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "初診患者の口腔内写真を別に示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "歯肉の腫脹",
+      "歯肉の出血",
+      "フェストゥーン",
+      "スティップリング"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "エックス線写真を別に示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "歯石沈着",
+      "根管充塡",
+      "隣接面う蝕",
+      "歯槽骨吸収"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "プロービング時の図を示す。プローブの目盛間隔は1mmである。\nアタッチメントレベルはどれか。",
+    "choices": [
+      "2mm",
+      "4mm",
+      "6mm",
+      "8mm"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "歯肉炎の臨床所見で正しいのはどれか。",
+    "choices": [
+      "歯肉退縮",
+      "歯槽骨吸収",
+      "歯肉ポケット",
+      "アタッチメントロス"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "48歳の女性。乳癌の骨転移治療のため、ビスホスホネート系注射薬を長期間投与中であるという。歯周治療を行うことになった。\n避けることが望ましい処置はどれか。",
+    "choices": [
+      "咬合調整",
+      "暫間固定",
+      "機械的歯面清掃",
+      "歯肉剥離掻爬術"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "器具の写真を別に示す。\n矢印で示す幅はどれか。",
+    "choices": [
+      "1mm",
+      "2mm",
+      "3mm",
+      "4mm"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "歯の動揺方向を矢印で図に示す。垂直方向の動きは認められなかった。\nMillerの分類で正しいのはどれか。",
+    "choices": [
+      "0度",
+      "1度",
+      "2度",
+      "3度"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "（　）に入る数値で正しいのはどれか。\n\nLindhe&Nymanの根分岐部病変の水平的分類において2度の基準は、骨の吸収が歯冠幅径の（　）を超えるが、貫通しないものである。",
+    "choices": [
+      "1/4",
+      "1/3",
+      "1/2",
+      "2/3"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2020_dh_20_am031",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "産業保健活動の3管理で歯科診療における作業管理に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "グローブの着用",
+      "フラッシングの実施",
+      "B型肝炎ワクチンの接種",
+      "口腔外バキュームの使用"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "平成30年の歯科衛生士の現状はどれか。2つ選べ。",
+    "choices": [
+      "就業先は介護保険施設が最も多い。",
+      "就業歯科衛生士数は10万人未満である。",
+      "登録歯科衛生士数は20万人以上である。",
+      "年齢階級別では40～44歳の就業率が最も高い。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "ヒヤリハット事例はどれか。1つ選べ。",
+    "choices": [
+      "歯垢染色液を患者の衣服に付着させた。",
+      "患者誘導の際、無影灯が患者の頭部にあたった。",
+      "試適したブリッジを口腔底に落下し、取り出した。",
+      "車椅子利用の患者を治療椅子に移乗する際、転倒させた。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "72歳の女性。ブラッシング時、①歯肉からの出血を訴えて来院した。歯ブラシ操作を確認したところ、②把持に力が入らず細かな歯ブラシ操作が困難である。③下顎舌側面にプラークと歯石沈着があり、歯肉は発赤し腫脹している。④歯科医師よりブラッシング指導の指示を受けた。\nObjective dataはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "頭部側面観を模式図に示す。\nCamper〈カンペル〉平面はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "糖尿病の薬物療法を受けている患者が歯科治療中に低血糖症となった。\nみられる症状はどれか。1つ選べ。",
+    "choices": [
+      "徐　脈",
+      "発　汗",
+      "過換気",
+      "血圧上昇"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "65歳の男性。摂食嚥下障害を主訴として来院し、嚥下造影検査を行った。嚥下後の造影画像を示す。\n考えらえる症状はどれか。2つ選べ。",
+    "choices": [
+      "咽頭残留",
+      "口腔内残留",
+      "鼻腔への逆流",
+      "絞扼感（胸部のつかえ）"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "窩洞形成後の修復法の術式を示す。\n\nコンディショニング → 水洗・乾燥 → 充　塡 → 光照射\n\nこれに用いるのはどれか。1つ選べ。",
+    "choices": [
+      "光重合型コンポジットレジン",
+      "化学重合型コンポジットレジン",
+      "従来型グラスアイオノマーセメント",
+      "レジン添加型グラスアイオノマーセメント"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "38歳の男性。下顎左側第二小臼歯の一過性冷水痛を主訴として来院した。ワンステップボンディングシステムによるコンポジットレジン修復を行うことになった。初診時の口腔内写真を示す。\nプライマーによる歯肉損傷防止に効果があるのはどれか。1つ選べ。",
+    "choices": [
+      "ウェッジ",
+      "ロール綿",
+      "ラバーダム防湿",
+      "ガムリトラクター"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "下顎左側第一大臼歯に形成された窩洞の写真を示す。\nBlackの窩洞分類はどれか。1つ選べ。",
+    "choices": [
+      "Ⅰ　級",
+      "Ⅱ　級",
+      "Ⅳ　級",
+      "Ⅴ　級"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "麻酔抜髄に使用される薬剤で化学熱傷の原因となるのはどれか。1つ選べ。",
+    "choices": [
+      "3%EDTA",
+      "3%過酸化水素水",
+      "2%塩酸リドカイン",
+      "10%次亜塩素酸ナトリウム"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "外科的歯内療法において、根尖を超音波レトロチップで処置中の写真を示す。\n次に行うのはどれか。1つ選べ。",
+    "choices": [
+      "逆根管充塡",
+      "根尖の切除",
+      "歯槽骨の削除",
+      "肉芽組織の除去"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "歯髄壊疽が認められた根未完成歯に対して、根管内の消毒後に水酸化カルシウムを貼薬し、経過観察を行うことになった。\n期待するのはどれか。1つ選べ。",
+    "choices": [
+      "根尖の閉鎖",
+      "歯根の成長",
+      "歯髄腔の閉鎖",
+      "象牙質の形成"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "慢性歯周炎患者の口腔内写真を示す。\nリスクファクターとして考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "歯　石",
+      "プラーク",
+      "歯肉の腫脹",
+      "付着歯肉幅の狭小"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "58歳の女性。頰の内側の白い線が心配になって来院した。起床時に咬筋部や側頭筋部の疼痛を自覚するという。初診時の口腔内写真を示す。\n原因として考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "口呼吸",
+      "咬唇癖",
+      "弄舌癖",
+      "くいしばり"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "30歳の女性。上顎臼歯部の歯内治療後の歯冠補綴治療を希望して来院した。CAD/CAM冠による治療を行うことになった。装置設計時の写真Aと完成時の写真Bを示す。\nAからBへの製作過程で行われるのはどれか。1つ選べ。",
+    "choices": [
+      "築盛法",
+      "鋳造法",
+      "筆積み法",
+      "切削加工法"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "40歳の女性。上顎前歯部の審美障害を主訴として来院した。オールセラミックブリッジによる治療が開始された。治療過程で用いる模型に装着した支台築造体の写真Aとプロビジョナルレストレーションの写真Bを示す。\nBの目的はどれか。1つ選べ。",
+    "choices": [
+      "歯髄の保護",
+      "残存歯質の補強",
+      "歯冠部の色調選択",
+      "最終補綴装置の設計判断"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "70歳の男性。上顎全部床義歯の不適合による咀嚼障害を主訴として来院した。義歯製作過程で用いる器材の写真A、Bを示す。\nこれを使用する目的はどれか。2つ選べ。",
+    "choices": [
+      "顎堤部の粘膜調整",
+      "顎堤粘膜形態の再現",
+      "顎堤粘膜面部の保護",
+      "顎堤粘膜翻転部の印記"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "歯科用局所麻酔薬で麻酔の持続時間の延長を目的に添加されているのはどれか。2つ選べ。",
+    "choices": [
+      "亜硫酸塩",
+      "アドレナリン",
+      "フェリプレシン",
+      "メチルパラベン"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "先天性口腔顎顔面疾患に対して行った手術後の顔貌の写真を示す。\n手術が行われた時期はどれか。1つ選べ。",
+    "choices": [
+      "生後直後",
+      "生後3～4か月",
+      "生後1年",
+      "生後1年6か月"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "38歳の男性。下顎の痛みと咬み合わせの異常を主訴として来院した。2日前に運動中に転倒し下顎部を強打したという。非観血的治療後の口腔内写真を示す。\n用いられている材料はどれか。2つ選べ。",
+    "choices": [
+      "金属線",
+      "床副子",
+      "線副子",
+      "ミニプレート"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "24歳の女性。下唇の疼痛を主訴として来院した。4日前から同部に症状を自覚し、現在食事がしにくいという。以前より疲労時などに同様な症状を繰り返しているという。初診時の口腔内写真を示す。\n矢印で示す粘膜病変は下唇①赤唇部に2mm程度の②菱形を呈している。病変の表層は白色の③偽膜で覆われており、その周囲に軽度の④貧血帯がみられる。\n下線部分で適切なのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "8歳の男児。口唇の突出を主訴として来院した。初診時の口腔内写真を示す。\nAngleの不正咬合の分類はどれか。1つ選べ。",
+    "choices": [
+      "Ⅰ　級",
+      "Ⅱ級1類",
+      "Ⅱ級2類",
+      "Ⅲ　級"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "頭蓋骨の写真とScammonの発育曲線を示す。\n頭蓋骨のうち矢印で示す骨の発育の特徴はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "10歳の女児。前歯で食物を咬み切れないことを主訴として来院した。初診時の口腔内写真を示す。\n原因として考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "咬唇癖",
+      "舌突出癖",
+      "小帯の異常",
+      "乳歯の早期喪失"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "2歳の女児。1歳6か月児健診で歯科受診を勧告されたため来院した。初診時医療面接を行ったところ、女児が発する音声言語の情報から、発達の遅れが推察された。\n発達遅延と考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "「アー」「ウー」",
+      "「パパ」「ママ」",
+      "「ママ　かえる」",
+      "「はやく　かえろう」"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "8歳の男児。う蝕の治療を希望して来院した。上顎左側第一乳臼歯の歯髄処置後、乳歯既製金属冠を用いて修復した。処置後の口腔内写真を示す。\n処置当日の注意点はどれか。1つ選べ。",
+    "choices": [
+      "粘着性食品の制限",
+      "装着直後の飲水制限",
+      "夕食後の歯磨き制限",
+      "フッ化物配合歯磨剤使用の制限"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "乳歯の外傷で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "男児より女児に多い。",
+      "上顎より下顎に多い。",
+      "乳中切歯が最も多い。",
+      "破折よりも転位や脱臼が多い。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "口腔機能低下症の診断に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "口　臭",
+      "歯　数",
+      "舌　圧",
+      "咬合力"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "77歳の男性。脳梗塞発症のため入院中であるが、意識レベルが改善してきたという。患者の写真を示す。\n矢印で示す部位から行うのはどれか。1つ選べ。",
+    "choices": [
+      "気管吸引",
+      "経管栄養",
+      "水分補給",
+      "薬物投与"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

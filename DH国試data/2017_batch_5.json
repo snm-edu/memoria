@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2017_dh_17_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "免疫グロブリンの構造を図に示す。\n該当するのはどれか。",
+    "choices": [
+      "血清中に最も多く存在する。",
+      "抗原結合部位は2か所である。",
+      "粘膜の感染防御に重要である。",
+      "アナフィラキシー反応を引き起こす。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "鉄結合能を有する唾液中の抗菌物質はどれか。",
+    "choices": [
+      "ヒスタチン",
+      "リゾチーム",
+      "ディフェンシン",
+      "ラクトフェリン"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "局所麻酔薬にアドレナリンを添加する目的はどれか。",
+    "choices": [
+      "感染の防止",
+      "効果の持続",
+      "炎症の抑制",
+      "不安の除去"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "血中薬物濃度 - 時間曲線を図に示す。血中薬物濃度が1.0と0.5に対するそれぞれの時間をxとyとする。\n生物学的半減期はどれか。",
+    "choices": [
+      "（y-x）/2",
+      "（x-y）/2",
+      "y-x",
+      "x-y"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "アラキドン酸カスケードを図に示す。\n①の反応を抑制するのはどれか。",
+    "choices": [
+      "解熱性鎮痛薬",
+      "ステロイド性抗炎症薬",
+      "酸性非ステロイド性抗炎症薬",
+      "塩基性非ステロイド性抗炎症薬"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm016",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "Hirschfeldの清掃不可能部位はどれか。",
+    "choices": [
+      "咬頭",
+      "歯頸部",
+      "隣接面",
+      "小窩裂溝"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "洗口剤の成分で殺菌作用を示すのはどれか。",
+    "choices": [
+      "安息香酸",
+      "トラネキサム酸",
+      "サッカリンナトリウム",
+      "塩化セチルピリジニウム"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "不溶性グルカンを合成するのはどれか。",
+    "choices": [
+      "インベルターゼ",
+      "デキストラナーゼ",
+      "グルコシルトランスフェラーゼ",
+      "フルクトシルトランスフェラーゼ"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "口臭の原因となる揮発性硫化物はどれか。2つ選べ。",
+    "choices": [
+      "アセトン",
+      "アセトアルデヒド",
+      "メチルメルカプタン",
+      "ジメチルサルファイド"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "【　】に入るのはどれか。\nDMFとは永久歯列におけるう蝕の【　】を表す。",
+    "choices": [
+      "経験",
+      "発生",
+      "増加",
+      "重度"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "1万人の母集団から標本100人を抽出する方法を図に示す。\nこの標本抽出法はどれか。",
+    "choices": [
+      "有意抽出法",
+      "系統抽出法",
+      "層化抽出法",
+      "多段抽出法"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "健康増進法に基づいて市町村が実施するのはどれか。2つ選べ。",
+    "choices": [
+      "健康教育",
+      "日常生活支援",
+      "生活機能評価",
+      "健康手帳の交付"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "国際保健協力の仕組みを図に示す。\n①に該当するのはどれか。2つ選べ。",
+    "choices": [
+      "WHO",
+      "JICA",
+      "JAICOH",
+      "UNICEF"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "【　】に入るのはどれか。\n健康日本21（第二次）において、健康寿命とは「健康上の問題で【　】が制限されることなく生活できる期間をいう」とされた。",
+    "choices": [
+      "職業生活",
+      "医療受診",
+      "社会参加",
+      "日常生活"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "人口動態統計において、一人の女子が15～49歳の間に産む子供の数を示す指標はどれか。",
+    "choices": [
+      "出生率",
+      "総再生産率",
+      "純再生産率",
+      "合計特殊出生率"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "人口動態統計における死因別にみた死亡率の推移を図に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "結核",
+      "肺炎",
+      "心疾患",
+      "肝疾患"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "定期学校健康診断に先だって行うのはどれか。",
+    "choices": [
+      "保健相談",
+      "保健学習",
+      "予防処置",
+      "保健調査"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "トータルヘルスプロモーションプランの第一段階として取り組むのはどれか。",
+    "choices": [
+      "健康測定",
+      "保健指導",
+      "栄養指導",
+      "メンタルヘルスケア"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "就学時の健康診断を実施する主体はどれか。",
+    "choices": [
+      "学校長",
+      "学校設置者",
+      "学校保健委員会",
+      "市町村教育委員会"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm030",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "歯科医師数、就業歯科衛生士数、就業歯科技工士数および歯科診療所数の推移を図に示す。\n就業歯科衛生士数はどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "歯科衛生士の業務で正しいのはどれか。",
+    "choices": [
+      "仮封材を除去する。",
+      "インレーを装着する。",
+      "エックス線を照射する。",
+      "主訴を聞き取り診療録に記入する。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm032",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "医療倫理の4つの原則でないのはどれか。",
+    "choices": [
+      "正義",
+      "共感",
+      "無危害",
+      "自律の尊重"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm033",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "89歳の女性。認知症高齢者の日常生活自立度判定基準はレベルⅡである。介護支援専門員より依頼があり、歯科訪問診療を開始した。初回訪問時の様子を以下に示す。\n\n口腔清掃を実施した際に、上顎臼歯部頬側と咽頭近くに粉状の薬の残留が認められた。\nまた、錠剤をうまく取り出すことができず、床に落としたりすることがあるという。\n\n連携が必要なのはどれか。",
+    "choices": [
+      "薬剤師",
+      "栄養士",
+      "臨床検査技師",
+      "精神保健福祉士"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "摂食機能障害に対して検査を実施した。検査中の写真を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "誤嚥検出の感度が高い。",
+      "長時間の検査が可能である。",
+      "唾液の咽頭部貯留が観察できる。",
+      "ベッドサイドで検査が可能である。"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "Hellmanの歯齢ⅡA期からⅣA期になるにつれて大きくなるのはどれか。2つ選べ。",
+    "choices": [
+      "霊長空隙",
+      "歯列弓長径",
+      "前歯部被蓋",
+      "切歯歯軸傾斜角"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "頭部エックス線規格写真分析〈セファロ分析〉のトレース図を示す。\nフランクフルト平面の設定に必要な計測点はどれか。2つ選べ。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "出血性素因のスクリーニング検査で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "血小板数",
+      "血中クレアチニン",
+      "プロトロンビン時間",
+      "血中尿素窒素〈BUN〉"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "小臼歯隣接面う蝕修復においてMinimal Intervention〈MI〉で推奨されるのはどれか。",
+    "choices": [
+      "メタルインレー",
+      "レジンインレー",
+      "硬質レジン前装冠",
+      "コンポジットレジン充&#x5861;"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "46歳の女性。上顎右側小臼歯の変色を主訴として来院した。5年前にコンポジットレジン修復を受けたという。疼痛は認められない。初診時の口腔内写真を別に示す。\n変色の原因として考えられるのはどれか。",
+    "choices": [
+      "保持形態の不良",
+      "窩洞外形の不備",
+      "感染歯質の残存",
+      "仕上げ研磨の不足"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "根管形成に使用するニッケルチタン製ロータリーファイルで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "超弾性である。",
+      "ISO規格に基づく。",
+      "彎曲根管に適する。",
+      "破折リスクが少ない。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

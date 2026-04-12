@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2018_dh_18_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "知的機能（IQ）と身体移動能力によって区分された大島の分類を図に示す。\n重症心身障害者（児）を指すのはどれか。",
+    "choices": [
+      "3",
+      "10",
+      "13",
+      "21"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "染色体の模式図を示す。\nダウン症候群で21番染色体異常はどれか。",
+    "choices": [
+      "（図参照：選択肢1）",
+      "（図参照：選択肢2）",
+      "（図参照：選択肢3）",
+      "（図参照：選択肢4）"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "30歳の女性。歯周病の予防を主訴として来院した。検査の結果、プロービング深さは1～3mm、O’LearyのPCRは28.0％であった。歯科衛生士が口腔清掃指導、歯肉縁上歯石の除去およびPMTCを行った。\n実施した予防の段階はどれか。",
+    "choices": [
+      "特異的防御",
+      "機能喪失防止",
+      "リハビリテーション",
+      "早期発見・早期治療"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "健康な歯肉で正しいのはどれか2つ選べ。",
+    "choices": [
+      "歯肉溝の深さは4mmである。",
+      "スティップリングが辺縁歯肉にみられる。",
+      "歯肉と歯の付着様式に上皮性付着がある。",
+      "遊離歯肉と付着歯肉の間には遊離歯肉溝が存在する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "歯周病がリスクファクターとなりうる疾患はどれか。2つ選べ。",
+    "choices": [
+      "胃　癌",
+      "心内膜炎",
+      "誤嚥性肺炎",
+      "後天性免疫不全症候群"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "器具の写真を別に示す。\n20g圧でこの器具を使用するのはどれか。",
+    "choices": [
+      "GI",
+      "PI",
+      "CPI",
+      "PMA Index"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "歯肉炎でみられないのはどれか。",
+    "choices": [
+      "発　赤",
+      "腫　脹",
+      "歯槽骨の吸収",
+      "プロービング時の出血"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "処置前に説明すべき術後の症状はどれか。2つ選べ。",
+    "choices": [
+      "う蝕発病",
+      "構音障害",
+      "歯肉退縮",
+      "象牙質知覚過敏"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "写真で示す部位の処置に適するのはどれか。2つ選べ。",
+    "choices": [
+      "＃1",
+      "＃5",
+      "＃9",
+      "＃13"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "下顎臼歯部に近遠心的に3mmの動揺がみられた。\nMillerの分類はどれか。",
+    "choices": [
+      "0度",
+      "1度",
+      "2度",
+      "3度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "歯周治療の流れを図に示す。\n①、②に該当する内容の組合せで正しいのはどれか。",
+    "choices": [
+      "（①）咬合調整 -- （②）動揺度検査",
+      "（①）スケーリング -- （②）新付着術",
+      "（①）口腔清掃指導 -- （②）予後不良歯の抜歯",
+      "（①）歯周ポケット検査 -- （②）ルートプレーニング"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "グレーシータイプキュレットの写真を別に示す。\n歯面と平行にして操作するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "歯石を評価指標に用いるのはどれか。",
+    "choices": [
+      "PI",
+      "OHI",
+      "PMA Index",
+      "O’LearyのPCR"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "Dentobuff-STRIP®の結果の写真（A）とRDテスト®の結果の写真（B）を別に示す。\nう蝕活動性の評価で正しいのはどれか。\nただし、選択肢は【宿主因子】 -- 【微生物因子】とする。",
+    "choices": [
+      "低　い -- 低　い",
+      "低　い -- 高　い",
+      "高　い -- 低　い",
+      "高　い -- 高　い"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "我が国で市販されている2％NaF溶液とAPF溶液の違いはどれか。2つ選べ。",
+    "choices": [
+      "応用頻度",
+      "溶液の色",
+      "溶液のpH",
+      "1回の応用量"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "レジン系小窩裂溝填塞の実施で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "咬合調整は重合前に行う。",
+      "酸処理後は白濁を確認する。",
+      "重合後はフッ化物を塗布する。",
+      "酸処理前にフッ化物配合研磨剤による歯面清掃を行う。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "我が国における市販フッ化物配合歯磨剤のフッ化物イオン濃度の上限はどれか。",
+    "choices": [
+      "500ppm",
+      "1,000ppm",
+      "1,500ppm",
+      "2,000ppm"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am078",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "地域保健活動の評価とその内容の組合せで正しいのはどれか。",
+    "choices": [
+      "プロセス評価 -- 疾患の減少",
+      "アウトカム評価 -- 人員体制",
+      "アウトプット評価 -- 事業実施量",
+      "ストラクチャー評価 -- 目標設定"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am079",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "脳卒中予防に対するポピュレーションアプローチはどれか。",
+    "choices": [
+      "脳ドックの受診勧告",
+      "医師から処方された降圧薬の服用",
+      "特定健診で指摘された事項の厳守",
+      "職場のポスターで紹介された運動の励行"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "認知ADLの把握ができるのはどれか。2つ選べ。",
+    "choices": [
+      "Barthel Index",
+      "日常生活機能評価",
+      "FIM＜機能的自立度評価＞",
+      "障害高齢者の日常生活自立度判定基準"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "40歳の女性。音波歯ブラシを歯科診療所で初めて購入したため、使用法を指導することになった。患者は口腔乾燥感を訴えている。\n正しい指導内容はどれか。2つ選べ。",
+    "choices": [
+      "音波歯ブラシのヘッドの交換は不要です。",
+      "歯ブラシの音波振動で細菌を死滅させます。",
+      "口腔内をうるおした状態で使用してください。",
+      "毛先を正しく清掃部位に当てることが大切です。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "1歳の女児。母親とともに定期歯科健康診査のため来院した。口腔内診査の結果、歯肉は健康であったが歯垢の軽度付着が認められた。保護者から仕上げ磨きに適した歯ブラシについて質問を受けた。歯ブラシの写真を別に示す。\n推奨するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "27歳の女性。市町村保健センターの妊婦歯科健康診査で歯肉炎を指摘され、歯科医院を受診した。検査の結果、妊娠時の歯肉炎と診断された。現在、妊娠10週で、つわりはない。\n口腔衛生管理で伝える内容はどれか。",
+    "choices": [
+      "出産してから処置を始めましょう。",
+      "炎症症状の改善のため抗菌薬を服用しましょう。",
+      "歯ぐきに麻酔して汚れを完全に取り除きましょう。",
+      "歯肉炎の原因であるプラーク除去のためしっかり磨きましょう。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "口腔疾患で2型糖尿病と関連があるのはどれか。2つ選べ。",
+    "choices": [
+      "骨隆起",
+      "歯周病",
+      "口腔癌",
+      "口腔乾燥症"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "3歳7か月の男児。3歳児歯科健康診査の受診に保護者と訪れた。う蝕罹患型はA型で、歯列咬合に異常はなく、清掃不良「有」の判定であった。1歳6か月児歯科健康診査時ではO2の判定を受けていたが、歯科医院の受診はしていなかったという。\n事後措置で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "小児科の受診を勧める。",
+      "歯の清掃方法を指導する。",
+      "虐待が疑われるので児童相談所へ通報する。",
+      "歯科医院でう蝕の治療を受けるよう指導する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "67歳の女性。左舌癌の切除再建術後3週で、主治医より退院後の口腔衛生管理を依頼された。まだ創部がしみるという。来院時の口腔内写真を別に示す。\n口腔衛生管理を行うにあたり考慮するのはどれか。2つ選べ。",
+    "choices": [
+      "鼻呼吸",
+      "体脂肪率",
+      "舌の可動域",
+      "患者の心理状態"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "ある地域で「お口の健康」に関する健康教育を行うことになった。内容を決定するうえで、健康日本21（第二次）「歯・口腔の健康」の目標に達しているか検討した。この地域の現状を表に示す。\n目標値に達しているのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "妊娠に関連する時期と食生活指導の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "非妊娠時 -- BMI18.5未満の者を対象に個別指導",
+      "初　期 -- 葉酸摂取のための栄養機能食品の推奨",
+      "中　期 -- 牛乳・乳製品の1日量の増加",
+      "末　期 -- 250kcalのエネルギー摂取量の付加"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "酸蝕症を疑うのはどれか。",
+    "choices": [
+      "舌突出癖",
+      "摂食障害",
+      "ブラキシズム",
+      "歯ブラシの誤用"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "80歳の女性。大腿骨頸部骨折にて入院していたが、病状と栄養が改善したため、介護保険施設に再入所した。食欲があり、現在歯数は24歯、RSSTは5回、食事中は口唇閉鎖し、こぼすことなく摂取している。再入所後の食形態の写真を別に示す。\n食生活指導で改善することが望ましいのはどれか。2つ選べ。",
+    "choices": [
+      "水分にとろみをつける。",
+      "コップを用いて自立摂取してもらう。",
+      "ペースト食を維持することが推奨される。",
+      "本人の体調をみて、食形態を段階的に上げていく。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2024_dh_24_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "ワクチンの概念をつくったのはどれか。1つ選べ。",
+    "choices": [
+      "野口英世",
+      "北里柴三郎",
+      "ロベルト・コッホ",
+      "エドワード・ジェンナー"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "Antimicrobial Resistance＜AMR＞はどれか。1つ選べ。",
+    "choices": [
+      "化学療法",
+      "乾熱滅菌",
+      "薬剤耐性",
+      "標準予防策"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm013（不備問題採点除外）",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "薬局などで自分で選んで買える医薬品（OTC医薬品）の分類を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "医薬部外品",
+      "医療用医薬品",
+      "要指導医薬品",
+      "処方せん医薬品"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "筋肉の特徴を表に示す。\nこの筋肉の収縮を抑制するのはどれか。1つ選べ。",
+    "choices": [
+      "β遮断薬",
+      "抗コリン薬",
+      "競合性筋弛緩薬",
+      "抗ヒスタミン薬"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "アミド型局所麻酔薬が主に代謝されるのはどれか。1つ選べ。",
+    "choices": [
+      "肺",
+      "肝　臓",
+      "血　漿",
+      "粘　膜"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "萌出後のエナメル質の成熟に関係する唾液中のイオンはどれか。2つ選べ。",
+    "choices": [
+      "K<sup>＋</sup>",
+      "Na<sup>＋</sup>",
+      "Ca<sup>2＋</sup>",
+      "PO<sub>4</sub><sup>3－</sup>"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "プラークコントロールで状況の改善が期待できるのはどれか。2つ選べ。",
+    "choices": [
+      "不正咬合",
+      "誤嚥性肺炎",
+      "慢性副鼻腔炎",
+      "全身因子関連歯肉炎"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "市販のフッ化物配合洗口剤が該当する法令上の分類はどれか。1つ選べ。",
+    "choices": [
+      "雑　貨",
+      "医薬品",
+      "化粧品",
+      "医薬部外品"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "う蝕予防のために用いられる代用甘味料の特徴を表に示す。\n糖アルコールはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "歯周組織の断面の模式図を示す。\n②はどれか。1つ選べ。",
+    "choices": [
+      "歯周膿瘍",
+      "慢性歯周炎",
+      "プラーク性歯肉炎",
+      "壊死性潰瘍性歯周炎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "22歳の女性。口臭を主訴として来院した。喫煙はせず、全身健康状態は良好である。口腔内診査の結果、治療を要する歯科疾患は認められない。官能検査の結果はスコア0であった。呼気のガスクロマトグラフィー検査の結果を表に示す。\n考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "病的口臭",
+      "外因性口臭",
+      "心因性口臭",
+      "生理的口臭"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "歯周病に関する歯数の診査対象歯を図に示す。\n該当する指数はどれか。1つ選べ。",
+    "choices": [
+      "GI",
+      "PI",
+      "GB Count",
+      "PMA Index"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "老年人口割合の算出式を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "総人口",
+      "従属人口",
+      "年少人口",
+      "生産年齢人口"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "疫学研究計画の流れを図に示す。\nこの研究方法の特徴はどれか。1つ選べ。",
+    "choices": [
+      "調査期間が長い。",
+      "前向き研究である。",
+      "罹患率を推計できる。",
+      "まれな疾患の研究に適している。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "Breslowの7つの健康習慣で食習慣に関連する項目はどれか。2つ選べ。",
+    "choices": [
+      "好き嫌いをしない。",
+      "朝食を毎日食べる。",
+      "よく噛んで食べる。",
+      "不必要な間食をしない。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "母子健康手帳で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "都道府県が交付する。",
+      "出生届の提出により交付される。",
+      "児童福祉法に基づいて交付される。",
+      "居住者には国籍にかかわらず交付される。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "歯科診療所の感染予防対策として口腔外バキューム装置を設置した。\n労働衛生管理で該当するのはどれか。1つ選べ。",
+    "choices": [
+      "健康管理",
+      "作業管理",
+      "保健管理",
+      "作業環境管理"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "我が国の衛生行政で保健所が拠点となるのはどれか。1つ選べ。",
+    "choices": [
+      "健康危機管理",
+      "医療保険の指導監督",
+      "地域に密着した保健指導",
+      "母子・父子福祉センターの運営"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "地域において精神保健活動を行っている機関はどれか。2つ選べ。",
+    "choices": [
+      "保健所",
+      "衛生研究所",
+      "精神保健福祉センター",
+      "地域包括支援センター"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "介護保険制度における地域ケア会議の目的はどれか。1つ選べ。",
+    "choices": [
+      "地域課題の把握",
+      "要介護認定の審査",
+      "居宅サービス計画の作成",
+      "サービス付き高齢者向け住宅の設置"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "判断能力のある患者へのインフォームド・コンセントで正しいのはどれか。1つ選べ。",
+    "choices": [
+      "看護師や歯科衛生士の責任で説明できる。",
+      "患者にとって有害な情報の提供は制限する。",
+      "医師が勧める治療を受け入れるために行われる。",
+      "16歳以上の未成年の場合は保護者と本人の同意を得る。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "歯科医療機関におけるヒューマンエラー対策の充実を図るため、従事者の問題解決能力を高めることとした。\n適切な対応はどれか。1つ選べ。",
+    "choices": [
+      "危険予知訓練の実施",
+      "多重防御機能の整備",
+      "アフォーダンスの構築",
+      "チェックリストの作成"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "職業倫理に関する規範の一部を図に示す。\nこの規範を定めたのはどれか。1つ選べ。",
+    "choices": [
+      "国際歯科連盟",
+      "国際労働機関",
+      "世界保健機関",
+      "国際歯科衛生士連盟"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "新生児から成長発育とともに減少するバイタルサインはどれか。2つ選べ。",
+    "choices": [
+      "呼吸数",
+      "心拍数",
+      "収縮期血圧",
+      "最大酸素飽和度"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "CTとMRIに共通する特徴はどれか。2つ選べ。",
+    "choices": [
+      "断層撮影である。",
+      "放射線被曝がある。",
+      "造影剤が利用できる。",
+      "フィルムを使用する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "放射線の線量とその影響の現れる確率の関係を図に示す。\nこの図に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "脱　毛",
+      "不　妊",
+      "骨壊死",
+      "白血病"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm037（不備問題全員加点）",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "顎口腔機能検査と用いる方法の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "筋機能検査 -- ゴシックアーチ描記法",
+      "下顎運動検査 -- チェックバイト法",
+      "構音機能検査 -- パラトグラム",
+      "歯列・咬合検査 -- 口腔内スキャナー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "41歳の男性。上顎臼歯の詰め物がとれたことを主訴として来院した。上顎左側第一大臼歯咬合面のインレーが脱離し、コンポジットレジン修復を行うことになった。処置中の口腔内写真（ミラー像）を示す。\nこの操作の目的はどれか。2つ選べ。",
+    "choices": [
+      "歯間の分離",
+      "歯肉の圧排",
+      "施術野の視野の確保",
+      "唾液による窩洞汚染の防止"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "54歳の女性。ブラッシング時に下顎左側中切歯に痛みを感じることを主訴として来院した。同歯の唇側歯頸部を探針で擦過すると一過性の疼痛を確認した。初診時の口腔内写真を示す。\n露出根面に塗布するのはどれか。1つ選べ。",
+    "choices": [
+      "ヨードホルム製剤",
+      "シュウ酸カリウム製剤",
+      "水酸化カルシウム製剤",
+      "次亜塩素酸ナトリウム溶液"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "45歳の女性。上顎左側奥歯の詰め物がとれ冷水がしみることを主訴として来院した。上顎左側第一大臼歯の急性化膿性歯髄炎と診断され、抜髄法が行われた。術中のある操作時のマイクロスコープ写真を示す。\nこの操作の目的はどれか。1つ選べ。",
+    "choices": [
+      "根管充塡材の切断",
+      "過剰根管充塡の予防",
+      "根管充塡の緊密度向上",
+      "根管用シーラーの塗布"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

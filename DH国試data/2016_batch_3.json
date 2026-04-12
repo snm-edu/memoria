@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2016_dh_16_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "82歳の男性。脳梗塞発症後、右片麻痺があり、摂食機能療法における間接訓練を継続してきた。座位は困難な状態である。本日から直接訓練を開始する予定である。\n誤嚥を起こしにくい姿勢はどれか。",
+    "choices": [
+      "頸部を伸展する。",
+      "頸部を左側に回旋する。",
+      "下肢は両側の膝を伸展する。",
+      "左側を下の半側臥位にする。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "胃瘻について正しいのはどれか。",
+    "choices": [
+      "鼻腔から胃への栄養路を確保する。",
+      "口腔から胃への栄養路を確保する。",
+      "皮膚から胃への栄養路を外科的に造設する。",
+      "直腸から胃への栄養路を非外科的に確保する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "う蝕予防処置はどれか。2つ選べ。",
+    "choices": [
+      "ブラッシング",
+      "小窩裂溝填塞",
+      "フッ化物歯面塗布",
+      "フッ化ジアンミン銀塗布"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "エックス線写真を別に示す。\n観察できるのはどれか。",
+    "choices": [
+      "歯槽硬線",
+      "歯根嚢胞",
+      "隣接面う蝕",
+      "垂直性骨吸収"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "う蝕活動性試験で予測できるのはどれか。2つ選べ。",
+    "choices": [
+      "発　病",
+      "進　行",
+      "停　止",
+      "喪　失"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "初診患者の口腔内写真を別に示す。\n認められる歯肉形態の異常はどれか。",
+    "choices": [
+      "クレフト",
+      "クレーター",
+      "フェストゥーン",
+      "テンションリッジ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am067",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "歯周疾患の第二次予防はどれか。2つ選べ。",
+    "choices": [
+      "咬合調整",
+      "歯周補綴",
+      "口腔清掃",
+      "歯周外科治療"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "PMTCに用いるのはどれか。",
+    "choices": [
+      "歯ブラシ",
+      "スケーラー",
+      "フッ化物配合研磨材",
+      "エアタービンハンドピース"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "判定までに4日間の培養を要するのはどれか。",
+    "choices": [
+      "RDテスト<sup>®</sup>",
+      "Dentocult<sup>®</sup>‐LB",
+      "ミューカウント<sup>®</sup>",
+      "カリオスタット<sup>®</sup>"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "フッ化物歯面塗布後の指導で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "定期的な塗布を勧める。",
+      "塗布効果の限界を説明する。",
+      "塗布直後のうがいを勧める。",
+      "口にたまった唾液を飲み込ませる。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "厚生労働省のガイドラインで定めるフッ化物洗口開始の対象年齢はどれか。",
+    "choices": [
+      "3歳",
+      "4歳",
+      "5歳",
+      "6歳"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "小窩裂溝填塞法の酸処理面の深さはどれか。",
+    "choices": [
+      "10～30μm",
+      "50～100μm",
+      "200～300μm",
+      "500～1000μm"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am073",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "歯周病原細菌により引き起こされる可能性があるのはどれか。",
+    "choices": [
+      "菌血症",
+      "自臭症",
+      "骨粗鬆症",
+      "遺伝性歯肉線維腫症"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "シャープニング操作で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "施術中は滅菌した砥石を使用する。",
+      "刃部側面と砥石の角度を一定にする。",
+      "アーカンサスストーンでは潤滑材は不要である。",
+      "刃部のトウからヒールに向かってまっすぐ研ぐ。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "プロービング操作の写真を別に示す。歯周組織検査時のプローブの先端の動きを矢印で示す。\nウォーキングストロークはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "40歳の女性。奥歯に物が挟まることを主訴として来院した。器材の写真を別に示す。\n検査に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "エックス線写真を別に示す。\n矢印に部位に適したグレーシータイプキュレットはどれか。",
+    "choices": [
+      "# 1/2",
+      "# 3/4",
+      "# 11/12",
+      "# 13/14"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am078",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "歯面研磨剤の研磨成分はどれか。2つ選べ。",
+    "choices": [
+      "シリカ",
+      "グリセリン",
+      "カラギーナン",
+      "炭酸カルシウム"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am079",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "初診時と歯周基本治療後のアタッチメントレベルとプロービングデプスの結果を表に示す。\n付着の獲得が認められたのはどれか。2つ選べ。",
+    "choices": [
+      "11",
+      "21",
+      "31",
+      "41"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "OHIのDebris Score＜DS＞の結果とOHI-SのDI-S集計表を示す。\n集計表で正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "摂食嚥下過程のある時期の図を示す。\nこの時期の摂食嚥下障害に行われる訓練はどれか。",
+    "choices": [
+      "舌訓練",
+      "咳嗽訓練",
+      "シャキア訓練",
+      "メンデルソン手技"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "改訂BDR指標でDを把握する質問はどれか。",
+    "choices": [
+      "自分で歯磨きができますか。",
+      "口に水を含むことができますか。",
+      "自分で入れ歯の着け外しができますか。",
+      "洗面所までの移動が1人でできますか。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am083",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "45歳の女性。歯磨き時に上顎右側臼歯部の歯肉から出血することを主訴として来院した。口腔内写真を別に示す。ブラッシング指導時に、患者からどのような歯磨剤が良いか質問を受けた。\n症状を緩和する歯磨剤の薬効成分はどれか。",
+    "choices": [
+      "硝酸カリウム",
+      "トラネキサム酸",
+      "フッ化第一スズ",
+      "ピロリン酸ナトリウム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "11歳の女児。学校歯科健康診断で歯科医院の受診を勧められて来院した。歯科医院での口腔内診査を以下に示し、歯垢染色後の口腔内写真を別に示す。\n適切な対応はどれか。2つ選べ。",
+    "choices": [
+      "要観察歯の磨き方を指導する。",
+      "う蝕になるリスクが低いことを説明する。",
+      "口腔内が永久歯列に交換したことの重要性を説明する。",
+      "自宅で定期的に歯垢染色して磨き残しを確認することを勧める。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "67歳の女性。家族の希望で歯科訪問診療を行った。2年前に交通事故で頭部を受傷し、以来寝たきりの全介助で生活しているという。夫の話では、時々むせることもあるが、発熱は無いという。初回訪問時の食後の口腔内写真を別に示す。\n家族に指導する口腔清掃用具で必要性が高いのはどれか。2つ選べ。",
+    "choices": [
+      "軟毛歯ブラシ",
+      "スポンジブラシ",
+      "デンタルフロス",
+      "ジェット水流洗口器"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am086",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "味覚障害を生じる疾患はどれか。2つ選べ。",
+    "choices": [
+      "狭心症",
+      "低血圧症",
+      "亜鉛欠乏症",
+      "シェーグレン症候群"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "日本人の食事摂取基準＜2015年版＞で成人1日当たりの食塩の目標量はどれか。",
+    "choices": [
+      "女性3.0g未満",
+      "男性5.0ｇ未満",
+      "女性7.0g未満",
+      "男性9.0ｇ未満"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am088",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "摂食嚥下リハビリテーションに関わる職種とその役割の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "管理栄養士 -- 食事の介助",
+      "作業療法士 -- 食器具の選定",
+      "理学療法士 -- 筋緊張の調整",
+      "言語聴覚士 -- 摂食嚥下機能の診断"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "32歳の女性。ある日の食事内容における食事バランスガイドの評価と食事の写真を別に示す。\n摂取することでバランスが向上するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "60歳の男性。歯周治療のため8か月前から通院している。40年間1日25本の喫煙習慣があり、次週より禁煙を決意したため聞きとりを行った。\n結果を以下に示す。\n\n・朝起きたらまず喫煙をする。\n・1日の中で朝の喫煙がやめにくい。\n・風邪をひいても喫煙は継続している。\n\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "禁煙外来を紹介する。",
+      "禁煙ステージは関心期である。",
+      "ブリンクマン指数は600である。",
+      "ニコチンに対する依存度が高い。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

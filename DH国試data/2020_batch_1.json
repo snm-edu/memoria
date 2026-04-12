@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2020_dh_20_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "人体骨格標本の一部の写真を示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "胸　骨",
+      "鎖　骨",
+      "肋　骨",
+      "肩甲骨"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "舌を後方に牽引するのはどれか。1つ選べ。",
+    "choices": [
+      "横舌筋",
+      "茎突舌筋",
+      "垂直舌筋",
+      "オトガイ舌筋"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "頭蓋骨の写真を示す。\n矢印で示す孔が交通するのはどれか。1つ選べ。",
+    "choices": [
+      "眼　窩",
+      "鼻　腔",
+      "上顎洞",
+      "頭蓋腔"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "Tomes〈トームス〉線維が存在するのはどれか。1つ選べ。",
+    "choices": [
+      "歯　髄",
+      "象牙質",
+      "エナメル質",
+      "セメント質"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "ある糖質の構造を図に示す。\nこの糖質はどれか。1つ選べ。",
+    "choices": [
+      "スクロース",
+      "セルロース",
+      "マルトース",
+      "ラクトース"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "ある反射経路を模式図に示す。\nこの反射はどれか。1つ選べ。",
+    "choices": [
+      "開口反射",
+      "屈曲反射",
+      "伸張反射",
+      "下顎張反射"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am007",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "大脳皮質を模式図に示す。\n味覚野はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am008",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "大唾液腺を模式図に示す。\n矢印で示す腺を支配しているのはどれか。1つ選べ。",
+    "choices": [
+      "顔面神経",
+      "舌咽神経",
+      "迷走神経",
+      "舌下神経"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "脂肪代謝障害による疾患はどれか。1つ選べ。",
+    "choices": [
+      "痛　風",
+      "糖尿病",
+      "粥状動脈硬化症",
+      "フェニルケトン尿症"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "65歳の男性。舌縁に発生した腫瘤を主訴として来院した。1か月前から気付いていたが、痛みがないため放置していたという。圧迫により退色を認める。口腔内写真を示す。\n矢印で示す病変の主体と考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "多数の血管",
+      "増生した線維",
+      "菲薄化した上皮",
+      "メラニン色素の沈着"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "抗体を模式図に示す。\n可変部はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "Candida albicansを模式図に示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "莢　膜",
+      "仮性菌糸",
+      "厚膜胞子",
+      "分芽胞子"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "A型インフルエンザウイルスを模式図に示す。\n矢印で示すのはどれか。１つ選べ。",
+    "choices": [
+      "gp41",
+      "HBs抗原",
+      "カプシド",
+      "ノイラミニダーゼ〈NA〉"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "経口投与した薬物のバイオアベイラビリティ〈生物学的利用能〉に影響するのはどれか。1つ選べ。",
+    "choices": [
+      "治療係数",
+      "血液脳関門",
+      "最小有効量",
+      "初回通過効果"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "出血から止血までの流れを図に示す。\n①で示す段階を抑制するのはどれか。1つ選べ。",
+    "choices": [
+      "アスピリン",
+      "アドレナリン",
+      "トロンビン製剤",
+      "ワルファリンカリウム"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "唾液の機能と成分の組合せで正しいのはどれか。1つ選べ。",
+    "choices": [
+      "緩衝作用 -- 分泌型IgA",
+      "抗菌作用 -- リゾチーム",
+      "潤滑作用 -- アミラーゼ",
+      "消化作用 -- ムチン"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "プラーク内部の物質の濃度分布を模式図に示す。\n①に該当するのはどれか。2つ選べ。",
+    "choices": [
+      "酸　素",
+      "栄養素",
+      "水素イオン",
+      "微生物代謝産生物質"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "舌清掃で抑制効果が期待されるのはどれか。2つ選べ。",
+    "choices": [
+      "う　蝕",
+      "口　臭",
+      "歯周病",
+      "誤嚥性肺炎"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "アタッチメントレベル測定の基準となるのはどれか。2つ選べ。",
+    "choices": [
+      "歯肉辺縁",
+      "歯間乳頭頂",
+      "セメント - エナメル境",
+      "歯冠補綴装置のマージン"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "歯周病の第二次予防はどれか。2つ選べ。",
+    "choices": [
+      "歯周病検診",
+      "食生活指導",
+      "歯周外科治療",
+      "口腔機能回復治療"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "学校保健統計調査（平成30年）による、むし歯のある者の割合の年齢変化を図に示す。\nグラフがN字曲線を呈する要因はどれか。1つ選べ。",
+    "choices": [
+      "飲食習慣",
+      "乳歯の交換",
+      "歯口清掃習慣",
+      "フッ化物応用"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "地域歯科保健活動でアウトカム評価の対象はどれか。2つ選べ。",
+    "choices": [
+      "歯科医療費の減少",
+      "口腔のQOLの向上",
+      "歯科健診の実施回数",
+      "担当人員の活用状況"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "感染症予防で感染経路対策はどれか。2つ選べ。",
+    "choices": [
+      "予防接種",
+      "患者の隔離",
+      "マスクの着用",
+      "使用器具の滅菌"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "大気中CO2濃度の上昇が原因となるのはどれか。1つ選べ。",
+    "choices": [
+      "酸性雨",
+      "森林の減少",
+      "地球温暖化",
+      "オゾン層の破壊"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "ランダム化比較対照試験の流れを図に示す。\nランダム化を行うのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "地域の健康危機管理の拠点はどれか。1つ選べ。",
+    "choices": [
+      "保健所",
+      "地域医療支援病院",
+      "市町村保健センター",
+      "地域包括支援センター"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "地域包括ケアシステムの概念を図に示す。\n［　］内に入るのはどれか。2つ選べ。",
+    "choices": [
+      "食　事",
+      "年　金",
+      "予　防",
+      "住まい"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "処方せん交付義務を規定しているのはどれか。1つ選べ。",
+    "choices": [
+      "薬剤師法",
+      "健康保険法",
+      "歯科医師法",
+      "医薬品、医療機器等の品質、有効性及び安全性の確保に関する法律〈薬機法〉"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "我が国の社会保障制度における社会保険と社会福祉の保障内容による分類を表に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "介護保険",
+      "雇用保険",
+      "国民健康保険",
+      "国民年金保険"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "発達障害者支援法が適用されるのはどれか。2つ選べ。",
+    "choices": [
+      "学習障害",
+      "精神遅滞",
+      "脳性麻痺",
+      "注意欠陥多動性障害"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2016_dh_16_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "アナフィラキシー型アレルギーの発現に関与するのはどれか。",
+    "choices": [
+      "IgA",
+      "IgE",
+      "IgG",
+      "IgM"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "口腔内細菌のグラム染色像を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "Treponema denticola",
+      "Streptococcus mutans",
+      "Actinomyces naeslundii",
+      "Porphyromonas gingivalis"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "薬物Aと薬物Bの用量有効率曲線と用量致死率曲線およびそれぞれの50%有効量と50%致死量を図に示す。用量を対数で表示する。\n薬物Aと薬物Bの安全性を表す安全域Aと安全域Bの関係で正しいのはどれか。",
+    "choices": [
+      "安全域Aは安全域Bの1/4である。",
+      "安全域Aは安全域Bの1/2である。",
+      "安全域Aは安全域Bの2倍である。",
+      "安全域Aは安全域Bの4倍である。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "歯痛にジクロフェナクナトリウムを投与した。該当する薬物療法はどれか。",
+    "choices": [
+      "原因療法",
+      "対症療法",
+      "補充療法",
+      "予防療法"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "アナフィラキシーショックによる呼吸困難やチアノーゼに対して投与すべき薬物はどれか。",
+    "choices": [
+      "アスピリン",
+      "アドレナリン",
+      "ニフェジピン",
+      "アセチルコリン"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm016",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "口腔細菌と病原性の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "Lactobaeillus casei -- 酸産生",
+      "Streptococcus sobrinus -- 毒素産生",
+      "Fusobacterium nucleatum -- グルカン合成",
+      "Porphyromonas gingivalis -- タンパク分解酵素産生"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "家庭用品品質表示法に規定されている歯ブラシの表示内容はどれか。2つ選べ。",
+    "choices": [
+      "植毛数",
+      "柄の長さ",
+      "柄の材質",
+      "毛の硬さ"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "歯磨剤の薬効成分で、う蝕予防と歯周病予防の両方の効能が期待できるのはどれか。",
+    "choices": [
+      "乳酸アルミニウム",
+      "ピロリン酸ナトリウム",
+      "ベンゼトニウム塩化物",
+      "グリチルリチン酸ニカリウム"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "う蝕リスクを高めるのはどれか。",
+    "choices": [
+      "リパーゼ",
+      "デキストラナーゼ",
+      "ペルオキシダーゼ",
+      "グルコシルトランスフェラーゼ"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "フッ化物応用法と使用薬剤の組合せで正しいのはどれか。",
+    "choices": [
+      "洗口剤 -- APF",
+      "歯磨剤 -- NaF",
+      "歯面塗布 -- MFP",
+      "水道水フッ化物濃度調整 -- SnF<sub>2</sub>"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "OHIのDebris Score＜DS＞とCalculus Score＜CS＞を表に示す。\nOHIはどれか。",
+    "choices": [
+      "2",
+      "2.5",
+      "3",
+      "3.5"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm022",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "GI＜Löe&Silness,1963＞とPDI＜Ramfjord,1959＞に共通する診査対象歯はどれか。2つ選べ。",
+    "choices": [
+      "右上1番",
+      "左上2番",
+      "右下4番",
+      "左下6番"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "人口動態統計における主要死因別にみた死亡率の推移を図に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "肺　炎",
+      "心疾患",
+      "悪性新生物",
+      "脳血管疾患"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "（　）に入るのはどれか。\n\n感染性廃棄物とは、医療機関等から生じ、人が感染し、もしくは感染するおそれのある（　）が含まれる可能性のある廃棄物をいう。",
+    "choices": [
+      "病原体",
+      "危険物質",
+      "汚染物質",
+      "有害物質"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "食中毒の原因別月別発生数＜件数＞を図に示す。\nノロウイルスによるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "学校保健における対人管理はどれか。2つ選べ。",
+    "choices": [
+      "PTA活動",
+      "学級活動",
+      "健康診断",
+      "感染症予防"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "職業性疾病のうち作業管理要因によるのはどれか。",
+    "choices": [
+      "B型肝炎",
+      "水銀中毒",
+      "頸肩腕障害",
+      "電離放射線障害"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "（　）に入るのはどれか。\n\n日本国憲法第25条では「国はすべての生活部面について、社会福祉、社会保障及び（　）の向上及び増進に努めなければならない」と定めている。",
+    "choices": [
+      "教育水準",
+      "国民所得",
+      "公衆衛生",
+      "勤労意欲"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "平成25年度の部門別社会保障給付費を構成割合の高い順に示す。\n正しいのはどれか。",
+    "choices": [
+      "年金＞福祉＞医療",
+      "医療＞年金＞福祉",
+      "年金＞医療＞福祉",
+      "医療＞福祉＞年金"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "高齢者が住み慣れた地域で自立した生活が営めるよう、医療、介護、予防、住まい及び生活支援サービスを切れ目なく提供することを目的とした仕組みはどれか。",
+    "choices": [
+      "地域支援事業",
+      "地域密着型サービス",
+      "地域医療連携システム",
+      "地域包括ケアシステム"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm031",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "血清カルシウム濃度の恒常性維持において、活性型ビタミンDが作用するのはどれか。2つ選べ。",
+    "choices": [
+      "骨",
+      "小　腸",
+      "肝　臓",
+      "皮　膚"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm032",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "食事バランスガイドで示されていないのはどれか。",
+    "choices": [
+      "食　塩",
+      "水　分",
+      "運　動",
+      "嗜好飲料"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "医療現場におけるインシデント報告書の目的はどれか。2つ選べ。",
+    "choices": [
+      "勤務評定",
+      "保健所への報告",
+      "メタ認知能力の育成",
+      "事故発生リスクの分析"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "運動負荷心電図検査で自転車をこぐことで負荷を与えるのはどれか。",
+    "choices": [
+      "エルゴメータ",
+      "トレッドミル",
+      "スパイログラム",
+      "パルスオキシメータ"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "細菌感染が疑われる患者のスクリーニング検査で指標となるのはどれか。2つ選べ。",
+    "choices": [
+      "CRP値",
+      "赤血球数",
+      "白血球数",
+      "血小板数"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm036",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "根管洗浄用プラスチックシリンジの感染予防対策で有効なのはどれか。",
+    "choices": [
+      "薬液消毒",
+      "乾熱滅菌",
+      "紫外線消毒",
+      "低温プラズマ滅菌"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm037",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "35歳の女性。歯の変色を主訴として来院した。歯の萌出直後から気付いていたが放置していたという。初診時の口腔内写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "色素沈着",
+      "歯髄壊死",
+      "抗菌薬の副作用",
+      "フッ化物の過剰摂取"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm038",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "形成窩洞内に充填した光重合型コンポジットレジンと光照射器の位置関係の図を別に示す。\n重合率が最も高いのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm039",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "咬合面のう蝕検査に用いるのはどれか。",
+    "choices": [
+      "CO<sub>2</sub>レーザー",
+      "半導体レーザー",
+      "Er：YAGレーザー",
+      "Nd：YAGレーザー"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm040",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "34歳の男性。上顎左側第一小臼歯の痛みを主訴として来院した。窩洞形成を行い間接修復することになった。窩洞形成後の口腔内写真を別に示す。\n印象採得に用いるのはどれか。",
+    "choices": [
+      "アルジネート印象材",
+      "シリコーンラバー印象材",
+      "酸化亜鉛ユージノール印象材",
+      "モデリングコンパウンド印象材"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

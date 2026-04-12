@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2021_dh_21_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "障害のある人に対する就職や制度面での障壁はどれか。1つ選べ。",
+    "choices": [
+      "物理的バリア",
+      "社会的バリア",
+      "心理的バリア",
+      "文化・情報のバリア"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "軽度精神発達遅滞の患児に対する歯科診療トレーニングの写真を示す。\nこの行動療法はどれか。1つ選べ。",
+    "choices": [
+      "カウント法",
+      "Tell-Show-Do法",
+      "TEACCHプログラム",
+      "トークンエコノミー法"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am063",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "高値になると歯周基本治療の効果に影響を与えるのはどれか。1つ選べ。",
+    "choices": [
+      "HbA1c",
+      "HCV抗体",
+      "ヘマトクリット",
+      "HDLコレステロール"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "小窩裂溝塡塞の適応はどれか。2つ選べ。",
+    "choices": [
+      "盲　孔",
+      "根面溝",
+      "中心結節",
+      "エナメル突起"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "初診時と歯周治療終了時の同一歯に対する歯周組織検査の図を示す。\nアタッチメントゲイン（mm）はどれか。1つ選べ。",
+    "choices": [
+      "（図参照：選択肢1）",
+      "2",
+      "4",
+      "6"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "加齢に伴う唾液減少が原因で生じるのはどれか。2つ選べ。",
+    "choices": [
+      "口　臭",
+      "咬　耗",
+      "顎関節症",
+      "味覚障害"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "15歳の女子。前歯部の歯肉腫脹を主訴として来院した。初診時の口腔内写真を示す。\nPMA index（前歯部法）の下顎のスコアに最も近いのはどれか。1つ選べ。",
+    "choices": [
+      "2点",
+      "6点",
+      "10点",
+      "17点"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "健康な歯周組織を模式図に示す。\nスティップリングがみられるのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "小児のう蝕予防で、フッ化物洗口と比較したフッ化物歯面塗布の特徴はどれか。1つ選べ。",
+    "choices": [
+      "適応年齢が低い。",
+      "方法が簡便である。",
+      "保護者によって実施される。",
+      "使用薬剤を薬局で購入できる。"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "12歳の男児。学校歯科健康診断で「G」と判定されて来院した。初診時の口腔内写真を示す。歯科医師から超音波スケーラーを使用しての歯石除去を指示された。\n矢印で示す部位を除去するときに留意すべきなのはどれか。1つ選べ。",
+    "choices": [
+      "咬頭の摩耗",
+      "チップの破損",
+      "修復物の脱離",
+      "象牙質知覚過敏"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am071",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "34歳の女性。冷たいものが歯にしみることを主訴として来院した。初診時の口腔内写真を示す。しみるのが強い部分を矢印で示す。\n主訴の原因として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "う　蝕",
+      "歯　石",
+      "歯列不正",
+      "外傷性咬合"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "保育園の5歳時クラスでフッ化物洗口を行うことになった。園児に説明をするために作成した媒体の一部を図に示す。\n②の目的はどれか。2つ選べ。",
+    "choices": [
+      "誤飲の防止",
+      "口腔粘膜の保護",
+      "溶液の毒性低下",
+      "う蝕予防効果の向上"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "ポケットプロービングで確認できるのはどれか。2つ選べ。",
+    "choices": [
+      "歯の動揺度",
+      "歯周組織の破壊程度",
+      "歯肉縁下プラーク量",
+      "ポケット内壁の炎症"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "10歳の男児。男児の通う小学校では毎週木曜日の昼食後、溶液10mLを用いてフッ化物洗口を実施している。\nフッ素の口腔内残留量（mg）はどれか。1つ選べ。\nただし、洗口後の溶液の口腔内残留率は20％とする。",
+    "choices": [
+      "0.5",
+      "0.9",
+      "1.8",
+      "2.9"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "AxelssonのPMTCで使用する器材・器具の写真を示す。実施の流れを示す。\n\nプラークの染め出し\n↓\n①歯間部の清掃\n↓\n②頰舌・咬合面の清掃\n↓\n③歯面・歯周ポケット内の洗浄\n↓\n④フッ化物歯面塗布\n\nこの器材・器具を使用するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "グレーシータイプキュレットを操作している写真を示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "う蝕リスク検査の結果の写真を示す。\n評価しているのはどれか。1つ選べ。",
+    "choices": [
+      "Candida albicans",
+      "Lactobacillus caseii",
+      "Streptococcus mutans",
+      "Porphyromonas gingivalis"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am078（不備問題採点除外）",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "38歳の女性。半月前に家族から口臭を指摘され、気になったため来院した。歯科医師からデンタルフロス使用方法の指導について指示された。初診時の情報を表に示す。\nSOAPで記録する際の項目と内容の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "S -- 1日1回の歯磨き",
+      "O -- 口の臭いが気になる",
+      "A -- 官能試験スコア",
+      "P -- デンタルフロス使用方法の指導"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am079",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "50歳の女性。着色除去を希望して来院した。数か月前から気付き、次第に範囲が広がっているという。初診時の口腔内写真を示す。\n着色の原因と考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "外　傷",
+      "飲食物",
+      "テトラサイクリン",
+      "フッ化ナトリウム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "歯磨剤の成分と配合成分の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "研磨剤 -- リン酸水素カルシウム",
+      "湿潤剤 -- パラオキシ安息香酸メチル",
+      "粘結剤 -- アルギン酸ナトリウム",
+      "発泡剤 -- ソルビトール"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "Down症候群の患者の口腔衛生管理を行う際に配慮すべき点はどれか。2つ選べ。",
+    "choices": [
+      "小顎症",
+      "歯列不正",
+      "顎関節脱臼",
+      "歯の形態異常"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "小学校低学年を対象とした集団歯科保健指導を行うことになった。留意すべきなのはどれか。2つ選べ。",
+    "choices": [
+      "歯周炎",
+      "歯の交換",
+      "口腔の外傷",
+      "第一小臼歯のう蝕"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "85歳の女性。口臭を主訴として同居の家族に付き添われて来院した。2年前から認知症を発症しているという。来院時の家族との医療面接の結果を表に示す。\n家族に対する指導内容で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "洗口剤の使用",
+      "軽食への変更",
+      "仕上げ磨きの実施",
+      "歯間ブラシの使用"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "工場でメッキ作業を行う職員を対象とした集団歯科保健指導で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "専用マスクの使用",
+      "歯垢染め出しの実施",
+      "小窩裂溝塡塞の勧奨",
+      "フッ化物洗口の勧奨"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "健康信念モデル＜Health Belief Model＞の一部を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "為害性",
+      "重篤性",
+      "難治性",
+      "易罹患性"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "「歯と口の健康週間」において、高校生を対象とした食生活に関する健康教育の依頼を受けた。\n指導目標として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "食べ方が心と体に影響を及ぼすことを理解する。",
+      "初めての食材にも食べる意欲が持てるようにする。",
+      "食べ物が生活習慣病に関係していることを理解する。",
+      "前歯で噛み切り、奥歯でしっかり噛み砕くことができるようにする。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "30歳の男性。矯正歯科治療のため来院した。歯科医師から口腔衛生管理を行うよう指示を受けた。う蝕リスクの評価結果を図に示す。\n推奨するのはどれか。2つ選べ。",
+    "choices": [
+      "代用甘味料",
+      "小窩裂溝塡塞",
+      "口腔保湿スプレー",
+      "1,450ppmF配合歯磨剤"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "食品添加物に用いられるのはどれか。2つ選べ。",
+    "choices": [
+      "砂　糖",
+      "オリーブ油",
+      "アスパルテーム",
+      "L-アスコルビン酸"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "85歳の女性。骨折で要介護状態となり介護施設に入所している。普通食を摂取していたが、臼歯部両側遊離端義歯を紛失して歯科訪問診療を受診した。義歯製作までに食事形態の変更が必要となった。むせはないという。野菜の炒め煮の食事形態の写真を示す。\n適切なのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "スクリーニング項目の一部を図に示す。\nこの項目で評価するのはどれか。1つ選べ。",
+    "choices": [
+      "BMI＜Body mass index＞",
+      "SGA＜Subjective global assessment＞",
+      "EAT-10＜Eating assessment tool＞",
+      "MNA-SF<sup>®</sup>＜Mini nutritional assessment-short form＞"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

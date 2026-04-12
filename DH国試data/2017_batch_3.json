@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2017_dh_17_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "原因と考えられる服用薬はどれか。",
+    "choices": [
+      "ニフェジピン",
+      "フェニトイン",
+      "カルバマゼピン",
+      "シクロスポリン"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am062",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "口腔清掃中に全身が硬直する発作が生じ、呼びかけに反応しない。\n直ちに行うのはどれか。2つ選べ。",
+    "choices": [
+      "背板を起こす。",
+      "開口器で咬舌を防ぐ。",
+      "口腔清掃を中止する。",
+      "口腔内の器具をすべて除去する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "歯周病の第二次予防の組合せで正しいのはどれか。",
+    "choices": [
+      "特異的防御 -- スケーリング",
+      "機能喪失阻止 -- 歯周外科処置",
+      "早期発見・即時処置 -- PMTC",
+      "リハビリテーション -- 健康教育"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "口腔の付着物・沈着物で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "歯石の主成分はリン酸カルシウムである。",
+      "色素沈着は外来性と歯質内に着色するものがある。",
+      "歯垢は細菌と食物残渣からなる層状の構造物である。",
+      "ペリクルは口腔粘膜に形成される透明な薄膜である。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "妊娠期の口腔に多くみられるのはどれか。2つ選べ。",
+    "choices": [
+      "悪阻による口腔清掃不良",
+      "妊娠初期のアレルギー性歯肉炎",
+      "妊娠高血圧症候群による粘膜皮膚病変",
+      "女性ホルモンのバランスの変化に関連する歯肉炎"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "歯周病に関与する環境因子はどれか。2つ選べ。",
+    "choices": [
+      "喫煙",
+      "遺伝",
+      "細菌",
+      "口腔清掃習慣"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "器具の写真を別に示す。\n使用する部位はどれか。2つ選べ。",
+    "choices": [
+      "16歯根部&#x9830;側",
+      "27歯根部口蓋側",
+      "34歯根部&#x9830;側",
+      "46歯根部舌側"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "歯周炎の活動性を評価するのはどれか。",
+    "choices": [
+      "BOP",
+      "動揺度",
+      "PMA Index",
+      "O'LearyのPCR"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "根分岐部病変の判定に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "Weineの分類",
+      "Millerの分類",
+      "Glickmanの分類",
+      "Lindhe & Nymanの水平的分類"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "歯周組織検査結果の一部を表に示す。\n根面の露出が最も大きいのはどれか。",
+    "choices": [
+      "第一小臼歯",
+      "第二小臼歯",
+      "第一大臼歯",
+      "第二大臼歯"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "エアスケーラーの特徴はどれか。",
+    "choices": [
+      "無注水下で行う。",
+      "キャビテーション効果がある。",
+      "エアロゾルの発生を抑制する。",
+      "エアタービンの圧縮空気を利用する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "グレーシータイプキュレット＃13のシャープニングを、手用のアーカンサスストーンで行う。\n正しい操作はどれか。2つ選べ。",
+    "choices": [
+      "先端は12時の方向に向ける。",
+      "フェイスは床面と垂直にする。",
+      "ヒールからトウ方向に研ぐ。",
+      "砥石は下げる動作で終了する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "ミュータンスレンサ球菌の菌数レベルを示すのはどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "炭酸水素ナトリウムを用いる歯面清掃器の使用時の写真を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "この男児に勧める歯磨剤の成分で適切なのはどれか。",
+    "choices": [
+      "フッ化第一スズ",
+      "乳酸アルミニウム",
+      "ポリリン酸ナトリウム",
+      "ポリエチレングリコール"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "光重合型小窩裂溝填塞を行うのに必要な器材の写真を別に示す。\n他に必要なのはどれか。2つ選べ。",
+    "choices": [
+      "咬合紙",
+      "コンタクトゲージ",
+      "プラスチックストリップス",
+      "ラバーダム防湿用器具・器材一式"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "我が国で市販されている歯磨剤に含まれるフッ化物はどれか。2つ選べ。",
+    "choices": [
+      "フッ化ナトリウム",
+      "ケイフッ化ナトリウム",
+      "リン酸酸性フッ化ナトリウム",
+      "モノフルオロリン酸ナトリウム"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am078",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "小学校で行うフッ化物洗口剤の取扱いで正しいのはどれか。",
+    "choices": [
+      "洗口液の調整は児童自らが行う。",
+      "洗口液はガラス容器に分注する。",
+      "洗口液は溶解後2か月程度使用できる。",
+      "洗口用顆粒剤は児童の手の届かないところに保管する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am079",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "53歳の女性。初診時の会話を以下に示す。\n歯科衛生士：①今日はどういったことで来院されましたか。\n患　　　　者：左下の歯肉が痛むので。\n歯科衛生士：②いつ頃から痛みましたか。\n患　　　　者：今回は、昨晩の夕食時です。実は、半年ぐらい前から時々痛むことがありました。\n歯科衛生士：それは、ずいぶん我慢なさったのですね。\n　　　　　　　　③どういう時に痛みますか。思い当たることはありますか。\n患　　　　者：食べた物の影響ではないと思います。忙しくて疲れがたまってくると噛んだ時に痛むようになった気がします。\n歯科衛生士：なるほど体の疲れと関係があるかもしれないということですね。\n　　　　　　　　④その時の生活状況をもう少し詳しくお話しいただけますか。\nコミュニケーション技法で焦点化〈フォーカシング〉の部分はどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "Breslowの7つの健康習慣を用いて生活指導を行う際、正の強化が有効なのはどれか。2つ選べ。",
+    "choices": [
+      "喫煙",
+      "朝食",
+      "飲酒",
+      "運動"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am081（不備問題採点除外）",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "多剤服用の高齢者に対して歯科保健指導を行う際に、薬物の注意すべき有害作用はどれか。2つ選べ。",
+    "choices": [
+      "歯髄壊死",
+      "出血傾向",
+      "口腔乾燥",
+      "嚥下障害"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "0～3歳児のミュータンスレンサ球菌の感染と定着の予防で有効なのはどれか。2つ選べ。",
+    "choices": [
+      "洗口剤の使用",
+      "離乳開始の遅延",
+      "含糖食品の摂取制限",
+      "養育者の口腔衛生の改善"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "摂食嚥下機能の獲得段階と特徴的な動きの組合せで正しいのはどれか。",
+    "choices": [
+      "嚥下機能獲得期 -- 上唇での取り込み",
+      "捕食機能獲得期 -- 頬と口唇の協調運動",
+      "押しつぶし機能獲得期 -- 舌尖の口蓋皺襞への押し付け",
+      "すりつぶし機能獲得期 -- 下唇の内転"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "義歯装着者でカンジダ菌が定着しやすいのはどれか。",
+    "choices": [
+      "鉤歯",
+      "人工歯",
+      "義歯床面",
+      "クラスプ"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "88歳の女性。市の訪問事業で保健師とともに訪問した。5年前から重度認知症でADLは全介助である。家族から下顎左側臼歯部のブリッジが揺れるため、軟らかいものしか食べられないと相談された。口腔内を観察したところ、プラークが付着していた。また、ブリッジに軽度の動揺が認められたが、ブリッジと支台歯の接着は強固であった。\n家族に指導するのはどれか。2つ選べ。",
+    "choices": [
+      "食形態の変更",
+      "ブリッジ部の清掃",
+      "セルフケアの習慣づけ",
+      "歯科医師への往診の依頼"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "84歳の女性。乳癌の治療のため入院している。歯科医師より周術期の口腔衛生管理を指示されて定期的に病室を訪問している。4日前に手術が行われ、術後の経過は順調でおかゆも食べているという。患者が食事中の病室訪問時に見つけた義歯の写真を別に示す。\n担当の看護師に対する義歯の説明で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "義歯は毎食後清掃してください。",
+      "食事の際は使用するようにしてください。",
+      "手術後1週程度は使用しないでください。",
+      "歯科医療従事者以外は触らないようにしてください。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "ハイリスクアプローチはどれか。2つ選べ。",
+    "choices": [
+      "地域住民へのフレイル予防の講演",
+      "高血圧患者への塩分摂取量の指導",
+      "学童への「噛ミング30」学習の普及",
+      "喫煙者へのニコチン代替療法による禁煙支援"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "日本人の食事摂取基準の模式図を示す。\n①に該当する摂取量が定められているのはどれか。",
+    "choices": [
+      "炭水化物",
+      "ナトリウム",
+      "ビタミンD",
+      "たんぱく質"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "小学5年生のサッカー教室に通う25組の親子に対して、食育関連の話をすることになった。対象者の特徴を以下に示す。\n\n練習時間　　 ：土・日　8時～11時　　火・金　17時～19時\n食習慣　 　　 ：練習翌朝の欠食者が20名であった。\n　　　　　　 　　 練習中、スポーツドリンク、麦茶の摂取をしている。\n　　　　　　　　  練習後、菓子パンやスナック菓子を摂取する者が数名いる。\nローレル指数：全体平均は標準である。\n口腔内状況　：第一小臼歯、第二小臼歯および第二大臼歯未萌出の者が多いため、咬み合わせは不安定である。\n\n歯科衛生士の講話として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "間食の選択",
+      "肥満と食事内容",
+      "軟性食材と仕上げ磨き",
+      "口腔状況とよく噛むことの必要性"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "3歳の男児。食事が上手に食べられないことを主訴として来院した。出生時に脳性麻痺と診断され、現在日常生活は全介助であるという。口腔内診査の結果、歯列咬合に異常はないが、噛みしめが非常に強かった。保護者が持参した患児用に購入した食具の写真を別に示す。①と④はシリコーン製、②と③は金属製である。\n保護者に勧めるのはどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

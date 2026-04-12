@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2017_dh_17_am091",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "両唇音はどれか。2つ選べ。",
+    "choices": [
+      "タ",
+      "パ",
+      "マ",
+      "ラ"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am092",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "意識障害に伴う嚥下障害がみられる急性期脳血管疾患患者への口腔ケアの目的はどれか。2つ選べ。",
+    "choices": [
+      "流涎の予防",
+      "肺炎の予防",
+      "味覚障害の予防",
+      "廃用による口腔機能低下の予防"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am093",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "摂食機能障害者に対して水の入ったコップとストローを使用した間接訓練の写真を別に示す。\nこの訓練の目的はどれか。",
+    "choices": [
+      "咬合力の増強",
+      "声門閉鎖機能の強化",
+      "鼻咽腔閉鎖機能の強化",
+      "舌の食塊形成機能の向上"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am094",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "摂食嚥下障害の間接訓練で、口腔内の感覚機能を高めて嚥下運動を誘発するのはどれか。",
+    "choices": [
+      "脱感作療法",
+      "ガムラビング",
+      "筋刺激訓練法",
+      "味覚刺激訓練"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am095",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "54歳の女性。5日前に脳血管疾患を発症し入院中である。病室にて口腔清掃準備時の写真を別に示す。患者の意識状態は、Japan Coma Scale &Ⅲ-200である。\n口腔衛生管理を行うにあたり、患者に負担のない姿勢はどれか。2つ選べ。",
+    "choices": [
+      "座位",
+      "仰臥位",
+      "側臥位",
+      "セミファーラー位"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "擦式手指消毒の手順で最初に行うのはどれか。",
+    "choices": [
+      "手掌",
+      "手首",
+      "拇指",
+      "手指間"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "歯科用ユニットのエアコンプレッサーで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "作動音は小さい。",
+      "電源は常に入れておく。",
+      "水抜きバルブが設けられている。",
+      "エアタービンハンドピースの動力源となる。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "従来型グラスアイオノマーセメントについて正しいのはどれか。",
+    "choices": [
+      "光で硬化する。",
+      "硬化時に水を添加する。",
+      "硬化後は十分な乾燥が必要である。",
+      "フッ化物のリチャージが可能である。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "22歳の女性。上顎左側第一小臼歯のう蝕治療を希望して来院した。修復処置を行い、本日修復物の装着を予定している。装着前の修復物の写真を別に示す。\n合着前に行う処理はどれか。2つ選べ。",
+    "choices": [
+      "フッ酸処理",
+      "サンドブラスト",
+      "リン酸エッチング",
+      "イオウ含有プライマー塗布"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "16歳の女子。上顎前歯部の審美障害を主訴として来院した。診査の結果、エナメル質に限局したう蝕と診断された。コンポジットレジン修復を行うことになったが、患者は重度の歯科恐怖症であり、特にタービンの音には敏感に反応するという。Er：YAGレーザーを用いて治療することになった。\n治療前に行うのはどれか。2つ選べ。",
+    "choices": [
+      "換気を確認する。",
+      "診療室を暗くする。",
+      "酸素吸入器を準備する。",
+      "保護用ゴーグルを準備する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "38歳の女性。上顎左側第一大臼歯の温熱痛を主訴として来院した。歯髄炎と診断され、根管治療を開始した。治療中に撮影したエックス線写真を別に示す。\n撮影の目的はどれか。",
+    "choices": [
+      "う蝕の確認",
+      "根管長の確認",
+      "根尖病巣の位置",
+      "根管充&#x5861;の状態"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "45歳の男性。下顎第一大臼歯の全部金属冠の印象採得を行うことになった。圧排糸を用いて歯肉排除を行うよう歯科医師から指示された。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "支台歯の歯頸部全周より数mm短いものを使用する。",
+      "硫酸アルミニウムを浸透させる。",
+      "ジンパッカーで歯肉溝に挿入する。",
+      "探針で取り出す。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "歯科技工物の写真を別に示す。\n治療時に用意するのはどれか。2つ選べ。",
+    "choices": [
+      "コンタクトゲージ",
+      "ワックススパチュラ",
+      "パラフィンワックス",
+      "モデリングコンパウンド"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "伝達麻酔のカートリッジ式注射器について正しいのはどれか。2つ選べ。",
+    "choices": [
+      "浸潤麻酔に使用できる。",
+      "ハンドルはリング状である。",
+      "プランジャーの先端は平坦である。",
+      "注射針は30G（ゲージ）を使用する。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "器具の写真を別に示す。\n帯環の調整に用いるのはどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "小児歯科治療時の行動療法的対応法はどれか。2つ選べ。",
+    "choices": [
+      "開口の保持",
+      "モデリング",
+      "トークンエコノミー",
+      "ハンドオーバーマウス"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "高齢者の脱水状態を把握するのに有用な検査項目はどれか。",
+    "choices": [
+      "白血球分画",
+      "クロスマッチ",
+      "ヘマトクリット値",
+      "プロトロンビン時間"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am108",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "聴覚障害を有する患者の対応で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "筆談の準備をする。",
+      "ジェスチャーを用いる。",
+      "肩に手を置いて誘導する。",
+      "補聴器の音量を最大にする。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "エックス線写真フィルムの保管で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "乾燥して保管する。",
+      "ケースを使用する。",
+      "診療録にテープで貼りつける。",
+      "患者氏名をフィルムに書き込む。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "46歳の男性。下顎左側第二小臼歯のインレー脱離を主訴として来院した。局所麻酔後、軟化象牙質の除去中に意識レベルが低下し、顔面蒼白、徐脈および血圧低下を認めた。\n適切な対応はどれか。2つ選べ。",
+    "choices": [
+      "衣服をゆるめる。",
+      "AEDを装着する。",
+      "深呼吸をすすめる。",
+      "姿勢を半座位にする。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "頭頸部のある断面を図に示す。\nこの断面の名称はどれか。",
+    "choices": [
+      "横断面",
+      "水平断面",
+      "矢状断面",
+      "前頭断面"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "歯周組織の断面図を示す。\n付着上皮〈接合上皮〉はどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "下顎第一大臼歯の咬合面を模式図に示す。○は咬頭頂を示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "近心&#x9830;側咬頭",
+      "近心舌側咬頭",
+      "遠心&#x9830;側咬頭",
+      "遠心舌側咬頭"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "舌の写真と線で囲んだ部位の拡大写真を別に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "糸状乳頭",
+      "茸状乳頭",
+      "葉状乳頭",
+      "有郭乳頭"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "骨格筋細胞の筋小胞体から放出されるのはどれか。",
+    "choices": [
+      "ATP",
+      "アクチン",
+      "トロポニン",
+      "カルシウムイオン"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "象牙質に多く含まれるコラーゲンはどれか。",
+    "choices": [
+      "&#x2160;型",
+      "&#x2161;型",
+      "&#x2162;型",
+      "&#x2164;型"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "開口反射で正しいのはどれか。",
+    "choices": [
+      "片側性に起こる。",
+      "閉口筋が抑制される。",
+      "筋紡錘が受容器である。",
+      "単シナプス反射である。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm008",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "心臓の構造を図に示す。\n①で形成された血栓が遊離して梗塞を起こしやすいのはどれか。",
+    "choices": [
+      "肝",
+      "腸",
+      "脳",
+      "肺"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "アブフラクションについて正しいのはどれか。",
+    "choices": [
+      "咬合面に生じる。",
+      "過度の咬合圧によって生じる。",
+      "エナメル質に限局して生じる。",
+      "酸の曝露による職業性歯科疾患である。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_pm010（不備問題採点除外）",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "口腔領域と同じ組織系の悪性腫瘍が発生するのはどれか。",
+    "choices": [
+      "食道",
+      "胃",
+      "小腸",
+      "大腸"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

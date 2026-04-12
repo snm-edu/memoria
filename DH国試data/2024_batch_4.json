@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2024_dh_24_am091",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "摂食嚥下障害を有する患者の口腔衛生管理時の写真を示す。\n患者の姿勢で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am092",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "印象体から撤去した直後の模型の写真を示す。\n感染対策として模型に行うのはどれか。1つ選べ。",
+    "choices": [
+      "EOG滅菌を実施",
+      "10％ホルマリン溶液に浸漬",
+      "2％グルタラール溶液で清拭",
+      "アルコール系消毒薬を噴霧して密閉"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am093",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "セラミックインレーの装着に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "リン酸亜鉛セメント",
+      "接着性レジンセメント",
+      "グラスアイオノマーセメント",
+      "ポリカルボキシレートセメント"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am094",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "仮封材の性質と特徴を表に示す。\n水硬性仮封材はどれか。1つ選べ。\nただし、①～④は、酸化亜鉛ユージノールセメント、水硬性仮封材、テンポラリーストッピング、レジン系仮封材のいずれかである。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am095",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "30歳の男性。上顎右側第二小臼歯の一過性の冷水痛を主訴として来院した。検査の結果、コンポジットレジン修復を行うことになった。う蝕除去後の口腔内写真（A）と器具の写真（B）を示す。\n次に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "50歳の男性。上顎左側第一大臼歯の自発痛を主訴として来院した。3か月前から強い冷水痛があったがそのままにしていたところ、昨夜食事中に修復物が脱離して、自発痛が生じたという。冷水を口に含むと一時的に疼痛が緩和するという。打診痛を認めた。急性化膿性歯髄炎と診断された。ラバーダム装着後の口腔内写真（ミラー像）（A）、初診時のエックス線画像（B）および器具の写真（C）を示す。\n次の操作で使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "器具の写真を示す。\n歯肉切除術に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "全部床義歯の製作時に用いる器具の写真を示す。\nこの器具を用いるのはどれか。1つ選べ。",
+    "choices": [
+      "概形印象採得",
+      "筋圧形成",
+      "下顎安静位の計測",
+      "水平的顎間関係の記録"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "72歳の女性。下顎の部分床義歯が合わないため、義歯の新製を主訴として来院した。印象用トレーの写真を示す。\nこのトレーを用いて印象採得するための印象材はどれか。1つ選べ。",
+    "choices": [
+      "寒天印象材",
+      "シリコーンゴム印象材",
+      "モデリングコンパウンド",
+      "酸化亜鉛ユージノール印象材"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "64歳の男性。下唇の腫脹を主訴として来院した。半年前から同症状の再発と消失を繰り返しているという。診断の結果、無痛性の腫瘤の内部に粘液が貯留しており、摘出することになった。器具の写真を示す。\n使用するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "42歳の男性。多数歯のインプラント手術を予定している。強い不安を抱いているため、鎮静法で手術することになった。鎮静法の術式の流れを図に、使用する機器を写真に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "局所麻酔",
+      "静脈路の確保",
+      "酸素吸入の開始",
+      "鼻マスクの装着"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "矯正歯科治療用器具の写真を示す。\n適切な用途はどれか。1つ選べ。",
+    "choices": [
+      "アーチワイヤーの屈曲",
+      "マルチブラケットの位置決め",
+      "歯冠近遠心径と歯列弓長径の計測",
+      "バンドへのアタッチメント点溶接"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "86歳の女性。脳梗塞の既往があり要介護認定を受けている。家族から義歯修理の依頼があり、歯科訪問診療を行った。口腔乾燥が顕著であり、乾燥痰が多く付着していたため、歯科医師から口腔衛生管理の指示を受けた。\n乾燥痰を除去する際の対応として正しいのはどれか。2つ選べ。",
+    "choices": [
+      "毛の硬い歯ブラシを使用する。",
+      "少量の水で乾燥痰を浸潤させる。",
+      "頸部は前屈させた状態を保持する。",
+      "歯ブラシを口蓋の前方から後方へ動かす。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "7歳の男児。歯の痛みを主訴として来院した。ADHD＜注意欠陥多動性障害＞と診断され、治療を受けているという。歯科診療になれておらず、緊張した様子だったため、①診療に関する説明は抽象的な表現を用い、②人が多い空間で対応することを心掛けた。③急な起き上がりに配慮し、④1回の処置時間は長く設定した。\n下線部で正しい対応はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "23歳の女性。上顎左側側切歯の着色を主訴として来院した。歯科医師から二等分法によるデジタルエックス線撮影を行う準備をするように指示された。使用する器材の写真を示す。\nこの撮影に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "健常小児の運動機能の発達で定頸が認められる時期はどれか。1つ選べ。",
+    "choices": [
+      "3～4か月",
+      "7～8か月",
+      "12～14か月",
+      "16～18か月"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "地域支援事業の一環として実施されている、高齢者の「通いの場」での歯科衛生士の役割はどれか。2つ選べ。",
+    "choices": [
+      "「健口体操」の指導",
+      "服薬管理についての講話",
+      "口腔機能の簡単なアセスメントの実施",
+      "独居高齢者を対象とした食事会の開催"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am108",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "口腔機能訓練器具の写真を示す。\nこの器具を用いた機能訓練で改善が期待できる発音はどれか。2つ選べ。",
+    "choices": [
+      "ヒ",
+      "フ",
+      "マ",
+      "ヨ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "17歳の女子。脳性麻痺の診断を受けており、家族から「最近食事の時にむせるのが気になる。」と相談を受けた。家族の食事介助の様子（A、B）を示す。\n家族への指導として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "頭をやや前屈させましょう。",
+      "一口量を少なくしましょう。",
+      "横向きに寝かせて食べさせましょう。",
+      "ボウル部の深いスプーンを使いましょう。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "70歳の男性。食べづらさを主訴として来院した。脳梗塞の既往がある。口腔機能低下症の検査結果を表に示す。\n適切な口腔機能訓練はどれか。2つ選べ。",
+    "choices": [
+      "舌抵抗訓練",
+      "アイスマッサージ",
+      "口唇の可動域訓練",
+      "バルーン拡張訓練"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "口腔から入った食物の通過順序で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "直腸 → 結腸 → 回腸 → 空腸",
+      "空腸 → 回腸 → 結腸 → 直腸",
+      "結腸 → 空腸 → 直腸 → 回腸",
+      "回腸 → 直腸 → 空腸 → 結腸"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "象牙質にみられるのはどれか。1つ選べ。",
+    "choices": [
+      "歯小皮",
+      "周波条",
+      "Retzius＜レチウス＞条",
+      "Owen.＜オーエン＞外形線"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "頭蓋骨側面の写真を示す。\n矢印で示す部位に付着するのはどれか。1つ選べ。",
+    "choices": [
+      "咬　筋",
+      "側頭筋",
+      "外側翼突筋",
+      "内側翼突筋"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "口腔内写真を示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "下唇小帯",
+      "口蓋小窩",
+      "舌下小丘",
+      "耳下腺乳頭"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm005",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "耳下腺唾液の電解質濃度と分泌速度の関係を図に示す。\nNa＋はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "味覚の神経機構を模式図に示す。\n①で示す点線で囲んだ部位はどれか。1つ選べ。",
+    "choices": [
+      "弧束核",
+      "下唾液核",
+      "三叉神経運動核",
+      "三叉神経中脳路核"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "グアニンと水素結合しDNAを構成するのはどれか。1つ選べ。",
+    "choices": [
+      "チミン",
+      "アデニン",
+      "ウラシル",
+      "シトシン"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm008",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "自己免疫疾患はどれか。1つ選べ。",
+    "choices": [
+      "白板症",
+      "紅板症",
+      "天疱瘡",
+      "帯状疱疹"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "エプーリスの発症部位はどれか。1つ選べ。",
+    "choices": [
+      "舌",
+      "歯　肉",
+      "頰粘膜",
+      "口蓋粘膜"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "ある患者の上顎前歯の形態を模式図に示す。\nこの患者の胎児期に母親の罹患が疑われるのはどれか。1つ選べ。",
+    "choices": [
+      "結　核",
+      "梅　毒",
+      "風　疹",
+      "麻　疹"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

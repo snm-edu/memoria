@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2021_dh_21_am001",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "口腔内写真を示す。\n矢印で示す部位から分泌される唾液を産生するのはどれか。1つ選べ。",
+    "choices": [
+      "顎下腺",
+      "耳下腺",
+      "舌下腺",
+      "エブネル腺"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "膜電位と刺激強度を図に示す。\n閾値はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am003",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "下顎骨の写真を示す。\n側頭筋が付着するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am004",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "ネフロンを模式図に示す。\n矢印で示す部位で水分の再吸収を促進するのはどれか。1つ選べ。",
+    "choices": [
+      "アドレナリン",
+      "オキシトシン",
+      "カルシトニン",
+      "バソプレッシン"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am005",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "日本人における下顎永久歯の萌出順序で最も多いのはどれか。1つ選べ。",
+    "choices": [
+      "1→6→2→3→4→5→7",
+      "1→6→2→4→3→5→7",
+      "6→1→2→5→4→3→7",
+      "6→1→2→4→3→5→7"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "体温の変動を図に示す。実線は体温を、点数はセットポイントを示す。\n①で示す時期に生じるのはどれか。1つ選べ。",
+    "choices": [
+      "悪　寒",
+      "発　汗",
+      "ふるえ",
+      "皮膚血管収縮"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am007",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "乳歯のエナメル質にみられるのはどれか。1つ選べ。",
+    "choices": [
+      "新産線",
+      "Tomes＜トームス＞顆粒層",
+      "Owen＜オーエン＞の外形線",
+      "Andresen＜アンドレーゼン＞線"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am008",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "グルコースの代謝過程を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "コハク酸",
+      "フマル酸",
+      "ピルビン酸",
+      "イソクエン酸"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "ある疾患の発症過程を図に示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "ビタミンA",
+      "ビタミンB<sub>12</sub>",
+      "ビタミンD",
+      "ビタミンK"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "垂直感染はどれか。1つ選べ。",
+    "choices": [
+      "空気感染",
+      "接触感染",
+      "母乳感染",
+      "媒介物感染"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "薬物Aの性質を表に示す。\n薬物Aの薬物動態に影響するのはどれか。1つ選べ。",
+    "choices": [
+      "腎血流量の増加",
+      "血管透過性の亢進",
+      "肝薬物代謝酵素の誘導",
+      "血漿タンパク質との結合"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "食細胞の貪食に対する細菌の抵抗要因はどれか。1つ選べ。",
+    "choices": [
+      "芽　胞",
+      "莢　膜",
+      "線　毛",
+      "鞭　毛"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "口腔粘膜の変化を模式図に示す。\nこの変化により観察されるのはどれか。1つ選べ。",
+    "choices": [
+      "赤色病変",
+      "白色病変",
+      "潰瘍性病変",
+      "水疱性病変"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "インフルエンザに罹患した小児の鎮痛や解熱に適しているのはどれか。1つ選べ。",
+    "choices": [
+      "アスピリン",
+      "メフェナム酸",
+      "アセトアミノフェン",
+      "ジクロフェナクナトリウム"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "ウイルスの模式図を示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "核　酸",
+      "カプシド",
+      "スパイク",
+      "エンベロープ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "安静時に比べて、刺激時に濃度が高くなる唾液成分はどれか。2つ選べ。",
+    "choices": [
+      "カリウム",
+      "アミラーゼ",
+      "ナトリウム",
+      "分泌型IgA"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "歯磨剤の配合成分表を示す。\n①に使用できるのはどれか。2つ選べ。",
+    "choices": [
+      "無水ケイ酸",
+      "炭酸カルシウム",
+      "ピロリン酸カルシウム",
+      "ハイドロキシアパタイト"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "検査当日に結果を提示できるのはどれか。2つ選べ。",
+    "choices": [
+      "RDテスト<sup>®</sup>",
+      "Dentocult<sup>®</sup>LB",
+      "Dentocult<sup>®</sup>SM",
+      "Dentobuff<sup>®</sup>Strip"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "歯周炎の発症モデルを図に示す。\n①に該当するのはどれか。2つ選べ。",
+    "choices": [
+      "喫　煙",
+      "内毒素",
+      "口腔清掃",
+      "エナメル突起"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "口腔がんのリスクファクターはどれか。2つ選べ。",
+    "choices": [
+      "飲　酒",
+      "喫　煙",
+      "歯周病",
+      "ブラキシズム"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "CPI（2013年、WHO）で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "代表歯を診査する。",
+      "歯石の有無を記録する。",
+      "歯肉出血を2段階に分類する。",
+      "歯周ポケットを3段階に分類する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "地域歯科保健における市町村の役割はどれか。2つ選べ。",
+    "choices": [
+      "母子への歯科保健事業",
+      "歯科保健に関する計画の策定",
+      "歯科保健対策に関わる人材の養成",
+      "難病患者に対する専門的歯科保健対策"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "災害時の保健活動フェーズの一例を表に示す。\nフェーズ4での活動はどれか。1つ選べ。",
+    "choices": [
+      "傷病者救護",
+      "災害拠点の設置",
+      "生命・安全の確保",
+      "健康な生活活動への支援"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "国連が発表した世界人口の推移と将来予測を図に示す。\n①で示す推計値はどれか。1つ選べ。",
+    "choices": [
+      "40",
+      "60",
+      "80",
+      "100"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "歯科診療所の必要換気量算出に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "一酸化炭素",
+      "二酸化硫黄",
+      "二酸化炭素",
+      "浮遊粒子状物質"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "前向きコホート研究と比較した患者対照研究の特徴はどれか。1つ選べ。",
+    "choices": [
+      "信頼性が高い。",
+      "労力が大きい。",
+      "研究期間が長い。",
+      "稀な疾患に適している。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "う歯、ぜん息、鼻・副鼻腔疾患、裸眼視力1.0未満の2000年度と2019年度の学校保健統計調査結果の被患率（％）を表に示す。\nう歯はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "我が国の保健福祉対策の概念図を示す。\nこれはどれか。1つ選べ。",
+    "choices": [
+      "新エンゼルプラン",
+      "新オレンジプラン",
+      "健康日本21（第二次）",
+      "健やか親子21（第2次）"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am029",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "歯科衛生士の業務または責務が明記されているのはどれか。2つ選べ。",
+    "choices": [
+      "健康増進法",
+      "高齢者の医療の確保に関する法律",
+      "歯科口腔保健の推進に関する法律",
+      "精神保健及び精神障害者福祉に関する法律"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "我が国の保険診療の概念図を示す。\n①はどれか。1つ選べ。",
+    "choices": [
+      "療養の給付",
+      "保険料の支払い",
+      "診療報酬の請求",
+      "一部負担金の支払い"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

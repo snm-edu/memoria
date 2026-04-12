@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2020_dh_20_pm011（不備問題採点除外）",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "抗原提示を模式図に示す。\n①で示すのはどれか。1つ選べ。",
+    "choices": [
+      "CD4",
+      "Fcレセプター",
+      "MHCクラスⅡ",
+      "Toll様レセプター4"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "ペスト菌を発見したのはどれか。1つ選べ。",
+    "choices": [
+      "大村　智",
+      "志賀　潔",
+      "野口　英世",
+      "北里　柴三郎"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "ムスカリン性アセチルコリン受容体に対する薬物Aの作用を模式図に示す。\n薬物Aはどれか。1つ選べ。",
+    "choices": [
+      "ニコチン",
+      "モルヒネ塩酸塩水和物",
+      "アトロピン硫酸塩水和物",
+      "プロプラノロール塩酸塩"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "薬物を薬理作用により分類した図を示す。\n斜線部に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "リドカイン塩酸塩",
+      "アンピシリン水和物",
+      "ベンザルコニウム塩化物",
+      "ロキソプロフェンナトリウム水和物"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "ステロイド性抗炎症薬の薬理作用はどれか。1つ選べ。",
+    "choices": [
+      "血圧降下",
+      "免疫抑制",
+      "血糖値低下",
+      "骨形成促進"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "口腔細菌の歯面への初期定着の状況を模式図に示す。\n①の主成分はどれか。1つ選べ。",
+    "choices": [
+      "脂　質",
+      "無機塩",
+      "リポ多糖",
+      "糖タンパク質"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "Keyesによるう蝕発生要因の概念図を示す。\n①の要因に対する予防手段はどれか。2つ選べ。",
+    "choices": [
+      "口腔清掃",
+      "小窩裂溝塡塞",
+      "フッ化物応用",
+      "代用甘味料の使用"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "飲料水中のフッ化物イオン濃度とう蝕罹患状態および歯のフッ素症との関係を図に示す。\n最大の効果で最大の安全な点はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "歯周病と全身の疾患・異常との因果関係を図に示す。\n①に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "糖尿病",
+      "認知症",
+      "関節リウマチ",
+      "慢性閉塞性肺疾患"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "72歳の女性。右側頰粘膜の痛みを主訴として来院した。4年前に義歯を破損したが使用しないまま放置していたという。高血圧症のため降圧薬を服用しているがそれ以外の全身的特記事項はない。検査の結果、扁平上皮癌と診断された。初診時の口腔内写真を示す。\n考えらえる原因はどれか。1つ選べ。",
+    "choices": [
+      "免疫異常",
+      "機械的刺激",
+      "薬の副作用",
+      "ウイルス感染"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "歯科保健関連データで順序尺度はどれか。1つ選べ。",
+    "choices": [
+      "CPI",
+      "DMFT",
+      "RID index",
+      "O’LearyのPCR"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "健康日本21（第二次）の「歯・口腔の健康」の目標設定の概念図を示す。\n①に最も関連するのはどれか。1つ選べ。",
+    "choices": [
+      "歯科医師法",
+      "地域保健法",
+      "歯科口腔保健の推進に関する法律〈歯科口腔保健法〉",
+      "地域における医療および介護の総合的な確保の推進に関する法律"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "国際協力の仕組みを図に示す。\nJapan International Cooperation Agency〈JICA〉が担当するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "現在の我が国の人口問題で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "健康寿命は短縮している。",
+      "高齢者の割合は増加している。",
+      "出生数が死亡数を上回っている。",
+      "人口の構造はピラミッド型である。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "この調査の研究方法はどれか。1つ選べ。",
+    "choices": [
+      "横断研究",
+      "介入研究",
+      "コホート研究",
+      "症例対照研究"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "調査対象の組合せはどれか。1つ選べ。",
+    "choices": [
+      "① -- ② -- ③",
+      "① -- ⑤ -- ⑨",
+      "③ -- ⑥ -- ⑨",
+      "⑦ -- ⑤ -- ③"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "災害拠点病院で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "国が指定する医療機関である。",
+      "災害医療における人的・物的支援を行う。",
+      "災害派遣医療チーム〈DMAT〉が運営する。",
+      "地域災害拠点病院は三次医療圏ごとに設置する。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "職業上の守秘義務を規定しているのはどれか。2つ選べ。",
+    "choices": [
+      "医師法",
+      "歯科医師法",
+      "歯科衛生士法",
+      "歯科技工士法"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "要介護者にリハビリテーション等を提供し、在宅復帰を目指す施設はどれか。1つ選べ。",
+    "choices": [
+      "介護医療院",
+      "介護老人福祉施設",
+      "介護老人保健施設",
+      "介護療養型医療施設"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "介護予防ケアマネジメントを基本機能にもつのはどれか。1つ選べ。",
+    "choices": [
+      "老人福祉センター",
+      "市町村保健センター",
+      "口腔保健支援センター",
+      "地域包括支援センター"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "保存期間が3年と規定されているのはどれか。2つ選べ。",
+    "choices": [
+      "診療録",
+      "処方せん",
+      "歯科技工指示書",
+      "歯科衛生士業務記録"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_pm032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "ある患者の初診時の歯科衛生士業務記録を示す。\nAssessment dataはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "嚥下訓練を行うのはどれか。2つ選べ。",
+    "choices": [
+      "管理栄養士",
+      "言語聴覚士",
+      "作業療法士",
+      "歯科衛生士"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2020_dh_20_pm034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "う蝕検知液に含まれている染色成分はどれか。1つ選べ。",
+    "choices": [
+      "アシッドレッド",
+      "フェノールフタレイン",
+      "クリスタルバイオレット",
+      "ポリプロピレングリコール"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "構音機能検査はどれか。1つ選べ。",
+    "choices": [
+      "パラトグラム法",
+      "パントグラフ法",
+      "チェックバイト法",
+      "ゴシックアーチ描記法"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "血液成分のうち、血漿と血清で最も違いがあるのはどれか。1つ選べ。",
+    "choices": [
+      "凝固因子",
+      "アルブミン",
+      "免疫グロブリン",
+      "C反応性タンパク"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "電磁波で波長が最も短いのはどれか。1つ選べ。",
+    "choices": [
+      "紫外線",
+      "赤外線",
+      "可視光線",
+      "エックス線"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "小臼歯へのコンポジットレジン修復操作の写真を示す。\nこのレジンの特徴はどれか。1つ選べ。",
+    "choices": [
+      "歯髄鎮静作用",
+      "良好な窩壁適合性",
+      "酸素による重合促進作用",
+      "マクロフィラーによる耐摩耗性"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "40歳の男性。友人より歯の色を指摘され来院した。歯が生えかわった時から色が変わっていたという。これまで歯科治療の既往はなく、う蝕はみられなかった。口腔内写真を示す。\n適切と考えられる処置はどれか。1つ選べ。",
+    "choices": [
+      "歯面研磨",
+      "オフィスブリーチング",
+      "ラミネートべニア修復",
+      "グラスアイオノマー修復"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2020_dh_20_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "温熱刺激により症状が増悪するのはどれか。1つ選べ。",
+    "choices": [
+      "歯髄壊疽",
+      "歯髄充血",
+      "急性化膿性歯髄炎",
+      "急性単純性歯髄炎"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

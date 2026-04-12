@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2022_dh_22_am091",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "65歳の男性。下顎右側第二大臼歯がう蝕症第4度と診断され、抜歯を行うことになった。器具の写真を示す。\n準備するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am092",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "47歳の女性。上顎右側中切歯を白くしたいとの希望で来院した。根管処置後、ウォーキングブリーチ法を行うことになった。器具の写真を示す。\n準備するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am093",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "矯正歯科治療に使用する器具の写真を示す。\n角線のワイヤーを屈曲するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am094",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "歯科用石膏の練和時に、混水比を大きくした場合の物性と変化の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "圧縮強さ -- 大きくなる",
+      "硬化時間 -- 短くなる",
+      "硬化膨張 -- 小さくなる",
+      "練和物の流動性 -- 大きくなる"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am095",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "47歳の女性。下顎左側第二大臼歯の疼痛を主訴として来院した。検査の結果、直接抜髄を行うことになった。器具の写真を示す。\n冠部歯髄の除去に使用するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "患者水平位診療時の患者の位置設定は、①下顎の咬合平面と床面と垂直になるようにし、体全体では、②鼻と膝が同じ高さにあり、足と③腰が下がる姿勢にする。妊娠中の場合は、④右側を下にした側臥位にするとよい。\n下線部分で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "全身管理用機器を装着している写真を示す。\n発光するのはどれか。2つ選べ。",
+    "choices": [
+      "紫外光",
+      "青色光",
+      "赤外光",
+      "赤色光"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "歯科診療時における体動のコントロールで、器具によるものと比べて徒手によるものの利点はどれか。2つ選べ。",
+    "choices": [
+      "力の強い人にも対応できる。",
+      "突発的な動きに対応できる。",
+      "協力状態に合わせて調節できる。",
+      "マンパワーの省力化がはかれる。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "22歳の女性。う蝕処置を希望して来院した。軽度の歯科恐怖症があり、吸入鎮静法を行うことになった。吸入鎮静器の写真を示す。\n矢印で示すボンベに充塡されているのはどれか。1つ選べ。",
+    "choices": [
+      "空　気",
+      "酸　素",
+      "亜酸化窒素",
+      "二酸化炭素"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "器具・器材の写真を示す。\n従来型グラスアイオノマーセメント修復時に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "58歳の男性。部分床義歯製作のため、付加型シリコーンゴム印象材を用いて精密印象採得を行うことになった。精密印象採得に先立ちブロックアウトの準備をするよう指示を受けた。器具・器材の写真を示す。\n準備するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "矯正歯科診断時の評価に用いる側貌写真を示す。\n写真と評価する内容の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "① -- 口唇形態",
+      "② -- 犬歯の位置",
+      "③ -- 過蓋咬合",
+      "④ -- 口唇の突出度"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "8歳の女児。歯の痛みを主訴として来院した。自閉スペクトラム症と診断され、感覚過敏があるという。\n歯科診療時の対応として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "負の強化を行う。",
+      "視覚的な情報を活用する。",
+      "毎回同じユニットを使用する。",
+      "治療中イヤーマフは外してもらう。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "診療室内における患者対応時の写真を示す。\n視覚に障害がある患者に対する誘導はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "全部床義歯を製作するため、咬合採得を行うことになった。器具・器材の写真を示す。\n準備するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am106",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "口腔筋機能療法＜MFT＞の目的はどれか。2つ選べ。",
+    "choices": [
+      "口腔習癖の改善",
+      "唾液分泌の促進",
+      "誤嚥性肺炎の予防",
+      "筋圧の不均衡の是正"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am107",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "7歳の男児。口から食べ物がこぼれることを主訴として来院した。脳性麻痺と診断されており、食事中にむせがあるという。摂食嚥下指導で保護者に食事介助の方法を指導した。指導時の写真を示す。\nこの介助の目的はどれか。1つ選べ。",
+    "choices": [
+      "舌の挙上",
+      "顎位の安定",
+      "誤嚥の防止",
+      "咀嚼力の増強"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am108",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "摂食嚥下障害に対する間接訓練について説明している時の写真を示す。\nこの訓練により機能の改善が期待できるのはどれか。2つ選べ。",
+    "choices": [
+      "口唇閉鎖",
+      "舌骨挙上",
+      "軟口蓋挙上",
+      "食道入口部開大"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2022_dh_22_am109",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "3歳の女児。かたいものを口から出すことを主訴として保護者と来院した。幼児食になってから気になるようになったという。初診時の口腔内写真を示す。\n適切な対応はどれか。1つ選べ。",
+    "choices": [
+      "咬合力検査を行う。",
+      "舌小帯の切除を行う。",
+      "セファロ分析を行う。",
+      "食事を離乳食に戻してもらう。"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_am110",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "68歳の男性。食事の時うまく飲み込めないことを主訴として来院した。食塊形成ができず、口腔や咽頭に食物が残留し、嚥下後の誤嚥がみられる。診断の結果、直接訓練を行うことになった。訓練に使用する食材の側方からの写真（A）および斜め上方からの写真（B）を示す。\nこの訓練はどれか。1つ選べ。",
+    "choices": [
+      "脱感作",
+      "嚥下の訓練",
+      "鼻咽腔閉鎖訓練",
+      "筋のリラクゼーション"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "中枢神経を模式図に示す。\n体温調節中枢が存在するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm002",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "歯周病の原因となる可能性のある歯の形態異常はどれか。1つ選べ。",
+    "choices": [
+      "盲　孔",
+      "斜切痕",
+      "介在結節",
+      "中心結節"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm003",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "細胞質基質で行われる代謝はどれか。1つ選べ。",
+    "choices": [
+      "解　糖",
+      "β酸化",
+      "電子伝達系",
+      "クエン酸回路"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm004",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "活性型ビタミンD3の合成過程を図に示す。\n①の反応が行われるのはどれか。1つ選べ。",
+    "choices": [
+      "肝　臓",
+      "小　腸",
+      "腎　臓",
+      "皮　膚"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm005",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "純漿液腺はどれか。1つ選べ。",
+    "choices": [
+      "頰　腺",
+      "後舌腺",
+      "耳下腺",
+      "舌下腺"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "頭頸部矢状断の解剖写真を示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "声　帯",
+      "舌　骨",
+      "口蓋垂",
+      "喉頭蓋"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "顎反射の経路を模式図に示す。\nこの反射の役割はどれか。1つ選べ。",
+    "choices": [
+      "嚥下時の閉口",
+      "咀嚼力の調節",
+      "下顎安静位の維持",
+      "口腔内の傷害防止"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm008",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "β-ラクタム系抗菌薬の作用機序はどれか。1つ選べ。",
+    "choices": [
+      "細胞膜障害",
+      "核酸合成阻害",
+      "細胞壁合成阻害",
+      "タンパク質合成阻害"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "結核結節を模式図に示す。\n①にみられるのはどれか。1つ選べ。",
+    "choices": [
+      "壊　死",
+      "血　腫",
+      "膿　瘍",
+      "粘液貯留"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2022_dh_22_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "細菌の模式図を示す。\n矢印で示すのはどれか。1つ選べ。",
+    "choices": [
+      "線　毛",
+      "核様体",
+      "リポ多糖",
+      "リボソーム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

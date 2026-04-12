@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2021_dh_21_am091",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 91,
+    "question_text": "乳児型嚥下について正しいのはどれか。1つ選べ。",
+    "choices": [
+      "3歳頃消失する。",
+      "上下顎が接触する。",
+      "舌は蠕動様運動する。",
+      "舌尖は口蓋に固定する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am092",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 92,
+    "question_text": "摂食嚥下訓練中の写真を示す。\nこの訓練で改善されるのはどれか。1つ選べ。",
+    "choices": [
+      "嚥下圧",
+      "口腔内圧",
+      "喉頭挙上",
+      "胸郭可動域"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am093",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 93,
+    "question_text": "66歳の女性。食事が飲み込みにくいことを主訴として来院した。口腔機能の低下が疑われたため、口腔機能精密検査を行った。検査に用いた器具の写真（A）と検査実施時の写真（B）を示す。\n検査内容はどれか。1つ選べ。",
+    "choices": [
+      "舌　圧",
+      "舌運動",
+      "口腔湿潤度",
+      "口腔衛生状態"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am094",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 94,
+    "question_text": "73歳の男性。脳血管疾患で入院していた急性期病棟から回復期病棟に移動することになり、利き手交換訓練を行うことになった。口腔機能管理を行うよう歯科医師から指示された。歯式を図に示す。\nセルフケアで推奨するのはどれか。2つ選べ。",
+    "choices": [
+      "電動歯ブラシ",
+      "デンタルフロス",
+      "柄の細い歯ブラシ",
+      "吸盤がついた義歯用ブラシ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am095",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 95,
+    "question_text": "入院患者に対する多職種連携チームのうち、NSTの主目的はどれか。1つ選べ。",
+    "choices": [
+      "栄養管理",
+      "感染予防",
+      "口腔健康管理",
+      "廃用萎縮予防"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am096",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 96,
+    "question_text": "5歳の女児。下顎左側第一乳臼歯のう蝕治療を希望して来院した。診断の結果、乳歯用既製金属冠を用いた歯冠修復を行うことになった。\nマージン部の適合に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "咬合面調整鉗子",
+      "クラウンセッター",
+      "コンタクトゲージ",
+      "ゴードンのプライヤー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am097",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 97,
+    "question_text": "ラバーダム防湿に使用する器具の写真を示す。\n器具と使用目的の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "① -- ラバーダムシートに穿孔する。",
+      "② -- ラバーダムシートを歯に固定する。",
+      "③ -- ラバーダムシートを歯頸部に括約する。",
+      "④ -- ラバーダムシートを広げた状態で固定する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am098",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 98,
+    "question_text": "うっ血性心疾患を有する患者の歯科診療時の体位で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "座　位",
+      "水平位",
+      "側臥位",
+      "半座位"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am099",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 99,
+    "question_text": "器材・器具の写真を示す。\n口腔内でプロビジョナルレストレーションを製作する場合、使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am100",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 100,
+    "question_text": "歯科医師から上顎左側犬歯の二等分法エックス線撮影の準備を指示された。正しいのはどれか。2つ選べ。",
+    "choices": [
+      "椅子に浅く座るよう指示をする。",
+      "正中矢状面を床に対して垂直にする。",
+      "画像検出器の位置づけは横置きにする。",
+      "指示用コーンの先端は皮膚面に接するよう固定する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am101",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 101,
+    "question_text": "24歳の女性。下顎左側埋伏智歯部の痛みと腫れを主訴として来院した。診察の結果、抜歯を行うことになった。器具とその先端の写真を示す。\n粘膜骨膜弁の翻転に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am102",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 102,
+    "question_text": "口腔に関連したQOLの評価はどれか。1つ選べ。",
+    "choices": [
+      "FIM",
+      "SGA",
+      "MMSE",
+      "GOHAI"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am103",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 103,
+    "question_text": "剪刀を把持している写真を示す。\n縫合糸を切断する際の正しい持ち方はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am104",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 104,
+    "question_text": "外傷などで頸髄損傷の可能性がある場合の気道確保の方法はどれか。1つ選べ。",
+    "choices": [
+      "下顎挙上法",
+      "頭部後屈法",
+      "背部殴打法",
+      "あご先挙上法"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am105",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 105,
+    "question_text": "器具の写真を示す。\nグラスアイオノマーセメントの塡塞に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am106",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 106,
+    "question_text": "27歳の女性。歯を白くしたいとの希望で来院した。歯科医師の指示のもとで漂白処置を行うことになった。処置中の口腔内写真を示す。\n続いて行うのはどれか。1つ選べ。",
+    "choices": [
+      "光照射",
+      "歯面清掃",
+      "漂白剤の塗布",
+      "知覚過敏の有無の確認"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_am107",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 107,
+    "question_text": "器具の写真を示す。\n主な使用目的はどれか。2つ選べ。",
+    "choices": [
+      "術野の確保",
+      "根管内の乾燥",
+      "出血部位の吸引",
+      "空気中の浮遊物質の減少"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am108",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 108,
+    "question_text": "アーチワイヤー・マルチブラケット装置の撤去に使用する器具の写真を示す。\n使用目的との組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "① -- 結紮線の切断",
+      "② -- バンドの撤去",
+      "③ -- ブラケットの除去",
+      "④ -- ボンディング材の除去"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am109",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 109,
+    "question_text": "器具とその先端の写真を示す。\n歯肉切除術で使用する器具はどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2021_dh_21_am110",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 110,
+    "question_text": "バー・ポイントの写真を示す。\n回転数200,000rpmのマイクロモーターで使用できるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "下顔面・頸部の側貌写真を示す。\n矢印で示す高まりを形成するのはどれか。1つ選べ。",
+    "choices": [
+      "軸　椎",
+      "舌　骨",
+      "甲状軟骨",
+      "輪状軟骨"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "心臓を模式図に示す。\n全身からの静脈血が流入するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "上顎第一大臼歯にみられることがあるのはどれか。1つ選べ。",
+    "choices": [
+      "盲　孔",
+      "棘突起",
+      "斜切痕",
+      "カラベリー結節"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm004",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "消化器系を模式図に示す。\n胆汁を生成するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm005",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "咀嚼粘膜が覆うのはどれか。1つ選べ。",
+    "choices": [
+      "口　唇",
+      "歯　肉",
+      "舌　背",
+      "頰粘膜"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm006",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "歯と歯周組織を模式図に示す。\n歯の表面に圧刺激を与えたときに興奮するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm007",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "硬組織の成分含有量（％）の比較を図に示す。\nエナメル質はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm008",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "出血傾向に対するスクリーニング検査結果の一部を表に示す。\n出血傾向の原因と考えられる異常はどれか。1つ選べ。",
+    "choices": [
+      "血　管",
+      "血小板",
+      "凝固因子",
+      "線維素溶解系"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "口腔細菌の電子顕微鏡写真を示す。\n正しいのはどれか。1つ選べ。",
+    "choices": [
+      "Treponema denticola",
+      "Streptococcus mutans",
+      "Staphylococcus aureus",
+      "Fusobacterium nucleatum"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2021_dh_21_pm010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "薬物A単独と、薬物Aと薬物Bの併用時の用量-反応曲線を模式図に示す。\n模式図は、薬物Aに対して①作用薬である薬物Bが薬物Aの受容体に②競合的に結合すると、薬物Aの作用は低下し、さらに薬物Aの濃度を③下げると、薬物Bは受容体から追い出され薬物Aの最大反応率が④増強する現象を示している。\n下線部で適切なのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

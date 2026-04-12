@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2016_dh_16_pm041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "46歳の男性。下顎右側第二小臼歯の歯冠が折れたことを主訴として来院した。慢性根尖性歯周炎と診断され、感染根管治療を行うことになった。初診時の口腔内写真（A）と感染根管治療開始直前の口腔内写真（B）を別に示す。\n感染根管治療開始前に患歯に施された処置はどれか。",
+    "choices": [
+      "隔壁の形成",
+      "歯肉の圧排",
+      "咬合の確保",
+      "暫間被覆冠の装着"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm042",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "歯肉療法と用いる薬剤の組合せで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "直接覆髄法 -- 水酸化カルシウム",
+      "生活歯髄切断法 -- フェノールカンフル",
+      "歯髄鎮静消炎療法 -- ユージノール",
+      "暫間的間接覆髄法 -- パラホルムアルデヒド"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "歯槽骨吸収がみられるのはどれか。",
+    "choices": [
+      "侵襲性歯周炎",
+      "妊娠性歯肉炎",
+      "遺伝性歯肉線維腫症",
+      "壊死性潰瘍性歯肉炎"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "44歳の女性。歯周治療を希望して来院した。1年8か月かけて歯周基本治療と歯肉剥離掻爬術を行った。歯周外科治療後の再評価検査結果を表に示す。プロービング時に出血は認められなかった。\nその後の対応で考えられるのはどれか。",
+    "choices": [
+      "SPT",
+      "再治療",
+      "経過観察",
+      "メインテナンス"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "35歳の女性。歯冠修復処置を希望して来院した。臼歯部は正常な対合関係で、顎運動検査の結果、グループファンクションの咬合様式と診断された。\n下顎側方運動により作業側で咬合接触するのはどれか。",
+    "choices": [
+      "下顎犬歯の尖頭",
+      "上顎中切歯の切縁",
+      "上顎小臼歯頬側咬頭の外斜面",
+      "下顎小臼歯舌側咬頭の外斜面"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "フェイスボウトランスファーで再現されるのはどれか。",
+    "choices": [
+      "下顎の最前方位",
+      "顎運動時の切歯路角",
+      "顎関節と上顎咬合平面の位置関係",
+      "下顎安静位における前歯部の離開"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "下顎部分床義歯の連結装置で歯軸方向の幅が最も広いのはどれか。",
+    "choices": [
+      "屈曲リンガルバー",
+      "鋳造リンガルバー",
+      "リンガルエプロン",
+      "リンガルプレート"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "61歳の男性。左側顔面の痛みを主訴として来院した。5日前から左側顔面に強度の神経痛様疼痛を自覚し、2日前から左側の顔面皮膚と口腔粘膜に限局した水疱が出現したという。4歳時に水痘に罹患した既往がある。顔貌写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "麻　疹",
+      "天疱瘡",
+      "帯状疱疹",
+      "手足口病"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "46歳の女性。右舌縁部の異常を訴えて来院した。2週前に鏡で見たところ、舌縁部の変色に気付いたという。直径約15mmの弾性軟の腫瘤を認め、ガラス圧診法により病変部の退色が認められた。口腔内写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "血管腫",
+      "線維腫",
+      "乳頭腫",
+      "リンパ管腫"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm050",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "28歳の男性。術後処置のため来院した。7日前に下顎左側水平埋伏智歯の抜歯術を受け、術後経過に異常はなかったという。創部の状態は良好で、抜糸をすることになった。器具の写真を別に示す。\n準備するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm051（不備問題採点除外）",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "38歳の女性。下顎左側埋伏智歯の抜歯術を行うことになった。歯科治療恐怖症のため、吸入鎮静法を開始した。\n至適鎮静状態を確認できるのはどれか。",
+    "choices": [
+      "ベリルのサイン",
+      "マルゲーヌ圧痛",
+      "ニコルスキー現象",
+      "キューンの貧血帯"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "11歳の男児。歯並びの異常を訴えて来院した。歯ブラシが届きにくいという。初診時の口腔内写真を別に示す。\n矢印が示す歯の位置異常はどれか。",
+    "choices": [
+      "移　転",
+      "遠心捻転",
+      "唇側傾斜",
+      "舌側転位"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "矯正歯科治療中の図を示す。\n顎間ゴムの種類はどれか。",
+    "choices": [
+      "Ⅱ級ゴム",
+      "Ⅲ級ゴム",
+      "垂直ゴム",
+      "交叉ゴム"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "矯正装置を装着した口腔内写真を別に示す。\n装置の名称はどれか。",
+    "choices": [
+      "急速拡大装置",
+      "タングクリブ",
+      "舌側弧線装置",
+      "クワドヘリックス"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "Hellmanの歯齢ⅢA期にみられるのはどれか。",
+    "choices": [
+      "顎間空隙",
+      "正中離開",
+      "乳犬歯間幅径の縮小",
+      "リーウェイスペース閉鎖"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "11歳の男児。歯の形を気にして来院した。初診時の口腔内写真を別に示す。\n矢印で示す形態異常はどれか。",
+    "choices": [
+      "臼傍結節",
+      "中心結節",
+      "基底結節",
+      "臼歯結節"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "4歳の男児。う蝕の治療を希望して来院した。フッ化物歯面塗布を受けた経験はあるが、修復処置は初めてであるという。治療に協力的でスムースに終了できたので、シールを与えた。\nこの対応はどれか。",
+    "choices": [
+      "TSD法",
+      "TEACCH法",
+      "レスポンスコスト法",
+      "トークンエコノミー法"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "4歳の男児。下顎左側第二乳臼歯のう蝕治療を希望して来院した。潰瘍性歯髄炎と診断し、局所麻酔下に生活歯髄切断後、既製乳歯冠修復を行った。\n診療後の保護者への説明で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "口唇をよく冷やしてください。",
+      "すぐに食事をしてもかまいません。",
+      "しばらくの間ガーゼを咬ませていてください。",
+      "今日は粘着性のある食品を食べるのは控えてください。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm059",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "軽度認知症の高齢者が、少人数の共同生活を営む施設はどれか。",
+    "choices": [
+      "ケアハウス",
+      "グループホーム",
+      "介護老人保健施設",
+      "特別養護老人ホーム"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "認知症の中核症状はどれか。2つ選べ。",
+    "choices": [
+      "徘　徊",
+      "記憶障害",
+      "知的機能低下",
+      "生活意欲低下"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "摂食嚥下機能のスクリーニングテスト時の写真を別に示す。\n本テストで評価するのはどれか。",
+    "choices": [
+      "不顕性誤嚥の有無",
+      "嚥下時の呼吸リズム",
+      "嚥下後の咽頭部残留",
+      "嚥下の随意的な惹起能力"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm062",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "う蝕のリスク評価に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "乳酸桿菌数",
+      "唾液緩衝能",
+      "血清抗体価",
+      "唾液潜血濃度"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "エックス線写真を別に示す。\n歯石が観察できるのはどれか。",
+    "choices": [
+      "側切歯",
+      "犬　歯",
+      "第一小臼歯",
+      "第二小臼歯"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "口腔内写真を別に示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "脱　灰",
+      "瘻　孔",
+      "歯肉炎",
+      "メラニン色素沈着"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "う蝕の発病要因と予防処置の組合せで正しいのはどれか。",
+    "choices": [
+      "細菌叢 -- PTC",
+      "歯冠形態 -- フッ化物歯面塗布",
+      "歯質結晶性 -- 小窩裂溝填塞",
+      "発酵性糖質 -- フッ化物配合歯磨剤"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm066",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "患者のスケーリング中に、手が滑って術者自身の指を切ってしまった。\n対処の順序を示す。\n\n①グローブの撤去→流水下洗浄→傷の消毒\n②グローブの撤去→傷の消毒→流水下洗浄\n③流水下洗浄→グローブの撤去→傷の消毒\n③流水下洗浄→傷の消毒→グローブの撤去\n\n適切なのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "歯科予防処置はどれか。",
+    "choices": [
+      "プロービング",
+      "機械的歯面清掃",
+      "ブラッシング指導",
+      "ルートプレーニング"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "歯面塗布に用いるフッ化物製剤とpHの組合せで正しいのはどれか。",
+    "choices": [
+      "NaF溶液 -- 5.0",
+      "APF溶液 -- 3.5",
+      "APFゲル -- 2.8",
+      "SnF<sub>2</sub>溶液 -- 7.0"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "（　）に入る組合せで正しいのはどれか。\n\nフッ化物洗口法には（①）%NaF溶液で毎日行う方法と（②）%NaF溶液で週1回行う方法があり、洗口用顆粒は（③）に分類される。",
+    "choices": [
+      "①0.01 -- ②0.5 -- ③劇　薬",
+      "①0.01 -- ②0.2 -- ③普通薬",
+      "①0.05 -- ②0.2 -- ③劇　薬",
+      "①0.05 -- ②0.5 -- ③普通薬"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "小窩裂溝填塞に用いられるものはどれか。2つ選べ。",
+    "choices": [
+      "Bis-GMA系レジン",
+      "カーボネート系レジン",
+      "カルボキシレートセメント",
+      "グラスアイオノマーセメント"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

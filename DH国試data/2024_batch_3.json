@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2024_dh_24_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "脳性麻痺患者における麻痺のある部位を「＋」で表す模式図を示す。\n麻痺の部位による分類はどれか。1つ選べ。",
+    "choices": [
+      "片麻痺",
+      "単麻痺",
+      "対麻痺",
+      "両麻痺"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "10歳の男児。自閉スペクトラム症と診断されている。術者によるブラッシングができるように指導を行った。行動療法中の写真（A、B、C、D）を示す。\n行ったのはどれか。1つ選べ。",
+    "choices": [
+      "系統的脱感作法",
+      "Tell-Show-Do法",
+      "フラッディング法",
+      "トークンエコノミー法"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "疾病予防の概念で歯周病の第二次予防に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "PMTC",
+      "禁煙指導",
+      "歯周疾患検診",
+      "口腔機能回復治療"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "う蝕の特徴はどれか。2つ選べ。",
+    "choices": [
+      "根面う蝕は環状に進行する。",
+      "急性う蝕は穿下性に進行する。",
+      "慢性う蝕は穿通性に進行する。",
+      "平滑面エナメル質う蝕はエナメル象牙境を頂点とした円錐形を呈する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "歯周組織の模式図を示す。\n①～④の説明で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "①は角化上皮で覆われている。",
+      "②は可動性の粘膜である。",
+      "③はコラーゲン線維に富んでいる。",
+      "④は歯と結合組織付着している。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "患者への口腔清掃方法の指導で改善を期待できるのはどれか。2つ選べ。",
+    "choices": [
+      "口　臭",
+      "咬耗症",
+      "歯肉の炎症",
+      "メラニン色素沈着"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "下顎左側臼歯部のエックス線画像を示す。\n画像から認められるのはどれか。2つ選べ。",
+    "choices": [
+      "根尖病巣",
+      "歯石の付着",
+      "エナメル真珠",
+      "歯槽硬線の消失"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "口腔内写真を示す。\n前歯部を対象としたPMA Indexの評価部位はどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "歯周組織検査中の写真を示す。矢印で示す方向にのみ0.5mmの動揺が確認された。\nMillerの分類で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "0度",
+      "1度",
+      "2度",
+      "3度"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "超音波スケーラーのチップと水流の写真を示す。\n使用法で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "術前に口腔外で水流の確認を行う。",
+      "チップの先端をポケット底部まで挿入する。",
+      "チップは30度で歯に当てる。",
+      "50gの側方圧をかける。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "グレーシータイプキュレットを刃部先端からみた模式図を示す。\n下顎右側第一大臼歯舌側遠心の縁下歯石を除去するのに適しているのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "38歳の女性。歯面の着色を主訴として来院した。妊娠高血圧の治療を行っているという。着色除去に用いる機器の写真を示す。\n対応で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "ノズルの先端を歯面から20～50mm離す。",
+      "咬合面では咬合平面に対して90度で使用する。",
+      "一箇所に集中せず小さな円を描くように動かす。",
+      "炭酸水素ナトリウムを主成分とするパウダーを使用する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "75歳の男性。慢性歯周炎に対する歯周基本治療終了後、3か月間隔で歯周病のメインテナンスと初期の根面う蝕の管理としてフッ化物歯面塗布を行っている。来院時、歯周ポケットの検査を行った後に用いる器材の写真を示す。\n3番目に用いるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "5歳の男児。歯科医師からフッ化物歯面塗布を指示され、リン酸酸性フッ化ナトリウム溶液（第Ⅱ法）を2mL準備した。\n溶液に含まれるフッ素量はどれか。1つ選べ。",
+    "choices": [
+      "0.018mg",
+      "0.04mg",
+      "4mg",
+      "18mg"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "歯科医師からう蝕予防処置の指示を受けた。使用する器材の写真を示す。\n正しいのはどれか。2つ選べ。",
+    "choices": [
+      "簡易防湿は不要である。",
+      "上下顎同時に実施できる。",
+      "実施直後に軽くうがいをさせる。",
+      "やや仰向きの姿勢で軽くかませる。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "フッ化物配合歯磨剤の応用で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "うがいが可能な年齢から使用する。",
+      "年齢に応じたフッ化物濃度を選択する。",
+      "永久歯萌出が完了するまでの使用を勧める。",
+      "ブラッシング後に歯磨剤が口の中に残らないようにうがいをする。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "レジン系小窩裂溝塡塞材を用いて模型上で予防塡塞を行っている過程の一部の写真（A、B）を示す。\nこの処置の目的はどれか。2つ選べ。",
+    "choices": [
+      "歯面の清掃",
+      "感染歯質の除去",
+      "歯質の再石灰化",
+      "接着効果の向上"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am078",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "28歳の女性。口臭を主訴として来院した。起床時に口臭を自覚することがあり、家族からも口の臭いを指摘されたという。検査結果を表に示す。\n医療面接で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "食事の嗜好を尋ねる。",
+      "消化器内科の受診を勧める。",
+      "自己管理に問題があることを指摘する。",
+      "口臭を指摘された際の気持ちに寄り添う。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am079",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "45歳の男性。定期歯科健康診査のため半年ぶりに来院した。最近、ストレスを感じているという。医療面接時の会話の一部を図に示す。\nストレスの行動的反応はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "禁煙支援に対する行動変容プロセスで自己の再評価はどれか。1つ選べ。",
+    "choices": [
+      "喫煙のリスクについて知る。",
+      "職場からの補助を受けて禁煙外来を受診する。",
+      "禁煙をすることによる歯周組織への良い影響を知る。",
+      "禁煙をしないことによる家族への影響に注意を向ける。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "中学1年生を対象とした歯科保健教育を実施することになった。教材として使用した15歳女子の口腔内写真を示す。\nこの写真を用いて指導できるのはどれか。2つ選べ。",
+    "choices": [
+      "歯肉癌に関するリスク因子",
+      "デンタルフロスの使用の必要性",
+      "不良補綴装置の歯肉に対する為害性",
+      "ホルモンの変化と歯肉炎との関連性"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "80歳の女性。2年前に転倒により骨折して以来、外出時は車いすを使用している。町内会の役員を継続することを望み、週に3回介護予防通所リハビリテーションに通っている。\n国際生活機能分類＜ICF＞で下線部に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "活　動",
+      "参　加",
+      "健康状態",
+      "心身機能・身体構造"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "78歳の男性。薬剤関連顎骨壊死＜MRONJ＞の経過観察で来院した。ブラッシング時に矢印で示す部位の疼痛を訴えている。口腔内写真を示す。\n適切な口腔衛生指導はどれか。2つ選べ。",
+    "choices": [
+      "患部にフッ化物ジェルを塗布する。",
+      "アルコールを含まない洗口剤で含嗽する。",
+      "患部の食渣をスポンジブラシで除去する。",
+      "疼痛がある間は歯ブラシの使用を中止する。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "84歳の男性。脳梗塞で右側の半身麻痺がある。患者の口腔清掃の状況を図に示す。\nBDR指標で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "【B】a1 -- 【D】b -- 【R】a",
+      "【B】a2 -- 【D】b -- 【R】b",
+      "【B】b1 -- 【D】b -- 【R】b",
+      "【B】b2 -- 【D】a -- 【R】b"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2024_dh_24_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "中学3年生を対象とした「総合的な学習の時間」で、食生活に関する健康教育を行うことになった。\n生徒の主体的な参加を促すための効果的な方法はどれか。2つ選べ。",
+    "choices": [
+      "加糖飲料に含まれる砂糖量の展示",
+      "中学生の食生活に関する探究的学習",
+      "生徒の1週間の食生活記録の振り返り",
+      "生活習慣病予防のための啓発動画の視聴"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "再生不良性貧血患者の口腔内写真を示す。\n口腔衛生管理で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "SRPの実施",
+      "保湿剤の塗布",
+      "出血部位の確認",
+      "毛先の硬い歯ブラシの使用"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "80歳の男性。5年前に脳梗塞を発症し、現在在宅療養中で、意識障害があるという。口臭が強いことを主訴として家族から歯科訪問診療の依頼を受けた。歯科医師から口腔衛生管理を指示された。口腔清掃時の写真を示す。\nこの患者に行うのはどれか。2つ選べ。",
+    "choices": [
+      "頭部の後屈",
+      "歯の動揺の確認",
+      "ラポールの形成",
+      "リクライニング位の設定"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "80歳の女性。舌癌に対する舌部分切除術後2週が経過した。現在在宅療養中である。体重に変化はないという。経口摂取を進めるために評価を行った結果を表に示す。\n患者に対する適切な指導はどれか。2つ選べ。",
+    "choices": [
+      "ゆっくりと食べましょう。",
+      "一口の量を少なめにしましょう。",
+      "栄養補助食品を中心に食べましょう。",
+      "口を大きく開かないようにしましょう。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "83歳の女性。定期歯科健康診査のため来院した。最近食べこぼしが多いという。口腔機能検査の結果と口腔機能低下の基準値を表に示す。\n適切な指導内容はどれか。2つ選べ。",
+    "choices": [
+      "口唇のストレッチ",
+      "唾液腺マッサージ",
+      "吹き戻し笛の訓練",
+      "とろみ調整食品の活用"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2024_dh_24_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "87歳の女性。腰椎の骨折のため在宅療養中である。家族から「最近食事量が減り、野菜しか食べず、体重も減ってきている。また、疲れやすいようで、日中もベッド上で過ごすことが多い。」と相談を受けた。MNA®-SFの評価は6点であった。摂食嚥下機能に問題はない。\n家族への食事指導として適切なのはどれか。2つ選べ。",
+    "choices": [
+      "汁物にはとろみをつけましょう。",
+      "タンパク質を多く含む食品を摂りましょう。",
+      "本人の好きなものだけを食べさせましょう。",
+      "食事量が少ないときは高カロリー食品を活用しましょう。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

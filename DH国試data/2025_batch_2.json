@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2025_dh_25_am031",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "歯科衛生士法第13条の6を図に示す。\n①に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "秘　密",
+      "個人情報",
+      "心身の障害",
+      "診療の内容"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am032",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "感染性廃棄物容器に表示するマークを図に示す。\nマークが橙色の場合の廃棄物はどれか。2つ選べ。",
+    "choices": [
+      "唾液を拭きとったガーゼ",
+      "うがいに使用した紙コップ",
+      "治療中に折れたスケーラー",
+      "使用済みのディスポーザブルメス"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "大規模災害時に医療のトリアージを行うことは、医療従事者の倫理原則の考え方のどれに該当するか。1つ選べ。",
+    "choices": [
+      "正　義",
+      "善　意",
+      "無危害",
+      "自律尊重"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am034",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "相対的歯科医行為に該当するのはどれか。2つ選べ。",
+    "choices": [
+      "歯周病の診断",
+      "修復物の研磨",
+      "歯の漂白処置",
+      "インプラント体の埋入"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "20歳の女性。左下奥歯の冷水痛を主訴として来院した。以下のような流れで診察を行うことになった。\n①で使用するのはどれか。2つ選べ。",
+    "choices": [
+      "探　針",
+      "ロール綿",
+      "歯周プローブ",
+      "歯髄電気診断器"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "全部床義歯を装着している患者の口腔機能検査に用いる機器の写真を示す。\n使用法で適切なのはどれか。1つ選べ。",
+    "choices": [
+      "義歯は外して使用する。",
+      "①を押す最大値を計測する。",
+      "①を断続的な力で押し潰す。",
+      "②を上下顎臼歯部で保持する。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "口内法エックス線撮影はどれか。2つ選べ。",
+    "choices": [
+      "咬翼法",
+      "平行法",
+      "シュラー法",
+      "ウォーターズ法"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "歯の化学的損傷の原因はどれか。2つ選べ。",
+    "choices": [
+      "歯ぎしり",
+      "習慣性嘔吐",
+      "柑橘類の過食",
+      "過度のブラッシング"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "52歳の女性。下顎左側中切歯の審美不良を主訴として来院した。10年前に外傷により歯科治療を受けたが、その後、徐々に変色してきたという。初診時の口腔内写真（A）とエックス線画像（B）、および処置後の口腔内写真（C）を示す。\nこの歯に対して行ったのはどれか。2つ選べ。",
+    "choices": [
+      "感染根管治療",
+      "オフィスブリーチ",
+      "ウォーキングブリーチ",
+      "コンポジットレジン修復"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "上顎前歯部の歯周炎を悪化させたのはどれか。2つ選べ。",
+    "choices": [
+      "歯　石",
+      "口呼吸",
+      "斜切痕",
+      "小帯の高位付着"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "再評価時の医療面接の際に、上顎右側切歯部にブラッシング時の一過性疼痛があることを訴えた。\n適切な対応として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "麻酔抜髄",
+      "レーザー照射",
+      "コンポジットレジン修復",
+      "シュウ酸カリウム製剤の塗布"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "62歳の女性。下顎右側前歯部のブラッシング時における歯肉疼痛を主訴として来院した。診察の結果、歯周基本治療後に、歯周外科治療を行うことになった。初診時の歯周組織検査結果の一部と口腔内写真（A）、および手術中（B）と手術後の口腔内写真（C）を示す。\n目的はどれか。1つ選べ。",
+    "choices": [
+      "歯槽骨の再生",
+      "角化歯肉の獲得",
+      "歯周ポケットの減少",
+      "病的歯肉組織の切除"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "放散性の痛みを特徴とするのはどれか。1つ選べ。",
+    "choices": [
+      "急性化膿性歯髄炎",
+      "慢性増殖性歯髄炎",
+      "急性化膿性根尖性歯周炎",
+      "慢性化膿性根尖性歯周炎"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "上顎左側犬歯に外科的歯内治療として歯根尖切除術が行われることになった。逆根管充塡材として用いるのはどれか。2つ選べ。",
+    "choices": [
+      "MTAセメント",
+      "リン酸亜鉛セメント",
+      "ポリカルボキシレートセメント",
+      "強化型酸化亜鉛ユージノールセメント"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "8歳の男児。保護者からの電話で「小学校からの帰宅途中で転倒した。その際に上の前歯が1本脱落し、そのまま家に持ち帰った。」と連絡があった。転倒したのは10分前という。直ちに来院することになった。\n脱落した歯の取扱いについて、保護者に伝える内容で正しいのはどれか。1つ選べ。",
+    "choices": [
+      "消毒してください。",
+      "牛乳に浸けてください。",
+      "清潔なティッシュペーパーに包んでください。",
+      "流水下で付着しているものを擦って取ってください。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "全部床義歯の仮想咬合平面を設定する際の基準はどれか。1つ選べ。",
+    "choices": [
+      "フランクフルト平面",
+      "Spee＜スピー＞彎曲",
+      "Camper＜カンペル＞平面",
+      "Monson＜モンソン＞カーブ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "42歳の女性。上顎右側中切歯のレジン前装冠の前装部破損を主訴として来院した。診察の結果、クラウンを再製作することになった。支台歯形成後の治療過程の口腔内写真を示す。\nこの工程の目的はどれか。1つ選べ。",
+    "choices": [
+      "咬合調整",
+      "適合調整",
+      "既製冠の選択",
+      "セメント除去"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "部分床義歯の一部の写真を示す。\n義歯の沈下に抵抗する部位はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "60歳の男性。左側頰部の疼痛を主訴として来院した。5日前から上顎左側智歯の疼痛があり、次第に左頰が腫れてきたという。診察の結果、上顎左側智歯周囲炎から波及した頰部膿瘍と診断された。口腔内から消炎手術を行うことになった。初診時の口腔内写真を示す。\n局所麻酔の次に行うのはどれか。1つ選べ。",
+    "choices": [
+      "試験的穿刺",
+      "膿瘍腔の洗浄",
+      "ドレーンの挿入",
+      "止血鉗子による排膿孔の拡大"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "Sjögren＜シェーグレン＞症候群の診断に用いる検査項目はどれか。2つ選べ。",
+    "choices": [
+      "味覚検査",
+      "口唇腺生検",
+      "擦過細胞診",
+      "唾液分泌量測定"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "三叉神経痛の特徴はどれか。2つ選べ。",
+    "choices": [
+      "腫脹を伴う。",
+      "電撃痛である。",
+      "両側性である。",
+      "突発的に生じる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "50歳の女性。下顎左側の奥歯の痛みを主訴として来院した。診察の結果、下顎左側の水平半埋伏智歯周囲に歯肉の腫脹が認められた。炎症消退後に局所麻酔下で抜歯を行うことになった。エアタービンを用いて智歯の歯冠と歯根の分割を行ったところ、患者が左側頰部に痛みを訴えた。手術を中断し、患者の左側頰部を触ると捻髪音が認められたため、CT撮影を行った。その画像を示す。\n疑われるのはどれか。1つ選べ。",
+    "choices": [
+      "気　腫",
+      "血　腫",
+      "膿　瘍",
+      "浮　腫"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "12歳の女児。前歯の審美不良を主訴として保護者と来院した。2年前から前歯で食べ物が噛みにくかったという。診察の結果、矯正歯科治療を行うことになった。初診時の口腔内写真を示す。\n認められるのはどれか。2つ選べ。",
+    "choices": [
+      "前歯部の交叉咬合",
+      "左側大臼歯部の交叉咬合",
+      "上顎左側犬歯の唇側転位",
+      "下顎右側第一大臼歯の舌側転位"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "マルチブラケット装置を用いた矯正力による歯の移動を模式図に示す。\nこの移動様式はどれか。1つ選べ。",
+    "choices": [
+      "回　転",
+      "トルク",
+      "傾斜移動",
+      "歯体移動"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "矯正装置の写真を示す。\nこの装置の目的はどれか。1つ選べ。",
+    "choices": [
+      "歯列弓長径の増大",
+      "歯列弓幅径の増大",
+      "オーバーバイトの増加",
+      "オーバージェットの増加"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "4歳の男児。口唇が閉じにくいことを主訴として保護者と来院した。3歳児歯科健康診査で歯列不正を指摘されたが、そのままにしていたという。初診時の口腔内写真を示す。\n疑われるのはどれか。1つ選べ。",
+    "choices": [
+      "吸指癖",
+      "咬爪癖",
+      "偏咀嚼",
+      "歯ぎしり"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "口腔内写真を示す。\nこの写真で示すう蝕の好発時期はどれか。1つ選べ。",
+    "choices": [
+      "2歳未満",
+      "2～3歳",
+      "4～5歳",
+      "6～7歳"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "9歳の男児。初診時の口腔内写真を示す。上顎右側側切歯の形態異常が認められた。\nこれが生じる歯の発育段階はどれか。1つ選べ。",
+    "choices": [
+      "開始期",
+      "添加期",
+      "形態分化期",
+      "組織分化期"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_am059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "高齢者の摂食嚥下障害で機能的障害の原因となるのはどれか。2つ選べ。",
+    "choices": [
+      "咽頭炎",
+      "認知症",
+      "頭頸部腫瘍",
+      "パーキンソン病"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_am060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "施設入所者が自治体の移動支援事業を利用して、病院を受診することになった。\nこの事業によって解消されるのはどれか。1つ選べ。",
+    "choices": [
+      "意識的障壁",
+      "情報的障壁",
+      "制度的障壁",
+      "物理的障壁"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

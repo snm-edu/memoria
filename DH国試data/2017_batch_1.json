@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2017_dh_17_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "上顎骨後面の写真を別に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "正円孔",
+      "歯槽孔",
+      "大口蓋孔",
+      "小口蓋孔"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "外分泌腺と内分泌腺の両方の構造をもつのはどれか。",
+    "choices": [
+      "副腎",
+      "膵臓",
+      "甲状腺",
+      "下垂体"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "下顔面の写真を別に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "人中",
+      "口角",
+      "鼻唇溝",
+      "上唇結節"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am004",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "下顎骨の写真を別に示す。\n矢印で示す孔から出る神経の役割はどれか。",
+    "choices": [
+      "下唇の感覚",
+      "口輪筋の運動",
+      "顎下腺の分泌",
+      "下顎前歯部歯肉の感覚"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "血糖値を低下させるのはどれか。",
+    "choices": [
+      "インスリン",
+      "グルカゴン",
+      "アドレナリン",
+      "サイロキシン"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "①の反応を触媒するのはどれか。",
+    "choices": [
+      "アルドラーゼ",
+      "炭酸脱水酵素",
+      "コハク酸脱水素酵素",
+      "アルカリフォスファターゼ"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am007",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "線溶系で血栓を溶解するのはどれか。",
+    "choices": [
+      "プラスミン",
+      "カリクレイン",
+      "プロトロンビン",
+      "フィブリノゲン"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am008",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "老化に伴い値が大きくなるのはどれか。",
+    "choices": [
+      "筋肉量",
+      "骨密度",
+      "基礎代謝量",
+      "収縮期血圧"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "単一遺伝子病はどれか。",
+    "choices": [
+      "血友病",
+      "歯周病",
+      "唇顎口蓋裂",
+      "ダウン症候群"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "【　】に入るのはどれか。\n免疫原性を持たないガラス片が生体内に入り込むと、それを肉芽組織が取り囲み、さらに線維化して周囲組織から隔離する。この機転を【　】という。",
+    "choices": [
+      "石灰化",
+      "被包化",
+      "血栓形成",
+      "補体活性化"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "ある微生物のグラム染色像を別に示す。\nこの微生物が原因と考えられるのはどれか。",
+    "choices": [
+      "結核",
+      "梅毒",
+      "赤痢",
+      "食中毒"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "あるウイルスの構造を図に示す。\nこのウイルスの感染経路はどれか。",
+    "choices": [
+      "空気",
+      "血液",
+      "経口",
+      "飛沫"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "運動性を有するのはどれか。",
+    "choices": [
+      "Tannerella forsythia",
+      "Treponema denticola",
+      "Fusobacterium nucleatum",
+      "Porphyromonas gingivalis"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "小児の薬用量を求めるAugsbergerの式を示す。\n（小児の【　】）×4＋20/100×成人量\n【　】に入るのはどれか。",
+    "choices": [
+      "体重",
+      "身長",
+      "年齢",
+      "胸囲"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "毒薬の表示を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "舌の写真を別に示す。\n舌苔が付着しやすい部位はどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "粉歯磨き、練歯磨き、液状歯磨き及び液体歯磨きの代表的な成分組成を図に示す。\n練歯磨きはどれか。",
+    "choices": [
+      "&#x2460;",
+      "&#x2461;",
+      "&#x2462;",
+      "&#x2463;"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "フッ化物歯面塗布に用いるのはどれか。",
+    "choices": [
+      "HF",
+      "NaF",
+      "CaF<sub>2</sub>",
+      "Ca<sub>10</sub>（PO<sub>4</sub>）<sub>6</sub>F<sub>2</sub>"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "う蝕発症の宿主要因はどれか。2つ選べ。",
+    "choices": [
+      "歯列不正",
+      "唾液緩衝能",
+      "含糖食品摂取頻度",
+      "ミュータンスレンサ球菌数"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "歯垢染め出し後の口腔内写真を別に示す。\n上顎右側前歯のスコアが5と評価されるのはどれか。",
+    "choices": [
+      "PℓI",
+      "OHI",
+      "PHP",
+      "O'LearyのPCR"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "健康日本21（第二次）における歯・口腔の健康の目標設定の考え方を図に示す。\n①はどれか。",
+    "choices": [
+      "歯科検診の受診者",
+      "1日3回歯を磨く者",
+      "フッ化物配合歯磨剤使用者",
+      "ゆっくりよく噛んで食べる者"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "学校保健統計の中学生の被患率（男女合計）の推移を図に示す。\n矢印で示すのはどれか。",
+    "choices": [
+      "う歯",
+      "心電図異常",
+      "鼻・副鼻腔疾患",
+      "裸眼視力1.0未満"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "人口静態統計の調査項目はどれか。",
+    "choices": [
+      "出生",
+      "就業",
+      "婚姻",
+      "死亡"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "スタンダードプレコーションにおいて、直接接触感染の防止に有効なのはどれか。",
+    "choices": [
+      "マスク",
+      "ガウン",
+      "グローブ",
+      "フェイスガード"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "感覚温度を求めるのに必要な指標の組合せはどれか。",
+    "choices": [
+      "気湿 -- 気流 -- 輻射熱",
+      "気流 -- 輻射熱 -- 気温",
+      "気湿 -- 気温 -- 輻射熱",
+      "気温 -- 気湿 -- 気流"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "新興感染症はどれか。",
+    "choices": [
+      "ポリオ",
+      "天然痘",
+      "マラリア",
+      "鳥インフルエンザ"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "「高齢者の医療の確保に関する法律」に基づき実施されるのはどれか。",
+    "choices": [
+      "特定健康診査",
+      "定期健康診断",
+      "臨時健康診断",
+      "特殊健康診断"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "歯科衛生士の業務として正しいのはどれか。",
+    "choices": [
+      "義歯調整",
+      "小窩裂溝填塞",
+      "ブラケットの装着",
+      "フッ化物洗口剤の処方"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2017_dh_17_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "歯科診療所で患者に交付されるのはどれか。2つ選べ。",
+    "choices": [
+      "診断書",
+      "処方せん",
+      "業務記録",
+      "技工指示書"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2017_dh_17_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "すべての年代が給付対象となるのはどれか。",
+    "choices": [
+      "介護保険",
+      "医療保険",
+      "雇用保険",
+      "労働者災害補償保険"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

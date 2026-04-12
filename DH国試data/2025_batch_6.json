@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2025_dh_25_pm041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "手術後に行った処置（D）の目的はどれか。2つ選べ。",
+    "choices": [
+      "創面の保護",
+      "術後疼痛の軽減",
+      "歯槽骨の再生促進",
+      "上皮組織の侵入防止"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "55歳の女性。下顎右側臼歯部の咬合痛を主訴として来院した。慢性歯周炎と診断され、歯周基本治療が行われた。再評価の結果、下顎右側臼歯部に歯周外科治療を行うことになった。再評価時の歯周組織検査結果の一部とエックス線画像（A）、および歯周外科手術中の口腔内写真（B）を示す。\n下顎右側第一大臼歯の根分岐部病変に行う治療として、考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "トンネリング",
+      "ヘミセクション",
+      "ルートセパレーション",
+      "ファーケーションプラスティ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "13歳の男子。下顎左側第一小臼歯の疼痛を主訴として来院した。3日前に食事をしていたところ、急に痛みが生じたという。診察の結果、中心結節の破折による急性歯髄炎と診断され、麻酔抜髄が行われることになった。ラバーダムシート装着手順の口腔内写真を示す。\n3番目はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "18歳の男子。上顎左側中切歯の歯冠破折を主訴として来院した。20分前にボールが直撃したという。歯の動揺および自発痛はない。診察の結果、直接覆髄が行われることになった。初診時の口腔内写真（A）とエックス線画像（B）を示す。\nこの治療法を選択した根拠として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "点状露髄である。",
+      "根未完成歯である。",
+      "歯肉に損傷がない。",
+      "非感染性歯髄である。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "部分床義歯のリラインの目的はどれか。1つ選べ。",
+    "choices": [
+      "咬合高径の回復",
+      "鉤歯の動揺抑制",
+      "義歯床の破折防止",
+      "粘膜適合状態の改善"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "80歳の女性。歯肉からの出血を主訴として来院した。5年前に下顎にインプラントオーバーデンチャーを装着したという。診察の結果、インプラント周囲歯肉の腫脹と清掃不良が認められた。歯科医師から口腔衛生管理の指示を受けた。来院時の口腔内写真を示す。\nチェアサイドの口腔清掃で用いるのはどれか。2つ選べ。",
+    "choices": [
+      "鎌型スケーラー",
+      "スーパーフロス",
+      "ヨウ素系洗口液",
+      "ワイヤーコーティングされた歯間ブラシ"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "24歳の女性。上顎右側中切歯の変色が気になることを主訴として来院した。診察の結果、セラミックスによる修復処置を行うことになった。修復物の写真（A）と試適時の口腔内写真（B）を示す。\n修復物の内面処理に使用するのはどれか。1つ選べ。",
+    "choices": [
+      "硫黄含有プライマー",
+      "シランカップリング剤",
+      "モディファイヤーペースト",
+      "セルフエッチングプライマー"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "2種類の部分床義歯の写真（A、B）を示す。\nAと比較したBの特徴はどれか。1つ選べ。",
+    "choices": [
+      "着脱が容易",
+      "咬合調整が簡便",
+      "床の修理が容易",
+      "熱伝導性が良好"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm049",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "口腔潜在的悪性疾患に分類されるのはどれか。2つ選べ。",
+    "choices": [
+      "紅板症",
+      "白板症",
+      "帯状疱疹",
+      "類天疱瘡"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "永久歯の歯髄壊死が原因で発症するのはどれか。1つ選べ。",
+    "choices": [
+      "歯根嚢胞",
+      "含歯性嚢胞",
+      "鼻歯槽嚢胞",
+      "歯原性角化嚢胞"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "70歳の男性。右側舌縁部の痛みを主訴として来院した。半年前から潰瘍があることを自覚していたが、3週前に病変が大きくなったことに気付いたという。口腔内診査の結果、右側舌縁に易出血性潰瘍が認められ、周囲に硬結を触知した。初診時の口腔内写真を示す。\n疑われるのはどれか。1つ選べ。",
+    "choices": [
+      "舌　癌",
+      "口腔扁平苔癬",
+      "アフタ性口内炎",
+      "口腔カンジダ症"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm052",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "9歳の女児。歯並びが悪いことを主訴として保護者と来院した。上顎左側第二乳臼歯は1年前に脱落したという。診察の結果、上顎左側第一大臼歯の近心傾斜を認めた。初診時の口腔内写真を示す。\n時間の経過によって生じる可能性があるのはどれか。1つ選べ。",
+    "choices": [
+      "上顎左側乳犬歯の舌側転位",
+      "上顎左側第一乳臼歯の低位",
+      "上顎左側第一大臼歯の頰側傾斜",
+      "上顎左側第二小臼歯の異所萌出"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "定型発達2歳児の脳頭蓋と顔面頭蓋の容量比はどれか。1つ選べ。",
+    "choices": [
+      "2：1",
+      "5：1",
+      "6：1",
+      "8：1"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "15歳の女子。矯正歯科診断用の資料の写真を示す。\n矢印で示す計測項目はどれか。1つ選べ。",
+    "choices": [
+      "歯列弓長径",
+      "歯列弓幅径",
+      "歯槽基底弓長径",
+      "歯槽基底弓幅径"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "模型上でマルチブラケット装置にアーチワイヤーを装着した時の写真を示す。\n患者に装着する場合、頰粘膜の損傷を防ぐためにワイヤーに行うのはどれか。2つ選べ。",
+    "choices": [
+      "屈　曲",
+      "結　紮",
+      "切　断",
+      "溶　接"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "4歳の女児。下顎右側第一乳臼歯の痛みを主訴として保護者と来院した。2日前から痛みが増大しているという。診察の結果、急性歯髄炎と診断され、麻酔抜髄を行うことになった。浸潤麻酔後の口腔内写真を示す。\n次に行うのはどれか。1つ選べ。",
+    "choices": [
+      "う蝕除去",
+      "根管貼薬",
+      "髄腔開拡",
+      "ラバーダム防湿"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "6歳の男児。左側の奥歯でうまく噛めないことを主訴として保護者と来院した。2年前から徐々に咬み合わせが悪くなったという。疼痛はない。初診時の口腔内写真を示す。\n考えられるのはどれか。1つ選べ。",
+    "choices": [
+      "咬　耗",
+      "異所萌出",
+      "低位乳歯",
+      "エナメル質減形成"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "85歳の女性。歯ぐきからの出血を主訴として来院した。手の痛みのために口腔清掃は困難であるという。診察の結果、慢性歯周炎と診断され、歯科医師からブラッシング指導を行うよう指示された。初診時の手指の写真を示す。\n疑われる全身疾患はどれか。1つ選べ。",
+    "choices": [
+      "骨粗鬆症",
+      "脳血管疾患",
+      "関節リウマチ",
+      "Perkinson＜パーキンソン＞病"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "74歳の男性。家族から「口臭が気になる。」と相談を受け、歯科訪問診療を行った。脳梗塞の後遺症による左半身麻痺のため寝たきりとなり、自宅で療養生活を送っているという。診察の結果、口腔内に食物の残留が認められ、摂食嚥下障害と診断された。歯科医師から口腔衛生管理を行うよう指示された。\n安全に行うための姿勢はどれか。2つ選べ。",
+    "choices": [
+      "仰臥位で軽く顎を引く。",
+      "座位で頭部を後屈する。",
+      "右側を上にした側臥位にする。",
+      "ファーラ位（約45度）にする。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "口腔機能精密検査に用いる機器の写真（A）と口腔内写真（B）を示す。\n機器の測定面を接触させる部位はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "歯科診療時のコミュニケーション法を図に示す。\n限局性学習症のある患児に用いる際に配慮が必要なのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "9歳の男児。歯肉の腫脹を主訴として保護者と来院した。てんかんの既往があり、小児科を受診しているという。診察を始めたところ、四肢の強直性収縮が15秒間認められた。初診時の口腔内写真を示す。\n考えられる疾患はどれか。1つ選べ。",
+    "choices": [
+      "侵襲性歯周炎",
+      "慢性剥離性歯肉炎",
+      "薬剤性歯肉増殖症",
+      "壊死性潰瘍性歯肉炎"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "30歳の女性。歯肉の腫れと出血を主訴として来院した。妊娠5か月であり、つわりはみられない。診察の結果、妊娠性歯肉炎と診断された。歯科医師から歯周病の予防処置計画を立てるよう指示された。初診時の口腔内写真を示す。\n予防処置計画の内容で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "アレルギー検査を行う。",
+      "抗菌薬の全身投与を行う。",
+      "出産前に歯石を除去する。",
+      "歯面清掃器でプラークを除去する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "上顎前歯部の写真を示す。\n矢印で示す「くぼみ」の特徴はどれか。1つ選べ。",
+    "choices": [
+      "遊離歯肉にみられる。",
+      "加齢によって出現する。",
+      "健康な歯肉で観察される。",
+      "過度のブラッシングで生じる。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "う蝕予防を目的とした化学的プラークコントロールのために歯磨剤に配合されるのはどれか。2つ選べ。",
+    "choices": [
+      "フッ化カルシウム",
+      "フッ化ナトリウム",
+      "リン酸酸性フッ化ナトリウム",
+      "モノフルオロリン酸ナトリウム"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "口腔内写真を示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "歯　石",
+      "クレフト",
+      "根面う蝕",
+      "歯肉退縮"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "23歳の女性。定期歯科健康診査のため来院した。前歯の歯磨きが苦手だという。歯科医師から口腔清掃状態を確認するように指示され、OHIの評価方法に準じて上下顎前歯部唇側面の評価を行った。評価時の口腔内写真を示す。\n上顎と下顎のDIスコアの組合せで正しいのはどれか。1つ選べ。\nただし、選択肢は【上顎】 -- 【下顎】とする。",
+    "choices": [
+      "スコア1 -- スコア1",
+      "スコア1 -- スコア3",
+      "スコア2 -- スコア2",
+      "スコア2 -- スコア3"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "歯と歯周組織におけるプラークの付着状態を模式図に示す。\n①に比べ②の領域に多いのはどれか。2つ選べ。",
+    "choices": [
+      "Actinomyces viscosus",
+      "Treponema denticola",
+      "Streptococcus sanguinis",
+      "Porphyromonas gingivalis"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2025_dh_25_pm069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "スケーリング前に、シックルタイプスケーラーのシャープニングを行うことにした。砥石の形態を模式図に示す。\nフェイスのシャープニングに用いるのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2025_dh_25_pm070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "シックルタイプスケーラーの刃部と歯面および歯石の断面を模式図に示す。\nスケーリング時のスケーラーの刃部と歯面の角度はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

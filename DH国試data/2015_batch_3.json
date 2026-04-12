@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2015_dh_15_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "経鼻経管栄養について正しいのはどれか。",
+    "choices": [
+      "胃食道逆流を生じる危険がない。",
+      "チューブ交換は5～6か月ごとである。",
+      "胃瘻よりも容易にチューブを留置できる。",
+      "水分と栄養を投与するときのみ挿入する。"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am062",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "88歳の女性。要介護4で、60人が入所できる高齢者施設に半年前に住民票を移して生活している。\nこの施設はどれか。",
+    "choices": [
+      "老人保健施設",
+      "グループホーム",
+      "デイケアセンター",
+      "特別養護老人ホーム"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "歯間部および歯肉の形態異常と関連する要因の組合せで正しいのはどれか。",
+    "choices": [
+      "クレフト -- 不適切なブラッシング",
+      "フェストゥーン -- 喫　煙",
+      "テンションリッジ -- 咬合性外傷",
+      "ブラックトライアングル -- 抗菌薬の長期連用"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "グレーシータイプキュレットの写真を別に示す。\n歯肉縁下での操作時に歯根面と平行になるのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "パノラマエックス線写真を別に示す。\n観察できるのはどれか。2つ選べ。",
+    "choices": [
+      "ブリッジ",
+      "遊離端義歯",
+      "インプラント",
+      "矯正用ワイヤー"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "う蝕の第二次予防はどれか。",
+    "choices": [
+      "口腔清掃",
+      "間食指導",
+      "義歯装着",
+      "フッ化ジアンミン銀塗布"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "歯周治療後のメインテナンスの意義で誤っているのはどれか。",
+    "choices": [
+      "患者教育",
+      "歯周組織の病変の治療",
+      "モチベーションの再強化",
+      "歯周疾患の再発の早期発見"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am068",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "歯周病がリスクファクターとなる可能性が指摘されているのはどれか。2つ選べ。",
+    "choices": [
+      "乳　癌",
+      "誤嚥性肺炎",
+      "低体重児出産",
+      "筋萎縮性側索硬化症"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "上顎右側中切歯のプロービング時の写真を別に示す。\n正しい挿入操作はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "45歳の女性。咬合痛を訴えて来院した。歯周組織検査時の写真を別に示す。\n検査内容はどれか。",
+    "choices": [
+      "歯の動揺度",
+      "根分岐部病変の程度",
+      "歯肉縁下のプラーク量",
+      "歯根膜腔の拡大の有無"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "グレーシータイプキュレット＃5の刃部を拡大した写真を別に示す。\n矢印に示す部位でシャープニングの対象とならないのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "シックルスケーラーの執筆状変法把持法の写真を別に示す。\n正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "上顎のスケーリング時の頭部を設定した写真を別に示す。\n適したマキシラアングルはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "30歳の女性。歯面の色素沈着を訴えて来院した。妊娠高血圧症の治療を行っている。\n使用すべきでない器材はどれか。",
+    "choices": [
+      "エアスケーラー",
+      "超音波スケーラー",
+      "ポリッシングブラシ",
+      "炭酸水素ナトリウム歯面清掃器"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am075",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "日本人1日当たりの食品からのフッ素摂取量はどれか。",
+    "choices": [
+      "1～3mg",
+      "5～10mg",
+      "15～20mg",
+      "25～30mg"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "う蝕活動性試験の目的はどれか。2つ選べ。",
+    "choices": [
+      "う蝕進行度の判定",
+      "リコール間隔の決定",
+      "一人平均う蝕歯数の算出",
+      "う蝕予防プログラムの立案"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "APF歯面塗布剤の取扱いで正しいのはどれか。",
+    "choices": [
+      "冷凍庫に保存する。",
+      "ガラス瓶に保存する。",
+      "塗布の直前に濃度を調整する。",
+      "事前に必要量を分注しておく。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am078",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "フッ化物洗口に用いられるのはどれか。",
+    "choices": [
+      "フッ化第一スズ",
+      "フッ化ナトリウム",
+      "リン酸酸性フッ化ナトリウム",
+      "モノフルオロリン酸ナトリウム"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am079",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "12歳の女児。歯科予防処置を希望して来院した。永久歯は28本萌出している。これまで歯科予防処置の既往はない。今回、小窩裂溝塡塞を行うことになった。\n処置の優先順位の高い歯はどれか。",
+    "choices": [
+      "第一小臼歯",
+      "第二小臼歯",
+      "第一大臼歯",
+      "第二大臼歯"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "58歳の男性。2年前の脳梗塞で軽度の後遺症が残存している。\n歯科衛生士との会話を下に示す。\n\n歯科衛生士：こんにちは。①今日はどのようにして来られましたか。\n患　者：妻の運転で車で来ました。\n歯科衛生士：歯磨きについてお聞きします。②ご自宅ではどこで歯磨きされていますか。\n患　者：風呂場の洗面所で歯磨きします。\n歯科衛生士：③お口に汚れが残っていますが、磨きにくいですか。\n患　者：そうなんです。この歯ブラシを使っているのですが…\n歯科衛生士：グリップが細いですね。④こちらの柄の太いものを試してはいかがですか。\n患　者：確かに力が入ります。ありがとうございました。\n\nノーマライゼーションの対応に該当するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am081",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "改訂水飲みテストで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "3mLの冷水を用いる。",
+      "不顕性誤嚥を検出する。",
+      "嚥下機能の確定診断となる。",
+      "嚥下後の呼吸状態、むせ及び発声を観察する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am082",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "Japan Coma Scale＜JCS＞のⅡ-20を表すのはどれか。",
+    "choices": [
+      "体をゆさぶると開眼する。",
+      "痛み刺激に全く反応しない。",
+      "意識清明とはいえない状態である。",
+      "痛み刺激を与えても覚醒しないが顔をしかめる。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "35歳の男性。定期健康診査で来院した。\n\n①冷たいものを食べると歯がしみるといっており、口腔を観察すると、②歯肉に退縮がみられた。③歯は朝食後と就寝前に磨いているという。いつものように磨いてもらうと、④歯ブラシを大きく横に動かしていた。\n\nOデータはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "O’LearyのPCRで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "地域集団の把握に適している。",
+      "診査対象に第三大臼歯は含まない。",
+      "歯頸部プラークの付着の有無を評価する。",
+      "診査対象にブリッジのポンティックは含まない。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "義歯の写真（A）と口腔清掃用品の写真（B）を別に示す。\nこの義歯を清掃するための用具はどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "判定基準に歯石の沈着が含まれるのはどれか。",
+    "choices": [
+      "GI＜Löe＆Silness＞",
+      "OHI",
+      "PHP",
+      "PMA index"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am087",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "乳幼児の口腔清掃と開始時期の組合せで適切なのはどれか。",
+    "choices": [
+      "歯ブラシに慣らす -- 7～8か月",
+      "ブクブクうがい -- 12か月",
+      "就寝前の歯磨きの習慣化 -- 24か月",
+      "本人磨きの練習 -- 48か月"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "RDテスト®の結果の写真を別に示す。\n結果の説明で正しいのはどれか。",
+    "choices": [
+      "歯の質がやや弱いです。",
+      "唾液の分泌量が少なめです。",
+      "歯ぐきに炎症があるようです。",
+      "むし歯の原因菌が多いと思われます。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "82歳の男性。右片麻痺があり、義歯の清掃が難しいという。\n口腔清掃自立度＜改訂BDR指標＞の評価を表に示す。\n男性への指導内容で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "うがいの練習",
+      "口腔清掃習慣の確立",
+      "義歯清掃用具の選択",
+      "ファーラ位での口腔清掃"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "1歳1か月の男児の母親へ摂食に関する指導を行うことになった。男児の現在の状態を以下に示す。\n\n・上下左右乳切歯＜8本＞が萌出している。\n・バナナなどの離乳食を手でつかんで、口に押し込むようにしている。\n・舌を上下、左右に動かして、押しつぶすように食べている。\n・水分をコップで一口ずつ飲んでいる。\n\n指導で適切なのはどれか。2つ選べ。",
+    "choices": [
+      "一口量を覚えさせていく。",
+      "平らなスプーンを使用させる。",
+      "手づかみで食べさせないようにする。",
+      "やわらかなものを前歯でかみ取らせる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  }
+]

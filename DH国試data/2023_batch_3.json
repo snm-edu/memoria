@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2023_dh_23_am061",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 61,
+    "question_text": "障害程度と治療内容による障害者の歯科医療体制の図を示す。\n①に該当するのはどれか。1つ選べ。",
+    "choices": [
+      "一般歯科診療所",
+      "こども病院の歯科",
+      "歯科医師会立口腔保健センター",
+      "歯科大学付属病院の障害者歯科"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am062",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 62,
+    "question_text": "脳性麻痺患者の歯科診療時の体位の写真を示す。\nこの目的はどれか。2つ選べ。",
+    "choices": [
+      "脱感作",
+      "緊張緩和",
+      "反射抑制",
+      "適応行動の誘導"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am063",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 63,
+    "question_text": "78歳の男性。ブラッシング時の上顎前歯部歯肉からの出血を主訴として来院した。歯科医師からスケーリングを指示された。初診時のスケーリング実施部位のエックス線画像を示す。\n使用するグレーシータイプキュレットはどれか。2つ選べ。",
+    "choices": [
+      "＃1/2",
+      "＃5/6",
+      "＃7/8",
+      "＃9/10"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am064",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 64,
+    "question_text": "成人の歯周組織で健康な状態はどれか。2つ選べ。",
+    "choices": [
+      "歯根膜は1.0～1.5mmの幅がある。",
+      "遊離歯肉は歯槽骨上縁より歯冠側にある。",
+      "付着歯肉ではスティップリングがみられる。",
+      "歯肉結合組織のおよそ15％がコラーゲン線維である。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am065",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 65,
+    "question_text": "OHIの評価結果を表に示す。\nOHI-Sはどれか。1つ選べ。",
+    "choices": [
+      "2.5",
+      "3",
+      "3.2",
+      "5"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am066",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 66,
+    "question_text": "5歳の男児。定期歯科健康診査で来院した。う蝕予防のために歯科医師からフッ化物洗口剤を処方された。\n洗口液の家庭での取扱いで正しいのはどれか。2つ選べ。",
+    "choices": [
+      "常温で保存する。",
+      "6か月ほど使用できる。",
+      "プラスチック容器に保存する。",
+      "小児の手の届かないところに保管する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am067",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 67,
+    "question_text": "根分岐部病変の検査でファーケーションプローブの挿入方向を模式図に示す。\n該当するのはどれか。1つ選べ。",
+    "choices": [
+      "上顎第一小臼歯",
+      "上顎第一大臼歯",
+      "下顎第二小臼歯",
+      "下顎第一大臼歯"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am068",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 68,
+    "question_text": "フッ化物配合歯磨剤の使用について正しいのはどれか。2つ選べ。",
+    "choices": [
+      "根面う蝕予防に効果的である。",
+      "2歳以下での使用は禁忌である。",
+      "学齢期には積極的に使用を勧める。",
+      "唾液分泌が低下した高齢者には使用を控える。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am069",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 69,
+    "question_text": "使用するのはどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am070",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 70,
+    "question_text": "用いられるのはどれか。1つ選べ。",
+    "choices": [
+      "10％過酸化水素水",
+      "78％エタノール製剤",
+      "0.9％塩化ナトリウム溶液",
+      "0.5％次亜塩素酸ナトリウム溶液"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am071",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 71,
+    "question_text": "6歳の女児。定期歯科健康診査のため来院した。歯科医師から保護者に仕上げ磨きについて指導するよう指示を受けた。口腔内写真を示す。\n保護者が最も注意すべき部位はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am072",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 72,
+    "question_text": "レジン系小窩裂溝塡塞材を用いる術式の流れを図に、使用する材料を写真に示す。\nこの材料を使用するのはどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am073",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 73,
+    "question_text": "歯周病のリスクファクターを図に示す。\n①の因子に含まれるのはどれか。2つ選べ。",
+    "choices": [
+      "栄　養",
+      "加　齢",
+      "ストレス",
+      "ブラキシズム"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am074",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 74,
+    "question_text": "顎模型上でのグレーシータイプキュレット操作の写真を示す。\nこの器具で使用できるのはどれか。1つ選べ。",
+    "choices": [
+      "上顎右側犬歯唇側遠心面",
+      "下顎右側第二大臼歯頰側遠心面",
+      "下顎左側第一大臼歯舌側中央部",
+      "上顎左側第二小臼歯口蓋側遠心面"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am075",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 75,
+    "question_text": "フッ化物歯面塗布を行う時期と主な対象歯の組合せで効果的なのはどれか。2つ選べ。",
+    "choices": [
+      "6　歳 -- 中切歯",
+      "8　歳 -- 第二小臼歯",
+      "10　歳 -- 第一大臼歯",
+      "12　歳 -- 第二大臼歯"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am076",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 76,
+    "question_text": "重度の歯周病が影響するのはどれか。1つ選べ。",
+    "choices": [
+      "早　産",
+      "白血病",
+      "急性膵炎",
+      "低アルカリホスファターゼ血症"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am077",
+    "category": "歯科予防処置論",
+    "subcategory": "",
+    "exam_number": 77,
+    "question_text": "下顎前歯部歯肉の口腔内写真を示す。\n外縁上皮はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am078",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 78,
+    "question_text": "幼稚園で4歳児を対象としたう蝕予防に関する健康教育を行うことになった。\n適切な教育内容はどれか。1つ選べ。",
+    "choices": [
+      "歯磨剤の選択",
+      "うがいの重要性",
+      "う蝕の成り立ち",
+      "磨き残しの確認"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am079",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 79,
+    "question_text": "56歳の男性。右側臼歯部の動揺と違和感を主訴として来院した。医療面接と検査の結果、慢性歯周炎と診断された。\n医療面接の内容で主訴と関連する生活習慣はどれか。2つ選べ。",
+    "choices": [
+      "ガムは毎食後噛んでいます。",
+      "コーヒーは1日3～4杯飲んでいます。",
+      "歯磨きは1日1回、朝に行っています。",
+      "タバコは20歳から毎日1箱吸っています。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am080",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 80,
+    "question_text": "76歳の男性。肺癌で入院中である。主治医から依頼があり、口腔衛生管理を行っている。化学療法を開始して2クール目が終了し、口腔内の疼痛が強いという。口腔内の写真を示す。\n口腔粘膜の管理で使用するのはどれか。2つ選べ。",
+    "choices": [
+      "口腔湿潤剤",
+      "表面麻酔薬",
+      "フッ化物洗口剤",
+      "アルコール含有含嗽剤"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am081",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 81,
+    "question_text": "歯科診療所に来院した幼児に対して虐待を疑うのはどれか。1つ選べ。",
+    "choices": [
+      "多　動",
+      "肥　満",
+      "不潔な服装",
+      "歯科治療への恐怖心"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am082",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 82,
+    "question_text": "56歳の男性。6か月ごとのSPTにて来院した。特定健康診査でメタボリックシンドロームと指摘されたという。医療面接の結果を図に示す。\n面接結果から適切な指導内容はどれか。2つ選べ。",
+    "choices": [
+      "欠食は避けましょう。",
+      "意識して噛むようにしましょう。",
+      "アルコールの摂取を控えましょう。",
+      "ゆっくりと歩くようにしましょう。"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am083",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 83,
+    "question_text": "ある町の地域保健事業で高齢者の口腔機能低下予防への取組みを行った。\nPDCAサイクルのうち、「A」に当てはまるのはどれか。1つ選べ。",
+    "choices": [
+      "健康教育内容の修正",
+      "口腔機能向上教室の開催",
+      "住民の口腔機能の実態の把握",
+      "口腔機能低下症予備群の人数の把握"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am084",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 84,
+    "question_text": "15歳の男子。歯肉の腫脹を主訴として来院した。てんかんの既往がある。初診時の口腔内写真を示す。\nまず行うのはどれか。1つ選べ。",
+    "choices": [
+      "服薬指導",
+      "食生活指導",
+      "口腔衛生指導",
+      "生活習慣指導"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am085",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 85,
+    "question_text": "82歳の女性。義歯があわないことを主訴として家族と来院した。上下顎に部分床義歯を装着している。1年前に脳梗塞を発症し、右片麻痺がある。1日のほとんどをベッド上で過ごすが、介助により車椅子に移乗し、家族と一緒に食事をとっているという。歯科医師から口腔衛生指導を行うよう指示を受けた。\n口腔清掃の自立度の確認で最も注意が必要なのはどれか。1つ選べ。",
+    "choices": [
+      "うがいができるか。",
+      "開口していられるか。",
+      "義歯の着脱ができるか。",
+      "歯ブラシを把持できるか。"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am086",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 86,
+    "question_text": "2型糖尿病との関連が深い疾患はどれか。2つ選べ。",
+    "choices": [
+      "歯周病",
+      "白板症",
+      "扁平苔癬",
+      "口腔乾燥症"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am087",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 87,
+    "question_text": "医療面接の写真を示す。\n歯科衛生士と患者の適切な位置関係はどれか。1つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am088",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 88,
+    "question_text": "65歳の女性。乳癌で化学療法を受けている。悪心と口内炎により食事摂取が困難という。栄養サポートチーム＜NST＞で食生活指導を行うことになった。\n食品の選択で避けるのはどれか。1つ選べ。",
+    "choices": [
+      "栄養補助食品",
+      "香辛料を含む食品",
+      "高タンパク質食品",
+      "流動性の高い食品"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2023_dh_23_am089",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 89,
+    "question_text": "令和元年国民健康・栄養調査において、摂取量が減少傾向にあるのはどれか。2つ選べ。",
+    "choices": [
+      "脂　肪",
+      "食　塩",
+      "食物繊維",
+      "タンパク質"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2023_dh_23_am090",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 90,
+    "question_text": "エナメル質の形成に関与しているのはどれか。1つ選べ。",
+    "choices": [
+      "ビタミンA",
+      "ビタミンB<sub>1</sub>",
+      "ビタミンＣ",
+      "ビタミンＥ"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

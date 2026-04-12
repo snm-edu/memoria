@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2015_dh_15_pm011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "レトロウイルスはどれか。",
+    "choices": [
+      "B型肝炎ウイルス",
+      "ムンプスウイルス",
+      "インフルエンザウイルス",
+      "ヒトT細胞白血病ウイルス"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "女性ホルモンによって発育促進がみられるのはどれか。",
+    "choices": [
+      "Prevotella intermedia",
+      "Actinomyces naeslundii",
+      "Tannerella forsythensis＜forsythia＞",
+      "Aggregatibacter actinomycetemcomitans"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "局所麻酔薬に配合される血管収縮薬はどれか。",
+    "choices": [
+      "アトロピン",
+      "アスピリン",
+      "アドレナリン",
+      "アンピシリン"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "ある薬物を水または牛乳で服用後の血中薬物濃度-時間曲線を図に示す。\n服用した薬物はどれか。",
+    "choices": [
+      "ペニシリン系薬",
+      "マクロライド系薬",
+      "テトラサイクリン系薬",
+      "アミノグリコシド系薬"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "日本薬局方を公示するのはどれか。",
+    "choices": [
+      "厚生労働省",
+      "日本保険薬局協会",
+      "食品医薬品安全センター",
+      "医薬品医療機器総合機構"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm016",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "唾液の緩衝作用と再石灰化の両方の機能に関わるのはどれか。",
+    "choices": [
+      "乳　酸",
+      "炭　酸",
+      "リン酸",
+      "クエン酸"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "平成23年歯科疾患実態調査の65～69歳と70～74歳の歯の状態を図に示す。\n③はどれか。",
+    "choices": [
+      "健全歯",
+      "未処置歯",
+      "処置歯",
+      "喪失歯"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "う蝕の発生要因になる甘味料はどれか。",
+    "choices": [
+      "スクラロース",
+      "フルクトース",
+      "アスパルテーム",
+      "エリスリトール"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "フッ素イオン濃度が最も高いのはどれか。",
+    "choices": [
+      "フッ化物バーニッシュ",
+      "フッ化第一スズ配合歯磨剤",
+      "リン酸酸性フッ化ナトリウム溶液",
+      "モノフルオロリン酸ナトリウム配合歯磨剤"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "口腔癌の第一次予防はどれか。2つ選べ。",
+    "choices": [
+      "禁煙指導",
+      "適正飲酒",
+      "減塩運動",
+      "がん検診"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "3歳児歯科健康診査の受診者10名の結果を表に示す。\nう蝕罹患型A型の割合はどれか。",
+    "choices": [
+      "10％",
+      "20％",
+      "30％",
+      "40％"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "学校歯科健康診断の結果、GOと判定された者への対応はどれか。2つ選べ。",
+    "choices": [
+      "口腔衛生指導",
+      "歯石除去の勧奨",
+      "う蝕処置の指示",
+      "生活習慣の指導"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "健康日本21（第二次）の基本的な方向で正しいのはどれか。2つ選べ。",
+    "choices": [
+      "健康寿命の延伸",
+      "健康格差の縮小",
+      "壮年期死亡の減少",
+      "高度先進医療の推進"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "水道法の水質基準において検出されないことと規定されているのはどれか。",
+    "choices": [
+      "水　銀",
+      "大腸菌",
+      "フッ素",
+      "ホルムアルデヒド"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "予防接種において生ワクチンを用いるのはどれか。",
+    "choices": [
+      "麻　疹",
+      "破傷風",
+      "百日咳",
+      "インフルエンザ"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "学校保健において感染症により出席を停止させることができるのはどれか。",
+    "choices": [
+      "校　長",
+      "学校医",
+      "市町村長",
+      "保健所長"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "トータル・ヘルスプロモーション・プランが位置づけられているのはどれか。",
+    "choices": [
+      "老人保健",
+      "地域保健",
+      "母子保健",
+      "産業保健"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "国民が生涯にわたって日常生活において歯科疾患の予防に向けた取り組みを行うことを主な目的とする法律はどれか。",
+    "choices": [
+      "地域保健法",
+      "歯科医師法",
+      "健康増進法",
+      "歯科口腔保健の推進に関する法律"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "国民健康・栄養調査を規定しているのはどれか。",
+    "choices": [
+      "食品衛生法",
+      "健康増進法",
+      "食育基本法",
+      "地域保健法"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "障害者総合支援法で定められている自立支援医療で誤っているのはどれか。",
+    "choices": [
+      "育成医療",
+      "更生医療",
+      "養育医療",
+      "精神通院医療"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm031",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "不飽和脂肪酸はどれか。2つ選べ。",
+    "choices": [
+      "ラウリン酸",
+      "リノール酸",
+      "パルミチン酸",
+      "ドコサヘキサエン酸"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm032",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "日本人の食事摂取基準において、耐容上限量が設定されていないのはどれか。",
+    "choices": [
+      "ビタミンA",
+      "ビタミンC",
+      "ビタミンD",
+      "ビタミンE"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "傾聴の姿勢として正しいのはどれか。2つ選べ。",
+    "choices": [
+      "患者の話にうなづく。",
+      "患者の表情に注目する。",
+      "患者との会話の前に答えを用意する。",
+      "患者の話の途中で自分の意見を言う。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm034",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "成人のバイタルサインの異常値はどれか。",
+    "choices": [
+      "脈　拍 -- 70回/分",
+      "呼吸数 -- 15回/分",
+      "拡張期血圧 -- 100mmHg",
+      "収縮期血圧 -- 120mmHg"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "尿検査でケトン体陽性になるのはどれか。",
+    "choices": [
+      "血友病",
+      "糖尿病",
+      "B型肝炎",
+      "甲状腺機能低下症"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm036",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "低温プラズマ滅菌で正しいのはどれか。",
+    "choices": [
+      "環境汚染がある。",
+      "使用ガスに毒性がある。",
+      "滅菌温度は70℃である。",
+      "器材は滅菌直後に使用できる。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm037",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "38歳の女性。上顎左側第一大臼歯の一過性の冷水痛を訴えて来院した。5年前にコンポジットレジン修復処置を受けたという。隣接面にう蝕はみられず自発痛と打診痛もない。診察の結果、再修復を行うことになった。初診時の口腔内写真を別に示す。\nコンポジットレジン修復時に必要なのはどれか。2つ選べ。",
+    "choices": [
+      "ウェッジ",
+      "光照射器",
+      "マトリックス",
+      "シェードガイド"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm038",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "コンポジットレジンに含まれるフィラーにより向上するのはどれか。2つ選べ。",
+    "choices": [
+      "摩耗性",
+      "重合収縮",
+      "機械的強度",
+      "エックス線造影性"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2015_dh_15_pm039",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "48歳の女性。上顎左側臼歯部のブラッシング時の疼痛を訴えて来院した。う蝕は認められなかった。初診時の口腔内写真を別に示す。\n原因歯を特定するために行う検査として有効なのはどれか。",
+    "choices": [
+      "打　診",
+      "透照診",
+      "擦過診",
+      "歯髄電気診"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2015_dh_15_pm040",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "9歳の女児。下顎左側第一大臼歯の痛みを訴えて来院した。軟化象牙質を除去したところ点状の露髄を生じた。露髄部を水酸化カルシウム製剤で被覆し、グラスアイオノマーセメントで仮封した。\nこの処置により形成が期待されるのはどれか。",
+    "choices": [
+      "象牙粒",
+      "象牙質橋",
+      "第三象牙質",
+      "有細胞セメント質"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  }
+]

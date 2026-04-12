@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2016_dh_16_am031",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 31,
+    "question_text": "「歯を丈夫で健康にする食品」と表示できるのはどれか。",
+    "choices": [
+      "特別用途食品",
+      "栄養機能食品",
+      "健康補助食品",
+      "特定保健用食品"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am032",
+    "category": "歯科保健指導論",
+    "subcategory": "",
+    "exam_number": 32,
+    "question_text": "国民健康・栄養調査で、高度経済成長期と比べて、近年摂取量が増加しているのはどれか。",
+    "choices": [
+      "食　塩",
+      "魚介類",
+      "炭水化物",
+      "緑黄色野菜"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am033",
+    "category": "歯科衛生士概論",
+    "subcategory": "",
+    "exam_number": 33,
+    "question_text": "歯科保健指導で、問題解決を行う際に適切なのはどれか。2つ選べ。",
+    "choices": [
+      "問題解決まで方針を変更しない。",
+      "複数の問題点には優先順位をつける。",
+      "問題解決は歯科衛生士主導で決定する。",
+      "得られた情報から問題点を明確にする。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am034",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 34,
+    "question_text": "口内法エックス線撮影時、被曝線量の軽減に有効なのはどれか。2つ選べ。",
+    "choices": [
+      "管電流を増加する。",
+      "照射野を大きくする。",
+      "ロングコーンを使用する。",
+      "高感度フィルムを使用する。"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am035",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 35,
+    "question_text": "金属アレルギー検査はどれか。2つ選べ。",
+    "choices": [
+      "パッチテスト",
+      "薬剤感受性試験",
+      "ガスクロマトグラフィー",
+      "DLST＜薬剤誘発性リンパ球刺激試験＞"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am036",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 36,
+    "question_text": "口腔乾燥症に対する検査はどれか。",
+    "choices": [
+      "フードテスト",
+      "サクソンテスト",
+      "改訂水飲みテスト",
+      "反復唾液嚥下テスト"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am037",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 37,
+    "question_text": "手指の消毒に使用するのはどれか。2つ選べ。",
+    "choices": [
+      "ポビドンヨード",
+      "グルタールアルデヒド",
+      "次亜塩素酸ナトリウム",
+      "クロルヘキシジングルコン酸塩"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am038",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 38,
+    "question_text": "28歳の男性。歯の痛みを主訴として来院した。2年前から食後に嘔吐を繰り返しているという。初診時の口腔内写真を別に示す。\n考えられるのはどれか。",
+    "choices": [
+      "咬耗症",
+      "酸蝕症",
+      "摩耗症",
+      "エナメル質形成不全症"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am039",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 39,
+    "question_text": "46歳の女性。歯の冷水痛を主訴として来院した。コンポジットレジンインレー修復を行うことになった。コンポジットレジンインレー製作時の写真を別に示す。\n直接法と比較した長所はどれか。2つ選べ。",
+    "choices": [
+      "耐摩耗性が向上する。",
+      "来院回数が少なくなる。",
+      "隣接面の接触点の回復に優れる。",
+      "コントラクションギャップの形成が促進される。"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am040",
+    "category": "歯科診療補助論",
+    "subcategory": "",
+    "exam_number": 40,
+    "question_text": "コンポジットレジンインレー体内面にシランカップリング処理を行うことで得られる効果はどれか。",
+    "choices": [
+      "嵌合効果",
+      "接着効果",
+      "静電効果",
+      "相互拡散効果"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am041",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 41,
+    "question_text": "45歳の女性。上顎左側側切歯の変色を主訴として来院した。4年前から気付いていたが放置していたという。初診時の口腔内写真を別に示す。\n変色の原因として考えられるのはどれか。",
+    "choices": [
+      "喫　煙",
+      "歯髄壊死",
+      "象牙質形成不全症",
+      "テトラサイクリン服用"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am042",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 42,
+    "question_text": "38歳の女性。上顎左側臼歯部の歯肉からの排膿を主訴として来院した。2週前から同部の腫脹と疼痛を認めていたが放置していたという。頬側歯肉部に瘻孔がみられ、上顎左側第二小臼歯と第一大臼歯に打診痛を認めた。エックス線写真撮影直前の口腔内写真を別に示す。\nこの検査の目的はどれか。",
+    "choices": [
+      "根管長の測定",
+      "原因歯の特定",
+      "歯根破折の診断",
+      "歯髄の生死の判定"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am043",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 43,
+    "question_text": "19歳の女性。ブラッシング時の疼痛を主訴として来院した。2年前から気付いていたが放置していたという。既往歴にてんかんがあり、投薬を受けている。初診時の口腔内写真を別に示す。\n考えられる対応で、まず行うのはどれか。",
+    "choices": [
+      "歯肉の切除",
+      "服用薬の中止",
+      "抗菌薬の投与",
+      "プラークコントロール"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am044",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 44,
+    "question_text": "36歳の女性。上下顎前歯部歯肉からの出血を主訴として来院した。検査の結果、侵襲性歯周炎と診断され、歯周治療を行うことになった。初診時の口腔内写真を別に示す。\n歯周基本治療開始前に説明すべきリスクはどれか。2つ選べ。",
+    "choices": [
+      "歯根破折",
+      "構音障害",
+      "エナメル質う蝕",
+      "象牙質知覚過敏症"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am045",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 45,
+    "question_text": "部分床義歯の写真を別に示す。\n複合義歯はどれか。2つ選べ。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am046",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 46,
+    "question_text": "有床義歯製作において、前歯部人工歯選択のSPA要素に含まれないのはどれか。",
+    "choices": [
+      "性　格",
+      "性　別",
+      "職　業",
+      "年　齢"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am047",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 47,
+    "question_text": "固定性ブリッジの構成要素はどれか。2つ選べ。",
+    "choices": [
+      "支台歯",
+      "築造体",
+      "連結部",
+      "支台装置"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am048",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 48,
+    "question_text": "半固定性ブリッジに用いるのはどれか。",
+    "choices": [
+      "磁性アタッチメント",
+      "キーアンドキーウェイ",
+      "コーヌステレスコープ",
+      "Oリングアタッチメント"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am049（不備問題採点除外）",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 49,
+    "question_text": "9歳の男児。顎裂部の矯正歯科治療を目的に紹介され来院した。両側唇顎口蓋裂で、生後4か月時に口唇形成術、1歳6か月時に口蓋形成術を受けたという。現在は両側顎裂を認める。術前の口腔内写真を別に示す。\n考えられる手術はどれか。2つ選べ。",
+    "choices": [
+      "骨移植術",
+      "小帯切除術",
+      "瘻孔閉鎖術",
+      "骨隆起除去術"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am050",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 50,
+    "question_text": "16歳の男子。交通事故で受傷し、救急車で搬送された。下顎骨骨折と診断され、全身麻酔下に観血的整復固定術を行うことになった。術中写真を別に示す。\n骨片の固定に用いるのはどれか。2つ選べ。",
+    "choices": [
+      "金属線",
+      "床副子",
+      "ミニプレート",
+      "バイトプレート"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am051",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 51,
+    "question_text": "26歳の女性。舌下面の異常を訴えて来院した。2か月前から舌下面の腫脹に気付き、病変の増大と縮小を繰り返しているという。口腔内写真を別に示す。腫脹を矢印で示す。\n考えられるのはどれか。",
+    "choices": [
+      "膿　瘍",
+      "血管腫",
+      "線維腫",
+      "粘液嚢胞"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am052",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 52,
+    "question_text": "胎生7週の顔面構造を図に示す。\n上顎突起はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am053",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 53,
+    "question_text": "下顎犬歯の移動を図に示す。\n移動様式はどれか。",
+    "choices": [
+      "挺　出",
+      "トルク",
+      "傾斜移動",
+      "歯体移動"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am054",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 54,
+    "question_text": "矯正歯科治療用器具の写真を別に示す。\n適切な用途はどれか。",
+    "choices": [
+      "結紮線の切断",
+      "トルクの付与",
+      "補助弾線の調整",
+      "アーチワイヤーの切断"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am055",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 55,
+    "question_text": "13歳女子。マルチブラケット装置を用いた矯正歯科治療の段階が終了した。本日から下顎歯列に使用する装置の写真を別に示す。\n装置の名称はどれか。",
+    "choices": [
+      "バイオネーター",
+      "犬歯間保定装置",
+      "トゥースポジショナー",
+      "ホーレータイプリテーナー"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am056",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 56,
+    "question_text": "Hellmanの歯齢ⅡC期の第一大臼歯の特徴はどれか。",
+    "choices": [
+      "咬耗が著しい。",
+      "う蝕感受性が低い。",
+      "咬合が安定している。",
+      "自浄作用が働きにくい。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am057",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 57,
+    "question_text": "8歳の女児。上顎左側中切歯の色調異常を訴えて来院した。萌出時から異常が認められ、歯磨きをしても変化はないという。歯の発育段階での異常と診断された。口腔内写真を別に示す。\n原因として考えられるのはどれか。",
+    "choices": [
+      "外胚葉異形成症",
+      "フッ化物の過剰摂取",
+      "エナメル質形成不全症",
+      "先行乳歯の根尖性歯周炎"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2016_dh_16_am058",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 58,
+    "question_text": "5歳の男児。前歯で食物が咬みにくいことを訴えて来院した。全身疾患は認められず、う蝕の治療は終了している。咬合時の口腔内写真を別に示す。\n咬合異常の原因として考えられるのはどれか。2つ選べ。",
+    "choices": [
+      "頬　杖",
+      "吸指癖",
+      "舌突出癖",
+      "歯ぎしり"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am059",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 59,
+    "question_text": "パーキンソン病の典型的な症状はどれか。2つ選べ。",
+    "choices": [
+      "出血しやすい。",
+      "手足が震える。",
+      "暴力的態度をとる。",
+      "筋肉の緊張が亢進する。"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2016_dh_16_am060",
+    "category": "臨床歯科医学",
+    "subcategory": "",
+    "exam_number": 60,
+    "question_text": "77歳の男性。脳梗塞発症後、口蓋に食渣が付着することを訴えている。この患者に装着した口腔内装置の写真（A、B）を別に示す。\n適応症はどれか。",
+    "choices": [
+      "舌挙上不全",
+      "口唇閉鎖不全",
+      "軟口蓋挙上不全",
+      "食道入口部開大不全"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]

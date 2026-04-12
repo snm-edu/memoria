@@ -1,0 +1,482 @@
+[
+  {
+    "question_id": "2018_dh_18_am001",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 1,
+    "question_text": "骨単位の模式図を示す。\n①で示すのはどれか。",
+    "choices": [
+      "骨小腔",
+      "骨小管",
+      "ハバース管",
+      "フォルクマン管"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am002",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 2,
+    "question_text": "人体の図を示す。\n矢印の部位にある骨はどれか。",
+    "choices": [
+      "寛　骨",
+      "脛　骨",
+      "橈　骨",
+      "腓　骨"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am003",
+    "category": "歯・口腔の構造と機能",
+    "subcategory": "",
+    "exam_number": 3,
+    "question_text": "頭蓋骨側面の写真を別に示す。\n関節結節はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am004",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 4,
+    "question_text": "舌下神経がつかさどるのはどれか。",
+    "choices": [
+      "舌の味覚",
+      "舌の触覚",
+      "舌の運動",
+      "舌下腺の分泌"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am005",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 5,
+    "question_text": "感覚と受容器の組合せで正しいのはどれか。",
+    "choices": [
+      "視　覚 -- 有毛細胞",
+      "痛　覚 -- 自由神経終末",
+      "聴　覚 -- ルフィニ小体",
+      "温　覚 -- マイスナー小体"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am006",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 6,
+    "question_text": "細胞膜の模式図を示す。\n正しいのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am007（不備問題採点除外）",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 7,
+    "question_text": "血漿と各臓器の間で起こるCa2+の移動を模式図に示す。\n活性型ビタミンD3が作用するのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am008",
+    "category": "人体の構造と機能",
+    "subcategory": "",
+    "exam_number": 8,
+    "question_text": "一次止血でみられるのはどれか。",
+    "choices": [
+      "血小板の粘着",
+      "フィブリンの出現",
+      "第Ⅻ因子の活性化",
+      "トロンビンの活性化"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am009",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 9,
+    "question_text": "異なる嚢胞の模式図を示す。\nBはどれか。",
+    "choices": [
+      "含歯性嚢胞",
+      "類表皮嚢胞",
+      "鼻口蓋管嚢胞",
+      "粘液嚢胞（溢出型）"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am010",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 10,
+    "question_text": "細胞死の過程を図に示す。\n①はどれか。",
+    "choices": [
+      "核の膨化",
+      "細胞の断片化",
+      "細胞膜の破裂",
+      "細胞小器官の消失"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am011",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 11,
+    "question_text": "針刺し事故で感染するのはどれか。",
+    "choices": [
+      "麻疹ウイルス",
+      "B型肝炎ウイルス",
+      "ヘルペスウイルス",
+      "インフルエンザウイルス"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am012",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 12,
+    "question_text": "Streptococcus mutansの産生する不溶性グルカンで正しいのはどれか。",
+    "choices": [
+      "フルクトースが連結している。",
+      "不溶性はα1-3結合の存在による。",
+      "グルコースを基質として合成する。",
+      "フルクトシルトランスフェラーゼで合成される。"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am013",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 13,
+    "question_text": "ABO式血液型検査で用いられる反応はどれか。",
+    "choices": [
+      "凝集反応",
+      "沈降反応",
+      "中和反応",
+      "補体結合反応"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am014",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 14,
+    "question_text": "高齢者の薬物療法において副作用の発現率が高い理由はどれか。",
+    "choices": [
+      "薬物排泄能の亢進",
+      "薬物代謝能の向上",
+      "血清アルブミン量の増加",
+      "服薬アドヒアランスの低下"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am015",
+    "category": "疾病の成り立ち及び回復過程の促進",
+    "subcategory": "",
+    "exam_number": 15,
+    "question_text": "抗菌薬を経口投与した場合の血中薬物濃度‐時間曲線を図に示す。曲線①の抗菌薬単独投与に対し、抗菌薬とMg2+含有制酸薬を併用すると曲線②のように変化した。\nこの抗菌薬はどれか。",
+    "choices": [
+      "アンピシリン（ペニシリン系）",
+      "オフロキサシン（ニューキノロン系）",
+      "クラリスロマイシン（マクロライド系）",
+      "ストレプトマイシン（アミノグリコシド系）"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am016",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 16,
+    "question_text": "唾液成分で歯質保護作用を持つのはどれか。",
+    "choices": [
+      "アミラーゼ",
+      "チオシアン塩",
+      "糖タンパク質",
+      "ペルオキシダーゼ"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am017",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 17,
+    "question_text": "ある歯磨剤に表示されている成分表の一部を示す。\nこの歯磨剤が表示できる効能はどれか。2つ選べ。",
+    "choices": [
+      "歯がしみるのを防ぐ",
+      "歯肉からの出血を防ぐ",
+      "歯垢の沈着の予防および除去",
+      "むし歯の発生および進行の予防"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am018",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 18,
+    "question_text": "0.1％フッ化ナトリウム溶液8mLで洗口した場合の口腔内残留フッ化物イオン量＜フッ素量＞はどれか。ただし、フッ化物イオンの口腔内残留率は10％とする。",
+    "choices": [
+      "0.36mg",
+      "0.45mg",
+      "0.72mg",
+      "0.90mg"
+    ],
+    "correct_answer": "A",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am019",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 19,
+    "question_text": "口臭症分類で高頻度にみられるのはどれか。2つ選べ。",
+    "choices": [
+      "生理的口臭",
+      "口臭恐怖症",
+      "全身由来の病的口臭",
+      "口腔由来の病的口臭"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am020",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 20,
+    "question_text": "ある集団の2時点でのう蝕状況を図に示す。\nう蝕発病を示すのはどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am021",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 21,
+    "question_text": "代表値に平均値を用いる患者情報はどれか。2つ選べ。",
+    "choices": [
+      "性　別",
+      "年　齢",
+      "DMF歯数",
+      "CPIコード"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am022",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 22,
+    "question_text": "1歳6か月児歯科健康診査の結果を表に示す。\nう蝕有病者率はどれか。",
+    "choices": [
+      "1％",
+      "3％",
+      "6％",
+      "26％"
+    ],
+    "correct_answer": "C",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am023",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 23,
+    "question_text": "ある死亡原因の年代別・年齢階級別死亡率を図に示す。\nこの死亡原因はどれか。",
+    "choices": [
+      "肺　炎",
+      "糖尿病",
+      "心疾患",
+      "悪性新生物"
+    ],
+    "correct_answer": "A",
+    "has_image": true,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am024",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 24,
+    "question_text": "感染症成立の3要因において宿主感受性に対する予防策はどれか。",
+    "choices": [
+      "隔　離",
+      "消　毒",
+      "検　疫",
+      "予防接種"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am025",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 25,
+    "question_text": "結核はどれか。",
+    "choices": [
+      "新興感染症",
+      "再興感染症",
+      "輸入感染症",
+      "日和見感染症"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am026",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 26,
+    "question_text": "学校病はどれか。2つ選べ。",
+    "choices": [
+      "う　歯",
+      "歯肉炎",
+      "結膜炎",
+      "インフルエンザ"
+    ],
+    "correct_answer": "C",
+    "has_image": false,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am027",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 27,
+    "question_text": "（　）に入るのはどれか。\n\n地域包括ケアシステムに必要な5つの視点とは、医療、介護、（　）、住まい、生活支援である。",
+    "choices": [
+      "年　金",
+      "予　防",
+      "福　祉",
+      "雇　用"
+    ],
+    "correct_answer": "B",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am028",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 28,
+    "question_text": "職業性疾病で作業要因によるのはどれか。",
+    "choices": [
+      "難　聴",
+      "熱中症",
+      "じん肺",
+      "腰痛症"
+    ],
+    "correct_answer": "D",
+    "has_image": false,
+    "is_multi_select": false
+  },
+  {
+    "question_id": "2018_dh_18_am029",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 29,
+    "question_text": "歯科衛生士法施行規則に基づく業務従事者届出事項はどれか。2つ選べ。",
+    "choices": [
+      "年　齢",
+      "本　籍",
+      "業務従事施設の管理者",
+      "歯科衛生士名簿の登録番号"
+    ],
+    "correct_answer": "D",
+    "has_image": true,
+    "is_multi_select": true
+  },
+  {
+    "question_id": "2018_dh_18_am030",
+    "category": "歯・口腔の健康と予防に関わる人間と社会の仕組み",
+    "subcategory": "",
+    "exam_number": 30,
+    "question_text": "保健医療従事者の就業先別割合のグラフを示す。\n歯科衛生士はどれか。",
+    "choices": [
+      "①",
+      "②",
+      "③",
+      "④"
+    ],
+    "correct_answer": "B",
+    "has_image": true,
+    "is_multi_select": false
+  }
+]
