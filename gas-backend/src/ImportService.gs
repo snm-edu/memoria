@@ -22,6 +22,11 @@ function onOpen() {
     .addItem('📥 DH問題を自動インポート', 'importDHQuestions')
     .addItem('📥 NRS問題を自動インポート', 'importNRSQuestions')
     .addSeparator()
+    .addItem('🔄 DH問題カテゴリを更新', 'updateDHCategories')
+    .addItem('🔄 CE問題カテゴリを更新', 'updateCECategories')
+    .addItem('🔄 CO問題カテゴリを更新', 'updateCOCategories')
+    .addItem('🔄 NRS問題カテゴリを更新', 'updateNRSCategories')
+    .addSeparator()
     .addItem('🔍 questions件数を確認', 'countQuestions')
     .addToUi();
 }
@@ -231,6 +236,129 @@ function countQuestions() {
     `合計: ${total}問\n\n学科別:\n${summary}`,
     SpreadsheetApp.getUi().ButtonSet.OK
   );
+}
+
+/**
+ * 既存問題のcategory/subcategory/subtopicを最新JSONで一括更新
+ * @param {string} department - 'clinical_eng' | 'orthoptist' | 'nursing' | 'dental_hyg'
+ * @param {string} label - 表示用学科名
+ */
+function updateCategoriesFromGitHub_(department, label) {
+  const ui = SpreadsheetApp.getUi();
+
+  ui.alert(
+    `${label} カテゴリ更新開始`,
+    `GitHub Pagesからデータを取得して既存問題のカテゴリを更新します...\nしばらくお待ちください。`,
+    ui.ButtonSet.OK
+  );
+
+  try {
+    const response = UrlFetchApp.fetch(QUESTIONS_JSON_URL, {
+      muteHttpExceptions: true,
+      headers: { 'Cache-Control': 'no-cache' }
+    });
+
+    if (response.getResponseCode() !== 200) {
+      ui.alert('取得エラー', `HTTP ${response.getResponseCode()}`, ui.ButtonSet.OK);
+      return;
+    }
+
+    const allQuestions = JSON.parse(response.getContentText());
+    const deptQuestions = allQuestions.filter(q => q.department === department);
+
+    // JSON側のlookup: question_id -> {category, subcategory, subtopic}
+    const jsonLookup = {};
+    deptQuestions.forEach(q => {
+      jsonLookup[String(q.question_id)] = {
+        category: q.category || '',
+        subcategory: q.subcategory || '',
+        subtopic: q.subtopic || '',
+      };
+    });
+
+    const sheet = getOrCreateSheet(CONFIG.SHEETS.QUESTIONS);
+    const lastRow = sheet.getLastRow();
+    if (lastRow < 2) {
+      ui.alert('データなし', 'questionsシートが空です。', ui.ButtonSet.OK);
+      return;
+    }
+
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    const colIdx = {};
+    headers.forEach((h, i) => { colIdx[h] = i + 1; }); // 1-indexed
+
+    // 必要なカラムの列番号
+    const idCol = colIdx['question_id'];
+    const deptCol = colIdx['department'];
+    const catCol = colIdx['category'];
+    const subCol = colIdx['subcategory'];
+    const topCol = colIdx['subtopic'];
+
+    if (!idCol || !deptCol || !catCol || !subCol || !topCol) {
+      ui.alert('エラー', '必要なカラムが見つかりません。', ui.ButtonSet.OK);
+      return;
+    }
+
+    // 全行読み込み
+    const allData = sheet.getRange(2, 1, lastRow - 1, headers.length).getValues();
+
+    // 対象行を特定して更新
+    let updatedCount = 0;
+    const updates = []; // {row, cat, sub, top}
+
+    allData.forEach((row, i) => {
+      const rowDept = String(row[deptCol - 1] || '');
+      if (rowDept !== department) return;
+
+      const qid = String(row[idCol - 1] || '');
+      const newData = jsonLookup[qid];
+      if (!newData) return;
+
+      const sheetRow = i + 2; // 1-indexed, +1 for header
+      updates.push({ sheetRow, newData });
+    });
+
+    // バッチ更新（1行ずつ）
+    const BATCH = 100;
+    for (let i = 0; i < updates.length; i++) {
+      const { sheetRow, newData } = updates[i];
+      sheet.getRange(sheetRow, catCol).setValue(newData.category);
+      sheet.getRange(sheetRow, subCol).setValue(newData.subcategory);
+      sheet.getRange(sheetRow, topCol).setValue(newData.subtopic);
+      updatedCount++;
+      if (i % BATCH === BATCH - 1) Utilities.sleep(200);
+    }
+
+    ui.alert(
+      '更新完了 ✅',
+      `${label}の ${updatedCount}問 のカテゴリを更新しました。`,
+      ui.ButtonSet.OK
+    );
+
+  } catch (e) {
+    console.error('カテゴリ更新エラー:', e);
+    ui.alert('エラー', e.message, ui.ButtonSet.OK);
+  }
+}
+
+/** DH問題のカテゴリを更新 */
+function updateDHCategories() {
+  updateCategoriesFromGitHub_('dental_hyg', 'DH（歯科衛生士）');
+}
+
+/** CE問題のカテゴリを更新 */
+function updateCECategories() {
+  updateCategoriesFromGitHub_('clinical_eng', 'CE（臨床工学技士）');
+}
+
+/** CO問題のカテゴリを更新 */
+function updateCOCategories() {
+  updateCategoriesFromGitHub_('orthoptist', 'CO（視能訓練士）');
+}
+
+/** NRS問題のカテゴリを更新 */
+function updateNRSCategories() {
+  updateCategoriesFromGitHub_('nursing', 'NRS（看護師）');
 }
 
 /**
