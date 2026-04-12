@@ -88,6 +88,7 @@ function doPost(e) {
           correctAnswer: body.correctAnswer,
           questionText: body.questionText,
           choices: body.choices,
+          department: body.department,
         }));
 
       case 'generateSimilar':
@@ -96,7 +97,11 @@ function doPost(e) {
           errorType: body.errorType,
           originalQuestion: body.originalQuestion,
           analysis: body.analysis,
+          department: body.department,
         }));
+
+      case 'refreshDashboard':
+        return jsonResponse(DashboardService.refreshStudent(body.studentId));
 
       default:
         return jsonResponse({ error: 'Unknown action: ' + action }, 400);

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
+import { refreshDashboard } from '../../services/api';
 
 const GAS_API_URL = import.meta.env.VITE_GAS_API_URL || '';
 
@@ -39,6 +40,7 @@ export function AiDashboard() {
   const profile = state.profile;
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -70,6 +72,25 @@ export function AiDashboard() {
     fetchDashboard();
   }, [profile]);
 
+  // オンデマンドAI分析更新
+  const handleRefresh = useCallback(async () => {
+    if (!profile || refreshing) return;
+    setRefreshing(true);
+    setError('');
+    try {
+      const res = await refreshDashboard(profile.studentId);
+      if (res.success && res.data) {
+        setData(res.data as unknown as DashboardData);
+      } else if (res.error) {
+        setError(res.error);
+      }
+    } catch {
+      setError('AI分析の更新に失敗しました');
+    } finally {
+      setRefreshing(false);
+    }
+  }, [profile, refreshing]);
+
   function getBarColor(rate: number): string {
     if (rate < 40) return 'bg-red-400';
     if (rate < 60) return 'bg-amber-400';
@@ -79,14 +100,27 @@ export function AiDashboard() {
 
   return (
     <div className="min-h-screen p-4 pb-20">
-      <header className="flex items-center gap-3 mb-6">
+      <header className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'home' })}
+            className="text-slate-400"
+          >
+            ← 戻る
+          </button>
+          <h2 className="text-xl font-bold">🤖 AI分析</h2>
+        </div>
         <button
-          onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'home' })}
-          className="text-slate-400"
+          onClick={handleRefresh}
+          disabled={refreshing || !profile}
+          className={`px-3 py-1.5 rounded-lg text-sm font-bold transition-all
+            ${refreshing
+              ? 'bg-slate-100 text-slate-400 cursor-wait'
+              : 'bg-gradient-to-r from-blue-500 to-purple-500 text-white active:scale-95 shadow-sm'
+            }`}
         >
-          ← 戻る
+          {refreshing ? '⏳ 分析中...' : '🔄 AI分析'}
         </button>
-        <h2 className="text-xl font-bold">🤖 AI分析</h2>
       </header>
 
       {loading && (
@@ -98,10 +132,20 @@ export function AiDashboard() {
       {error && (
         <div className="card text-center py-8">
           <p className="text-slate-400 mb-2">{error}</p>
-          <p className="text-xs text-slate-300">
-            分析データは毎日午前4時に自動更新されます。<br />
-            問題を解いてデータを蓄積しましょう。
+          <p className="text-xs text-slate-300 mb-4">
+            問題を解いてから「AI分析」ボタンを押してください。
           </p>
+          <button
+            onClick={handleRefresh}
+            disabled={refreshing || !profile}
+            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all
+              ${refreshing
+                ? 'bg-slate-100 text-slate-400'
+                : 'bg-gradient-to-r from-blue-500 to-purple-500 text-white active:scale-95'
+              }`}
+          >
+            {refreshing ? '⏳ 分析中...' : '🔄 AI分析を実行'}
+          </button>
         </div>
       )}
 
@@ -251,7 +295,8 @@ export function AiDashboard() {
 
           {/* 注記 */}
           <p className="text-xs text-slate-300 text-center">
-            ※ 分析データは毎日午前4時に自動更新されます
+            ※ 分析データは毎日午前4時に自動更新されます<br />
+            「AI分析」ボタンで最新データに即時更新もできます
           </p>
         </div>
       )}

@@ -118,6 +118,18 @@ export async function updateStudentNumber(body: {
   return apiPost({ action: 'updateStudentNumber', ...body });
 }
 
+export async function refreshDashboard(studentId: string): Promise<ApiResponse<{
+  studentId: string;
+  totalQuestions: number;
+  correctRate: number;
+  weakCategories: { category: string; accuracy: number }[];
+  strongCategories: { category: string; accuracy: number }[];
+  aiComment: string;
+  updatedAt: string;
+}>> {
+  return apiPost({ action: 'refreshDashboard', studentId });
+}
+
 export async function ping(): Promise<boolean> {
   const res = await apiGet<{ status: string }>({ action: 'ping' });
   return res.success === true;

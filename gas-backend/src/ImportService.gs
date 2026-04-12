@@ -7,7 +7,7 @@
  */
 
 // GitHub Pages の questions.json URL
-const QUESTIONS_JSON_URL = 'https://snm-edu.github.io/memoria/data/questions.json';
+const QUESTIONS_JSON_URL = 'https://memoria-flame.vercel.app/data/questions.json';
 
 /**
  * スプレッドシートを開いたときにカスタムメニューを追加

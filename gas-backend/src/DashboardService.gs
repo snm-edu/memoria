@@ -535,6 +535,105 @@ const DashboardService = {
   },
 
   /**
+   * 特定学生のダッシュボードをオンデマンド更新（PWAのボタンから呼ばれる）
+   * 1名分だけ再計算＋AIコメント再生成
+   */
+  refreshStudent(studentId) {
+    if (!studentId) return { error: 'studentId is required' };
+
+    var ss = getSpreadsheet();
+    var allLogs = this.collectAllLogs(ss);
+    var studentLogs = allLogs.filter(function(row) { return row[1] === studentId; });
+
+    if (studentLogs.length === 0) {
+      return { error: '学習データがありません。問題を解いてからAI分析を実行してください。' };
+    }
+
+    var categoryMap = this.getCategoryMap(ss);
+    var analysis = this.analyzeStudent(studentLogs, categoryMap);
+
+    // 常にAIコメントを新規生成（オンデマンドなので差分チェックしない）
+    var aiComment = '';
+    try {
+      aiComment = this.generateAiComment(analysis);
+    } catch (e) {
+      aiComment = '分析コメント生成中にエラーが発生しました';
+      Logger.log('Gemini API error for ' + studentId + ': ' + e);
+    }
+
+    var nameMap = this.getStudentNameMap();
+    var studentName = nameMap[analysis.studentNumber] || '';
+
+    // ai_dashboardシートに書き込み
+    var dashboard = ss.getSheetByName(CONFIG.SHEETS.AI_DASHBOARD);
+    var dashHeaders = [
+      'student_id', 'student_number', 'student_name', 'department', 'grade',
+      'total_questions', 'correct_rate', 'streak_days',
+      'weak_categories', 'strong_categories', 'weekly_trend',
+      'error_patterns', 'ai_comment', 'updated_at'
+    ];
+    if (!dashboard) {
+      dashboard = ss.insertSheet(CONFIG.SHEETS.AI_DASHBOARD);
+      dashboard.getRange(1, 1, 1, dashHeaders.length).setValues([dashHeaders]);
+      dashboard.getRange(1, 1, 1, dashHeaders.length).setFontWeight('bold');
+    }
+
+    var row = [
+      studentId,
+      analysis.studentNumber,
+      studentName,
+      analysis.department,
+      analysis.grade,
+      analysis.totalQuestions,
+      analysis.correctRate,
+      analysis.streakDays,
+      JSON.stringify(analysis.weakCategories),
+      JSON.stringify(analysis.strongCategories),
+      JSON.stringify(analysis.weeklyTrend),
+      JSON.stringify(analysis.errorPatterns),
+      aiComment,
+      new Date().toISOString()
+    ];
+
+    // 既存行を探して更新 or 追加
+    var data = dashboard.getDataRange().getValues();
+    var found = false;
+    for (var i = 1; i < data.length; i++) {
+      if (data[i][0] === studentId) {
+        dashboard.getRange(i + 1, 1, 1, 14).setValues([row]);
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      dashboard.appendRow(row);
+    }
+
+    // 取得したデータをそのまま返す
+    function safeParse(val) {
+      if (!val) return [];
+      try { return JSON.parse(val); } catch (e) { return []; }
+    }
+
+    return {
+      studentId: studentId,
+      studentNumber: analysis.studentNumber,
+      studentName: studentName,
+      department: analysis.department,
+      grade: analysis.grade,
+      totalQuestions: analysis.totalQuestions,
+      correctRate: analysis.correctRate,
+      streakDays: analysis.streakDays,
+      weakCategories: analysis.weakCategories,
+      strongCategories: analysis.strongCategories,
+      weeklyTrend: analysis.weeklyTrend,
+      errorPatterns: analysis.errorPatterns,
+      aiComment: aiComment,
+      updatedAt: new Date().toISOString(),
+    };
+  },
+
+  /**
    * 特定学生のダッシュボードデータを取得（API用）
    */
   getStudentDashboard(studentId) {
