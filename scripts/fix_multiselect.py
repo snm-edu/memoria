@@ -2,7 +2,8 @@
 """複数選択問題の正答を元xlsxから再抽出して修正する"""
 import openpyxl, re, os, json, glob
 
-BASE = '/Users/ny/Documents/Antigravity/メモリア（Memoria）'
+# スクリプトの場所からプロジェクトルートを動的に解決（フォルダ移動に対応）
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def extract_correct_answers(data_dir):
     fixes = {}
