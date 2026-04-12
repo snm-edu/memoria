@@ -332,15 +332,18 @@ export function QuizScreen() {
             ※ 2つ選んでください
           </p>
         )}
-        {/* 問題画像 */}
+        {/* 問題画像（複数画像はセミコロン区切り） */}
         {q.has_image && q.image_url && (
-          <div className="mt-3">
-            <img
-              src={`${import.meta.env.BASE_URL}${q.image_url}`}
-              alt="問題の図"
-              className="w-full rounded-lg border border-slate-200"
-              loading="lazy"
-            />
+          <div className="mt-3 space-y-2">
+            {q.image_url.split(';').map((url, idx) => (
+              <img
+                key={idx}
+                src={`${import.meta.env.BASE_URL}${url.trim()}`}
+                alt={idx === 0 ? '問題の図' : `問題の図${idx + 1}`}
+                className="w-full rounded-lg border border-slate-200"
+                loading="lazy"
+              />
+            ))}
           </div>
         )}
       </div>
