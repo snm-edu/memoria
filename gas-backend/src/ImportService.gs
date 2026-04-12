@@ -29,11 +29,19 @@ function onOpen() {
     .addItem('DH（歯科衛生士）',     'updateDHCategories')
     .addItem('NRS（看護師）',        'updateNRSCategories');
 
+  const backupMenu = ui.createMenu('🔒 バックアップ')
+    .addItem('今すぐバックアップ（スプレッドシートコピー）', 'backupNow')
+    .addItem('questionsをJSONでエクスポート',                'exportQuestionsJson')
+    .addSeparator()
+    .addItem('週次自動バックアップを設定（毎週日曜2時）',   'setupWeeklyBackupTrigger')
+    .addItem('週次自動バックアップを解除',                   'deleteWeeklyBackupTrigger');
+
   ui.createMenu('メモリア管理')
     .addItem('🤖 AIダッシュボード更新', 'updateAllDashboards')
     .addSeparator()
     .addSubMenu(importMenu)
     .addSubMenu(updateMenu)
+    .addSubMenu(backupMenu)
     .addSeparator()
     .addItem('🔍 questions件数を確認', 'countQuestions')
     .addToUi();
