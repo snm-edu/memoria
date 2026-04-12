@@ -491,7 +491,7 @@ const DashboardService = {
    */
   generateAiComment(analysis) {
     if (!CONFIG.GEMINI_API_KEY) return '（APIキー未設定）';
-    if (analysis.totalQuestions < 10) return 'まだ回答数が少ないです。もう少し問題を解いてから分析しましょう。';
+    if (analysis.totalQuestions < 5) return 'まだ回答数が少ないです。もう少し問題を解いてから分析しましょう。';
 
     var weakList = '';
     for (var i = 0; i < analysis.weakCategories.length; i++) {
@@ -543,7 +543,7 @@ const DashboardService = {
 
     var ss = getSpreadsheet();
     var allLogs = this.collectAllLogs(ss);
-    var studentLogs = allLogs.filter(function(row) { return row[1] === studentId; });
+    var studentLogs = allLogs.filter(function(row) { return row.studentId === studentId; });
 
     if (studentLogs.length === 0) {
       return { error: '学習データがありません。問題を解いてからAI分析を実行してください。' };
