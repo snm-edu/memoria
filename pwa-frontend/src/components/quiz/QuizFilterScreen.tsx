@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
+import type { QuizFilters } from '../../hooks/useQuiz';
 
-export interface QuizFilters {
-  category?: string;
-  year?: number;
-  sourceFilter?: 'official' | 'mock' | 'all'; // 過去問 / 模擬試験 / すべて
-}
+export type { QuizFilters };
 
 interface Props {
   onStart: (filters: QuizFilters) => void;
