@@ -4,7 +4,7 @@
 // === 問題 ===
 export interface Question {
   question_id: string;       // "NRS-2014-001" or "2014_nrs_14_pm001"
-  department: Department;
+  department: string;
   exam_year: number;
   exam_number: number;       // 問題番号
   category: string;          // 大分類（例: "必修問題", "人体の構造と機能"）
@@ -36,7 +36,7 @@ export interface CardState {
 export interface AnswerSubmission {
   log_id?: string;
   student_id: string;
-  department: Department;
+  department: string;
   grade: number;            // 1/2/3
   question_id: string;
   selected_answer: string[];
@@ -51,7 +51,7 @@ export interface AnswerSubmission {
 export interface StudentProfile {
   id?: number;
   student_id: string;       // crypto.randomUUID()
-  department: Department;
+  department: string;
   grade: number;
   created_at: string;
 }
@@ -82,7 +82,7 @@ export interface GeneratedQuestion {
 // === API リクエスト/レスポンス ===
 export interface GetQuestionsParams {
   action: 'getQuestions';
-  dept?: Department;
+  dept?: string;
   category?: string;
   limit?: number;
   offset?: number;
@@ -99,7 +99,7 @@ export interface SubmitAnswerParams {
   questionId: string;
   answer: string[];
   responseTime: number;
-  department: Department;
+  department: string;
   grade: number;
 }
 
