@@ -7,28 +7,18 @@ import { AnalysisCard } from '../ai/AnalysisCard';
 import { QuizFilterScreen } from './QuizFilterScreen';
 import { highlightKeywords } from '../../services/memoriaStep';
 import type { BgmTrack } from '../../services/bgm';
+import DOMPurify from 'dompurify';
 
-/** 安全なHTMLタグのみレンダリング（sub, sup, br, strong, span+style） */
+// DOMPurify は style 属性中の expression() / javascript: 等の危険な CSS を自動除去する
+const SANITIZE_CONFIG = {
+  ALLOWED_TAGS: ['sub', 'sup', 'br', 'strong', 'span'],
+  ALLOWED_ATTR: ['style'],
+} satisfies Parameters<typeof DOMPurify.sanitize>[1];
+
+/** 安全なHTMLタグのみレンダリング（DOMPurify によるサニタイズ） */
 function SafeHtml({ text, className }: { text: string; className?: string }) {
-  // highlightKeywordsが<strong>やstyle付き<span>を挿入するため許可タグを拡張
-  const ALLOWED = /<\/?(sub|sup|br|strong|\/strong)\s*\/?>|<span\s+style="[^"]*">|<\/span>/gi;
-  // 許可タグを一時退避 → 全体エスケープ → 復元
-  const tokens: string[] = [];
-  const escaped = text
-    .replace(ALLOWED, (m) => {
-      tokens.push(m);
-      return `\x00${tokens.length - 1}\x00`;
-    })
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/\x00(\d+)\x00/g, (_, i) => tokens[Number(i)]!);
-  return (
-    <span
-      className={className}
-      dangerouslySetInnerHTML={{ __html: escaped }}
-    />
-  );
+  const clean = DOMPurify.sanitize(text, SANITIZE_CONFIG);
+  return <span className={className} dangerouslySetInnerHTML={{ __html: clean }} />;
 }
 
 /** メモリアステップのレベルバッジカラー */

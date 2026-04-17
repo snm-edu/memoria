@@ -12,8 +12,10 @@
     "validate:types": "tsc --noEmit"
   },
   "dependencies": {
+    "@types/dompurify": "^3.0.5",
     "dexie": "^4.0.0",
     "dexie-react-hooks": "^1.1.7",
+    "dompurify": "^3.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
