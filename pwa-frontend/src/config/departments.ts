@@ -3,16 +3,19 @@
 
 export type ColorSet = { gradient: string; border: string; color: string };
 
+// Department 型を先に定義するため、REGISTRY_DATA の id リテラルをここで列挙
+export type Department = 'nursing' | 'orthoptist' | 'dental_hyg' | 'clinical_eng';
+
 export interface DepartmentEntry {
-  id: string;
-  label: string;
-  shortLabel: string;
-  enabled: boolean;
-  color: ColorSet;
-  imagePrefix: string;
-  dataVersion: number;
-  grades: readonly number[];
-  orderIndex: number;
+  readonly id: Department;
+  readonly label: string;
+  readonly shortLabel: string;
+  readonly enabled: boolean;
+  readonly color: Readonly<ColorSet>;
+  readonly imagePrefix: string;
+  readonly dataVersion: number;
+  readonly grades: readonly number[];
+  readonly orderIndex: number;
 }
 
 // ラベルは CLAUDE.md の学校公式学科名に準拠
@@ -63,20 +66,23 @@ const REGISTRY_DATA = [
   },
 ] as const;
 
-export type Department = typeof REGISTRY_DATA[number]['id'];
-
-export const DEPARTMENT_REGISTRY: readonly DepartmentEntry[] = REGISTRY_DATA as unknown as readonly DepartmentEntry[];
+export const DEPARTMENT_REGISTRY: readonly DepartmentEntry[] = REGISTRY_DATA;
 
 export const DEPARTMENT_LABELS: Record<Department, string> = Object.fromEntries(
   REGISTRY_DATA.map(d => [d.id, d.label])
 ) as Record<Department, string>;
 
-export const DEPARTMENTS: Department[] = (REGISTRY_DATA as readonly { id: Department; enabled: boolean; orderIndex: number }[])
-  .filter(d => d.enabled)
+// 全学科（enabled 問わず）、orderIndex 順
+export const DEPARTMENTS: Department[] = REGISTRY_DATA
+  .slice()
   .sort((a, b) => a.orderIndex - b.orderIndex)
   .map(d => d.id);
 
-export const AVAILABLE_DEPARTMENTS: Department[] = DEPARTMENTS;
+// enabled === true のみ、orderIndex 順
+export const AVAILABLE_DEPARTMENTS: Department[] = REGISTRY_DATA
+  .filter(d => d.enabled)
+  .sort((a, b) => a.orderIndex - b.orderIndex)
+  .map(d => d.id);
 
 export const DEPT_STYLES: Record<Department, ColorSet> = Object.fromEntries(
   REGISTRY_DATA.map(d => [d.id, d.color])
@@ -87,7 +93,7 @@ export const GRADES = [1, 2, 3] as const;
 export function getDepartment(id: Department): DepartmentEntry {
   const entry = REGISTRY_DATA.find(d => d.id === id);
   if (!entry) throw new Error(`Unknown department: ${id}`);
-  return entry as unknown as DepartmentEntry;
+  return entry;
 }
 
 export function getLabel(id: Department): string {
