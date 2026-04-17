@@ -1,6 +1,7 @@
 import { db } from './db';
 import type { Question } from '../types';
 import type { Department } from '../config/departments';
+import { QuestionSchema } from '../schemas/question';
 
 // manifest のスキーマ
 interface ManifestDept {
@@ -88,10 +89,21 @@ export async function loadQuestionsForDepartment(dept: Department): Promise<numb
       return existingCount;
     }
 
-    const questions = (rawData as Question[]).filter(
-      (q) => q.correct_answer && q.correct_answer.length > 0
-        && !q.question_id.includes('不備問題')
-    );
+    const questions: Question[] = [];
+    let invalidCount = 0;
+    for (const item of rawData) {
+      const parsed = QuestionSchema.safeParse(item);
+      if (!parsed.success) {
+        invalidCount++;
+        continue;
+      }
+      const q = parsed.data;
+      if (!q.correct_answer.length || q.question_id.includes('不備問題')) continue;
+      questions.push(q as Question);
+    }
+    if (invalidCount > 0) {
+      console.warn(`${dept}: ${invalidCount}件のレコードがスキーマ検証に失敗`);
+    }
 
     // fetch 成功後にトランザクション内で delete → bulkPut をアトミックに実行
     await db.transaction('rw', db.questionCache, async () => {
