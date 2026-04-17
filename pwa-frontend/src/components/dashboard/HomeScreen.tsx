@@ -102,12 +102,12 @@ export function HomeScreen() {
   }
 
   // 学年の出題範囲にある問題数を計算
-  const gradeCategories = profile ? getCategoriesForGrade(profile.grade, profile.department) : [];
   const gradeQuestionCount = useLiveQuery(async () => {
     if (!profile) return 0;
+    const gradeCategories = await getCategoriesForGrade(profile.grade, profile.department);
     const all = await db.questionCache.toArray();
     return all.filter(q => q.department === profile.department && gradeCategories.includes(q.category)).length;
-  }, [profile?.grade], 0);
+  }, [profile?.grade, profile?.department], 0);
 
   // ゲーミフィケーションデータ取得
   const gamification = useLiveQuery(async () => {

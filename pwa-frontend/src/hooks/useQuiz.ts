@@ -157,6 +157,14 @@ export function useQuiz() {
     // プロフィールの学科でフィルタ（必須）
     const profileDept = appState.profile?.department;
 
+    // curriculum を事前ロード（matchesFilter で同期使用するため）
+    let gradeCategoriesCache: string[] | null = null;
+    let gradeDifficultyCache: number | null = null;
+    if (filters?.gradeLimit && profileDept) {
+      gradeCategoriesCache = await getCategoriesForGrade(filters.gradeLimit, profileDept);
+      gradeDifficultyCache = await getMaxDifficultyForGrade(filters.gradeLimit, profileDept);
+    }
+
     // フィルター条件に合致するかチェック
     const matchesFilter = (q: Question): boolean => {
       if (!hasValidChoices(q)) return false; // 選択肢が画像のみの問題を除外
@@ -164,12 +172,10 @@ export function useQuiz() {
       if (filters?.category && q.category !== filters.category) return false;
       if (filters?.subcategory && q.subcategory !== filters.subcategory) return false;
       if (filters?.year && q.exam_year !== filters.year) return false;
-      // 学年別カリキュラムフィルター
+      // 学年別カリキュラムフィルター（事前ロード済みキャッシュを同期で使用）
       if (filters?.gradeLimit) {
-        const allowedCategories = getCategoriesForGrade(filters.gradeLimit, profileDept);
-        if (!allowedCategories.includes(q.category)) return false;
-        const maxDifficulty = getMaxDifficultyForGrade(filters.gradeLimit);
-        if (q.difficulty > maxDifficulty) return false;
+        if (gradeCategoriesCache && !gradeCategoriesCache.includes(q.category)) return false;
+        if (gradeDifficultyCache !== null && q.difficulty > gradeDifficultyCache) return false;
       }
       return true;
     };
@@ -390,6 +396,7 @@ export function useQuiz() {
           questionText: current.question_text,
           choices: current.choices,
           department: appState.profile?.department,
+          studyHour: new Date().getHours(),
         });
         if (res.success && res.data) {
           setState((s) => ({
