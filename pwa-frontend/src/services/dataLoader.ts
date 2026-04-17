@@ -24,6 +24,9 @@ const VERSION_KEY_PREFIX = 'memoria-data-version-'; // + dept
 // manifest をキャッシュ（セッション中に一度だけ fetch）
 let manifestCache: Manifest | null = null;
 
+// 並列実行ガード: 同一学科に対して同時に複数の ensureCacheFor が走るのを防ぐ
+const inflight = new Map<string, Promise<number>>();
+
 export async function loadManifest(): Promise<Manifest | null> {
   if (manifestCache) return manifestCache;
   try {
@@ -60,10 +63,11 @@ export async function loadQuestionsForDepartment(dept: Department): Promise<numb
 
   if (needsReload) {
     console.log(`データ更新: ${dept} v${storedVersion ?? '0'} → v${deptMeta.version}`);
-    await db.questionCache.where('department').equals(dept).delete();
   }
 
+  // delete 前に existingCount を取得（fetch 失敗時のフォールバック用）
   const existingCount = await db.questionCache.where('department').equals(dept).count();
+
   if (existingCount > 0 && !needsReload) {
     return existingCount;
   }
@@ -73,16 +77,30 @@ export async function loadQuestionsForDepartment(dept: Department): Promise<numb
     const res = await fetch(url);
     if (!res.ok) {
       console.error(`${dept} 問題データ取得失敗:`, res.status);
-      return existingCount; // 失敗時は既存データを使う
+      return existingCount; // fetch 失敗: 既存データ維持
     }
 
     const rawData: unknown[] = await res.json();
+
+    // Array バリデーション
+    if (!Array.isArray(rawData)) {
+      console.error(`${dept}: 不正なデータ形式`);
+      return existingCount;
+    }
+
     const questions = (rawData as Question[]).filter(
       (q) => q.correct_answer && q.correct_answer.length > 0
         && !q.question_id.includes('不備問題')
     );
 
-    await db.questionCache.bulkPut(questions);
+    // fetch 成功後にトランザクション内で delete → bulkPut をアトミックに実行
+    await db.transaction('rw', db.questionCache, async () => {
+      if (needsReload) {
+        await db.questionCache.where('department').equals(dept).delete();
+      }
+      await db.questionCache.bulkPut(questions);
+    });
+
     localStorage.setItem(VERSION_KEY_PREFIX + dept, String(deptMeta.version));
     console.log(`${dept}: ${questions.length}問ロード (v${deptMeta.version})`);
     return questions.length;
@@ -93,7 +111,13 @@ export async function loadQuestionsForDepartment(dept: Department): Promise<numb
 }
 
 export async function ensureCacheFor(dept: Department): Promise<number> {
-  return loadQuestionsForDepartment(dept);
+  const existing = inflight.get(dept);
+  if (existing) return existing;
+  const promise = loadQuestionsForDepartment(dept).finally(() => {
+    inflight.delete(dept);
+  });
+  inflight.set(dept, promise);
+  return promise;
 }
 
 export async function reloadDepartment(dept: Department): Promise<number> {
