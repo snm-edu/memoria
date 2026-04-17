@@ -7,7 +7,7 @@ export { DEPARTMENT_LABELS, DEPARTMENTS, AVAILABLE_DEPARTMENTS, DEPT_STYLES, GRA
 export interface Question {
   question_id: string;
   department: Department;
-  exam_year: number;
+  exam_year: number | string; // 通常は number（年度）、模擬試験は "mock_YYYY" 形式の string
   exam_number: number;
   category: string;
   subcategory: string;

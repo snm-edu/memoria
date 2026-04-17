@@ -19,6 +19,7 @@ export interface QuizFilters {
   subcategory?: string; // サブカテゴリで更に絞り込み
   year?: number;
   gradeLimit?: number; // 学年に応じた出題範囲制限
+  sourceFilter?: 'official' | 'mock' | 'all'; // 過去問 / 模擬試験 / すべて
 }
 
 interface QuizState {
@@ -172,6 +173,12 @@ export function useQuiz() {
       if (filters?.category && q.category !== filters.category) return false;
       if (filters?.subcategory && q.subcategory !== filters.subcategory) return false;
       if (filters?.year && q.exam_year !== filters.year) return false;
+      // sourceFilter: 過去問 / 模擬試験 フィルター
+      if (filters?.sourceFilter && filters.sourceFilter !== 'all') {
+        const isMock = typeof q.exam_year === 'string' && q.exam_year.startsWith('mock_');
+        if (filters.sourceFilter === 'official' && isMock) return false;
+        if (filters.sourceFilter === 'mock' && !isMock) return false;
+      }
       // 学年別カリキュラムフィルター（事前ロード済みキャッシュを同期で使用）
       if (filters?.gradeLimit) {
         if (gradeCategoriesCache !== null && !gradeCategoriesCache.includes(q.category)) return false;
