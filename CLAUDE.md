@@ -418,3 +418,29 @@ npm run validate:types  # TypeScript 型チェック（tsc --noEmit）
 - 看護国試は5択問題あり（choice_eカラムで対応済み）
 - 学科ごとに国家試験の形式が異なる場合がある
   → department別にUI分岐可能な設計にしておく
+
+## セキュリティ未対応事項（GAS バックエンド）
+
+2026-04-18 のセキュリティ監査でフロントエンド側（XSS/CSP/Zod/npm audit/DebugInfo）は対応済み。
+GAS バックエンド側は以下が未対応。GAS の編集・デプロイ権限を持つタイミングで対応すること。
+
+### 優先度: High
+
+1. **studentId の認証欠如**（`gas-backend/src/AnswerService.gs:92-135`）
+   - 任意の UUID を偽装して他学生の回答ログを上書きできる
+   - **対応方針**: `updateStudentNumber` で `studentId` と `oldStudentNumber` の両方が同一行に紐づくことを検証してから更新する（現在は `||` 条件で片方一致なら全更新）
+   - 中期: Google Sign-in（@snm.ac.jp ドメイン限定）導入
+
+2. **Gemini プロンプトインジェクション**（`gas-backend/src/GeminiService.gs`）
+   - AI 生成テキストが次の Gemini 呼び出しに混入する経路がある
+   - **対応方針**: プロンプトにデリミタ（`<<<USER_INPUT>>>...<<<END>>>`）を追加し、`originalQuestion` は Sheets から lookup する（フロントから受け取るテキストを使わない）
+
+### 優先度: Medium
+
+3. **GAS 入力バリデーション不足**（`gas-backend/src/Code.gs:14-113`）
+   - `studentId` の UUID 形式検証なし、文字列長上限なし
+   - **対応方針**: UUID バリデーション（`/^[0-9a-f-]{36}$/i`）と文字列長上限を追加
+
+4. **Gemini レート制限の未実装**（`gas-backend/src/Config.gs:20` の定数が未使用）
+   - 1 studentId で Gemini を無制限に呼び出してクレジット枯渇攻撃が可能
+   - **対応方針**: `PropertiesService` に `gemini_calls_{studentId}_{YYYYMMDD}` を保存してカウント管理
