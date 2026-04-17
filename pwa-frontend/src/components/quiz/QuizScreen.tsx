@@ -9,15 +9,23 @@ import { highlightKeywords } from '../../services/memoriaStep';
 import type { BgmTrack } from '../../services/bgm';
 import DOMPurify from 'dompurify';
 
-// DOMPurify は style 属性中の expression() / javascript: 等の危険な CSS を自動除去する
+// 通常テキスト用（選択肢・解説など）: style 属性を禁止して CSS Injection リスクを排除
 const SANITIZE_CONFIG = {
+  ALLOWED_TAGS: ['sub', 'sup', 'br', 'strong', 'span'],
+  ALLOWED_ATTR: [],
+} satisfies Parameters<typeof DOMPurify.sanitize>[1];
+
+// 強調・穴埋め用（highlightKeywords / fillInBlank）: style 属性を許可
+// DOMPurify は expression() / javascript: 等の危険な CSS 値を自動除去する
+const SANITIZE_CONFIG_HIGHLIGHT = {
   ALLOWED_TAGS: ['sub', 'sup', 'br', 'strong', 'span'],
   ALLOWED_ATTR: ['style'],
 } satisfies Parameters<typeof DOMPurify.sanitize>[1];
 
-/** 安全なHTMLタグのみレンダリング（DOMPurify によるサニタイズ） */
-function SafeHtml({ text, className }: { text: string; className?: string }) {
-  const clean = DOMPurify.sanitize(text, SANITIZE_CONFIG);
+/** 安全なHTMLタグのみレンダリング（DOMPurify によるサニタイズ）
+ *  allowStyle: highlightKeywords や fillInBlank の style 属性が必要な箇所のみ true */
+function SafeHtml({ text, className, allowStyle }: { text: string; className?: string; allowStyle?: boolean }) {
+  const clean = DOMPurify.sanitize(text, allowStyle ? SANITIZE_CONFIG_HIGHLIGHT : SANITIZE_CONFIG);
   return <span className={className} dangerouslySetInnerHTML={{ __html: clean }} />;
 }
 
@@ -316,6 +324,7 @@ export function QuizScreen() {
         <SafeHtml
           text={displayQuestionText}
           className="text-base leading-relaxed whitespace-pre-wrap block"
+          allowStyle
         />
         {isMultiSelect && (
           <p className="text-sm text-primary-500 font-bold mt-2">
@@ -413,6 +422,7 @@ export function QuizScreen() {
                 '<span style="background-color: #fef08a; padding: 2px 12px; border-radius: 4px; font-weight: bold;">____</span>'
               )}
               className="text-sm leading-relaxed block"
+              allowStyle
             />
           </div>
 
