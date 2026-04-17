@@ -418,3 +418,29 @@ npm run validate:types  # TypeScript 型チェック（tsc --noEmit）
 - 看護国試は5択問題あり（choice_eカラムで対応済み）
 - 学科ごとに国家試験の形式が異なる場合がある
   → department別にUI分岐可能な設計にしておく
+
+## セキュリティ未対応事項（GAS バックエンド）
+
+2026-04-18 のセキュリティ監査でフロントエンド側（XSS/CSP/Zod/npm audit/DebugInfo）は対応済み。
+GAS バックエンド側は以下が未対応。GAS の編集・デプロイ権限を持つタイミングで対応すること。
+
+### 優先度: High
+
+1. [REDACTED — 詳細は非公開で管理]
+
+
+
+
+2. [REDACTED — 詳細は非公開で管理]
+
+
+
+### 優先度: Medium
+
+3. [REDACTED — 詳細は非公開で管理]
+
+
+
+4. [REDACTED — 詳細は非公開で管理]
+
+
