@@ -106,7 +106,10 @@ export function HomeScreen() {
     if (!profile) return 0;
     const gradeCategories = await getCategoriesForGrade(profile.grade, profile.department);
     const all = await db.questionCache.toArray();
-    return all.filter(q => q.department === profile.department && gradeCategories.includes(q.category)).length;
+    return all.filter(q =>
+      q.department === profile.department &&
+      (gradeCategories === null || gradeCategories.includes(q.category))
+    ).length;
   }, [profile?.grade, profile?.department], 0);
 
   // ゲーミフィケーションデータ取得

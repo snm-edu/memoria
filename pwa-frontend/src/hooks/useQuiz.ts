@@ -174,7 +174,7 @@ export function useQuiz() {
       if (filters?.year && q.exam_year !== filters.year) return false;
       // 学年別カリキュラムフィルター（事前ロード済みキャッシュを同期で使用）
       if (filters?.gradeLimit) {
-        if (gradeCategoriesCache && !gradeCategoriesCache.includes(q.category)) return false;
+        if (gradeCategoriesCache !== null && !gradeCategoriesCache.includes(q.category)) return false;
         if (gradeDifficultyCache !== null && q.difficulty > gradeDifficultyCache) return false;
       }
       return true;
