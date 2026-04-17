@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-17T13:03:52.828Z",
+  "departments": [
+    {
+      "id": "clinical_eng",
+      "version": 1,
+      "count": 1980,
+      "path": "questions/clinical_eng.json",
+      "checksum": "sha256-39f453b8060744e03fb707aa51c12c43cb8c5a0c4b9387bad84e9c7e456f796f",
+      "lastUpdated": "2026-04-17T13:03:52.828Z"
+    },
+    {
+      "id": "dental_hyg",
+      "version": 1,
+      "count": 2640,
+      "path": "questions/dental_hyg.json",
+      "checksum": "sha256-ac3da0217a76ab30cde6a6f008652dacbf838c4b7a8dcd103112a61665804587",
+      "lastUpdated": "2026-04-17T13:03:52.828Z"
+    },
+    {
+      "id": "nursing",
+      "version": 1,
+      "count": 2520,
+      "path": "questions/nursing.json",
+      "checksum": "sha256-ea2e5089f0ac13bed38ab2119c56b80ae0e9ad6c4b55cc82f06a4257bf7da8f6",
+      "lastUpdated": "2026-04-17T13:03:52.828Z"
+    },
+    {
+      "id": "orthoptist",
+      "version": 1,
+      "count": 1800,
+      "path": "questions/orthoptist.json",
+      "checksum": "sha256-61a261f7197c7553da2824c9020915aeb650ddf2a9c25c3a0fa8d26ed518338f",
+      "lastUpdated": "2026-04-17T13:03:52.828Z"
+    }
+  ]
+}
