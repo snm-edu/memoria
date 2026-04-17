@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "validate": "node scripts/validate-data.mjs",
+    "validate:types": "tsc --noEmit"
   },
   "dependencies": {
     "dexie": "^4.0.0",
