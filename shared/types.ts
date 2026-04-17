@@ -1,16 +1,6 @@
 // ナースメモリア 共有型定義
 // GASバックエンド・PWAフロントエンドの両方で使用
 
-// === 学科 ===
-export type Department = 'nursing' | 'clinical_eng' | 'dental_hyg' | 'orthoptist';
-
-export const DEPARTMENT_LABELS: Record<Department, string> = {
-  nursing: '看護学科',
-  clinical_eng: '臨床工学科',
-  dental_hyg: '歯科衛生学科',
-  orthoptist: '視能訓練学科',
-};
-
 // === 問題 ===
 export interface Question {
   question_id: string;       // "NRS-2014-001" or "2014_nrs_14_pm001"

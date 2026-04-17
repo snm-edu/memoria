@@ -1,15 +1,7 @@
-// 学科
-export type Department = 'nursing' | 'clinical_eng' | 'dental_hyg' | 'orthoptist';
-
-export const DEPARTMENT_LABELS: Record<Department, string> = {
-  nursing: '看護学科',
-  clinical_eng: '臨床工学技士学科',
-  dental_hyg: '歯科衛生士学科',
-  orthoptist: '視能訓練士学科',
-};
-
-export const DEPARTMENTS: Department[] = ['nursing', 'orthoptist', 'dental_hyg', 'clinical_eng'];
-export const GRADES = [1, 2, 3] as const;
+// 学科（departments.ts から re-export）
+import type { Department } from '../config/departments';
+export type { Department, DepartmentEntry, ColorSet } from '../config/departments';
+export { DEPARTMENT_LABELS, DEPARTMENTS, AVAILABLE_DEPARTMENTS, DEPT_STYLES, GRADES, getDepartment, getLabel, DEPARTMENT_REGISTRY } from '../config/departments';
 
 // 問題
 export interface Question {
@@ -70,6 +62,7 @@ export type ErrorType = 'knowledge_gap' | 'misread' | 'confusion';
 
 export interface ErrorAnalysis {
   error_type: ErrorType;
+  cheer: string;
   analysis: string;
   key_concept: string;
   study_hint: string;
