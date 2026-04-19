@@ -21,39 +21,135 @@ export const BADGE_DEFINITIONS: BadgeDefinition[] = [
   { id: 'acc90', name: '正答率90%', description: '直近100問で90%以上', icon: '🥇', category: 'accuracy' },
   { id: 'perfect', name: 'パーフェクト', description: '1セッション全問正解', icon: '💎', category: 'accuracy' },
   // 分野制覇（4種）
-  { id: 'first_mastery', name: '最初の得意分野', description: '1分野で正答率80%超', icon: '🌱', category: 'mastery' },
+  { id: 'first_mastery', name: '初制覇', description: '1分野で正答率80%超', icon: '🌱', category: 'mastery' },
   { id: 'mastery3', name: '3分野制覇', description: '3分野で正答率80%超', icon: '🌿', category: 'mastery' },
   { id: 'mastery_all', name: '全分野制覇', description: '全分野で正答率80%超', icon: '🌳', category: 'mastery' },
   { id: 'overcome', name: '苦手克服', description: '正答率50%以下→80%超に改善', icon: '🦋', category: 'mastery' },
   // チャレンジ（7種）
-  { id: 'revenge', name: 'リベンジ成功', description: '3回間違えた問題に正解', icon: '🛡️', category: 'challenge' },
-  { id: 'combo10', name: '10問連続正解', description: '1セッション内で10問連続正解', icon: '⚡', category: 'challenge' },
-  { id: 'speed_star', name: 'スピードスター', description: '正答かつ5秒以内×10問', icon: '🚀', category: 'challenge' },
+  { id: 'revenge', name: '雪辱達成', description: '3回間違えた問題に正解', icon: '🛡️', category: 'challenge' },
+  { id: 'combo10', name: '10連続', description: '1セッション内で10問連続正解', icon: '⚡', category: 'challenge' },
+  { id: 'speed_star', name: '速答王', description: '正答かつ5秒以内×10問', icon: '🚀', category: 'challenge' },
   { id: 'early_bird', name: '早起き学習', description: '午前7時前に学習開始', icon: '🌅', category: 'challenge' },
   { id: 'night_owl', name: '夜の努力家', description: '午後10時以降に学習', icon: '🌙', category: 'challenge' },
   { id: 'weekend', name: '週末も学習', description: '土日両方で学習', icon: '📅', category: 'challenge' },
   { id: 'rapid_growth', name: '急成長', description: '週の正答率が前週+15%以上', icon: '📈', category: 'challenge' },
 ];
 
-// === レベル定義 ===
-export const LEVEL_TITLES: { level: number; title: string; expRequired: number }[] = [
-  { level: 1, title: '見学生', expRequired: 0 },
-  { level: 5, title: '実習生', expRequired: 500 },
-  { level: 10, title: '新人', expRequired: 2000 },
-  { level: 15, title: '一人前', expRequired: 5000 },
-  { level: 20, title: 'プリセプター', expRequired: 10000 },
-  { level: 25, title: '主任', expRequired: 20000 },
-  { level: 30, title: '師長', expRequired: 35000 },
-  { level: 35, title: '専門家', expRequired: 50000 },
-  { level: 40, title: '部長', expRequired: 80000 },
+// === キャラクター進化定義（フクロウ7段階） ===
+export interface CharacterStage {
+  stage: number;      // 1〜7
+  emoji: string;
+  name: string;
+  gpRequired: number; // この段階に必要なGP
+}
+
+export const CHARACTER_STAGES: CharacterStage[] = [
+  { stage: 1, emoji: '🥚', name: 'たまご',     gpRequired: 0    },
+  { stage: 2, emoji: '🐣', name: 'ひなが誕生', gpRequired: 100  },
+  { stage: 3, emoji: '🐥', name: 'ひよこ',     gpRequired: 500  },
+  { stage: 4, emoji: '🐦', name: 'ことり',     gpRequired: 1000 },
+  { stage: 5, emoji: '🦅', name: 'わか鷹',     gpRequired: 2000 },
+  { stage: 6, emoji: '🦉', name: 'ふくろう',   gpRequired: 4000 },
+  { stage: 7, emoji: '👑', name: '賢者の梟',   gpRequired: 7000 },
 ];
+
+// === レベル定義（学科別） ===
+type LevelTitleEntry = { level: number; title: string; expRequired: number };
+
+const LEVEL_TITLES_NURSING: LevelTitleEntry[] = [
+  { level: 1,  title: '見学生',       expRequired: 0      },
+  { level: 5,  title: '実習生',       expRequired: 3200   },
+  { level: 10, title: '新人',         expRequired: 16200  },
+  { level: 15, title: '一人前',       expRequired: 39200  },
+  { level: 20, title: 'プリセプター', expRequired: 72200  },
+  { level: 25, title: '主任',         expRequired: 115200 },
+  { level: 30, title: '師長',         expRequired: 168200 },
+  { level: 35, title: '専門看護師',   expRequired: 231200 },
+  { level: 40, title: '看護部長',     expRequired: 304200 },
+];
+
+const LEVEL_TITLES_CE: LevelTitleEntry[] = [
+  { level: 1,  title: '見学生',   expRequired: 0      },
+  { level: 5,  title: '実習技士', expRequired: 3200   },
+  { level: 10, title: '新人CE',   expRequired: 16200  },
+  { level: 15, title: '一人前CE', expRequired: 39200  },
+  { level: 20, title: '先輩CE',   expRequired: 72200  },
+  { level: 25, title: '主任CE',   expRequired: 115200 },
+  { level: 30, title: '技士長',   expRequired: 168200 },
+  { level: 35, title: '認定CE',   expRequired: 231200 },
+  { level: 40, title: 'CEセンター長', expRequired: 304200 },
+];
+
+const LEVEL_TITLES_DH: LevelTitleEntry[] = [
+  { level: 1,  title: '見学生',     expRequired: 0      },
+  { level: 5,  title: '実習衛生士', expRequired: 3200   },
+  { level: 10, title: '新人DH',     expRequired: 16200  },
+  { level: 15, title: '一人前DH',   expRequired: 39200  },
+  { level: 20, title: '先輩DH',     expRequired: 72200  },
+  { level: 25, title: '主任DH',     expRequired: 115200 },
+  { level: 30, title: '技士長',     expRequired: 168200 },
+  { level: 35, title: '認定衛生士', expRequired: 231200 },
+  { level: 40, title: '科長',       expRequired: 304200 },
+];
+
+const LEVEL_TITLES_CO: LevelTitleEntry[] = [
+  { level: 1,  title: '見学生',     expRequired: 0      },
+  { level: 5,  title: '実習訓練士', expRequired: 3200   },
+  { level: 10, title: '新人CO',     expRequired: 16200  },
+  { level: 15, title: '一人前CO',   expRequired: 39200  },
+  { level: 20, title: '先輩CO',     expRequired: 72200  },
+  { level: 25, title: '主任CO',     expRequired: 115200 },
+  { level: 30, title: '技士長',     expRequired: 168200 },
+  { level: 35, title: '認定CO',     expRequired: 231200 },
+  { level: 40, title: '視能訓練科長', expRequired: 304200 },
+];
+
+export const LEVEL_TITLES_BY_DEPT: Record<string, LevelTitleEntry[]> = {
+  nursing:      LEVEL_TITLES_NURSING,
+  clinical_eng: LEVEL_TITLES_CE,
+  dental_hyg:   LEVEL_TITLES_DH,
+  orthoptist:   LEVEL_TITLES_CO,
+};
+
+/**
+ * ストリーク日数に応じたGP倍率を返す
+ */
+export function calculateStreakMultiplier(streakDays: number): number {
+  if (streakDays >= 30) return 1.5;
+  if (streakDays >= 14) return 1.3;
+  if (streakDays >= 7)  return 1.2;
+  if (streakDays >= 3)  return 1.1;
+  return 1.0;
+}
+
+/**
+ * GPからキャラクターステージ情報を返す
+ */
+export function getCharacterStage(gp: number): {
+  current: CharacterStage;
+  nextGP: number | null;
+  progress: number;
+} {
+  let current = CHARACTER_STAGES[0]!;
+  for (const stage of CHARACTER_STAGES) {
+    if (gp >= stage.gpRequired) current = stage;
+  }
+  const nextStage = CHARACTER_STAGES.find(s => s.gpRequired > gp) ?? null;
+  const nextGP = nextStage?.gpRequired ?? null;
+  const prevGP = current.gpRequired;
+  const progress = nextGP !== null && nextGP > prevGP
+    ? Math.min(1, (gp - prevGP) / (nextGP - prevGP))
+    : 1;
+  return { current, nextGP, progress };
+}
 
 /**
  * EXPからレベルを計算
  */
 export function calculateLevel(exp: number): number {
-  // 簡易レベル計算: level = floor(sqrt(exp / 25)) + 1、最大40
-  return Math.min(40, Math.floor(Math.sqrt(exp / 25)) + 1);
+  // level = floor(sqrt(exp / 200)) + 1、最大40
+  // Level 2 = 200 EXP（正解20問相当）、Level 10 = 16200 EXP（~1600問相当）
+  return Math.min(40, Math.floor(Math.sqrt(exp / 200)) + 1);
 }
 
 /**
@@ -61,8 +157,8 @@ export function calculateLevel(exp: number): number {
  */
 export function getLevelProgress(exp: number): { level: number; currentExp: number; nextLevelExp: number; progress: number } {
   const level = calculateLevel(exp);
-  const currentLevelExp = (level - 1) * (level - 1) * 25;
-  const nextLevelExp = level * level * 25;
+  const currentLevelExp = (level - 1) * (level - 1) * 200;
+  const nextLevelExp = level * level * 200;
   const progress = nextLevelExp > currentLevelExp
     ? (exp - currentLevelExp) / (nextLevelExp - currentLevelExp)
     : 1;
@@ -72,9 +168,10 @@ export function getLevelProgress(exp: number): { level: number; currentExp: numb
 /**
  * レベルに対応する称号を返す
  */
-export function getLevelTitle(level: number): string {
-  let title = '見学生';
-  for (const lt of LEVEL_TITLES) {
+export function getLevelTitle(level: number, department?: string): string {
+  const titles = (department ? LEVEL_TITLES_BY_DEPT[department] : undefined) ?? LEVEL_TITLES_NURSING;
+  let title = titles[0]!.title;
+  for (const lt of titles) {
     if (level >= lt.level) title = lt.title;
   }
   return title;
@@ -84,9 +181,10 @@ export function getLevelTitle(level: number): string {
  * 回答後のEXP計算
  */
 export function calculateExpGain(isCorrect: boolean, isReview: boolean, consecutiveCorrect: number): number {
-  let exp = isCorrect ? 10 : 3;
-  if (isCorrect && isReview) exp = 15; // 復習正答ボーナス
-  if (isCorrect && consecutiveCorrect > 1) exp += Math.min(consecutiveCorrect, 10); // 連続正答ボーナス（最大+10）
+  if (!isCorrect) return 0; // 不正解は経験値なし
+  let exp = 10;
+  if (isReview) exp = 15; // 復習正答ボーナス
+  if (consecutiveCorrect > 1) exp += Math.min(consecutiveCorrect, 10); // 連続正答ボーナス（最大+10）
   return exp;
 }
 
@@ -108,6 +206,7 @@ export async function getOrCreateGamification(studentId: string): Promise<Gamifi
     weeklyQuestions: 0,
     weeklyCorrect: 0,
     weekStartDate: today,
+    characterPoints: 0,
   };
   const id = await db.gamification.add(state);
   return { ...state, id: id as number };
@@ -256,8 +355,9 @@ export async function updateGamification(
   isCorrect: boolean,
   isReview: boolean,
   consecutiveCorrect: number,
-  sessionStats?: { correct: number; total: number; consecutiveCorrect: number; fastCorrect: number }
-): Promise<{ newBadges: string[]; expGained: number; levelUp: boolean; state: GamificationState }> {
+  sessionStats?: { correct: number; total: number; consecutiveCorrect: number; fastCorrect: number },
+  addGP = true
+): Promise<{ newBadges: string[]; expGained: number; levelUp: boolean; stageUp: boolean; state: GamificationState }> {
   let gState = await getOrCreateGamification(studentId);
 
   // ストリーク更新
@@ -272,6 +372,16 @@ export async function updateGamification(
   gState.level = calculateLevel(gState.exp);
   const levelUp = gState.level > oldLevel;
 
+  // キャラクターGP計算: sessionStats がある場合（セッション終了時）かつ addGP=true の場合のみ加算
+  const oldStage = getCharacterStage(gState.characterPoints);
+  if (addGP && sessionStats) {
+    const multiplier = calculateStreakMultiplier(gState.streakDays);
+    const gpGained = Math.round(sessionStats.total * multiplier);
+    gState.characterPoints += gpGained;
+  }
+  const newStage = getCharacterStage(gState.characterPoints);
+  const stageUp = newStage.current.stage > oldStage.current.stage;
+
   // バッジ判定
   const newBadges = await checkBadges(gState, sessionStats);
   gState.badges = [...gState.badges, ...newBadges];
@@ -279,5 +389,5 @@ export async function updateGamification(
   // DB保存
   await db.gamification.put(gState);
 
-  return { newBadges, expGained, levelUp, state: gState };
+  return { newBadges, expGained, levelUp, stageUp, state: gState };
 }

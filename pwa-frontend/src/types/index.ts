@@ -100,6 +100,7 @@ export interface GamificationState {
   weeklyQuestions: number;  // 今週の回答数
   weeklyCorrect: number;    // 今週の正答数
   weekStartDate: string;    // 週の開始日
+  characterPoints: number;  // キャラクター成長GP
 }
 
 // バッジ定義
