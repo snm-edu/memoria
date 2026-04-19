@@ -342,6 +342,71 @@ error_typeに応じた出題方針:
 - Gemini APIモデル: gemini-2.5-flash
 - AI分析の差分更新（totalQuestions未変更時はスキップ）
 
+## 追加・更新運用マニュアル
+
+Claude Code への指示で以下のシナリオを実行する際の標準手順。各手順の最後に必ず `npm run validate` を実行して整合性を確認すること。
+
+### データ構造（Single Source of Truth）
+
+| ファイル | 役割 |
+|---------|------|
+| `pwa-frontend/src/config/departments.ts` | 学科レジストリ（型・ラベル・スタイル全て） |
+| `pwa-frontend/public/data/manifest.json` | バージョン管理の中枢 |
+| `pwa-frontend/public/data/questions/{dept}.json` | 学科別問題データ |
+| `pwa-frontend/public/data/curriculum/{dept}.json` | 学年別出題カリキュラム |
+
+### 1. 新学科追加
+
+1. `departments.ts` の `REGISTRY_DATA` に `enabled: false` で仮エントリ追加
+   ```ts
+   { id: 'new_dept', label: '新学科', shortLabel: 'ND', enabled: false,
+     color: { gradient: '...', border: '#...', text: '#...' },
+     grades: [1, 2, 3], orderIndex: 5 }
+   ```
+2. `public/data/questions/new_dept.json` を作成（問題データ JSON 配列）
+3. `public/data/curriculum/new_dept.json` を作成（grades 1/2/3 のカテゴリ定義）
+4. `public/data/manifest.json` に新学科エントリを追加（version: 1）
+5. `npm run validate` で整合性確認（エラーなし）
+6. `enabled: true` に変更してコミット
+
+### 2. 新年度問題追加
+
+1. 対象 `public/data/questions/{dept}.json` に新問題を追記
+   - `question_id` は `{DEPT}-{YEAR}-{NNN}` 形式で一意化
+   - `exam_year` を新年度の数値に設定
+2. `public/data/manifest.json` の該当学科の `version` を +1、`count` と `lastUpdated` を更新
+3. `npm run validate` で整合性確認
+
+### 3. 個別問題の訂正・差し替え
+
+1. `public/data/questions/{dept}.json` 内で `question_id` 一致レコードを編集
+2. `public/data/manifest.json` の該当学科の `version` を +1
+3. 注意: `cardStates` は `question_id` 参照のみのため、id を変えない限りユーザーの学習履歴は保持される
+
+### 4. 分類体系（カテゴリ）の更新
+
+1. `public/data/curriculum/{dept}.json` の `categories` 配列を編集
+2. カテゴリ名を変更した場合は、`public/data/questions/{dept}.json` の `category` フィールドも一致させる
+3. `npm run validate` で整合性確認
+
+### 5. 模擬試験の追加
+
+1. 問題データに以下の形式で追記:
+   - `question_id`: `{DEPT}-mock{YYYY}-{NNN}` 形式（例: `NRS-mock2025-001`）
+   - `exam_year`: `"mock_2025"` 形式の文字列
+   - `source`: `"mock_2025"` 等（既存フィールドを流用）
+2. `public/data/questions/{dept}.json` に追記
+3. `public/data/manifest.json` の `version` を +1、`count` を更新
+4. `npm run validate` で整合性確認
+
+### 整合性チェックコマンド
+
+```bash
+cd pwa-frontend
+npm run validate        # データ整合性（manifest・問題数・重複・画像・カリキュラム）
+npm run validate:types  # TypeScript 型チェック（tsc --noEmit）
+```
+
 ## 既知の注意点
 
 - GASのWebアプリは `script.google.com` ドメインからレスポンスを返す
@@ -353,3 +418,29 @@ error_typeに応じた出題方針:
 - 看護国試は5択問題あり（choice_eカラムで対応済み）
 - 学科ごとに国家試験の形式が異なる場合がある
   → department別にUI分岐可能な設計にしておく
+
+## セキュリティ未対応事項（GAS バックエンド）
+
+2026-04-18 のセキュリティ監査でフロントエンド側（XSS/CSP/Zod/npm audit/DebugInfo）は対応済み。
+GAS バックエンド側は以下が未対応。GAS の編集・デプロイ権限を持つタイミングで対応すること。
+
+### 優先度: High
+
+1. **studentId の認証欠如**（`gas-backend/src/AnswerService.gs:92-135`）
+   - 任意の UUID を偽装して他学生の回答ログを上書きできる
+   - **対応方針**: `updateStudentNumber` で `studentId` と `oldStudentNumber` の両方が同一行に紐づくことを検証してから更新する（現在は `||` 条件で片方一致なら全更新）
+   - 中期: Google Sign-in（@snm.ac.jp ドメイン限定）導入
+
+2. **Gemini プロンプトインジェクション**（`gas-backend/src/GeminiService.gs`）
+   - AI 生成テキストが次の Gemini 呼び出しに混入する経路がある
+   - **対応方針**: プロンプトにデリミタ（`<<<USER_INPUT>>>...<<<END>>>`）を追加し、`originalQuestion` は Sheets から lookup する（フロントから受け取るテキストを使わない）
+
+### 優先度: Medium
+
+3. **GAS 入力バリデーション不足**（`gas-backend/src/Code.gs:14-113`）
+   - `studentId` の UUID 形式検証なし、文字列長上限なし
+   - **対応方針**: UUID バリデーション（`/^[0-9a-f-]{36}$/i`）と文字列長上限を追加
+
+4. **Gemini レート制限の未実装**（`gas-backend/src/Config.gs:20` の定数が未使用）
+   - 1 studentId で Gemini を無制限に呼び出してクレジット枯渇攻撃が可能
+   - **対応方針**: `PropertiesService` に `gemini_calls_{studentId}_{YYYYMMDD}` を保存してカウント管理

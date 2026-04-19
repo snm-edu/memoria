@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
+import type { QuizFilters } from '../../hooks/useQuiz';
 
-export interface QuizFilters {
-  category?: string;
-  year?: number;
-}
+export type { QuizFilters };
 
 interface Props {
   onStart: (filters: QuizFilters) => void;
@@ -19,6 +17,7 @@ export function QuizFilterScreen({ onStart, onCancel }: Props) {
   const [years, setYears] = useState<number[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
+  const [selectedSource, setSelectedSource] = useState<'official' | 'mock' | 'all'>('all');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -35,9 +34,13 @@ export function QuizFilterScreen({ onStart, onCancel }: Props) {
           ...new Set(questions.map((q) => q.category).filter(Boolean)),
         ].sort();
 
-        // ユニークな年度を抽出（0を除外）
+        // ユニークな年度を抽出（number型かつ0より大きいもののみ。模擬試験の "mock_YYYY" は除外）
         const uniqueYears = [
-          ...new Set(questions.map((q) => q.exam_year).filter((y) => y > 0)),
+          ...new Set(
+            questions
+              .map((q) => q.exam_year)
+              .filter((y): y is number => typeof y === 'number' && y > 0)
+          ),
         ].sort((a, b) => b - a); // 新しい年度が先
 
         setCategories(uniqueCategories);
@@ -59,6 +62,9 @@ export function QuizFilterScreen({ onStart, onCancel }: Props) {
     }
     if (selectedYear) {
       filters.year = selectedYear;
+    }
+    if (selectedSource !== 'all') {
+      filters.sourceFilter = selectedSource;
     }
     onStart(filters);
   };
@@ -146,6 +152,32 @@ export function QuizFilterScreen({ onStart, onCancel }: Props) {
               }`}
             >
               {year}年
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* 問題種別フィルター */}
+      <div className="mb-6">
+        <h2 className="text-sm font-bold text-slate-500 mb-2">問題種別</h2>
+        <div className="flex gap-2">
+          {(
+            [
+              { value: 'all', label: 'すべて' },
+              { value: 'official', label: '過去問のみ' },
+              { value: 'mock', label: '模擬試験のみ' },
+            ] as const
+          ).map(({ value, label }) => (
+            <button
+              key={value}
+              onClick={() => setSelectedSource(value)}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                selectedSource === value
+                  ? 'bg-primary-500 text-white'
+                  : 'bg-slate-100 text-slate-600'
+              }`}
+            >
+              {label}
             </button>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import type { ApiResponse, Question } from '../types';
+import { ErrorAnalysisSchema } from '../schemas/api';
 
 const GAS_API_URL = import.meta.env.VITE_GAS_API_URL || '';
 
@@ -91,13 +92,32 @@ export async function analyzeError(body: {
   questionText: string;
   choices: string[];
   department?: string;
+  studyHour?: number;
 }): Promise<ApiResponse<{
   error_type: string;
+  cheer: string;
   analysis: string;
   key_concept: string;
   study_hint: string;
 }>> {
-  return apiPost({ action: 'analyzeError', ...body });
+  const raw = await apiPost<unknown>({ action: 'analyzeError', ...body });
+  if (!raw.success) return raw as ApiResponse<{ error_type: string; cheer: string; analysis: string; key_concept: string; study_hint: string }>;
+
+  const parsed = ErrorAnalysisSchema.safeParse(raw.data);
+  if (!parsed.success) {
+    console.warn('[analyzeError] レスポンス検証失敗:', parsed.error.flatten());
+    return { success: false, error: 'invalid response' };
+  }
+  return {
+    success: true,
+    data: {
+      error_type: parsed.data.error_type,
+      cheer: parsed.data.cheer ?? '',
+      analysis: parsed.data.analysis,
+      key_concept: parsed.data.key_concept ?? '',
+      study_hint: parsed.data.study_hint ?? '',
+    },
+  };
 }
 
 export async function generateSimilar(body: {

@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "lastUpdated": "2026-04-19",
+  "stages": {
+    "1": {
+      "name": "たまご",
+      "messages": [
+        { "id": "egg_em_01", "text": "ピヨ…早起きしたんだね、すごい！", "tags": ["early_morning"] },
+        { "id": "egg_em_02", "text": "殻ごしに朝の光を感じるよ…一緒にがんばろう", "tags": ["early_morning"] },
+        { "id": "egg_no_01", "text": "夜遅くまで…無理はしないでね", "tags": ["night_owl"] },
+        { "id": "egg_no_02", "text": "こんな時間まで偉い…でも休息も大事だよ", "tags": ["night_owl"] },
+        { "id": "egg_st_01", "text": "{streakDays}日連続だね！殻が少し温かくなってきたよ", "tags": ["streak3"] },
+        { "id": "egg_st_02", "text": "{streakDays}日も続いてる…もうすぐ僕、出てこれそう！", "tags": ["streak7"] },
+        { "id": "egg_st_03", "text": "{streakDays}日連続…奇跡だよ。君のおかげで殻が動いた気がする", "tags": ["streak14"] },
+        { "id": "egg_cb_01", "text": "おかえり…会えて嬉しいよ", "tags": ["comeback"] },
+        { "id": "egg_cb_02", "text": "待ってたよ。また一緒にがんばろう", "tags": ["comeback"] },
+        { "id": "egg_im_01", "text": "最近すごく伸びてる…！僕も嬉しい", "tags": ["improving"] },
+        { "id": "egg_im_02", "text": "殻の中から見てるよ、その調子！", "tags": ["improving"] },
+        { "id": "egg_sg_01", "text": "大丈夫、ゆっくり進もう", "tags": ["struggling"] },
+        { "id": "egg_sg_02", "text": "失敗は成長の証だよ。僕もまだ卵だしね", "tags": ["struggling"] },
+        { "id": "egg_we_01", "text": "週末も来てくれたんだね、ありがとう", "tags": ["weekend"] },
+        { "id": "egg_gn_01", "text": "ピヨピヨ…今日も来てくれてありがとう", "tags": ["generic"] },
+        { "id": "egg_gn_02", "text": "殻の中から応援してるよ！", "tags": ["generic"] },
+        { "id": "egg_gn_03", "text": "君と一緒に大きくなりたいな", "tags": ["generic"] },
+        { "id": "egg_gn_04", "text": "今日はどんな問題に挑戦するの？", "tags": ["generic"] },
+        { "id": "egg_gn_05", "text": "ちょっとずつでいいんだよ", "tags": ["generic"] },
+        { "id": "egg_gn_06", "text": "君の頑張りが、僕が孵る力になるんだ", "tags": ["generic"] },
+        { "id": "egg_gn_07", "text": "えへへ、まだ卵だけど…応援できるよ！", "tags": ["generic"] }
+      ]
+    },
+    "2": {
+      "name": "ヒビ割れたまご",
+      "messages": [
+        { "id": "crack_em_01", "text": "おはよう！ヒビの隙間から朝日が眩しいよ！", "tags": ["early_morning"] },
+        { "id": "crack_no_01", "text": "遅くまでお疲れ様。ヒビの向こうの星が綺麗だね", "tags": ["night_owl"] },
+        { "id": "crack_st_01", "text": "{streakDays}日連続！殻がパリパリ鳴ってる気がする！", "tags": ["streak3"] },
+        { "id": "crack_gn_01", "text": "もう少しで外に出られそう…わくわく！", "tags": ["generic"] },
+        { "id": "crack_gn_02", "text": "君が頑張るたびに殻が割れていくよ！", "tags": ["generic"] },
+        { "id": "crack_sg_01", "text": "大丈夫、硬い殻もいつかは割れるよ！", "tags": ["struggling"] }
+      ]
+    },
+    "3": {
+      "name": "ヒナフクロウ",
+      "messages": [
+        { "id": "chick_em_01", "text": "ピヨッ！朝だよ、一緒にお勉強しよ！", "tags": ["early_morning"] },
+        { "id": "chick_no_01", "text": "ふぁ〜あ…僕も一緒に起きてるよ。ピヨ…", "tags": ["night_owl"] },
+        { "id": "chick_st_01", "text": "{streakDays}日も一緒にいるね！ピヨピヨ！", "tags": ["streak7"] },
+        { "id": "chick_gn_01", "text": "外の世界は広くて面白いね、ピヨ！", "tags": ["generic"] },
+        { "id": "chick_gn_02", "text": "君が僕を孵してくれたんだ、ありがとう！", "tags": ["generic"] },
+        { "id": "chick_im_01", "text": "すごいすごい！羽ばたきたくなっちゃう！", "tags": ["improving"] },
+        { "id": "chick_sg_01", "text": "焦らなくていいよ、一緒に少しずつ進もう！", "tags": ["struggling"] }
+      ]
+    },
+    "4": {
+      "name": "見習いフクロウ",
+      "messages": [
+        { "id": "app_em_01", "text": "おはようございます！朝の空気が気持ちいいです。", "tags": ["early_morning"] },
+        { "id": "app_no_01", "text": "フクロウは夜行性だから大丈夫。一緒に頑張ります！", "tags": ["night_owl"] },
+        { "id": "app_st_01", "text": "連続{streakDays}日達成！日々の積み重ねが翼を強くします！", "tags": ["streak7", "streak14"] },
+        { "id": "app_gn_01", "text": "僕も飛ぶ練習中だよ。お互い頑張ろうね。", "tags": ["generic"] },
+        { "id": "app_gn_02", "text": "ちょっとずつ羽が大きくなってきた気がするんだ。", "tags": ["generic"] },
+        { "id": "app_sg_01", "text": "間違えた問題は、高く飛ぶためのバネになるよ！", "tags": ["struggling"] },
+        { "id": "app_im_01", "text": "正答率が上がってる！僕ももっと練習しなきゃ！", "tags": ["improving"] }
+      ]
+    },
+    "5": {
+      "name": "大人のフクロウ",
+      "messages": [
+        { "id": "adult_em_01", "text": "ホー。朝の学びは知識の定着に良いらしいね。", "tags": ["early_morning"] },
+        { "id": "adult_no_01", "text": "静かな夜だね。集中するには絶好の時間帯だ。", "tags": ["night_owl"] },
+        { "id": "adult_st_01", "text": "{streakDays}日連続の学習。君の努力は本物だね。", "tags": ["streak14"] },
+        { "id": "adult_gn_01", "text": "知識は目に見えない翼になる。一緒に飛ぼう。", "tags": ["generic"] },
+        { "id": "adult_gn_02", "text": "解剖生理や疾患の理解…日々成長しているね。", "tags": ["generic"] },
+        { "id": "adult_cb_01", "text": "戻ってきたね。休むことも立派な学習の一部さ。", "tags": ["comeback"] }
+      ]
+    },
+    "6": {
+      "name": "賢者フクロウ",
+      "messages": [
+        { "id": "sage_gn_01", "text": "ホッホゥ。迷った時は基礎に立ち返るのじゃ。", "tags": ["generic"] },
+        { "id": "sage_gn_02", "text": "君の知識の木に、立派な実がなりつつあるようじゃ。", "tags": ["generic"] },
+        { "id": "sage_st_01", "text": "継続こそ力なり。{streakDays}日の積み重ね、見事じゃ。", "tags": ["streak3", "streak7", "streak14"] },
+        { "id": "sage_im_01", "text": "素晴らしい！国家試験の合格がはっきりと見えるぞ。", "tags": ["improving"] },
+        { "id": "sage_sg_01", "text": "焦るでない。この躓きこそが、後に君を救うのじゃ。", "tags": ["struggling"] }
+      ]
+    },
+    "7": {
+      "name": "伝説のメモリアフクロウ",
+      "messages": [
+        { "id": "legend_gn_01", "text": "君はもう、私から教えることがないほど成長したね。", "tags": ["generic"] },
+        { "id": "legend_gn_02", "text": "君の努力が私をここまで導いてくれた。ありがとう。", "tags": ["generic"] },
+        { "id": "legend_st_01", "text": "{streakDays}日の軌跡が、君の未来を明るく照らしているよ。", "tags": ["streak14"] },
+        { "id": "legend_im_01", "text": "神々しいほどの正答率！医療の未来は君に託せるね。", "tags": ["improving"] },
+        { "id": "legend_em_01", "text": "早朝の眩しい光も、君の知性には敵わないようだ。", "tags": ["early_morning"] },
+        { "id": "legend_sg_01", "text": "どれだけ高みへ登ろうと、学び続ける君を誇りに思うよ。", "tags": ["struggling"] }
+      ]
+    }
+  }
+}

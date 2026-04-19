@@ -156,8 +156,8 @@ export function SettingsScreen() {
           </div>
         )}
 
-        {/* デバッグ情報 */}
-        <DebugInfo profile={profile} state={state} />
+        {/* デバッグ情報（開発環境のみ） */}
+        {import.meta.env.DEV && <DebugInfo profile={profile} state={state} />}
       </div>
     </div>
   );
