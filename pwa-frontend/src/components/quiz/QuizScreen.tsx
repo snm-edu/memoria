@@ -7,28 +7,27 @@ import { AnalysisCard } from '../ai/AnalysisCard';
 import { QuizFilterScreen } from './QuizFilterScreen';
 import { highlightKeywords } from '../../services/memoriaStep';
 import type { BgmTrack } from '../../services/bgm';
+import { sfx } from '../../services/sfx';
+import DOMPurify from 'dompurify';
 
-/** 安全なHTMLタグのみレンダリング（sub, sup, br, strong, span+style） */
-function SafeHtml({ text, className }: { text: string; className?: string }) {
-  // highlightKeywordsが<strong>やstyle付き<span>を挿入するため許可タグを拡張
-  const ALLOWED = /<\/?(sub|sup|br|strong|\/strong)\s*\/?>|<span\s+style="[^"]*">|<\/span>/gi;
-  // 許可タグを一時退避 → 全体エスケープ → 復元
-  const tokens: string[] = [];
-  const escaped = text
-    .replace(ALLOWED, (m) => {
-      tokens.push(m);
-      return `\x00${tokens.length - 1}\x00`;
-    })
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/\x00(\d+)\x00/g, (_, i) => tokens[Number(i)]!);
-  return (
-    <span
-      className={className}
-      dangerouslySetInnerHTML={{ __html: escaped }}
-    />
-  );
+// 通常テキスト用（選択肢・解説など）: style 属性を禁止して CSS Injection リスクを排除
+const SANITIZE_CONFIG = {
+  ALLOWED_TAGS: ['sub', 'sup', 'br', 'strong', 'span'],
+  ALLOWED_ATTR: [],
+} satisfies Parameters<typeof DOMPurify.sanitize>[1];
+
+// 強調・穴埋め用（highlightKeywords / fillInBlank）: style 属性を許可
+// DOMPurify は expression() / javascript: 等の危険な CSS 値を自動除去する
+const SANITIZE_CONFIG_HIGHLIGHT = {
+  ALLOWED_TAGS: ['sub', 'sup', 'br', 'strong', 'span'],
+  ALLOWED_ATTR: ['style'],
+} satisfies Parameters<typeof DOMPurify.sanitize>[1];
+
+/** 安全なHTMLタグのみレンダリング（DOMPurify によるサニタイズ）
+ *  allowStyle: highlightKeywords や fillInBlank の style 属性が必要な箇所のみ true */
+function SafeHtml({ text, className, allowStyle }: { text: string; className?: string; allowStyle?: boolean }) {
+  const clean = DOMPurify.sanitize(text, allowStyle ? SANITIZE_CONFIG_HIGHLIGHT : SANITIZE_CONFIG);
+  return <span className={className} dangerouslySetInnerHTML={{ __html: clean }} />;
 }
 
 /** メモリアステップのレベルバッジカラー */
@@ -87,6 +86,15 @@ export function QuizScreen() {
   useEffect(() => {
     play(bgmTrack);
   }, [bgmTrack, play]);
+
+  // 回答確定時の効果音: showFeedback が false→true に変化した瞬間に鳴らす
+  const prevShowFeedbackRef = useRef(false);
+  useEffect(() => {
+    if (quiz.showFeedback && !prevShowFeedbackRef.current && quiz.isCorrect !== null) {
+      sfx.play(quiz.isCorrect ? 'correct' : 'incorrect');
+    }
+    prevShowFeedbackRef.current = quiz.showFeedback;
+  }, [quiz.showFeedback, quiz.isCorrect]);
 
   // graded モード: 学年制限付きで自動開始
   useEffect(() => {
@@ -326,6 +334,7 @@ export function QuizScreen() {
         <SafeHtml
           text={displayQuestionText}
           className="text-base leading-relaxed whitespace-pre-wrap block"
+          allowStyle
         />
         {isMultiSelect && (
           <p className="text-sm text-primary-500 font-bold mt-2">
@@ -423,6 +432,7 @@ export function QuizScreen() {
                 '<span style="background-color: #fef08a; padding: 2px 12px; border-radius: 4px; font-weight: bold;">____</span>'
               )}
               className="text-sm leading-relaxed block"
+              allowStyle
             />
           </div>
 

@@ -1,61 +1,152 @@
 import { db } from './db';
 import type { Question } from '../types';
+import type { Department } from '../config/departments';
+import { QuestionSchema } from '../schemas/question';
 
-const DATA_URL = import.meta.env.BASE_URL + 'data/questions.json';
+// manifest のスキーマ
+interface ManifestDept {
+  id: string;
+  version: number;
+  count: number;
+  path: string;
+  checksum?: string;
+  lastUpdated: string;
+}
+interface Manifest {
+  schemaVersion: number;
+  generatedAt: string;
+  departments: ManifestDept[];
+}
 
-/**
- * データバージョン — questions.jsonを更新したら必ずインクリメントする
- * これによりIndexedDBの古いキャッシュが自動的に再読み込みされる
- */
-const DATA_VERSION = 5; // v4→v5: CO視能訓練士1,800問追加（全4学科8,940問）
-const VERSION_KEY = 'memoria-data-version';
+const BASE = import.meta.env.BASE_URL;
+const MANIFEST_URL = BASE + 'data/manifest.json';
+const VERSION_KEY_PREFIX = 'memoria-data-version-'; // + dept
 
-/**
- * 問題データをIndexedDBに初期ロード
- * バージョンが変わった場合は強制再読み込み
- */
-export async function loadQuestionsToCache(): Promise<number> {
-  const currentVersion = localStorage.getItem(VERSION_KEY);
-  const needsReload = currentVersion !== String(DATA_VERSION);
+// manifest をキャッシュ（セッション中に一度だけ fetch）
+let manifestCache: Manifest | null = null;
 
-  if (needsReload) {
-    // バージョン変更 → キャッシュクリア＆再読み込み
-    console.log(`データ更新: v${currentVersion || '0'} → v${DATA_VERSION}`);
-    await db.questionCache.clear();
+// 並列実行ガード: 同一学科に対して同時に複数の ensureCacheFor が走るのを防ぐ
+const inflight = new Map<string, Promise<number>>();
+
+export async function loadManifest(): Promise<Manifest | null> {
+  if (manifestCache) return manifestCache;
+  try {
+    const res = await fetch(MANIFEST_URL);
+    if (!res.ok) {
+      console.error('manifest.json 取得失敗:', res.status);
+      return null;
+    }
+    manifestCache = await res.json() as Manifest;
+    return manifestCache;
+  } catch (err) {
+    console.error('manifest.json ロードエラー:', err);
+    return null;
+  }
+}
+
+export async function loadQuestionsForDepartment(dept: Department): Promise<number> {
+  const manifest = await loadManifest();
+  if (!manifest) {
+    // manifest が取得できない場合は既存キャッシュを使う
+    const count = await db.questionCache.where('department').equals(dept).count();
+    return count;
   }
 
-  const existingCount = await db.questionCache.count();
+  const deptMeta = manifest.departments.find(d => d.id === dept);
+  if (!deptMeta) {
+    console.error(`manifest に学科 ${dept} が見つかりません`);
+    return 0;
+  }
+
+  // バージョン比較
+  const storedVersion = localStorage.getItem(VERSION_KEY_PREFIX + dept);
+  const needsReload = storedVersion !== String(deptMeta.version);
+
+  if (needsReload) {
+    console.log(`データ更新: ${dept} v${storedVersion ?? '0'} → v${deptMeta.version}`);
+  }
+
+  // delete 前に existingCount を取得（fetch 失敗時のフォールバック用）
+  const existingCount = await db.questionCache.where('department').equals(dept).count();
+
   if (existingCount > 0 && !needsReload) {
     return existingCount;
   }
 
   try {
-    const res = await fetch(DATA_URL);
+    const url = BASE + 'data/' + deptMeta.path;
+    const res = await fetch(url);
     if (!res.ok) {
-      console.error('問題データ取得失敗:', res.status);
-      return 0;
+      console.error(`${dept} 問題データ取得失敗:`, res.status);
+      return existingCount; // fetch 失敗: 既存データ維持
     }
 
     const rawData: unknown[] = await res.json();
-    const questions = (rawData as Question[]).filter(
-      (q) => q.correct_answer && q.correct_answer.length > 0
-    );
 
-    await db.questionCache.bulkPut(questions);
-    localStorage.setItem(VERSION_KEY, String(DATA_VERSION));
-    console.log(`問題データ: ${questions.length}問ロード (v${DATA_VERSION})`);
+    // Array バリデーション
+    if (!Array.isArray(rawData)) {
+      console.error(`${dept}: 不正なデータ形式`);
+      return existingCount;
+    }
+
+    const questions: Question[] = [];
+    let invalidCount = 0;
+    for (const item of rawData) {
+      const parsed = QuestionSchema.safeParse(item);
+      if (!parsed.success) {
+        invalidCount++;
+        continue;
+      }
+      const q = parsed.data;
+      if (!q.correct_answer.length || q.question_id.includes('不備問題')) continue;
+      questions.push(q as Question);
+    }
+    if (invalidCount > 0) {
+      console.warn(`${dept}: ${invalidCount}件のレコードがスキーマ検証に失敗`);
+    }
+
+    // fetch 成功後にトランザクション内で delete → bulkPut をアトミックに実行
+    await db.transaction('rw', db.questionCache, async () => {
+      if (needsReload) {
+        await db.questionCache.where('department').equals(dept).delete();
+      }
+      await db.questionCache.bulkPut(questions);
+    });
+
+    localStorage.setItem(VERSION_KEY_PREFIX + dept, String(deptMeta.version));
+    console.log(`${dept}: ${questions.length}問ロード (v${deptMeta.version})`);
     return questions.length;
   } catch (err) {
-    console.error('問題データロードエラー:', err);
-    return 0;
+    console.error(`${dept} 問題データロードエラー:`, err);
+    return existingCount;
   }
 }
 
-/**
- * 問題データを強制再読み込み
- */
-export async function reloadQuestions(): Promise<number> {
-  localStorage.removeItem(VERSION_KEY);
-  await db.questionCache.clear();
-  return loadQuestionsToCache();
+export async function ensureCacheFor(dept: Department): Promise<number> {
+  const existing = inflight.get(dept);
+  if (existing) return existing;
+  const promise = loadQuestionsForDepartment(dept).finally(() => {
+    inflight.delete(dept);
+  });
+  inflight.set(dept, promise);
+  return promise;
+}
+
+export async function reloadDepartment(dept: Department): Promise<number> {
+  localStorage.removeItem(VERSION_KEY_PREFIX + dept);
+  await db.questionCache.where('department').equals(dept).delete();
+  return loadQuestionsForDepartment(dept);
+}
+
+// 後方互換: 既存の呼び出し元（loadQuestionsToCache）向け
+// profile が取得できない場合は何もしない（呼び出し元で dept を渡すように移行）
+export async function loadQuestionsToCache(dept?: Department): Promise<number> {
+  if (!dept) return 0;
+  return ensureCacheFor(dept);
+}
+
+// 後方互換
+export async function reloadQuestions(dept?: Department): Promise<number> {
+  if (!dept) return 0;
+  return reloadDepartment(dept);
 }

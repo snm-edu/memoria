@@ -342,6 +342,71 @@ error_typeに応じた出題方針:
 - Gemini APIモデル: gemini-2.5-flash
 - AI分析の差分更新（totalQuestions未変更時はスキップ）
 
+## 追加・更新運用マニュアル
+
+Claude Code への指示で以下のシナリオを実行する際の標準手順。各手順の最後に必ず `npm run validate` を実行して整合性を確認すること。
+
+### データ構造（Single Source of Truth）
+
+| ファイル | 役割 |
+|---------|------|
+| `pwa-frontend/src/config/departments.ts` | 学科レジストリ（型・ラベル・スタイル全て） |
+| `pwa-frontend/public/data/manifest.json` | バージョン管理の中枢 |
+| `pwa-frontend/public/data/questions/{dept}.json` | 学科別問題データ |
+| `pwa-frontend/public/data/curriculum/{dept}.json` | 学年別出題カリキュラム |
+
+### 1. 新学科追加
+
+1. `departments.ts` の `REGISTRY_DATA` に `enabled: false` で仮エントリ追加
+   ```ts
+   { id: 'new_dept', label: '新学科', shortLabel: 'ND', enabled: false,
+     color: { gradient: '...', border: '#...', text: '#...' },
+     grades: [1, 2, 3], orderIndex: 5 }
+   ```
+2. `public/data/questions/new_dept.json` を作成（問題データ JSON 配列）
+3. `public/data/curriculum/new_dept.json` を作成（grades 1/2/3 のカテゴリ定義）
+4. `public/data/manifest.json` に新学科エントリを追加（version: 1）
+5. `npm run validate` で整合性確認（エラーなし）
+6. `enabled: true` に変更してコミット
+
+### 2. 新年度問題追加
+
+1. 対象 `public/data/questions/{dept}.json` に新問題を追記
+   - `question_id` は `{DEPT}-{YEAR}-{NNN}` 形式で一意化
+   - `exam_year` を新年度の数値に設定
+2. `public/data/manifest.json` の該当学科の `version` を +1、`count` と `lastUpdated` を更新
+3. `npm run validate` で整合性確認
+
+### 3. 個別問題の訂正・差し替え
+
+1. `public/data/questions/{dept}.json` 内で `question_id` 一致レコードを編集
+2. `public/data/manifest.json` の該当学科の `version` を +1
+3. 注意: `cardStates` は `question_id` 参照のみのため、id を変えない限りユーザーの学習履歴は保持される
+
+### 4. 分類体系（カテゴリ）の更新
+
+1. `public/data/curriculum/{dept}.json` の `categories` 配列を編集
+2. カテゴリ名を変更した場合は、`public/data/questions/{dept}.json` の `category` フィールドも一致させる
+3. `npm run validate` で整合性確認
+
+### 5. 模擬試験の追加
+
+1. 問題データに以下の形式で追記:
+   - `question_id`: `{DEPT}-mock{YYYY}-{NNN}` 形式（例: `NRS-mock2025-001`）
+   - `exam_year`: `"mock_2025"` 形式の文字列
+   - `source`: `"mock_2025"` 等（既存フィールドを流用）
+2. `public/data/questions/{dept}.json` に追記
+3. `public/data/manifest.json` の `version` を +1、`count` を更新
+4. `npm run validate` で整合性確認
+
+### 整合性チェックコマンド
+
+```bash
+cd pwa-frontend
+npm run validate        # データ整合性（manifest・問題数・重複・画像・カリキュラム）
+npm run validate:types  # TypeScript 型チェック（tsc --noEmit）
+```
+
 ## 既知の注意点
 
 - GASのWebアプリは `script.google.com` ドメインからレスポンスを返す
@@ -353,3 +418,29 @@ error_typeに応じた出題方針:
 - 看護国試は5択問題あり（choice_eカラムで対応済み）
 - 学科ごとに国家試験の形式が異なる場合がある
   → department別にUI分岐可能な設計にしておく
+
+## セキュリティ未対応事項（GAS バックエンド）
+
+2026-04-18 のセキュリティ監査でフロントエンド側（XSS/CSP/Zod/npm audit/DebugInfo）は対応済み。
+GAS バックエンド側は以下が未対応。GAS の編集・デプロイ権限を持つタイミングで対応すること。
+
+### 優先度: High
+
+1. [REDACTED — 詳細は非公開で管理]
+
+
+
+
+2. [REDACTED — 詳細は非公開で管理]
+
+
+
+### 優先度: Medium
+
+3. [REDACTED — 詳細は非公開で管理]
+
+
+
+4. [REDACTED — 詳細は非公開で管理]
+
+

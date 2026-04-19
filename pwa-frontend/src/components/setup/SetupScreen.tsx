@@ -1,18 +1,7 @@
 import { useState } from 'react';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
-import { DEPARTMENTS, DEPARTMENT_LABELS, GRADES, type Department } from '../../types';
-
-// 現在問題データが用意されている学科
-const AVAILABLE_DEPARTMENTS: Department[] = ['nursing', 'clinical_eng', 'dental_hyg', 'orthoptist'];
-
-// 学科カラー（学校公式サイト準拠・超淡いグラデーション）
-const DEPT_STYLES: Record<Department, { gradient: string; border: string; color: string }> = {
-  nursing:      { gradient: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%)', border: '#fdba74', color: '#c2410c' },
-  orthoptist:   { gradient: 'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%)', border: '#f9a8d4', color: '#be185d' },
-  dental_hyg:   { gradient: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%)', border: '#6ee7b7', color: '#047857' },
-  clinical_eng: { gradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%)', border: '#93c5fd', color: '#1d4ed8' },
-};
+import { DEPARTMENTS, DEPARTMENT_LABELS, GRADES, type Department, AVAILABLE_DEPARTMENTS, DEPT_STYLES } from '../../types';
 
 export function SetupScreen() {
   const { dispatch } = useApp();

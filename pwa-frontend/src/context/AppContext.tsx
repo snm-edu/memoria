@@ -77,12 +77,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
     }
   }, [profile]);
 
-  // 問題データを初期ロード
+  // 問題データを初期ロード（プロフィールの学科が確定してから実行）
   useEffect(() => {
-    loadQuestionsToCache().then((count) => {
+    if (!profile?.department) return;
+    loadQuestionsToCache(profile.department).then((count) => {
       if (count > 0) console.log(`問題データ: ${count}問ロード済み`);
     });
-  }, []);
+  }, [profile?.department]);
 
   // オンライン状態監視
   useEffect(() => {

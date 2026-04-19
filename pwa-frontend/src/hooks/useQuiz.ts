@@ -19,6 +19,7 @@ export interface QuizFilters {
   subcategory?: string; // サブカテゴリで更に絞り込み
   year?: number;
   gradeLimit?: number; // 学年に応じた出題範囲制限
+  sourceFilter?: 'official' | 'mock' | 'all'; // 過去問 / 模擬試験 / すべて
 }
 
 interface QuizState {
@@ -157,6 +158,14 @@ export function useQuiz() {
     // プロフィールの学科でフィルタ（必須）
     const profileDept = appState.profile?.department;
 
+    // curriculum を事前ロード（matchesFilter で同期使用するため）
+    let gradeCategoriesCache: string[] | null = null;
+    let gradeDifficultyCache: number | null = null;
+    if (filters?.gradeLimit && profileDept) {
+      gradeCategoriesCache = await getCategoriesForGrade(filters.gradeLimit, profileDept);
+      gradeDifficultyCache = await getMaxDifficultyForGrade(filters.gradeLimit, profileDept);
+    }
+
     // フィルター条件に合致するかチェック
     const matchesFilter = (q: Question): boolean => {
       if (!hasValidChoices(q)) return false; // 選択肢が画像のみの問題を除外
@@ -164,12 +173,16 @@ export function useQuiz() {
       if (filters?.category && q.category !== filters.category) return false;
       if (filters?.subcategory && q.subcategory !== filters.subcategory) return false;
       if (filters?.year && q.exam_year !== filters.year) return false;
-      // 学年別カリキュラムフィルター
+      // sourceFilter: 過去問 / 模擬試験 フィルター
+      if (filters?.sourceFilter && filters.sourceFilter !== 'all') {
+        const isMock = typeof q.exam_year === 'string' && q.exam_year.startsWith('mock_');
+        if (filters.sourceFilter === 'official' && isMock) return false;
+        if (filters.sourceFilter === 'mock' && !isMock) return false;
+      }
+      // 学年別カリキュラムフィルター（事前ロード済みキャッシュを同期で使用）
       if (filters?.gradeLimit) {
-        const allowedCategories = getCategoriesForGrade(filters.gradeLimit, profileDept);
-        if (!allowedCategories.includes(q.category)) return false;
-        const maxDifficulty = getMaxDifficultyForGrade(filters.gradeLimit);
-        if (q.difficulty > maxDifficulty) return false;
+        if (gradeCategoriesCache !== null && !gradeCategoriesCache.includes(q.category)) return false;
+        if (gradeDifficultyCache !== null && q.difficulty > gradeDifficultyCache) return false;
       }
       return true;
     };
@@ -390,6 +403,7 @@ export function useQuiz() {
           questionText: current.question_text,
           choices: current.choices,
           department: appState.profile?.department,
+          studyHour: new Date().getHours(),
         });
         if (res.success && res.data) {
           setState((s) => ({
@@ -418,9 +432,9 @@ export function useQuiz() {
         const profile = await db.profile.toCollection().first();
         if (profile) {
           const s = stateRef.current;
-          await updateGamification(
+          const result = await updateGamification(
             profile.studentId,
-            true, false, 0,
+            false, false, 0,
             {
               correct: s.sessionStats.correct,
               total: s.sessionStats.total,
@@ -428,6 +442,9 @@ export function useQuiz() {
               fastCorrect: sessionFastCorrectRef.current,
             }
           );
+          if (result.stageUp) {
+            console.log('🎉 キャラクターが進化した！');
+          }
         }
       } catch (e) { console.warn('[quiz] session badge check error:', e); }
       // セッションカウンターリセット

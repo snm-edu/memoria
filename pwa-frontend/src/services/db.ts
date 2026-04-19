@@ -72,6 +72,34 @@ export class NurseMemoriaDB extends Dexie {
       aiCache: '++id, [questionId+selectedAnswer], questionId',
       gamification: '++id, visitorId',
     });
+    // v5: manifest ベース学科別分割対応マイグレーション
+    this.version(5).stores({
+      profile: '++id, studentId, studentNumber, department, grade',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+      gamification: '++id, visitorId',
+    }).upgrade(_tx => {
+      // 旧バージョンキー（単一questions.json方式）を削除
+      // 次回起動で学科別 fetch が走る
+      localStorage.removeItem('memoria-data-version');
+    });
+    // v6: キャラクター成長GP フィールド追加
+    this.version(6).stores({
+      profile: '++id, studentId, studentNumber, department, grade',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+      gamification: '++id, visitorId',
+    }).upgrade(tx => {
+      return tx.table('gamification').toCollection().modify((g: GamificationState) => {
+        if (g.characterPoints === undefined) {
+          g.characterPoints = 0;
+        }
+      });
+    });
   }
 }
 
