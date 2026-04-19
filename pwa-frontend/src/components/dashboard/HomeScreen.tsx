@@ -191,14 +191,16 @@ export function HomeScreen() {
             <p className="text-xs text-slate-400">{levelTitle}</p>
           </div>
         </div>
-        <button onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'badges' })} className="card flex items-center gap-2 py-2 px-3">
-          <CharacterDisplay
-            stage={charInfo.current.stage}
-            fallbackEmoji={charInfo.current.emoji}
-            fallbackName={charInfo.current.name}
-            size={32}
-            compact
-          />
+        <button onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'badges' })} className="card flex items-center gap-1 py-2 px-3 relative">
+          <div className="shrink-0 -mt-5 -ml-3 -mr-1">
+            <CharacterDisplay
+              stage={charInfo.current.stage}
+              fallbackEmoji={charInfo.current.emoji}
+              fallbackName={charInfo.current.name}
+              size={60}
+              compact
+            />
+          </div>
           <div>
             <p className="text-lg font-bold">{badgeCount}</p>
             <p className="text-xs text-slate-400">バッジ</p>
