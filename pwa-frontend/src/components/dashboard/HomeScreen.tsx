@@ -5,6 +5,8 @@ import { useApp } from '../../context/AppContext';
 import { useBgm } from '../../hooks/useBgm';
 import { DEPARTMENT_LABELS } from '../../types';
 import { getCategoriesForGrade } from '../../services/gradeFilter';
+import { getCharacterStage } from '../../services/gamification';
+import { CharacterDisplay } from '../character/CharacterDisplay';
 
 export function HomeScreen() {
   const { state, dispatch } = useApp();
@@ -121,6 +123,8 @@ export function HomeScreen() {
   const streakDays = gamification?.streakDays || 0;
   const exp = gamification?.exp || 0;
   const badgeCount = gamification?.badges?.length || 0;
+  const characterPoints = gamification?.characterPoints || 0;
+  const charInfo = getCharacterStage(characterPoints);
 
   // レベル計算
   const level = Math.min(40, Math.floor(Math.sqrt(exp / 25)) + 1);
@@ -187,8 +191,14 @@ export function HomeScreen() {
             <p className="text-xs text-slate-400">{levelTitle}</p>
           </div>
         </div>
-        <button onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'badges' })} className="card flex items-center gap-1 py-2 px-3">
-          <span className="text-xl">🏅</span>
+        <button onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'badges' })} className="card flex items-center gap-2 py-2 px-3">
+          <CharacterDisplay
+            stage={charInfo.current.stage}
+            fallbackEmoji={charInfo.current.emoji}
+            fallbackName={charInfo.current.name}
+            size={32}
+            compact
+          />
           <div>
             <p className="text-lg font-bold">{badgeCount}</p>
             <p className="text-xs text-slate-400">バッジ</p>

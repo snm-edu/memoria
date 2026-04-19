@@ -12,8 +12,9 @@ interface Props {
   stage: number;
   fallbackEmoji: string;
   fallbackName: string;
-  context: MessageContext;
+  context?: MessageContext;
   size?: number;
+  compact?: boolean;
 }
 
 type LoadState = 'loading' | 'ready' | 'missing';
@@ -32,7 +33,7 @@ const characterBaseUrl = () => `${import.meta.env.BASE_URL}assets/character/`;
 const stageAssetUrl = (stage: number) =>
   `${characterBaseUrl()}${STAGE_FILES[stage] ?? `stage${stage}.json`}`;
 
-export function CharacterDisplay({ stage, fallbackEmoji, fallbackName, context, size = 200 }: Props) {
+export function CharacterDisplay({ stage, fallbackEmoji, fallbackName, context, size = 200, compact = false }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const animRef = useRef<AnimationItem | null>(null);
   const [loadState, setLoadState] = useState<LoadState>('loading');
@@ -80,8 +81,9 @@ export function CharacterDisplay({ stage, fallbackEmoji, fallbackName, context, 
     };
   }, [stage]);
 
-  // メッセージプールロード
+  // メッセージプールロード（compact 時は吹き出し不要なのでスキップ）
   useEffect(() => {
+    if (compact) return;
     let cancelled = false;
     getMessagesForStage(stage).then(msgs => {
       if (!cancelled) setPool(msgs);
@@ -89,10 +91,11 @@ export function CharacterDisplay({ stage, fallbackEmoji, fallbackName, context, 
     return () => {
       cancelled = true;
     };
-  }, [stage]);
+  }, [stage, compact]);
 
   // 初回 & プール変更時にメッセージを選定
   useEffect(() => {
+    if (compact || !context) return;
     if (pool.length === 0) {
       setCurrentMsg(null);
       return;
@@ -102,10 +105,10 @@ export function CharacterDisplay({ stage, fallbackEmoji, fallbackName, context, 
     // 少し遅延して吹き出しをフェードイン
     const t = setTimeout(() => setBubbleVisible(true), 400);
     return () => clearTimeout(t);
-  }, [pool, stage]);
+  }, [pool, stage, compact, context]);
 
   function refreshMessage() {
-    if (pool.length === 0) return;
+    if (pool.length === 0 || !context) return;
     setBubbleVisible(false);
     setTimeout(() => {
       const next = selectMessage(stage, context, pool, currentMsg?.id);
@@ -120,6 +123,27 @@ export function CharacterDisplay({ stage, fallbackEmoji, fallbackName, context, 
 
   const sizeStyle = { width: size, height: size };
 
+  if (compact) {
+    return (
+      <div style={sizeStyle} className="relative inline-block shrink-0" aria-label={fallbackName}>
+        <div
+          ref={containerRef}
+          style={{ ...sizeStyle, visibility: loadState === 'ready' ? 'visible' : 'hidden' }}
+        />
+        {loadState !== 'ready' && (
+          <div
+            style={sizeStyle}
+            className="absolute inset-0 flex items-center justify-center"
+          >
+            <span style={{ fontSize: Math.round(size * 0.75), lineHeight: 1 }}>
+              {fallbackEmoji}
+            </span>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-center select-none">
       {/* 吹き出し */}
@@ -130,7 +154,7 @@ export function CharacterDisplay({ stage, fallbackEmoji, fallbackName, context, 
         aria-live="polite"
       >
         <div className="rounded-2xl bg-white border border-slate-200 shadow-sm px-4 py-2 text-sm text-slate-700 leading-snug">
-          {currentMsg ? applyTemplate(currentMsg, context) : ''}
+          {currentMsg && context ? applyTemplate(currentMsg, context) : ''}
         </div>
         <div className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-3 h-3 bg-white border-r border-b border-slate-200 rotate-45" />
       </div>
