@@ -142,17 +142,25 @@ export function CharacterDisplay({ stage, fallbackEmoji, fallbackName, context, 
         className="active:scale-95 transition-transform"
         aria-label={`${fallbackName} に話しかける`}
       >
-        {loadState === 'ready' ? (
-          <div ref={containerRef} style={sizeStyle} />
-        ) : loadState === 'loading' ? (
-          <div style={sizeStyle} className="flex items-center justify-center text-slate-300">
-            <span className="text-6xl animate-pulse">{fallbackEmoji}</span>
-          </div>
-        ) : (
-          <div style={sizeStyle} className="flex items-center justify-center">
-            <span className="text-7xl">{fallbackEmoji}</span>
-          </div>
-        )}
+        <div style={sizeStyle} className="relative">
+          {/* Lottie コンテナ: ref を常にマウントして useEffect の loadAnimation に渡せるようにする */}
+          <div
+            ref={containerRef}
+            style={{ ...sizeStyle, visibility: loadState === 'ready' ? 'visible' : 'hidden' }}
+          />
+          {loadState !== 'ready' && (
+            <div
+              style={sizeStyle}
+              className={`absolute inset-0 flex items-center justify-center ${
+                loadState === 'loading' ? 'text-slate-300' : ''
+              }`}
+            >
+              <span className={loadState === 'loading' ? 'text-6xl animate-pulse' : 'text-7xl'}>
+                {fallbackEmoji}
+              </span>
+            </div>
+          )}
+        </div>
       </button>
     </div>
   );
