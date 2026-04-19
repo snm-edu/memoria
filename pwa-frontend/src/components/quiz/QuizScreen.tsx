@@ -7,6 +7,7 @@ import { AnalysisCard } from '../ai/AnalysisCard';
 import { QuizFilterScreen } from './QuizFilterScreen';
 import { highlightKeywords } from '../../services/memoriaStep';
 import type { BgmTrack } from '../../services/bgm';
+import { sfx } from '../../services/sfx';
 import DOMPurify from 'dompurify';
 
 // 通常テキスト用（選択肢・解説など）: style 属性を禁止して CSS Injection リスクを排除
@@ -85,6 +86,15 @@ export function QuizScreen() {
   useEffect(() => {
     play(bgmTrack);
   }, [bgmTrack, play]);
+
+  // 回答確定時の効果音: showFeedback が false→true に変化した瞬間に鳴らす
+  const prevShowFeedbackRef = useRef(false);
+  useEffect(() => {
+    if (quiz.showFeedback && !prevShowFeedbackRef.current && quiz.isCorrect !== null) {
+      sfx.play(quiz.isCorrect ? 'correct' : 'incorrect');
+    }
+    prevShowFeedbackRef.current = quiz.showFeedback;
+  }, [quiz.showFeedback, quiz.isCorrect]);
 
   // graded モード: 学年制限付きで自動開始
   useEffect(() => {
