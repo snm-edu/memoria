@@ -1,7 +1,9 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
-import { BADGE_DEFINITIONS, getLevelProgress, getLevelTitle } from '../../services/gamification';
+import { BADGE_DEFINITIONS, getLevelProgress, getLevelTitle, getCharacterStage } from '../../services/gamification';
+import { CharacterDisplay } from '../character/CharacterDisplay';
+import type { MessageContext } from '../../services/characterMessage';
 
 export function BadgesScreen() {
   const { state, dispatch } = useApp();
@@ -11,6 +13,14 @@ export function BadgesScreen() {
     if (!profile) return null;
     return db.gamification.where('visitorId').equals(profile.studentId).first();
   }, [profile?.studentId]);
+
+  // 文脈算出: 直近50問の正答率
+  const recentAccuracy = useLiveQuery(async () => {
+    const recent = await db.answerLog.orderBy('timestamp').reverse().limit(50).toArray();
+    if (recent.length < 5) return null;
+    const correct = recent.filter(l => l.isCorrect).length;
+    return (correct / recent.length) * 100;
+  }, []);
 
   const earnedBadges = gamification?.badges || [];
   const categories = [
@@ -22,7 +32,9 @@ export function BadgesScreen() {
   ];
 
   const levelInfo = gamification ? getLevelProgress(gamification.exp) : { level: 1, currentExp: 0, nextLevelExp: 25, progress: 0 };
-  const title = getLevelTitle(levelInfo.level);
+  const title = getLevelTitle(levelInfo.level, profile?.department);
+  const gp = gamification?.characterPoints ?? 0;
+  const charInfo = getCharacterStage(gp);
 
   return (
     <div className="min-h-screen p-4 pb-20">
@@ -41,6 +53,43 @@ export function BadgesScreen() {
         <p className="text-xs text-slate-400 mt-1">次のレベルまで {levelInfo.nextLevelExp - levelInfo.currentExp} EXP</p>
       </div>
 
+      {/* キャラクター成長 */}
+      <div className="card mb-4 text-center py-4">
+        {(() => {
+          const now = new Date();
+          const ctx: MessageContext = {
+            streakDays: gamification?.streakDays ?? 0,
+            recentAccuracy: recentAccuracy ?? null,
+            lastStudyDate: gamification?.lastStudyDate ?? '',
+            hour: now.getHours(),
+            dayOfWeek: now.getDay(),
+          };
+          return (
+            <CharacterDisplay
+              stage={charInfo.current.stage}
+              fallbackEmoji={charInfo.current.emoji}
+              fallbackName={charInfo.current.name}
+              context={ctx}
+              size={200}
+            />
+          );
+        })()}
+        <p className="font-bold text-lg mt-2">{charInfo.current.name}</p>
+        <p className="text-xs text-slate-400 mb-2">ステージ {charInfo.current.stage} / 7</p>
+        <div className="w-full bg-slate-100 rounded-full h-2 mb-1">
+          <div
+            className="bg-gradient-to-r from-amber-400 to-orange-500 h-2 rounded-full transition-all"
+            style={{ width: `${charInfo.progress * 100}%` }}
+          />
+        </div>
+        <p className="text-xs text-slate-400">
+          {charInfo.nextGP !== null
+            ? `次の進化まで ${charInfo.nextGP - gp} GP`
+            : '最高ステージ達成！'}
+        </p>
+        <p className="text-xs text-slate-300 mt-1">GP: {gp}</p>
+      </div>
+
       {/* 獲得数 */}
       <div className="card mb-4 text-center">
         <p className="text-3xl font-bold">{earnedBadges.length} <span className="text-sm text-slate-400">/ {BADGE_DEFINITIONS.length}</span></p>
@@ -53,7 +102,7 @@ export function BadgesScreen() {
         return (
           <div key={cat.key} className="mb-4">
             <h3 className="text-sm font-bold text-slate-500 mb-2">{cat.label}</h3>
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               {badges.map(badge => {
                 const earned = earnedBadges.includes(badge.id);
                 return (
