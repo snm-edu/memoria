@@ -20,24 +20,30 @@ export function AnalysisCard({ analysis, onClose }: Props) {
   return (
     <div className="card space-y-4">
       <div className="flex items-center justify-between">
-        <h3 className="font-bold text-lg">AI誤答分析</h3>
+        <h3 className="font-bold text-lg">AI分析</h3>
         <span className={`text-xs px-2 py-1 rounded-full font-bold ${errorInfo.color}`}>
           {errorInfo.label}
         </span>
       </div>
 
+      {analysis.cheer && (
+        <div className="bg-amber-50 border border-amber-200 p-3 rounded-lg">
+          <p className="text-sm leading-relaxed text-amber-900">{analysis.cheer}</p>
+        </div>
+      )}
+
       <div>
-        <p className="text-sm text-slate-500 mb-1">間��えた原因</p>
+        <p className="text-sm text-slate-500 mb-1">なぜ間違えやすいか</p>
         <p className="text-sm leading-relaxed">{analysis.analysis}</p>
       </div>
 
       <div>
-        <p className="text-sm text-slate-500 mb-1">重要概念</p>
+        <p className="text-sm text-slate-500 mb-1">ここだけ覚えよう</p>
         <p className="text-sm font-medium text-primary-600">{analysis.key_concept}</p>
       </div>
 
       <div className="bg-blue-50 p-3 rounded-lg">
-        <p className="text-sm text-slate-500 mb-1">学習アドバイス</p>
+        <p className="text-sm text-slate-500 mb-1">次への作戦</p>
         <p className="text-sm leading-relaxed">{analysis.study_hint}</p>
       </div>
 

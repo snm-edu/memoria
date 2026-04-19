@@ -6,7 +6,7 @@ const GeminiService = {
   /**
    * 誤��分析
    */
-  analyzeError({ questionId, studentAnswer, correctAnswer, questionText, choices, department }) {
+  analyzeError({ questionId, studentAnswer, correctAnswer, questionText, choices, department, studyHour }) {
     if (!questionId || !studentAnswer || !correctAnswer) {
       return { error: 'questionId, studentAnswer, correctAnswer are required' };
     }
@@ -25,8 +25,24 @@ const GeminiService = {
       `${choiceLabels[i]}: ${c}`
     ).join('\n');
 
-    const prompt = `あなたは${expertName}の教育専門家です。
-学生が以下の問題に間違えました。間違えた原因を分析してください。
+    // 深夜判定（0〜5時台）
+    const hour = (studyHour !== undefined && studyHour !== null) ? studyHour : new Date().getHours();
+    const isLateNight = hour >= 0 && hour < 6;
+
+    const lateNightNote = isLateNight
+      ? `【時刻メモ】今は深夜${hour}時です。まず「こんな時間まで頑張ってるね！」と労い、カラダを心配してください。そして「眠ってる間に脳が今日の勉強を整理してくれるから、少し休むのも大事な勉強法だよ」とやさしく伝えてください。`
+      : '';
+
+    const cheerInstruction = isLateNight
+      ? '深夜なので：労い＋カラダ心配＋眠りで脳が整理する話＋励まし、全体150字以内'
+      : '悔しさへの共感＋大丈夫という励まし、100字以内';
+
+    const prompt = `あなたは${expertName}の勉強を一緒に頑張る、優しくて熱い先輩です。
+学生が問題を間違えました。まず気持ちに寄り添い、前向きになれるよう励ましてから、勉強のヒントを伝えてください。
+難しい専門用語や硬い言葉は使わず、友達に話しかけるような自然な言葉で書いてください。
+すべての出力は必ず日本語のみで書いてください。他の言語を混ぜないでください。
+
+${lateNightNote}
 
 【問題】${questionText}
 【選択肢】
@@ -37,15 +53,16 @@ ${choiceText}
 以下のJSON形式で回答してください:
 {
   "error_type": "knowledge_gap | misread | confusion",
-  "analysis": "間違えた原因の説明（学生向け、200字以内）",
-  "key_concept": "理解すべき重要概念",
-  "study_hint": "学習のアドバイス（100字以内）"
+  "cheer": "${cheerInstruction}",
+  "analysis": "なぜ間違えやすいかをやさしく一言で（80字以内）",
+  "key_concept": "ここだけ覚えようというキーポイント（30字以内）",
+  "study_hint": "次に活かせる具体的なコツ（80字以内）"
 }
 
-error_typeの判定基準:
-- knowledge_gap: 正答の知識自体が不足している
-- misread: 問題文や選択肢の読み違い（否定語の見落とし等）
-- confusion: 類似概念との混同（例: 交感神経と副交感神経）`;
+error_typeの判定基準（内部分類用）:
+- knowledge_gap: その知識がまだ定着していない
+- misread: 問題文や選択肢の読み違い（「ではない」の見落とし等）
+- confusion: 似た概念との混同`;
 
     const result = callGeminiAPI(prompt, 3, { json: true });
     if (result.error) return result;
@@ -59,6 +76,7 @@ error_typeの判定基準:
     return {
       question_id: questionId,
       error_type: analysis.error_type || 'knowledge_gap',
+      cheer: analysis.cheer || '',
       analysis: analysis.analysis || '',
       key_concept: analysis.key_concept || '',
       study_hint: analysis.study_hint || '',
