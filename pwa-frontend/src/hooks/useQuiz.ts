@@ -432,9 +432,9 @@ export function useQuiz() {
         const profile = await db.profile.toCollection().first();
         if (profile) {
           const s = stateRef.current;
-          await updateGamification(
+          const result = await updateGamification(
             profile.studentId,
-            true, false, 0,
+            false, false, 0,
             {
               correct: s.sessionStats.correct,
               total: s.sessionStats.total,
@@ -442,6 +442,9 @@ export function useQuiz() {
               fastCorrect: sessionFastCorrectRef.current,
             }
           );
+          if (result.stageUp) {
+            console.log('🎉 キャラクターが進化した！');
+          }
         }
       } catch (e) { console.warn('[quiz] session badge check error:', e); }
       // セッションカウンターリセット
