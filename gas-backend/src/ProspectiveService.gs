@@ -99,3 +99,37 @@ const ProspectiveService = {
     return { profile: null };
   },
 };
+
+/**
+ * ワンショット: student_logs の student_type 列の空セルを 'enrolled' で埋める
+ *
+ * GAS エディタから手動で 1 回だけ実行してください。
+ * 実行後、以降の書き込みは AnswerService.submitAnswer が自動的に埋めます。
+ */
+function backfillStudentTypeEnrolled() {
+  const sheet = getOrCreateSheet(CONFIG.SHEETS.STUDENT_LOGS);
+  const lastRow = sheet.getLastRow();
+  const lastCol = sheet.getLastColumn();
+  if (lastRow <= 1) {
+    console.log('[backfill] データ行なし');
+    return;
+  }
+
+  const headers = sheet.getRange(1, 1, 1, lastCol).getValues()[0];
+  const typeColIdx = headers.indexOf('student_type');
+  if (typeColIdx === -1) {
+    throw new Error('student_type 列が見つかりません。先にヘッダー行に student_type を追加してください。');
+  }
+
+  const range = sheet.getRange(2, typeColIdx + 1, lastRow - 1, 1);
+  const values = range.getValues();
+  let filled = 0;
+  for (let i = 0; i < values.length; i++) {
+    if (!values[i][0]) {
+      values[i][0] = 'enrolled';
+      filled++;
+    }
+  }
+  range.setValues(values);
+  console.log('[backfill] ' + filled + ' 行を enrolled で埋めました');
+}
