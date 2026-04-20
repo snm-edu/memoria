@@ -6,17 +6,18 @@ const AnswerService = {
   /**
    * 回答を記録
    */
-  submitAnswer({ studentId, studentNumber, questionId, answer, isCorrect, responseTime, department, grade, timestamp }) {
+  submitAnswer({ studentId, studentNumber, questionId, answer, isCorrect, responseTime, department, grade, studentType, timestamp }) {
     if (!studentId || !questionId) {
       return { error: 'studentId and questionId are required' };
     }
 
     const sheet = getOrCreateSheet(CONFIG.SHEETS.STUDENT_LOGS);
 
-    // ヘッダー確認・作成
+    // ヘッダー確認・作成（student_type 列を含む最新スキーマ）
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
         'log_id', 'student_id', 'student_number', 'department', 'grade',
+        'student_type',
         'question_id', 'selected_answer', 'is_correct', 'response_time_ms',
         'attempt_count', 'timestamp'
       ]);
@@ -46,19 +47,30 @@ const AnswerService = {
       const logId = Utilities.getUuid();
       const ts = timestamp || new Date().toISOString();
 
-      sheet.appendRow([
+      // 既存シートの列構成に合わせて書き込む（student_type 列の有無を動的判定）
+      const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+      const hasTypeCol = headers.indexOf('student_type') !== -1;
+
+      const rowBase = [
         logId,
         studentId,
         studentNumber || '',
         department || '',
         grade || '',
+      ];
+      const rowTail = [
         questionId,
         selectedAnswer.join(','),
         isCorrect,
         responseTime || 0,
         attemptCount,
         ts,
-      ]);
+      ];
+      const row = hasTypeCol
+        ? rowBase.concat([studentType || 'enrolled']).concat(rowTail)
+        : rowBase.concat(rowTail);
+
+      sheet.appendRow(row);
 
       return {
         log_id: logId,

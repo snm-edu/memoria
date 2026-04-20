@@ -4,11 +4,13 @@
  * GET  /exec?action=getQuestions&dept=nursing&category=...&limit=20&offset=0
  * GET  /exec?action=getReviewQueue&studentId=xxx
  * GET  /exec?action=getStudentStats&studentId=xxx
- * POST /exec?action=submitAnswer   { studentId, studentNumber, questionId, answer, responseTime, department, grade }
+ * POST /exec?action=submitAnswer   { studentId, studentNumber, questionId, answer, responseTime, department, grade, studentType }
  * POST /exec?action=submitAnswerBatch { answers: [...] }
  * POST /exec?action=updateStudentNumber { oldStudentNumber, newStudentNumber, studentId }
  * POST /exec?action=analyzeError   { questionId, studentAnswer, correctAnswer }
  * POST /exec?action=generateSimilar { questionId, errorType }
+ * POST /exec?action=logPreEnrollmentGame { studentId, studentNumber, department, gameId, status }
+ * POST /exec?action=getMyProfile   { studentId, studentNumber }
  */
 
 function doGet(e) {
@@ -68,7 +70,23 @@ function doPost(e) {
           responseTime: body.responseTime,
           department: body.department,
           grade: body.grade,
+          studentType: body.studentType || 'enrolled',
           timestamp: body.timestamp || '',
+        }));
+
+      case 'logPreEnrollmentGame':
+        return jsonResponse(ProspectiveService.logPreEnrollmentGame({
+          studentId: body.studentId,
+          studentNumber: body.studentNumber || '',
+          department: body.department || '',
+          gameId: body.gameId,
+          status: body.status,
+        }));
+
+      case 'getMyProfile':
+        return jsonResponse(ProspectiveService.getMyProfile({
+          studentId: body.studentId,
+          studentNumber: body.studentNumber,
         }));
 
       case 'submitAnswerBatch':

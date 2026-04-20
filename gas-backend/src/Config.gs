@@ -26,6 +26,8 @@ const CONFIG = {
     AI_GENERATED: 'ai_generated',
     AI_DASHBOARD: 'ai_dashboard',
     CATEGORY_STATS: 'category_stats',
+    PROSPECTIVE_LOGS: 'prospective_logs',
+    PROFILE: 'profile',
   },
 
   // デフォルト取得件数
@@ -73,9 +75,20 @@ function getSheetHeaders(sheetName) {
       ];
     case CONFIG.SHEETS.STUDENT_LOGS:
       return [
-        'log_id', 'student_id', 'department', 'grade',
+        'log_id', 'student_id', 'student_number', 'department', 'grade',
+        'student_type',
         'question_id', 'selected_answer', 'is_correct',
         'response_time_ms', 'attempt_count', 'timestamp'
+      ];
+    case CONFIG.SHEETS.PROSPECTIVE_LOGS:
+      return [
+        'log_id', 'student_id', 'student_number', 'department',
+        'game_id', 'status', 'timestamp'
+      ];
+    case CONFIG.SHEETS.PROFILE:
+      return [
+        'student_id', 'student_number', 'department', 'grade',
+        'student_type', 'updated_at'
       ];
     case CONFIG.SHEETS.AI_GENERATED:
       return [
