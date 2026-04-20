@@ -71,14 +71,14 @@ export function QuizFilterScreen({ onStart, onCancel }: Props) {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-[100dvh] flex items-center justify-center">
         <p className="text-slate-400">読み込み中...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col p-4 pb-6">
+    <div className="min-h-[100dvh] flex flex-col p-4 pb-6">
       {/* ヘッダー */}
       <div className="flex items-center gap-3 mb-6">
         <button onClick={onCancel} className="text-slate-400">

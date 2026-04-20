@@ -11,7 +11,8 @@
   }
 
   body {
-    @apply min-h-screen bg-slate-50;
+    @apply bg-slate-50;
+    min-height: 100dvh;
     overscroll-behavior-y: none;
   }
 }

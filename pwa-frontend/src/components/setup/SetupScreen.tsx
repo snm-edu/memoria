@@ -63,7 +63,7 @@ export function SetupScreen() {
     : grade !== null ? `${grade}年` : '';
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6">
+    <div className="min-h-[100dvh] flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-md">
         {/* ロゴ・タイトル */}
         <div className="text-center mb-8">

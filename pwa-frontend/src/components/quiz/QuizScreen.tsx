@@ -158,7 +158,7 @@ export function QuizScreen() {
 
   if (quiz.isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-[100dvh] flex items-center justify-center">
         <p className="text-slate-400">問題を読み込み中...</p>
       </div>
     );
@@ -166,7 +166,7 @@ export function QuizScreen() {
 
   if (quiz.isFinished) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-6">
+      <div className="min-h-[100dvh] flex flex-col items-center justify-center p-6">
         <div className="card w-full max-w-md text-center">
           <div className="flex justify-end mb-2">
             <button
@@ -220,7 +220,7 @@ export function QuizScreen() {
 
   if (!quiz.currentQuestion) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6">
+      <div className="min-h-[100dvh] flex items-center justify-center p-6">
         <div className="card text-center">
           <p className="text-slate-500 mb-4">
             問題がありません。問題データを読み込んでください。
@@ -246,7 +246,7 @@ export function QuizScreen() {
     : q.question_text;
 
   return (
-    <div className="min-h-screen flex flex-col p-4 pb-6">
+    <div className="min-h-[100dvh] flex flex-col p-4 pb-6">
       {/* プログレス */}
       <div className="flex items-center gap-3 mb-4">
         <button

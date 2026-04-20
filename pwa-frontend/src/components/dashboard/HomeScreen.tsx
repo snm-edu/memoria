@@ -138,7 +138,7 @@ export function HomeScreen() {
   for (const [lv, t] of TITLES) { if (level >= lv) levelTitle = t; }
 
   return (
-    <div className="min-h-screen p-4 pb-20">
+    <div className="min-h-[100dvh] p-4 pb-20">
       {/* ヘッダー */}
       <header className="flex items-center justify-between mb-6">
         <div>
