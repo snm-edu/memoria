@@ -37,7 +37,7 @@ export function BadgesScreen() {
   const charInfo = getCharacterStage(gp);
 
   return (
-    <div className="min-h-screen p-4 pb-20">
+    <div className="min-h-[100dvh] p-4 pb-20">
       <header className="flex items-center gap-3 mb-6">
         <button onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'home' })} className="text-slate-400">← 戻る</button>
         <h2 className="text-xl font-bold">バッジコレクション</h2>

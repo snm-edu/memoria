@@ -3,6 +3,8 @@ import { useApp } from '../../context/AppContext';
 import { DEPARTMENT_LABELS } from '../../types';
 import { logPreEnrollmentGame } from '../../services/api';
 
+// prospective モードの "ホーム" は当画面なので、戻り先として設定画面を用意する
+
 type GameId = 'basics' | 'kanji' | 'reading' | 'thinking';
 
 interface GameMeta {
@@ -21,7 +23,7 @@ const GAMES: GameMeta[] = [
 ];
 
 export function PreEnrollmentGamesMenu() {
-  const { state } = useApp();
+  const { state, dispatch } = useApp();
   const { profile } = state;
   const [message, setMessage] = useState<string | null>(null);
 
@@ -43,19 +45,30 @@ export function PreEnrollmentGamesMenu() {
   }
 
   return (
-    <div className="min-h-screen p-4 pb-10">
-      <header className="mb-6">
-        <h1 className="text-xl font-extrabold tracking-tight"
-            style={{
-              background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>Memoria</h1>
-        {profile && (
-          <p className="text-sm text-slate-400">
-            {DEPARTMENT_LABELS[profile.department]} 入学前コース
-          </p>
-        )}
+    <div className="min-h-[100dvh] p-4 pb-6">
+      <header className="mb-6 flex items-start justify-between">
+        <div>
+          <h1 className="text-xl font-extrabold tracking-tight"
+              style={{
+                background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>Memoria</h1>
+          {profile && (
+            <p className="text-sm text-slate-400">
+              {DEPARTMENT_LABELS[profile.department]} 入学前コース
+            </p>
+          )}
+        </div>
+        <button
+          onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'settings' })}
+          className="w-10 h-10 flex items-center justify-center rounded-full
+            bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors"
+          title="設定"
+          aria-label="設定"
+        >
+          ⚙️
+        </button>
       </header>
 
       <div className="card mb-5 text-center">
