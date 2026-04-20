@@ -47,28 +47,23 @@ const AnswerService = {
       const logId = Utilities.getUuid();
       const ts = timestamp || new Date().toISOString();
 
-      // 既存シートの列構成に合わせて書き込む（student_type 列の有無を動的判定）
+      // 既存シートの列順に依存しないよう、ヘッダー名で値をマッピング
       const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-      const hasTypeCol = headers.indexOf('student_type') !== -1;
-
-      const rowBase = [
-        logId,
-        studentId,
-        studentNumber || '',
-        department || '',
-        grade || '',
-      ];
-      const rowTail = [
-        questionId,
-        selectedAnswer.join(','),
-        isCorrect,
-        responseTime || 0,
-        attemptCount,
-        ts,
-      ];
-      const row = hasTypeCol
-        ? rowBase.concat([studentType || 'enrolled']).concat(rowTail)
-        : rowBase.concat(rowTail);
+      const valueByCol = {
+        log_id: logId,
+        student_id: studentId,
+        student_number: studentNumber || '',
+        department: department || '',
+        grade: grade || '',
+        student_type: studentType || 'enrolled',
+        question_id: questionId,
+        selected_answer: selectedAnswer.join(','),
+        is_correct: isCorrect,
+        response_time_ms: responseTime || 0,
+        attempt_count: attemptCount,
+        timestamp: ts,
+      };
+      const row = headers.map(h => (h in valueByCol ? valueByCol[h] : ''));
 
       sheet.appendRow(row);
 
