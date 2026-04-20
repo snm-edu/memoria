@@ -71,6 +71,7 @@ export async function submitAnswer(body: {
   responseTime: number;
   department: string;
   grade: number;
+  studentType?: 'prospective' | 'enrolled' | 'graduate';
 }): Promise<ApiResponse<{
   is_correct: boolean;
   correct_answer: string[];
@@ -153,4 +154,26 @@ export async function refreshDashboard(studentId: string): Promise<ApiResponse<{
 export async function ping(): Promise<boolean> {
   const res = await apiGet<{ status: string }>({ action: 'ping' });
   return res.success === true;
+}
+
+export async function logPreEnrollmentGame(body: {
+  studentId: string;
+  studentNumber: string;
+  department: string;
+  gameId: 'basics' | 'kanji' | 'reading' | 'thinking';
+  status: 'started' | 'completed';
+}): Promise<ApiResponse<{ log_id: string }>> {
+  return apiPost({ action: 'logPreEnrollmentGame', ...body });
+}
+
+export async function getMyProfile(body: {
+  studentId: string;
+  studentNumber: string;
+}): Promise<ApiResponse<{
+  studentNumber: string;
+  department: string;
+  grade: number;
+  studentType: 'prospective' | 'enrolled' | 'graduate';
+}>> {
+  return apiPost({ action: 'getMyProfile', ...body });
 }

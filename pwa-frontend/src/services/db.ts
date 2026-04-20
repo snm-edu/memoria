@@ -100,6 +100,22 @@ export class NurseMemoriaDB extends Dexie {
         }
       });
     });
+    // v7: 学生区分（studentType）追加
+    this.version(7).stores({
+      profile: '++id, studentId, studentNumber, department, grade, studentType',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+      gamification: '++id, visitorId',
+    }).upgrade(tx => {
+      // 既存プロフィールは在校生として補完
+      return tx.table('profile').toCollection().modify((profile: StudentProfile) => {
+        if (!profile.studentType) {
+          profile.studentType = 'enrolled';
+        }
+      });
+    });
   }
 }
 

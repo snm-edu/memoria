@@ -47,13 +47,20 @@ export interface AnswerLog {
   synced: boolean;
 }
 
+// 学生区分
+// prospective: 入学前（内定者）
+// enrolled:    在校生（1-3 年）
+// graduate:    卒業生（再受験者）
+export type StudentType = 'prospective' | 'enrolled' | 'graduate';
+
 // 学生プロフィール
 export interface StudentProfile {
   id?: number;
   studentId: string;
   studentNumber: string;  // 学籍番号（教員が識別に使用）
   department: Department;
-  grade: number;
+  grade: number;              // prospective=0, enrolled=1/2/3, graduate=3
+  studentType: StudentType;
   createdAt: string;
 }
 

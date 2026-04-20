@@ -1,5 +1,6 @@
 import { db } from './db';
 import { submitAnswerBatch } from './api';
+import type { StudentType } from '../types';
 
 /**
  * 未同期の回答ログをGASに送信
@@ -8,7 +9,8 @@ export async function syncPendingAnswers(
   studentId: string,
   department: string,
   grade: number,
-  studentNumber?: string
+  studentNumber?: string,
+  studentType: StudentType = 'enrolled'
 ): Promise<{ synced: number; failed: number }> {
   // 全ログから未同期を抽出
   const allLogs = await db.answerLog.toArray();
@@ -29,6 +31,7 @@ export async function syncPendingAnswers(
     responseTime: log.responseTimeMs,
     department,
     grade,
+    studentType,
     timestamp: log.timestamp,
   }));
 

@@ -120,7 +120,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
         state.profile.studentId,
         state.profile.department,
         state.profile.grade,
-        state.profile.studentNumber
+        state.profile.studentNumber,
+        state.profile.studentType,
       );
       if (result.synced > 0) {
         console.log(`同期完了: ${result.synced}件送信`);

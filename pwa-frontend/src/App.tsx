@@ -7,6 +7,7 @@ import { ReviewSchedule } from './components/dashboard/ReviewSchedule';
 import { SettingsScreen } from './components/settings/SettingsScreen';
 import { BadgesScreen } from './components/dashboard/BadgesScreen';
 import { AiDashboard } from './components/dashboard/AiDashboard';
+import { PreEnrollmentGamesMenu } from './components/prospective/PreEnrollmentGamesMenu';
 
 function AppContent() {
   const { state } = useApp();
@@ -15,7 +16,9 @@ function AppContent() {
     case 'setup':
       return <SetupScreen />;
     case 'home':
-      return <HomeScreen />;
+      return state.profile?.studentType === 'prospective'
+        ? <PreEnrollmentGamesMenu />
+        : <HomeScreen />;
     case 'quiz':
       return <QuizScreen />;
     case 'weakness':

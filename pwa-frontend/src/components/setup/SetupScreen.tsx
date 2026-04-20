@@ -1,17 +1,36 @@
 import { useState } from 'react';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
-import { DEPARTMENTS, DEPARTMENT_LABELS, GRADES, type Department, AVAILABLE_DEPARTMENTS, DEPT_STYLES } from '../../types';
+import { DEPARTMENTS, DEPARTMENT_LABELS, GRADES, type Department, type StudentType, AVAILABLE_DEPARTMENTS, DEPT_STYLES } from '../../types';
 
 export function SetupScreen() {
   const { dispatch } = useApp();
   const [department, setDepartment] = useState<Department | null>(null);
   const [grade, setGrade] = useState<number | null>(null);
+  const [studentType, setStudentType] = useState<StudentType | null>(null);
   const [studentNumber, setStudentNumber] = useState('');
   const [step, setStep] = useState<'dept' | 'grade' | 'studentNum' | 'confirm'>('dept');
 
+  function selectEnrolled(g: number) {
+    setGrade(g);
+    setStudentType('enrolled');
+    setStep('studentNum');
+  }
+
+  function selectProspective() {
+    setGrade(0);
+    setStudentType('prospective');
+    setStep('studentNum');
+  }
+
+  function selectGraduate() {
+    setGrade(3);
+    setStudentType('graduate');
+    setStep('studentNum');
+  }
+
   async function handleConfirm() {
-    if (!department || !grade || !studentNumber.trim()) return;
+    if (!department || grade === null || !studentType || !studentNumber.trim()) return;
 
     const studentId = crypto.randomUUID();
     const profile = {
@@ -19,6 +38,7 @@ export function SetupScreen() {
       studentNumber: studentNumber.trim(),
       department,
       grade,
+      studentType,
       createdAt: new Date().toISOString(),
     };
 
@@ -26,6 +46,21 @@ export function SetupScreen() {
     dispatch({ type: 'SET_PROFILE', profile });
     dispatch({ type: 'SET_SCREEN', screen: 'home' });
   }
+
+  const studentNumHint =
+    studentType === 'prospective' ? '仮学籍番号（合格通知書記載）を入力してください'
+    : studentType === 'graduate'  ? '在校時の学籍番号を入力してください（学習履歴を引き継ぎます）'
+    : '学習記録の管理に使用します。あとから変更もできます。';
+
+  const studentNumPlaceholder =
+    studentType === 'prospective' ? '例: P25-001'
+    : studentType === 'graduate'  ? '例: 23N001'
+    : '例: 25N001';
+
+  const typeLabel =
+    studentType === 'prospective' ? '入学前'
+    : studentType === 'graduate'  ? '卒業生'
+    : grade !== null ? `${grade}年` : '';
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
@@ -86,21 +121,48 @@ export function SetupScreen() {
         {step === 'grade' && (
           <div className="space-y-3">
             <h2 className="text-lg font-bold text-center mb-4">学年を選択</h2>
+            {/* 在校生（主） */}
             <div className="grid grid-cols-3 gap-3">
               {GRADES.map((g) => (
                 <button
                   key={g}
-                  onClick={() => { setGrade(g); setStep('studentNum'); }}
-                  className={`p-4 rounded-xl text-center font-bold text-xl transition-all
-                    ${grade === g
-                      ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white border-2 border-slate-200 active:border-primary-400'
-                    }`}
+                  onClick={() => selectEnrolled(g)}
+                  className="p-4 rounded-xl text-center font-bold text-xl transition-all
+                    bg-white border-2 border-slate-200 active:border-primary-400 shadow-sm
+                    hover:shadow-md active:scale-[0.98]"
                 >
                   {g}年
                 </button>
               ))}
             </div>
+
+            {/* 区切り */}
+            <div className="flex items-center gap-3 pt-2 pb-1">
+              <div className="flex-1 h-px bg-slate-200" />
+              <span className="text-xs text-slate-400">その他</span>
+              <div className="flex-1 h-px bg-slate-200" />
+            </div>
+
+            {/* 入学前・卒業生（副） */}
+            <div className="grid grid-cols-2 gap-3">
+              <button
+                onClick={selectProspective}
+                className="p-3 rounded-xl text-center font-semibold text-sm transition-all
+                  bg-slate-50 border border-slate-200 text-slate-600
+                  active:border-slate-400 active:scale-[0.98]"
+              >
+                入学前
+              </button>
+              <button
+                onClick={selectGraduate}
+                className="p-3 rounded-xl text-center font-semibold text-sm transition-all
+                  bg-slate-50 border border-slate-200 text-slate-600
+                  active:border-slate-400 active:scale-[0.98]"
+              >
+                卒業生
+              </button>
+            </div>
+
             <button
               onClick={() => setStep('dept')}
               className="w-full text-center text-slate-400 mt-4 py-2"
@@ -118,13 +180,13 @@ export function SetupScreen() {
               type="text"
               value={studentNumber}
               onChange={(e) => setStudentNumber(e.target.value)}
-              placeholder="例: 25N001"
+              placeholder={studentNumPlaceholder}
               className="w-full p-4 rounded-xl border-2 border-slate-200 text-center text-xl font-bold
                 focus:border-primary-400 focus:outline-none transition-all"
               autoFocus
             />
             <p className="text-xs text-slate-400 text-center">
-              学習記録の管理に使用します。あとから変更もできます。
+              {studentNumHint}
             </p>
             <button
               onClick={() => { if (studentNumber.trim()) setStep('confirm'); }}
@@ -147,13 +209,13 @@ export function SetupScreen() {
         )}
 
         {/* 確認 */}
-        {step === 'confirm' && department && grade && studentNumber.trim() && (
+        {step === 'confirm' && department && studentType && studentNumber.trim() && (
           <div className="text-center space-y-6">
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
               <p className="text-slate-500 text-sm mb-1">学科</p>
               <p className="text-xl font-bold">{DEPARTMENT_LABELS[department]}</p>
-              <p className="text-slate-500 text-sm mb-1 mt-4">学年</p>
-              <p className="text-xl font-bold">{grade}年</p>
+              <p className="text-slate-500 text-sm mb-1 mt-4">区分</p>
+              <p className="text-xl font-bold">{typeLabel}</p>
               <p className="text-slate-500 text-sm mb-1 mt-4">学籍番号</p>
               <p className="text-xl font-bold">{studentNumber.trim()}</p>
             </div>
