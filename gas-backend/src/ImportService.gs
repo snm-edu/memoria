@@ -238,7 +238,7 @@ function countQuestions() {
   const total = lastRow - 1;
   const labelMap = {
     nursing: '看護学科',
-    clinical_eng: '臨床工学科',
+    clinical_eng: '臨床工学技士学科',
     dental_hyg: '歯科衛生学科',
     orthoptist: '視能訓練学科',
   };

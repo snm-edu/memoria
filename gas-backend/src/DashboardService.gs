@@ -27,38 +27,54 @@ const DashboardService = {
     // 学生名簿から学籍番号→氏名のマップを作成
     var nameMap = this.getStudentNameMap();
 
-    // ai_dashboardシート取得or作成（student_name列追加対応）
+    // ai_dashboardシート取得or作成（student_name・last_study_date列追加対応）
     let dashboard = ss.getSheetByName(CONFIG.SHEETS.AI_DASHBOARD);
     const dashHeaders = [
       'student_id', 'student_number', 'student_name', 'department', 'grade',
       'total_questions', 'correct_rate', 'streak_days',
       'weak_categories', 'strong_categories', 'weekly_trend',
-      'error_patterns', 'ai_comment', 'updated_at'
+      'error_patterns', 'ai_comment', 'last_study_date', 'updated_at'
     ];
     if (!dashboard) {
       dashboard = ss.insertSheet(CONFIG.SHEETS.AI_DASHBOARD);
       dashboard.getRange(1, 1, 1, dashHeaders.length).setValues([dashHeaders]);
       dashboard.getRange(1, 1, 1, dashHeaders.length).setFontWeight('bold');
-    } else {
-      // 既存シートにstudent_name列がなければヘッダーを更新
-      var currentHeaders = dashboard.getRange(1, 1, 1, dashboard.getLastColumn()).getValues()[0];
-      if (currentHeaders.indexOf('student_name') === -1) {
-        dashboard.clear();
-        dashboard.getRange(1, 1, 1, dashHeaders.length).setValues([dashHeaders]);
-        dashboard.getRange(1, 1, 1, dashHeaders.length).setFontWeight('bold');
+    }
+
+    // 既存データを取得（マイグレーション判定＋差分チェック用）
+    // ヘッダーが旧スキーマでも AI コメントは再利用できるよう、先に収集してから再構築する
+    const oldData = dashboard.getDataRange().getValues();
+    const oldHeaders = oldData[0] || [];
+    const oldStudentIdIdx = oldHeaders.indexOf('student_id');
+    const oldTotalIdx = oldHeaders.indexOf('total_questions');
+    const oldAiCommentIdx = oldHeaders.indexOf('ai_comment');
+
+    const existingMap = {};
+    if (oldStudentIdIdx !== -1) {
+      for (var r = 1; r < oldData.length; r++) {
+        var sid = oldData[r][oldStudentIdIdx];
+        if (!sid) continue;
+        existingMap[sid] = {
+          rowNum: r + 1,
+          totalQuestions: oldTotalIdx !== -1 ? oldData[r][oldTotalIdx] : 0,
+          aiComment: oldAiCommentIdx !== -1 ? oldData[r][oldAiCommentIdx] : ''
+        };
       }
     }
 
-    // 既存データを読み込み（差分チェック用）
-    const existingData = dashboard.getDataRange().getValues();
-    const existingMap = {};
-    existingData.slice(1).forEach(function(row, i) {
-      existingMap[row[0]] = {
-        rowNum: i + 2,
-        totalQuestions: row[5],
-        aiComment: row[12]
-      };
-    });
+    // スキーマ不一致ならヘッダー書き換え（行番号は無効化して appendRow に回す）
+    var needsMigration = false;
+    for (var h = 0; h < dashHeaders.length; h++) {
+      if (oldHeaders[h] !== dashHeaders[h]) { needsMigration = true; break; }
+    }
+    if (needsMigration) {
+      dashboard.clear();
+      dashboard.getRange(1, 1, 1, dashHeaders.length).setValues([dashHeaders]);
+      dashboard.getRange(1, 1, 1, dashHeaders.length).setFontWeight('bold');
+      for (var sidKey in existingMap) {
+        existingMap[sidKey].rowNum = null;
+      }
+    }
 
     const studentIds = Object.keys(studentGroups);
     let updatedCount = 0;
@@ -104,11 +120,12 @@ const DashboardService = {
         JSON.stringify(analysis.weeklyTrend),
         JSON.stringify(analysis.errorPatterns),
         aiComment,
+        analysis.lastStudyDate,
         new Date().toISOString()
       ];
 
-      if (existing) {
-        dashboard.getRange(existing.rowNum, 1, 1, 14).setValues([row]);
+      if (existing && existing.rowNum) {
+        dashboard.getRange(existing.rowNum, 1, 1, dashHeaders.length).setValues([row]);
       } else {
         dashboard.appendRow(row);
       }
@@ -144,7 +161,7 @@ const DashboardService = {
     var headers = [
       'student_id', 'student_number', 'student_name', 'department', 'grade',
       'category', 'subcategory', 'subtopic',
-      'total_count', 'correct_count', 'accuracy_rate'
+      'total_count', 'correct_count', 'accuracy_rate', 'last_study_date'
     ];
     sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
     sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
@@ -157,7 +174,9 @@ const DashboardService = {
       var logs = studentGroups[studentId];
       var latest = logs[logs.length - 1] || {};
       var studentNumber = latest.studentNumber || '';
-      var studentName = nameMap[studentNumber] || '';
+      // student_nameが空の場合は student_number → student_id の順でフォールバック
+      // Looker Studioのフィルターコントロールで空値が混入しないようにするため
+      var studentName = nameMap[studentNumber] || studentNumber || studentId;
 
       // 分野 × サブカテゴリ × サブトピックの3階層で集計
       var stats = {};
@@ -173,10 +192,14 @@ const DashboardService = {
         var key = cat + '|||' + sub + '|||' + topic;
 
         if (!stats[key]) {
-          stats[key] = { correct: 0, total: 0, cat: cat, sub: sub, topic: topic };
+          stats[key] = { correct: 0, total: 0, cat: cat, sub: sub, topic: topic, lastDate: '' };
         }
         stats[key].total++;
         if (log.isCorrect) stats[key].correct++;
+        if (log.timestamp) {
+          var dateStr = String(log.timestamp).split('T')[0];
+          if (dateStr > stats[key].lastDate) stats[key].lastDate = dateStr;
+        }
       }
 
       // 行データ作成
@@ -194,7 +217,8 @@ const DashboardService = {
           s.topic,
           s.total,
           s.correct,
-          rate
+          rate,
+          s.lastDate
         ]);
       }
     }
@@ -340,12 +364,14 @@ const DashboardService = {
     }
     var correctRate = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
 
-    // 連続学習日数の計算
+    // 連続学習日数の計算 & 最終学習日の特定
     var dateSet = {};
+    var lastStudyDate = '';
     for (var i = 0; i < logs.length; i++) {
       if (logs[i].timestamp) {
         var d = new Date(logs[i].timestamp).toISOString().split('T')[0];
         dateSet[d] = true;
+        if (d > lastStudyDate) lastStudyDate = d;
       }
     }
     var dates = Object.keys(dateSet).sort().reverse();
@@ -483,6 +509,7 @@ const DashboardService = {
       strongCategories: strongCategories.slice(0, 3),
       weeklyTrend: weeklyTrend,
       errorPatterns: errorPatterns,
+      lastStudyDate: lastStudyDate,
     };
   },
 
@@ -513,17 +540,26 @@ const DashboardService = {
       }
     }
 
-    var prompt = 'あなたは医療系専門学校の教育アドバイザーです。以下の学生の学習データを分析し、150字以内で具体的な学習アドバイスを日本語のプレーンテキストで書いてください。JSONではなく普通の文章で回答してください。\n\n' +
+    // 注: 学年情報は問題選定の参考として渡すが、アドバイス本文には学年を含めない。
+    // 上級生や卒業生が下級学年の範囲を復習するケースがあるため、学年を断定しないこと。
+    var prompt = 'あなたは医療系専門学校の教育アドバイザーです。以下の学生 1 名の学習データを分析し、150字以内で具体的な学習アドバイスを日本語のプレーンテキストで書いてください。JSONではなく普通の文章で回答してください。\n\n' +
+      '■ 文体ルール（厳守）\n' +
+      '- 宛先は 1 名の個人です。「あなた」と呼びかけてください。\n' +
+      '- 「皆さん」「みなさん」など複数人への呼びかけは禁止。\n' +
+      '- 「○年生のあなたは」「○年生の皆さん」など学年を明示した呼びかけは禁止（同じ学生が別学年の問題を解くことがあるため）。\n' +
+      '- 学年番号を本文中に書かないこと。代わりに弱点分野・誤答傾向・学習姿勢など、個別の観察事実に基づいて助言する。\n' +
+      '- 前向きで具体的なアドバイスで締めくくる。\n\n' +
+      '■ 学生データ（参考情報。本文に学年数字は書かない）\n' +
       '学科: ' + getDepartmentLabel_(analysis.department) + '\n' +
       '対象国家試験: ' + getDepartmentExpertName(analysis.department) + '\n' +
-      '学年: ' + analysis.grade + '年\n' +
+      '解いている問題の学年帯: ' + analysis.grade + '年向け\n' +
       '総回答数: ' + analysis.totalQuestions + '問\n' +
       '全体正答率: ' + analysis.correctRate + '%\n' +
       '連続学習: ' + analysis.streakDays + '日\n\n' +
       '苦手分野:\n' + (weakList || '（特になし）\n') + '\n' +
       '得意分野:\n' + (strongList || '（特になし）\n') + '\n' +
       errorInfo + '\n' +
-      '具体的かつ励ましの要素を含むアドバイスを書いてください。';
+      '上記ルールに従い、この学生本人への個別アドバイスを 150 字以内で書いてください。';
 
     var result = callGeminiAPI(prompt);
     if (result.error) {
@@ -570,7 +606,7 @@ const DashboardService = {
       'student_id', 'student_number', 'student_name', 'department', 'grade',
       'total_questions', 'correct_rate', 'streak_days',
       'weak_categories', 'strong_categories', 'weekly_trend',
-      'error_patterns', 'ai_comment', 'updated_at'
+      'error_patterns', 'ai_comment', 'last_study_date', 'updated_at'
     ];
     if (!dashboard) {
       dashboard = ss.insertSheet(CONFIG.SHEETS.AI_DASHBOARD);
@@ -592,17 +628,22 @@ const DashboardService = {
       JSON.stringify(analysis.weeklyTrend),
       JSON.stringify(analysis.errorPatterns),
       aiComment,
+      analysis.lastStudyDate,
       new Date().toISOString()
     ];
 
-    // 既存行を探して更新 or 追加
+    // 既存行を探して更新 or 追加（ヘッダー位置を動的に決定してスキーマ差異に耐える）
     var data = dashboard.getDataRange().getValues();
+    var headers = data[0] || [];
+    var sidIdx = headers.indexOf('student_id');
     var found = false;
-    for (var i = 1; i < data.length; i++) {
-      if (data[i][0] === studentId) {
-        dashboard.getRange(i + 1, 1, 1, 14).setValues([row]);
-        found = true;
-        break;
+    if (sidIdx !== -1) {
+      for (var i = 1; i < data.length; i++) {
+        if (data[i][sidIdx] === studentId) {
+          dashboard.getRange(i + 1, 1, 1, dashHeaders.length).setValues([row]);
+          found = true;
+          break;
+        }
       }
     }
     if (!found) {
@@ -629,6 +670,7 @@ const DashboardService = {
       weeklyTrend: analysis.weeklyTrend,
       errorPatterns: analysis.errorPatterns,
       aiComment: aiComment,
+      lastStudyDate: analysis.lastStudyDate,
       updatedAt: new Date().toISOString(),
     };
   },
@@ -680,6 +722,7 @@ const DashboardService = {
       weeklyTrend: safeParse(row[idx['weekly_trend']]),
       errorPatterns: safeParse(row[idx['error_patterns']]),
       aiComment: row[idx['ai_comment']],
+      lastStudyDate: idx['last_study_date'] !== undefined ? row[idx['last_study_date']] : '',
       updatedAt: row[idx['updated_at']],
     };
   },

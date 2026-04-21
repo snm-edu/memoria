@@ -55,7 +55,7 @@ const REGISTRY_DATA = [
   },
   {
     id: 'clinical_eng' as const,
-    label: '臨床工学科',
+    label: '臨床工学技士学科',
     shortLabel: 'CE',
     enabled: true,
     color: { gradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%)', border: '#93c5fd', color: '#1d4ed8' },
