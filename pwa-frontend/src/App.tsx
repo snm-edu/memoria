@@ -19,6 +19,8 @@ function AppContent() {
       return state.profile?.studentType === 'prospective'
         ? <PreEnrollmentGamesMenu />
         : <HomeScreen />;
+    case 'prospective':
+      return <PreEnrollmentGamesMenu />;
     case 'quiz':
       return <QuizScreen />;
     case 'weakness':

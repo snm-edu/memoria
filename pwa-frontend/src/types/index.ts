@@ -120,4 +120,4 @@ export interface BadgeDefinition {
 }
 
 // 画面
-export type Screen = 'setup' | 'home' | 'quiz' | 'analysis' | 'weakness' | 'schedule' | 'settings' | 'badges' | 'ai_dashboard';
+export type Screen = 'setup' | 'home' | 'quiz' | 'analysis' | 'weakness' | 'schedule' | 'settings' | 'badges' | 'ai_dashboard' | 'prospective';

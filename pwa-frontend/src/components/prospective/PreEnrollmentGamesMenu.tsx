@@ -32,6 +32,10 @@ export function PreEnrollmentGamesMenu() {
   const [message, setMessage] = useState<string | null>(null);
   const [showEnrollModal, setShowEnrollModal] = useState(false);
 
+  // prospective: 検証モーダルで国試対策モードへ切替
+  // enrolled/graduate: 一時的な息抜き訪問、ボタンで home に戻るのみ
+  const isVisiting = profile?.studentType === 'enrolled' || profile?.studentType === 'graduate';
+
   function handleComingSoon(game: GameMeta) {
     setMessage(`${game.label} は現在準備中です`);
   }
@@ -67,7 +71,7 @@ export function PreEnrollmentGamesMenu() {
           </h1>
           {profile && (
             <p className="text-sm text-slate-400">
-              {DEPARTMENT_LABELS[profile.department]} 入学前コース
+              {DEPARTMENT_LABELS[profile.department]} {isVisiting ? '息抜きモード' : '入学前コース'}
             </p>
           )}
         </div>
@@ -83,7 +87,7 @@ export function PreEnrollmentGamesMenu() {
       </header>
 
       <p className="relative z-10 text-center text-sm font-bold text-slate-600 mb-2 flex-shrink-0">
-        入学までに 4 つの力を育てよう
+        {isVisiting ? 'ちょっと一息、4 つの力で遊ぼう' : '入学までに 4 つの力を育てよう'}
       </p>
 
       <div className="relative z-10 grid grid-cols-2 grid-rows-2 gap-3 flex-1 min-h-0">
@@ -148,17 +152,23 @@ export function PreEnrollmentGamesMenu() {
         })}
       </div>
 
-      {/* 国試対策へ移動ボタン */}
+      {/* 国試対策へ移動/戻るボタン */}
       <button
         type="button"
-        onClick={() => setShowEnrollModal(true)}
+        onClick={() => {
+          if (isVisiting) {
+            dispatch({ type: 'SET_SCREEN', screen: 'home' });
+          } else {
+            setShowEnrollModal(true);
+          }
+        }}
         className="relative z-10 mt-3 w-full py-3 rounded-2xl font-bold text-white shadow-lg
           active:scale-[0.98] transition-transform flex-shrink-0"
         style={{
           background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
         }}
       >
-        🎓 国試対策へ移動
+        {isVisiting ? '📚 国試対策へ戻る' : '🎓 国試対策へ移動'}
       </button>
 
       {message && (
@@ -238,8 +248,18 @@ function EnrollModal({ studentId, department, onClose, onEnrolled }: EnrollModal
         department,
       });
 
-      if (!res.success || !res.data) {
-        setErrorText('通信に失敗しました。電波の良い場所で再度お試しください。');
+      if (!res.success) {
+        const errMsg = String(res.error || '');
+        console.warn('[enroll] validation API error:', errMsg);
+        if (errMsg.indexOf('Unknown action') !== -1) {
+          setErrorText('システムが最新ではありません。教員に連絡してください。');
+        } else {
+          setErrorText('通信に失敗しました。電波の良い場所で再度お試しください。');
+        }
+        return;
+      }
+      if (!res.data) {
+        setErrorText('サーバーから応答がありませんでした。しばらくしてから再度お試しください。');
         return;
       }
 

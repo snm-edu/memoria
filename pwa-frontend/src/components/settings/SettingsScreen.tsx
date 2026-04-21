@@ -130,6 +130,21 @@ export function SettingsScreen() {
           </div>
         </div>
 
+        {/* 入学前ゲームで息抜き（enrolled/graduate のみ） */}
+        {(profile.studentType === 'enrolled' || profile.studentType === 'graduate') && (
+          <button
+            type="button"
+            onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'prospective' })}
+            className="w-full p-4 rounded-2xl font-bold text-white shadow-sm
+              active:scale-[0.98] transition-transform"
+            style={{
+              background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
+            }}
+          >
+            🎮 入学前ゲームで息抜き
+          </button>
+        )}
+
         {/* 保存ボタン */}
         {hasChanges && (
           <button
