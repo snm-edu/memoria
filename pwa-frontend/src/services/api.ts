@@ -186,7 +186,7 @@ export async function validateEnrollment(body: {
   valid: boolean;
   grade?: number;
   studentType?: 'enrolled' | 'graduate';
-  error?: string;
+  reason?: 'not_found' | 'rate_limited' | 'invalid_grade_in_roster';
 }>> {
   return apiPost({ action: 'validateEnrollment', ...body });
 }
