@@ -144,12 +144,16 @@ const ProspectiveService = {
 
     const headers = data[0];
     const idx = {};
-    headers.forEach((h, i) => { idx[h] = i; });
+    // ヘッダー行の空白/不可視文字を吸収（シート側の typo に強くする）
+    headers.forEach((h, i) => {
+      const key = String(h || '').replace(/[\s\u3000\u00a0\u200b]/g, '').toLowerCase();
+      if (key) idx[key] = i;
+    });
 
     const required = ['student_number', 'department', 'grade'];
     for (let k = 0; k < required.length; k++) {
       if (idx[required[k]] === undefined) {
-        return { error: 'enrolled_students sheet missing column: ' + required[k] };
+        return { error: 'enrolled_students sheet missing column: ' + required[k] + ' / found: ' + headers.join('|') };
       }
     }
 
