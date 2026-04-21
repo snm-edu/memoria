@@ -264,7 +264,7 @@ function EnrollModal({ studentId, department, onClose, onEnrolled }: EnrollModal
       }
 
       if (!res.data.valid) {
-        const reason = res.data.error;
+        const reason = res.data.reason;
         if (reason === 'rate_limited') {
           setErrorText('試行回数が上限に達しました。明日またお試しください。');
         } else {

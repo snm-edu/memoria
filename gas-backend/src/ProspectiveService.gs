@@ -121,24 +121,25 @@ const ProspectiveService = {
     }
 
     // レート制限: studentId あたり 1 日 MAX_ENROLLMENT_ATTEMPTS_PER_DAY 回まで
+    // 注: reason フィールドを使うのは jsonResponse が error キーを "失敗" として扱うため
     const props = PropertiesService.getScriptProperties();
     const dateKey = Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyyMMdd');
     const rateKey = 'enroll_attempts_' + studentId + '_' + dateKey;
     const current = Number(props.getProperty(rateKey) || '0');
     if (current >= CONFIG.MAX_ENROLLMENT_ATTEMPTS_PER_DAY) {
-      return { valid: false, error: 'rate_limited' };
+      return { valid: false, reason: 'rate_limited' };
     }
     props.setProperty(rateKey, String(current + 1));
 
     const ss = getSpreadsheet();
     const sheet = ss.getSheetByName(CONFIG.SHEETS.ENROLLED_STUDENTS);
     if (!sheet) {
-      return { valid: false, error: 'not_found' };
+      return { valid: false, reason: 'not_found' };
     }
 
     const data = sheet.getDataRange().getValues();
     if (data.length <= 1) {
-      return { valid: false, error: 'not_found' };
+      return { valid: false, reason: 'not_found' };
     }
 
     const headers = data[0];
@@ -158,10 +159,10 @@ const ProspectiveService = {
       const row = data[i];
       const snum = String(row[idx['student_number']] || '').trim();
       const dept = String(row[idx['department']] || '').trim();
-      if (snum === trimmedNumber && dept === department) {
+      if (snum === trimmedNumber && dept === String(department).trim()) {
         const grade = Number(row[idx['grade']]);
         if (!grade || grade < 1 || grade > 3) {
-          return { valid: false, error: 'invalid_grade_in_roster' };
+          return { valid: false, reason: 'invalid_grade_in_roster' };
         }
         // student_type 列は任意。未記載/不正値は 'enrolled' にフォールバック
         let studentType = 'enrolled';
@@ -175,9 +176,36 @@ const ProspectiveService = {
       }
     }
 
-    return { valid: false, error: 'not_found' };
+    return { valid: false, reason: 'not_found' };
   },
 };
+
+/**
+ * 手動リセット用: studentId の enrollment レート制限カウンタをクリア
+ *
+ * テスト中に 10 回を超えてしまった場合、GAS エディタから以下の要領で呼び出す:
+ *   resetEnrollmentRateLimit('YOUR-STUDENT-ID-UUID')
+ * 省略時は本日分の全カウンタをクリア。
+ */
+function resetEnrollmentRateLimit(studentId) {
+  const props = PropertiesService.getScriptProperties();
+  const dateKey = Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyyMMdd');
+  if (studentId) {
+    const key = 'enroll_attempts_' + studentId + '_' + dateKey;
+    props.deleteProperty(key);
+    console.log('[resetRateLimit] cleared ' + key);
+    return;
+  }
+  const all = props.getProperties();
+  let cleared = 0;
+  Object.keys(all).forEach(function (k) {
+    if (k.indexOf('enroll_attempts_') === 0 && k.indexOf(dateKey) !== -1) {
+      props.deleteProperty(k);
+      cleared++;
+    }
+  });
+  console.log('[resetRateLimit] cleared ' + cleared + ' keys for ' + dateKey);
+}
 
 /**
  * ワンショット: student_logs の student_type 列の空セルを 'enrolled' で埋める
