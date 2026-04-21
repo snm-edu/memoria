@@ -30,32 +30,21 @@ export function PreEnrollmentGamesMenu() {
   const { profile } = state;
   const [message, setMessage] = useState<string | null>(null);
 
-  async function handleStart(game: GameMeta) {
+  function handleComingSoon(game: GameMeta) {
+    setMessage(`${game.label} は現在準備中です`);
+  }
+
+  function handleLinkClick(game: GameMeta) {
     if (!profile) return;
-
-    if (game.comingSoon) {
-      setMessage(`${game.label} は現在準備中です`);
-      return;
-    }
-
     setMessage(null);
-
-    // 実施ログを送信（失敗してもリンク遷移はブロックしない）
-    try {
-      await logPreEnrollmentGame({
-        studentId: profile.studentId,
-        studentNumber: profile.studentNumber,
-        department: profile.department,
-        gameId: game.id,
-        status: 'started',
-      });
-    } catch (err) {
-      console.warn('[prospective] log failed', err);
-    }
-
-    if (game.href) {
-      window.open(game.href, '_blank', 'noopener,noreferrer');
-    }
+    // fire-and-forget: リンク遷移は <a> が処理するのでログ完了を待たない
+    logPreEnrollmentGame({
+      studentId: profile.studentId,
+      studentNumber: profile.studentNumber,
+      department: profile.department,
+      gameId: game.id,
+      status: 'started',
+    }).catch((err) => console.warn('[prospective] log failed', err));
   }
 
   return (
@@ -97,39 +86,65 @@ export function PreEnrollmentGamesMenu() {
 
       <div className="relative z-10 grid grid-cols-2 grid-rows-2 gap-3"
            style={{ height: 'calc(100dvh - 9.5rem)' }}>
-        {GAMES.map((game) => (
-          <button
-            key={game.id}
-            onClick={() => handleStart(game)}
-            className="relative overflow-hidden rounded-3xl shadow-xl active:scale-[0.97] transition-transform"
-            style={{
-              animation: `floatY 5s ease-in-out infinite`,
-              animationDelay: game.delay,
-            }}
-            aria-label={game.label}
-          >
-            <img
-              src={game.image}
-              alt={game.label}
-              className="absolute inset-0 w-full h-full object-cover"
-              draggable={false}
-            />
-            {/* 下部に文字を読みやすくするためのグラデーション */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/55 to-transparent" />
-            <div className="absolute inset-x-0 bottom-2 text-center">
-              <div className="inline-block px-3 py-1 text-white font-extrabold text-lg drop-shadow-md">
-                {game.label}
-              </div>
-              {game.comingSoon && (
-                <div className="mt-1">
-                  <span className="inline-block rounded-full bg-white/85 text-slate-700 text-[10px] font-bold px-2 py-0.5">
-                    Coming soon
-                  </span>
+        {GAMES.map((game) => {
+          const cardClass =
+            'relative block overflow-hidden rounded-3xl shadow-xl active:scale-[0.97] transition-transform';
+          const cardStyle = {
+            animation: 'floatY 5s ease-in-out infinite',
+            animationDelay: game.delay,
+          } as const;
+
+          const inner = (
+            <>
+              <img
+                src={game.image}
+                alt={game.label}
+                className="absolute inset-0 w-full h-full object-cover"
+                draggable={false}
+              />
+              {/* 下部に文字を読みやすくするためのグラデーション */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/55 to-transparent" />
+              <div className="absolute inset-x-0 bottom-2 text-center">
+                <div className="inline-block px-3 py-1 text-white font-extrabold text-lg drop-shadow-md">
+                  {game.label}
                 </div>
-              )}
-            </div>
-          </button>
-        ))}
+                {game.comingSoon && (
+                  <div className="mt-1">
+                    <span className="inline-block rounded-full bg-white/85 text-slate-700 text-[10px] font-bold px-2 py-0.5">
+                      Coming soon
+                    </span>
+                  </div>
+                )}
+              </div>
+            </>
+          );
+
+          return game.href ? (
+            <a
+              key={game.id}
+              href={game.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => handleLinkClick(game)}
+              className={cardClass}
+              style={cardStyle}
+              aria-label={game.label}
+            >
+              {inner}
+            </a>
+          ) : (
+            <button
+              key={game.id}
+              type="button"
+              onClick={() => handleComingSoon(game)}
+              className={`${cardClass} text-left`}
+              style={cardStyle}
+              aria-label={`${game.label}（準備中）`}
+            >
+              {inner}
+            </button>
+          );
+        })}
       </div>
 
       {message && (
