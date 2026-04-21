@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { DEPARTMENT_LABELS } from '../../types';
-import { logPreEnrollmentGame, updateStudentNumber } from '../../services/api';
+import { logPreEnrollmentGame, updateStudentNumber, validateEnrollment } from '../../services/api';
 import { db } from '../../services/db';
 
 type GameId = 'basics' | 'kanji' | 'reading' | 'thinking';
@@ -167,11 +167,12 @@ export function PreEnrollmentGamesMenu() {
         </p>
       )}
 
-      {showEnrollModal && (
+      {showEnrollModal && profile && (
         <EnrollModal
+          studentId={profile.studentId}
+          department={profile.department}
           onClose={() => setShowEnrollModal(false)}
-          onEnrolled={async (newStudentNumber, newGrade) => {
-            if (!profile) return;
+          onEnrolled={async (newStudentNumber, newGrade, newStudentType) => {
             // 未同期ログを先に送信
             try { await triggerSync(); } catch { /* noop */ }
 
@@ -192,17 +193,17 @@ export function PreEnrollmentGamesMenu() {
             await db.profile.update(profile.id!, {
               studentNumber: newStudentNumber,
               grade: newGrade,
-              studentType: 'enrolled',
+              studentType: newStudentType,
             });
 
-            // AppContext を更新 → studentType='enrolled' になるので自動的に HomeScreen へ
+            // AppContext を更新 → studentType='enrolled'/'graduate' のどちらでも HomeScreen へ
             dispatch({
               type: 'SET_PROFILE',
               profile: {
                 ...profile,
                 studentNumber: newStudentNumber,
                 grade: newGrade,
-                studentType: 'enrolled',
+                studentType: newStudentType,
               },
             });
             dispatch({ type: 'SET_SCREEN', screen: 'home' });
@@ -214,21 +215,55 @@ export function PreEnrollmentGamesMenu() {
 }
 
 interface EnrollModalProps {
+  studentId: string;
+  department: string;
   onClose: () => void;
-  onEnrolled: (studentNumber: string, grade: number) => void | Promise<void>;
+  onEnrolled: (studentNumber: string, grade: number, studentType: 'enrolled' | 'graduate') => void | Promise<void>;
 }
 
-function EnrollModal({ onClose, onEnrolled }: EnrollModalProps) {
+function EnrollModal({ studentId, department, onClose, onEnrolled }: EnrollModalProps) {
   const [studentNumber, setStudentNumber] = useState('');
-  const [grade, setGrade] = useState(1);
   const [isSaving, setIsSaving] = useState(false);
+  const [errorText, setErrorText] = useState<string | null>(null);
 
   async function handleSubmit() {
     const num = studentNumber.trim();
     if (!num || isSaving) return;
     setIsSaving(true);
+    setErrorText(null);
     try {
-      await onEnrolled(num, grade);
+      const res = await validateEnrollment({
+        studentId,
+        studentNumber: num,
+        department,
+      });
+
+      if (!res.success || !res.data) {
+        setErrorText('通信に失敗しました。電波の良い場所で再度お試しください。');
+        return;
+      }
+
+      if (!res.data.valid) {
+        const reason = res.data.error;
+        if (reason === 'rate_limited') {
+          setErrorText('試行回数が上限に達しました。明日またお試しください。');
+        } else {
+          setErrorText('この学籍番号は登録されていません。教員に確認してください。');
+        }
+        return;
+      }
+
+      const grade = res.data.grade;
+      if (!grade) {
+        setErrorText('学年情報の取得に失敗しました。教員に確認してください。');
+        return;
+      }
+
+      const studentType = res.data.studentType === 'graduate' ? 'graduate' : 'enrolled';
+      await onEnrolled(num, grade, studentType);
+    } catch (err) {
+      console.warn('[enroll] validation failed', err);
+      setErrorText('エラーが発生しました。時間を置いて再度お試しください。');
     } finally {
       setIsSaving(false);
     }
@@ -245,7 +280,6 @@ function EnrollModal({ onClose, onEnrolled }: EnrollModalProps) {
       >
         <h2 className="text-lg font-extrabold text-center mb-2">🎓 国試対策モードへ切り替え</h2>
         <p className="text-xs text-slate-500 text-center mb-5 leading-relaxed">
-          ご入学おめでとうございます！<br />
           本学籍番号を入力すると、国試対策モードに切り替わります。<br />
           これまでの学習履歴は引き継がれます。
         </p>
@@ -254,30 +288,16 @@ function EnrollModal({ onClose, onEnrolled }: EnrollModalProps) {
         <input
           type="text"
           value={studentNumber}
-          onChange={(e) => setStudentNumber(e.target.value)}
+          onChange={(e) => { setStudentNumber(e.target.value); setErrorText(null); }}
           placeholder="例: 25N001"
           autoFocus
           className="w-full p-3 rounded-xl border-2 border-slate-200 text-center text-lg font-bold mb-4
             focus:border-primary-400 focus:outline-none transition-all"
         />
 
-        <label className="block text-xs font-bold text-slate-500 mb-2">学年</label>
-        <div className="grid grid-cols-3 gap-2 mb-5">
-          {[1, 2, 3].map((g) => (
-            <button
-              key={g}
-              type="button"
-              onClick={() => setGrade(g)}
-              className={`p-3 rounded-xl text-center font-bold transition-all
-                ${grade === g
-                  ? 'bg-primary-500 text-white shadow'
-                  : 'bg-slate-100 border-2 border-slate-200 text-slate-600'
-                }`}
-            >
-              {g}年
-            </button>
-          ))}
-        </div>
+        {errorText && (
+          <p className="text-xs text-red-600 text-center mb-3 font-bold">{errorText}</p>
+        )}
 
         <button
           type="button"
@@ -289,7 +309,7 @@ function EnrollModal({ onClose, onEnrolled }: EnrollModalProps) {
               : 'bg-primary-500 active:bg-primary-600 shadow-lg'
             }`}
         >
-          {isSaving ? '切り替え中...' : '国試対策モードへ切り替える'}
+          {isSaving ? '確認中...' : '国試対策モードへ切り替える'}
         </button>
         <button
           type="button"

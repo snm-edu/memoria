@@ -28,7 +28,11 @@ const CONFIG = {
     CATEGORY_STATS: 'category_stats',
     PROSPECTIVE_LOGS: 'prospective_logs',
     PROFILE: 'profile',
+    ENROLLED_STUDENTS: 'enrolled_students',
   },
+
+  // 1 studentId あたりの enrollment 検証試行回数上限（1日）
+  MAX_ENROLLMENT_ATTEMPTS_PER_DAY: 10,
 
   // デフォルト取得件数
   DEFAULT_QUESTION_LIMIT: 20,
@@ -89,6 +93,10 @@ function getSheetHeaders(sheetName) {
       return [
         'student_id', 'student_number', 'department', 'grade',
         'student_type', 'updated_at'
+      ];
+    case CONFIG.SHEETS.ENROLLED_STUDENTS:
+      return [
+        'student_number', 'department', 'grade', 'student_type', 'notes', 'created_at'
       ];
     case CONFIG.SHEETS.AI_GENERATED:
       return [

@@ -48,8 +48,8 @@ export function SetupScreen() {
   }
 
   const studentNumHint =
-    studentType === 'prospective' ? 'ユーザー名（入学前学習コンテンツのご案内記載）を入力してください'
-    : studentType === 'graduate'  ? '在校時の学籍番号を入力してください（学習履歴を引き継ぎます）'
+    studentType === 'prospective' ? 'ユーザー名（入学前学習コンテンツのご案内記載）を入力ください'
+    : studentType === 'graduate'  ? '在校時の学籍番号を入力ください（学習履歴を引き継ぎます）'
     : '学習記録の管理に使用します。あとから変更もできます。';
 
   const studentNumPlaceholder =

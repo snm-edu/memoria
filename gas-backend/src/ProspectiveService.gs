@@ -98,6 +98,85 @@ const ProspectiveService = {
 
     return { profile: null };
   },
+
+  /**
+   * 学籍番号を enrolled_students シートと照合し、国試対策モードへの切り替え可否を返す
+   * - studentNumber + department の両方が一致した場合のみ valid:true
+   * - grade はシート記載の学年を返す（学生側で入力不要）
+   * - 1日の試行回数を studentId 単位で制限（ブルートフォース対策）
+   */
+  validateEnrollment({ studentId, studentNumber, department }) {
+    if (!studentId || !studentNumber || !department) {
+      return { error: 'studentId, studentNumber, department are required' };
+    }
+
+    // UUID 形式の簡易検証（studentId）
+    if (!/^[0-9a-f-]{36}$/i.test(String(studentId))) {
+      return { error: 'invalid studentId format' };
+    }
+
+    const trimmedNumber = String(studentNumber).trim();
+    if (trimmedNumber.length === 0 || trimmedNumber.length > 32) {
+      return { error: 'invalid studentNumber' };
+    }
+
+    // レート制限: studentId あたり 1 日 MAX_ENROLLMENT_ATTEMPTS_PER_DAY 回まで
+    const props = PropertiesService.getScriptProperties();
+    const dateKey = Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyyMMdd');
+    const rateKey = 'enroll_attempts_' + studentId + '_' + dateKey;
+    const current = Number(props.getProperty(rateKey) || '0');
+    if (current >= CONFIG.MAX_ENROLLMENT_ATTEMPTS_PER_DAY) {
+      return { valid: false, error: 'rate_limited' };
+    }
+    props.setProperty(rateKey, String(current + 1));
+
+    const ss = getSpreadsheet();
+    const sheet = ss.getSheetByName(CONFIG.SHEETS.ENROLLED_STUDENTS);
+    if (!sheet) {
+      return { valid: false, error: 'not_found' };
+    }
+
+    const data = sheet.getDataRange().getValues();
+    if (data.length <= 1) {
+      return { valid: false, error: 'not_found' };
+    }
+
+    const headers = data[0];
+    const idx = {};
+    headers.forEach((h, i) => { idx[h] = i; });
+
+    const required = ['student_number', 'department', 'grade'];
+    for (let k = 0; k < required.length; k++) {
+      if (idx[required[k]] === undefined) {
+        return { error: 'enrolled_students sheet missing column: ' + required[k] };
+      }
+    }
+
+    const allowedTypes = ['enrolled', 'graduate'];
+
+    for (let i = 1; i < data.length; i++) {
+      const row = data[i];
+      const snum = String(row[idx['student_number']] || '').trim();
+      const dept = String(row[idx['department']] || '').trim();
+      if (snum === trimmedNumber && dept === department) {
+        const grade = Number(row[idx['grade']]);
+        if (!grade || grade < 1 || grade > 3) {
+          return { valid: false, error: 'invalid_grade_in_roster' };
+        }
+        // student_type 列は任意。未記載/不正値は 'enrolled' にフォールバック
+        let studentType = 'enrolled';
+        if (idx['student_type'] !== undefined) {
+          const raw = String(row[idx['student_type']] || '').trim();
+          if (allowedTypes.indexOf(raw) !== -1) {
+            studentType = raw;
+          }
+        }
+        return { valid: true, grade: grade, studentType: studentType };
+      }
+    }
+
+    return { valid: false, error: 'not_found' };
+  },
 };
 
 /**
