@@ -48,7 +48,7 @@ export function SetupScreen() {
   }
 
   const studentNumHint =
-    studentType === 'prospective' ? '仮学籍番号（合格通知書記載）を入力してください'
+    studentType === 'prospective' ? 'ユーザー名（入学前学習コンテンツのご案内記載）を入力してください'
     : studentType === 'graduate'  ? '在校時の学籍番号を入力してください（学習履歴を引き継ぎます）'
     : '学習記録の管理に使用します。あとから変更もできます。';
 
@@ -56,6 +56,10 @@ export function SetupScreen() {
     studentType === 'prospective' ? '例: P25-001'
     : studentType === 'graduate'  ? '例: 23N001'
     : '例: 25N001';
+
+  const studentNumTitle =
+    studentType === 'prospective' ? 'ユーザー名'
+    : '学籍番号を入力';
 
   const typeLabel =
     studentType === 'prospective' ? '入学前'
@@ -175,7 +179,7 @@ export function SetupScreen() {
         {/* 学籍番号入力 */}
         {step === 'studentNum' && (
           <div className="space-y-4">
-            <h2 className="text-lg font-bold text-center mb-4">学籍番号を入力</h2>
+            <h2 className="text-lg font-bold text-center mb-4">{studentNumTitle}</h2>
             <input
               type="text"
               value={studentNumber}
@@ -216,7 +220,7 @@ export function SetupScreen() {
               <p className="text-xl font-bold">{DEPARTMENT_LABELS[department]}</p>
               <p className="text-slate-500 text-sm mb-1 mt-4">区分</p>
               <p className="text-xl font-bold">{typeLabel}</p>
-              <p className="text-slate-500 text-sm mb-1 mt-4">学籍番号</p>
+              <p className="text-slate-500 text-sm mb-1 mt-4">{studentNumTitle}</p>
               <p className="text-xl font-bold">{studentNumber.trim()}</p>
             </div>
             <p className="text-xs text-slate-400">
@@ -229,7 +233,7 @@ export function SetupScreen() {
               onClick={() => setStep('studentNum')}
               className="w-full text-center text-slate-400 py-2"
             >
-              ← 学籍番号入力に戻る
+              ← {studentNumTitle}入力に戻る
             </button>
           </div>
         )}

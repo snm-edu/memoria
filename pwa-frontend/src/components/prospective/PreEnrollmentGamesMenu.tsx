@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { DEPARTMENT_LABELS } from '../../types';
-import { logPreEnrollmentGame } from '../../services/api';
+import { logPreEnrollmentGame, updateStudentNumber } from '../../services/api';
+import { db } from '../../services/db';
 
 type GameId = 'basics' | 'kanji' | 'reading' | 'thinking';
 
@@ -26,9 +27,10 @@ const GAMES: GameMeta[] = [
 ];
 
 export function PreEnrollmentGamesMenu() {
-  const { state, dispatch } = useApp();
+  const { state, dispatch, triggerSync } = useApp();
   const { profile } = state;
   const [message, setMessage] = useState<string | null>(null);
+  const [showEnrollModal, setShowEnrollModal] = useState(false);
 
   function handleComingSoon(game: GameMeta) {
     setMessage(`${game.label} は現在準備中です`);
@@ -48,10 +50,10 @@ export function PreEnrollmentGamesMenu() {
   }
 
   return (
-    <div className="relative min-h-[100dvh] overflow-hidden p-4 pb-6">
+    <div className="relative min-h-[100dvh] overflow-hidden p-4 pb-6 flex flex-col">
       <style>{floatKeyframes}</style>
 
-      <header className="relative z-10 mb-4 flex items-start justify-between">
+      <header className="relative z-10 mb-3 flex items-start justify-between flex-shrink-0">
         <div>
           <h1
             className="text-xl font-extrabold tracking-tight"
@@ -80,12 +82,11 @@ export function PreEnrollmentGamesMenu() {
         </button>
       </header>
 
-      <p className="relative z-10 text-center text-sm font-bold text-slate-600 mb-3">
+      <p className="relative z-10 text-center text-sm font-bold text-slate-600 mb-2 flex-shrink-0">
         入学までに 4 つの力を育てよう
       </p>
 
-      <div className="relative z-10 grid grid-cols-2 grid-rows-2 gap-3"
-           style={{ height: 'calc(100dvh - 9.5rem)' }}>
+      <div className="relative z-10 grid grid-cols-2 grid-rows-2 gap-3 flex-1 min-h-0">
         {GAMES.map((game) => {
           const cardClass =
             'relative block overflow-hidden rounded-3xl shadow-xl active:scale-[0.97] transition-transform';
@@ -147,11 +148,158 @@ export function PreEnrollmentGamesMenu() {
         })}
       </div>
 
+      {/* 国試対策へ移動ボタン */}
+      <button
+        type="button"
+        onClick={() => setShowEnrollModal(true)}
+        className="relative z-10 mt-3 w-full py-3 rounded-2xl font-bold text-white shadow-lg
+          active:scale-[0.98] transition-transform flex-shrink-0"
+        style={{
+          background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
+        }}
+      >
+        🎓 国試対策へ移動
+      </button>
+
       {message && (
-        <p className="relative z-10 text-center text-xs text-slate-500 mt-3">
+        <p className="relative z-10 text-center text-xs text-slate-500 mt-2 flex-shrink-0">
           {message}
         </p>
       )}
+
+      {showEnrollModal && (
+        <EnrollModal
+          onClose={() => setShowEnrollModal(false)}
+          onEnrolled={async (newStudentNumber, newGrade) => {
+            if (!profile) return;
+            // 未同期ログを先に送信
+            try { await triggerSync(); } catch { /* noop */ }
+
+            // GAS 側の学籍番号を更新（失敗してもローカル更新は続行）
+            if (profile.studentNumber && profile.studentNumber !== newStudentNumber) {
+              try {
+                await updateStudentNumber({
+                  oldStudentNumber: profile.studentNumber,
+                  newStudentNumber,
+                  studentId: profile.studentId,
+                });
+              } catch (err) {
+                console.warn('[enroll] GAS updateStudentNumber failed', err);
+              }
+            }
+
+            // ローカル DB を更新
+            await db.profile.update(profile.id!, {
+              studentNumber: newStudentNumber,
+              grade: newGrade,
+              studentType: 'enrolled',
+            });
+
+            // AppContext を更新 → studentType='enrolled' になるので自動的に HomeScreen へ
+            dispatch({
+              type: 'SET_PROFILE',
+              profile: {
+                ...profile,
+                studentNumber: newStudentNumber,
+                grade: newGrade,
+                studentType: 'enrolled',
+              },
+            });
+            dispatch({ type: 'SET_SCREEN', screen: 'home' });
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+interface EnrollModalProps {
+  onClose: () => void;
+  onEnrolled: (studentNumber: string, grade: number) => void | Promise<void>;
+}
+
+function EnrollModal({ onClose, onEnrolled }: EnrollModalProps) {
+  const [studentNumber, setStudentNumber] = useState('');
+  const [grade, setGrade] = useState(1);
+  const [isSaving, setIsSaving] = useState(false);
+
+  async function handleSubmit() {
+    const num = studentNumber.trim();
+    if (!num || isSaving) return;
+    setIsSaving(true);
+    try {
+      await onEnrolled(num, grade);
+    } finally {
+      setIsSaving(false);
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-3xl p-6 w-full max-w-sm shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h2 className="text-lg font-extrabold text-center mb-2">🎓 国試対策モードへ切り替え</h2>
+        <p className="text-xs text-slate-500 text-center mb-5 leading-relaxed">
+          ご入学おめでとうございます！<br />
+          本学籍番号を入力すると、国試対策モードに切り替わります。<br />
+          これまでの学習履歴は引き継がれます。
+        </p>
+
+        <label className="block text-xs font-bold text-slate-500 mb-1">学籍番号</label>
+        <input
+          type="text"
+          value={studentNumber}
+          onChange={(e) => setStudentNumber(e.target.value)}
+          placeholder="例: 25N001"
+          autoFocus
+          className="w-full p-3 rounded-xl border-2 border-slate-200 text-center text-lg font-bold mb-4
+            focus:border-primary-400 focus:outline-none transition-all"
+        />
+
+        <label className="block text-xs font-bold text-slate-500 mb-2">学年</label>
+        <div className="grid grid-cols-3 gap-2 mb-5">
+          {[1, 2, 3].map((g) => (
+            <button
+              key={g}
+              type="button"
+              onClick={() => setGrade(g)}
+              className={`p-3 rounded-xl text-center font-bold transition-all
+                ${grade === g
+                  ? 'bg-primary-500 text-white shadow'
+                  : 'bg-slate-100 border-2 border-slate-200 text-slate-600'
+                }`}
+            >
+              {g}年
+            </button>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={handleSubmit}
+          disabled={!studentNumber.trim() || isSaving}
+          className={`w-full p-3 rounded-xl font-bold text-white transition-all
+            ${!studentNumber.trim() || isSaving
+              ? 'bg-slate-300 cursor-not-allowed'
+              : 'bg-primary-500 active:bg-primary-600 shadow-lg'
+            }`}
+        >
+          {isSaving ? '切り替え中...' : '国試対策モードへ切り替える'}
+        </button>
+        <button
+          type="button"
+          onClick={onClose}
+          disabled={isSaving}
+          className="w-full text-center text-slate-400 py-2 mt-2 text-sm"
+        >
+          キャンセル
+        </button>
+      </div>
     </div>
   );
 }
