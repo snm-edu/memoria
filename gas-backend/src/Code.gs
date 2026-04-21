@@ -11,6 +11,7 @@
  * POST /exec?action=generateSimilar { questionId, errorType }
  * POST /exec?action=logPreEnrollmentGame { studentId, studentNumber, department, gameId, status }
  * POST /exec?action=getMyProfile   { studentId, studentNumber }
+ * POST /exec?action=validateEnrollment { studentId, studentNumber, department }
  */
 
 function doGet(e) {
@@ -87,6 +88,13 @@ function doPost(e) {
         return jsonResponse(ProspectiveService.getMyProfile({
           studentId: body.studentId,
           studentNumber: body.studentNumber,
+        }));
+
+      case 'validateEnrollment':
+        return jsonResponse(ProspectiveService.validateEnrollment({
+          studentId: body.studentId,
+          studentNumber: body.studentNumber,
+          department: body.department,
         }));
 
       case 'submitAnswerBatch':

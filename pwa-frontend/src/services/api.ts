@@ -177,3 +177,16 @@ export async function getMyProfile(body: {
 }>> {
   return apiPost({ action: 'getMyProfile', ...body });
 }
+
+export async function validateEnrollment(body: {
+  studentId: string;
+  studentNumber: string;
+  department: string;
+}): Promise<ApiResponse<{
+  valid: boolean;
+  grade?: number;
+  studentType?: 'enrolled' | 'graduate';
+  error?: string;
+}>> {
+  return apiPost({ action: 'validateEnrollment', ...body });
+}
