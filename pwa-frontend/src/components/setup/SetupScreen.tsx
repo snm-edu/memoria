@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
 import { DEPARTMENTS, DEPARTMENT_LABELS, GRADES, type Department, type StudentType, AVAILABLE_DEPARTMENTS, DEPT_STYLES } from '../../types';
+import { validateEnrollment } from '../../services/api';
 
 export function SetupScreen() {
   const { dispatch } = useApp();
@@ -10,6 +11,10 @@ export function SetupScreen() {
   const [studentType, setStudentType] = useState<StudentType | null>(null);
   const [studentNumber, setStudentNumber] = useState('');
   const [step, setStep] = useState<'dept' | 'grade' | 'studentNum' | 'confirm'>('dept');
+  const [isValidating, setIsValidating] = useState(false);
+  const [errorText, setErrorText] = useState<string | null>(null);
+  // 検証用の仮 studentId。確定時に profile.studentId として再利用する。
+  const studentIdRef = useRef<string>(crypto.randomUUID());
 
   function selectEnrolled(g: number) {
     setGrade(g);
@@ -29,12 +34,81 @@ export function SetupScreen() {
     setStep('studentNum');
   }
 
+  async function handleStudentNumNext() {
+    const num = studentNumber.trim();
+    if (!num || !department || !studentType || isValidating) return;
+
+    setErrorText(null);
+
+    // 入学前はユーザー名なので検証不要
+    if (studentType === 'prospective') {
+      setStep('confirm');
+      return;
+    }
+
+    setIsValidating(true);
+    try {
+      const res = await validateEnrollment({
+        studentId: studentIdRef.current,
+        studentNumber: num,
+        department,
+      });
+
+      if (!res.success) {
+        const errMsg = String(res.error || '');
+        if (errMsg.indexOf('Unknown action') !== -1) {
+          setErrorText('システムが最新ではありません。教員に連絡してください。');
+        } else {
+          setErrorText('通信に失敗しました。電波の良い場所で再度お試しください。');
+        }
+        return;
+      }
+      if (!res.data) {
+        setErrorText('サーバーから応答がありませんでした。');
+        return;
+      }
+      if (!res.data.valid) {
+        if (res.data.reason === 'rate_limited') {
+          setErrorText('試行回数が上限に達しました。明日またお試しください。');
+        } else {
+          setErrorText('この学籍番号は登録されていません。教員に確認してください。');
+        }
+        return;
+      }
+
+      // 区分の整合性チェック
+      const serverType = res.data.studentType;
+      if (studentType === 'graduate' && serverType !== 'graduate') {
+        setErrorText('この学籍番号は卒業生として登録されていません。');
+        return;
+      }
+      if (studentType === 'enrolled' && serverType !== 'enrolled') {
+        setErrorText('この学籍番号は在校生として登録されていません。');
+        return;
+      }
+
+      // 学年の整合性チェック（在校生のみ）
+      if (studentType === 'enrolled' && res.data.grade && grade !== null && res.data.grade !== grade) {
+        setErrorText(`この学籍番号は${res.data.grade}年として登録されています。学年選択をやり直してください。`);
+        return;
+      }
+
+      // サーバー値を正として採用
+      if (res.data.grade) setGrade(res.data.grade);
+      setStep('confirm');
+    } catch (err) {
+      console.warn('[setup] validation error', err);
+      setErrorText('エラーが発生しました。時間を置いて再度お試しください。');
+    } finally {
+      setIsValidating(false);
+    }
+  }
+
   async function handleConfirm() {
     if (!department || grade === null || !studentType || !studentNumber.trim()) return;
 
-    const studentId = crypto.randomUUID();
     const profile = {
-      studentId,
+      studentId: studentIdRef.current,
       studentNumber: studentNumber.trim(),
       department,
       grade,
@@ -183,7 +257,7 @@ export function SetupScreen() {
             <input
               type="text"
               value={studentNumber}
-              onChange={(e) => setStudentNumber(e.target.value)}
+              onChange={(e) => { setStudentNumber(e.target.value); setErrorText(null); }}
               placeholder={studentNumPlaceholder}
               className="w-full p-4 rounded-xl border-2 border-slate-200 text-center text-xl font-bold
                 focus:border-primary-400 focus:outline-none transition-all"
@@ -192,16 +266,19 @@ export function SetupScreen() {
             <p className="text-xs text-slate-400 text-center">
               {studentNumHint}
             </p>
+            {errorText && (
+              <p className="text-xs text-red-600 text-center font-bold">{errorText}</p>
+            )}
             <button
-              onClick={() => { if (studentNumber.trim()) setStep('confirm'); }}
-              disabled={!studentNumber.trim()}
+              onClick={handleStudentNumNext}
+              disabled={!studentNumber.trim() || isValidating}
               className={`w-full p-4 rounded-xl font-bold text-lg transition-all
-                ${studentNumber.trim()
+                ${studentNumber.trim() && !isValidating
                   ? 'bg-primary-500 text-white shadow-lg active:bg-primary-600'
                   : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                 }`}
             >
-              次へ
+              {isValidating ? '確認中...' : '次へ'}
             </button>
             <button
               onClick={() => setStep('grade')}
