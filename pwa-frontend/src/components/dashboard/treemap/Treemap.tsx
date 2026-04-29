@@ -8,17 +8,18 @@ import type {
   TreemapLeaf,
 } from './treemapTypes';
 
-interface TreemapProps {
-  data: TreemapRoot;
-  width: number;
-  height: number;
-}
-
 type AnyNode =
   | TreemapRoot
   | TreemapCategory
   | TreemapSubcategory
   | TreemapLeaf;
+
+interface TreemapProps {
+  data: TreemapRoot | TreemapCategory | TreemapSubcategory;
+  width: number;
+  height: number;
+  onCellClick?: (depth: number, datum: AnyNode) => void;
+}
 
 function isLeaf(node: AnyNode): node is TreemapLeaf {
   return !('children' in node);
@@ -38,7 +39,7 @@ const HEADER_SUB = 18;
 const LABEL_MIN_W = 40;
 const LABEL_MIN_H = 24;
 
-export function Treemap({ data, width, height }: TreemapProps) {
+export function Treemap({ data, width, height, onCellClick }: TreemapProps) {
   const root = useMemo(() => {
     const h = hierarchy<AnyNode>(data, (d) =>
       isLeaf(d) ? null : (d as { children: AnyNode[] }).children
@@ -85,7 +86,11 @@ export function Treemap({ data, width, height }: TreemapProps) {
           const color = leafColor(datum);
           const showLabel = w >= LABEL_MIN_W && h >= LABEL_MIN_H;
           return (
-            <g key={i}>
+            <g
+              key={i}
+              onClick={() => onCellClick?.(depth, datum)}
+              style={{ cursor: onCellClick ? 'pointer' : 'default' }}
+            >
               <rect
                 x={x}
                 y={y}
@@ -118,7 +123,11 @@ export function Treemap({ data, width, height }: TreemapProps) {
         const fontSize = depth === 1 ? 13 : 11;
         const showHeader = w >= LABEL_MIN_W && headerH >= 14;
         return (
-          <g key={i}>
+          <g
+            key={i}
+            onClick={() => onCellClick?.(depth, datum)}
+            style={{ cursor: onCellClick ? 'pointer' : 'default' }}
+          >
             <rect
               x={x}
               y={y}
