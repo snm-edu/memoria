@@ -162,30 +162,29 @@ export function WeaknessTreemap() {
 
   return (
     <div className="min-h-[100dvh] flex flex-col pb-20">
-      <header className="flex items-center gap-3 px-4 py-3">
+      <header className="flex items-center gap-2 px-4 py-3">
         <button
           onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'home' })}
-          className="text-slate-400"
+          className="text-slate-400 flex-shrink-0"
         >
           ← 戻る
         </button>
-        <h2 className="text-xl font-bold">分野別学習マップ</h2>
+        <h2 className="text-xl font-bold flex-1 min-w-0 truncate">分野別学習マップ</h2>
+        {showActionBar && (
+          <ChallengeFab focusPath={focusPath} onChallenge={handleFabChallenge} />
+        )}
       </header>
 
-      <TreemapBreadcrumb segments={breadcrumbSegments} onSegmentClick={handleSegmentClick} />
+      <TreemapBreadcrumb
+        segments={breadcrumbSegments}
+        onSegmentClick={handleSegmentClick}
+        totalQuestions={showActionBar ? fabSummary.total : undefined}
+        weakCount={showActionBar ? fabSummary.weak : undefined}
+      />
 
       {data && <TreemapLegend updatedAt={data.updatedAt} />}
 
-      {showActionBar && (
-        <ChallengeFab
-          focusPath={focusPath}
-          totalQuestions={fabSummary.total}
-          weakCount={fabSummary.weak}
-          onChallenge={handleFabChallenge}
-        />
-      )}
-
-      <div ref={canvasRef} className="flex-1 min-h-[50dvh]">
+      <div ref={canvasRef} className="flex-1 min-h-[55dvh]">
         {loading && (
           <div className="text-center text-slate-400 py-8">読み込み中...</div>
         )}
