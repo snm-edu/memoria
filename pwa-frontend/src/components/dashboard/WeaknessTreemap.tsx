@@ -1,6 +1,7 @@
-import { useEffect, useState, useRef, useLayoutEffect, useMemo } from 'react';
+import { useEffect, useState, useRef, useLayoutEffect, useMemo, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
-import { fetchStudentTreemap } from '../../services/treemapApi';
+import { fetchStudentTreemap, refreshStudentTreemap } from '../../services/treemapApi';
+import { db } from '../../services/db';
 import { Treemap } from './treemap/Treemap';
 import { TreemapBreadcrumb } from './treemap/TreemapBreadcrumb';
 import { TreemapLegend } from './treemap/TreemapLegend';
@@ -17,12 +18,19 @@ import type {
   FocusPath,
 } from './treemap/treemapTypes';
 
+const STALE_MS = 24 * 60 * 60 * 1000; // 24時間
+const REFRESH_DEBOUNCE_MS = 60 * 1000; // 60秒
+
 export function WeaknessTreemap() {
   const { state, dispatch } = useApp();
   const profile = state.profile;
   const [data, setData] = useState<TreemapResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [cachedAt, setCachedAt] = useState<number | null>(null);
+  const [pendingSync, setPendingSync] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+  const lastRefreshAt = useRef<number>(0);
 
   const [focusPath, setFocusPath] = useState<FocusPath>([]);
   const [activeLeaf, setActiveLeaf] = useState<TreemapLeaf | null>(null);
@@ -31,6 +39,7 @@ export function WeaknessTreemap() {
   const canvasRef = useRef<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
+  // mount 時のフェッチ: stale-while-revalidate
   useEffect(() => {
     if (!profile) {
       setLoading(false);
@@ -38,22 +47,69 @@ export function WeaknessTreemap() {
       return;
     }
     let cancelled = false;
-    setLoading(true);
-    setError('');
-    fetchStudentTreemap({
-      studentId: profile.studentId,
-      studentNumber: profile.studentNumber || '',
-      department: profile.department,
-      grade: profile.grade,
-    }).then((res) => {
+
+    async function loadFromCache() {
+      const cached = await db.treemapCache.get(profile!.studentId);
+      if (cached && cached.payload) {
+        if (!cancelled) {
+          setData(cached.payload as TreemapResponse);
+          setCachedAt(cached.fetchedAt);
+          setPendingSync(cached.pendingSync);
+          setLoading(false);
+        }
+        return cached;
+      }
+      return null;
+    }
+
+    async function fetchFresh() {
+      const res = await fetchStudentTreemap({
+        studentId: profile!.studentId,
+        studentNumber: profile!.studentNumber || '',
+        department: profile!.department,
+        grade: profile!.grade,
+      });
       if (cancelled) return;
       if (res.success && res.data) {
+        const now = Date.now();
         setData(res.data);
+        setError('');
+        setCachedAt(now);
+        setPendingSync(false);
+        await db.treemapCache.put({
+          studentId: profile!.studentId,
+          fetchedAt: now,
+          payload: res.data,
+          pendingSync: false,
+          lastQuizAt: null,
+        });
       } else {
-        setError(res.error || 'データの取得に失敗しました');
+        const cached = await db.treemapCache.get(profile!.studentId);
+        if (!cached) {
+          setError(res.error || 'データの取得に失敗しました');
+        }
       }
-      setLoading(false);
-    });
+      if (!cancelled) setLoading(false);
+    }
+
+    setLoading(true);
+    setError('');
+
+    (async () => {
+      const cached = await loadFromCache();
+      const isStale = !cached || Date.now() - cached.fetchedAt > STALE_MS;
+      if (!cached || isStale) {
+        if (navigator.onLine) {
+          await fetchFresh();
+        } else if (!cached) {
+          setError('オフラインです。一度オンラインで起動するとキャッシュされます。');
+          setLoading(false);
+        } else {
+          setLoading(false);
+        }
+      }
+    })();
+
     return () => {
       cancelled = true;
     };
@@ -71,7 +127,42 @@ export function WeaknessTreemap() {
     return () => window.removeEventListener('resize', update);
   }, [data, focusPath]);
 
-  // focusPath とまとめセル展開状態を加味したサブツリー
+  // ⟳ 即時更新ボタン (60秒デバウンス)
+  const handleRefresh = useCallback(async () => {
+    if (!profile || refreshing) return;
+    if (Date.now() - lastRefreshAt.current < REFRESH_DEBOUNCE_MS) {
+      return;
+    }
+    lastRefreshAt.current = Date.now();
+    setRefreshing(true);
+    try {
+      const res = await refreshStudentTreemap({
+        studentId: profile.studentId,
+        studentNumber: profile.studentNumber || '',
+        department: profile.department,
+        grade: profile.grade,
+      });
+      if (res.success && res.data) {
+        const now = Date.now();
+        setData(res.data);
+        setError('');
+        setCachedAt(now);
+        setPendingSync(false);
+        await db.treemapCache.put({
+          studentId: profile.studentId,
+          fetchedAt: now,
+          payload: res.data,
+          pendingSync: false,
+          lastQuizAt: null,
+        });
+      } else {
+        setError(res.error || '更新に失敗しました');
+      }
+    } finally {
+      setRefreshing(false);
+    }
+  }, [profile, refreshing]);
+
   const scopedData = useMemo(() => {
     if (!data) return null;
     const scope = resolveScope(data.tree, focusPath);
@@ -107,7 +198,6 @@ export function WeaknessTreemap() {
     const node = datum as { name: string; children?: unknown[] };
     if (!data) return;
 
-    // 親階層 (children あり: 大分類 or 中分類) → 直接 focusPath ジャンプ
     if (node.children) {
       for (const cat of data.tree.children) {
         if (cat.name === node.name) {
@@ -124,16 +214,11 @@ export function WeaknessTreemap() {
       return;
     }
 
-    // リーフ (小分類) タップ
-    // 中分類ビュー (focusPath.length === 2) → ボトムシート
     if (focusPath.length === 2) {
       setActiveLeaf(datum as TreemapLeaf);
       return;
     }
 
-    // 全体 or 大分類ビューでリーフタップ → そのリーフの中分類までズーム
-    // (中分類ヘッダー帯が細くタップしにくいため、中の小分類エリアをタップしても
-    //  中分類にズームできるようにする UX 改善)
     const leafName = node.name;
     for (const cat of data.tree.children) {
       for (const sub of cat.children) {
@@ -187,8 +272,10 @@ export function WeaknessTreemap() {
   }
 
   const breadcrumbSegments = ['全体', ...focusPath];
-
   const showActionBar = !!data && !loading && !error;
+  const legendUpdatedAt = cachedAt
+    ? new Date(cachedAt).toISOString()
+    : data?.updatedAt || '';
 
   return (
     <div className="min-h-[100dvh] flex flex-col pb-20">
@@ -200,10 +287,31 @@ export function WeaknessTreemap() {
           ← 戻る
         </button>
         <h2 className="text-xl font-bold flex-1 min-w-0 truncate">分野別学習マップ</h2>
+        {data && (
+          <button
+            type="button"
+            onClick={handleRefresh}
+            disabled={refreshing}
+            aria-label="最新データに更新"
+            className={`w-9 h-9 rounded-full flex items-center justify-center text-base flex-shrink-0 transition-colors ${
+              refreshing
+                ? 'bg-slate-100 text-slate-400 animate-spin'
+                : 'bg-slate-100 text-slate-600 active:bg-slate-200'
+            }`}
+          >
+            ⟳
+          </button>
+        )}
         {showActionBar && (
           <ChallengeFab focusPath={focusPath} onChallenge={handleFabChallenge} />
         )}
       </header>
+
+      {!state.isOnline && (
+        <div className="bg-slate-100 text-slate-500 text-xs px-4 py-1 text-center">
+          📡 オフラインです (キャッシュ表示中)
+        </div>
+      )}
 
       <TreemapBreadcrumb
         segments={breadcrumbSegments}
@@ -212,7 +320,7 @@ export function WeaknessTreemap() {
         weakCount={showActionBar ? fabSummary.weak : undefined}
       />
 
-      {data && <TreemapLegend updatedAt={data.updatedAt} />}
+      {data && <TreemapLegend updatedAt={legendUpdatedAt} />}
 
       <div ref={canvasRef} className="flex-1 min-h-[55dvh]">
         {loading && (
@@ -232,6 +340,14 @@ export function WeaknessTreemap() {
           />
         )}
       </div>
+
+      {pendingSync && (
+        <div className="fixed bottom-16 left-0 right-0 px-4 z-10 pointer-events-none">
+          <div className="max-w-lg mx-auto pointer-events-auto bg-amber-50 border border-amber-200 text-amber-700 text-xs rounded-lg px-3 py-2 text-center">
+            🔄 ローカル表示中。⟳ で最新化できます
+          </div>
+        </div>
+      )}
 
       {activeLeaf && (
         <LeafDetailSheet
