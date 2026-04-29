@@ -139,6 +139,7 @@ export function WeaknessTreemap() {
       category: params.category,
       subcategory: params.subcategory,
       scope: 'all',
+      origin: 'weakness',
     });
   }
 
@@ -152,6 +153,7 @@ export function WeaknessTreemap() {
       subcategory: params.subcategory,
       subtopic: params.subtopic,
       scope,
+      origin: 'weakness',
     });
   }
 

@@ -22,6 +22,7 @@ interface AppState {
   quizSubcategory: string; // サブカテゴリ指定（空文字=指定なし）
   quizSubtopic: string; // 小分類指定（空文字=指定なし）
   quizScope: QuizScope; // 'all' | 'weak' | 'unstudied'
+  quizOrigin: Screen; // クイズ起動元 (戻るボタン押下時の遷移先)
 }
 
 type AppAction =
@@ -37,6 +38,7 @@ type AppAction =
       subcategory?: string;
       subtopic?: string;
       scope?: QuizScope;
+      origin?: Screen;
     };
 
 function appReducer(state: AppState, action: AppAction): AppState {
@@ -62,6 +64,7 @@ function appReducer(state: AppState, action: AppAction): AppState {
         quizSubcategory: action.subcategory || '',
         quizSubtopic: action.subtopic || '',
         quizScope: action.scope || 'all',
+        quizOrigin: action.origin || 'home',
       };
   }
 }
@@ -77,6 +80,7 @@ const initialState: AppState = {
   quizSubcategory: '',
   quizSubtopic: '',
   quizScope: 'all',
+  quizOrigin: 'home',
 };
 
 const AppContext = createContext<{

@@ -141,7 +141,7 @@ export function QuizScreen() {
   );
 
   const handleFilterCancel = useCallback(() => {
-    dispatch({ type: 'SET_SCREEN', screen: 'home' });
+    dispatch({ type: 'SET_SCREEN', screen: state.quizOrigin });
   }, [dispatch]);
 
   // 穴埋め回答の確認ハンドラ
@@ -221,10 +221,10 @@ export function QuizScreen() {
               もう一度
             </button>
             <button
-              onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'home' })}
+              onClick={() => dispatch({ type: 'SET_SCREEN', screen: state.quizOrigin })}
               className="btn-secondary w-full"
             >
-              ホームに戻る
+              {state.quizOrigin === 'weakness' ? '学習マップに戻る' : 'ホームに戻る'}
             </button>
           </div>
         </div>
@@ -240,10 +240,10 @@ export function QuizScreen() {
             問題がありません。問題データを読み込んでください。
           </p>
           <button
-            onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'home' })}
+            onClick={() => dispatch({ type: 'SET_SCREEN', screen: state.quizOrigin })}
             className="btn-secondary"
           >
-            ホームに戻る
+            {state.quizOrigin === 'weakness' ? '学習マップに戻る' : 'ホームに戻る'}
           </button>
         </div>
       </div>
@@ -264,7 +264,7 @@ export function QuizScreen() {
       {/* プログレス */}
       <div className="flex items-center gap-3 mb-4">
         <button
-          onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'home' })}
+          onClick={() => dispatch({ type: 'SET_SCREEN', screen: state.quizOrigin })}
           className="text-slate-400 text-sm"
         >
           ✕
