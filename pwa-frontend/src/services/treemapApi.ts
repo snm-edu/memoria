@@ -34,9 +34,13 @@ export async function loadAllowedCategories(
 
 /**
  * GAS API: ツリーマップ取得
+ *
+ * studentNumber を渡すと GAS 側で学籍番号で集約され、端末・UUID 変更を跨いだ
+ * 全学習履歴がまとまる (教員 Looker と共通言語化)。空文字なら studentId フォールバック。
  */
 export async function fetchStudentTreemap(params: {
   studentId: string;
+  studentNumber: string;
   department: string;
   grade: number;
 }): Promise<ApiResponse<TreemapResponse>> {
@@ -57,6 +61,7 @@ export async function fetchStudentTreemap(params: {
   const url = new URL(GAS_API_URL);
   url.searchParams.set('action', 'getStudentTreemap');
   url.searchParams.set('studentId', params.studentId);
+  url.searchParams.set('studentNumber', params.studentNumber);
   url.searchParams.set('department', params.department);
   url.searchParams.set('grade', String(params.grade));
   url.searchParams.set('categories', categories.join(','));

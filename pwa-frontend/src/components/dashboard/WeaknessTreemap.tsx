@@ -29,6 +29,7 @@ export function WeaknessTreemap() {
 
     fetchStudentTreemap({
       studentId: profile.studentId,
+      studentNumber: profile.studentNumber || '',
       department: profile.department,
       grade: profile.grade,
     }).then((res) => {

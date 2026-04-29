@@ -50,14 +50,22 @@ const TreemapService = {
   },
 
   /**
-   * category_stats シートから studentId フィルタで
-   * (category, subcategory, subtopic) ごとの学習結果マップを抽出する
+   * category_stats シートから (category, subcategory, subtopic) ごとの学習結果マップを抽出する
+   *
+   * 照合の優先順位:
+   * 1. studentNumber が指定された場合 → 学籍番号で全 UUID 行を集約
+   *    (端末変更や再ログインで UUID が変わっても、同じ学籍番号なら履歴を引き継げる)
+   * 2. studentNumber が空の場合 → studentId (UUID) で照合 (卒業生・学籍番号未登録ユーザー向けフォールバック)
+   *
+   * 同じ学籍番号で複数の UUID 行が存在する場合 (画像の例: snm の 91414810-... と 056c8ff4-...)、
+   * 同一 (cat, sub, top) のキーで answered/correct を加算合計し、lastDate は最新を採用する。
    *
    * @param {Spreadsheet} ss
-   * @param {string} studentId
+   * @param {string} studentId - UUID
+   * @param {string} studentNumber - 学籍番号 (空文字可)
    * @return {Object} key=cat|||sub|||top, value={answered, correct, lastDate}
    */
-  buildLearnedMap: function(ss, studentId) {
+  buildLearnedMap: function(ss, studentId, studentNumber) {
     var sheet = ss.getSheetByName('category_stats');
     if (!sheet) return {};
     var data = sheet.getDataRange().getValues();
@@ -67,19 +75,30 @@ const TreemapService = {
     var idx = {};
     headers.forEach(function(h, i) { idx[h] = i; });
 
+    var useNumber = !!studentNumber;
     var learned = {};
     for (var i = 1; i < data.length; i++) {
       var row = data[i];
-      if (row[idx['student_id']] !== studentId) continue;
+      var match = useNumber
+        ? row[idx['student_number']] === studentNumber
+        : row[idx['student_id']] === studentId;
+      if (!match) continue;
+
       var cat = row[idx['category']] || '';
       var sub = row[idx['subcategory']] || '未分類';
       var top = row[idx['subtopic']] || '未分類';
       var key = cat + '|||' + sub + '|||' + top;
-      learned[key] = {
-        answered: Number(row[idx['total_count']]) || 0,
-        correct: Number(row[idx['correct_count']]) || 0,
-        lastDate: row[idx['last_study_date']] || ''
-      };
+      var answered = Number(row[idx['total_count']]) || 0;
+      var correct = Number(row[idx['correct_count']]) || 0;
+      var lastDate = row[idx['last_study_date']] || '';
+
+      if (!learned[key]) {
+        learned[key] = { answered: 0, correct: 0, lastDate: '' };
+      }
+      // 同じ学籍番号の複数 UUID 行を加算合計
+      learned[key].answered += answered;
+      learned[key].correct += correct;
+      if (lastDate > learned[key].lastDate) learned[key].lastDate = lastDate;
     }
     return learned;
   },
@@ -232,10 +251,11 @@ const TreemapService = {
    *
    * @param {Object} params
    * @param {string} params.studentId
+   * @param {string} params.studentNumber - 学籍番号 (推奨。空文字なら studentId フォールバック)
    * @param {string} params.department
    * @param {number} params.grade
    * @param {Array<string>} params.categories - PWA から渡される大分類ホワイトリスト
-   * @return {Object} {success, data} or {success:false, error}
+   * @return {Object} 成功時は生データ、失敗時は {error:string} (jsonResponse がラップ)
    */
   getStudentTreemap: function(params) {
     if (!params || !params.studentId) {
@@ -251,13 +271,13 @@ const TreemapService = {
     try {
       var ss = getSpreadsheet();
       var master = this.buildLeafMaster(ss, params.department, params.categories);
-      var learned = this.buildLearnedMap(ss, params.studentId);
+      var learned = this.buildLearnedMap(ss, params.studentId, params.studentNumber || '');
       var leafs = this.mergeLeafs(master, learned);
       var tree = this.buildTree(leafs);
 
-      // jsonResponse が {success, data, error} でラップするため、ここでは生データを返す
       return {
         studentId: params.studentId,
+        studentNumber: params.studentNumber || '',
         department: params.department,
         grade: params.grade,
         updatedAt: new Date().toISOString(),
@@ -290,15 +310,14 @@ function testBuildLeafMaster() {
 }
 
 /**
- * Task 2: 学習済みマップの確認
- * studentId は実在する値を category_stats から拾って差し替え
+ * Task 2: 学習済みマップの確認 (学籍番号集約モード)
+ * studentNumber は実在する値 (例: 'snm') を入れる
  */
 function testBuildLearnedMap() {
   var ss = getSpreadsheet();
-  var testStudentId = 'snm';
-  var learned = TreemapService.buildLearnedMap(ss, testStudentId);
+  var learned = TreemapService.buildLearnedMap(ss, '', 'snm');
   var keys = Object.keys(learned);
-  Logger.log('学習済み件数: ' + keys.length);
+  Logger.log('学習済み件数 (studentNumber=snm 集約): ' + keys.length);
   for (var i = 0; i < Math.min(3, keys.length); i++) {
     Logger.log(keys[i] + ' => ' + JSON.stringify(learned[keys[i]]));
   }
@@ -311,7 +330,7 @@ function testMergeLeafs() {
   var ss = getSpreadsheet();
   var allowed = ['医用電気電子工学', '医学概論'];
   var master = TreemapService.buildLeafMaster(ss, 'clinical_eng', allowed);
-  var learned = TreemapService.buildLearnedMap(ss, 'snm');
+  var learned = TreemapService.buildLearnedMap(ss, '', 'snm');
   var leafs = TreemapService.mergeLeafs(master, learned);
 
   var stats = { high: 0, low: 0, none: 0 };
@@ -333,7 +352,7 @@ function testBuildTree() {
   var ss = getSpreadsheet();
   var allowed = ['医用電気電子工学', '医学概論'];
   var master = TreemapService.buildLeafMaster(ss, 'clinical_eng', allowed);
-  var learned = TreemapService.buildLearnedMap(ss, 'snm');
+  var learned = TreemapService.buildLearnedMap(ss, '', 'snm');
   var leafs = TreemapService.mergeLeafs(master, learned);
   var tree = TreemapService.buildTree(leafs);
   Logger.log('ルート totalQuestions: ' + tree.totalQuestions);
@@ -347,14 +366,17 @@ function testBuildTree() {
 }
 
 /**
- * Task 5: 公開エントリの確認
+ * Task 5: 公開エントリの確認 (学籍番号で照合)
  */
 function testGetStudentTreemap() {
   var result = TreemapService.getStudentTreemap({
-    studentId: 'snm',
+    studentId: 'dummy-uuid',
+    studentNumber: 'snm',
     department: 'clinical_eng',
-    grade: 2,
-    categories: ['医用電気電子工学', '医学概論', '生体機能代行装置学', '医用機械工学']
+    grade: 3,
+    categories: ['医用電気電子工学', '医学概論', '生体機能代行装置学', '医用機械工学',
+                 '医用機器安全管理学', '生体計測装置学', '医用治療機器学',
+                 '生体物性材料工学', '臨床医学総論']
   });
   Logger.log(JSON.stringify(result, null, 2).substring(0, 1500));
 }

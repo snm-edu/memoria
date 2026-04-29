@@ -35,6 +35,7 @@ export interface TreemapRoot {
 
 export interface TreemapResponse {
   studentId: string;
+  studentNumber: string;
   department: string;
   grade: number;
   updatedAt: string;
