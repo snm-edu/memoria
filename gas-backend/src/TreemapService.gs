@@ -247,6 +247,57 @@ const TreemapService = {
   },
 
   /**
+   * ツリー内の同一親 (中分類) に属する confidence:'none' リーフが3件以上ある場合、
+   * '+未着手N件' という isAggregate セルに集約する。
+   *
+   * 大分類はまとめない (Spec §6.3)。中分類セル内の小分類群のみ対象。
+   * 学習が進むと自然にまとめセルが減り進捗実感に繋がる。
+   *
+   * @param {Object} tree - buildTree の戻り値
+   * @return {Object} 同じ tree (in-place 改変)
+   */
+  aggregateUnstudied: function(tree) {
+    var THRESHOLD = 3;
+    if (!tree || !tree.children) return tree;
+
+    for (var c = 0; c < tree.children.length; c++) {
+      var cat = tree.children[c];
+      if (!cat.children) continue;
+
+      for (var s = 0; s < cat.children.length; s++) {
+        var sub = cat.children[s];
+        if (!sub.children) continue;
+
+        var unstudied = [];
+        var others = [];
+        for (var l = 0; l < sub.children.length; l++) {
+          var leaf = sub.children[l];
+          if (leaf.confidence === 'none') unstudied.push(leaf);
+          else others.push(leaf);
+        }
+
+        if (unstudied.length >= THRESHOLD) {
+          var totalQ = 0;
+          for (var u = 0; u < unstudied.length; u++) totalQ += unstudied[u].totalQuestions;
+          var aggregate = {
+            name: '+未着手' + unstudied.length + '件',
+            totalQuestions: totalQ,
+            answered: 0,
+            correct: 0,
+            correctRate: null,
+            confidence: 'none',
+            lastDate: '',
+            isAggregate: true,
+            aggregateLeaves: unstudied
+          };
+          sub.children = others.concat([aggregate]);
+        }
+      }
+    }
+    return tree;
+  },
+
+  /**
    * ツリーマップ用データ取得 (公開エントリ)
    *
    * @param {Object} params
@@ -274,6 +325,7 @@ const TreemapService = {
       var learned = this.buildLearnedMap(ss, params.studentId, params.studentNumber || '');
       var leafs = this.mergeLeafs(master, learned);
       var tree = this.buildTree(leafs);
+      tree = this.aggregateUnstudied(tree);
 
       return {
         studentId: params.studentId,
@@ -363,6 +415,38 @@ function testBuildTree() {
       + ' answered=' + c.answered + ' rate=' + c.correctRate
       + ' subCount=' + c.children.length);
   }
+}
+
+/**
+ * Phase B Task 4: 未着手まとめセル化の確認
+ */
+function testAggregateUnstudied() {
+  var ss = getSpreadsheet();
+  var allowed = ['医用電気電子工学', '医学概論', '生体機能代行装置学', '医用機械工学',
+                 '医用機器安全管理学', '生体計測装置学', '医用治療機器学',
+                 '生体物性材料工学', '臨床医学総論'];
+  var master = TreemapService.buildLeafMaster(ss, 'clinical_eng', allowed);
+  var learned = TreemapService.buildLearnedMap(ss, '', 'snm');
+  var leafs = TreemapService.mergeLeafs(master, learned);
+  var tree = TreemapService.buildTree(leafs);
+  tree = TreemapService.aggregateUnstudied(tree);
+
+  var aggCount = 0;
+  for (var c = 0; c < tree.children.length; c++) {
+    for (var s = 0; s < tree.children[c].children.length; s++) {
+      var sub = tree.children[c].children[s];
+      for (var l = 0; l < sub.children.length; l++) {
+        if (sub.children[l].isAggregate) {
+          aggCount++;
+          Logger.log(tree.children[c].name + ' > ' + sub.name + ' > '
+            + sub.children[l].name + ' (内包 '
+            + sub.children[l].aggregateLeaves.length + ' 件, totalQ='
+            + sub.children[l].totalQuestions + ')');
+        }
+      }
+    }
+  }
+  Logger.log('まとめセル数: ' + aggCount);
 }
 
 /**
