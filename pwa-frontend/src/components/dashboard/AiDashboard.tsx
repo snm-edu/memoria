@@ -215,7 +215,7 @@ export function AiDashboard() {
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-bold text-red-500">{cat.rate}%</span>
                         <button
-                          onClick={() => dispatch({ type: 'START_CATEGORY_QUIZ', category: cat.category })}
+                          onClick={() => dispatch({ type: 'START_CATEGORY_QUIZ', category: cat.category, scope: 'all' })}
                           className="text-xs bg-red-500 text-white px-2 py-0.5 rounded-full active:bg-red-600"
                         >
                           挑戦→
@@ -244,7 +244,7 @@ export function AiDashboard() {
                                   {sub.rate}%
                                 </span>
                                 <button
-                                  onClick={() => dispatch({ type: 'START_CATEGORY_QUIZ', category: cat.category, subcategory: subName })}
+                                  onClick={() => dispatch({ type: 'START_CATEGORY_QUIZ', category: cat.category, subcategory: subName, scope: 'all' })}
                                   className="text-[10px] bg-orange-500 text-white px-1.5 py-0.5 rounded-full active:bg-orange-600"
                                 >
                                   挑戦
