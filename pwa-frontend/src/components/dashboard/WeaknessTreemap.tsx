@@ -105,24 +105,43 @@ export function WeaknessTreemap() {
 
   function handleCellClick(_depth: number, datum: unknown) {
     const node = datum as { name: string; children?: unknown[] };
+    if (!data) return;
 
-    // リーフ (children なし) → ボトムシート
-    if (!node.children) {
+    // 親階層 (children あり: 大分類 or 中分類) → 直接 focusPath ジャンプ
+    if (node.children) {
+      for (const cat of data.tree.children) {
+        if (cat.name === node.name) {
+          setFocusPath([cat.name]);
+          return;
+        }
+        for (const sub of cat.children) {
+          if (sub.name === node.name) {
+            setFocusPath([cat.name, sub.name]);
+            return;
+          }
+        }
+      }
+      return;
+    }
+
+    // リーフ (小分類) タップ
+    // 中分類ビュー (focusPath.length === 2) → ボトムシート
+    if (focusPath.length === 2) {
       setActiveLeaf(datum as TreemapLeaf);
       return;
     }
 
-    // 親階層 (大分類 or 中分類) → ツリーから name で逆引きして focusPath を構築
-    if (!data) return;
+    // 全体 or 大分類ビューでリーフタップ → そのリーフの中分類までズーム
+    // (中分類ヘッダー帯が細くタップしにくいため、中の小分類エリアをタップしても
+    //  中分類にズームできるようにする UX 改善)
+    const leafName = node.name;
     for (const cat of data.tree.children) {
-      if (cat.name === node.name) {
-        setFocusPath([cat.name]);
-        return;
-      }
       for (const sub of cat.children) {
-        if (sub.name === node.name) {
-          setFocusPath([cat.name, sub.name]);
-          return;
+        for (const leaf of sub.children) {
+          if (leaf.name === leafName) {
+            setFocusPath([cat.name, sub.name]);
+            return;
+          }
         }
       }
     }
