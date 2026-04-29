@@ -8,6 +8,12 @@ import { QuizFilterScreen } from './QuizFilterScreen';
 import { highlightKeywords } from '../../services/memoriaStep';
 import type { BgmTrack } from '../../services/bgm';
 import { sfx } from '../../services/sfx';
+import { db } from '../../services/db';
+import {
+  applyOptimisticUpdate,
+  type SessionLogEntry,
+} from '../dashboard/treemap/treemapHelpers';
+import type { TreemapResponse } from '../dashboard/treemap/treemapTypes';
 import DOMPurify from 'dompurify';
 
 // 通常テキスト用（選択肢・解説など）: style 属性を禁止して CSS Injection リスクを排除
@@ -86,6 +92,63 @@ export function QuizScreen() {
   useEffect(() => {
     play(bgmTrack);
   }, [bgmTrack, play]);
+
+  // クイズセッション完了時、ツリーマップ起点の演習なら treemapCache を楽観更新する。
+  // origin='weakness' の時のみ実行し、最新 sessionStats.total 件の answerLog を
+  // セッションログとみなして applyOptimisticUpdate を実行する。
+  const optimisticDoneRef = useRef(false);
+  useEffect(() => {
+    if (!quiz.isFinished) {
+      optimisticDoneRef.current = false;
+      return;
+    }
+    if (optimisticDoneRef.current) return;
+    if (state.quizOrigin !== 'weakness') return;
+    if (!state.profile) return;
+    if (quiz.sessionStats.total === 0) return;
+    optimisticDoneRef.current = true;
+
+    const profile = state.profile;
+    const sessionTotal = quiz.sessionStats.total;
+    (async () => {
+      const cached = await db.treemapCache.get(profile.studentId);
+      if (!cached || !cached.payload) return;
+      const payload = cached.payload as TreemapResponse;
+
+      const recentLogs = await db.answerLog
+        .orderBy('timestamp')
+        .reverse()
+        .limit(sessionTotal)
+        .toArray();
+
+      const qIds = recentLogs.map((l) => l.questionId);
+      const qs = await db.questionCache.where('question_id').anyOf(qIds).toArray();
+      const qMap = new Map(qs.map((q) => [q.question_id, q]));
+
+      const sessionLogs: SessionLogEntry[] = [];
+      for (const log of recentLogs) {
+        const q = qMap.get(log.questionId);
+        if (!q) continue;
+        sessionLogs.push({
+          category: q.category,
+          subcategory: q.subcategory || '',
+          subtopic: q.subtopic || '',
+          isCorrect: log.isCorrect,
+        });
+      }
+
+      const cloned = JSON.parse(JSON.stringify(payload)) as TreemapResponse;
+      applyOptimisticUpdate(cloned.tree, sessionLogs);
+
+      await db.treemapCache.put({
+        studentId: profile.studentId,
+        fetchedAt: cached.fetchedAt,
+        payload: cloned,
+        pendingSync: true,
+        lastQuizAt: Date.now(),
+      });
+    })();
+  }, [quiz.isFinished, quiz.sessionStats.total, state.quizOrigin, state.profile]);
 
   // 回答確定時の効果音: showFeedback が false→true に変化した瞬間に鳴らす
   const prevShowFeedbackRef = useRef(false);
