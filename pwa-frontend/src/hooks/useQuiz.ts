@@ -229,11 +229,18 @@ export function useQuiz() {
     }
 
     // scope 別 post-filter (ツリーマップ起点の演習用)
+    // scope で 0問になった場合は scope='all' にフォールバック
+    // (まだ解いていない/苦手判定対象がない範囲でも、subtopic/subcategory で出題できるように)
     if (filters?.scope === 'unstudied') {
       const cardIds = new Set(
         (await db.cardStates.toArray()).map((c) => c.questionId)
       );
-      questions = questions.filter((q) => !cardIds.has(q.question_id));
+      const filtered = questions.filter((q) => !cardIds.has(q.question_id));
+      if (filtered.length > 0) {
+        questions = filtered;
+      } else {
+        console.log('[Quiz] scope=unstudied で対象なし → scope=all にフォールバック');
+      }
     } else if (filters?.scope === 'weak') {
       const allLogs = await db.answerLog.toArray();
       const accByQ = new Map<string, { correct: number; total: number }>();
@@ -243,11 +250,16 @@ export function useQuiz() {
         if (log.isCorrect) a.correct++;
         accByQ.set(log.questionId, a);
       }
-      questions = questions.filter((q) => {
+      const filtered = questions.filter((q) => {
         const a = accByQ.get(q.question_id);
         if (!a || a.total === 0) return false;
         return a.correct / a.total < 0.6;
       });
+      if (filtered.length > 0) {
+        questions = filtered;
+      } else {
+        console.log('[Quiz] scope=weak で対象なし → scope=all にフォールバック');
+      }
     }
 
     // 最初の問題のメモリアステップ状態を計算
