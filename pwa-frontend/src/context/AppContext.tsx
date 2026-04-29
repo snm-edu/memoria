@@ -8,6 +8,9 @@ import type { StudentProfile, Screen } from '../types';
 // クイズモード: 'home'からの学年制限付き or 'nav'からの自由選択
 type QuizMode = 'graded' | 'free';
 
+// クイズスコープ: 全問 / 苦手のみ / 未着手のみ
+export type QuizScope = 'all' | 'weak' | 'unstudied';
+
 interface AppState {
   profile: StudentProfile | null;
   screen: Screen;
@@ -17,6 +20,8 @@ interface AppState {
   quizMode: QuizMode;
   quizCategory: string; // カテゴリ指定クイズ用（空文字=指定なし）
   quizSubcategory: string; // サブカテゴリ指定（空文字=指定なし）
+  quizSubtopic: string; // 小分類指定（空文字=指定なし）
+  quizScope: QuizScope; // 'all' | 'weak' | 'unstudied'
 }
 
 type AppAction =
@@ -26,7 +31,13 @@ type AppAction =
   | { type: 'SET_SYNC_COUNT'; count: number }
   | { type: 'SET_LAST_SYNC'; timestamp: string }
   | { type: 'SET_QUIZ_MODE'; mode: QuizMode }
-  | { type: 'START_CATEGORY_QUIZ'; category: string; subcategory?: string };
+  | {
+      type: 'START_CATEGORY_QUIZ';
+      category: string;
+      subcategory?: string;
+      subtopic?: string;
+      scope?: QuizScope;
+    };
 
 function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
@@ -43,7 +54,15 @@ function appReducer(state: AppState, action: AppAction): AppState {
     case 'SET_QUIZ_MODE':
       return { ...state, quizMode: action.mode };
     case 'START_CATEGORY_QUIZ':
-      return { ...state, screen: 'quiz', quizMode: 'free', quizCategory: action.category, quizSubcategory: action.subcategory || '' };
+      return {
+        ...state,
+        screen: 'quiz',
+        quizMode: 'free',
+        quizCategory: action.category,
+        quizSubcategory: action.subcategory || '',
+        quizSubtopic: action.subtopic || '',
+        quizScope: action.scope || 'all',
+      };
   }
 }
 
@@ -56,6 +75,8 @@ const initialState: AppState = {
   quizMode: 'free',
   quizCategory: '',
   quizSubcategory: '',
+  quizSubtopic: '',
+  quizScope: 'all',
 };
 
 const AppContext = createContext<{

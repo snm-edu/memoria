@@ -112,11 +112,25 @@ export function QuizScreen() {
       if (state.quizSubcategory) {
         filters.subcategory = state.quizSubcategory;
       }
+      if (state.quizSubtopic) {
+        filters.subtopic = state.quizSubtopic;
+      }
+      if (state.quizScope && state.quizScope !== 'all') {
+        filters.scope = state.quizScope;
+      }
       void quiz.startSession(20, filters);
       // カテゴリ指定をクリア（次回は通常モードに戻す）
       dispatch({ type: 'START_CATEGORY_QUIZ', category: '' });
     }
-  }, [hasCategory, state.quizCategory, state.quizSubcategory, quiz.startSession, dispatch]);
+  }, [
+    hasCategory,
+    state.quizCategory,
+    state.quizSubcategory,
+    state.quizSubtopic,
+    state.quizScope,
+    quiz.startSession,
+    dispatch,
+  ]);
 
   const handleFilterStart = useCallback(
     (filters: QuizFilters) => {
