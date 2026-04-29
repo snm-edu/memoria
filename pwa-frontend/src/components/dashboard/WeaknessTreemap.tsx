@@ -277,11 +277,21 @@ export function WeaknessTreemap() {
     ? new Date(cachedAt).toISOString()
     : data?.updatedAt || '';
 
+  // ヘッダーの「← 戻る」: ズーム階層がある時は1階層戻る、無い時はホームへ
+  function handleBackButton() {
+    if (focusPath.length > 0) {
+      setFocusPath(focusPath.slice(0, -1));
+      setActiveLeaf(null);
+    } else {
+      dispatch({ type: 'SET_SCREEN', screen: 'home' });
+    }
+  }
+
   return (
     <div className="min-h-[100dvh] flex flex-col pb-20">
       <header className="flex items-center gap-2 px-4 py-3">
         <button
-          onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'home' })}
+          onClick={handleBackButton}
           className="text-slate-400 flex-shrink-0"
         >
           ← 戻る
