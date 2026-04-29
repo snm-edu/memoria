@@ -158,7 +158,7 @@ export function WeaknessTreemap() {
 
   const breadcrumbSegments = ['全体', ...focusPath];
 
-  const showFab = !!data && !loading && !error;
+  const showActionBar = !!data && !loading && !error;
 
   return (
     <div className="min-h-[100dvh] flex flex-col pb-20">
@@ -169,20 +169,23 @@ export function WeaknessTreemap() {
         >
           ← 戻る
         </button>
-        <h2 className="text-xl font-bold flex-1">分野別学習マップ</h2>
-        {showFab && <ChallengeFab onChallenge={handleFabChallenge} />}
+        <h2 className="text-xl font-bold">分野別学習マップ</h2>
       </header>
 
-      <TreemapBreadcrumb
-        segments={breadcrumbSegments}
-        onSegmentClick={handleSegmentClick}
-        totalQuestions={showFab ? fabSummary.total : undefined}
-        weakCount={showFab ? fabSummary.weak : undefined}
-      />
+      <TreemapBreadcrumb segments={breadcrumbSegments} onSegmentClick={handleSegmentClick} />
 
       {data && <TreemapLegend updatedAt={data.updatedAt} />}
 
-      <div ref={canvasRef} className="flex-1 min-h-[55dvh]">
+      {showActionBar && (
+        <ChallengeFab
+          focusPath={focusPath}
+          totalQuestions={fabSummary.total}
+          weakCount={fabSummary.weak}
+          onChallenge={handleFabChallenge}
+        />
+      )}
+
+      <div ref={canvasRef} className="flex-1 min-h-[50dvh]">
         {loading && (
           <div className="text-center text-slate-400 py-8">読み込み中...</div>
         )}
