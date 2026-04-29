@@ -103,19 +103,28 @@ export function WeaknessTreemap() {
     };
   }, [scopedData]);
 
-  function handleCellClick(depth: number, datum: unknown) {
-    const cur = focusPath;
-    if (cur.length === 0 && depth === 1) {
-      setFocusPath([(datum as { name: string }).name]);
-      return;
-    }
-    if (cur.length === 1 && depth === 1) {
-      setFocusPath([cur[0]!, (datum as { name: string }).name]);
-      return;
-    }
-    if (cur.length === 2 && depth === 1) {
+  function handleCellClick(_depth: number, datum: unknown) {
+    const node = datum as { name: string; children?: unknown[] };
+
+    // リーフ (children なし) → ボトムシート
+    if (!node.children) {
       setActiveLeaf(datum as TreemapLeaf);
       return;
+    }
+
+    // 親階層 (大分類 or 中分類) → ツリーから name で逆引きして focusPath を構築
+    if (!data) return;
+    for (const cat of data.tree.children) {
+      if (cat.name === node.name) {
+        setFocusPath([cat.name]);
+        return;
+      }
+      for (const sub of cat.children) {
+        if (sub.name === node.name) {
+          setFocusPath([cat.name, sub.name]);
+          return;
+        }
+      }
     }
   }
 
