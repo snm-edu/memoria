@@ -239,13 +239,13 @@ const TreemapService = {
    */
   getStudentTreemap: function(params) {
     if (!params || !params.studentId) {
-      return { success: false, error: 'studentId is required' };
+      return { error: 'studentId is required' };
     }
     if (!params.department) {
-      return { success: false, error: 'department is required' };
+      return { error: 'department is required' };
     }
     if (!params.categories || !params.categories.length) {
-      return { success: false, error: 'categories is required' };
+      return { error: 'categories is required' };
     }
 
     try {
@@ -255,7 +255,8 @@ const TreemapService = {
       var leafs = this.mergeLeafs(master, learned);
       var tree = this.buildTree(leafs);
 
-      var data = {
+      // jsonResponse が {success, data, error} でラップするため、ここでは生データを返す
+      return {
         studentId: params.studentId,
         department: params.department,
         grade: params.grade,
@@ -264,10 +265,9 @@ const TreemapService = {
         answered: tree.answered,
         tree: tree
       };
-      return { success: true, data: data };
     } catch (e) {
       Logger.log('getStudentTreemap error: ' + e + '\n' + e.stack);
-      return { success: false, error: String(e) };
+      return { error: String(e) };
     }
   },
 };
