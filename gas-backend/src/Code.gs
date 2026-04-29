@@ -13,6 +13,7 @@
  * POST /exec?action=logPreEnrollmentGame { studentId, studentNumber, department, gameId, status }
  * POST /exec?action=getMyProfile   { studentId, studentNumber }
  * POST /exec?action=validateEnrollment { studentId, studentNumber, department }
+ * POST /exec?action=refreshStudentTreemap { studentId, studentNumber, department, grade, categories }
  */
 
 function doGet(e) {
@@ -140,6 +141,15 @@ function doPost(e) {
 
       case 'refreshDashboard':
         return jsonResponse(DashboardService.refreshStudent(body.studentId));
+
+      case 'refreshStudentTreemap':
+        return jsonResponse(TreemapService.refreshStudentTreemap({
+          studentId: body.studentId || '',
+          studentNumber: body.studentNumber || '',
+          department: body.department || '',
+          grade: parseInt(body.grade) || 0,
+          categories: Array.isArray(body.categories) ? body.categories : [],
+        }));
 
       default:
         return jsonResponse({ error: 'Unknown action: ' + action }, 400);

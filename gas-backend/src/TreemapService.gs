@@ -342,6 +342,160 @@ const TreemapService = {
       return { error: String(e) };
     }
   },
+
+  /**
+   * 1学生分の student_logs を集計して category_stats シートを差分更新する。
+   *
+   * 既存の DashboardService.updateCategoryStats は全学生を一括再計算するため
+   * 重い。本関数は studentNumber か studentId に該当する行のみ削除→挿入する
+   * 軽量版で、refresh ボタンから呼び出す用途。
+   *
+   * @param {Spreadsheet} ss
+   * @param {string} studentId
+   * @param {string} studentNumber - 空文字なら studentId フォールバック
+   * @return {void}
+   */
+  recomputeCategoryStats: function(ss, studentId, studentNumber) {
+    var sheetName = 'category_stats';
+    var sheet = ss.getSheetByName(sheetName);
+    if (!sheet) return;
+
+    var data = sheet.getDataRange().getValues();
+    if (data.length <= 1) return;
+    var headers = data[0];
+    var idx = {};
+    headers.forEach(function(h, i) { idx[h] = i; });
+
+    var useNumber = !!studentNumber;
+    for (var r = data.length - 1; r >= 1; r--) {
+      var row = data[r];
+      var match = useNumber
+        ? row[idx['student_number']] === studentNumber
+        : row[idx['student_id']] === studentId;
+      if (match) sheet.deleteRow(r + 1);
+    }
+
+    var allLogs = [];
+    var sheets = ss.getSheets();
+    for (var s = 0; s < sheets.length; s++) {
+      var ls = sheets[s];
+      var name = ls.getName();
+      if (name === CONFIG.SHEETS.STUDENT_LOGS || name.indexOf(CONFIG.SHEETS.STUDENT_LOGS + '_') === 0) {
+        var ldata = ls.getDataRange().getValues();
+        if (ldata.length <= 1) continue;
+        var lheaders = ldata[0];
+        var lidx = {};
+        lheaders.forEach(function(h, i) { lidx[h] = i; });
+        for (var i = 1; i < ldata.length; i++) {
+          var lrow = ldata[i];
+          var matchLog = useNumber
+            ? lrow[lidx['student_number']] === studentNumber
+            : lrow[lidx['student_id']] === studentId;
+          if (!matchLog) continue;
+          allLogs.push({
+            studentId: lrow[lidx['student_id']] || '',
+            studentNumber: lrow[lidx['student_number']] || '',
+            department: lrow[lidx['department']] || '',
+            grade: lrow[lidx['grade']] || '',
+            questionId: lrow[lidx['question_id']] || '',
+            isCorrect: lrow[lidx['is_correct']] === true || lrow[lidx['is_correct']] === 'TRUE',
+            timestamp: lrow[lidx['timestamp']] || '',
+          });
+        }
+      }
+    }
+
+    if (allLogs.length === 0) return;
+
+    var qSheet = ss.getSheetByName(CONFIG.SHEETS.QUESTIONS);
+    var qMap = {};
+    if (qSheet) {
+      var qdata = qSheet.getDataRange().getValues();
+      var qheaders = qdata[0];
+      var qidx = {};
+      qheaders.forEach(function(h, i) { qidx[h] = i; });
+      for (var i = 1; i < qdata.length; i++) {
+        var qr = qdata[i];
+        qMap[qr[qidx['question_id']]] = {
+          category: qr[qidx['category']] || '',
+          subcategory: qr[qidx['subcategory']] || '',
+          subtopic: qr[qidx['subtopic']] || ''
+        };
+      }
+    }
+
+    var nameMap = {};
+    try {
+      nameMap = DashboardService.getStudentNameMap();
+    } catch (e) {
+      Logger.log('getStudentNameMap error: ' + e);
+    }
+
+    var stats = {};
+    var latest = allLogs[allLogs.length - 1];
+    for (var i = 0; i < allLogs.length; i++) {
+      var log = allLogs[i];
+      var info = qMap[log.questionId];
+      if (!info) continue;
+      var cat = info.category || '';
+      var sub = info.subcategory || '未分類';
+      var top = info.subtopic || '未分類';
+      var key = cat + '|||' + sub + '|||' + top;
+      if (!stats[key]) {
+        stats[key] = { correct: 0, total: 0, cat: cat, sub: sub, top: top, lastDate: '' };
+      }
+      stats[key].total++;
+      if (log.isCorrect) stats[key].correct++;
+      if (log.timestamp) {
+        var dateStr = String(log.timestamp).split('T')[0];
+        if (dateStr > stats[key].lastDate) stats[key].lastDate = dateStr;
+      }
+    }
+
+    var rows = [];
+    var studentName = nameMap[latest.studentNumber] || latest.studentNumber || studentId;
+    for (var key in stats) {
+      var st = stats[key];
+      var rate = st.total > 0 ? Math.round((st.correct / st.total) * 100) : 0;
+      rows.push([
+        studentId,
+        latest.studentNumber || '',
+        studentName,
+        latest.department || '',
+        latest.grade || '',
+        st.cat, st.sub, st.top,
+        st.total, st.correct, rate, st.lastDate
+      ]);
+    }
+
+    if (rows.length > 0) {
+      sheet.getRange(sheet.getLastRow() + 1, 1, rows.length, 12).setValues(rows);
+    }
+  },
+
+  /**
+   * 1学生分の category_stats を即時再計算してから getStudentTreemap 同等の
+   * レスポンスを返す。フロントの ⟳ ボタンから POST で呼ばれる。
+   */
+  refreshStudentTreemap: function(params) {
+    if (!params || !params.studentId) {
+      return { error: 'studentId is required' };
+    }
+    if (!params.department) {
+      return { error: 'department is required' };
+    }
+    if (!params.categories || !params.categories.length) {
+      return { error: 'categories is required' };
+    }
+    try {
+      var ss = getSpreadsheet();
+      this.recomputeCategoryStats(ss, params.studentId, params.studentNumber || '');
+      return this.getStudentTreemap(params);
+    } catch (e) {
+      Logger.log('refreshStudentTreemap error: ' + e + '\n' + e.stack);
+      return { error: String(e) };
+    }
+  },
 };
 
 // === 手動動作確認用関数 (GAS エディタから実行) ===
