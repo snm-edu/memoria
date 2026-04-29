@@ -8,6 +8,8 @@ export interface TreemapLeaf {
   correctRate: number | null;
   confidence: Confidence;
   lastDate: string;
+  isAggregate?: boolean;
+  aggregateLeaves?: TreemapLeaf[];
 }
 
 export interface TreemapSubcategory {
@@ -43,3 +45,5 @@ export interface TreemapResponse {
   answered: number;
   tree: TreemapRoot;
 }
+
+export type FocusPath = string[]; // 例: [], ['医用電気電子工学'], ['医用電気電子工学', '電気工学']
