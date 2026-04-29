@@ -175,8 +175,15 @@ export function useQuiz() {
       if (!hasValidChoices(q)) return false; // 選択肢が画像のみの問題を除外
       if (profileDept && q.department !== profileDept) return false; // 学科フィルタ
       if (filters?.category && q.category !== filters.category) return false;
-      if (filters?.subcategory && q.subcategory !== filters.subcategory) return false;
-      if (filters?.subtopic && q.subtopic !== filters.subtopic) return false;
+      if (filters?.subcategory) {
+        // GAS 側で '未分類' に正規化された値も許容
+        const subNorm = q.subcategory && q.subcategory !== '' ? q.subcategory : '未分類';
+        if (subNorm !== filters.subcategory) return false;
+      }
+      if (filters?.subtopic) {
+        const topNorm = q.subtopic && q.subtopic !== '' ? q.subtopic : '未分類';
+        if (topNorm !== filters.subtopic) return false;
+      }
       if (filters?.year && q.exam_year !== filters.year) return false;
       // sourceFilter: 過去問 / 模擬試験 フィルター
       if (filters?.sourceFilter && filters.sourceFilter !== 'all') {
