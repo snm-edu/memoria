@@ -4,6 +4,7 @@
  * GET  /exec?action=getQuestions&dept=nursing&category=...&limit=20&offset=0
  * GET  /exec?action=getReviewQueue&studentId=xxx
  * GET  /exec?action=getStudentStats&studentId=xxx
+ * GET  /exec?action=getStudentTreemap&studentId=xxx&department=clinical_eng&grade=2&categories=cat1,cat2,...
  * POST /exec?action=submitAnswer   { studentId, studentNumber, questionId, answer, responseTime, department, grade, studentType }
  * POST /exec?action=submitAnswerBatch { answers: [...] }
  * POST /exec?action=updateStudentNumber { oldStudentNumber, newStudentNumber, studentId }
@@ -42,6 +43,16 @@ function doGet(e) {
         return jsonResponse(DashboardService.getStudentDashboard(
           e.parameter.studentId
         ));
+
+      case 'getStudentTreemap':
+        var categoriesParam = e.parameter.categories || '';
+        var categories = categoriesParam ? categoriesParam.split(',') : [];
+        return jsonResponse(TreemapService.getStudentTreemap({
+          studentId: e.parameter.studentId || '',
+          department: e.parameter.department || '',
+          grade: parseInt(e.parameter.grade) || 0,
+          categories: categories
+        }));
 
       case 'ping':
         return jsonResponse({ status: 'ok', timestamp: new Date().toISOString() });

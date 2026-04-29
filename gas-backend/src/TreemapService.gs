@@ -1,0 +1,360 @@
+/**
+ * Memoria ツリーマップサービス
+ *
+ * 学生個人用ツリーマップのデータを返す。
+ * questions シート(出題マスタ) × category_stats(学習履歴) を
+ * LEFT JOIN し、category > subcategory > subtopic のネスト構造で返却する。
+ *
+ * curriculum マスタは PWA 側にあるため、GAS は categories リストを
+ * パラメータで受け取って大分類フィルタとして使う。
+ */
+
+const TreemapService = {
+  /**
+   * questions シートから (department, allowedCategories) で絞った
+   * (category, subcategory, subtopic) ごとの問題数マスタを抽出する
+   *
+   * @param {Spreadsheet} ss
+   * @param {string} department - 学科コード(例: 'clinical_eng')
+   * @param {Array<string>} allowedCategories - 大分類のホワイトリスト
+   * @return {Object} key=cat|||sub|||top, value={cat, sub, top, totalQuestions}
+   */
+  buildLeafMaster: function(ss, department, allowedCategories) {
+    var sheet = ss.getSheetByName(CONFIG.SHEETS.QUESTIONS);
+    if (!sheet) return {};
+    var data = sheet.getDataRange().getValues();
+    if (data.length <= 1) return {};
+
+    var headers = data[0];
+    var idx = {};
+    headers.forEach(function(h, i) { idx[h] = i; });
+
+    var allowedSet = {};
+    allowedCategories.forEach(function(c) { allowedSet[c] = true; });
+
+    var master = {};
+    for (var i = 1; i < data.length; i++) {
+      var row = data[i];
+      if (row[idx['department']] !== department) continue;
+      var cat = row[idx['category']] || '';
+      if (!allowedSet[cat]) continue;
+      var sub = row[idx['subcategory']] || '未分類';
+      var top = row[idx['subtopic']] || '未分類';
+      var key = cat + '|||' + sub + '|||' + top;
+      if (!master[key]) {
+        master[key] = { cat: cat, sub: sub, top: top, totalQuestions: 0 };
+      }
+      master[key].totalQuestions++;
+    }
+    return master;
+  },
+
+  /**
+   * category_stats シートから studentId フィルタで
+   * (category, subcategory, subtopic) ごとの学習結果マップを抽出する
+   *
+   * @param {Spreadsheet} ss
+   * @param {string} studentId
+   * @return {Object} key=cat|||sub|||top, value={answered, correct, lastDate}
+   */
+  buildLearnedMap: function(ss, studentId) {
+    var sheet = ss.getSheetByName('category_stats');
+    if (!sheet) return {};
+    var data = sheet.getDataRange().getValues();
+    if (data.length <= 1) return {};
+
+    var headers = data[0];
+    var idx = {};
+    headers.forEach(function(h, i) { idx[h] = i; });
+
+    var learned = {};
+    for (var i = 1; i < data.length; i++) {
+      var row = data[i];
+      if (row[idx['student_id']] !== studentId) continue;
+      var cat = row[idx['category']] || '';
+      var sub = row[idx['subcategory']] || '未分類';
+      var top = row[idx['subtopic']] || '未分類';
+      var key = cat + '|||' + sub + '|||' + top;
+      learned[key] = {
+        answered: Number(row[idx['total_count']]) || 0,
+        correct: Number(row[idx['correct_count']]) || 0,
+        lastDate: row[idx['last_study_date']] || ''
+      };
+    }
+    return learned;
+  },
+
+  /**
+   * マスタリーフ × 学習済みマップを LEFT JOIN し、
+   * confidence (high/low/none) と correctRate を付与する
+   *
+   * @param {Object} master - buildLeafMaster の戻り値
+   * @param {Object} learned - buildLearnedMap の戻り値
+   * @return {Array<Object>} {cat, sub, top, totalQuestions, answered, correct, correctRate, confidence, lastDate}
+   */
+  mergeLeafs: function(master, learned) {
+    var leafs = [];
+    var keys = Object.keys(master);
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      var m = master[key];
+      var l = learned[key];
+      var leaf = {
+        cat: m.cat,
+        sub: m.sub,
+        top: m.top,
+        totalQuestions: m.totalQuestions,
+        answered: 0,
+        correct: 0,
+        correctRate: null,
+        confidence: 'none',
+        lastDate: ''
+      };
+      if (l) {
+        leaf.answered = l.answered;
+        leaf.correct = l.correct;
+        leaf.lastDate = l.lastDate;
+        if (l.answered > 0) {
+          leaf.correctRate = Math.round((l.correct / l.answered) * 100);
+        }
+        if (l.answered >= 5) {
+          leaf.confidence = 'high';
+        } else if (l.answered >= 1) {
+          leaf.confidence = 'low';
+        }
+      }
+      leafs.push(leaf);
+    }
+    return leafs;
+  },
+
+  /**
+   * フラットなリーフ配列から category > subcategory > subtopic の
+   * ネスト構造に変換する。親階層の totalQuestions, answered, correct,
+   * correctRate も同時に集約する。
+   *
+   * @param {Array<Object>} leafs - mergeLeafs の戻り値
+   * @return {Object} {name:'すべて', children:[...大分類...]}
+   */
+  buildTree: function(leafs) {
+    var catMap = {};
+
+    for (var i = 0; i < leafs.length; i++) {
+      var leaf = leafs[i];
+      var cat = leaf.cat;
+      var sub = leaf.sub;
+
+      if (!catMap[cat]) {
+        catMap[cat] = {
+          name: cat,
+          subMap: {},
+          totalQuestions: 0,
+          answered: 0,
+          correct: 0
+        };
+      }
+      var catNode = catMap[cat];
+      catNode.totalQuestions += leaf.totalQuestions;
+      catNode.answered += leaf.answered;
+      catNode.correct += leaf.correct;
+
+      if (!catNode.subMap[sub]) {
+        catNode.subMap[sub] = {
+          name: sub,
+          children: [],
+          totalQuestions: 0,
+          answered: 0,
+          correct: 0
+        };
+      }
+      var subNode = catNode.subMap[sub];
+      subNode.totalQuestions += leaf.totalQuestions;
+      subNode.answered += leaf.answered;
+      subNode.correct += leaf.correct;
+
+      subNode.children.push({
+        name: leaf.top,
+        totalQuestions: leaf.totalQuestions,
+        answered: leaf.answered,
+        correct: leaf.correct,
+        correctRate: leaf.correctRate,
+        confidence: leaf.confidence,
+        lastDate: leaf.lastDate
+      });
+    }
+
+    function ratePercent(correct, answered) {
+      return answered > 0 ? Math.round((correct / answered) * 100) : null;
+    }
+
+    var rootChildren = [];
+    var catKeys = Object.keys(catMap);
+    for (var c = 0; c < catKeys.length; c++) {
+      var cat = catMap[catKeys[c]];
+      var subChildren = [];
+      var subKeys = Object.keys(cat.subMap);
+      for (var s = 0; s < subKeys.length; s++) {
+        var sub = cat.subMap[subKeys[s]];
+        subChildren.push({
+          name: sub.name,
+          totalQuestions: sub.totalQuestions,
+          answered: sub.answered,
+          correctRate: ratePercent(sub.correct, sub.answered),
+          children: sub.children
+        });
+      }
+      rootChildren.push({
+        name: cat.name,
+        totalQuestions: cat.totalQuestions,
+        answered: cat.answered,
+        correctRate: ratePercent(cat.correct, cat.answered),
+        children: subChildren
+      });
+    }
+
+    var totalQuestions = 0;
+    var totalAnswered = 0;
+    for (var i = 0; i < rootChildren.length; i++) {
+      totalQuestions += rootChildren[i].totalQuestions;
+      totalAnswered += rootChildren[i].answered;
+    }
+
+    return {
+      name: 'すべて',
+      totalQuestions: totalQuestions,
+      answered: totalAnswered,
+      children: rootChildren
+    };
+  },
+
+  /**
+   * ツリーマップ用データ取得 (公開エントリ)
+   *
+   * @param {Object} params
+   * @param {string} params.studentId
+   * @param {string} params.department
+   * @param {number} params.grade
+   * @param {Array<string>} params.categories - PWA から渡される大分類ホワイトリスト
+   * @return {Object} {success, data} or {success:false, error}
+   */
+  getStudentTreemap: function(params) {
+    if (!params || !params.studentId) {
+      return { success: false, error: 'studentId is required' };
+    }
+    if (!params.department) {
+      return { success: false, error: 'department is required' };
+    }
+    if (!params.categories || !params.categories.length) {
+      return { success: false, error: 'categories is required' };
+    }
+
+    try {
+      var ss = getSpreadsheet();
+      var master = this.buildLeafMaster(ss, params.department, params.categories);
+      var learned = this.buildLearnedMap(ss, params.studentId);
+      var leafs = this.mergeLeafs(master, learned);
+      var tree = this.buildTree(leafs);
+
+      var data = {
+        studentId: params.studentId,
+        department: params.department,
+        grade: params.grade,
+        updatedAt: new Date().toISOString(),
+        totalQuestions: tree.totalQuestions,
+        answered: tree.answered,
+        tree: tree
+      };
+      return { success: true, data: data };
+    } catch (e) {
+      Logger.log('getStudentTreemap error: ' + e + '\n' + e.stack);
+      return { success: false, error: String(e) };
+    }
+  },
+};
+
+// === 手動動作確認用関数 (GAS エディタから実行) ===
+
+/**
+ * Task 1: マスタリーフ抽出の確認
+ */
+function testBuildLeafMaster() {
+  var ss = getSpreadsheet();
+  var allowed = ['医用電気電子工学', '医学概論', '生体機能代行装置学'];
+  var master = TreemapService.buildLeafMaster(ss, 'clinical_eng', allowed);
+  var keys = Object.keys(master);
+  Logger.log('リーフ件数: ' + keys.length);
+  Logger.log('サンプル(先頭3件):');
+  for (var i = 0; i < Math.min(3, keys.length); i++) {
+    Logger.log(keys[i] + ' => ' + JSON.stringify(master[keys[i]]));
+  }
+}
+
+/**
+ * Task 2: 学習済みマップの確認
+ * studentId は実在する値を category_stats から拾って差し替え
+ */
+function testBuildLearnedMap() {
+  var ss = getSpreadsheet();
+  var testStudentId = 'snm';
+  var learned = TreemapService.buildLearnedMap(ss, testStudentId);
+  var keys = Object.keys(learned);
+  Logger.log('学習済み件数: ' + keys.length);
+  for (var i = 0; i < Math.min(3, keys.length); i++) {
+    Logger.log(keys[i] + ' => ' + JSON.stringify(learned[keys[i]]));
+  }
+}
+
+/**
+ * Task 3: LEFT JOIN + confidence の確認
+ */
+function testMergeLeafs() {
+  var ss = getSpreadsheet();
+  var allowed = ['医用電気電子工学', '医学概論'];
+  var master = TreemapService.buildLeafMaster(ss, 'clinical_eng', allowed);
+  var learned = TreemapService.buildLearnedMap(ss, 'snm');
+  var leafs = TreemapService.mergeLeafs(master, learned);
+
+  var stats = { high: 0, low: 0, none: 0 };
+  for (var i = 0; i < leafs.length; i++) stats[leafs[i].confidence]++;
+  Logger.log('confidence分布: ' + JSON.stringify(stats));
+  Logger.log('サンプル(highの先頭1件):');
+  for (var i = 0; i < leafs.length; i++) {
+    if (leafs[i].confidence === 'high') {
+      Logger.log(JSON.stringify(leafs[i]));
+      break;
+    }
+  }
+}
+
+/**
+ * Task 4: ネスト構造化の確認
+ */
+function testBuildTree() {
+  var ss = getSpreadsheet();
+  var allowed = ['医用電気電子工学', '医学概論'];
+  var master = TreemapService.buildLeafMaster(ss, 'clinical_eng', allowed);
+  var learned = TreemapService.buildLearnedMap(ss, 'snm');
+  var leafs = TreemapService.mergeLeafs(master, learned);
+  var tree = TreemapService.buildTree(leafs);
+  Logger.log('ルート totalQuestions: ' + tree.totalQuestions);
+  Logger.log('大分類数: ' + tree.children.length);
+  for (var i = 0; i < tree.children.length; i++) {
+    var c = tree.children[i];
+    Logger.log('  ' + c.name + ' total=' + c.totalQuestions
+      + ' answered=' + c.answered + ' rate=' + c.correctRate
+      + ' subCount=' + c.children.length);
+  }
+}
+
+/**
+ * Task 5: 公開エントリの確認
+ */
+function testGetStudentTreemap() {
+  var result = TreemapService.getStudentTreemap({
+    studentId: 'snm',
+    department: 'clinical_eng',
+    grade: 2,
+    categories: ['医用電気電子工学', '医学概論', '生体機能代行装置学', '医用機械工学']
+  });
+  Logger.log(JSON.stringify(result, null, 2).substring(0, 1500));
+}
