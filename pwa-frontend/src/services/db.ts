@@ -13,6 +13,15 @@ export interface AiCacheEntry {
   createdAt: string;
 }
 
+// ツリーマップ表示データのキャッシュ + 楽観更新管理 (Phase C)
+export interface TreemapCacheEntry {
+  studentId: string; // primary key
+  fetchedAt: number; // Unix ms (サーバから最後に取得した時刻)
+  payload: unknown; // TreemapResponse (型循環を避けるため unknown で保存)
+  pendingSync: boolean; // 楽観更新後・サーバ未同期
+  lastQuizAt: number | null; // 最後にクイズで楽観更新した時刻
+}
+
 export class NurseMemoriaDB extends Dexie {
   profile!: Table<StudentProfile>;
   cardStates!: Table<CardState>;
@@ -20,6 +29,7 @@ export class NurseMemoriaDB extends Dexie {
   answerLog!: Table<AnswerLog>;
   aiCache!: Table<AiCacheEntry>;
   gamification!: Table<GamificationState>;
+  treemapCache!: Table<TreemapCacheEntry>;
 
   constructor() {
     super('NurseMemoria');
@@ -115,6 +125,16 @@ export class NurseMemoriaDB extends Dexie {
           profile.studentType = 'enrolled';
         }
       });
+    });
+    // v8: ツリーマップキャッシュ (Phase C: 楽観更新 + stale-while-revalidate)
+    this.version(8).stores({
+      profile: '++id, studentId, studentNumber, department, grade, studentType',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+      gamification: '++id, visitorId',
+      treemapCache: 'studentId',
     });
   }
 }

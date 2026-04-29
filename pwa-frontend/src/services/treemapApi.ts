@@ -73,3 +73,48 @@ export async function fetchStudentTreemap(params: {
     return { success: false, error: String(err) };
   }
 }
+
+/**
+ * GAS API (POST): 1学生分の category_stats を即時再計算してから取得。
+ * ⟳ ボタンから呼び出す。GAS の同時実行制限・短期連打を避けるため、
+ * 呼び出し側でデバウンス (60秒) を実装する。
+ */
+export async function refreshStudentTreemap(params: {
+  studentId: string;
+  studentNumber: string;
+  department: string;
+  grade: number;
+}): Promise<ApiResponse<TreemapResponse>> {
+  if (!GAS_API_URL) {
+    return { success: false, error: 'API URL not configured' };
+  }
+
+  let categories: string[];
+  try {
+    categories = await loadAllowedCategories(params.department, params.grade);
+  } catch (err) {
+    return { success: false, error: 'curriculum 読み込み失敗: ' + String(err) };
+  }
+  if (categories.length === 0) {
+    return { success: false, error: '対象学年の出題範囲が空です' };
+  }
+
+  try {
+    const res = await fetch(GAS_API_URL, {
+      method: 'POST',
+      redirect: 'follow',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        action: 'refreshStudentTreemap',
+        studentId: params.studentId,
+        studentNumber: params.studentNumber,
+        department: params.department,
+        grade: params.grade,
+        categories,
+      }),
+    });
+    return await res.json();
+  } catch (err) {
+    return { success: false, error: String(err) };
+  }
+}
