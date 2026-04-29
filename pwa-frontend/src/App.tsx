@@ -2,7 +2,7 @@ import { AppProvider, useApp } from './context/AppContext';
 import { SetupScreen } from './components/setup/SetupScreen';
 import { HomeScreen } from './components/dashboard/HomeScreen';
 import { QuizScreen } from './components/quiz/QuizScreen';
-import { WeaknessMap } from './components/dashboard/WeaknessMap';
+import { WeaknessTreemap } from './components/dashboard/WeaknessTreemap';
 import { ReviewSchedule } from './components/dashboard/ReviewSchedule';
 import { SettingsScreen } from './components/settings/SettingsScreen';
 import { BadgesScreen } from './components/dashboard/BadgesScreen';
@@ -24,7 +24,7 @@ function AppContent() {
     case 'quiz':
       return <QuizScreen />;
     case 'weakness':
-      return <WeaknessMap />;
+      return <WeaknessTreemap />;
     case 'schedule':
       return <ReviewSchedule />;
     case 'settings':
