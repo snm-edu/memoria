@@ -14,9 +14,13 @@ import { useApp } from '../context/AppContext';
 import { getCategoriesForGrade, getMaxDifficultyForGrade } from '../services/gradeFilter';
 import type { Question, ErrorAnalysis, CardState } from '../types';
 
+export type QuizScope = 'all' | 'weak' | 'unstudied';
+
 export interface QuizFilters {
   category?: string;
   subcategory?: string; // サブカテゴリで更に絞り込み
+  subtopic?: string; // 小分類で更に絞り込み (ツリーマップ起点)
+  scope?: QuizScope; // 'weak'=苦手のみ, 'unstudied'=未着手のみ, 'all'=全問
   year?: number;
   gradeLimit?: number; // 学年に応じた出題範囲制限
   sourceFilter?: 'official' | 'mock' | 'all'; // 過去問 / 模擬試験 / すべて
@@ -172,6 +176,7 @@ export function useQuiz() {
       if (profileDept && q.department !== profileDept) return false; // 学科フィルタ
       if (filters?.category && q.category !== filters.category) return false;
       if (filters?.subcategory && q.subcategory !== filters.subcategory) return false;
+      if (filters?.subtopic && q.subtopic !== filters.subtopic) return false;
       if (filters?.year && q.exam_year !== filters.year) return false;
       // sourceFilter: 過去問 / 模擬試験 フィルター
       if (filters?.sourceFilter && filters.sourceFilter !== 'all') {
@@ -221,6 +226,28 @@ export function useQuiz() {
         ...questions,
         ...shuffleArray(newQuestions).slice(0, needed),
       ];
+    }
+
+    // scope 別 post-filter (ツリーマップ起点の演習用)
+    if (filters?.scope === 'unstudied') {
+      const cardIds = new Set(
+        (await db.cardStates.toArray()).map((c) => c.questionId)
+      );
+      questions = questions.filter((q) => !cardIds.has(q.question_id));
+    } else if (filters?.scope === 'weak') {
+      const allLogs = await db.answerLog.toArray();
+      const accByQ = new Map<string, { correct: number; total: number }>();
+      for (const log of allLogs) {
+        const a = accByQ.get(log.questionId) || { correct: 0, total: 0 };
+        a.total++;
+        if (log.isCorrect) a.correct++;
+        accByQ.set(log.questionId, a);
+      }
+      questions = questions.filter((q) => {
+        const a = accByQ.get(q.question_id);
+        if (!a || a.total === 0) return false;
+        return a.correct / a.total < 0.6;
+      });
     }
 
     // 最初の問題のメモリアステップ状態を計算
