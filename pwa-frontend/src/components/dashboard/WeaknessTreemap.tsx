@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef, useLayoutEffect, useMemo, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
 import { fetchStudentTreemap, refreshStudentTreemap } from '../../services/treemapApi';
+import { fetchMyRanking, type MyRankingPayload } from '../../services/rankingApi';
 import { db } from '../../services/db';
 import { Treemap } from './treemap/Treemap';
 import { TreemapBreadcrumb } from './treemap/TreemapBreadcrumb';
 import { TreemapLegend } from './treemap/TreemapLegend';
+import { ClassRankingCard } from './treemap/ClassRankingCard';
 import { ChallengeFab } from './treemap/ChallengeFab';
 import { LeafDetailSheet } from './treemap/LeafDetailSheet';
 import {
@@ -35,6 +37,18 @@ export function WeaknessTreemap() {
   const [focusPath, setFocusPath] = useState<FocusPath>([]);
   const [activeLeaf, setActiveLeaf] = useState<TreemapLeaf | null>(null);
   const [aggregateExpanded, setAggregateExpanded] = useState<Set<string>>(new Set());
+  const [ranking, setRanking] = useState<MyRankingPayload | null>(null);
+
+  // 同学年内ランキングをフェッチ (画面マウント時に1回、軽量集計なのでキャッシュなし)
+  useEffect(() => {
+    if (!profile?.studentId) return;
+    let cancelled = false;
+    fetchMyRanking(profile.studentId).then((res) => {
+      if (cancelled) return;
+      if (res.success && res.data) setRanking(res.data);
+    });
+    return () => { cancelled = true; };
+  }, [profile?.studentId]);
 
   const canvasRef = useRef<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -329,6 +343,8 @@ export function WeaknessTreemap() {
         totalQuestions={showActionBar ? fabSummary.total : undefined}
         weakCount={showActionBar ? fabSummary.weak : undefined}
       />
+
+      {ranking?.available && <ClassRankingCard ranking={ranking} />}
 
       {data && <TreemapLegend updatedAt={legendUpdatedAt} />}
 

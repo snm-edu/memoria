@@ -350,22 +350,46 @@ const TreemapService = {
    * 重い。本関数は studentNumber か studentId に該当する行のみ削除→挿入する
    * 軽量版で、refresh ボタンから呼び出す用途。
    *
+   * Spec §6.6 (Phase D): 新スキーマ (confidence + total_questions_master) に対応。
+   * 学生の学年範囲 (curriculum 累積) で全マスタリーフを LEFT JOIN し、
+   * 未着手領域も行として書き出す。
+   *
    * @param {Spreadsheet} ss
    * @param {string} studentId
    * @param {string} studentNumber - 空文字なら studentId フォールバック
    * @return {void}
    */
   recomputeCategoryStats: function(ss, studentId, studentNumber) {
-    var sheetName = 'category_stats';
+    var sheetName = CONFIG.SHEETS.CATEGORY_STATS;
     var sheet = ss.getSheetByName(sheetName);
     if (!sheet) return;
 
-    var data = sheet.getDataRange().getValues();
-    if (data.length <= 1) return;
-    var headers = data[0];
-    var idx = {};
-    headers.forEach(function(h, i) { idx[h] = i; });
+    // 新スキーマ (14列) を強制。日次バッチ未実行で旧スキーマ (12列) のままだと
+    // append で列数不整合になるため、ここでヘッダーを書き換える。
+    var newHeaders = [
+      'student_id', 'student_number', 'student_name', 'department', 'grade',
+      'category', 'subcategory', 'subtopic',
+      'total_count', 'correct_count', 'accuracy_rate', 'last_study_date',
+      'confidence', 'total_questions_master'
+    ];
 
+    var data = sheet.getDataRange().getValues();
+    if (data.length === 0) return;
+    var headers = data[0];
+    // 名前ベースで判定 (列数だけではsheetの空セルパディングで誤検出するため)
+    var schemaMismatch = headers[12] !== 'confidence'
+      || headers[13] !== 'total_questions_master';
+    if (schemaMismatch) {
+      // 旧スキーマからの初回移行: ヘッダーのみ更新 (既存の旧データはそのまま温存)
+      // 次回日次バッチで全面リライトされる
+      sheet.getRange(1, 1, 1, newHeaders.length).setValues([newHeaders]);
+      sheet.getRange(1, 1, 1, newHeaders.length).setFontWeight('bold');
+      Logger.log('category_stats: 旧スキーマ検出 → ヘッダーを新スキーマに更新');
+    }
+    var idx = {};
+    newHeaders.forEach(function(h, i) { idx[h] = i; });
+
+    // 学生の既存行をすべて削除 (削除後にインデックスがずれるため逆順走査)
     var useNumber = !!studentNumber;
     for (var r = data.length - 1; r >= 1; r--) {
       var row = data[r];
@@ -375,6 +399,7 @@ const TreemapService = {
       if (match) sheet.deleteRow(r + 1);
     }
 
+    // student_logs から該当学生のログを収集
     var allLogs = [];
     var sheets = ss.getSheets();
     for (var s = 0; s < sheets.length; s++) {
@@ -406,9 +431,14 @@ const TreemapService = {
     }
 
     if (allLogs.length === 0) return;
+    var latest = allLogs[allLogs.length - 1];
+    var department = latest.department || '';
+    var grade = Number(latest.grade) || 0;
 
-    var qSheet = ss.getSheetByName(CONFIG.SHEETS.QUESTIONS);
+    // questions マスタを department で絞り込んだ (cat,sub,top) マップ
     var qMap = {};
+    var deptMaster = {};
+    var qSheet = ss.getSheetByName(CONFIG.SHEETS.QUESTIONS);
     if (qSheet) {
       var qdata = qSheet.getDataRange().getValues();
       var qheaders = qdata[0];
@@ -421,9 +451,25 @@ const TreemapService = {
           subcategory: qr[qidx['subcategory']] || '',
           subtopic: qr[qidx['subtopic']] || ''
         };
+        if (qr[qidx['department']] !== department) continue;
+        var qcat = qr[qidx['category']] || '';
+        if (!qcat) continue;
+        var qsub = qr[qidx['subcategory']] || '未分類';
+        var qtop = qr[qidx['subtopic']] || '未分類';
+        var qkey = qcat + '|||' + qsub + '|||' + qtop;
+        if (!deptMaster[qkey]) {
+          deptMaster[qkey] = { cat: qcat, sub: qsub, top: qtop, totalQuestions: 0 };
+        }
+        deptMaster[qkey].totalQuestions++;
       }
     }
 
+    // curriculum 累積カテゴリ
+    var allowedCategories = CurriculumService.loadAccumulatedCategories(ss, department, grade);
+    var allowedSet = {};
+    allowedCategories.forEach(function(c) { allowedSet[c] = true; });
+
+    // 学習統計を構築
     var nameMap = {};
     try {
       nameMap = DashboardService.getStudentNameMap();
@@ -431,45 +477,66 @@ const TreemapService = {
       Logger.log('getStudentNameMap error: ' + e);
     }
 
-    var stats = {};
-    var latest = allLogs[allLogs.length - 1];
+    var studied = {};
     for (var i = 0; i < allLogs.length; i++) {
       var log = allLogs[i];
       var info = qMap[log.questionId];
       if (!info) continue;
-      var cat = info.category || '';
-      var sub = info.subcategory || '未分類';
-      var top = info.subtopic || '未分類';
-      var key = cat + '|||' + sub + '|||' + top;
-      if (!stats[key]) {
-        stats[key] = { correct: 0, total: 0, cat: cat, sub: sub, top: top, lastDate: '' };
+      var scat = info.category || '未分類';
+      var ssub = info.subcategory || '未分類';
+      var stop = info.subtopic || '未分類';
+      var skey = scat + '|||' + ssub + '|||' + stop;
+      if (!studied[skey]) {
+        studied[skey] = { correct: 0, total: 0, cat: scat, sub: ssub, top: stop, lastDate: '' };
       }
-      stats[key].total++;
-      if (log.isCorrect) stats[key].correct++;
+      studied[skey].total++;
+      if (log.isCorrect) studied[skey].correct++;
       if (log.timestamp) {
         var dateStr = String(log.timestamp).split('T')[0];
-        if (dateStr > stats[key].lastDate) stats[key].lastDate = dateStr;
+        if (dateStr > studied[skey].lastDate) studied[skey].lastDate = dateStr;
       }
     }
 
+    // LEFT JOIN: マスタ全件を出力 (未着手も含む)
     var rows = [];
     var studentName = nameMap[latest.studentNumber] || latest.studentNumber || studentId;
-    for (var key in stats) {
-      var st = stats[key];
-      var rate = st.total > 0 ? Math.round((st.correct / st.total) * 100) : 0;
+    var emittedKeys = {};
+    for (var mkey in deptMaster) {
+      var m = deptMaster[mkey];
+      if (!allowedSet[m.cat]) continue;
+      var st = studied[mkey];
+      var total = st ? st.total : 0;
+      var correct = st ? st.correct : 0;
+      var lastDate = st ? st.lastDate : '';
+      var rate = total > 0 ? Math.round((correct / total) * 100) : '';
+      var confidence = total >= 5 ? 'high' : total >= 1 ? 'low' : 'none';
       rows.push([
-        studentId,
-        latest.studentNumber || '',
-        studentName,
-        latest.department || '',
-        latest.grade || '',
-        st.cat, st.sub, st.top,
-        st.total, st.correct, rate, st.lastDate
+        studentId, latest.studentNumber || '', studentName,
+        department, grade,
+        m.cat, m.sub, m.top,
+        total, correct, rate, lastDate,
+        confidence, m.totalQuestions
+      ]);
+      emittedKeys[mkey] = true;
+    }
+
+    // 学年範囲外の studied (旧学年問題等) も保持
+    for (var skey2 in studied) {
+      if (emittedKeys[skey2]) continue;
+      var st2 = studied[skey2];
+      var rate2 = st2.total > 0 ? Math.round((st2.correct / st2.total) * 100) : '';
+      var conf2 = st2.total >= 5 ? 'high' : st2.total >= 1 ? 'low' : 'none';
+      rows.push([
+        studentId, latest.studentNumber || '', studentName,
+        department, grade,
+        st2.cat, st2.sub, st2.top,
+        st2.total, st2.correct, rate2, st2.lastDate,
+        conf2, 0
       ]);
     }
 
     if (rows.length > 0) {
-      sheet.getRange(sheet.getLastRow() + 1, 1, rows.length, 12).setValues(rows);
+      sheet.getRange(sheet.getLastRow() + 1, 1, rows.length, newHeaders.length).setValues(rows);
     }
   },
 
@@ -601,6 +668,56 @@ function testAggregateUnstudied() {
     }
   }
   Logger.log('まとめセル数: ' + aggCount);
+}
+
+/**
+ * Phase D Task: 教員Looker用 category_stats 拡張版の動作確認
+ *
+ * 1学生分について recomputeCategoryStats を実行し、
+ * 未着手行 (confidence='none') が書き込まれているか確認する。
+ * 事前に seedCurriculumSheet() を実行してから呼び出すこと。
+ */
+function testRecomputeCategoryStatsWithUnstudied() {
+  var ss = getSpreadsheet();
+  TreemapService.recomputeCategoryStats(ss, '', 'snm');
+
+  var sheet = ss.getSheetByName(CONFIG.SHEETS.CATEGORY_STATS);
+  var data = sheet.getDataRange().getValues();
+  var headers = data[0];
+  var idx = {};
+  headers.forEach(function(h, i) { idx[h] = i; });
+
+  var stats = { high: 0, low: 0, none: 0, otherCols: headers.length };
+  var sample = null;
+  for (var r = 1; r < data.length; r++) {
+    var row = data[r];
+    if (row[idx['student_number']] !== 'snm') continue;
+    var conf = row[idx['confidence']];
+    if (stats[conf] !== undefined) stats[conf]++;
+    if (!sample && conf === 'none' && Number(row[idx['total_questions_master']]) > 0) {
+      sample = {
+        cat: row[idx['category']],
+        sub: row[idx['subcategory']],
+        top: row[idx['subtopic']],
+        master: row[idx['total_questions_master']]
+      };
+    }
+  }
+  Logger.log('snm の confidence 分布 (列数=' + stats.otherCols + '): ' + JSON.stringify(stats));
+  if (sample) Logger.log('未着手サンプル: ' + JSON.stringify(sample));
+}
+
+/**
+ * Phase D Task: 日次バッチ拡張版の動作確認
+ *
+ * 重い処理 (全学生分書き換え) なので開発時のみ実行。
+ */
+function testUpdateCategoryStatsWithUnstudied() {
+  var ss = getSpreadsheet();
+  var allLogs = DashboardService.collectAllLogs(ss);
+  var categoryMap = DashboardService.getCategoryMap(ss);
+  DashboardService.updateCategoryStats(ss, allLogs, categoryMap);
+  Logger.log('updateCategoryStats 完了。Looker のフィルタ "confidence != none" で従来表示と互換。');
 }
 
 /**

@@ -1,3 +1,4 @@
 node_modules/
 dist/
 public/data/questions.json.bak
+.vercel

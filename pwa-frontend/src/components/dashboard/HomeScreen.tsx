@@ -4,9 +4,9 @@ import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
 import { useBgm } from '../../hooks/useBgm';
 import { DEPARTMENT_LABELS } from '../../types';
-import { getCategoriesForGrade } from '../../services/gradeFilter';
 import { getCharacterStage } from '../../services/gamification';
 import { CharacterDisplay } from '../character/CharacterDisplay';
+import { EXAM_NAMES, formatExamCountdown } from '../../config/examDates';
 
 export function HomeScreen() {
   const { state, dispatch } = useApp();
@@ -102,17 +102,6 @@ export function HomeScreen() {
     dispatch({ type: 'SET_QUIZ_MODE', mode: 'free' });
     dispatch({ type: 'SET_SCREEN', screen: 'quiz' });
   }
-
-  // 学年の出題範囲にある問題数を計算
-  const gradeQuestionCount = useLiveQuery(async () => {
-    if (!profile) return 0;
-    const gradeCategories = await getCategoriesForGrade(profile.grade, profile.department);
-    const all = await db.questionCache.toArray();
-    return all.filter(q =>
-      q.department === profile.department &&
-      (gradeCategories === null || gradeCategories.includes(q.category))
-    ).length;
-  }, [profile?.grade, profile?.department], 0);
 
   // ゲーミフィケーションデータ取得
   const gamification = useLiveQuery(async () => {
@@ -231,7 +220,7 @@ export function HomeScreen() {
         </button>
         {profile && (
           <p className="text-xs text-slate-400 mt-2">
-            {profile.grade}年生の範囲から出題（{gradeQuestionCount}問）
+            🎯 {EXAM_NAMES[profile.department]}まで {formatExamCountdown(profile.department, profile.grade)}
           </p>
         )}
       </div>

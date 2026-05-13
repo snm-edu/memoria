@@ -27,13 +27,19 @@ const DashboardService = {
     // 学生名簿から学籍番号→氏名のマップを作成
     var nameMap = this.getStudentNameMap();
 
-    // ai_dashboardシート取得or作成（student_name・last_study_date列追加対応）
+    // 教員向けコメント生成用に curriculum と questions マスタを事前構築
+    // 同じデータを下の updateCategoryStats でも使うため、先に作って共有する
+    var qMasterByDept = this.buildQuestionMasterByDepartment(ss);
+    var curriculumByDept = CurriculumService.loadAll(ss);
+
+    // ai_dashboardシート取得or作成（teacher_comment 列を末尾追加）
     let dashboard = ss.getSheetByName(CONFIG.SHEETS.AI_DASHBOARD);
     const dashHeaders = [
       'student_id', 'student_number', 'student_name', 'department', 'grade',
       'total_questions', 'correct_rate', 'streak_days',
       'weak_categories', 'strong_categories', 'weekly_trend',
-      'error_patterns', 'ai_comment', 'last_study_date', 'updated_at'
+      'error_patterns', 'ai_comment', 'last_study_date', 'updated_at',
+      'teacher_comment'
     ];
     if (!dashboard) {
       dashboard = ss.insertSheet(CONFIG.SHEETS.AI_DASHBOARD);
@@ -42,12 +48,13 @@ const DashboardService = {
     }
 
     // 既存データを取得（マイグレーション判定＋差分チェック用）
-    // ヘッダーが旧スキーマでも AI コメントは再利用できるよう、先に収集してから再構築する
+    // ヘッダーが旧スキーマでも AI コメント / teacher_comment は再利用できるよう、先に収集してから再構築する
     const oldData = dashboard.getDataRange().getValues();
     const oldHeaders = oldData[0] || [];
     const oldStudentIdIdx = oldHeaders.indexOf('student_id');
     const oldTotalIdx = oldHeaders.indexOf('total_questions');
     const oldAiCommentIdx = oldHeaders.indexOf('ai_comment');
+    const oldTeacherCommentIdx = oldHeaders.indexOf('teacher_comment');
 
     const existingMap = {};
     if (oldStudentIdIdx !== -1) {
@@ -57,7 +64,8 @@ const DashboardService = {
         existingMap[sid] = {
           rowNum: r + 1,
           totalQuestions: oldTotalIdx !== -1 ? oldData[r][oldTotalIdx] : 0,
-          aiComment: oldAiCommentIdx !== -1 ? oldData[r][oldAiCommentIdx] : ''
+          aiComment: oldAiCommentIdx !== -1 ? oldData[r][oldAiCommentIdx] : '',
+          teacherComment: oldTeacherCommentIdx !== -1 ? oldData[r][oldTeacherCommentIdx] : ''
         };
       }
     }
@@ -78,7 +86,9 @@ const DashboardService = {
 
     const studentIds = Object.keys(studentGroups);
     let updatedCount = 0;
-    let skippedCount = 0;
+    let studentAiSkipped = 0;
+    let teacherAiSkipped = 0;
+    let teacherAiGenerated = 0;
 
     for (var s = 0; s < studentIds.length; s++) {
       var studentId = studentIds[s];
@@ -88,21 +98,52 @@ const DashboardService = {
       // 差分チェック: 回答数が変わっていなければAI呼び出しをスキップ
       var existing = existingMap[studentId];
       var aiComment = '';
+      var teacherComment = '';
+      var dataUnchanged = existing && existing.totalQuestions === analysis.totalQuestions;
 
-      if (existing && existing.totalQuestions === analysis.totalQuestions && existing.aiComment) {
-        // データ変化なし → 既存のAIコメントを再利用
+      // 学生向けAIコメント
+      if (dataUnchanged && existing.aiComment) {
         aiComment = existing.aiComment;
-        skippedCount++;
+        studentAiSkipped++;
       } else {
-        // 新規 or データ変化あり → Gemini APIでコメント生成
         try {
           aiComment = this.generateAiComment(analysis);
         } catch (e) {
           aiComment = '分析コメント生成中にエラーが発生しました';
-          Logger.log('Gemini API error for ' + studentId + ': ' + e);
+          Logger.log('Gemini AI comment error for ' + studentId + ': ' + e);
         }
-        // レート制限対策: Gemini API呼び出し後に1秒待機
-        Utilities.sleep(1000);
+        Utilities.sleep(1000); // レート制限対策
+      }
+
+      // 教員向けAIコメント (Phase D-2a: 日次バッチで自動生成、Looker ダッシュボードに即反映)
+      if (dataUnchanged && existing.teacherComment) {
+        teacherComment = existing.teacherComment;
+        teacherAiSkipped++;
+      } else {
+        // 未着手率と出題比重ベースの優先度を in-memory で計算
+        var us = this.buildUnstudiedStats(
+          logs, categoryMap, qMasterByDept, curriculumByDept,
+          analysis.department, analysis.grade
+        );
+        analysis.totalLeaves = us.totalLeaves;
+        analysis.touchedLeaves = us.touchedLeaves;
+        analysis.unstudiedRate = us.unstudiedRate;
+
+        var cp = this.buildCategoryPriorities(
+          logs, categoryMap, qMasterByDept, curriculumByDept,
+          analysis.department, analysis.grade
+        );
+        analysis.totalExamQuestions = cp.totalExamQuestions;
+        analysis.categoryPriorities = cp.priorities;
+
+        try {
+          teacherComment = this.generateTeacherComment(analysis);
+          teacherAiGenerated++;
+        } catch (e) {
+          teacherComment = '教員コメント生成中にエラーが発生しました';
+          Logger.log('Gemini teacher comment error for ' + studentId + ': ' + e);
+        }
+        Utilities.sleep(1000); // レート制限対策
       }
 
       var studentName = nameMap[analysis.studentNumber] || '';
@@ -121,7 +162,8 @@ const DashboardService = {
         JSON.stringify(analysis.errorPatterns),
         aiComment,
         analysis.lastStudyDate,
-        new Date().toISOString()
+        new Date().toISOString(),
+        teacherComment
       ];
 
       if (existing && existing.rowNum) {
@@ -133,20 +175,31 @@ const DashboardService = {
       updatedCount++;
     }
 
-    Logger.log('ダッシュボード更新完了: ' + updatedCount + '名（AI更新: ' + (updatedCount - skippedCount) + '名、スキップ: ' + skippedCount + '名）');
+    Logger.log('ダッシュボード更新完了: ' + updatedCount + '名'
+      + '（学生AI: 生成 ' + (updatedCount - studentAiSkipped) + '名 / 再利用 ' + studentAiSkipped + '名'
+      + '、教員AI: 生成 ' + teacherAiGenerated + '名 / 再利用 ' + teacherAiSkipped + '名）');
 
     // category_statsシートを更新（ツリーマップ用）
     this.updateCategoryStats(ss, allLogs, categoryMap);
 
-    return { updated: updatedCount, skipped: skippedCount };
+    return {
+      updated: updatedCount,
+      studentAiSkipped: studentAiSkipped,
+      teacherAiSkipped: teacherAiSkipped,
+      teacherAiGenerated: teacherAiGenerated
+    };
   },
 
   /**
    * 分野別統計シートを更新（ツリーマップ・Looker Studio用）
    * student × category × subcategory × subtopic の粒度で集計
+   *
+   * Spec §6.6 (Phase D): 学生PWAと同じく未着手領域(curriculum × questions)も
+   * 行として書き出す。 confidence='none', total_count=0, total_questions_master>0
+   * となる行が「グレー領域」を表す。教員 Looker 側はこの新カラムでフィルタ可能。
    */
   updateCategoryStats(ss, allLogs, categoryMap) {
-    var sheetName = 'category_stats';
+    var sheetName = CONFIG.SHEETS.CATEGORY_STATS;
     var sheet = ss.getSheetByName(sheetName);
     if (!sheet) {
       sheet = ss.insertSheet(sheetName);
@@ -157,18 +210,29 @@ const DashboardService = {
     // 学生名簿から学籍番号→氏名のマップを作成
     var nameMap = this.getStudentNameMap();
 
-    // ヘッダー
+    // ヘッダー (新スキーマ: confidence, total_questions_master を末尾追加)
+    // 既存 Looker レポートが先頭12列を参照していれば追加だけで影響なし
     var headers = [
       'student_id', 'student_number', 'student_name', 'department', 'grade',
       'category', 'subcategory', 'subtopic',
-      'total_count', 'correct_count', 'accuracy_rate', 'last_study_date'
+      'total_count', 'correct_count', 'accuracy_rate', 'last_study_date',
+      'confidence', 'total_questions_master'
     ];
     sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
     sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
 
     // 学生ごとにグループ化
     var studentGroups = this.groupByStudent(allLogs);
+
+    // questions シート全体を学科別マスタに集約 (1回構築して全学生で共有)
+    var qMasterByDept = this.buildQuestionMasterByDepartment(ss);
+
+    // curriculum シートを読み込み (累積カテゴリ計算用)
+    var curriculumByDept = CurriculumService.loadAll(ss);
+
     var rows = [];
+    var unstudiedCount = 0;
+    var studiedCount = 0;
 
     for (var studentId in studentGroups) {
       var logs = studentGroups[studentId];
@@ -177,10 +241,11 @@ const DashboardService = {
       // student_nameが空の場合は student_number → student_id の順でフォールバック
       // Looker Studioのフィルターコントロールで空値が混入しないようにするため
       var studentName = nameMap[studentNumber] || studentNumber || studentId;
+      var department = latest.department || '';
+      var grade = Number(latest.grade) || 0;
 
-      // 分野 × サブカテゴリ × サブトピックの3階層で集計
-      var stats = {};
-
+      // 学生の学習統計を構築
+      var studied = {};
       for (var i = 0; i < logs.length; i++) {
         var log = logs[i];
         var info = categoryMap[log.questionId];
@@ -191,44 +256,221 @@ const DashboardService = {
         var topic = info.subtopic || '未分類';
         var key = cat + '|||' + sub + '|||' + topic;
 
-        if (!stats[key]) {
-          stats[key] = { correct: 0, total: 0, cat: cat, sub: sub, topic: topic, lastDate: '' };
+        if (!studied[key]) {
+          studied[key] = { correct: 0, total: 0, cat: cat, sub: sub, topic: topic, lastDate: '' };
         }
-        stats[key].total++;
-        if (log.isCorrect) stats[key].correct++;
+        studied[key].total++;
+        if (log.isCorrect) studied[key].correct++;
         if (log.timestamp) {
           var dateStr = String(log.timestamp).split('T')[0];
-          if (dateStr > stats[key].lastDate) stats[key].lastDate = dateStr;
+          if (dateStr > studied[key].lastDate) studied[key].lastDate = dateStr;
         }
       }
 
-      // 行データ作成
-      for (var key in stats) {
-        var s = stats[key];
-        var rate = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+      // 学生の curriculum 累積範囲とマスタリーフを取得
+      var allowedCategories = CurriculumService.accumulate(curriculumByDept, department, grade);
+      var allowedSet = {};
+      allowedCategories.forEach(function(c) { allowedSet[c] = true; });
+      var deptMaster = qMasterByDept[department] || {};
+
+      // LEFT JOIN: 学生のマスタリーフ全件を出力 (未着手は total=0, confidence='none')
+      var emittedKeys = {};
+      for (var key in deptMaster) {
+        var m = deptMaster[key];
+        if (!allowedSet[m.cat]) continue;
+        var s = studied[key];
+        var total = s ? s.total : 0;
+        var correct = s ? s.correct : 0;
+        var lastDate = s ? s.lastDate : '';
+        // accuracy_rate は未着手では空値 (Looker で null として扱える)
+        var rate = total > 0 ? Math.round((correct / total) * 100) : '';
+        var confidence = total >= 5 ? 'high' : total >= 1 ? 'low' : 'none';
+        if (confidence === 'none') unstudiedCount++; else studiedCount++;
         rows.push([
-          studentId,
-          studentNumber,
-          studentName,
-          latest.department || '',
-          latest.grade || '',
-          s.cat,
-          s.sub,
-          s.topic,
-          s.total,
-          s.correct,
-          rate,
-          s.lastDate
+          studentId, studentNumber, studentName, department, grade,
+          m.cat, m.sub, m.top,
+          total, correct, rate, lastDate,
+          confidence, m.totalQuestions
+        ]);
+        emittedKeys[key] = true;
+      }
+
+      // 学年範囲外で解答した履歴 (旧学年問題等) も保持: studied のうち未出力のものを追加
+      // total_questions_master は不明なので 0、curriculum 外として識別可能
+      for (var sKey in studied) {
+        if (emittedKeys[sKey]) continue;
+        var st = studied[sKey];
+        var sRate = st.total > 0 ? Math.round((st.correct / st.total) * 100) : '';
+        var sConf = st.total >= 5 ? 'high' : st.total >= 1 ? 'low' : 'none';
+        if (sConf === 'none') unstudiedCount++; else studiedCount++;
+        rows.push([
+          studentId, studentNumber, studentName, department, grade,
+          st.cat, st.sub, st.topic,
+          st.total, st.correct, sRate, st.lastDate,
+          sConf, 0
         ]);
       }
     }
 
-    // 一括書き込み
+    // 一括書き込み (大量行は chunk 分割: setValues は 1 セル 50KB 上限・通信タイムアウト対策)
     if (rows.length > 0) {
-      sheet.getRange(2, 1, rows.length, headers.length).setValues(rows);
+      var CHUNK = 5000;
+      for (var offset = 0; offset < rows.length; offset += CHUNK) {
+        var chunk = rows.slice(offset, offset + CHUNK);
+        sheet.getRange(2 + offset, 1, chunk.length, headers.length).setValues(chunk);
+      }
     }
 
-    Logger.log('category_stats更新: ' + rows.length + '行');
+    Logger.log('category_stats更新: ' + rows.length + '行 (学習済=' + studiedCount + ', 未着手=' + unstudiedCount + ', 学生数=' + Object.keys(studentGroups).length + ')');
+  },
+
+  /**
+   * 学生の curriculum 累積範囲を基準に未着手リーフ統計を計算する
+   *
+   * Phase D-2a: 教員向け AI コメントで「未着手率」を観察事実として渡すため。
+   * 既に updateAll が構築している qMasterByDept と curriculumByDept を再利用するので
+   * 追加 I/O は無し (in-memory 計算のみ)。
+   *
+   * @param {Array<Object>} logs - 学生の student_logs エントリ
+   * @param {Object} categoryMap - questionId → {category, subcategory, subtopic}
+   * @param {Object} qMasterByDept - buildQuestionMasterByDepartment の戻り値
+   * @param {Object} curriculumByDept - CurriculumService.loadAll の戻り値
+   * @param {string} department
+   * @param {number} grade
+   * @return {Object} {totalLeaves, touchedLeaves, unstudiedRate}
+   */
+  buildUnstudiedStats: function(logs, categoryMap, qMasterByDept, curriculumByDept, department, grade) {
+    var allowedCategories = CurriculumService.accumulate(curriculumByDept, department, Number(grade) || 0);
+    var allowedSet = {};
+    allowedCategories.forEach(function(c) { allowedSet[c] = true; });
+
+    // マスタリーフ総数 (curriculum 範囲内)
+    var deptMaster = qMasterByDept[department] || {};
+    var totalLeaves = 0;
+    for (var key in deptMaster) {
+      if (allowedSet[deptMaster[key].cat]) totalLeaves++;
+    }
+
+    // 着手済リーフ数 (logs から distinct (cat,sub,top) をカウント)
+    var touched = {};
+    for (var i = 0; i < logs.length; i++) {
+      var info = categoryMap[logs[i].questionId];
+      if (!info) continue;
+      var cat = info.category || '未分類';
+      if (!allowedSet[cat]) continue;
+      var sub = info.subcategory || '未分類';
+      var top = info.subtopic || '未分類';
+      touched[cat + '|||' + sub + '|||' + top] = true;
+    }
+    var touchedCount = Object.keys(touched).length;
+
+    return {
+      totalLeaves: totalLeaves,
+      touchedLeaves: touchedCount,
+      unstudiedRate: totalLeaves > 0 ? Math.round((1 - touchedCount / totalLeaves) * 100) : 0
+    };
+  },
+
+  /**
+   * 教員コメント用: 学生の category 別「着手優先度」を計算する
+   *
+   * 優先度 = 出題比重(%) × 不足度(1 - 正答率)
+   *   - 出題比重: 学科マスタにおけるカテゴリの問題数比率 (≒ 国試での配点比重)
+   *   - 不足度: 未着手 = 1.0 (最高), 着手済 = (1 - 正答率/100)
+   *
+   * @return {Object} {totalExamQuestions, priorities[{category, examWeightPct, examQuestions,
+   *                   studentAttempts, currentRate, unstudied, priorityScore}]}
+   */
+  buildCategoryPriorities: function(logs, categoryMap, qMasterByDept, curriculumByDept, department, grade) {
+    var allowedCategories = CurriculumService.accumulate(curriculumByDept, department, Number(grade) || 0);
+    var allowedSet = {};
+    allowedCategories.forEach(function(c) { allowedSet[c] = true; });
+
+    // 1. 学科マスタからカテゴリ別の出題量を集計
+    var deptMaster = qMasterByDept[department] || {};
+    var weightByCat = {};
+    var totalMaster = 0;
+    for (var key in deptMaster) {
+      var m = deptMaster[key];
+      if (!allowedSet[m.cat]) continue;
+      weightByCat[m.cat] = (weightByCat[m.cat] || 0) + m.totalQuestions;
+      totalMaster += m.totalQuestions;
+    }
+
+    // 2. 学生のカテゴリ別正答率
+    var studentByCat = {};
+    for (var i = 0; i < logs.length; i++) {
+      var info = categoryMap[logs[i].questionId];
+      if (!info || !info.category) continue;
+      var cat = info.category;
+      if (!allowedSet[cat]) continue;
+      if (!studentByCat[cat]) studentByCat[cat] = { total: 0, correct: 0 };
+      studentByCat[cat].total++;
+      if (logs[i].isCorrect) studentByCat[cat].correct++;
+    }
+
+    // 3. 優先度計算 (出題比重 × 不足度)
+    var priorities = [];
+    for (var cat in weightByCat) {
+      var w = weightByCat[cat];
+      var weightPct = totalMaster > 0 ? Math.round(w / totalMaster * 100) : 0;
+      var s = studentByCat[cat] || { total: 0, correct: 0 };
+      var rate = s.total > 0 ? Math.round(s.correct / s.total * 100) : null;
+      var unstudied = s.total === 0;
+      var gapFactor = rate === null ? 1.0 : Math.max(0, (100 - rate) / 100);
+      var priorityScore = Math.round(weightPct * gapFactor * 10) / 10;
+      priorities.push({
+        category: cat,
+        examQuestions: w,
+        examWeightPct: weightPct,
+        studentAttempts: s.total,
+        studentCorrect: s.correct,
+        currentRate: rate,
+        unstudied: unstudied,
+        priorityScore: priorityScore
+      });
+    }
+    priorities.sort(function(a, b) { return b.priorityScore - a.priorityScore; });
+
+    return {
+      totalExamQuestions: totalMaster,
+      priorities: priorities
+    };
+  },
+
+  /**
+   * questions シートから学科別の (cat, sub, top) → totalQuestions マスタを構築
+   *
+   * @param {Spreadsheet} ss
+   * @return {Object} {[department]: {[key]: {cat, sub, top, totalQuestions}}}
+   */
+  buildQuestionMasterByDepartment: function(ss) {
+    var sheet = ss.getSheetByName(CONFIG.SHEETS.QUESTIONS);
+    if (!sheet) return {};
+    var data = sheet.getDataRange().getValues();
+    if (data.length <= 1) return {};
+
+    var headers = data[0];
+    var idx = {};
+    headers.forEach(function(h, i) { idx[h] = i; });
+
+    var byDept = {};
+    for (var i = 1; i < data.length; i++) {
+      var row = data[i];
+      var dept = row[idx['department']];
+      if (!dept) continue;
+      var cat = row[idx['category']] || '';
+      if (!cat) continue;
+      var sub = row[idx['subcategory']] || '未分類';
+      var top = row[idx['subtopic']] || '未分類';
+      var key = cat + '|||' + sub + '|||' + top;
+      if (!byDept[dept]) byDept[dept] = {};
+      if (!byDept[dept][key]) {
+        byDept[dept][key] = { cat: cat, sub: sub, top: top, totalQuestions: 0 };
+      }
+      byDept[dept][key].totalQuestions++;
+    }
+    return byDept;
   },
 
   /**
@@ -571,6 +813,119 @@ const DashboardService = {
   },
 
   /**
+   * Phase D-2a: 教員向け AI コメントを Gemini で生成
+   *
+   * 対象: 担任・教科担当教員。
+   * 用途: 個別面談・補講設計・授業計画への反映。
+   * クラス全体サマリは別案件 (本実装ではスコープ外)。
+   *
+   * 文体ルール (厳守):
+   * - 教員視点 ("〇〇さんは" / "この学生は" / "本生徒は")
+   * - 学生への呼びかけ語 (あなた/皆さん) は禁止
+   * - 学年番号を本文に書かない
+   * - 学生氏名は書かない (Looker フィルタで識別済み)
+   * - 観察事実 → 仮説 → 具体アクション の流れ
+   *
+   * @param {Object} analysis - analyzeStudent の戻り値 + unstudiedRate 等
+   * @return {string} 200字以内の教員向けコメント
+   */
+  generateTeacherComment: function(analysis) {
+    if (!CONFIG.GEMINI_API_KEY) return '（APIキー未設定）';
+    if (analysis.totalQuestions < 5) return '回答数が少なく傾向分析未実施。次回演習で着手領域を観察。';
+
+    var weakList = '';
+    for (var i = 0; i < analysis.weakCategories.length; i++) {
+      var c = analysis.weakCategories[i];
+      weakList += '- ' + c.category + ': ' + c.rate + '%（' + c.count + '問）\n';
+    }
+
+    var strongList = '';
+    for (var i = 0; i < analysis.strongCategories.length; i++) {
+      var c = analysis.strongCategories[i];
+      strongList += '- ' + c.category + ': ' + c.rate + '%\n';
+    }
+
+    var errorInfo = '';
+    if (analysis.errorPatterns.length > 0) {
+      errorInfo = '誤答傾向:\n';
+      for (var i = 0; i < analysis.errorPatterns.length; i++) {
+        errorInfo += '- ' + analysis.errorPatterns[i].description + '\n';
+      }
+    }
+
+    var unstudiedInfo = '';
+    if (typeof analysis.unstudiedRate === 'number' && analysis.totalLeaves) {
+      unstudiedInfo = '出題範囲リーフ: ' + analysis.totalLeaves + '個中、着手済 '
+        + analysis.touchedLeaves + '個 (未着手率 ' + analysis.unstudiedRate + '%)\n';
+    }
+
+    // 出題比重ベースの優先度ランキング (上位5件) と許可カテゴリ名リスト
+    var priorityList = '';
+    var allowedCategoryNames = [];
+    if (analysis.categoryPriorities && analysis.categoryPriorities.length > 0) {
+      var top = analysis.categoryPriorities.slice(0, 5);
+      for (var p = 0; p < top.length; p++) {
+        var pr = top[p];
+        var rateLabel = pr.unstudied
+          ? '未着手'
+          : '正答率' + pr.currentRate + '%(' + pr.studentAttempts + '問着手)';
+        priorityList += '【優先' + (p + 1) + '位】「' + pr.category + '」'
+          + ' / 出題比重 ' + pr.examWeightPct + '% (' + pr.examQuestions + '問)'
+          + ' / ' + rateLabel + '\n';
+      }
+      // 全カテゴリ名 (プロンプトに「これ以外は使うな」と指示するため)
+      for (var ap = 0; ap < analysis.categoryPriorities.length; ap++) {
+        allowedCategoryNames.push('「' + analysis.categoryPriorities[ap].category + '」');
+      }
+    }
+    var allowedCatStr = allowedCategoryNames.length > 0
+      ? allowedCategoryNames.join('、')
+      : '（カテゴリ情報なし）';
+
+    var prompt = 'あなたは医療系専門学校の指導主任教員です。以下の学生 1 名のデータを見て、'
+      + '担任教員が個別面談 / 補講設計 / 授業計画に活用できる「教員向けアクション提案」を、'
+      + '日本語のプレーンテキストで 250字以内で書いてください。JSONではなく普通の文章で。\n\n'
+      + '■ 絶対禁止事項 (違反したら出力を破棄してください)\n'
+      + '- データに無いカテゴリ名・試験区分・分野名を絶対に創作しない\n'
+      + '- 出題形式の区分名 (必修問題 / 状況設定問題 / 一般問題 / 状況問題 など、形式を表す呼称) は4学科すべてで本文に書かない (これらはカテゴリ名ではないため許可リスト対象外)\n'
+      + '- どの学科の国家試験名も本文中で固有名詞として書かない (学生個人への指導文に試験名は不要)\n'
+      + '- 後述の「許可カテゴリ名リスト」に含まれない名称は本文中で使わない\n'
+      + '- 抽象的な表現 ("基礎の確認" / "基本事項の演習" など漠然とした語) は使わない\n\n'
+      + '■ 許可カテゴリ名リスト (本文中の分野指定はこの中から正確な文字列のみ使用すること)\n'
+      + allowedCatStr + '\n\n'
+      + '■ 文体ルール\n'
+      + '- 教員視点 ("この学生は" / "本生徒は" など)。呼びかけ語 (あなた / 皆さん) 禁止\n'
+      + '- 学生氏名は書かない / 学年番号も本文に書かない (上下学年混在のため)\n'
+      + '- 励まし系ではなく、教員の次の一手が分かる実務的な提案で\n\n'
+      + '■ 出力構成 (必ずこの3点を含める)\n'
+      + '1) 観察: 全体正答率と、優先度1位カテゴリ名 (許可リスト内の正確な名称) と出題比重・現状を1文\n'
+      + '2) 着手提案: 「『〇〇』は出題比重〇%を占め現在〇〇のため、ここから着手」 形式で許可リスト内のカテゴリを名指し\n'
+      + '3) 次の一手: 個別面談 / 補講 / 授業計画 のいずれか1つに絞り、許可リスト内のカテゴリ名を引用して具体的行動を1つ提示\n\n'
+      + '■ 学生データ (本文に学年数字は書かない)\n'
+      + '学科: ' + getDepartmentLabel_(analysis.department) + '\n'
+      + '対象国家試験: ' + getDepartmentExpertName(analysis.department) + '\n'
+      + '解いている問題の学年帯: ' + analysis.grade + '年向け (本文には記載しない)\n'
+      + '総回答数: ' + analysis.totalQuestions + '問\n'
+      + '全体正答率: ' + analysis.correctRate + '%\n'
+      + '連続学習: ' + analysis.streakDays + '日\n'
+      + '最終学習日: ' + (analysis.lastStudyDate || '未記録') + '\n'
+      + unstudiedInfo + '\n'
+      + '■ カテゴリ別 着手優先度ランキング (出題比重×不足度) — 本文ではこのランキング上位を引用すること\n'
+      + (priorityList || '（出題マスタが未整備のためランキング不可）\n') + '\n'
+      + '苦手分野 (rate < 65%):\n' + (weakList || '（特になし）\n') + '\n'
+      + '得意分野:\n' + (strongList || '（特になし）\n') + '\n'
+      + errorInfo + '\n'
+      + '上記ルールに厳格に従い、許可カテゴリ名リスト内の正確な名称のみを使い、創作カテゴリや試験区分用語を一切混ぜずに、250字以内で書いてください。';
+
+    var result = callGeminiAPI(prompt);
+    if (result.error) {
+      Logger.log('Gemini teacher comment error: ' + result.error);
+      return '教員コメント生成に失敗。データが揃ったら次回バッチで再試行されます。';
+    }
+    return (result.text || '').trim() || '介入推奨の特定材料なし。次回観察で再評価。';
+  },
+
+  /**
    * 特定学生のダッシュボードをオンデマンド更新（PWAのボタンから呼ばれる）
    * 1名分だけ再計算＋AIコメント再生成
    */
@@ -588,7 +943,7 @@ const DashboardService = {
     var categoryMap = this.getCategoryMap(ss);
     var analysis = this.analyzeStudent(studentLogs, categoryMap);
 
-    // 常にAIコメントを新規生成（オンデマンドなので差分チェックしない）
+    // 学生向けAIコメントを新規生成（PWAの⟳ボタンから呼ばれるオンデマンド処理）
     var aiComment = '';
     try {
       aiComment = this.generateAiComment(analysis);
@@ -597,21 +952,50 @@ const DashboardService = {
       Logger.log('Gemini API error for ' + studentId + ': ' + e);
     }
 
+    // 教員向けコメントは別経路 (TeacherCommentService) でのみ生成。
+    // ここでは既存値を保持するだけ (学生PWAの操作で教員コメントが消えないように)
     var nameMap = this.getStudentNameMap();
     var studentName = nameMap[analysis.studentNumber] || '';
 
-    // ai_dashboardシートに書き込み
+    // ai_dashboardシートに書き込み (teacher_comment 列追加)
     var dashboard = ss.getSheetByName(CONFIG.SHEETS.AI_DASHBOARD);
     var dashHeaders = [
       'student_id', 'student_number', 'student_name', 'department', 'grade',
       'total_questions', 'correct_rate', 'streak_days',
       'weak_categories', 'strong_categories', 'weekly_trend',
-      'error_patterns', 'ai_comment', 'last_study_date', 'updated_at'
+      'error_patterns', 'ai_comment', 'last_study_date', 'updated_at',
+      'teacher_comment'
     ];
     if (!dashboard) {
       dashboard = ss.insertSheet(CONFIG.SHEETS.AI_DASHBOARD);
       dashboard.getRange(1, 1, 1, dashHeaders.length).setValues([dashHeaders]);
       dashboard.getRange(1, 1, 1, dashHeaders.length).setFontWeight('bold');
+    } else {
+      // 旧スキーマ (teacher_comment 列なし) なら自動でヘッダーを追加
+      var currentHeaders = dashboard.getRange(1, 1, 1, dashboard.getLastColumn()).getValues()[0];
+      if (currentHeaders.indexOf('teacher_comment') === -1) {
+        dashboard.getRange(1, 1, 1, dashHeaders.length).setValues([dashHeaders]);
+        dashboard.getRange(1, 1, 1, dashHeaders.length).setFontWeight('bold');
+      }
+    }
+
+    // 既存行を探し、teacher_comment 列の既存値を保持
+    var data = dashboard.getDataRange().getValues();
+    var headers = data[0] || [];
+    var sidIdx = headers.indexOf('student_id');
+    var existingTeacherCommentIdx = headers.indexOf('teacher_comment');
+    var existingTeacherComment = '';
+    var foundRow = -1;
+    if (sidIdx !== -1) {
+      for (var i = 1; i < data.length; i++) {
+        if (data[i][sidIdx] === studentId) {
+          foundRow = i + 1;
+          if (existingTeacherCommentIdx !== -1) {
+            existingTeacherComment = data[i][existingTeacherCommentIdx] || '';
+          }
+          break;
+        }
+      }
     }
 
     var row = [
@@ -629,33 +1013,18 @@ const DashboardService = {
       JSON.stringify(analysis.errorPatterns),
       aiComment,
       analysis.lastStudyDate,
-      new Date().toISOString()
+      new Date().toISOString(),
+      existingTeacherComment  // 教員コメントは既存値を維持 (学生PWA操作で消さない)
     ];
 
-    // 既存行を探して更新 or 追加（ヘッダー位置を動的に決定してスキーマ差異に耐える）
-    var data = dashboard.getDataRange().getValues();
-    var headers = data[0] || [];
-    var sidIdx = headers.indexOf('student_id');
-    var found = false;
-    if (sidIdx !== -1) {
-      for (var i = 1; i < data.length; i++) {
-        if (data[i][sidIdx] === studentId) {
-          dashboard.getRange(i + 1, 1, 1, dashHeaders.length).setValues([row]);
-          found = true;
-          break;
-        }
-      }
-    }
-    if (!found) {
+    if (foundRow > 0) {
+      dashboard.getRange(foundRow, 1, 1, dashHeaders.length).setValues([row]);
+    } else {
       dashboard.appendRow(row);
     }
 
-    // 取得したデータをそのまま返す
-    function safeParse(val) {
-      if (!val) return [];
-      try { return JSON.parse(val); } catch (e) { return []; }
-    }
-
+    // PWA経由で学生がレスポンスを受け取るため、teacher_comment は API には含めない
+    // (Looker は spreadsheet 直接参照なので影響なし)
     return {
       studentId: studentId,
       studentNumber: analysis.studentNumber,
@@ -708,6 +1077,8 @@ const DashboardService = {
       try { return JSON.parse(val); } catch (e) { return []; }
     }
 
+    // セキュリティ注: teacher_comment は教員専用なので PWA レスポンスに含めない。
+    // Looker はスプレッドシートを直接参照するため API スコープ外の閲覧経路で問題なし。
     return {
       studentId: row[idx['student_id']],
       studentNumber: row[idx['student_number']],
@@ -769,4 +1140,45 @@ function setupDailyDashboard() {
  */
 function runDashboardUpdate() {
   DashboardService.updateAll();
+}
+
+/**
+ * Phase D-2a 動作確認: 1学生分の教員コメントを生成してログ出力する
+ * (シートには書き込まない、Gemini API のみ呼ぶ)
+ *
+ * studentNumber または studentId を直接指定して実行。
+ */
+function testGenerateTeacherComment() {
+  var ss = getSpreadsheet();
+  var allLogs = DashboardService.collectAllLogs(ss);
+  // テスト対象: studentNumber='snm' (curriculumシード済の前提)
+  var targetStudentNumber = 'snm';
+  var studentLogs = allLogs.filter(function(row) { return row.studentNumber === targetStudentNumber; });
+  if (studentLogs.length === 0) {
+    Logger.log('対象学生のログがありません: studentNumber=' + targetStudentNumber);
+    return;
+  }
+
+  var categoryMap = DashboardService.getCategoryMap(ss);
+  var analysis = DashboardService.analyzeStudent(studentLogs, categoryMap);
+
+  var qMasterByDept = DashboardService.buildQuestionMasterByDepartment(ss);
+  var curriculumByDept = CurriculumService.loadAll(ss);
+  var us = DashboardService.buildUnstudiedStats(
+    studentLogs, categoryMap, qMasterByDept, curriculumByDept,
+    analysis.department, analysis.grade
+  );
+  analysis.totalLeaves = us.totalLeaves;
+  analysis.touchedLeaves = us.touchedLeaves;
+  analysis.unstudiedRate = us.unstudiedRate;
+
+  Logger.log('=== analysis ===');
+  Logger.log('学科: ' + analysis.department + ', 学年: ' + analysis.grade);
+  Logger.log('総回答: ' + analysis.totalQuestions + ', 正答率: ' + analysis.correctRate + '%');
+  Logger.log('未着手率: ' + us.unstudiedRate + '% (touched ' + us.touchedLeaves + '/' + us.totalLeaves + ')');
+  Logger.log('苦手分野: ' + analysis.weakCategories.length + '件');
+
+  var teacherComment = DashboardService.generateTeacherComment(analysis);
+  Logger.log('=== teacher_comment ===');
+  Logger.log(teacherComment);
 }
