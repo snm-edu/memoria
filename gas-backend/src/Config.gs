@@ -29,6 +29,7 @@ const CONFIG = {
     PROSPECTIVE_LOGS: 'prospective_logs',
     PROFILE: 'profile',
     ENROLLED_STUDENTS: 'enrolled_students',
+    CURRICULUM: 'curriculum',
   },
 
   // 1 studentId あたりの enrollment 検証試行回数上限（1日）
@@ -97,6 +98,10 @@ function getSheetHeaders(sheetName) {
     case CONFIG.SHEETS.ENROLLED_STUDENTS:
       return [
         'student_number', 'department', 'grade', 'student_type', 'notes', 'created_at'
+      ];
+    case CONFIG.SHEETS.CURRICULUM:
+      return [
+        'department', 'grade', 'category'
       ];
     case CONFIG.SHEETS.AI_GENERATED:
       return [

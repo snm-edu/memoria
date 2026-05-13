@@ -27,7 +27,7 @@ NotebookLMで過去問PDFから問題を抽出→Google Sheets問題バンク→
 
 - **メインアカウント**: Google AI Ultra（個人アカウント、学校購入）
   - NotebookLM Ultra（ノートブック上限最大、ソース600個/NB）
-  - Gemini API（GCPクレジット $100/月）
+  - Gemini Developer API（**別課金**。Ultra の 25,000 AI credits は Flow/Whisk の動画・画像生成専用で、API 呼び出しには使えない点に注意）
   - GAS デプロイ元
   - Google Sheets 問題バンクDB オーナー
 - **ファミリーアカウント × 4学科**: Ultra特典共有
@@ -36,6 +36,12 @@ NotebookLMで過去問PDFから問題を抽出→Google Sheets問題バンク→
   - AIクレジット（画像/動画生成用）はグループ共有枠
   - 各学科独自のNotebookLMノートブックを管理可能
   - 問題バンクSheetsは閲覧権限で共有
+
+### Gemini API の課金設計
+
+- Ultra サブスクに **API 無料枠は含まれない**（2026-04 確認）ため、Gemini API は独立した Paid Tier として運用する
+- 新規 GCP アカウントの $300 welcome credit は 2026-03-02 以降に作成したアカウントでは Gemini API に使えない仕様になっているため、あてにしない
+- **Paid Tier + 月次 spending cap $10** を設定して暴走を防ぐ（Google の 2026-03-23 以降の新規は Prepaid billing 必須）
 
 ### 制約
 
@@ -133,14 +139,27 @@ POST /exec?action=generateSimilar { questionId, errorType }
 | 同時実行数 | 30 | ピーク15-20 | ○ |
 | Sheets読み書き | 無制限（レート制限あり） | 600名×20問=12,000 | ○ |
 
-### Gemini APIコスト試算（$100/月GCPクレジット内）
+### Gemini APIコスト試算（2026-04-22 更新）
 
+- 使用モデル: **`gemini-2.5-flash-lite`**（Paid Tier / Standard）
+- 料金（2026-04 時点）: 入力 $0.10/100万トークン, 出力 $0.40/100万トークン（text/image/video）
 - 誤答分析: 入力〜500トークン + 出力〜300トークン
 - 類題生成: 入力〜800トークン + 出力〜600トークン
-- Gemini 3.1 Pro 料金: 入力 $1.25/100万トークン, 出力 $5.00/100万トークン
-- 1回のAI呼び出しコスト ≈ $0.003
-- 600名 × 月20回AI呼び出し = 12,000回 ≈ **$36/月**
-- → $100クレジット内で余裕
+- 1回のAI呼び出しコスト ≈ $0.0002〜0.0003
+- 600名 × 月20回AI呼び出し = 12,000回 ≈ **$3〜5/月**
+- → 月次 spending cap $10 を設定すれば暴走時も損失最小
+
+#### 参考: Free Tier を使わない理由
+
+- `gemini-2.5-flash-lite` の Free Tier はトークン単価は $0 だが、RPD 1,500 / RPM 15 程度の制限あり
+- 600名の本番運用では誤答集中時に 429 エラーで AI 分析が停止するリスクが高い
+- 単価が激安（月 $3-5）なので Paid Tier 一択
+
+#### 旧モデル移行メモ
+
+- `gemini-2.0-flash` は **2026-06-01 にシャットダウン予定** → 使わない
+- 過去の試算で参照していた `gemini-3.1-pro`（入力 $1.25/M, 出力 $5.00/M）は Free Tier から削除済み・Paid 専用
+- 過去の「GCPクレジット $100/月」前提は誤認のため撤廃（Ultra に API 枠は含まれない）
 
 ### 重要: AI呼び出し最適化
 
@@ -339,7 +358,7 @@ error_typeに応じた出題方針:
 
 ### GASバックエンドコード（`gas-backend/src/`）
 - Config.gs, GeminiService.gs, DashboardService.gs 等
-- Gemini APIモデル: gemini-2.5-flash
+- Gemini APIモデル: **`gemini-2.5-flash-lite`**（`Config.gs:14` の `GEMINI_MODEL` で定義）
 - AI分析の差分更新（totalQuestions未変更時はスキップ）
 
 ## 追加・更新運用マニュアル
@@ -444,3 +463,50 @@ GAS バックエンド側は以下が未対応。GAS の編集・デプロイ権
 4. [REDACTED — 詳細は非公開で管理]
 
 
+
+## Vercel 環境変数運用ポリシー
+
+（2026-04-20 Vercel セキュリティインシデントを受けて策定）
+
+### 基本方針
+
+- **secret に該当する環境変数は、Preview / Production では必ず Sensitive Environment Variables として登録する**
+- Development 環境でも Sensitive 指定を推奨（Dashboard からの値閲覧を防止）
+- secret かどうかの判定は「流出した瞬間に金銭的・情報的被害が出るか」で判断
+
+### secret 判定基準
+
+| 分類 | 例 | Sensitive 指定 |
+|------|-----|---------------|
+| 認証情報 | API キー、Token、Deploy Hook Secret、Webhook Secret | **必須** |
+| 接続情報（非公開） | 非公開 DB 接続文字列、内部 API の URL | **必須** |
+| 公開値 | `VITE_APP_NAME`、`VITE_BASE_PATH` | 不要（Plaintext 可）|
+| 半公開値 | `VITE_GAS_API_URL`（Vite の仕様で bundle 埋込だが、Dashboard からの閲覧制限は有用） | **Sensitive 推奨** |
+
+### 重要: Vite の `VITE_*` 変数の仕様
+
+- `VITE_*` で始まる変数は **ビルド時にクライアント JS バンドルへ inline される**
+- Sensitive 指定しても公開 JS に値が含まれるため、**真の秘匿にはならない**
+- 真に秘匿したい値は以下のいずれかで扱う:
+  1. Vercel Serverless Functions / Edge Functions の環境変数（VITE_ プレフィクスなし）
+  2. GAS 側の PropertiesService（本プロジェクトの現状）
+  3. 外部 Secret Manager（Google Secret Manager 等）
+- したがって、**本プロジェクトの実質的な secret はすべて GAS 側にあり、Vercel 側には真の secret を置かない設計を維持する**
+
+### 運用ルール
+
+1. **新規 env 変数追加時**:
+   - secret 判定 → Sensitive 指定の要否を決定
+   - Preview / Production / Development 各環境で設定
+   - PR の description に「どの環境に何を追加したか」記載
+2. **ローテーション**:
+   - サービス側で新キー発行 → Vercel Dashboard で値更新 → Redeploy → 動作確認後に旧キー revoke
+   - ターミナル経由でのキー値転送は避け、Dashboard UI 上で完結させる
+3. **Audit**:
+   - 四半期ごとに Team Audit Log と Environment Variables を確認
+   - 身に覚えのない変更・Sensitive 未指定の secret を発見したら即ローテ
+4. **インシデント時**:
+   - Team Settings → Tokens で全 token を revoke → 新規発行
+   - Environment Variables を全件 Dashboard で再確認し、Sensitive 未指定の secret を洗い出す
+   - 該当 secret をすべてローテ
+   - Team Audit Log で期間中の `env.*` / `deployment.created` / `token.created` / `member.*` を精査
