@@ -164,17 +164,20 @@ const ProspectiveService = {
       const snum = String(row[idx['student_number']] || '').trim();
       const dept = String(row[idx['department']] || '').trim();
       if (snum === trimmedNumber && dept === String(department).trim()) {
-        const grade = Number(row[idx['grade']]);
-        if (!grade || grade < 1 || grade > 3) {
-          return { valid: false, reason: 'invalid_grade_in_roster' };
-        }
-        // student_type 列は任意。未記載/不正値は 'enrolled' にフォールバック
+        // student_type を先に判定（grade の許容範囲が区分で異なるため）
         let studentType = 'enrolled';
         if (idx['student_type'] !== undefined) {
           const raw = String(row[idx['student_type']] || '').trim();
           if (allowedTypes.indexOf(raw) !== -1) {
             studentType = raw;
           }
+        }
+        const grade = Number(row[idx['grade']]);
+        if (!grade || grade < 1) {
+          return { valid: false, reason: 'invalid_grade_in_roster' };
+        }
+        if (grade > 3 && studentType !== 'graduate') {
+          return { valid: false, reason: 'invalid_grade_in_roster' };
         }
         return { valid: true, grade: grade, studentType: studentType };
       }

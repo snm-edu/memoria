@@ -59,7 +59,7 @@ export interface StudentProfile {
   studentId: string;
   studentNumber: string;  // 学籍番号（教員が識別に使用）
   department: Department;
-  grade: number;              // prospective=0, enrolled=1/2/3, graduate=3
+  grade: number;              // prospective=0, enrolled=1/2/3, graduate=3|4
   studentType: StudentType;
   createdAt: string;
 }
