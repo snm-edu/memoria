@@ -139,7 +139,7 @@ export function HomeScreen() {
               }}>Memoria</h1>
           {profile && (
             <p className="text-sm text-slate-400">
-              {DEPARTMENT_LABELS[profile.department]} {profile.grade}年
+              {DEPARTMENT_LABELS[profile.department]} {profile.studentType === 'graduate' ? '卒業生' : `${profile.grade}年`}
             </p>
           )}
         </div>
