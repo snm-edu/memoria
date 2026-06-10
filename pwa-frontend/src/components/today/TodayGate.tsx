@@ -25,6 +25,7 @@ export function TodayGate({ token, onDone }: Props) {
   const { dispatch } = useApp();
   const [status, setStatus] = useState<GateStatus>('loading');
   const [studentName, setStudentName] = useState('');
+  const [errorDetail, setErrorDetail] = useState('');
 
   useEffect(() => {
     let cancelled = false;
@@ -33,6 +34,10 @@ export function TodayGate({ token, onDone }: Props) {
         const student = await resolveStudent(token);
         if (cancelled) return;
         if (!student) {
+          // 診断用: トークン不一致（長さ・末尾）か設定漏れかを画面で判別できるようにする
+          setErrorDetail(
+            `code: TOKEN_NOT_FOUND / 受信トークン: ${token.length}文字 (末尾 …${token.slice(-4)})`
+          );
           setStatus('error');
           return;
         }
@@ -77,7 +82,10 @@ export function TodayGate({ token, onDone }: Props) {
         onDone();
       } catch (err) {
         console.error('[TodayGate]', err);
-        if (!cancelled) setStatus('error');
+        if (!cancelled) {
+          setErrorDetail(`code: FETCH_ERROR / ${err instanceof Error ? err.message : String(err)}`);
+          setStatus('error');
+        }
       }
     })();
     return () => { cancelled = true; };
@@ -117,6 +125,9 @@ export function TodayGate({ token, onDone }: Props) {
       <p className="text-sm text-slate-600">
         通信状態を確認してもう一度開くか、リンクが古い可能性があるため担任の先生に連絡してください。
       </p>
+      {errorDetail && (
+        <p className="text-xs text-slate-400 break-all max-w-xs">{errorDetail}</p>
+      )}
       <button onClick={onDone} className="mt-4 px-6 py-2 rounded-lg bg-slate-200 text-slate-700 font-medium">
         通常画面へ
       </button>
