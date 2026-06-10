@@ -4,6 +4,7 @@ import { db } from '../../services/db';
 import {
   saveToken, resolveStudent, hydrateCardStates,
 } from '../../services/restart/restartSync';
+import { loadQuestionsToCache } from '../../services/dataLoader';
 import type { StudentProfile, Department } from '../../types';
 
 interface Props {
@@ -60,6 +61,9 @@ export function TodayGate({ token, onDone }: Props) {
         }
 
         saveToken(token);
+
+        // 新規ブラウザ（Teams内蔵等）では問題キャッシュが空のため、ロード完了を待ってからクイズを開始する
+        await loadQuestionsToCache(student.department as Department);
         await hydrateCardStates(token);
         if (cancelled) return;
 
