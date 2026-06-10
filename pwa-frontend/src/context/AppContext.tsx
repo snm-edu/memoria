@@ -3,6 +3,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../services/db';
 import { loadQuestionsToCache } from '../services/dataLoader';
 import { syncPendingAnswers } from '../services/sync';
+import { pushAllCardStates } from '../services/restart/restartSync';
 import type { StudentProfile, Screen } from '../types';
 
 // クイズモード: 'home'からの学年制限付き or 'nav'からの自由選択
@@ -151,6 +152,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
       if (result.synced > 0) {
         console.log(`同期完了: ${result.synced}件送信`);
         dispatch({ type: 'SET_LAST_SYNC', timestamp: new Date().toISOString() });
+      }
+      // 既卒生（トークン保持者）のみ: カード状態をSupabaseへバックアップ
+      const pushed = await pushAllCardStates();
+      if (pushed > 0) {
+        console.log(`[restartSync] カード状態 ${pushed}件をクラウドへ同期`);
       }
     } catch (err) {
       console.error('同期エラー:', err);
