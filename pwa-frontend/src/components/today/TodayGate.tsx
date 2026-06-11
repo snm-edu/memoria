@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
 import { db } from '../../services/db';
 import {
@@ -13,7 +13,7 @@ interface Props {
   onDone: () => void;
 }
 
-type GateStatus = 'loading' | 'error' | 'mismatch';
+type GateStatus = 'loading' | 'error' | 'mismatch' | 'nodata';
 
 /** 時間帯からセッション種別を決める（端末ローカル時刻＝JST想定） */
 export function sessionScopeForHour(hour: number): 'all' | 'weak' {
@@ -21,11 +21,44 @@ export function sessionScopeForHour(hour: number): 'all' | 'weak' {
   return 'all'; // 朝・夜: SM-2期限の復習優先（既存クイズの標準動作）
 }
 
+/**
+ * 端末に残った別利用者のローカルデータを消去する（本人切り替え用）。
+ * questionCache は学科共通の問題データなので残す（再ダウンロード回避）。
+ */
+async function wipeLocalUserData(): Promise<void> {
+  await db.transaction(
+    'rw',
+    [db.profile, db.cardStates, db.answerLog, db.gamification, db.aiCache, db.treemapCache],
+    async () => {
+      await db.profile.clear();
+      await db.cardStates.clear();
+      await db.answerLog.clear();
+      await db.gamification.clear();
+      await db.aiCache.clear();
+      await db.treemapCache.clear();
+    },
+  );
+}
+
 export function TodayGate({ token, onDone }: Props) {
   const { dispatch } = useApp();
   const [status, setStatus] = useState<GateStatus>('loading');
   const [studentName, setStudentName] = useState('');
   const [errorDetail, setErrorDetail] = useState('');
+  const [attempt, setAttempt] = useState(0);
+
+  const retry = useCallback(() => {
+    setErrorDetail('');
+    setStatus('loading');
+    setAttempt((n) => n + 1);
+  }, []);
+
+  /** 「本人として開き直す」: 端末の旧データを消して、トークンの本人でやり直す */
+  const switchToTokenStudent = useCallback(async () => {
+    setStatus('loading');
+    await wipeLocalUserData();
+    setAttempt((n) => n + 1);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -67,8 +100,18 @@ export function TodayGate({ token, onDone }: Props) {
 
         saveToken(token);
 
-        // 新規ブラウザ（Teams内蔵等）では問題キャッシュが空のため、ロード完了を待ってからクイズを開始する
-        await loadQuestionsToCache(student.department as Department);
+        // 新規ブラウザ（Teams内蔵等）では問題キャッシュが空のため、ロード完了を待ってからクイズを開始する。
+        // 初回アクセスは1.4MBの問題データ取得があり、モバイル回線では失敗しうるため1回だけ自動リトライする。
+        let questionCount = await loadQuestionsToCache(student.department as Department);
+        if (questionCount === 0 && !cancelled) {
+          questionCount = await loadQuestionsToCache(student.department as Department);
+        }
+        if (cancelled) return;
+        if (questionCount === 0) {
+          setStatus('nodata');
+          return;
+        }
+
         await hydrateCardStates(token);
         if (cancelled) return;
 
@@ -89,7 +132,7 @@ export function TodayGate({ token, onDone }: Props) {
       }
     })();
     return () => { cancelled = true; };
-  }, [token, dispatch, onDone]);
+  }, [token, dispatch, onDone, attempt]);
 
   if (status === 'loading') {
     return (
@@ -108,10 +151,38 @@ export function TodayGate({ token, onDone }: Props) {
         <p className="text-2xl">⚠️</p>
         <p className="font-bold text-slate-800">このリンクは {studentName} さん専用です</p>
         <p className="text-sm text-slate-600">
-          この端末には別の利用者の学習データが入っているため、データ保護のため中断しました。
-          自分の端末・ブラウザで開き直してください。
+          この端末には別の利用者の学習データが残っています。
+          あなたが {studentName} さん本人なら、下のボタンで切り替えてください
+          （学習記録はクラウドに保存されているので消えません）。
         </p>
-        <button onClick={onDone} className="mt-4 px-6 py-2 rounded-lg bg-slate-200 text-slate-700 font-medium">
+        <button
+          onClick={switchToTokenStudent}
+          className="mt-2 px-6 py-3 rounded-lg bg-blue-600 text-white font-bold"
+        >
+          {studentName} さんとして開き直す
+        </button>
+        <button onClick={onDone} className="px-6 py-2 rounded-lg bg-slate-200 text-slate-700 font-medium">
+          そのまま通常画面へ
+        </button>
+      </div>
+    );
+  }
+
+  if (status === 'nodata') {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 p-8 text-center">
+        <p className="text-2xl">📡</p>
+        <p className="font-bold text-slate-800">問題データを取得できませんでした</p>
+        <p className="text-sm text-slate-600">
+          電波の良い場所で、もう一度お試しください。初回は少しダウンロードに時間がかかります。
+        </p>
+        <button
+          onClick={retry}
+          className="mt-2 px-6 py-3 rounded-lg bg-blue-600 text-white font-bold"
+        >
+          もう一度試す
+        </button>
+        <button onClick={onDone} className="px-6 py-2 rounded-lg bg-slate-200 text-slate-700 font-medium">
           通常画面へ
         </button>
       </div>
@@ -128,7 +199,13 @@ export function TodayGate({ token, onDone }: Props) {
       {errorDetail && (
         <p className="text-xs text-slate-400 break-all max-w-xs">{errorDetail}</p>
       )}
-      <button onClick={onDone} className="mt-4 px-6 py-2 rounded-lg bg-slate-200 text-slate-700 font-medium">
+      <button
+        onClick={retry}
+        className="mt-2 px-6 py-3 rounded-lg bg-blue-600 text-white font-bold"
+      >
+        もう一度試す
+      </button>
+      <button onClick={onDone} className="px-6 py-2 rounded-lg bg-slate-200 text-slate-700 font-medium">
         通常画面へ
       </button>
     </div>
