@@ -1,4 +1,4 @@
-import type { ApiResponse, Question } from '../types';
+import type { ApiResponse, Question, VideoRecommendation, VideoRecommendationEventType } from '../types';
 import { ErrorAnalysisSchema } from '../schemas/api';
 
 const GAS_API_URL = import.meta.env.VITE_GAS_API_URL || '';
@@ -189,4 +189,28 @@ export async function validateEnrollment(body: {
   reason?: 'not_found' | 'rate_limited' | 'invalid_grade_in_roster';
 }>> {
   return apiPost({ action: 'validateEnrollment', ...body });
+}
+
+export async function fetchVideoRecommendations(params: {
+  studentId: string;
+  studentNumber: string;
+  limit?: number;
+}): Promise<ApiResponse<{ recommendations: VideoRecommendation[]; total: number }>> {
+  const queryParams: Record<string, string> = {
+    action: 'getVideoRecommendations',
+    studentId: params.studentId,
+    studentNumber: params.studentNumber,
+  };
+  if (params.limit) queryParams['limit'] = String(params.limit);
+  return apiGet(queryParams);
+}
+
+export async function markVideoRecommendation(body: {
+  recommendationId: string;
+  studentId: string;
+  studentNumber: string;
+  eventType: VideoRecommendationEventType;
+  feedback?: string;
+}): Promise<ApiResponse<{ ok: boolean; recommendationId: string; eventType: VideoRecommendationEventType }>> {
+  return apiPost({ action: 'markVideoRecommendation', ...body });
 }
