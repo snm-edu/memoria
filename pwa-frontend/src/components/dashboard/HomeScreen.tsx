@@ -7,6 +7,7 @@ import { DEPARTMENT_LABELS } from '../../types';
 import { getCharacterStage } from '../../services/gamification';
 import { CharacterDisplay } from '../character/CharacterDisplay';
 import { EXAM_NAMES, formatExamCountdown } from '../../config/examDates';
+import { RecommendedVideosCard } from '../video/RecommendedVideosCard';
 
 export function HomeScreen() {
   const { state, dispatch } = useApp();
@@ -259,6 +260,10 @@ export function HomeScreen() {
         </div>
         <span className="text-slate-300">→</span>
       </button>
+
+      {profile && (
+        <RecommendedVideosCard profile={profile} isOnline={state.isOnline} />
+      )}
 
       {/* 弱点分野 */}
       {weakCategories.length > 0 && (

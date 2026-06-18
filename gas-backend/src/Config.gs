@@ -30,6 +30,9 @@ const CONFIG = {
     PROFILE: 'profile',
     ENROLLED_STUDENTS: 'enrolled_students',
     CURRICULUM: 'curriculum',
+    RECORDING_SEGMENTS: 'recording_segments',
+    VIDEO_RECOMMENDATIONS: 'video_recommendations',
+    VIDEO_EVENTS: 'video_events',
   },
 
   // 1 studentId あたりの enrollment 検証試行回数上限（1日）
@@ -102,6 +105,28 @@ function getSheetHeaders(sheetName) {
     case CONFIG.SHEETS.CURRICULUM:
       return [
         'department', 'grade', 'category'
+      ];
+    case CONFIG.SHEETS.RECORDING_SEGMENTS:
+      return [
+        'created_at', 'segment_key', 'segment_id', 'schedule_key', 'date', 'grade',
+        'subject', 'teacher', 'zoom_meeting_id', 'transcript_file_id', 'drive_folder_id',
+        'start_sec', 'end_sec', 'display_time', 'title', 'summary', 'segment_subject',
+        'department', 'category', 'subcategory', 'subtopic', 'topic', 'keywords',
+        'related_question_ids', 'source', 'status', 'approved', 'reviewed_by',
+        'reviewed_at', 'error', 'video_url', 'drive_file_id', 'updated_at'
+      ];
+    case CONFIG.SHEETS.VIDEO_RECOMMENDATIONS:
+      return [
+        'created_at', 'recommendation_key', 'recommendation_id', 'student_id',
+        'student_number', 'student_name', 'question_id', 'segment_key', 'segment_id',
+        'schedule_key', 'display_time', 'title', 'summary', 'reason', 'score',
+        'status', 'shown_at', 'completed_at', 'feedback'
+      ];
+    case CONFIG.SHEETS.VIDEO_EVENTS:
+      return [
+        'event_id', 'recommendation_key', 'recommendation_id', 'student_id',
+        'student_number', 'event_type', 'question_id', 'segment_key', 'segment_id',
+        'feedback', 'created_at'
       ];
     case CONFIG.SHEETS.AI_GENERATED:
       return [
