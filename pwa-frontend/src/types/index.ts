@@ -88,6 +88,30 @@ export interface GeneratedQuestion {
   created_at: string;
 }
 
+// 授業動画推薦
+export type VideoRecommendationStatus = 'approved' | 'shown' | 'completed' | 'needs_review' | 'draft' | 'dismissed';
+export type VideoRecommendationEventType = 'opened' | 'viewed' | 'later' | 'wrong_content';
+
+export interface VideoRecommendation {
+  recommendationId: string;
+  studentId: string;
+  studentNumber: string;
+  questionId: string;
+  segmentId: string;
+  title: string;
+  summary: string;
+  reason: string;
+  score: number;
+  displayTime: string;
+  videoUrl: string;
+  driveFileId: string;
+  category: string;
+  subcategory: string;
+  subtopic: string;
+  status: VideoRecommendationStatus;
+  updatedAt: string;
+}
+
 // API レスポンス
 export interface ApiResponse<T = unknown> {
   success: boolean;
