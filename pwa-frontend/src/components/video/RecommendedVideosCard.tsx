@@ -12,10 +12,17 @@ interface RecommendedVideosCardProps {
 
 const ACTIVE_STATUSES: VideoRecommendationStatus[] = ['approved', 'shown'];
 
+/** Google Drive の共有URL(/view 等)を、iframe 埋め込み再生用の /preview に変換する。Drive 以外は null。 */
+function toDrivePreviewUrl(url: string): string | null {
+  const match = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/);
+  return match ? `https://drive.google.com/file/d/${match[1]}/preview` : null;
+}
+
 export function RecommendedVideosCard({ profile, isOnline, onOpenAiDashboard }: RecommendedVideosCardProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [expanded, setExpanded] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<VideoRecommendation | null>(null);
 
   const recommendations = useLiveQuery(async () => {
     const rows = await db.videoRecommendations
@@ -109,7 +116,12 @@ export function RecommendedVideosCard({ profile, isOnline, onOpenAiDashboard }: 
 
   async function openVideo(recommendation: VideoRecommendation) {
     if (recommendation.videoUrl) {
-      window.open(recommendation.videoUrl, '_blank', 'noopener,noreferrer');
+      // Drive 動画はアプリ内モーダルで埋め込み再生。それ以外は従来どおり別タブで開く。
+      if (toDrivePreviewUrl(recommendation.videoUrl)) {
+        setActiveVideo(recommendation);
+      } else {
+        window.open(recommendation.videoUrl, '_blank', 'noopener,noreferrer');
+      }
     }
     await recordAction(recommendation, 'opened');
   }
@@ -263,6 +275,51 @@ export function RecommendedVideosCard({ profile, isOnline, onOpenAiDashboard }: 
             <p className="mt-1 text-xs text-slate-400">AI分析で、次に重点復習する分野を見直します</p>
           </button>
         )
+      )}
+
+      {activeVideo && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div
+            className="w-full max-w-2xl rounded-xl bg-white p-3"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mb-2 flex items-center justify-between gap-2">
+              <p className="min-w-0 truncate text-sm font-bold text-slate-700">{activeVideo.title}</p>
+              <button
+                type="button"
+                onClick={() => setActiveVideo(null)}
+                className="shrink-0 rounded-lg bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500 active:bg-slate-200"
+              >
+                閉じる
+              </button>
+            </div>
+            {activeVideo.displayTime && (
+              <p className="mb-2 text-xs font-bold text-amber-600">
+                ▶ {activeVideo.displayTime} 付近を再生してください（自動頭出しは今後対応予定）
+              </p>
+            )}
+            <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
+              <iframe
+                src={toDrivePreviewUrl(activeVideo.videoUrl) || ''}
+                title={activeVideo.title}
+                className="h-full w-full"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href={activeVideo.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block text-center text-xs text-slate-400 underline"
+            >
+              再生できない場合はこちら（Driveで開く）
+            </a>
+          </div>
+        </div>
       )}
     </section>
   );
