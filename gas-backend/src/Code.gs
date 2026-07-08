@@ -5,6 +5,7 @@
  * GET  /exec?action=getReviewQueue&studentId=xxx
  * GET  /exec?action=getStudentStats&studentId=xxx
  * GET  /exec?action=getStudentTreemap&studentId=xxx&studentNumber=snm&department=clinical_eng&grade=2&categories=cat1,cat2,...
+ * GET  /exec?action=getVideoRecommendations&studentId=xxx&studentNumber=snm&limit=3
  * GET  /exec?action=getTeacherComment&studentId=xxx (教員専用、HTML応答、Looker→新タブで開く想定)
  * GET  /exec?action=getMyRanking&studentId=xxx (同学年内 percentile + 段階表現)
  * GET  /exec?action=getWorksheet&studentId=xxx&token=YYY&count=20 (教員専用、トークン認証、補講ワークシートPDFを生成してsnmにメール送信)
@@ -17,6 +18,7 @@
  * POST /exec?action=getMyProfile   { studentId, studentNumber }
  * POST /exec?action=validateEnrollment { studentId, studentNumber, department }
  * POST /exec?action=refreshStudentTreemap { studentId, studentNumber, department, grade, categories }
+ * POST /exec?action=markVideoRecommendation { recommendationId, studentId, studentNumber, eventType, feedback }
  */
 
 function doGet(e) {
@@ -57,6 +59,13 @@ function doGet(e) {
           department: e.parameter.department || '',
           grade: parseInt(e.parameter.grade) || 0,
           categories: categories
+        }));
+
+      case 'getVideoRecommendations':
+        return jsonResponse(VideoService.getVideoRecommendations({
+          studentId: e.parameter.studentId || '',
+          studentNumber: e.parameter.studentNumber || '',
+          limit: parseInt(e.parameter.limit) || 3
         }));
 
       case 'getTeacherComment':
@@ -173,6 +182,15 @@ function doPost(e) {
           categories: Array.isArray(body.categories) ? body.categories : [],
         }));
 
+      case 'markVideoRecommendation':
+        return jsonResponse(VideoService.markVideoRecommendation({
+          recommendationId: body.recommendationId || '',
+          studentId: body.studentId || '',
+          studentNumber: body.studentNumber || '',
+          eventType: body.eventType || '',
+          feedback: body.feedback || '',
+        }));
+
       default:
         return jsonResponse({ error: 'Unknown action: ' + action }, 400);
     }
@@ -180,6 +198,14 @@ function doPost(e) {
     console.error('doPost error:', error);
     return jsonResponse({ error: error.message }, 500);
   }
+}
+
+/**
+ * 動画推薦用シートの初期化。
+ * Apps Script の関数プルダウンから初回だけ手動実行する。
+ */
+function initVideoRecommendationSheets() {
+  return VideoService.initVideoRecommendationSheets();
 }
 
 /**

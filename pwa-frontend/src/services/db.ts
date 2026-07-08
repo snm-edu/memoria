@@ -1,5 +1,5 @@
 import Dexie, { type Table } from 'dexie';
-import type { StudentProfile, CardState, Question, AnswerLog, GamificationState } from '../types';
+import type { StudentProfile, CardState, Question, AnswerLog, GamificationState, VideoRecommendation } from '../types';
 
 // AI分析キャッシュ
 export interface AiCacheEntry {
@@ -30,6 +30,7 @@ export class NurseMemoriaDB extends Dexie {
   aiCache!: Table<AiCacheEntry>;
   gamification!: Table<GamificationState>;
   treemapCache!: Table<TreemapCacheEntry>;
+  videoRecommendations!: Table<VideoRecommendation>;
 
   constructor() {
     super('NurseMemoria');
@@ -135,6 +136,17 @@ export class NurseMemoriaDB extends Dexie {
       aiCache: '++id, [questionId+selectedAnswer], questionId',
       gamification: '++id, visitorId',
       treemapCache: 'studentId',
+    });
+    // v9: 授業動画推薦キャッシュ
+    this.version(9).stores({
+      profile: '++id, studentId, studentNumber, department, grade, studentType',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+      gamification: '++id, visitorId',
+      treemapCache: 'studentId',
+      videoRecommendations: 'recommendationId, studentId, studentNumber, status, updatedAt',
     });
   }
 }

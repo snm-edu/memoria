@@ -7,6 +7,7 @@ import { DEPARTMENT_LABELS } from '../../types';
 import { getCharacterStage } from '../../services/gamification';
 import { CharacterDisplay } from '../character/CharacterDisplay';
 import { EXAM_NAMES, formatExamCountdown } from '../../config/examDates';
+import { RecommendedVideosCard } from '../video/RecommendedVideosCard';
 
 export function HomeScreen() {
   const { state, dispatch } = useApp();
@@ -225,6 +226,14 @@ export function HomeScreen() {
         )}
       </div>
 
+      {profile && (
+        <RecommendedVideosCard
+          profile={profile}
+          isOnline={state.isOnline}
+          onOpenAiDashboard={() => dispatch({ type: 'SET_SCREEN', screen: 'ai_dashboard' })}
+        />
+      )}
+
       {/* 統計カード */}
       <div className="grid grid-cols-2 gap-3 mb-4">
         <div className="card text-center">
@@ -246,19 +255,6 @@ export function HomeScreen() {
           <p className="text-2xl font-bold">{totalQuestions}</p>
         </div>
       </div>
-
-      {/* AI分析ボタン */}
-      <button
-        onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'ai_dashboard' })}
-        className="w-full card mb-4 flex items-center gap-3 active:bg-slate-50 transition-colors"
-      >
-        <span className="text-2xl">🤖</span>
-        <div className="flex-1 text-left">
-          <p className="text-sm font-bold">AI分析ダッシュボード</p>
-          <p className="text-xs text-slate-400">苦手分野の深掘り・学習アドバイス</p>
-        </div>
-        <span className="text-slate-300">→</span>
-      </button>
 
       {/* 弱点分野 */}
       {weakCategories.length > 0 && (
