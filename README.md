@@ -83,4 +83,6 @@ GASバックエンドは `script.google.com` に個人アカウントからデ�
 
 ## ライセンス
 
-未定（TODO: ライセンスを選定して追加予定）。
+コード（PWA・GASバックエンド・データパイプライン等）は [MIT License](./LICENSE) です。
+
+**適用対象外**: `CE国試data/` / `CO国試data/` / `DH国試data/` / `NRS国試data/` に含まれる過去問データ（xlsx・PDF・画像）、および同内容を収録した `pwa-frontend/public/data/questions/*.json`（学科別問題バンク）は、出典・著作権の扱いが未整理のためMITライセンスの対象に含みません。これらの再利用可否は個別にご確認ください。
