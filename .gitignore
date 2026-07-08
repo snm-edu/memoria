@@ -27,3 +27,7 @@ scripts/output/*.json
 # Logs
 *.log
 npm-debug.log*
+
+# 学校内部の運用自動化（Zoom予約・録画アーカイブ・保護者レポート）
+# メモリア本体とは別物・公開リポジトリに含めない
+automation/
