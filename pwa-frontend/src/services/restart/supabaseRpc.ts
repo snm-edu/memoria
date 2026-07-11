@@ -36,6 +36,7 @@ export function rowToCardState(row: CardStateRow): CardState {
     lastReview: row.last_review ?? '',
     hintLevel: row.hint_level,
     consecutiveCorrectAtZero: row.consecutive_correct_at_zero,
+    updatedAt: row.updated_at ?? '',
   };
 }
 
@@ -49,6 +50,9 @@ export function cardStateToRow(card: CardState): CardStateRow {
     last_review: card.lastReview || null,
     hint_level: card.hintLevel,
     consecutive_correct_at_zero: card.consecutiveCorrectAtZero,
+    // 実時刻を送ることで server 側 coalesce(x.updated_at, now()) が実LWWになる。
+    // 空（レガシー未移行）の場合のみ省略し server の now() に委ねる。
+    updated_at: card.updatedAt || undefined,
   };
 }
 

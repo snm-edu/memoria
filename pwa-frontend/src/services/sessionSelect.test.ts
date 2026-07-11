@@ -6,7 +6,8 @@ function card(over: Partial<CardState> = {}): CardState {
   return {
     questionId: 'q1', easeFactor: 2.5, interval: 6, repetitions: 3,
     nextReview: '2026-07-11', lastReview: '2026-07-05',
-    hintLevel: 0, consecutiveCorrectAtZero: 0, ...over,
+    hintLevel: 0, consecutiveCorrectAtZero: 0,
+    updatedAt: '2026-07-01T00:00:00.000Z', ...over,
   };
 }
 

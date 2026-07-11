@@ -52,6 +52,7 @@ export function sm2Update(card: CardState, quality: number, now: Date = new Date
 
   updated.nextReview = localDateString(addDays(now, updated.interval));
   updated.lastReview = localDateString(now);
+  updated.updatedAt = now.toISOString();
 
   return updated;
 }
@@ -94,6 +95,7 @@ export function createCardState(questionId: string): CardState {
     lastReview: '',
     hintLevel: 0,
     consecutiveCorrectAtZero: 0,
+    updatedAt: new Date().toISOString(),
   };
 }
 

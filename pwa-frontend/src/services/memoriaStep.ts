@@ -308,5 +308,6 @@ export function confirmUnderstanding(
     consecutiveCorrectAtZero: understood ? 0 : card.consecutiveCorrectAtZero,
     nextReview: localDateString(addDays(now, interval)),
     lastReview: localDateString(now),
+    updatedAt: now.toISOString(),
   };
 }

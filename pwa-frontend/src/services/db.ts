@@ -169,6 +169,26 @@ export class NurseMemoriaDB extends Dexie {
         card.nextReview = fixed.nextReview;
       });
     });
+    // v11: マルチデバイスLWW用の updatedAt を追加し既存カードへ後方補完
+    this.version(11).stores({
+      profile: '++id, studentId, studentNumber, department, grade, studentType',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+      gamification: '++id, visitorId',
+      treemapCache: 'studentId',
+      videoRecommendations: 'recommendationId, studentId, studentNumber, status, updatedAt',
+    }).upgrade(tx => {
+      return tx.table('cardStates').toCollection().modify((card: CardState) => {
+        if (!card.updatedAt) {
+          // 既存カードは lastReview（JST日付）から近似時刻を補完・未学習は現在時刻
+          card.updatedAt = card.lastReview
+            ? new Date(`${card.lastReview}T00:00:00+09:00`).toISOString()
+            : new Date().toISOString();
+        }
+      });
+    });
   }
 }
 

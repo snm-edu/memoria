@@ -17,7 +17,8 @@ function card(over: Partial<CardState> = {}): CardState {
   return {
     questionId: 'q1', easeFactor: 2.5, interval: 6, repetitions: 2,
     nextReview: '2026-07-11', lastReview: '2026-07-05',
-    hintLevel: 0, consecutiveCorrectAtZero: 0, ...over,
+    hintLevel: 0, consecutiveCorrectAtZero: 0,
+    updatedAt: '2026-07-01T00:00:00.000Z', ...over,
   };
 }
 
@@ -81,6 +82,10 @@ describe('sm2Update — 日付はJST基準', () => {
     const r = sm2Update(createCardState('q9'), 5, NOW); // 新規: interval=1
     expect(r.lastReview).toBe('2026-07-11');
     expect(r.nextReview).toBe('2026-07-12');
+  });
+  it('updatedAtを回答時刻(ISO)で更新する（LWW判定用）', () => {
+    const r = sm2Update(card({ updatedAt: '2026-07-01T00:00:00.000Z' }), 5, NOW);
+    expect(r.updatedAt).toBe(NOW.toISOString());
   });
 });
 
