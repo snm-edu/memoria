@@ -63,9 +63,11 @@ export function QuizScreen() {
   // graded モードまたはカテゴリ指定ではフィルター画面をスキップ
   const isGraded = state.quizMode === 'graded';
   const hasCategory = !!state.quizCategory;
-  const [showFilter, setShowFilter] = useState(!isGraded && !hasCategory);
+  // Teamsリンク経由「今日のセッション」ではフィルタ画面を出さず自動開始する
+  const [showFilter, setShowFilter] = useState(!isGraded && !hasCategory && !state.quizAutoStart);
   const gradedStarted = useRef(false);
   const categoryStarted = useRef(false);
+  const todayStarted = useRef(false);
 
   // レベル5穴埋め用の入力状態
   const [fillInAnswer, setFillInAnswer] = useState('');
@@ -166,6 +168,19 @@ export function QuizScreen() {
       void quiz.startSession(20, { gradeLimit: state.profile.grade });
     }
   }, [isGraded, state.profile, quiz.startSession]);
+
+  // Teamsリンク経由「今日のセッション」: 時間帯scope（昼=弱点補強）で自動開始
+  useEffect(() => {
+    if (state.quizAutoStart && !todayStarted.current && state.profile) {
+      todayStarted.current = true;
+      const filters: QuizFilters = {};
+      if (state.quizScope && state.quizScope !== 'all') {
+        filters.scope = state.quizScope;
+      }
+      void quiz.startSession(20, filters);
+      dispatch({ type: 'QUIZ_AUTOSTART_CONSUMED' });
+    }
+  }, [state.quizAutoStart, state.quizScope, state.profile, quiz.startSession, dispatch]);
 
   // カテゴリ指定モード: 苦手分野から直接開始
   useEffect(() => {

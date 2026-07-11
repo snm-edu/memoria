@@ -9,6 +9,7 @@ import {
   confirmUnderstanding,
 } from '../services/memoriaStep';
 import { localDateString } from '../services/date';
+import { rankReviewCards, isWeakCard, NEW_PER_SESSION } from '../services/sessionSelect';
 import { updateGamification } from '../services/gamification';
 import { useApp } from '../context/AppContext';
 import { getCategoriesForGrade, getMaxDifficultyForGrade } from '../services/gradeFilter';
@@ -209,16 +210,20 @@ export function useQuiz() {
     let questions: Question[] = [];
 
     if (reviewCards.length > 0) {
-      // 復習問��をキャッシュから取得
-      const reviewIds = reviewCards.map((c) => c.questionId);
+      // 優先度スコア降順で復習カードを並べ、苦戦カード（期限超過・高hintLevel・低EF）を先に出す
+      const reviewIds = rankReviewCards(reviewCards, today).map((c) => c.questionId);
       const reviewQuestions = await db.questionCache
         .where('question_id')
         .anyOf(reviewIds)
         .toArray();
-      questions = shuffleArray(reviewQuestions.filter(matchesFilter)).slice(0, limit);
+      const qById = new Map(reviewQuestions.map((q) => [q.question_id, q] as const));
+      questions = reviewIds
+        .map((id) => qById.get(id))
+        .filter((q): q is Question => !!q && matchesFilter(q))
+        .slice(0, limit);
     }
 
-    // 復習問題が足りない場合、新��問題を追加
+    // 復習問題が足りない場合、新規問題を追加（1セッションの新規はNEW_PER_SESSIONで上限＝復習負荷の雪だるま防止）
     if (questions.length < limit) {
       const studiedIds = new Set(
         (await db.cardStates.toArray()).map((c) => c.questionId)
@@ -228,42 +233,44 @@ export function useQuiz() {
         .filter((q) => q.correct_answer.length > 0) // 正解のある問題のみ
         .filter(matchesFilter);
 
-      const needed = limit - questions.length;
+      const needed = Math.min(limit - questions.length, NEW_PER_SESSION);
       questions = [
         ...questions,
         ...shuffleArray(newQuestions).slice(0, needed),
       ];
     }
 
-    // scope 別 post-filter (ツリーマップ起点の演習用)
-    // scope で 0問になった場合は scope='all' にフォールバック
-    // (まだ解いていない/苦手判定対象がない範囲でも、subtopic/subcategory で出題できるように)
+    // scope 別選抜 (ツリーマップ起点/時間帯セッション用)
+    // weak/unstudied は「確定20問への後段フィルタ」ではなく card_states/questionCache の
+    // プールから直接構築する（苦手が数問に痩せる・期限カードで枠が埋まる問題を回避）。
+    // 弱点判定は card_states ベース（isWeakCard）なので Supabase 復元だけで端末を跨いで成立する。
+    // 0問時は scope='all'（既定選抜）へフォールバック。
     if (filters?.scope === 'unstudied') {
-      const cardIds = new Set(
+      const studiedIds = new Set(
         (await db.cardStates.toArray()).map((c) => c.questionId)
       );
-      const filtered = questions.filter((q) => !cardIds.has(q.question_id));
-      if (filtered.length > 0) {
-        questions = filtered;
+      const pool = (await db.questionCache.toArray())
+        .filter((q) => !studiedIds.has(q.question_id))
+        .filter((q) => q.correct_answer.length > 0)
+        .filter(matchesFilter);
+      if (pool.length > 0) {
+        questions = shuffleArray(pool).slice(0, limit);
       } else {
         console.log('[Quiz] scope=unstudied で対象なし → scope=all にフォールバック');
       }
     } else if (filters?.scope === 'weak') {
-      const allLogs = await db.answerLog.toArray();
-      const accByQ = new Map<string, { correct: number; total: number }>();
-      for (const log of allLogs) {
-        const a = accByQ.get(log.questionId) || { correct: 0, total: 0 };
-        a.total++;
-        if (log.isCorrect) a.correct++;
-        accByQ.set(log.questionId, a);
-      }
-      const filtered = questions.filter((q) => {
-        const a = accByQ.get(q.question_id);
-        if (!a || a.total === 0) return false;
-        return a.correct / a.total < 0.6;
-      });
-      if (filtered.length > 0) {
-        questions = filtered;
+      const weakCards = rankReviewCards(
+        (await db.cardStates.toArray()).filter(isWeakCard),
+        today
+      );
+      const qById = new Map(
+        (await db.questionCache.toArray()).map((q) => [q.question_id, q] as const)
+      );
+      const pool = weakCards
+        .map((c) => qById.get(c.questionId))
+        .filter((q): q is Question => !!q && matchesFilter(q));
+      if (pool.length > 0) {
+        questions = pool.slice(0, limit);
       } else {
         console.log('[Quiz] scope=weak で対象なし → scope=all にフォールバック');
       }

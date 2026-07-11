@@ -115,12 +115,10 @@ export function TodayGate({ token, onDone }: Props) {
         await hydrateCardStates(token);
         if (cancelled) return;
 
-        // 時間帯セッションでクイズ開始
+        // 時間帯セッションでクイズを自動開始（フィルタ画面を挟まず scope を消費する）
         dispatch({
-          type: 'START_CATEGORY_QUIZ',
-          category: '',
+          type: 'START_TODAY_SESSION',
           scope: sessionScopeForHour(new Date().getHours()),
-          origin: 'home',
         });
         onDone();
       } catch (err) {
