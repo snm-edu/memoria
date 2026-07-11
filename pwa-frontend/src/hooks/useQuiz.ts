@@ -1,18 +1,18 @@
 import { useState, useCallback, useRef } from 'react';
 import { db } from '../services/db';
-import { sm2Update, calculateQuality, createCardState } from '../services/sm2';
+import { createCardState } from '../services/sm2';
 import { analyzeError as apiAnalyzeError } from '../services/api';
 import {
-  updateHintLevel,
   getVisibleChoices,
   createFillInBlank,
-  getEaseFactorPenalty,
-  shouldExtendInterval,
+  applyAnswer,
+  confirmUnderstanding,
 } from '../services/memoriaStep';
+import { localDateString } from '../services/date';
 import { updateGamification } from '../services/gamification';
 import { useApp } from '../context/AppContext';
 import { getCategoriesForGrade, getMaxDifficultyForGrade } from '../services/gradeFilter';
-import type { Question, ErrorAnalysis, CardState } from '../types';
+import type { Question, ErrorAnalysis } from '../types';
 
 export type QuizScope = 'all' | 'weak' | 'unstudied';
 
@@ -199,8 +199,8 @@ export function useQuiz() {
       return true;
     };
 
-    // 復習予定の問題を優先取得
-    const today = new Date().toISOString().split('T')[0]!;
+    // 復習予定の問題を優先取得（期限判定はJST日付基準）
+    const today = localDateString();
     const reviewCards = await db.cardStates
       .where('nextReview')
       .belowOrEqual(today)
@@ -337,24 +337,10 @@ export function useQuiz() {
     );
 
     try {
-      // SM-2更新
-      const quality = calculateQuality(isCorrect, responseTimeMs);
+      // SM-2 × メモリアステップの合成（applyAnswer に集約・純関数でテスト済み）
       const existingCard = await db.cardStates.get(current.question_id);
       const card = existingCard || createCardState(current.question_id);
-      const sm2Card = sm2Update(card, quality);
-
-      // メモリアステップ処理（SM-2カードにヒントレベルをマージ）
-      const hintUpdate = updateHintLevel(sm2Card, isCorrect);
-      const memoriaCard: CardState = { ...sm2Card, ...hintUpdate };
-      const penalty = getEaseFactorPenalty(memoriaCard.hintLevel);
-      memoriaCard.easeFactor = Math.max(1.3, memoriaCard.easeFactor - penalty);
-
-      if (shouldExtendInterval(memoriaCard)) {
-        memoriaCard.interval = Math.round(memoriaCard.interval * 1.5);
-        const extendedDate = new Date();
-        extendedDate.setDate(extendedDate.getDate() + memoriaCard.interval);
-        memoriaCard.nextReview = extendedDate.toISOString().split('T')[0]!;
-      }
+      const memoriaCard = applyAnswer(card, isCorrect, responseTimeMs);
 
       // DBに保存
       await db.cardStates.put(memoriaCard);
@@ -531,21 +517,8 @@ export function useQuiz() {
     try {
       const existingCard = await db.cardStates.get(current.question_id);
       const card = existingCard || createCardState(current.question_id);
-
-      if (understood) {
-        // 理解できた: quality=3相当でSM-2更新、hintLevelを3に引き下げ
-        const updatedCard = sm2Update(card, 3);
-        updatedCard.hintLevel = 3;
-        updatedCard.consecutiveCorrectAtZero = 0;
-        await db.cardStates.put(updatedCard);
-      } else {
-        // まだ不安: hintLevel=6のまま、翌日に再出題
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        card.nextReview = tomorrow.toISOString().split('T')[0]!;
-        card.lastReview = new Date().toISOString().split('T')[0]!;
-        await db.cardStates.put(card);
-      }
+      // 「理解できた」は満額進行させず短期再出題に固定（confirmUnderstanding）
+      await db.cardStates.put(confirmUnderstanding(card, understood));
     } catch (err) {
       console.error('確認モードDB保存エラー:', err);
     }

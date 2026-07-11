@@ -1,4 +1,12 @@
 import type { CardState } from '../types';
+import {
+  sm2Update,
+  calculateQuality,
+  adjustQualityForHint,
+  clampEF,
+  MAX_INTERVAL_DAYS,
+} from './sm2';
+import { localDateString, addDays } from './date';
 
 /**
  * メモリアステップ — アダプティブ出題アルゴリズム
@@ -230,8 +238,75 @@ export function getEaseFactorPenalty(hintLevel: number): number {
 // ---- インターバル延長判定 ----
 
 /**
- * ヒントなしで3回以上連続正答している場合、インターバルを延長すべきか判定
+ * ヒントなし連続正答が「ちょうど3回目」に到達した回のみ延長する。
+ *
+ * 従来は `>= 3` だったため4回目以降も毎回発動し、interval×1.5が複利で乗って
+ * interval が指数爆発していた（Date表現上限超過で沈黙クラッシュに至る）。
+ * `=== 3` にすることで1ストリークにつき延長ボーナスは1回だけになる。
  */
 export function shouldExtendInterval(card: CardState): boolean {
-  return card.hintLevel === 0 && card.consecutiveCorrectAtZero >= 3;
+  return card.hintLevel === 0 && card.consecutiveCorrectAtZero === 3;
+}
+
+// ---- 回答確定時の合成（SM-2 × メモリアステップ） ----
+
+/**
+ * 1回の回答から、SM-2更新・ヒントレベル遷移・EFペナルティ・延長判定までを合成した
+ * 次のカード状態を返す純関数。従来 useQuiz.confirmAnswer 内に埋もれていたロジックを
+ * テスト可能な形に切り出したもの。
+ *
+ * ペナルティは「出題時（=更新前）のヒントレベル」で算出し、負値を加算して EF を下げる
+ * （従来は更新後レベルを参照し、かつ負値を減算していたため符号が反転し、ヒントに頼った
+ * 苦戦カードほど EF が上がる逆適応になっていた）。
+ */
+export function applyAnswer(
+  card: CardState,
+  isCorrect: boolean,
+  responseTimeMs: number,
+  now: Date = new Date()
+): CardState {
+  const quality = adjustQualityForHint(
+    calculateQuality(isCorrect, responseTimeMs),
+    card.hintLevel
+  );
+  const sm2Card = sm2Update(card, quality, now);
+  const hintUpdate = updateHintLevel(sm2Card, isCorrect);
+  const next: CardState = { ...sm2Card, ...hintUpdate };
+
+  // 出題時のヒントレベルに応じた減点（getEaseFactorPenalty は負値を返す）
+  const penalty = getEaseFactorPenalty(card.hintLevel);
+  next.easeFactor = clampEF(next.easeFactor + penalty);
+
+  // ヒントなし連続正答3回到達時のみインターバルを1.5倍延長（上限キャップつき）
+  if (shouldExtendInterval(next)) {
+    next.interval = Math.min(Math.round(next.interval * 1.5), MAX_INTERVAL_DAYS);
+    next.nextReview = localDateString(addDays(now, next.interval));
+  }
+
+  return next;
+}
+
+/**
+ * レベル6（確認モード）で解答を見た後の自己申告を反映する。
+ *
+ * 「理解できた」を自力正答（sm2Update quality=3）として扱うと repetitions++ で
+ * interval が満額進行してしまうため、専用に短期再出題へ固定する。
+ *   understood=true  : 2日後に再出題・repetitions据え置き・hintLevel3へ
+ *   understood=false : 翌日に再出題・hintLevel6維持
+ * いずれも EaseFactor は変更しない。
+ */
+export function confirmUnderstanding(
+  card: CardState,
+  understood: boolean,
+  now: Date = new Date()
+): CardState {
+  const interval = understood ? 2 : 1;
+  return {
+    ...card,
+    interval,
+    hintLevel: understood ? 3 : 6,
+    consecutiveCorrectAtZero: understood ? 0 : card.consecutiveCorrectAtZero,
+    nextReview: localDateString(addDays(now, interval)),
+    lastReview: localDateString(now),
+  };
 }
