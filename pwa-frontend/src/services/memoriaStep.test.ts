@@ -3,8 +3,10 @@ import {
   shouldExtendInterval,
   applyAnswer,
   confirmUnderstanding,
+  createFillInBlank,
+  computePresentation,
 } from './memoriaStep';
-import type { CardState } from '../types';
+import type { CardState, Question } from '../types';
 
 const NOW = new Date('2026-07-11T00:00:00Z'); // JST 2026-07-11 09:00
 
@@ -60,6 +62,81 @@ describe('applyAnswer — ヒントなし連続正答での延長は1回だけ',
     const r = applyAnswer(card({ easeFactor: 2.5, hintLevel: 0, repetitions: 5, interval: 30, consecutiveCorrectAtZero: 4 }), true, 5000, NOW);
     expect(r.consecutiveCorrectAtZero).toBe(5);
     expect(r.interval).toBe(75);           // round(30*2.5)=75、延長なし
+  });
+});
+
+function question(over: Partial<Question> = {}): Question {
+  return {
+    question_id: 'NRS-2023-001', department: 'nursing', exam_year: 2023, exam_number: 1,
+    category: '基礎看護学', subcategory: '', subtopic: '', difficulty: 3,
+    question_text: '高血圧の治療で正しいのはどれか。',
+    choices: ['利尿薬を用いる', '安静のみとする', '水分を制限しない', '塩分を多く摂る'],
+    correct_answer: ['A'],
+    explanation: '高血圧の治療では利尿薬を用いることがある。',
+    has_image: false, image_url: '', is_multi_select: false,
+    source: 'notebooklm', created_at: '2026-01-01T00:00:00Z', ...over,
+  };
+}
+
+describe('createFillInBlank — 答えの露出防止', () => {
+  it('正答テキストの全出現を穴埋めする（従来は最初の1箇所のみ）', () => {
+    const r = createFillInBlank('利尿薬を用いる治療が基本。利尿薬を用いるのは体液量を減らすため。', ['利尿薬を用いる']);
+    expect(r.text).toBe('[ __ ]治療が基本。[ __ ]のは体液量を減らすため。');
+    expect(r.answer).toBe('利尿薬を用いる');
+    expect(r.hasBlank).toBe(true);
+  });
+
+  it('複数正答はすべて穴埋めし、answerは最初に見つかったテキスト', () => {
+    const r = createFillInBlank('聴診と触診の両方を行う。', ['聴診', '触診']);
+    expect(r.text).toBe('[ __ ]と[ __ ]の両方を行う。');
+    expect(r.answer).toBe('聴診');
+    expect(r.hasBlank).toBe(true);
+  });
+
+  it('解説に正答テキストが含まれない場合は hasBlank=false', () => {
+    const r = createFillInBlank('この疾患では早期発見が重要である。', ['配偶者暴力相談支援センターに通報する']);
+    expect(r.hasBlank).toBe(false);
+    expect(r.text).toBe('この疾患では早期発見が重要である。');
+  });
+
+  it('「正解はB」等の正答ラベル明示を伏せ字化する', () => {
+    const r = createFillInBlank('正解はBである。安静が必要。答え：C も誤り。', ['安静']);
+    expect(r.text).not.toMatch(/正解は\s*B/);
+    expect(r.text).not.toMatch(/答え：\s*C/);
+    expect(r.text).toContain('[ __ ]');
+  });
+
+  it('「Cが適切」形式も伏せ字化する', () => {
+    const r = createFillInBlank('Cが適切である。聴診を行う。', ['聴診']);
+    expect(r.text).not.toMatch(/C\s*が適切/);
+  });
+});
+
+describe('computePresentation — レベル5で穴が作れない問題は確認モードへフォールバック', () => {
+  it('穴が作れる問題はレベル5の穴埋めを出す', () => {
+    const p = computePresentation(question(), 5);
+    expect(p.hintLevel).toBe(5);
+    expect(p.fillInBlank?.hasBlank).toBe(true);
+    expect(p.confirmationMode).toBe(false);
+  });
+
+  it('解説に正答テキストがない問題はレベル6（確認モード）にする', () => {
+    const p = computePresentation(question({ explanation: '早期発見が重要である。' }), 5);
+    expect(p.hintLevel).toBe(6);
+    expect(p.fillInBlank).toBeNull();
+    expect(p.confirmationMode).toBe(true);
+  });
+
+  it('複数選択問題はレベル2/4で選択肢削減せずレベル1へフォールバック（既存挙動）', () => {
+    const p = computePresentation(question({ is_multi_select: true }), 4);
+    expect(p.hintLevel).toBe(1);
+    expect(p.visibleChoices).toHaveLength(4);
+  });
+
+  it('レベル4は2択になる', () => {
+    const p = computePresentation(question(), 4);
+    expect(p.hintLevel).toBe(4);
+    expect(p.visibleChoices).toHaveLength(2);
   });
 });
 

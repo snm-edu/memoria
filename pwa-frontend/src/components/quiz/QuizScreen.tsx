@@ -692,18 +692,20 @@ export function QuizScreen() {
                 </div>
               )}
 
-              {/* AI分析結果 */}
+              {/* AI分析結果（類題挑戦つき） */}
               {quiz.aiAnalysis && (
                 <AnalysisCard
                   analysis={quiz.aiAnalysis}
                   onClose={() => {}}
+                  onChallenge={() => void quiz.challengeSimilar()}
+                  challengeStatus={quiz.similarStatus}
                 />
               )}
 
-              {/* 連続誤答の警告 */}
-              {!quiz.isCorrect && quiz.consecutiveErrors >= 2 && quiz.consecutiveErrors < 3 && (
+              {/* AI分析の予告（実際の発動条件 = メモリアステップ3以上での誤答 に合わせる） */}
+              {!quiz.isCorrect && quiz.hintLevel === 2 && (
                 <p className="text-xs text-amber-600 text-center">
-                  {'\u26A0\uFE0F'} この問題を{quiz.consecutiveErrors}回連続で間違えています。次に間違えるとAIが分析します。
+                  {'\u26A0\uFE0F'} この問題でつまずいています。次に間違えるとAIが原因を分析します。
                 </p>
               )}
 

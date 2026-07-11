@@ -1,12 +1,18 @@
 import { useState, useCallback, useRef } from 'react';
 import { db } from '../services/db';
 import { createCardState } from '../services/sm2';
-import { analyzeError as apiAnalyzeError } from '../services/api';
 import {
-  getVisibleChoices,
-  createFillInBlank,
+  analyzeError as apiAnalyzeError,
+  generateSimilar as apiGenerateSimilar,
+} from '../services/api';
+import {
+  normalizeGeneratedResponse,
+  generatedToQuestion,
+} from '../services/similarQuestion';
+import {
   applyAnswer,
   confirmUnderstanding,
+  computePresentation,
 } from '../services/memoriaStep';
 import { localDateString } from '../services/date';
 import { rankReviewCards, isWeakCard, NEW_PER_SESSION } from '../services/sessionSelect';
@@ -44,79 +50,17 @@ interface QuizState {
   hintLevel: number;
   visibleChoices: string[];
   visibleLabels: string[];
-  fillInBlank: { text: string; answer: string } | null;
+  fillInBlank: { text: string; answer: string; hasBlank: boolean } | null;
   confirmationMode: boolean; // レベル6
+  // AI類題: 生成して次の問題として挿入するフローの状態
+  similarStatus: 'idle' | 'loading' | 'added' | 'error';
 }
-
-/** CHOICE_LABELSの定数（選択肢ラベル全体） */
-const ALL_CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E'];
 
 /**
- * 問題に対するメモリアステップの状態を計算するヘルパー
- * CardStateのhintLevelと問題データから、表示用の選択肢・ラベル・穴埋め等を算出
+ * 問題に対するメモリアステップの表示状態（純関数 computePresentation に委譲。
+ * レベル5で穴が作れない問題は確認モードへ自動フォールバックする）
  */
-function computeMemoriaState(
-  question: Question,
-  hintLevel: number
-): Pick<QuizState, 'hintLevel' | 'visibleChoices' | 'visibleLabels' | 'fillInBlank' | 'confirmationMode'> {
-  // 複数選択問題ではレベル2,4の選択肢削減をスキップ → レベル1(カテゴリヒント)にフォールバック
-  const effectiveLevel =
-    question.is_multi_select && (hintLevel === 2 || hintLevel === 4)
-      ? 1
-      : hintLevel;
-
-  // レベル5: 穴埋め変換
-  if (effectiveLevel === 5) {
-    const correctChoiceTexts = question.correct_answer.map((label) => {
-      const idx = ALL_CHOICE_LABELS.indexOf(label.toUpperCase());
-      return idx >= 0 ? question.choices[idx] ?? '' : '';
-    });
-    const blank = createFillInBlank(question.explanation, correctChoiceTexts);
-    return {
-      hintLevel: effectiveLevel,
-      visibleChoices: question.choices,
-      visibleLabels: ALL_CHOICE_LABELS.slice(0, question.choices.length),
-      fillInBlank: blank,
-      confirmationMode: false,
-    };
-  }
-
-  // レベル6: 確認モード
-  if (effectiveLevel === 6) {
-    return {
-      hintLevel: effectiveLevel,
-      visibleChoices: question.choices,
-      visibleLabels: ALL_CHOICE_LABELS.slice(0, question.choices.length),
-      fillInBlank: null,
-      confirmationMode: true,
-    };
-  }
-
-  // レベル2,4: 選択肢削減
-  if (effectiveLevel === 2 || effectiveLevel === 4) {
-    const result = getVisibleChoices(
-      question.choices,
-      question.correct_answer,
-      effectiveLevel
-    );
-    return {
-      hintLevel: effectiveLevel,
-      visibleChoices: result.choices,
-      visibleLabels: result.labels,
-      fillInBlank: null,
-      confirmationMode: false,
-    };
-  }
-
-  // レベル0,1,3: 全選択肢表示
-  return {
-    hintLevel: effectiveLevel,
-    visibleChoices: question.choices,
-    visibleLabels: ALL_CHOICE_LABELS.slice(0, question.choices.length),
-    fillInBlank: null,
-    confirmationMode: false,
-  };
-}
+const computeMemoriaState = computePresentation;
 
 export function useQuiz() {
   const { state: appState, triggerSync } = useApp();
@@ -138,6 +82,7 @@ export function useQuiz() {
     visibleLabels: [],
     fillInBlank: null,
     confirmationMode: false,
+    similarStatus: 'idle',
   });
 
   const startTimeRef = useRef<number>(Date.now());
@@ -304,6 +249,7 @@ export function useQuiz() {
       aiAnalysis: null,
       aiLoading: false,
       consecutiveErrors: 0,
+      similarStatus: 'idle',
       ...memoriaState,
     });
 
@@ -343,14 +289,19 @@ export function useQuiz() {
       current.correct_answer
     );
 
+    // GEN- はAI生成類題（一時問題）: SM-2カードは作らず回答ログのみ記録する
+    const isGenerated = current.question_id.startsWith('GEN-');
+    let answeredAtFillIn = false;
+
     try {
       // SM-2 × メモリアステップの合成（applyAnswer に集約・純関数でテスト済み）
-      const existingCard = await db.cardStates.get(current.question_id);
+      const existingCard = isGenerated ? undefined : await db.cardStates.get(current.question_id);
       const card = existingCard || createCardState(current.question_id);
-      const memoriaCard = applyAnswer(card, isCorrect, responseTimeMs);
-
-      // DBに保存
-      await db.cardStates.put(memoriaCard);
+      answeredAtFillIn = card.hintLevel === 5;
+      if (!isGenerated) {
+        const memoriaCard = applyAnswer(card, isCorrect, responseTimeMs);
+        await db.cardStates.put(memoriaCard);
+      }
 
       // 回答ログ記録
       await db.answerLog.add({
@@ -414,10 +365,12 @@ export function useQuiz() {
       }
     }
 
-    // AI分析の発動条件: hintLevel >= 3 に変更（メモリアステップ対応）
+    // AI分析の発動条件: hintLevel >= 3 の誤答時（メモリアステップ対応）。
+    // 穴埋め（レベル5）の誤答は selectedAnswer が実選択肢でなく分析品質が出ないためスキップ。
     const currentCard = await db.cardStates.get(current.question_id);
     const currentHintLevel = currentCard?.hintLevel ?? 0;
-    const shouldAnalyze = !isCorrect && currentHintLevel >= 3;
+    const shouldAnalyze =
+      !isCorrect && !answeredAtFillIn && !isGenerated && currentHintLevel >= 3;
 
     setState((s) => ({
       ...s,
@@ -432,8 +385,31 @@ export function useQuiz() {
       },
     }));
 
-    // AI分析を非同期で実行
+    // AI分析を非同期で実行（同一問題×同一誤答は aiCache から再利用しAPI呼び出しを節約）
     if (shouldAnalyze) {
+      const answerKey = [...finalAnswers].sort().join(',');
+      try {
+        const cached = await db.aiCache
+          .where('[questionId+selectedAnswer]')
+          .equals([current.question_id, answerKey])
+          .first();
+        if (cached) {
+          setState((s) => ({
+            ...s,
+            aiAnalysis: {
+              error_type: cached.errorType as ErrorAnalysis['error_type'],
+              cheer: '',
+              analysis: cached.analysis,
+              key_concept: cached.keyConcept,
+              study_hint: cached.studyHint,
+            },
+            aiLoading: false,
+          }));
+          return;
+        }
+      } catch (cacheErr) {
+        console.warn('[confirmAnswer] aiCache read error:', cacheErr);
+      }
       try {
         const res = await apiAnalyzeError({
           questionId: current.question_id,
@@ -445,11 +421,25 @@ export function useQuiz() {
           studyHour: new Date().getHours(),
         });
         if (res.success && res.data) {
+          const data = res.data as ErrorAnalysis;
           setState((s) => ({
             ...s,
-            aiAnalysis: res.data as ErrorAnalysis,
+            aiAnalysis: data,
             aiLoading: false,
           }));
+          try {
+            await db.aiCache.add({
+              questionId: current.question_id,
+              selectedAnswer: answerKey,
+              errorType: data.error_type,
+              analysis: data.analysis,
+              keyConcept: data.key_concept,
+              studyHint: data.study_hint,
+              createdAt: new Date().toISOString(),
+            });
+          } catch (cacheErr) {
+            console.warn('[confirmAnswer] aiCache write error:', cacheErr);
+          }
         } else {
           setState((s) => ({ ...s, aiLoading: false }));
         }
@@ -510,10 +500,52 @@ export function useQuiz() {
       aiAnalysis: null,
       aiLoading: false,
       consecutiveErrors: 0,
+      similarStatus: 'idle',
       ...memoriaState,
     }));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [triggerSync]);
+
+  /**
+   * AI分析結果から類題を生成し、セッションの次の問題として挿入する。
+   * 生成済み3題到達時はGAS側キャッシュからランダムに1問使う（API消費なし）。
+   * GEN- 問題はSM-2カードを作らないため、間隔反復のスケジュールは汚さない。
+   */
+  const challengeSimilar = useCallback(async () => {
+    const s = stateRef.current;
+    const current = s.questions[s.currentIndex];
+    if (!current || !s.aiAnalysis || s.similarStatus === 'loading') return;
+    if (current.question_id.startsWith('GEN-')) return; // 類題からの再生成はしない
+
+    setState((st) => ({ ...st, similarStatus: 'loading' }));
+    try {
+      const res = await apiGenerateSimilar({
+        questionId: current.question_id,
+        errorType: s.aiAnalysis.error_type,
+        originalQuestion: current.question_text,
+        analysis: s.aiAnalysis.analysis,
+        department: appState.profile?.department,
+      });
+      const gen = res.success ? normalizeGeneratedResponse(res.data) : null;
+      if (!gen) {
+        setState((st) => ({ ...st, similarStatus: 'error' }));
+        return;
+      }
+      const genQuestion = generatedToQuestion(gen, current);
+      setState((st) => {
+        if (st.questions.some((q) => q.question_id === genQuestion.question_id)) {
+          return { ...st, similarStatus: 'added' }; // 同一類題の重複挿入は防ぐ
+        }
+        const questions = [...st.questions];
+        questions.splice(st.currentIndex + 1, 0, genQuestion);
+        return { ...st, questions, similarStatus: 'added' };
+      });
+    } catch (err) {
+      console.error('[challengeSimilar] 類題生成エラー:', err);
+      setState((st) => ({ ...st, similarStatus: 'error' }));
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // レベル6の確認モード用ハンドラ
   const handleConfirmation = useCallback(async (understood: boolean) => {
@@ -545,6 +577,7 @@ export function useQuiz() {
     confirmAnswer,
     nextQuestion,
     handleConfirmation,
+    challengeSimilar,
   };
 }
 

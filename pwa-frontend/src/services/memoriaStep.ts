@@ -1,4 +1,4 @@
-import type { CardState } from '../types';
+import type { CardState, Question } from '../types';
 import {
   sm2Update,
   calculateQuality,
@@ -190,10 +190,27 @@ export interface FillInBlank {
   text: string;
   /** 穴に入る正答テキスト */
   answer: string;
+  /** 穴を1つ以上作れたか。false の場合はレベル5を成立させず確認モードへフォールバックする */
+  hasBlank: boolean;
 }
 
 /**
- * 解説文から正答選択肢テキストを[ __ ]に置換して穴埋め問題を作成する
+ * 「正解はB」「答え：C」「Cが適切」等、正答ラベルを明示する表現を伏せ字化する。
+ * 穴埋め表示で解説文がそのまま見えるため、ラベル漏れを機械的に塞ぐ。
+ */
+function maskAnswerLabels(text: string): string {
+  return text
+    .replace(/(正解|正答|答え)(\s*(?:は|:|：)\s*)([A-Ea-eＡ-Ｅａ-ｅ])/g, '$1$2◯')
+    .replace(/([A-EＡ-Ｅ])(\s*が\s*)(正解|正答|適切)/g, '◯$2$3');
+}
+
+/**
+ * 解説文から正答選択肢テキストを[ __ ]に置換して穴埋め問題を作成する。
+ *
+ * - 各正答テキストの「全出現」を穴埋めする（1箇所だけだと2回目以降で答えが見える）
+ * - 複数正答はすべて穴埋めし、回答は最初に見つかったテキストのみ要求する
+ * - 正答ラベルの明示表現（「正解はB」等）は伏せ字化する
+ * - どの正答も解説に含まれない場合は hasBlank=false（呼び出し側でレベル5をスキップ）
  *
  * @param explanation 解説文
  * @param correctChoiceTexts 正答の選択肢テキスト配列
@@ -203,23 +220,111 @@ export function createFillInBlank(
   correctChoiceTexts: string[]
 ): FillInBlank {
   let text = explanation;
-  // 最初に見つかった正答テキストを置換対象にする
   let replacedAnswer = '';
 
   for (const choiceText of correctChoiceTexts) {
     if (choiceText && text.includes(choiceText)) {
-      text = text.replace(choiceText, '[ __ ]');
-      replacedAnswer = choiceText;
-      break;
+      text = text.split(choiceText).join('[ __ ]');
+      if (!replacedAnswer) replacedAnswer = choiceText;
     }
   }
 
+  const hasBlank = replacedAnswer !== '';
+
   // どの正答テキストも解説文に見つからなかった場合はそのまま返す
-  if (!replacedAnswer && correctChoiceTexts.length > 0) {
+  if (!hasBlank && correctChoiceTexts.length > 0) {
     replacedAnswer = correctChoiceTexts[0]!;
   }
 
-  return { text, answer: replacedAnswer };
+  return { text: maskAnswerLabels(text), answer: replacedAnswer, hasBlank };
+}
+
+// ---- 出題時の表示状態（プレゼンテーション） ----
+
+/** 選択肢ラベル（A〜E） */
+const ALL_CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E'];
+
+export interface MemoriaPresentation {
+  hintLevel: number;
+  visibleChoices: string[];
+  visibleLabels: string[];
+  fillInBlank: FillInBlank | null;
+  confirmationMode: boolean;
+}
+
+/**
+ * ヒントレベルと問題データから、表示用の選択肢・穴埋め・確認モードを算出する純関数。
+ *
+ * - 複数選択問題はレベル2/4の選択肢削減をスキップしレベル1へフォールバック
+ * - レベル5は穴埋めを作れた場合のみ成立。穴が作れない問題（解説に正答テキスト非含有）は
+ *   全文タイプ一致を強いる無理ゲーになるため、レベル6（確認モード）へフォールバックする
+ */
+export function computePresentation(
+  question: Question,
+  hintLevel: number
+): MemoriaPresentation {
+  // 複数選択問題ではレベル2,4の選択肢削減をスキップ → レベル1(カテゴリヒント)にフォールバック
+  let effectiveLevel =
+    question.is_multi_select && (hintLevel === 2 || hintLevel === 4)
+      ? 1
+      : hintLevel;
+
+  const allLabels = ALL_CHOICE_LABELS.slice(0, question.choices.length);
+
+  // レベル5: 穴埋め変換（穴が作れなければレベル6へ）
+  if (effectiveLevel === 5) {
+    const correctChoiceTexts = question.correct_answer.map((label) => {
+      const idx = ALL_CHOICE_LABELS.indexOf(label.toUpperCase());
+      return idx >= 0 ? question.choices[idx] ?? '' : '';
+    });
+    const blank = createFillInBlank(question.explanation, correctChoiceTexts);
+    if (blank.hasBlank) {
+      return {
+        hintLevel: 5,
+        visibleChoices: question.choices,
+        visibleLabels: allLabels,
+        fillInBlank: blank,
+        confirmationMode: false,
+      };
+    }
+    effectiveLevel = 6;
+  }
+
+  // レベル6: 確認モード
+  if (effectiveLevel === 6) {
+    return {
+      hintLevel: 6,
+      visibleChoices: question.choices,
+      visibleLabels: allLabels,
+      fillInBlank: null,
+      confirmationMode: true,
+    };
+  }
+
+  // レベル2,4: 選択肢削減
+  if (effectiveLevel === 2 || effectiveLevel === 4) {
+    const result = getVisibleChoices(
+      question.choices,
+      question.correct_answer,
+      effectiveLevel
+    );
+    return {
+      hintLevel: effectiveLevel,
+      visibleChoices: result.choices,
+      visibleLabels: result.labels,
+      fillInBlank: null,
+      confirmationMode: false,
+    };
+  }
+
+  // レベル0,1,3: 全選択肢表示
+  return {
+    hintLevel: effectiveLevel,
+    visibleChoices: question.choices,
+    visibleLabels: allLabels,
+    fillInBlank: null,
+    confirmationMode: false,
+  };
 }
 
 // ---- SM-2 EaseFactor ペナルティ ----
