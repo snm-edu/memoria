@@ -79,6 +79,24 @@ function validateQuestion(q) {
     return { error: null, warn: `choices が4未満 (${Array.isArray(q.choices) ? q.choices.length : 'not array'})（計算問題の可能性）` };
   }
 
+  // correct_answer のラベルが choices の範囲内か（範囲外だと構造的に正解不能）
+  const labels = ['A', 'B', 'C', 'D', 'E'].slice(0, q.choices.length);
+  const outOfRange = q.correct_answer.filter(
+    (a) => !labels.includes(String(a).toUpperCase())
+  );
+  if (outOfRange.length > 0) {
+    return { error: `correct_answer に範囲外ラベル (${outOfRange.join(',')})`, warn: null };
+  }
+
+  // is_multi_select と正答数の整合（不整合だと単一選択UIで正解不能 or 「すべて選べ」表示が誤り）
+  // 既知の不整合が残存するため warn 扱い。新規データではゼロを維持すること。
+  if (q.is_multi_select === false && q.correct_answer.length > 1) {
+    return { error: null, warn: `正答${q.correct_answer.length}個なのに is_multi_select=false（単一選択UIでは正解不能）` };
+  }
+  if (q.is_multi_select === true && q.correct_answer.length === 1) {
+    return { error: null, warn: '正答1個なのに is_multi_select=true（「すべて選べ」表示が誤り）' };
+  }
+
   return { error: null, warn: null }; // OK
 }
 
