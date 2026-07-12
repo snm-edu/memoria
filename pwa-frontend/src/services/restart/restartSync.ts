@@ -49,6 +49,9 @@ export async function pushAllCardStates(): Promise<number> {
   const token = getToken();
   if (!token || !isSupabaseConfigured()) return 0;
   try {
+    // 古いローカルで新しいクラウドを上書きしないよう、先に pull+merge してから push する
+    // （?t= なしの直開きでも巻き戻りを防ぐ。LWWは updatedAt の実時刻比較で解決）
+    await hydrateCardStates(token);
     const local = await db.cardStates.toArray();
     return await pushCardStates(token, local);
   } catch (err) {

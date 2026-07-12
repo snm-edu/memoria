@@ -25,11 +25,12 @@ const VideoService = {
 
   /**
    * 学生向け動画推薦を取得する。
-   * studentNumber を優先し、端末変更時は studentId でフォールバックする。
+   * studentId(UUID) の一致を必須にする。学籍番号は連番で列挙できるため、
+   * 学籍番号単独の照合は他学生の弱点情報（推薦理由・誤答問題）の漏洩経路になる。
    */
   getVideoRecommendations({ studentId, studentNumber, limit }) {
-    if (!studentId && !studentNumber) {
-      return { error: 'studentId or studentNumber is required' };
+    if (!studentId) {
+      return { error: 'studentId is required' };
     }
 
     const recommendationSheet = getOrCreateSheet(CONFIG.SHEETS.VIDEO_RECOMMENDATIONS);
@@ -47,11 +48,13 @@ const VideoService = {
       .filter(row => {
         const rowStudentNumber = getCell_(row, idx, 'student_number');
         const rowStudentId = getCell_(row, idx, 'student_id');
-        const normalizedStudentNumber = String(studentNumber || '');
-        const matchesStudentNumber = studentNumber &&
-          (rowStudentNumber === normalizedStudentNumber || rowStudentId === normalizedStudentNumber);
-        const matchesStudentId = studentId && rowStudentId === String(studentId);
-        if (!matchesStudentNumber && !matchesStudentId) return false;
+        // studentId(UUID) 一致が必須。studentNumber が渡された場合は追加照合として
+        // 一致も要求する（片方でも食い違えば返さない）
+        if (rowStudentId !== String(studentId)) return false;
+        if (studentNumber && rowStudentNumber &&
+            rowStudentNumber !== String(studentNumber)) {
+          return false;
+        }
 
         const status = getCell_(row, idx, 'status') || 'approved';
         return allowedStatuses[status] === true;

@@ -25,15 +25,17 @@ const AnswerService = {
 
     const selectedAnswer = Array.isArray(answer) ? answer : [answer];
 
-    // isCorrectがPWAから送られていない場合は正解判定する
-    if (isCorrect === undefined || isCorrect === null) {
-      const question = findQuestionById(questionId);
-      if (question) {
-        const correctAnswer = question.correct_answer;
-        isCorrect = arraysEqual(selectedAnswer.sort(), correctAnswer.sort());
-      } else {
-        isCorrect = false;
-      }
+    // is_correct は常にサーバ側で問題バンクと突合して判定する（クライアント申告を信頼しない。
+    // 教員ダッシュボード・ランキング・弱点分析の元データ品質を守るため）。
+    // 問題バンクに無いID（AI類題 GEN-* 等）のみクライアント値を採用する。
+    const question = findQuestionById(questionId);
+    if (question && question.correct_answer && question.correct_answer.length > 0) {
+      isCorrect = arraysEqual(
+        selectedAnswer.slice().sort(),
+        question.correct_answer.slice().sort()
+      );
+    } else if (isCorrect === undefined || isCorrect === null) {
+      isCorrect = false;
     }
 
     // この問題の挑戦回数を取得
@@ -45,7 +47,13 @@ const AnswerService = {
       lock.waitLock(10000);
 
       const logId = Utilities.getUuid();
-      const ts = timestamp || new Date().toISOString();
+      // クライアント時計のズレ・過去日付申告によるstreak水増しを防ぐ:
+      // 不正な形式または±48時間超の乖離はサーバ受信時刻で上書きする
+      let ts = timestamp || new Date().toISOString();
+      const parsedTs = Date.parse(ts);
+      if (!isFinite(parsedTs) || Math.abs(Date.now() - parsedTs) > 48 * 3600 * 1000) {
+        ts = new Date().toISOString();
+      }
 
       // 既存シートの列順に依存しないよう、ヘッダー名で値をマッピング
       const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
@@ -97,8 +105,10 @@ const AnswerService = {
    * 学籍番号の変更（過去ログも一括更新）
    */
   updateStudentNumber({ oldStudentNumber, newStudentNumber, studentId }) {
-    if (!newStudentNumber) {
-      return { error: 'newStudentNumber is required' };
+    // studentId(UUID) を必須にする。学籍番号は連番で推測可能なため、
+    // 旧学籍番号だけで他人のログ帰属を書き換えられる経路は認めない。
+    if (!newStudentNumber || !studentId) {
+      return { error: 'studentId and newStudentNumber are required' };
     }
 
     const sheet = getOrCreateSheet(CONFIG.SHEETS.STUDENT_LOGS);
@@ -127,9 +137,9 @@ const AnswerService = {
 
       for (let i = 1; i < data.length; i++) {
         const row = data[i];
-        // studentId（端末ID）で照合、または旧学籍番号で照合
-        if (row[studentIdCol] === studentId ||
-            (oldStudentNumber && row[studentNumberCol] === oldStudentNumber)) {
+        // studentId（推測困難なUUID）の一致行のみ更新。
+        // oldStudentNumber 単独一致での書き換えは廃止（他人のログ付け替え防止）
+        if (row[studentIdCol] === studentId) {
           sheet.getRange(i + 1, studentNumberCol + 1).setValue(newStudentNumber);
           updatedRows++;
         }
@@ -253,22 +263,40 @@ const AnswerService = {
 // === ヘルパー関数 ===
 
 /**
- * 問題IDから問題を検索
+ * 問題バンクの実行内キャッシュ。
+ * is_correct のサーバ判定を全回答で行うため、バッチ50件でも
+ * シート読み取りは実行あたり1回に抑える（GAS 6分制限対策）。
  */
-function findQuestionById(questionId) {
+let __questionTableCache = null;
+
+function getQuestionTable_() {
+  if (__questionTableCache) return __questionTableCache;
   const sheet = getOrCreateSheet(CONFIG.SHEETS.QUESTIONS);
   const data = sheet.getDataRange().getValues();
-
-  if (data.length <= 1) return null;
-
-  const headers = data[0];
   const idx = {};
-  headers.forEach((h, i) => { idx[h] = i; });
+  const rowById = {};
+  if (data.length > 0) {
+    data[0].forEach((h, i) => { idx[h] = i; });
+    for (let i = 1; i < data.length; i++) {
+      rowById[data[i][idx['question_id']]] = data[i];
+    }
+  }
+  __questionTableCache = { idx, rowById, parsed: {} };
+  return __questionTableCache;
+}
 
-  const row = data.slice(1).find(r => r[idx['question_id']] === questionId);
-  if (!row) return null;
-
-  return rowToQuestion(row, idx);
+/**
+ * 問題IDから問題を検索（実行内メモ化つき）
+ */
+function findQuestionById(questionId) {
+  const table = getQuestionTable_();
+  if (Object.prototype.hasOwnProperty.call(table.parsed, questionId)) {
+    return table.parsed[questionId];
+  }
+  const row = table.rowById[questionId];
+  const question = row ? rowToQuestion(row, table.idx) : null;
+  table.parsed[questionId] = question;
+  return question;
 }
 
 /**

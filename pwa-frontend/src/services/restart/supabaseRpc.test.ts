@@ -23,6 +23,7 @@ describe('rowToCardState', () => {
       lastReview: '2026-06-09',
       hintLevel: 1,
       consecutiveCorrectAtZero: 0,
+      updatedAt: '2026-06-09T10:00:00Z',
     });
   });
 
@@ -37,10 +38,11 @@ describe('rowToCardState', () => {
 });
 
 describe('cardStateToRow', () => {
-  it('CardStateをSupabase行へ変換する（lastReview空文字→null）', () => {
+  it('CardStateをSupabase行へ変換する（lastReview空文字→null・updatedAtを送る）', () => {
     const card = {
       questionId: 'CE-2021-001', easeFactor: 2.5, interval: 0, repetitions: 0,
       nextReview: '2026-06-10', lastReview: '', hintLevel: 0, consecutiveCorrectAtZero: 0,
+      updatedAt: '2026-06-10T09:00:00.000Z',
     };
     expect(cardStateToRow(card)).toEqual({
       question_id: 'CE-2021-001',
@@ -51,6 +53,16 @@ describe('cardStateToRow', () => {
       last_review: null,
       hint_level: 0,
       consecutive_correct_at_zero: 0,
+      updated_at: '2026-06-10T09:00:00.000Z',
     });
+  });
+
+  it('updatedAtが空なら updated_at を省略する（server の now() に委ねる）', () => {
+    const card = {
+      questionId: 'x', easeFactor: 2.5, interval: 0, repetitions: 0,
+      nextReview: '2026-06-10', lastReview: '', hintLevel: 0, consecutiveCorrectAtZero: 0,
+      updatedAt: '',
+    };
+    expect(cardStateToRow(card).updated_at).toBeUndefined();
   });
 });

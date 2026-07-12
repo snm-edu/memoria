@@ -34,6 +34,7 @@ export interface CardState {
   lastReview: string;
   hintLevel: number;               // メモリアステップ: 0〜6（ヒントレベル）
   consecutiveCorrectAtZero: number; // レベル0での連続正答数
+  updatedAt: string;               // 端末での最終更新時刻（ISO8601）。マルチデバイス同期のLWW判定に使う
 }
 
 // 回答ログ

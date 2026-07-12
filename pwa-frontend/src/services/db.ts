@@ -1,5 +1,6 @@
 import Dexie, { type Table } from 'dexie';
 import type { StudentProfile, CardState, Question, AnswerLog, GamificationState, VideoRecommendation } from '../types';
+import { sanitizeCardState } from './sm2';
 
 // AI分析キャッシュ
 export interface AiCacheEntry {
@@ -147,6 +148,46 @@ export class NurseMemoriaDB extends Dexie {
       gamification: '++id, visitorId',
       treemapCache: 'studentId',
       videoRecommendations: 'recommendationId, studentId, studentNumber, status, updatedAt',
+    });
+    // v10: SM-2バグ（EFペナルティ符号反転・interval複利爆発）で汚染したカード状態を是正
+    this.version(10).stores({
+      profile: '++id, studentId, studentNumber, department, grade, studentType',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+      gamification: '++id, visitorId',
+      treemapCache: 'studentId',
+      videoRecommendations: 'recommendationId, studentId, studentNumber, status, updatedAt',
+    }).upgrade(tx => {
+      // EF>2.5・interval巨大・nextReviewが遠未来のカードをキャップ内へ丸める
+      const now = new Date();
+      return tx.table('cardStates').toCollection().modify((card: CardState) => {
+        const fixed = sanitizeCardState(card, now);
+        card.easeFactor = fixed.easeFactor;
+        card.interval = fixed.interval;
+        card.nextReview = fixed.nextReview;
+      });
+    });
+    // v11: マルチデバイスLWW用の updatedAt を追加し既存カードへ後方補完
+    this.version(11).stores({
+      profile: '++id, studentId, studentNumber, department, grade, studentType',
+      cardStates: 'questionId, nextReview, [questionId+nextReview]',
+      questionCache: 'question_id, department, category, exam_year',
+      answerLog: '++id, questionId, timestamp, synced',
+      aiCache: '++id, [questionId+selectedAnswer], questionId',
+      gamification: '++id, visitorId',
+      treemapCache: 'studentId',
+      videoRecommendations: 'recommendationId, studentId, studentNumber, status, updatedAt',
+    }).upgrade(tx => {
+      return tx.table('cardStates').toCollection().modify((card: CardState) => {
+        if (!card.updatedAt) {
+          // 既存カードは lastReview（JST日付）から近似時刻を補完・未学習は現在時刻
+          card.updatedAt = card.lastReview
+            ? new Date(`${card.lastReview}T00:00:00+09:00`).toISOString()
+            : new Date().toISOString();
+        }
+      });
     });
   }
 }

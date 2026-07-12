@@ -9,9 +9,13 @@ const ERROR_TYPE_LABELS: Record<string, { label: string; color: string }> = {
 interface Props {
   analysis: ErrorAnalysis;
   onClose: () => void;
+  /** 類題生成を起動する（未指定なら挑戦ボタンを出さない） */
+  onChallenge?: () => void;
+  /** 類題生成の進行状態 */
+  challengeStatus?: 'idle' | 'loading' | 'added' | 'error';
 }
 
-export function AnalysisCard({ analysis, onClose }: Props) {
+export function AnalysisCard({ analysis, onClose, onChallenge, challengeStatus = 'idle' }: Props) {
   const errorInfo = ERROR_TYPE_LABELS[analysis.error_type] || {
     label: '分析',
     color: 'bg-slate-100 text-slate-700',
@@ -46,6 +50,27 @@ export function AnalysisCard({ analysis, onClose }: Props) {
         <p className="text-sm text-slate-500 mb-1">次への作戦</p>
         <p className="text-sm leading-relaxed">{analysis.study_hint}</p>
       </div>
+
+      {onChallenge && challengeStatus === 'idle' && (
+        <button onClick={onChallenge} className="btn-primary w-full">
+          この弱点の類題に挑戦 →
+        </button>
+      )}
+      {challengeStatus === 'loading' && (
+        <p className="text-sm text-blue-600 text-center animate-pulse">
+          {'\u{1F916}'} 類題を用意しています...
+        </p>
+      )}
+      {challengeStatus === 'added' && (
+        <p className="text-sm text-green-600 text-center font-medium">
+          {'✅'} 類題を次の問題に追加しました。「次の問題へ」で挑戦できます
+        </p>
+      )}
+      {challengeStatus === 'error' && (
+        <p className="text-sm text-slate-500 text-center">
+          類題を用意できませんでした。また後で試してください
+        </p>
+      )}
 
       <button onClick={onClose} className="btn-secondary w-full">
         閉じる

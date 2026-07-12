@@ -20,11 +20,11 @@
     },
     {
       "id": "nursing",
-      "version": 1,
+      "version": 2,
       "count": 2520,
       "path": "questions/nursing.json",
-      "checksum": "sha256-ea2e5089f0ac13bed38ab2119c56b80ae0e9ad6c4b55cc82f06a4257bf7da8f6",
-      "lastUpdated": "2026-04-17T13:08:47.372Z"
+      "checksum": "sha256-5b8e330691d51c0594a93ab6bdd8b00cd483246d65786acfb660ea44f5466366",
+      "lastUpdated": "2026-07-12T00:22:35.623Z"
     },
     {
       "id": "orthoptist",

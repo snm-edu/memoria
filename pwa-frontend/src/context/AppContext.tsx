@@ -24,6 +24,7 @@ interface AppState {
   quizSubtopic: string; // 小分類指定（空文字=指定なし）
   quizScope: QuizScope; // 'all' | 'weak' | 'unstudied'
   quizOrigin: Screen; // クイズ起動元 (戻るボタン押下時の遷移先)
+  quizAutoStart: boolean; // Teamsリンク経由「今日のセッション」: フィルタ画面を飛ばして自動開始
 }
 
 type AppAction =
@@ -40,7 +41,9 @@ type AppAction =
       subtopic?: string;
       scope?: QuizScope;
       origin?: Screen;
-    };
+    }
+  | { type: 'START_TODAY_SESSION'; scope: QuizScope }
+  | { type: 'QUIZ_AUTOSTART_CONSUMED' };
 
 function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
@@ -67,6 +70,20 @@ function appReducer(state: AppState, action: AppAction): AppState {
         quizScope: action.scope || 'all',
         quizOrigin: action.origin || 'home',
       };
+    case 'START_TODAY_SESSION':
+      return {
+        ...state,
+        screen: 'quiz',
+        quizMode: 'free',
+        quizCategory: '',
+        quizSubcategory: '',
+        quizSubtopic: '',
+        quizScope: action.scope,
+        quizOrigin: 'home',
+        quizAutoStart: true,
+      };
+    case 'QUIZ_AUTOSTART_CONSUMED':
+      return { ...state, quizAutoStart: false };
   }
 }
 
@@ -82,6 +99,7 @@ const initialState: AppState = {
   quizSubtopic: '',
   quizScope: 'all',
   quizOrigin: 'home',
+  quizAutoStart: false,
 };
 
 const AppContext = createContext<{
