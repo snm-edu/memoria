@@ -1,0 +1,24 @@
+# Vercel の Root Directory は pwa-frontend だが、CLI デプロイはリポジトリ全体を
+# アップロード対象にするため、PWA のビルドに不要な巨大フォルダを明示的に除外する。
+# 2026-07-12: これが未設定だったため 146MB のアップロードでレート制限に到達した事故が発生。
+
+# 国試問題抽出パイプラインの生データ（画像・xlsx等、PWAには public/data/*.json 経由でのみ必要）
+CE国試data/
+CO国試data/
+DH国試data/
+NRS国試data/
+
+# ルート直下の抽出パイプライン・出力キャッシュ（pwa-frontend/scripts とは別物）
+scripts/
+
+# デプロイ対象外のバックエンド・ドキュメント
+gas-backend/
+docs/
+automation/
+
+# 一時作業フォルダ
+$TMPDIR/
+
+# ルート直下の単発バイナリ
+*.xlsx
+*.pdf
