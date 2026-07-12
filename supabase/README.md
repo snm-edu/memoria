@@ -53,6 +53,26 @@ where student_id = (select id from students where student_number = '00000000');
 select * from admin_register_student('00000000', '山田 花子', 'clinical_eng', 'sample@class.snm.ac.jp');
 ```
 
+## 日次DMの個別化（v_roster_daily・0002）
+
+`migrations/0002_daily_digest.sql` を SQL Editor で適用すると、DM本文差し込み用の
+集計ビュー `v_roster_daily` が使える（due_count / weak_count / is_stalled 付き名簿）。
+
+Power Automate 側の組み込み方:
+
+1. フローに「HTTP」アクションを追加し、毎朝の配信前に1回だけ実行
+   - Method: `GET`
+   - URI: `https://<project>.supabase.co/rest/v1/v_roster_daily?select=student_number,student_name,teams_email,url,due_count,weak_count,is_stalled`
+   - Headers: `apikey: <service_role キー>` / `Authorization: Bearer <service_role キー>`
+2. 返却JSONを「JSON の解析」→ Apply to each で名簿Excelの代わりに使う
+   （teams_email 宛に url とともに本文を組み立てる）
+3. 本文テンプレ例:
+   - 通常: `今日の復習は {due_count} 問、要注意問題は {weak_count} 問です。ここから3分だけ→ {url}`
+   - is_stalled=true: `少し間があきましたね。今日は1問だけでも大丈夫です→ {url}`
+
+⚠️ `service_role` キーは全権キー。Power Automate の接続情報（セキュア入力）にのみ保存し、
+Excel・リポジトリ・チャットには絶対に貼らないこと。anon キーではこのビューは読めない（意図的）。
+
 ## 今後の拡張（Step 4以降・このスキーマの続き）
 
 - `answer_logs` テーブル追加 → GAS/Sheets からの移行
