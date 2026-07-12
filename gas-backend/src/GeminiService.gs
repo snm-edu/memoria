@@ -11,10 +11,30 @@ const GeminiService = {
       return { error: 'questionId, studentAnswer, correctAnswer are required' };
     }
 
+    // プロンプトインジェクション対策①: 回答は選択肢ラベル(A-E)のみ許可
+    if (!isChoiceLabelArray_(studentAnswer)) {
+      return { error: 'invalid studentAnswer' };
+    }
+
     // キャッシュチェック（ai_generatedシートで同一エラーを検索）
     const cached = findCachedAnalysis(questionId, studentAnswer);
     if (cached) {
       return cached;
+    }
+
+    // プロンプトインジェクション対策②: 問題文・選択肢・正答はサーバ側の問題バンクを正とし、
+    // クライアント送信値は問題バンクに無いID（AI類題等）の場合のみ長さ制限つきで使う
+    const serverQuestion = findQuestionById(questionId);
+    if (serverQuestion) {
+      questionText = serverQuestion.question_text;
+      choices = serverQuestion.choices;
+      correctAnswer = serverQuestion.correct_answer;
+    } else {
+      if (!isChoiceLabelArray_(correctAnswer)) {
+        return { error: 'invalid correctAnswer' };
+      }
+      questionText = String(questionText || '').slice(0, 600);
+      choices = (choices || []).slice(0, 5).map(c => String(c).slice(0, 200));
     }
 
     // 学科に応じた専門家名を決定
@@ -91,28 +111,40 @@ error_typeの判定基準（内部分類用）:
       return { error: 'questionId and errorType are required' };
     }
 
+    // プロンプトインジェクション対策: errorType はホワイトリスト、元問題文はサーバ側の
+    // 問題バンクを正とする（生成結果はシートに永続化され他学習者にも配信されるため）
+    const errorGuidance = {
+      knowledge_gap: '同じ概念のより基礎的な問題を出す',
+      misread: '設問の言い回しを変え、注意深く読む必要がある問題にする',
+      confusion: '混同しやすい概念を明確に弁別させる問題にする',
+    };
+    const safeErrorType = Object.prototype.hasOwnProperty.call(errorGuidance, errorType)
+      ? errorType
+      : 'knowledge_gap';
+    const serverQuestion = findQuestionById(questionId);
+    if (!serverQuestion) {
+      // 問題バンクに実在しないIDへの生成は認めない（任意テキスト注入・無制限課金の防止）
+      return { error: 'unknown questionId' };
+    }
+    const originalText = serverQuestion.question_text;
+    const analysisText = String(analysis || '').slice(0, 400);
+
     // 既存の類題をチェック（最大3題まで）
     const existing = findGeneratedQuestions(questionId);
     if (existing.length >= 3) {
       return { questions: existing, cached: true };
     }
 
-    const errorGuidance = {
-      knowledge_gap: '同じ概念のより基礎的な問題を出す',
-      misread: '設問の言い回しを変え、注意深く読む必要がある問題にする',
-      confusion: '混同しやすい概念を明確に弁別させる問題にする',
-    };
-
     const expertName = getDepartmentExpertName(department || '');
     const prompt = `あなたは${expertName}の問題作成者です。
-以下の問題で学生が${errorType}のミスをしました。
+以下の問題で学生が${safeErrorType}のミスをしました。
 この弱点を克服するための類題を1問作成してください。
 
-【元の問題】${originalQuestion}
-【誤答タイプ】${errorType}
-【分析結果】${analysis || ''}
+【元の問題】${originalText}
+【誤答タイプ】${safeErrorType}
+【分析結果】${analysisText}
 
-出題方針: ${errorGuidance[errorType] || errorGuidance.knowledge_gap}
+出題方針: ${errorGuidance[safeErrorType]}
 
 以下のJSON形式で回答:
 {
@@ -145,7 +177,7 @@ error_typeの判定基準（内部分類用）:
       sheet.appendRow([
         genId,
         questionId,
-        errorType,
+        safeErrorType,
         generated.question_text || '',
         generated.choice_a || '',
         generated.choice_b || '',
@@ -163,7 +195,7 @@ error_typeの判定基準（内部分類用）:
     return {
       gen_id: genId,
       original_question_id: questionId,
-      error_type: errorType,
+      error_type: safeErrorType,
       question_text: generated.question_text,
       choices: [
         generated.choice_a,
@@ -178,6 +210,18 @@ error_typeの判定基準（内部分類用）:
     };
   },
 };
+
+// === 入力バリデーション ===
+
+/**
+ * 回答が選択肢ラベル(A-E・大文字小文字許容)のみの配列/単値かを判定する。
+ * 自由テキストをGeminiプロンプトへ流し込ませないための入口チェック。
+ */
+function isChoiceLabelArray_(answer) {
+  const arr = Array.isArray(answer) ? answer : [answer];
+  if (arr.length === 0 || arr.length > 5) return false;
+  return arr.every(a => /^[A-Ea-e]$/.test(String(a)));
+}
 
 // === 学科名マッピング ===
 
