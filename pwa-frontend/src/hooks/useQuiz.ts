@@ -13,6 +13,7 @@ import {
   applyAnswer,
   confirmUnderstanding,
   computePresentation,
+  resolveEffectiveLevel,
 } from '../services/memoriaStep';
 import { localDateString } from '../services/date';
 import { rankReviewCards, isWeakCard, NEW_PER_SESSION } from '../services/sessionSelect';
@@ -297,9 +298,13 @@ export function useQuiz() {
       // SM-2 × メモリアステップの合成（applyAnswer に集約・純関数でテスト済み）
       const existingCard = isGenerated ? undefined : await db.cardStates.get(current.question_id);
       const card = existingCard || createCardState(current.question_id);
-      answeredAtFillIn = card.hintLevel === 5;
+      // 実際に提示されたレベル（削減不能な問題では保存レベルと異なる。
+      // 例: 保存Lv4→提示Lv1。保存Lv5で穴なし→提示6だがその場合は確認モードUIになり本関数へは到達しない）。
+      // 品質補正・EFペナルティを「受けた支援」の実態に合わせるため applyAnswer へ渡す
+      const presentedLevel = resolveEffectiveLevel(current, card.hintLevel);
+      answeredAtFillIn = presentedLevel === 5;
       if (!isGenerated) {
-        const memoriaCard = applyAnswer(card, isCorrect, responseTimeMs);
+        const memoriaCard = applyAnswer(card, isCorrect, responseTimeMs, new Date(), presentedLevel);
         await db.cardStates.put(memoriaCard);
       }
 

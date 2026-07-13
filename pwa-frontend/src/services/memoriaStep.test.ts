@@ -5,6 +5,7 @@ import {
   confirmUnderstanding,
   createFillInBlank,
   computePresentation,
+  resolveEffectiveLevel,
 } from './memoriaStep';
 import type { CardState, Question } from '../types';
 
@@ -127,16 +128,216 @@ describe('computePresentation — レベル5で穴が作れない問題は確認
     expect(p.confirmationMode).toBe(true);
   });
 
-  it('複数選択問題はレベル2/4で選択肢削減せずレベル1へフォールバック（既存挙動）', () => {
-    const p = computePresentation(question({ is_multi_select: true }), 4);
-    expect(p.hintLevel).toBe(1);
-    expect(p.visibleChoices).toHaveLength(4);
-  });
-
   it('レベル4は2択になる', () => {
     const p = computePresentation(question(), 4);
     expect(p.hintLevel).toBe(4);
     expect(p.visibleChoices).toHaveLength(2);
+  });
+});
+
+/** 複数選択（5肢2択）フィクスチャ: 不正解3つ → Lv2/4とも削減成立 */
+function multiQuestion(over: Partial<Question> = {}): Question {
+  return question({
+    question_id: 'DH-2023-001',
+    is_multi_select: true,
+    question_text: '身体診察で正しいのはどれか。2つ選べ。',
+    choices: ['聴診を行う', '触診を行う', '打診のみで判断する', '視診は省略する', '問診は不要である'],
+    correct_answer: ['A', 'B'],
+    explanation: '聴診を行うことと触診を行うことが基本である。',
+    ...over,
+  });
+}
+
+describe('resolveEffectiveLevel — 提示レベルの決定（表示と評価の一致点）', () => {
+  it('単一選択4択: Lv2/Lv4はそのまま成立', () => {
+    expect(resolveEffectiveLevel(question(), 2)).toBe(2);
+    expect(resolveEffectiveLevel(question(), 4)).toBe(4);
+  });
+
+  it('複数選択5択2正解（不正解3）: Lv2/Lv4とも削減成立', () => {
+    expect(resolveEffectiveLevel(multiQuestion(), 2)).toBe(2);
+    expect(resolveEffectiveLevel(multiQuestion(), 4)).toBe(4);
+  });
+
+  it('複数選択3択2正解（不正解1）: 削減不能なのでLv1へ', () => {
+    const q3 = multiQuestion({ choices: ['聴診を行う', '触診を行う', '打診のみで判断する'] });
+    expect(resolveEffectiveLevel(q3, 2)).toBe(1);
+    expect(resolveEffectiveLevel(q3, 4)).toBe(1);
+  });
+
+  it('単一選択2択（不正解1）: 削減不能なのでLv1へ', () => {
+    const q2 = question({ choices: ['正しい', '誤り'], correct_answer: ['A'] });
+    expect(resolveEffectiveLevel(q2, 2)).toBe(1);
+    expect(resolveEffectiveLevel(q2, 4)).toBe(1);
+  });
+
+  it('Lv5: 穴が作れれば5、作れなければ6', () => {
+    expect(resolveEffectiveLevel(question(), 5)).toBe(5);
+    expect(resolveEffectiveLevel(question({ explanation: '早期発見が重要である。' }), 5)).toBe(6);
+  });
+
+  it('Lv0/1/3/6 はそのまま通す', () => {
+    for (const lv of [0, 1, 3, 6]) {
+      expect(resolveEffectiveLevel(multiQuestion(), lv)).toBe(lv);
+    }
+  });
+});
+
+describe('computePresentation — 複数選択でも選択肢削減が成立する', () => {
+  it('Lv2: 不正解1つを除外（正解2つは必ず残る・ラベルは元のまま）', () => {
+    const p = computePresentation(multiQuestion(), 2);
+    expect(p.hintLevel).toBe(2);
+    expect(p.visibleChoices).toHaveLength(4);
+    expect(p.visibleLabels).toContain('A');
+    expect(p.visibleLabels).toContain('B');
+  });
+
+  it('Lv4: 全正解+不正解1つに絞り込む', () => {
+    const p = computePresentation(multiQuestion(), 4);
+    expect(p.hintLevel).toBe(4);
+    expect(p.visibleChoices).toHaveLength(3);
+    expect(p.visibleLabels).toContain('A');
+    expect(p.visibleLabels).toContain('B');
+  });
+
+  it('削減不能（3択2正解）はLv1提示にフォールバック', () => {
+    const q3 = multiQuestion({ choices: ['聴診を行う', '触診を行う', '打診のみで判断する'] });
+    const p = computePresentation(q3, 4);
+    expect(p.hintLevel).toBe(1);
+    expect(p.visibleChoices).toHaveLength(3);
+  });
+
+  it('単一選択2択のLv2は偽装せずLv1提示になる（偽バッジ解消）', () => {
+    const q2 = question({ choices: ['正しい', '誤り'], correct_answer: ['A'] });
+    const p = computePresentation(q2, 2);
+    expect(p.hintLevel).toBe(1);
+    expect(p.visibleChoices).toHaveLength(2);
+  });
+});
+
+describe('resolveEffectiveLevel / getVisibleChoices — 非正規ラベル・不備データへの耐性（敵対レビュー回帰）', () => {
+  it('小文字ラベル correct_answer=[a,b] でも両関数の解釈が一致し、正解肢は削減で必ず保持される', () => {
+    const q = multiQuestion({ correct_answer: ['a', 'b'] });
+    expect(resolveEffectiveLevel(q, 2)).toBe(2);
+    expect(resolveEffectiveLevel(q, 4)).toBe(4);
+    // 乱数でどの不正解を消すかが変わるため反復して正解保持を確認
+    for (let i = 0; i < 30; i++) {
+      const p2 = computePresentation(q, 2);
+      expect(p2.visibleLabels).toContain('A');
+      expect(p2.visibleLabels).toContain('B');
+      expect(p2.visibleChoices).not.toContain(undefined);
+      const p4 = computePresentation(q, 4);
+      expect(p4.visibleLabels).toContain('A');
+      expect(p4.visibleLabels).toContain('B');
+      expect(p4.visibleChoices).toHaveLength(3);
+      expect(p4.visibleChoices).not.toContain(undefined);
+    }
+  });
+
+  it('範囲外ラベル correct_answer=[E]（4択）は有効正解ゼロ扱いでLv1へ（undefined肢を混入させない）', () => {
+    const q = question({ correct_answer: ['E'] }); // choicesは4つ
+    expect(resolveEffectiveLevel(q, 2)).toBe(1);
+    expect(resolveEffectiveLevel(q, 4)).toBe(1);
+    const p = computePresentation(q, 4);
+    expect(p.hintLevel).toBe(1);
+    expect(p.visibleChoices).not.toContain(undefined);
+  });
+
+  it('正解肢ゼロ（不備問題・採点除外）はLv2/4を成立させずLv1へ', () => {
+    const q = multiQuestion({ correct_answer: [] });
+    expect(resolveEffectiveLevel(q, 2)).toBe(1);
+    expect(resolveEffectiveLevel(q, 4)).toBe(1);
+    expect(computePresentation(q, 4).visibleChoices).toHaveLength(5);
+  });
+
+  it('重複ラベル correct_answer=[A,A] はSetで重複排除され削減成立', () => {
+    const q = question({ correct_answer: ['A', 'A'] });
+    expect(resolveEffectiveLevel(q, 4)).toBe(4);
+    const p = computePresentation(q, 4);
+    expect(p.visibleChoices).toHaveLength(2);
+    expect(p.visibleLabels).toContain('A');
+  });
+
+  it('全肢正解（不正解0）はLv1へ', () => {
+    const q = multiQuestion({ correct_answer: ['A', 'B', 'C', 'D', 'E'] });
+    expect(resolveEffectiveLevel(q, 2)).toBe(1);
+    expect(resolveEffectiveLevel(q, 4)).toBe(1);
+  });
+
+  it('空choicesでもクラッシュしない（Lv2/4→1・Lv5→6）', () => {
+    const q = question({ choices: [], correct_answer: [] });
+    expect(resolveEffectiveLevel(q, 2)).toBe(1);
+    expect(resolveEffectiveLevel(q, 5)).toBe(6);
+    expect(computePresentation(q, 4).visibleChoices).toHaveLength(0);
+  });
+
+  it('5肢3正解（不正解2）: Lv4は全正解3+不正解1の4択・正解全保持', () => {
+    const q = multiQuestion({ correct_answer: ['A', 'B', 'C'] });
+    expect(resolveEffectiveLevel(q, 4)).toBe(4);
+    for (let i = 0; i < 20; i++) {
+      const p = computePresentation(q, 4);
+      expect(p.visibleChoices).toHaveLength(4);
+      expect(p.visibleLabels).toContain('A');
+      expect(p.visibleLabels).toContain('B');
+      expect(p.visibleLabels).toContain('C');
+    }
+  });
+
+  it('5肢4正解（不正解1）は削減不能でLv1・全5肢表示', () => {
+    const q = multiQuestion({ correct_answer: ['A', 'B', 'C', 'D'] });
+    expect(resolveEffectiveLevel(q, 4)).toBe(1);
+    expect(computePresentation(q, 4).visibleChoices).toHaveLength(5);
+  });
+
+  it('単一選択5択: Lv2は4肢化・Lv4は2肢化（既存挙動の明示回帰）', () => {
+    const q = question({
+      choices: ['利尿薬を用いる', '安静のみとする', '水分を制限しない', '塩分を多く摂る', '運動を禁止する'],
+    });
+    const p2 = computePresentation(q, 2);
+    expect(p2.hintLevel).toBe(2);
+    expect(p2.visibleChoices).toHaveLength(4);
+    const p4 = computePresentation(q, 4);
+    expect(p4.hintLevel).toBe(4);
+    expect(p4.visibleChoices).toHaveLength(2);
+    expect(p4.visibleLabels).toContain('A');
+  });
+
+  it('範囲外hintLevel（7/-1）は素通しされ表示はクラッシュしない', () => {
+    expect(resolveEffectiveLevel(question(), 7)).toBe(7);
+    expect(resolveEffectiveLevel(question(), -1)).toBe(-1);
+    expect(computePresentation(question(), 7).visibleChoices).toHaveLength(4);
+  });
+});
+
+describe('applyAnswer — 評価は提示レベル基準（表示と評価の不整合解消）', () => {
+  it('保存Lv4・提示Lv1（削減不能フォールバック）での正答は満額に近く進行する', () => {
+    const r = applyAnswer(
+      card({ easeFactor: 2.5, hintLevel: 4, repetitions: 2, interval: 6 }),
+      true, 5000, NOW, 1
+    );
+    expect(r.interval).toBe(15);              // quality4 → 成功ブランチ round(6×2.5)
+    expect(r.repetitions).toBe(3);
+    expect(r.easeFactor).toBeCloseTo(2.4, 5); // ペナルティは提示Lv1の-0.1（-0.2ではない）
+    expect(r.hintLevel).toBe(2);              // 段階降下は保存レベル基準を維持
+  });
+
+  it('保存Lv4・提示Lv1での誤答はEF-0.1のみ（-0.2ではない）で段階は5へ', () => {
+    const r = applyAnswer(
+      card({ easeFactor: 2.5, hintLevel: 4, repetitions: 2, interval: 6 }),
+      false, 3000, NOW, 1
+    );
+    expect(r.interval).toBe(1);
+    expect(r.easeFactor).toBeCloseTo(2.4, 5);
+    expect(r.hintLevel).toBe(5);
+  });
+
+  it('presentedLevel省略時は保存レベル基準（後方互換）', () => {
+    const r = applyAnswer(
+      card({ easeFactor: 2.5, hintLevel: 4, repetitions: 2, interval: 6 }),
+      true, 5000, NOW
+    );
+    expect(r.easeFactor).toBeCloseTo(2.3, 5); // 従来通り -0.2
+    expect(r.interval).toBe(1);               // quality上限2 → 失敗ブランチ
   });
 });
 

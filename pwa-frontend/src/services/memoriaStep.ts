@@ -12,7 +12,7 @@ import { localDateString, addDays } from './date';
  * メモリアステップ — アダプティブ出題アルゴリズム
  *
  * hintLevel 0: 通常出題（ヒントなし）
- * hintLevel 1: 解説付きで再出題
+ * hintLevel 1: カテゴリヒント表示（全選択肢のまま）
  * hintLevel 2: 不正解1つ除外（3択化）
  * hintLevel 3: キーワードハイライト
  * hintLevel 4: 2択化（正答+不正解1つ）
@@ -62,6 +62,23 @@ export function updateHintLevel(
 
 // ---- 選択肢フィルタリング ----
 
+/** 選択肢ラベル（A〜E） */
+const ALL_CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E'];
+
+/**
+ * 正答ラベル配列を正規化して選択肢インデックスの集合にする。
+ * 小文字・範囲外ラベルの解釈を resolveEffectiveLevel / getVisibleChoices で
+ * 完全に一致させるための共通ヘルパー（不一致だと「削減成立と判定したのに
+ * 正解肢が画面から消える」事故になる）。範囲外・不明ラベルは黙って除外する。
+ */
+function correctIndexSet(choices: string[], correctAnswer: string[]): Set<number> {
+  return new Set(
+    correctAnswer
+      .map((label) => ALL_CHOICE_LABELS.indexOf(label.toUpperCase()))
+      .filter((i) => i >= 0 && i < choices.length)
+  );
+}
+
 export interface VisibleChoices {
   /** 表示する選択肢テキスト */
   choices: string[];
@@ -86,10 +103,8 @@ export function getVisibleChoices(
   const allLabels = choices.map((_, i) => String.fromCharCode(65 + i)); // A, B, C, ...
   const allIndices = choices.map((_, i) => i);
 
-  // 正答のインデックスを特定
-  const correctIndices = new Set(
-    correctAnswer.map((label) => label.charCodeAt(0) - 65)
-  );
+  // 正答のインデックスを特定（resolveEffectiveLevel と同一の正規化を共有）
+  const correctIndices = correctIndexSet(choices, correctAnswer);
 
   // 不正解のインデックスを収集
   const incorrectIndices = allIndices.filter((i) => !correctIndices.has(i));
@@ -241,9 +256,6 @@ export function createFillInBlank(
 
 // ---- 出題時の表示状態（プレゼンテーション） ----
 
-/** 選択肢ラベル（A〜E） */
-const ALL_CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E'];
-
 export interface MemoriaPresentation {
   hintLevel: number;
   visibleChoices: string[];
@@ -253,21 +265,48 @@ export interface MemoriaPresentation {
 }
 
 /**
- * ヒントレベルと問題データから、表示用の選択肢・穴埋め・確認モードを算出する純関数。
+ * 保存された hintLevel から「実際に提示できる」レベルを決定する純関数。
  *
- * - 複数選択問題はレベル2/4の選択肢削減をスキップしレベル1へフォールバック
- * - レベル5は穴埋めを作れた場合のみ成立。穴が作れない問題（解説に正答テキスト非含有）は
- *   全文タイプ一致を強いる無理ゲーになるため、レベル6（確認モード）へフォールバックする
+ * 表示（computePresentation）と評価（applyAnswer の品質補正・EFペナルティ）の両方が
+ * この関数を基準にすることで、「削減できない問題なのに2択支援を受けた扱いで減点される」
+ * という表示と評価の不整合を防ぐ。乱数はどの選択肢を消すかにしか使われないため、
+ * 同一の (question, hintLevel) に対するレベル判定は決定的
+ * （※出題と回答の間にクラウド同期が cardStates を書き換えた場合のみ入力自体がズレうる。
+ *   既卒生トークン保持者のオンライン復帰時に限られる稀なレースで、実害は1回答分の軽微な差）。
+ *
+ * - レベル2/4: 有効な正解肢が1つ以上、かつ不正解が2つ以上ある場合のみ成立
+ *   （レベル4の「削減後が元より少ない」条件 correct+1 < choices.length は不正解数>=2 と同値。
+ *   正解肢ゼロの不備問題は削減の意味をなさないためレベル1へ）。成立しない場合はレベル1へ。
+ *   複数選択問題も同じ規則（レベル2=不正解1除去、レベル4=全正解+不正解1、正解は常に全保持）。
+ * - レベル5: 穴埋めを作れた場合のみ成立。穴が作れない問題（解説に正答テキスト非含有）は
+ *   全文タイプ一致を強いる無理ゲーになるため、レベル6（確認モード）へ。
+ */
+export function resolveEffectiveLevel(question: Question, hintLevel: number): number {
+  if (hintLevel === 2 || hintLevel === 4) {
+    const correctIndices = correctIndexSet(question.choices, question.correct_answer);
+    if (correctIndices.size === 0) return 1; // 正解肢ゼロ（不備問題等）は削減不能
+    const incorrectCount = question.choices.length - correctIndices.size;
+    return incorrectCount >= 2 ? hintLevel : 1;
+  }
+  if (hintLevel === 5) {
+    const correctChoiceTexts = question.correct_answer.map((label) => {
+      const idx = ALL_CHOICE_LABELS.indexOf(label.toUpperCase());
+      return idx >= 0 ? question.choices[idx] ?? '' : '';
+    });
+    return createFillInBlank(question.explanation, correctChoiceTexts).hasBlank ? 5 : 6;
+  }
+  return hintLevel;
+}
+
+/**
+ * ヒントレベルと問題データから、表示用の選択肢・穴埋め・確認モードを算出する純関数。
+ * 提示レベルの決定は resolveEffectiveLevel に委譲する（表示と評価の一致点）。
  */
 export function computePresentation(
   question: Question,
   hintLevel: number
 ): MemoriaPresentation {
-  // 複数選択問題ではレベル2,4の選択肢削減をスキップ → レベル1(カテゴリヒント)にフォールバック
-  let effectiveLevel =
-    question.is_multi_select && (hintLevel === 2 || hintLevel === 4)
-      ? 1
-      : hintLevel;
+  let effectiveLevel = resolveEffectiveLevel(question, hintLevel);
 
   const allLabels = ALL_CHOICE_LABELS.slice(0, question.choices.length);
 
@@ -363,23 +402,30 @@ export function shouldExtendInterval(card: CardState): boolean {
  * ペナルティは「出題時（=更新前）のヒントレベル」で算出し、負値を加算して EF を下げる
  * （従来は更新後レベルを参照し、かつ負値を減算していたため符号が反転し、ヒントに頼った
  * 苦戦カードほど EF が上がる逆適応になっていた）。
+ *
+ * @param presentedLevel 実際に提示されたレベル（resolveEffectiveLevel の結果）。
+ *   削減不能フォールバック時（保存Lv4だが提示はLv1等）に、受けていない支援分の
+ *   品質頭打ち・EF減点を課さないために使う。品質補正とEFペナルティのみに影響し、
+ *   hintLevel の昇降（updateHintLevel）は失敗深度カウンタとして保存レベル基準を維持する。
+ *   省略時は card.hintLevel（提示＝保存レベルの通常ケースと同じ扱い）。
  */
 export function applyAnswer(
   card: CardState,
   isCorrect: boolean,
   responseTimeMs: number,
-  now: Date = new Date()
+  now: Date = new Date(),
+  presentedLevel: number = card.hintLevel
 ): CardState {
   const quality = adjustQualityForHint(
     calculateQuality(isCorrect, responseTimeMs),
-    card.hintLevel
+    presentedLevel
   );
   const sm2Card = sm2Update(card, quality, now);
   const hintUpdate = updateHintLevel(sm2Card, isCorrect);
   const next: CardState = { ...sm2Card, ...hintUpdate };
 
-  // 出題時のヒントレベルに応じた減点（getEaseFactorPenalty は負値を返す）
-  const penalty = getEaseFactorPenalty(card.hintLevel);
+  // 実際に提示されたレベルに応じた減点（getEaseFactorPenalty は負値を返す）
+  const penalty = getEaseFactorPenalty(presentedLevel);
   next.easeFactor = clampEF(next.easeFactor + penalty);
 
   // ヒントなし連続正答3回到達時のみインターバルを1.5倍延長（上限キャップつき）

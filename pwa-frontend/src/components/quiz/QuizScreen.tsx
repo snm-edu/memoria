@@ -391,8 +391,8 @@ export function QuizScreen() {
         </div>
       )}
 
-      {/* レベル2: 誤答排除バッジ */}
-      {hintLevel === 2 && !q.is_multi_select && (
+      {/* レベル2: 誤答排除バッジ（提示レベル2は削減成立を意味する。複数選択も対象） */}
+      {hintLevel === 2 && (
         <div className="mb-3 px-3 py-2 bg-orange-50 border border-orange-200 rounded-lg">
           <p className="text-sm text-orange-700">
             選択肢が1つ排除されました
@@ -400,11 +400,11 @@ export function QuizScreen() {
         </div>
       )}
 
-      {/* レベル4: 二択化バッジ */}
-      {hintLevel === 4 && !q.is_multi_select && (
+      {/* レベル4: 絞り込みバッジ（単一選択=2択、複数選択=全正解+不正解1の実数を表示） */}
+      {hintLevel === 4 && (
         <div className="mb-3 px-3 py-2 bg-red-50 border border-red-200 rounded-lg">
           <p className="text-sm text-red-700">
-            2択まで絞り込みました
+            {quiz.visibleChoices.length}択まで絞り込みました
           </p>
         </div>
       )}
