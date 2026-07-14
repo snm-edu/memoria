@@ -31,7 +31,7 @@ export function BadgesScreen() {
     { key: 'challenge', label: '💪 チャレンジ' },
   ];
 
-  const levelInfo = gamification ? getLevelProgress(gamification.exp) : { level: 1, currentExp: 0, nextLevelExp: 25, progress: 0 };
+  const levelInfo = getLevelProgress(gamification?.exp ?? 0);
   const title = getLevelTitle(levelInfo.level, profile?.department);
   const gp = gamification?.characterPoints ?? 0;
   const charInfo = getCharacterStage(gp);

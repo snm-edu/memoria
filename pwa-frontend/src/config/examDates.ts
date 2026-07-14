@@ -2,6 +2,7 @@
 // 国家試験日程の概算と、学生 (department × grade) からの残日数算出
 
 import type { Department } from './departments';
+import type { StudentType } from '../types';
 
 /**
  * 各学科の国家試験 概算開催日 (月日)
@@ -30,18 +31,43 @@ export const EXAM_NAMES: Record<Department, string> = {
 };
 
 /**
+ * 今日以降で最も近い開催日を返す (当日は「今日」を返す)。
+ * 国試は毎年ほぼ同じ月日に開催されるため、年をまたいで繰り上げるだけでよい。
+ */
+function nextAnnualOccurrence(date: { month: number; day: number }, now: Date): Date {
+  const candidate = new Date(now.getFullYear(), date.month - 1, date.day);
+  const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  // 当日は「いよいよ本日」を出したいので、繰り上げるのは前日以前になったときだけ
+  if (candidate.getTime() < todayMidnight.getTime()) {
+    return new Date(now.getFullYear() + 1, date.month - 1, date.day);
+  }
+  return candidate;
+}
+
+/**
  * 学生 (department × grade) の次回受験する国試の Date を返す。
  *
  * 学年度判定: 4月-3月。4月以降は当年度として扱う。
  * 卒業年度 = 入学年度 + 3 (3年制前提)
  * 国試年 = 卒業する年 (= enrollmentYear + 3)
+ *
+ * 卒業生 (studentType='graduate') だけは学年からの逆算をせず、今日以降で最も近い
+ * 開催日を返す。卒業生の grade は名簿値で上書きされて 3 と 4 のどちらにもなりうるため
+ * (types/index.ts の StudentProfile.grade 参照)、逆算すると受験済みの年が出て「終了」に
+ * なってしまう。学年に依存させないことで在校3年生と同じ日付に揃う。
  */
 export function computeNextExamDate(
   department: Department,
   grade: number,
+  studentType?: StudentType,
   now: Date = new Date()
 ): Date {
   const date = EXAM_DATE_ESTIMATES[department];
+
+  if (studentType === 'graduate') {
+    return nextAnnualOccurrence(date, now);
+  }
+
   const month = now.getMonth() + 1;
   const currentYear = now.getFullYear();
 
@@ -59,9 +85,10 @@ export function computeNextExamDate(
 export function daysUntilExam(
   department: Department,
   grade: number,
+  studentType?: StudentType,
   now: Date = new Date()
 ): number {
-  const examDate = computeNextExamDate(department, grade, now);
+  const examDate = computeNextExamDate(department, grade, studentType, now);
   const diff = examDate.getTime() - now.getTime();
   return Math.ceil(diff / (1000 * 60 * 60 * 24));
 }
@@ -73,9 +100,10 @@ export function daysUntilExam(
 export function formatExamCountdown(
   department: Department,
   grade: number,
+  studentType?: StudentType,
   now: Date = new Date()
 ): string {
-  const days = daysUntilExam(department, grade, now);
+  const days = daysUntilExam(department, grade, studentType, now);
   if (days < 0) return '終了';
   if (days === 0) return 'いよいよ本日';
   if (days < 30) return `あと${days}日`;
