@@ -143,13 +143,20 @@ export function getCharacterStage(gp: number): {
   return { current, nextGP, progress };
 }
 
+/** レベル上限。LEVEL_TITLES_* の最終エントリと一致させること。 */
+export const MAX_LEVEL = 40;
+
 /**
  * EXPからレベルを計算
+ *
+ * このカーブが正本。表示側は必ず calculateLevel / getLevelProgress を経由すること
+ * （画面ごとに式を再実装すると LEVEL_TITLES_* の expRequired と乖離する）。
  */
 export function calculateLevel(exp: number): number {
   // level = floor(sqrt(exp / 200)) + 1、最大40
   // Level 2 = 200 EXP（正解20問相当）、Level 10 = 16200 EXP（~1600問相当）
-  return Math.min(40, Math.floor(Math.sqrt(exp / 200)) + 1);
+  // 係数200は LEVEL_TITLES_* の expRequired = (level-1)^2 * 200 と一致する
+  return Math.min(MAX_LEVEL, Math.floor(Math.sqrt(exp / 200)) + 1);
 }
 
 /**
@@ -178,14 +185,36 @@ export function getLevelTitle(level: number, department?: string): string {
 }
 
 /**
- * 回答後のEXP計算
+ * 提示レベル（resolveEffectiveLevel の結果）に応じた EXP 倍率。
+ *
+ * 段階は sm2.ts の adjustQualityForHint / memoriaStep.ts の getEaseFactorPenalty と
+ * 同じ区切り（0 / 1-2 / 3-4 / 5-6）に揃えている。支援を多く受けた正答ほど
+ * SM-2 の評価が下がるのと同様に、EXP も減らして「自力想起」を厚く報いる。
  */
-export function calculateExpGain(isCorrect: boolean, isReview: boolean, consecutiveCorrect: number): number {
+export function getExpLevelMultiplier(presentedLevel: number): number {
+  if (presentedLevel <= 0) return 1.0; // ヒントなしの自力正答
+  if (presentedLevel <= 2) return 0.8; // カテゴリヒント / 3択化
+  if (presentedLevel <= 4) return 0.6; // キーワードハイライト / 2択化
+  return 0.4;                          // 穴埋め（レベル5-6）
+}
+
+/**
+ * 回答後のEXP計算
+ *
+ * @param presentedLevel 実際に提示されたレベル。省略時は 0（ヒントなし）扱い。
+ */
+export function calculateExpGain(
+  isCorrect: boolean,
+  isReview: boolean,
+  consecutiveCorrect: number,
+  presentedLevel = 0
+): number {
   if (!isCorrect) return 0; // 不正解は経験値なし
   let exp = 10;
   if (isReview) exp = 15; // 復習正答ボーナス
   if (consecutiveCorrect > 1) exp += Math.min(consecutiveCorrect, 10); // 連続正答ボーナス（最大+10）
-  return exp;
+  // 支援量に応じて傾斜。正答した以上は最低1EXPを保証する
+  return Math.max(1, Math.round(exp * getExpLevelMultiplier(presentedLevel)));
 }
 
 /**
@@ -356,7 +385,8 @@ export async function updateGamification(
   isReview: boolean,
   consecutiveCorrect: number,
   sessionStats?: { correct: number; total: number; consecutiveCorrect: number; fastCorrect: number },
-  addGP = true
+  addGP = true,
+  presentedLevel = 0
 ): Promise<{ newBadges: string[]; expGained: number; levelUp: boolean; stageUp: boolean; state: GamificationState }> {
   let gState = await getOrCreateGamification(studentId);
 
@@ -364,7 +394,7 @@ export async function updateGamification(
   gState = updateStreak(gState);
 
   // EXP計算
-  const expGained = calculateExpGain(isCorrect, isReview, consecutiveCorrect);
+  const expGained = calculateExpGain(isCorrect, isReview, consecutiveCorrect, presentedLevel);
   gState.exp += expGained;
 
   // レベル更新

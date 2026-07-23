@@ -4,7 +4,7 @@ import { db } from '../../services/db';
 import { useApp } from '../../context/AppContext';
 import { useBgm } from '../../hooks/useBgm';
 import { DEPARTMENT_LABELS } from '../../types';
-import { getCharacterStage } from '../../services/gamification';
+import { getCharacterStage, getLevelProgress, getLevelTitle, MAX_LEVEL } from '../../services/gamification';
 import { CharacterDisplay } from '../character/CharacterDisplay';
 import { EXAM_NAMES, formatExamCountdown } from '../../config/examDates';
 import { RecommendedVideosCard } from '../video/RecommendedVideosCard';
@@ -116,16 +116,10 @@ export function HomeScreen() {
   const characterPoints = gamification?.characterPoints || 0;
   const charInfo = getCharacterStage(characterPoints);
 
-  // レベル計算
-  const level = Math.min(40, Math.floor(Math.sqrt(exp / 25)) + 1);
-  const currentLevelExp = (level - 1) * (level - 1) * 25;
-  const nextLevelExp = level * level * 25;
-  const progress = nextLevelExp > currentLevelExp ? (exp - currentLevelExp) / (nextLevelExp - currentLevelExp) : 1;
-
-  // 称号
-  const TITLES = [[1,'見学生'],[5,'実習生'],[10,'新人'],[15,'一人前'],[20,'プリセプター'],[25,'主任'],[30,'師長'],[35,'専門家'],[40,'部長']] as const;
-  let levelTitle = '見学生';
-  for (const [lv, t] of TITLES) { if (level >= lv) levelTitle = t; }
+  // レベル・称号（式は gamification.ts が正本。ここで再実装しないこと）
+  const { level, currentExp, nextLevelExp, progress } = getLevelProgress(exp);
+  const levelTitle = getLevelTitle(level, profile?.department);
+  const expToNext = nextLevelExp - currentExp;
 
   return (
     <div className="min-h-[100dvh] p-4 pb-20">
@@ -202,7 +196,7 @@ export function HomeScreen() {
       <div className="mb-4 px-1">
         <div className="flex justify-between text-xs text-slate-400 mb-1">
           <span>EXP {exp}</span>
-          <span>次のレベルまで {nextLevelExp - exp}</span>
+          <span>{level >= MAX_LEVEL ? '最大レベル' : `次のレベルまで ${expToNext}`}</span>
         </div>
         <div className="w-full bg-slate-100 rounded-full h-2">
           <div className="bg-gradient-to-r from-blue-400 to-purple-500 h-2 rounded-full transition-all" style={{ width: `${progress * 100}%` }} />
@@ -221,7 +215,7 @@ export function HomeScreen() {
         </button>
         {profile && (
           <p className="text-xs text-slate-400 mt-2">
-            🎯 {EXAM_NAMES[profile.department]}まで {formatExamCountdown(profile.department, profile.grade)}
+            🎯 {EXAM_NAMES[profile.department]}まで {formatExamCountdown(profile.department, profile.grade, profile.studentType)}
           </p>
         )}
       </div>

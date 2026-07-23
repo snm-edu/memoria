@@ -339,6 +339,9 @@ export function useQuiz() {
             isCorrect,
             isReview,
             sessionConsecutiveCorrectRef.current,
+            undefined,
+            true,
+            presentedLevel, // 支援量に応じてEXPを傾斜（SM-2の品質補正と同じ基準）
           );
         }
       } catch (gErr) {
