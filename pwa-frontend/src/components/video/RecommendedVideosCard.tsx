@@ -46,13 +46,28 @@ function parseDisplayTime(displayTime: string): { startSec: number; endSec: numb
  * チャプター開始位置へ自動頭出しし、終了位置で自動停止する。
  * キー未設定・再生失敗時は従来の Drive /preview 埋め込みへフォールバックする。
  */
+/** 直ストリーミングでメタデータ取得を待つ上限。Zoom録画は moov が末尾にある個体が多く、
+ * その場合ほぼ全量DLまで再生できないため、超過したら Drive 埋め込みへ自動で切り替える。 */
+const DIRECT_PLAY_TIMEOUT_MS = 12000;
+
 function DriveVideoPlayer({ recommendation }: { recommendation: VideoRecommendation }) {
   const [directPlayFailed, setDirectPlayFailed] = useState(false);
   const autoStoppedRef = useRef(false);
+  const metadataLoadedRef = useRef(false);
 
   const fileId = driveFileIdFromUrl(recommendation.videoUrl);
   const range = parseDisplayTime(recommendation.displayTime);
   const canDirectPlay = Boolean(DRIVE_API_KEY && fileId) && !directPlayFailed;
+
+  useEffect(() => {
+    if (!canDirectPlay) return;
+    const timer = setTimeout(() => {
+      if (!metadataLoadedRef.current) {
+        setDirectPlayFailed(true);
+      }
+    }, DIRECT_PLAY_TIMEOUT_MS);
+    return () => clearTimeout(timer);
+  }, [canDirectPlay]);
 
   if (!canDirectPlay) {
     return (
@@ -92,6 +107,7 @@ function DriveVideoPlayer({ recommendation }: { recommendation: VideoRecommendat
           className="h-full w-full"
           src={`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${DRIVE_API_KEY}`}
           onLoadedMetadata={(event) => {
+            metadataLoadedRef.current = true;
             if (range) {
               event.currentTarget.currentTime = range.startSec;
             }
