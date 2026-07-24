@@ -46,28 +46,40 @@ function parseDisplayTime(displayTime: string): { startSec: number; endSec: numb
  * チャプター開始位置へ自動頭出しし、終了位置で自動停止する。
  * キー未設定・再生失敗時は従来の Drive /preview 埋め込みへフォールバックする。
  */
-/** 直ストリーミングでメタデータ取得を待つ上限。Zoom録画は moov が末尾にある個体が多く、
- * その場合ほぼ全量DLまで再生できないため、超過したら Drive 埋め込みへ自動で切り替える。 */
-const DIRECT_PLAY_TIMEOUT_MS = 12000;
+/** 直ストリーミングでメタデータ取得を待つ上限。Drive API はストリーミング用CDNではなく
+ * 応答が揺れることがあるため、超過したら1回だけ再試行し、それでもだめなら Drive 埋め込みへ切り替える。 */
+const DIRECT_PLAY_TIMEOUT_MS = 20000;
 
 function DriveVideoPlayer({ recommendation }: { recommendation: VideoRecommendation }) {
-  const [directPlayFailed, setDirectPlayFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const [failReason, setFailReason] = useState('');
   const autoStoppedRef = useRef(false);
   const metadataLoadedRef = useRef(false);
 
   const fileId = driveFileIdFromUrl(recommendation.videoUrl);
   const range = parseDisplayTime(recommendation.displayTime);
-  const canDirectPlay = Boolean(DRIVE_API_KEY && fileId) && !directPlayFailed;
+  const canDirectPlay = Boolean(DRIVE_API_KEY && fileId) && !failReason;
+
+  /** 直再生の失敗。1回目は video を作り直して再試行、2回目で埋め込みへ切り替える。 */
+  const failOrRetry = (reason: string) => {
+    if (attempt === 0) {
+      metadataLoadedRef.current = false;
+      setAttempt(1);
+    } else {
+      setFailReason(reason);
+    }
+  };
 
   useEffect(() => {
     if (!canDirectPlay) return;
     const timer = setTimeout(() => {
       if (!metadataLoadedRef.current) {
-        setDirectPlayFailed(true);
+        failOrRetry('タイムアウト');
       }
     }, DIRECT_PLAY_TIMEOUT_MS);
     return () => clearTimeout(timer);
-  }, [canDirectPlay]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [canDirectPlay, attempt]);
 
   if (!canDirectPlay) {
     return (
@@ -75,6 +87,7 @@ function DriveVideoPlayer({ recommendation }: { recommendation: VideoRecommendat
         {recommendation.displayTime && (
           <p className="mb-2 text-xs font-bold text-amber-600">
             ▶ {recommendation.displayTime} 付近を再生してください
+            {failReason ? `（自動頭出しは一時利用不可: ${failReason}）` : ''}
           </p>
         )}
         <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
@@ -100,6 +113,7 @@ function DriveVideoPlayer({ recommendation }: { recommendation: VideoRecommendat
       <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <video
+          key={attempt}
           controls
           autoPlay
           playsInline
@@ -119,7 +133,7 @@ function DriveVideoPlayer({ recommendation }: { recommendation: VideoRecommendat
               event.currentTarget.pause();
             }
           }}
-          onError={() => setDirectPlayFailed(true)}
+          onError={(event) => failOrRetry(`再生エラー${event.currentTarget.error ? `(${event.currentTarget.error.code})` : ''}`)}
         />
       </div>
     </>
@@ -193,6 +207,24 @@ export function RecommendedVideosCard({ profile, isOnline, onOpenAiDashboard }: 
   }, [profile.studentId, profile.studentNumber, isOnline]);
 
   const items = useMemo(() => recommendations || [], [recommendations]);
+
+  // 誤答した問題側の分野。「なぜこの動画か（弱点分野との繋がり）」を表示するために引く。
+  const questionCategories = useLiveQuery(async () => {
+    const ids = items.map((item) => item.questionId).filter(Boolean);
+    if (ids.length === 0) return {} as Record<string, string>;
+    const rows = await db.questionCache.where('question_id').anyOf(ids).toArray();
+    return Object.fromEntries(rows.map((q) => [q.question_id, q.category])) as Record<string, string>;
+  }, [items], {} as Record<string, string>);
+
+  /** 「医用電気電子工学の誤答対策 → 基礎: 情報処理工学 / 数値表現 / 54:08-…」形式のサブタイトル */
+  function subtitleFor(item: VideoRecommendation): string {
+    const weakCategory = questionCategories[item.questionId];
+    const segmentPart = [item.category, item.subcategory, item.displayTime].filter(Boolean).join(' / ');
+    if (weakCategory && weakCategory !== item.category) {
+      return `${weakCategory}の誤答対策 → 基礎: ${segmentPart}`;
+    }
+    return segmentPart;
+  }
 
   async function recordAction(
     recommendation: VideoRecommendation,
@@ -279,9 +311,7 @@ export function RecommendedVideosCard({ profile, isOnline, onOpenAiDashboard }: 
                   </span>
                 </div>
                 {(primary.category || primary.subcategory || primary.displayTime) && (
-                  <p className="mt-1 text-xs text-slate-500 truncate">
-                    {[primary.category, primary.subcategory, primary.displayTime].filter(Boolean).join(' / ')}
-                  </p>
+                  <p className="mt-1 text-xs text-slate-500 truncate">{subtitleFor(primary)}</p>
                 )}
               </div>
             </div>
@@ -335,9 +365,7 @@ export function RecommendedVideosCard({ profile, isOnline, onOpenAiDashboard }: 
                 <div className="min-w-0">
                   <p className="text-sm font-bold text-slate-700 line-clamp-2">{item.title}</p>
                   {(item.category || item.subcategory || item.displayTime) && (
-                    <p className="mt-1 text-xs text-slate-400 truncate">
-                      {[item.category, item.subcategory, item.displayTime].filter(Boolean).join(' / ')}
-                    </p>
+                    <p className="mt-1 text-xs text-slate-400 truncate">{subtitleFor(item)}</p>
                   )}
                 </div>
                 <span className="shrink-0 rounded-full bg-blue-50 px-2 py-1 text-xs font-bold text-blue-600">
