@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { fetchVideoRecommendations, markVideoRecommendation } from '../../services/api';
 import { db } from '../../services/db';
@@ -16,6 +16,98 @@ const ACTIVE_STATUSES: VideoRecommendationStatus[] = ['approved', 'shown'];
 function toDrivePreviewUrl(url: string): string | null {
   const match = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/);
   return match ? `https://drive.google.com/file/d/${match[1]}/preview` : null;
+}
+
+/** Drive 直ストリーミング用APIキー。リファラ制限付きの公開制限キーで、未設定なら /preview 埋め込みへフォールバック。 */
+const DRIVE_API_KEY = import.meta.env.VITE_DRIVE_API_KEY;
+
+function driveFileIdFromUrl(url: string): string | null {
+  const match = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/);
+  return match?.[1] ?? null;
+}
+
+/** display_time（"54:08-1:02:22" 形式）を開始・終了秒に変換する。解釈できなければ null。 */
+function parseDisplayTime(displayTime: string): { startSec: number; endSec: number } | null {
+  const parts = String(displayTime || '').split('-');
+  if (parts.length !== 2) return null;
+  const toSec = (clock: string): number | null => {
+    const nums = clock.trim().split(':').map(Number);
+    if (nums.length === 0 || nums.length > 3 || nums.some(Number.isNaN)) return null;
+    return nums.reduce((acc, n) => acc * 60 + n, 0);
+  };
+  const startSec = toSec(parts[0] ?? '');
+  const endSec = toSec(parts[1] ?? '');
+  if (startSec === null || endSec === null || endSec <= startSec) return null;
+  return { startSec, endSec };
+}
+
+/**
+ * 授業動画プレーヤー。APIキーがあれば Drive API 直ストリーミング（<video>）で
+ * チャプター開始位置へ自動頭出しし、終了位置で自動停止する。
+ * キー未設定・再生失敗時は従来の Drive /preview 埋め込みへフォールバックする。
+ */
+function DriveVideoPlayer({ recommendation }: { recommendation: VideoRecommendation }) {
+  const [directPlayFailed, setDirectPlayFailed] = useState(false);
+  const autoStoppedRef = useRef(false);
+
+  const fileId = driveFileIdFromUrl(recommendation.videoUrl);
+  const range = parseDisplayTime(recommendation.displayTime);
+  const canDirectPlay = Boolean(DRIVE_API_KEY && fileId) && !directPlayFailed;
+
+  if (!canDirectPlay) {
+    return (
+      <>
+        {recommendation.displayTime && (
+          <p className="mb-2 text-xs font-bold text-amber-600">
+            ▶ {recommendation.displayTime} 付近を再生してください
+          </p>
+        )}
+        <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
+          <iframe
+            src={toDrivePreviewUrl(recommendation.videoUrl) || ''}
+            title={recommendation.title}
+            className="h-full w-full"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+          />
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      {range && (
+        <p className="mb-2 text-xs font-bold text-emerald-600">
+          ▶ {recommendation.displayTime} を自動頭出しで再生します（終了位置で自動停止）
+        </p>
+      )}
+      <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+        <video
+          controls
+          autoPlay
+          playsInline
+          preload="metadata"
+          className="h-full w-full"
+          src={`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${DRIVE_API_KEY}`}
+          onLoadedMetadata={(event) => {
+            if (range) {
+              event.currentTarget.currentTime = range.startSec;
+            }
+          }}
+          onTimeUpdate={(event) => {
+            if (!range || autoStoppedRef.current) return;
+            if (event.currentTarget.currentTime >= range.endSec) {
+              autoStoppedRef.current = true;
+              event.currentTarget.pause();
+            }
+          }}
+          onError={() => setDirectPlayFailed(true)}
+        />
+      </div>
+    </>
+  );
 }
 
 export function RecommendedVideosCard({ profile, isOnline, onOpenAiDashboard }: RecommendedVideosCardProps) {
@@ -296,20 +388,7 @@ export function RecommendedVideosCard({ profile, isOnline, onOpenAiDashboard }: 
                 閉じる
               </button>
             </div>
-            {activeVideo.displayTime && (
-              <p className="mb-2 text-xs font-bold text-amber-600">
-                ▶ {activeVideo.displayTime} 付近を再生してください（自動頭出しは今後対応予定）
-              </p>
-            )}
-            <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
-              <iframe
-                src={toDrivePreviewUrl(activeVideo.videoUrl) || ''}
-                title={activeVideo.title}
-                className="h-full w-full"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-              />
-            </div>
+            <DriveVideoPlayer key={activeVideo.recommendationId} recommendation={activeVideo} />
             <a
               href={activeVideo.videoUrl}
               target="_blank"
