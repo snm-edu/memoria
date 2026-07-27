@@ -271,8 +271,11 @@ GAS のためユニットテスト基盤がない。以下の手順で検証す�
 - **Apps Script プロジェクトのタイムゾーンを `Asia/Tokyo` にする。** 週次トリガーの
   `atHour(7)` はプロジェクトのタイムゾーンで解釈される。JST でない場合、日曜のうちに
   発火して「先週」の定義が1週ずれ、しかも送信済みキーも変わるため二重に配信される。
-- **監査シートの置き場所は名簿スプレッドシート（`STUDENT_LIST_ID`）**。氏名と未着手状態の
-  組み合わせは、Web アプリを `ANYONE_ANONYMOUS` で公開している問題バンクには置かない。
+- **氏名を含むシートは全て名簿スプレッドシート（`STUDENT_LIST_ID`）に置く。**
+  対象は `students`（`report_group` 列）・`対象者リスト`・監査シート `週次Teams_YYYYMMDD` の3つ。
+  問題バンクは Web アプリを `ANYONE_ANONYMOUS` で公開しているため、個人が特定できる
+  データを置かない。問題バンク側に残るのは `student_logs` / `enrolled_students` /
+  `profile` など、既にそこにあるものだけとする。
 - **専用の Apps Script プロジェクトに置く（gas-backend に同居させない）。**
   `LockService.getScriptLock()` はプロジェクト単位である。`AnswerService.submitAnswer` は
   回答1件ごとにこのロックを取るため、gas-backend に同居させると、週次レポートが集計中
