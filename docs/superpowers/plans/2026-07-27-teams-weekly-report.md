@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** 2026年度既卒生24名のメモリア実施状況を、毎週月曜7時に藤吉先生のTeamsチャットへ自動送信する。
+**Goal:** 2026年度既卒生24名のメモリア実施状況を、毎週月曜7時に担当教員のTeamsチャットへ自動送信する。
 
 **Architecture:** 純粋ロジック（週の範囲計算・状態判定・メッセージ整形）を GAS API に依存しない `TeamsWeeklyReportCore.gs` に分離し、Node の `node:test` で自動テストする。Google Sheets 読み書き・メール・HTTP送信は `TeamsWeeklyReport.gs` に隔離し、Apps Script 上で手動検証する。送信先は Power Automate の HTTP トリガーで、そこから Teams チャットへ投稿する。
 
@@ -608,7 +608,7 @@ ls -l automation/teams-weekly/
 （`pwa-frontend/src/services/api.ts` の `submitAnswer`）は `studentNumber` を送らず、
 `gas-backend/src/AnswerService.gs:63` は `student_number: studentNumber || ''` と
 空文字で書き込む。学籍番号だけで突合すると、**毎日学習している学生が「未着手」として
-藤吉先生に報告される** — このシステムが最も避けるべき誤りそのものだった。
+担当教員に報告される** — このシステムが最も避けるべき誤りそのものだった。
 
 **現行仕様**
 
@@ -775,198 +775,33 @@ ls -l automation/teams-weekly/
 
 ---
 
-### Task 9: dryRun による実データ検証
+### Task 9〜11: 実機セットアップ・検証（運用者が実施）
 
-**Files:**
-- なし（Apps Script 上での検証のみ）
+> **手順の正本は `automation/teams-weekly/README.md`。** ここには再掲しない
+> （実装が進むたびに二重管理の片方が古くなるため）。README は実装済みコードから
+> 起こしてあり、スクリプトプロパティ・関数名・POSTペイロードのスキーマは
+> 実コードと突き合わせ済み。
 
-- [ ] **Step 1: dryRun を実行する**
+これらはコードでは完結せず、Apps Script エディタと Power Automate、
+実データへのアクセスが必要なため、運用者（ユーザー）が実施する。
 
-Apps Script エディタで下記を実行する:
+| Task | 内容 | README の該当節 |
+|---|---|---|
+| 9 | 対象者リスト作成 → `report_group` 反映 → dryRun で実データ突き合わせ | セットアップ 1〜3, 5 |
+| 10 | Power Automate フロー作成 → 単発送信 → 二重送信ガード → 異常系 | Power Automate フロー作成 / セットアップ 4, 6 |
+| 11 | 週次トリガー＋ウォッチドッグトリガー設置 → 翌週の初回自動配信確認 | セットアップ 7 |
 
-```javascript
-function debugDryRun() {
-  var r = buildWeeklyReport(true);
-  Logger.log('対象 ' + r.counts.total + ' / 実施 ' + r.counts.active
-    + ' / 停止 ' + r.counts.stalled + ' / 小休止 ' + r.counts.paused
-    + ' / 未着手 ' + r.counts.never);
-  Logger.log(r.text);
-}
-```
-
-Expected: エラーなく完了し、ログにメッセージ本文が出る。
-`counts.total` が **24** であること。
-`active + stalled + paused + never` の合計が `total` と一致すること。
-
-- [ ] **Step 2: シートの内容を実データと突き合わせる**
-
-`週次Teams_YYYYMMDD` シートを開き、次を目視で確認する:
-
-1. 24行あること
-2. `student_logs` に回答がある学生の `累計回答数` が0でないこと
-   （`student_logs` を `student_number` でフィルタして件数を数え、一致するか確認）
-3. ログが1行もない学生の `status` が `never` であること
-4. `最終学習日` が `student_logs` の当該学生の最新 `timestamp` と一致すること
-
-**ここで数字が合わなければ先に進まない。** 集計が誤ったまま送信すると、
-教員の判断材料としては害になる。
-
-- [ ] **Step 3: 確認結果を記録する**
-
-`automation/teams-weekly/README.md` に「検証記録」節を作り、
-実行日・対象人数・突き合わせた学生番号・結果を書き残す。
-
-- [ ] **Step 4: 保存を確認する（コミットはしない）**
-
-`automation/` は .gitignore 済み（公開リポジトリに学内自動化を含めない方針）。
-このタスクのファイルは **git add しない**。ワークツリーに保存されていることだけ確認する。
-
-```bash
-git status --short automation/   # 何も出なければ正常（ignore されている）
-ls -l automation/teams-weekly/
-```
+**実施結果は README の「検証記録」節に運用者が記入する。** 空欄は「未実施」を意味し、
+実施済みと解釈してはならない。
 
 ---
 
-### Task 10: Power Automate フロー作成と送信テスト
-
-**Files:**
-- Modify: `automation/teams-weekly/README.md`
-
-- [ ] **Step 1: フローを作る**
-
-Power Automate（make.powerautomate.com、学校の Microsoft アカウント）で
-インスタント クラウド フローを新規作成する。
-
-1. トリガー: **「HTTP 要求の受信時」**
-2. 要求本文の JSON スキーマに以下を貼る:
-
-```json
-{
-  "type": "object",
-  "properties": {
-    "title": { "type": "string" },
-    "summary": { "type": "string" },
-    "text": { "type": "string" },
-    "html": { "type": "string" },
-    "sheetUrl": { "type": "string" }
-  }
-}
-```
-
-3. アクション: **「チャットまたはチャネルにメッセージを投稿する」**
-   - 投稿者: **フロー ボット**
-   - 投稿先: **チャットとグループ チャット**
-   - 受信者: 藤吉先生
-   - メッセージ: 動的コンテンツの **`html`**
-4. 保存すると、トリガーに **HTTP POST の URL** が表示される。これをコピーする
-
-- [ ] **Step 2: URL をスクリプトプロパティに登録する**
-
-Apps Script の「プロジェクトの設定 > スクリプト プロパティ」で
-`TEAMS_FLOW_URL` に貼り付ける。
-
-**この URL はリポジトリにも、チャットにも、コミットメッセージにも貼らない。**
-URL を知っていれば誰でも藤吉先生にメッセージを送れるため、CLAUDE.md の
-secret 判定基準における「認証情報」相当として扱う。
-
-- [ ] **Step 3: 単発送信テストを行う**
-
-Apps Script で `buildAndSendWeeklyReport` を実行する。
-
-Expected:
-- Teams の藤吉先生とのチャットに Flow ボットからメッセージが届く
-- 改行が保たれている（1行に潰れていない）
-- 絵文字・氏名が文字化けしていない
-- 詳細シートのリンクが開ける
-
-崩れていた場合は `toHtml_` の出力とフロー側の「メッセージ」欄の設定を見直す。
-
-- [ ] **Step 4: 二重送信ガードを確認する**
-
-もう一度 `buildAndSendWeeklyReport` を実行する。
-
-Expected: Teams に**2通目は届かない**。実行ログに
-「この週（YYYY-MM-DD）は送信済みのためスキップします」が出る。
-
-- [ ] **Step 5: 異常系を確認する**
-
-`TEAMS_FLOW_URL` の値を一時的に `https://example.invalid/` に書き換え、
-`resetSentGuard()` を実行してから `buildAndSendWeeklyReport` を実行する。
-
-Expected: 3回リトライしたのち例外で終了し、`ADMIN_EMAIL`（未設定なら実行者）宛に
-「Teams送信に失敗しました」というメールが本文つきで届く。
-確認後、`TEAMS_FLOW_URL` を正しい値に戻す。
-
-- [ ] **Step 6: 手順と検証結果を README に書く**
-
-`automation/teams-weekly/README.md` に Step 1〜5 の手順と、
-実際に確認できた結果（届いた／崩れなかった／ガードが効いた／エラーメールが来た）を記録する。
-URL の実値は書かない。
-
-- [ ] **Step 7: 保存を確認する（コミットはしない）**
-
-`automation/` は .gitignore 済み（公開リポジトリに学内自動化を含めない方針）。
-このタスクのファイルは **git add しない**。ワークツリーに保存されていることだけ確認する。
-
-```bash
-git status --short automation/   # 何も出なければ正常（ignore されている）
-ls -l automation/teams-weekly/
-```
-
----
-
-### Task 11: 週次トリガーの設定と初回自動配信の確認
-
-**Files:**
-- Modify: `automation/teams-weekly/README.md`
-
-- [ ] **Step 1: トリガーを設定する**
-
-Apps Script で `installWeeklyTrigger` を実行する。
-
-Expected: ログに「毎週月曜 7時のトリガーを設定しました」。
-左メニュー「トリガー」に `buildAndSendWeeklyReport` が週次で1件だけ登録されている
-（重複がないこと）。
-
-- [ ] **Step 2: 送信済みフラグを解除する**
-
-`resetSentGuard()` を実行する。手動テストで立ったフラグを消しておかないと、
-翌週の自動実行が「送信済み」と誤判定してスキップされる可能性がある
-（週が変われば `range.start` も変わるため通常は問題ないが、確実にしておく）。
-
-- [ ] **Step 3: 翌週月曜に実配信を確認する**
-
-翌週の月曜 7時以降に Teams を確認する。届いていなければ Apps Script の
-「実行数」画面でエラー内容を確認する。
-
-- [ ] **Step 4: 運用手順を README に完成させる**
-
-以下を含める:
-
-- 対象者を増減するとき: `students` シートの `report_group` 列を編集するだけ
-- 年度が変わるとき: `REPORT_GROUP` プロパティを新しい値に変更し、名簿を付け替える
-- 送信を止めるとき: Apps Script の「トリガー」から削除する
-- 同じ週にもう一度送りたいとき: `resetSentGuard()` → `buildAndSendWeeklyReport()`
-- 実施者が増えて正答率・苦手分野を出したくなったとき: 設計書の「将来の拡張ポイント」を参照
-
-- [ ] **Step 5: 保存を確認する（コミットはしない）**
-
-`automation/` は .gitignore 済み（公開リポジトリに学内自動化を含めない方針）。
-このタスクのファイルは **git add しない**。ワークツリーに保存されていることだけ確認する。
-
-```bash
-git status --short automation/   # 何も出なければ正常（ignore されている）
-ls -l automation/teams-weekly/
-```
-
----
 
 ## 完了条件
 
 1. `node --test automation/teams-weekly/tests/core.test.js` が全件パスする
 2. `週次Teams_YYYYMMDD` シートに対象24名が出力され、実データと突き合わせて数値が一致している
-3. Teams の藤吉先生とのチャットに、崩れのないメッセージが実際に届いている
+3. Teams の担当教員とのチャットに、崩れのないメッセージが実際に届いている
 4. 同一週の再実行で二重送信されないことを実行して確認している
 5. 送信失敗時にエラーメールが届くことを実行して確認している
 6. 週次トリガーが1件だけ登録されている
