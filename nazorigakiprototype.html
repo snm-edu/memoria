@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>メモリア 書字トレーニング プロトタイプ</title>
+<style>
+  :root {
+    --ce-color: #1d4ed8;
+    --ce-border: #93c5fd;
+    --ce-bg1: #eff6ff;
+    --ce-bg2: #dbeafe;
+    --ce-bg3: #bfdbfe;
+    --ink: #1e293b;
+    --ok: #059669;
+    --warn: #d97706;
+    --ng: #dc2626;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    overscroll-behavior: none;
+    background: linear-gradient(135deg, var(--ce-bg1) 0%, var(--ce-bg2) 50%, var(--ce-bg3) 100%);
+    min-height: 100dvh;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+    color: var(--ink);
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 12px 14px calc(24px + env(safe-area-inset-bottom)); }
+
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 4px 8px;
+  }
+  header h1 { font-size: 17px; color: var(--ce-color); letter-spacing: .04em; }
+  header h1 small { font-weight: normal; color: #64748b; font-size: 11px; margin-left: 8px; }
+  .badge {
+    font-size: 11px; background: #fff; border: 1px solid var(--ce-border);
+    color: var(--ce-color); border-radius: 999px; padding: 4px 10px; white-space: nowrap;
+  }
+
+  /* ---- 問題カード ---- */
+  .prompt-card {
+    background: #fff; border: 1px solid var(--ce-border); border-radius: 16px;
+    padding: 14px 16px; margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, .07);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .yomi-chip {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--ce-bg2), var(--ce-bg3));
+    border: 1px solid var(--ce-border); color: var(--ce-color);
+    font-size: 20px; font-weight: bold; border-radius: 12px; padding: 10px 16px;
+    letter-spacing: .1em;
+  }
+  .prompt-text { font-size: 13px; line-height: 1.55; color: #475569; }
+  .prompt-text b { color: var(--ce-color); }
+  .qnav { margin-left: auto; display: flex; gap: 6px; flex-shrink: 0; }
+  .qnav button {
+    border: 1px solid var(--ce-border); background: #fff; color: var(--ce-color);
+    border-radius: 10px; width: 40px; height: 40px; font-size: 16px; cursor: pointer;
+  }
+  .qnav .count { font-size: 11px; color: #64748b; align-self: center; padding: 0 2px; }
+
+  /* ---- モードタブ ---- */
+  .modes { display: flex; gap: 6px; margin-bottom: 10px; }
+  .modes button {
+    flex: 1; border: 1px solid var(--ce-border); background: rgba(255,255,255,.65);
+    color: #475569; border-radius: 12px; padding: 9px 4px; font-size: 13px; cursor: pointer;
+    transition: all .15s;
+  }
+  .modes button.active {
+    background: var(--ce-color); border-color: var(--ce-color); color: #fff; font-weight: bold;
+    box-shadow: 0 3px 10px rgba(29, 78, 216, .3);
+  }
+  .modes button small { display: block; font-size: 9px; opacity: .75; margin-top: 2px; font-weight: normal; }
+
+  /* ---- キャンバス ---- */
+  .board {
+    position: relative; background: #fff; border: 1px solid var(--ce-border);
+    border-radius: 16px; overflow: hidden;
+    box-shadow: 0 3px 14px rgba(29, 78, 216, .10);
+    touch-action: none;           /* スクロール抑止＝パームでの画面移動も防ぐ */
+    -webkit-user-select: none; user-select: none;
+  }
+  .board canvas { display: block; width: 100%; height: auto; }
+  #inkCanvas, #resultCanvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  #resultCanvas { pointer-events: none; }
+
+  .pen-hint {
+    position: absolute; top: 8px; right: 10px; font-size: 10px; color: #94a3b8;
+    background: rgba(255,255,255,.85); border-radius: 8px; padding: 3px 8px; pointer-events: none;
+  }
+
+  /* ---- ツールバー ---- */
+  .toolbar { display: flex; gap: 8px; margin-top: 10px; align-items: center; flex-wrap: wrap; }
+  .toolbar button {
+    border: 1px solid var(--ce-border); background: #fff; color: var(--ce-color);
+    border-radius: 12px; padding: 11px 14px; font-size: 13px; cursor: pointer;
+  }
+  .toolbar button:active { transform: scale(.97); }
+  #judgeBtn {
+    margin-left: auto; background: var(--ce-color); color: #fff; border-color: var(--ce-color);
+    font-weight: bold; padding: 11px 26px; font-size: 15px;
+    box-shadow: 0 3px 10px rgba(29, 78, 216, .35);
+  }
+  .toggle { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #64748b; }
+  .toggle input { width: 18px; height: 18px; accent-color: var(--ce-color); }
+
+  /* ---- 結果パネル ---- */
+  .result {
+    margin-top: 10px; background: #fff; border: 1px solid var(--ce-border); border-radius: 16px;
+    padding: 14px 16px; display: none; animation: pop .25s ease;
+  }
+  .result.show { display: block; }
+  @keyframes pop { from { transform: translateY(6px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .result-head { display: flex; align-items: center; gap: 14px; }
+  .mark { font-size: 40px; font-weight: bold; line-height: 1; }
+  .mark.ok { color: var(--ok); } .mark.warn { color: var(--warn); } .mark.ng { color: var(--ng); }
+  .result-msg { font-size: 14px; font-weight: bold; }
+  .result-sub { font-size: 11px; color: #64748b; margin-top: 3px; }
+  .meters { display: flex; gap: 18px; margin-top: 10px; }
+  .meter { flex: 1; }
+  .meter .label { font-size: 10px; color: #64748b; display: flex; justify-content: space-between; margin-bottom: 3px; }
+  .bar { height: 8px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
+  .bar i { display: block; height: 100%; border-radius: 999px; background: var(--ce-color); transition: width .4s ease; }
+  .self-judge { margin-top: 12px; display: none; gap: 8px; }
+  .self-judge.show { display: flex; }
+  .self-judge button { flex: 1; border-radius: 12px; padding: 12px; font-size: 14px; font-weight: bold; cursor: pointer; border: 1px solid; }
+  .sj-ok { background: #ecfdf5; border-color: #6ee7b7; color: var(--ok); }
+  .sj-ng { background: #fef2f2; border-color: #fca5a5; color: var(--ng); }
+  .step-note {
+    margin-top: 10px; font-size: 11px; color: #64748b; background: var(--ce-bg1);
+    border-radius: 10px; padding: 8px 10px; line-height: 1.6;
+  }
+  .step-note b { color: var(--ce-color); }
+
+  footer { text-align: center; font-size: 10px; color: #94a3b8; margin-top: 16px; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>メモリア 書字トレーニング<small>プロトタイプ v0.1（CE学科）</small></h1>
+    <span class="badge" id="penBadge">ペン未検出</span>
+  </header>
+
+  <div class="prompt-card">
+    <div class="yomi-chip" id="yomiChip">えんげ</div>
+    <div class="prompt-text" id="promptText"></div>
+    <div class="qnav">
+      <button id="prevBtn" aria-label="前の問題">‹</button>
+      <span class="count" id="qCount">1/8</span>
+      <button id="nextBtn" aria-label="次の問題">›</button>
+    </div>
+  </div>
+
+  <div class="modes">
+    <button data-mode="trace" class="active">① なぞり書き<small>薄い手本をなぞる・自動判定</small></button>
+    <button data-mode="partial">② 頭文字ヒント<small>1文字目だけ手本・参考判定</small></button>
+    <button data-mode="recall">③ 白紙想起<small>記憶から書く・自己判定</small></button>
+  </div>
+
+  <div class="board" id="board">
+    <canvas id="templateCanvas"></canvas>
+    <canvas id="inkCanvas"></canvas>
+    <canvas id="resultCanvas"></canvas>
+    <div class="pen-hint" id="penHint">Apple Pencilで書けます（手のひらは無視されます）</div>
+  </div>
+
+  <div class="toolbar">
+    <button id="undoBtn">↩︎ 一画戻す</button>
+    <button id="clearBtn">✕ 全部消す</button>
+    <label class="toggle"><input type="checkbox" id="fingerToggle">指でも書く</label>
+    <button id="judgeBtn">判定する</button>
+  </div>
+
+  <div class="result" id="resultPanel">
+    <div class="result-head">
+      <div class="mark" id="resultMark">○</div>
+      <div>
+        <div class="result-msg" id="resultMsg"></div>
+        <div class="result-sub" id="resultSub"></div>
+      </div>
+    </div>
+    <div class="meters">
+      <div class="meter">
+        <div class="label"><span>手本の被覆率</span><span id="covVal">–</span></div>
+        <div class="bar"><i id="covBar" style="width:0%"></i></div>
+      </div>
+      <div class="meter">
+        <div class="label"><span>はみ出し率</span><span id="oobVal">–</span></div>
+        <div class="bar"><i id="oobBar" style="width:0%"></i></div>
+      </div>
+    </div>
+    <div class="self-judge" id="selfJudge">
+      <button class="sj-ok" id="sjOk">○ 書けた</button>
+      <button class="sj-ng" id="sjNg">✕ 書けなかった</button>
+    </div>
+    <div class="step-note" id="stepNote"></div>
+  </div>
+
+  <footer>
+    判定はすべて端末内で完結します（通信・AI・データ送信なし）<br>
+    緑＝なぞれた部分／赤＝なぞり残し。メモリアステップ統合時はこの結果がSM-2品質スコアに接続されます
+  </footer>
+</div>
+
+<script>
+'use strict';
+
+/* ================================================================
+ * メモリア 書字トレーニング プロトタイプ
+ *  - 3モード: trace(なぞり書き) / partial(頭文字ヒント) / recall(白紙想起)
+ *  - Apple Pencil対応: pointerType==='pen' 優先、パームリジェクション、筆圧線幅
+ *  - 判定: 手本グリフ画素の被覆率 + 膨張手本外へのはみ出し率（完全オフライン）
+ * ================================================================ */
+
+// ---- 出題データ（CE学科・定期試験頻出の書字用語サンプル） ----
+const TERMS = [
+  { kanji: '嚥下', yomi: 'えんげ',   hint: '飲み込むこと。<b>誤嚥性肺炎</b>の「えん」。' },
+  { kanji: '穿刺', yomi: 'せんし',   hint: '血管や体腔に<b>針を刺す</b>こと。透析のシャント◯◯。' },
+  { kanji: '橈骨', yomi: 'とうこつ', hint: '前腕の<b>母指側</b>の骨。脈拍触知の動脈名にも。' },
+  { kanji: '灌流', yomi: 'かんりゅう', hint: '人工心肺などで<b>血液を送り組織に行き渡らせる</b>こと。' },
+  { kanji: '褥瘡', yomi: 'じょくそう', hint: '長期臥床による<b>床ずれ</b>。体位変換で予防。' },
+  { kanji: '鉗子', yomi: 'かんし',   hint: '組織や物を<b>はさむ</b>器具。' },
+  { kanji: '塞栓', yomi: 'そくせん', hint: '血管が<b>詰まる</b>こと。空気◯◯症に注意。' },
+  { kanji: '蠕動', yomi: 'ぜんどう', hint: '消化管が内容物を送る<b>波状の運動</b>。' },
+];
+
+// ---- 状態 ----
+let qIndex = 0;
+let mode = 'trace';            // trace | partial | recall
+let strokes = [];              // [{ points: [{x,y,p}] }]
+let currentStroke = null;
+let penDetected = false;
+let judged = false;
+
+// ---- キャンバス参照 ----
+const board = document.getElementById('board');
+const tplCanvas = document.getElementById('templateCanvas');
+const inkCanvas = document.getElementById('inkCanvas');
+const resCanvas = document.getElementById('resultCanvas');
+const tplCtx = tplCanvas.getContext('2d');
+const inkCtx = inkCanvas.getContext('2d');
+const resCtx = resCanvas.getContext('2d');
+
+// 判定用の不可視キャンバス
+const maskCanvas = document.createElement('canvas');     // 手本グリフ（全文字・判定基準）
+const dilCanvas  = document.createElement('canvas');     // 膨張手本（はみ出し許容域）
+const wideCanvas = document.createElement('canvas');     // ストロークを太らせた被覆判定用インク
+
+const DPR = Math.min(window.devicePixelRatio || 1, 2);
+const CANVAS_H_RATIO = 0.42;   // 盤面の縦横比
+const FONT_STACK = '"YuKyokasho", "YuKyokasho Yoko", "Klee One", "Hiragino Mincho ProN", "Yu Mincho", serif';
+
+let cssW = 0, cssH = 0;        // CSSピクセルでの盤面サイズ
+let cells = [];                // 文字マス [{x, y, size}]
+
+// ================= レイアウト・手本描画 =================
+
+function setupCanvases() {
+  cssW = board.clientWidth;
+  cssH = Math.round(cssW * CANVAS_H_RATIO);
+  for (const c of [tplCanvas, inkCanvas, resCanvas, maskCanvas, dilCanvas, wideCanvas]) {
+    c.width = Math.round(cssW * DPR);
+    c.height = Math.round(cssH * DPR);
+  }
+  tplCanvas.style.height = cssH + 'px';
+  for (const ctx of [tplCtx, inkCtx, resCtx]) {
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+  }
+}
+
+function computeCells(n) {
+  const pad = 16;
+  const gap = 10;
+  const maxCell = Math.min(cssH - pad * 2, 170);
+  const size = Math.min(maxCell, (cssW - pad * 2 - gap * (n - 1)) / n);
+  const totalW = size * n + gap * (n - 1);
+  const x0 = (cssW - totalW) / 2;
+  const y0 = (cssH - size) / 2;
+  cells = [];
+  for (let i = 0; i < n; i++) cells.push({ x: x0 + i * (size + gap), y: y0, size });
+}
+
+/** マス（漢字練習帳風の点線十字つき）を描く */
+function drawCellFrames(ctx) {
+  ctx.save();
+  for (const c of cells) {
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([]);
+    ctx.strokeRect(c.x, c.y, c.size, c.size);
+    ctx.strokeStyle = '#e2e8f0';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(c.x + c.size / 2, c.y + 3); ctx.lineTo(c.x + c.size / 2, c.y + c.size - 3);
+    ctx.moveTo(c.x + 3, c.y + c.size / 2); ctx.lineTo(c.x + c.size - 3, c.y + c.size / 2);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+/** 文字をマスに描く（判定用マスクにも使う共通ルーチン） */
+function drawGlyphs(ctx, text, opts) {
+  const { color, from = 0, to = text.length, stroke = 0 } = opts;
+  ctx.save();
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  for (let i = from; i < to; i++) {
+    const c = cells[i];
+    if (!c) continue;
+    ctx.font = `${Math.round(c.size * 0.78)}px ${FONT_STACK}`;
+    ctx.fillStyle = color;
+    ctx.fillText(text[i], c.x + c.size / 2, c.y + c.size / 2 + c.size * 0.03);
+    if (stroke > 0) {
+      ctx.strokeStyle = color;
+      ctx.lineWidth = stroke;
+      ctx.lineJoin = 'round';
+      ctx.strokeText(text[i], c.x + c.size / 2, c.y + c.size / 2 + c.size * 0.03);
+    }
+  }
+  ctx.restore();
+}
+
+/** 手本レイヤーを現在のモードに合わせて再描画 */
+function renderTemplate() {
+  const term = TERMS[qIndex];
+  computeCells(term.kanji.length);
+
+  tplCtx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  tplCtx.clearRect(0, 0, cssW, cssH);
+  drawCellFrames(tplCtx);
+
+  // 見える手本: trace=全文字 / partial=1文字目のみ / recall=なし
+  const visibleTo = mode === 'trace' ? term.kanji.length : mode === 'partial' ? 1 : 0;
+  if (visibleTo > 0) drawGlyphs(tplCtx, term.kanji, { color: 'rgba(147, 197, 253, 0.55)', to: visibleTo });
+
+  // 判定基準マスク（常に全文字）
+  const mctx = maskCanvas.getContext('2d');
+  mctx.setTransform(1, 0, 0, 1, 0, 0);
+  mctx.clearRect(0, 0, maskCanvas.width, maskCanvas.height);
+  drawGlyphs(mctx, term.kanji, { color: '#000' });
+
+  // 膨張手本（はみ出し許容域）: 太いstrokeTextでグリフを膨らませる
+  const dctx = dilCanvas.getContext('2d');
+  dctx.setTransform(1, 0, 0, 1, 0, 0);
+  dctx.clearRect(0, 0, dilCanvas.width, dilCanvas.height);
+  const dilate = Math.max(14, (cells[0]?.size || 100) * 0.16);
+  drawGlyphs(dctx, term.kanji, { color: '#000', stroke: dilate });
+}
+
+// ================= ストローク描画 =================
+
+function strokeWidth(pressure) {
+  const base = Math.max(3.5, (cells[0]?.size || 100) * 0.045);
+  const p = pressure > 0 ? pressure : 0.5;
+  return base * (0.6 + p * 0.9);
+}
+
+function drawStrokeSegment(ctx, pts, widthScale = 1) {
+  if (pts.length < 2) {
+    const pt = pts[0];
+    if (!pt) return;
+    ctx.beginPath();
+    ctx.fillStyle = ctx.strokeStyle;
+    ctx.arc(pt.x, pt.y, strokeWidth(pt.p) * widthScale / 2, 0, Math.PI * 2);
+    ctx.fill();
+    return;
+  }
+  for (let i = 1; i < pts.length; i++) {
+    const a = pts[i - 1], b = pts[i];
+    ctx.beginPath();
+    ctx.lineWidth = strokeWidth((a.p + b.p) / 2) * widthScale;
+    ctx.moveTo(a.x, a.y);
+    ctx.lineTo(b.x, b.y);
+    ctx.stroke();
+  }
+}
+
+function redrawInk() {
+  inkCtx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  inkCtx.clearRect(0, 0, cssW, cssH);
+  inkCtx.strokeStyle = '#1e293b';
+  for (const s of strokes) drawStrokeSegment(inkCtx, s.points);
+}
+
+function clearResult() {
+  judged = false;
+  resCtx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  resCtx.clearRect(0, 0, cssW, cssH);
+  document.getElementById('resultPanel').classList.remove('show');
+}
+
+// ================= ポインター入力（Pencil対応） =================
+
+function acceptPointer(e) {
+  if (e.pointerType === 'pen') return true;
+  if (e.pointerType === 'mouse') return true;   // PC検証用
+  // touch: ペン検出済みなら常に拒否（パームリジェクション）。未検出時はトグルに従う
+  if (e.pointerType === 'touch') {
+    if (penDetected) return false;
+    return document.getElementById('fingerToggle').checked;
+  }
+  return false;
+}
+
+function toLocal(e) {
+  const rect = inkCanvas.getBoundingClientRect();
+  return {
+    x: (e.clientX - rect.left) * (cssW / rect.width),
+    y: (e.clientY - rect.top) * (cssH / rect.height),
+    p: e.pressure || 0.5,
+  };
+}
+
+inkCanvas.addEventListener('pointerdown', (e) => {
+  if (e.pointerType === 'pen' && !penDetected) {
+    penDetected = true;
+    document.getElementById('penBadge').textContent = '✎ Apple Pencil接続中';
+    document.getElementById('penHint').style.display = 'none';
+  }
+  if (!acceptPointer(e)) return;
+  e.preventDefault();
+  if (judged) clearResult();
+  inkCanvas.setPointerCapture(e.pointerId);
+  currentStroke = { points: [toLocal(e)] };
+  inkCtx.strokeStyle = '#1e293b';
+});
+
+inkCanvas.addEventListener('pointermove', (e) => {
+  if (!currentStroke || !acceptPointer(e)) return;
+  e.preventDefault();
+  const events = e.getCoalescedEvents ? e.getCoalescedEvents() : [e];
+  const startIdx = Math.max(0, currentStroke.points.length - 1);
+  for (const ce of events) currentStroke.points.push(toLocal(ce));
+  drawStrokeSegment(inkCtx, currentStroke.points.slice(startIdx));
+});
+
+function endStroke(e) {
+  if (!currentStroke) return;
+  if (currentStroke.points.length > 0) strokes.push(currentStroke);
+  currentStroke = null;
+}
+inkCanvas.addEventListener('pointerup', endStroke);
+inkCanvas.addEventListener('pointercancel', endStroke);
+
+// ================= 判定エンジン =================
+
+/**
+ * 被覆率・はみ出し率を算出する（縮小解像度で高速比較）
+ *  coverage = |手本 ∩ 太らせたインク| / |手本|
+ *  oob      = |実インク − 膨張手本| / |実インク|
+ */
+function analyze() {
+  // 太らせたインク（被覆判定用）: ペン線は手本の線より細いため、判定時のみ膨張させる
+  const wctx = wideCanvas.getContext('2d');
+  wctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  wctx.clearRect(0, 0, cssW, cssH);
+  wctx.lineCap = 'round';
+  wctx.lineJoin = 'round';
+  wctx.strokeStyle = '#000';
+  const wideScale = Math.max(2.4, (cells[0]?.size || 100) * 0.028);
+  for (const s of strokes) drawStrokeSegment(wctx, s.points, wideScale);
+
+  // 縮小解像度で比較（1/3スケール）
+  const sw = Math.max(1, Math.round(tplCanvas.width / 3));
+  const sh = Math.max(1, Math.round(tplCanvas.height / 3));
+  const small = document.createElement('canvas');
+  small.width = sw; small.height = sh;
+  const sctx = small.getContext('2d', { willReadFrequently: true });
+
+  const readAlpha = (source) => {
+    sctx.clearRect(0, 0, sw, sh);
+    sctx.drawImage(source, 0, 0, sw, sh);
+    return sctx.getImageData(0, 0, sw, sh).data;
+  };
+
+  const tpl  = readAlpha(maskCanvas);
+  const dil  = readAlpha(dilCanvas);
+  const wide = readAlpha(wideCanvas);
+  const inkA = readAlpha(inkCanvas);
+
+  let tplPx = 0, covered = 0, inkPx = 0, oobPx = 0;
+  const missed = [];   // なぞり残し座標（可視化用・縮小座標）
+  for (let i = 3; i < tpl.length; i += 4) {
+    const isTpl = tpl[i] > 40;
+    const isWide = wide[i] > 40;
+    const isInk = inkA[i] > 40;
+    const isDil = dil[i] > 40;
+    if (isTpl) {
+      tplPx++;
+      if (isWide) covered++;
+      else missed.push((i - 3) / 4);
+    }
+    if (isInk) {
+      inkPx++;
+      if (!isDil) oobPx++;
+    }
+  }
+  const coverage = tplPx > 0 ? covered / tplPx : 0;
+  const oob = inkPx > 0 ? oobPx / inkPx : 0;
+  return { coverage, oob, inkPx, missed, covered, tplPx, sw, sh };
+}
+
+/** なぞり残し／なぞれた部分をオーバーレイ描画 */
+function paintResultOverlay(a) {
+  resCtx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  resCtx.clearRect(0, 0, cssW, cssH);
+  const scaleX = cssW / a.sw, scaleY = cssH / a.sh;
+
+  // 手本全体をいったん薄緑、なぞり残しを赤で上塗り
+  resCtx.globalAlpha = 0.35;
+  const term = TERMS[qIndex];
+  drawGlyphs(resCtx, term.kanji, { color: '#34d399' });
+  resCtx.globalAlpha = 0.8;
+  resCtx.fillStyle = '#f87171';
+  for (const idx of a.missed) {
+    const x = (idx % a.sw) * scaleX;
+    const y = Math.floor(idx / a.sw) * scaleY;
+    resCtx.fillRect(x, y, scaleX + 0.5, scaleY + 0.5);
+  }
+  resCtx.globalAlpha = 1;
+}
+
+const MODE_LABEL = { trace: '① なぞり書き', partial: '② 頭文字ヒント', recall: '③ 白紙想起' };
+
+function judge() {
+  if (strokes.length === 0) {
+    showResult({ mark: 'ng', msg: 'まだ何も書かれていません', sub: 'マスの中にPencilで書いてみましょう', cov: 0, oob: 0, self: false, note: '' });
+    return;
+  }
+  const a = analyze();
+  judged = true;
+  const covPct = Math.round(a.coverage * 100);
+  const oobPct = Math.round(a.oob * 100);
+
+  if (mode === 'trace') {
+    paintResultOverlay(a);
+    let mark, msg, note;
+    if (a.oob > 0.50) {
+      // はみ出し過多は被覆率にかかわらず不合格（乱書き・マス外書字の防止）
+      mark = 'ng'; msg = '字からはみ出しすぎです。薄い手本の上を丁寧に';
+      note = 'マスの外や手本から離れた場所に書いた線が多すぎます。手本の線の上をゆっくりなぞりましょう';
+    } else if (a.coverage >= 0.70 && a.oob <= 0.35) {
+      mark = 'ok'; msg = 'よくなぞれています！合格';
+      note = '<b>メモリアステップ接続時:</b> なぞり書き合格 → 品質上限2でSM-2更新（自力想起ではないため間隔は控えめに進行）→ 次回は<b>②頭文字ヒント</b>に昇格します';
+    } else if (a.coverage >= 0.50) {
+      mark = 'warn'; msg = 'おしい！赤い部分をなぞり残しています';
+      note = '赤く表示された画数・部首を意識して、もう一度なぞってみましょう';
+    } else {
+      mark = 'ng'; msg = 'もう一度。薄い字の上をゆっくりなぞろう';
+      note = 'はみ出しが多い場合は、マスに対して字が小さすぎ/大きすぎないかも確認';
+    }
+    showResult({ mark, msg, sub: `被覆率 ${covPct}%（合格ライン70%）・はみ出し ${oobPct}%（35%まで）`, cov: covPct, oob: oobPct, self: false, note });
+  } else {
+    // partial / recall: 手本を重ね表示して自己判定（自由書字はフォント形状と一致しないため機械判定は参考値）
+    paintResultOverlay(a);
+    const term = TERMS[qIndex];
+    resCtx.globalAlpha = 0.9;
+    drawGlyphs(resCtx, term.kanji, { color: 'rgba(5, 150, 105, 0.65)' });
+    resCtx.globalAlpha = 1;
+    showResult({
+      mark: 'warn', markChar: '?',
+      msg: '模範解答を重ねました。書けていましたか？',
+      sub: `参考一致率 ${covPct}%（自由書字はフォントと形が違うため参考値です）`,
+      cov: covPct, oob: oobPct, self: true,
+      note: mode === 'recall'
+        ? '<b>メモリアステップ接続時:</b> 「書けた」→ 品質満点でSM-2更新・書字マスター認定／「書けなかった」→ ②頭文字ヒントへ降格して翌日再出題'
+        : '<b>メモリアステップ接続時:</b> 「書けた」→ ③白紙想起へ昇格／「書けなかった」→ ①なぞり書きへ降格',
+    });
+  }
+}
+
+function showResult({ mark, markChar, msg, sub, cov, oob, self, note }) {
+  const panel = document.getElementById('resultPanel');
+  const markEl = document.getElementById('resultMark');
+  markEl.className = 'mark ' + mark;
+  markEl.textContent = markChar || (mark === 'ok' ? '○' : mark === 'warn' ? '△' : '✕');
+  document.getElementById('resultMsg').textContent = msg;
+  document.getElementById('resultSub').textContent = sub;
+  document.getElementById('covVal').textContent = cov + '%';
+  document.getElementById('oobVal').textContent = oob + '%';
+  document.getElementById('covBar').style.width = cov + '%';
+  document.getElementById('covBar').style.background = cov >= 70 ? 'var(--ok)' : 'var(--ce-color)';
+  document.getElementById('oobBar').style.width = oob + '%';
+  document.getElementById('oobBar').style.background = oob > 35 ? 'var(--ng)' : '#94a3b8';
+  document.getElementById('selfJudge').classList.toggle('show', !!self);
+  document.getElementById('stepNote').innerHTML = note || '';
+  document.getElementById('stepNote').style.display = note ? 'block' : 'none';
+  panel.classList.add('show');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ================= UI操作 =================
+
+function loadQuestion() {
+  const term = TERMS[qIndex];
+  document.getElementById('yomiChip').textContent = term.yomi;
+  document.getElementById('promptText').innerHTML = `${term.hint}<br>漢字で書いてみよう（${MODE_LABEL[mode]}）`;
+  document.getElementById('qCount').textContent = `${qIndex + 1}/${TERMS.length}`;
+  strokes = [];
+  currentStroke = null;
+  clearResult();
+  renderTemplate();
+  redrawInk();
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => { qIndex = (qIndex - 1 + TERMS.length) % TERMS.length; loadQuestion(); });
+document.getElementById('nextBtn').addEventListener('click', () => { qIndex = (qIndex + 1) % TERMS.length; loadQuestion(); });
+
+document.querySelectorAll('.modes button').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.modes button').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    mode = btn.dataset.mode;
+    loadQuestion();
+  });
+});
+
+document.getElementById('undoBtn').addEventListener('click', () => { strokes.pop(); clearResult(); redrawInk(); });
+document.getElementById('clearBtn').addEventListener('click', () => { strokes = []; clearResult(); redrawInk(); });
+document.getElementById('judgeBtn').addEventListener('click', judge);
+document.getElementById('sjOk').addEventListener('click', () => {
+  showResult({ mark: 'ok', msg: '書けた！マスター度が上がりました', sub: '（プロトタイプのため記録はしていません）', cov: 0, oob: 0, self: false, note: '' });
+  setTimeout(() => { qIndex = (qIndex + 1) % TERMS.length; loadQuestion(); }, 900);
+});
+document.getElementById('sjNg').addEventListener('click', () => {
+  document.querySelector('.modes button[data-mode="trace"]').click();
+});
+
+window.addEventListener('resize', () => { setupCanvases(); renderTemplate(); redrawInk(); clearResult(); });
+
+// ================= 検証用フック（自動テスト専用・UIからは不可視） =================
+
+window.__memoriaDebug = {
+  /** 手本グリフ画素に沿ってインクを合成し、判定を返す（理想的トレースのシミュレーション） */
+  simulatePerfectTrace() {
+    const sctx = maskCanvas.getContext('2d', { willReadFrequently: true });
+    const data = sctx.getImageData(0, 0, maskCanvas.width, maskCanvas.height).data;
+    const step = 3;
+    const rows = new Map();
+    for (let y = 0; y < maskCanvas.height; y += step) {
+      for (let x = 0; x < maskCanvas.width; x += step) {
+        if (data[(y * maskCanvas.width + x) * 4 + 3] > 40) {
+          if (!rows.has(y)) rows.set(y, []);
+          rows.get(y).push(x);
+        }
+      }
+    }
+    strokes = [];
+    for (const [y, xs] of rows) {
+      let run = [];
+      for (let i = 0; i < xs.length; i++) {
+        if (run.length === 0 || xs[i] - xs[i - 1] <= step) run.push(xs[i]);
+        else { if (run.length) strokes.push(this._rowToStroke(y, run)); run = [xs[i]]; }
+      }
+      if (run.length) strokes.push(this._rowToStroke(y, run));
+    }
+    redrawInk();
+    return this.rawAnalyze();
+  },
+  _rowToStroke(y, xs) {
+    return { points: xs.map((x) => ({ x: x / DPR, y: y / DPR, p: 0.5 })) };
+  },
+  /** 盤面の対角に大きく乱書きするシミュレーション */
+  simulateScribble() {
+    strokes = [];
+    const pts1 = [], pts2 = [];
+    for (let t = 0; t <= 40; t++) {
+      pts1.push({ x: 8 + (cssW - 16) * (t / 40), y: 8 + (cssH - 16) * (t / 40), p: 0.5 });
+      pts2.push({ x: cssW - 8 - (cssW - 16) * (t / 40), y: 8 + (cssH - 16) * (t / 40), p: 0.5 });
+    }
+    strokes.push({ points: pts1 }, { points: pts2 });
+    redrawInk();
+    return this.rawAnalyze();
+  },
+  rawAnalyze() { const a = analyze(); return { coverage: a.coverage, oob: a.oob, inkPx: a.inkPx }; },
+  judge, state: () => ({ mode, qIndex, strokes: strokes.length }),
+};
+
+// ---- 起動 ----
+setupCanvases();
+loadQuestion();
+</script>
+</body>
+</html>
