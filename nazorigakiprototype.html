@@ -25,6 +25,10 @@
     min-height: 100dvh;
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
     color: var(--ink);
+    /* パームレスト対策: 手のひらタッチによるテキスト選択・コールアウトメニューを全面禁止 */
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
   }
   .wrap { max-width: 920px; margin: 0 auto; padding: 12px 14px calc(24px + env(safe-area-inset-bottom)); }
 
@@ -141,8 +145,8 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>メモリア 書字トレーニング<small>プロトタイプ v0.1（CE学科）</small></h1>
-    <span class="badge" id="penBadge">ペン未検出</span>
+    <h1>メモリア 書字トレーニング<small>プロトタイプ v0.3（CE学科）</small></h1>
+    <span class="badge" id="penBadge">読み込み中…</span>
   </header>
 
   <div class="prompt-card">
@@ -171,7 +175,7 @@
   <div class="toolbar">
     <button id="undoBtn">↩︎ 一画戻す</button>
     <button id="clearBtn">✕ 全部消す</button>
-    <label class="toggle"><input type="checkbox" id="fingerToggle">指でも書く</label>
+    <label class="toggle"><input type="checkbox" id="fingerToggle" checked>指でも書く</label>
     <button id="judgeBtn">判定する</button>
   </div>
 
@@ -450,6 +454,24 @@ function endStroke(e) {
 inkCanvas.addEventListener('pointerup', endStroke);
 inkCanvas.addEventListener('pointercancel', endStroke);
 
+// ---- パームレスト強化対策 ----
+// 手のひらが盤面や周囲に触れたときの選択・スクロール・拡大鏡がペン入力を中断させるのを防ぐ。
+// ボタン・チェックボックス等の操作要素へのタッチだけは通常動作を残す。
+document.addEventListener('touchstart', (e) => {
+  const t = e.target;
+  const isControl = t && t.closest && t.closest('button, input, label, a, select');
+  if (isControl) return;
+  const onBoard = t && t.closest && t.closest('.board');
+  // 盤面上のタッチは常に既定動作を止める（描画はPointerEventsが処理する）
+  // ペン検出後は、盤面外への手のひらタッチも既定動作を止める
+  if (onBoard || penDetected) e.preventDefault();
+}, { passive: false });
+
+document.addEventListener('touchmove', (e) => {
+  // 書いている最中の手のひらによる画面スクロールを止める
+  if (currentStroke) e.preventDefault();
+}, { passive: false });
+
 // ================= 判定エンジン =================
 
 /**
@@ -634,7 +656,23 @@ document.getElementById('sjNg').addEventListener('click', () => {
   document.querySelector('.modes button[data-mode="trace"]').click();
 });
 
-window.addEventListener('resize', () => { setupCanvases(); renderTemplate(); redrawInk(); clearResult(); });
+function reflow() {
+  if (board.clientWidth < 40) return;   // レイアウト未確定時は無視（rAFリトライに任せる）
+  setupCanvases(); renderTemplate(); redrawInk(); clearResult();
+}
+window.addEventListener('resize', reflow);
+// アプリ内プレビュー等で「後からサイズが確定する」環境に追従する
+if (typeof ResizeObserver !== 'undefined') {
+  let lastW = 0;
+  new ResizeObserver(() => {
+    const w = board.clientWidth;
+    if (w >= 40 && Math.abs(w - lastW) > 2) { lastW = w; reflow(); }
+  }).observe(board);
+}
+// フォント読み込み完了後に手本を描き直す（初回がフォールバック字形になるのを防ぐ）
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => { renderTemplate(); redrawInk(); });
+}
 
 // ================= 検証用フック（自動テスト専用・UIからは不可視） =================
 
@@ -684,9 +722,18 @@ window.__memoriaDebug = {
   judge, state: () => ({ mode, qIndex, strokes: strokes.length }),
 };
 
-// ---- 起動 ----
-setupCanvases();
-loadQuestion();
+// ---- 起動（レイアウト確定までrAFで待ってから初期化） ----
+function boot(attempt = 0) {
+  if (board.clientWidth < 40 && attempt < 240) {   // 最大約4秒待つ
+    requestAnimationFrame(() => boot(attempt + 1));
+    return;
+  }
+  setupCanvases();
+  loadQuestion();
+  const badge = document.getElementById('penBadge');
+  if (badge.textContent === '読み込み中…') badge.textContent = '書けます（ペン推奨・指OK）';
+}
+boot();
 </script>
 </body>
 </html>
