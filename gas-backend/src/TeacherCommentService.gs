@@ -212,24 +212,28 @@ const TeacherCommentService = {
     var sheet = ss.getSheetByName(CONFIG.SHEETS.AI_DASHBOARD);
     if (!sheet) return;
 
-    var data = sheet.getDataRange().getValues();
-    if (data.length <= 1) return;
+    // 行番号を引いてから書くため、日次バッチの疑似行削除と競合すると別人の行を上書きしうる。
+    // DashboardService と同じスクリプトロックで直列化する。
+    DashboardService.withDashboardLock_(function () {
+      var data = sheet.getDataRange().getValues();
+      if (data.length <= 1) return;
 
-    var headers = data[0];
-    var sidIdx = headers.indexOf('student_id');
-    var tcIdx = headers.indexOf('teacher_comment');
-    var updatedIdx = headers.indexOf('updated_at');
-    if (sidIdx === -1 || tcIdx === -1) return;
+      var headers = data[0];
+      var sidIdx = headers.indexOf('student_id');
+      var tcIdx = headers.indexOf('teacher_comment');
+      var updatedIdx = headers.indexOf('updated_at');
+      if (sidIdx === -1 || tcIdx === -1) return;
 
-    for (var i = 1; i < data.length; i++) {
-      if (data[i][sidIdx] === studentId) {
-        sheet.getRange(i + 1, tcIdx + 1).setValue(comment);
-        if (updatedIdx !== -1) {
-          sheet.getRange(i + 1, updatedIdx + 1).setValue(new Date().toISOString());
+      for (var i = 1; i < data.length; i++) {
+        if (data[i][sidIdx] === studentId) {
+          sheet.getRange(i + 1, tcIdx + 1).setValue(comment);
+          if (updatedIdx !== -1) {
+            sheet.getRange(i + 1, updatedIdx + 1).setValue(new Date().toISOString());
+          }
+          return;
         }
-        return;
       }
-    }
+    });
   },
 
   // === HTML レンダリング ===

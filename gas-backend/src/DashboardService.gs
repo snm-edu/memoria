@@ -497,6 +497,29 @@ const DashboardService = {
   },
 
   /**
+   * ai_dashboard の「行番号を引いてから書く」処理を直列化する。
+   *
+   * 2026-08-21 以降、日次バッチが疑似行を deleteRows するため既存行の行番号が動く。
+   * read と write の間に削除が挟まると別人の行を上書きするので、
+   * refreshStudent / saveTeacherComment / rebuildZeroLogRows_ の3経路すべてがこのロックを取る。
+   * （ロックは全参加者が取って初めて機能する。1箇所だけ取っても意味が無い）
+   *
+   * @param {Function} fn ロック内で実行する処理
+   * @return {*} fn の戻り値
+   */
+  withDashboardLock_(fn) {
+    var lock = LockService.getScriptLock();
+    if (!lock.tryLock(20000)) {
+      throw new Error('ai_dashboard のロックを20秒待っても取得できませんでした');
+    }
+    try {
+      return fn();
+    } finally {
+      lock.releaseLock();
+    }
+  },
+
+  /**
    * 名簿の students シートを取得する。
    * ScriptProperty STUDENT_LIST_ID があれば外部スプレッドシート、無ければコンテナ内を見る。
    * 見つからなければ null を返す。
@@ -610,27 +633,27 @@ const DashboardService = {
       rows.push(buildZeroLogDashboardRow_(targets[t], updatedAt));
     }
 
-    // --- 2. シートを読み直す ---
-    var values = dashboard.getDataRange().getValues();
-    var blocks = groupContiguousDesc_(findZeroLogRowNumbersDesc_(values));
+    // --- 2〜4. 読み直し・削除・追記はロック内で一息に行う（行番号レース対策） ---
+    this.withDashboardLock_(function () {
+      var values = dashboard.getDataRange().getValues();
+      var blocks = groupContiguousDesc_(findZeroLogRowNumbersDesc_(values));
 
-    // --- 3. 既存の疑似行を削除（開始行の降順なので行番号がずれない） ---
-    for (var b = 0; b < blocks.length; b++) {
-      dashboard.deleteRows(blocks[b].start, blocks[b].count);
-      result.deleted += blocks[b].count;
-    }
-
-    // --- 4. 一括追記（deleteRows でグリッド行数が減っているので不足分を先に足す） ---
-    if (rows.length) {
-      var startRow = dashboard.getLastRow() + 1;
-      var needRows = startRow + rows.length - 1;
-      var maxRows = dashboard.getMaxRows();
-      if (needRows > maxRows) {
-        dashboard.insertRowsAfter(maxRows, needRows - maxRows);
+      for (var b = 0; b < blocks.length; b++) {
+        dashboard.deleteRows(blocks[b].start, blocks[b].count);
+        result.deleted += blocks[b].count;
       }
-      dashboard.getRange(startRow, 1, rows.length, columnCount).setValues(rows);
-      result.added = rows.length;
-    }
+
+      if (rows.length) {
+        var startRow = dashboard.getLastRow() + 1;
+        var needRows = startRow + rows.length - 1;
+        var maxRows = dashboard.getMaxRows();
+        if (needRows > maxRows) {
+          dashboard.insertRowsAfter(maxRows, needRows - maxRows);
+        }
+        dashboard.getRange(startRow, 1, rows.length, columnCount).setValues(rows);
+        result.added = rows.length;
+      }
+    });
 
     Logger.log('ゼロログ疑似行: 削除 ' + result.deleted + '行 / 追加 ' + result.added + '行');
     return result;
@@ -1113,6 +1136,8 @@ const DashboardService = {
     // 日次バッチが作った疑似行 (zerolog-<student_number>) が残っている場合は、その行を再利用して
     // 上書きする。append すると同一学生が「未着手」と実データの2行に分裂して見えるため
     // （翌朝のバッチまで最大約18時間その状態が続く）。
+    var self = this;
+    this.withDashboardLock_(function () {
     var data = dashboard.getDataRange().getValues();
     var headers = data[0] || [];
     var sidIdx = headers.indexOf('student_id');
@@ -1167,6 +1192,7 @@ const DashboardService = {
     } else {
       dashboard.appendRow(row);
     }
+    });
 
     // PWA経由で学生がレスポンスを受け取るため、teacher_comment は API には含めない
     // (Looker は spreadsheet 直接参照なので影響なし)
