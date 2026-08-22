@@ -62,6 +62,48 @@ function buildStudentNumbersWithLogs_(logs) {
   return set;
 }
 
+/**
+ * 名簿 students シートの getValues() 結果をレコード配列に変換する。
+ *
+ * 期待する列（A〜E）: student_number / student_name / department / grade / report_group
+ * department は canonical 英語id（nursing / clinical_eng / orthoptist / dental_hyg）で
+ * ai_dashboard 側と同一語彙のため変換しない。
+ * grade は生値のまま保持する（数値化は buildZeroLogDashboardRow_ の責務）。
+ * studentNumberRaw は trim 前の生値（buildNameMapFromRoster_ が既存キーを維持するために使う）。
+ *
+ * @param {Array<Array>} values 1行目がヘッダーの2次元配列
+ * @return {Array<Object>}
+ */
+function parseRosterValues_(values) {
+  var records = [];
+  if (!values || values.length <= 1) return records;
+
+  var headers = values[0] || [];
+  var idx = {};
+  for (var h = 0; h < headers.length; h++) {
+    idx[String(headers[h]).trim()] = h;
+  }
+  if (idx['student_number'] === undefined) return records;
+
+  for (var i = 1; i < values.length; i++) {
+    var row = values[i] || [];
+    var rawCell = row[idx['student_number']];
+    var num = normalizeStudentNumber_(rawCell);
+    if (!num) continue;
+    records.push({
+      studentNumber: num,
+      studentNumberRaw: rawCell === null || rawCell === undefined ? '' : String(rawCell),
+      studentName: idx['student_name'] !== undefined ? (row[idx['student_name']] || '') : '',
+      department: idx['department'] !== undefined ? (row[idx['department']] || '') : '',
+      grade: idx['grade'] !== undefined ? (row[idx['grade']] === undefined ? '' : row[idx['grade']]) : '',
+      reportGroup: idx['report_group'] !== undefined
+        ? (row[idx['report_group']] === undefined ? '' : row[idx['report_group']])
+        : ''
+    });
+  }
+  return records;
+}
+
 if (typeof module !== 'undefined') {
   module.exports = {
     ZEROLOG_ID_PREFIX,
@@ -69,5 +111,6 @@ if (typeof module !== 'undefined') {
     normalizeStudentNumber_,
     normalizeMatchKey_,
     buildStudentNumbersWithLogs_,
+    parseRosterValues_,
   };
 }

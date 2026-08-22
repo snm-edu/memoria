@@ -92,3 +92,93 @@ test('学籍番号が数値型・前ゼロ・全角でも同じキーに正規�
     91: true, X004: true, 9002: true,
   });
 });
+
+// ---------------------------------------------------------------------------
+// parseRosterValues_
+// ---------------------------------------------------------------------------
+
+const ROSTER_HEADERS = ['student_number', 'student_name', 'department', 'grade', 'report_group'];
+
+test('ヘッダー名でインデックスを引いてレコード化する', () => {
+  const values = [
+    ROSTER_HEADERS,
+    ['X001', '氏名A', 'clinical_eng', 4, '2026既卒'],
+    ['X002', '氏名B', 'nursing', 1, ''],
+  ];
+  assert.deepStrictEqual(core.parseRosterValues_(values), [
+    { studentNumber: 'X001', studentNumberRaw: 'X001', studentName: '氏名A', department: 'clinical_eng', grade: 4, reportGroup: '2026既卒' },
+    { studentNumber: 'X002', studentNumberRaw: 'X002', studentName: '氏名B', department: 'nursing', grade: 1, reportGroup: '' },
+  ]);
+});
+
+test('空配列・ヘッダー行のみ・null なら空配列を返す', () => {
+  assert.deepStrictEqual(core.parseRosterValues_([]), []);
+  assert.deepStrictEqual(core.parseRosterValues_([ROSTER_HEADERS]), []);
+  assert.deepStrictEqual(core.parseRosterValues_(null), []);
+});
+
+test('report_group列が存在しない名簿でも落ちず、reportGroupは空文字になる', () => {
+  const values = [
+    ['student_number', 'student_name', 'department', 'grade'],
+    ['X001', '氏名A', 'nursing', 2],
+  ];
+  assert.deepStrictEqual(core.parseRosterValues_(values), [
+    { studentNumber: 'X001', studentNumberRaw: 'X001', studentName: '氏名A', department: 'nursing', grade: 2, reportGroup: '' },
+  ]);
+});
+
+test('student_number列が存在しない名簿では空配列を返す（突合キーが無いため）', () => {
+  const values = [['student_name', 'grade'], ['氏名A', 2]];
+  assert.deepStrictEqual(core.parseRosterValues_(values), []);
+});
+
+test('学籍番号が空・空白のみの行はスキップする', () => {
+  const values = [
+    ROSTER_HEADERS,
+    ['', '氏名A', 'nursing', 1, ''],
+    ['   ', '氏名B', 'nursing', 1, ''],
+    ['X002', '氏名C', 'nursing', 1, ''],
+  ];
+  assert.deepStrictEqual(core.parseRosterValues_(values).map((r) => r.studentNumber), ['X002']);
+});
+
+test('grade空欄はそのまま空文字で保持する（数値化は行組み立て側の責務）', () => {
+  const values = [ROSTER_HEADERS, ['X001', '氏名A', 'nursing', '', '2026既卒']];
+  assert.strictEqual(core.parseRosterValues_(values)[0].grade, '');
+});
+
+test('学籍番号は文字列に正規化され、生値も保持される（数値セル対策）', () => {
+  const values = [ROSTER_HEADERS, [9001, '氏名A', 'nursing', 4, '2026既卒']];
+  const rec0 = core.parseRosterValues_(values)[0];
+  assert.strictEqual(rec0.studentNumber, '9001');
+  assert.strictEqual(rec0.studentNumberRaw, '9001');
+});
+
+test('学籍番号に前後空白があると studentNumber は trim 済み・Raw は生値になる', () => {
+  const values = [ROSTER_HEADERS, ['X001 ', '氏名A', 'nursing', 4, '2026既卒']];
+  const rec0 = core.parseRosterValues_(values)[0];
+  assert.strictEqual(rec0.studentNumber, 'X001');
+  assert.strictEqual(rec0.studentNumberRaw, 'X001 ');
+});
+
+test('ヘッダーに前後空白があっても列を引ける', () => {
+  const values = [
+    [' student_number ', 'student_name ', ' department', 'grade', 'report_group'],
+    ['X001', '氏名A', 'nursing', 3, '2026既卒'],
+  ];
+  assert.deepStrictEqual(core.parseRosterValues_(values)[0], {
+    studentNumber: 'X001', studentNumberRaw: 'X001', studentName: '氏名A',
+    department: 'nursing', grade: 3, reportGroup: '2026既卒',
+  });
+});
+
+test('列順が入れ替わっていてもヘッダー名で引く', () => {
+  const values = [
+    ['report_group', 'grade', 'department', 'student_name', 'student_number'],
+    ['2026既卒', 4, 'orthoptist', '氏名A', 'X001'],
+  ];
+  assert.deepStrictEqual(core.parseRosterValues_(values)[0], {
+    studentNumber: 'X001', studentNumberRaw: 'X001', studentName: '氏名A',
+    department: 'orthoptist', grade: 4, reportGroup: '2026既卒',
+  });
+});
