@@ -187,15 +187,83 @@ function selectZeroLogRosterRecords_(rosterRecords, studentNumbersWithLogs) {
   return result;
 }
 
+/**
+ * ゼロログ学生の teacher_comment 固定文言。
+ * Gemini は呼ばない（観察できる事実が無く、既存の totalQuestions<5 ガードと同じ内容にしかならない）。
+ */
+var ZEROLOG_TEACHER_COMMENT = '未着手（回答ログなし）。初回ログインと初回演習の声かけが必要。';
+
+/**
+ * 学年を数値に正規化する。
+ * 数値として解釈できない値（空欄・全角数字・'4年' 等）と、学年としてありえない値
+ * （Date・boolean・範囲外・小数）は 0 にする。
+ *
+ * Number() は Date を巨大な有限の整数に変換するため、isFinite だけでは弾けない
+ * （実測: Number(new Date('2026-08-21')) === 1787270400000）。
+ * Looker の Google Sheets コネクタは列の型をデータから推定するため、
+ * これまで数値だけだった grade 列に文字列が混入すると TEXT 型に再分類され、
+ * 既存の学年フィルタが壊れるリスクがある（未検証だが回避する）。
+ */
+function toGradeNumber_(value) {
+  if (typeof value === 'boolean') return 0;
+  var n = Number(value);
+  if (!Number.isInteger(n)) return 0;
+  if (n < 0 || n > 9) return 0;
+  return n;
+}
+
+/**
+ * 名簿レコード1件から ai_dashboard の16要素配列を作る。
+ *
+ * 列順は DashboardService.updateAll() の dashHeaders と完全に一致させること:
+ * student_id, student_number, student_name, department, grade,
+ * total_questions, correct_rate, streak_days,
+ * weak_categories, strong_categories, weekly_trend, error_patterns,
+ * ai_comment, last_study_date, updated_at, teacher_comment
+ *
+ * student_name が空のときは student_number にフォールバックする
+ * （DashboardService.gs:241-243 と同じ規約。Looker のフィルターコントロールに空値を混ぜないため）。
+ *
+ * @param {Object} record 名簿レコード
+ * @param {string} updatedAtIso ISO8601 文字列（同一バッチ内では同じ値を渡す）
+ * @return {Array} 16要素
+ */
+function buildZeroLogDashboardRow_(record, updatedAtIso) {
+  var r = record || {};
+  var num = normalizeStudentNumber_(r.studentNumber);
+  var name = r.studentName ? String(r.studentName) : num;
+  return [
+    ZEROLOG_ID_PREFIX + num,          // student_id
+    num,                              // student_number
+    name,                             // student_name
+    r.department ? String(r.department) : '', // department
+    toGradeNumber_(r.grade),          // grade
+    0,                                // total_questions
+    0,                                // correct_rate
+    0,                                // streak_days
+    '[]',                             // weak_categories
+    '[]',                             // strong_categories
+    '[]',                             // weekly_trend
+    '[]',                             // error_patterns
+    '',                               // ai_comment
+    '',                               // last_study_date
+    updatedAtIso,                     // updated_at
+    ZEROLOG_TEACHER_COMMENT           // teacher_comment
+  ];
+}
+
 if (typeof module !== 'undefined') {
   module.exports = {
     ZEROLOG_ID_PREFIX,
     ZEROLOG_MAX_ROWS,
+    ZEROLOG_TEACHER_COMMENT,
     normalizeStudentNumber_,
     normalizeMatchKey_,
     buildStudentNumbersWithLogs_,
     parseRosterValues_,
     buildNameMapFromRoster_,
     selectZeroLogRosterRecords_,
+    toGradeNumber_,
+    buildZeroLogDashboardRow_,
   };
 }

@@ -351,3 +351,107 @@ test('groupRows は report_group が非空の行数（対象外になった行�
   assert.strictEqual(got.groupRows, 2);
   assert.strictEqual(got.records.length, 1);
 });
+
+// ---------------------------------------------------------------------------
+// toGradeNumber_ / buildZeroLogDashboardRow_
+// ---------------------------------------------------------------------------
+
+const AT = '2026-08-21T19:00:00.000Z';
+
+test('16要素の配列を返し、各列が仕様どおりの型・値になる', () => {
+  const row = core.buildZeroLogDashboardRow_(
+    { studentNumber: 'X001', studentNumberRaw: 'X001', studentName: '名簿氏名', department: 'clinical_eng', grade: '4', reportGroup: '2026既卒' },
+    AT
+  );
+  assert.strictEqual(row.length, 16);
+  assert.strictEqual(row[0], 'zerolog-X001'); // student_id
+  assert.strictEqual(row[1], 'X001');         // student_number
+  assert.strictEqual(row[2], '名簿氏名');      // student_name
+  assert.strictEqual(row[3], 'clinical_eng'); // department
+  assert.strictEqual(row[4], 4);              // grade（数値）
+  assert.strictEqual(row[5], 0);              // total_questions
+  assert.strictEqual(row[6], 0);              // correct_rate
+  assert.strictEqual(row[7], 0);              // streak_days
+  assert.strictEqual(row[8], '[]');           // weak_categories
+  assert.strictEqual(row[9], '[]');           // strong_categories
+  assert.strictEqual(row[10], '[]');          // weekly_trend
+  assert.strictEqual(row[11], '[]');          // error_patterns
+  assert.strictEqual(row[12], '');            // ai_comment（Geminiを呼ばない）
+  assert.strictEqual(row[13], '');            // last_study_date
+  assert.strictEqual(row[14], AT);            // updated_at
+  assert.strictEqual(row[15], core.ZEROLOG_TEACHER_COMMENT); // teacher_comment（固定文言）
+});
+
+test('gradeが空欄なら0にする', () => {
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001', grade: '' }, AT)[4], 0);
+});
+
+test('gradeが非数値文字列なら0にする（列がTEXT型に再分類されるのを防ぐ）', () => {
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001', grade: '４' }, AT)[4], 0);
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001', grade: '4年' }, AT)[4], 0);
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001', grade: 'abc' }, AT)[4], 0);
+});
+
+test('gradeが数値型ならそのまま数値になる', () => {
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001', grade: 3 }, AT)[4], 3);
+});
+
+test('gradeが数値文字列なら数値化する', () => {
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001', grade: '4' }, AT)[4], 4);
+});
+
+test('gradeが未定義・nullでも0にする', () => {
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001' }, AT)[4], 0);
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001', grade: null }, AT)[4], 0);
+});
+
+test('gradeが0ならそのまま0', () => {
+  assert.strictEqual(core.toGradeNumber_(0), 0);
+});
+
+test('gradeにDateが入っていても0にする（Number(Date)は巨大な有限値になるため）', () => {
+  assert.strictEqual(core.toGradeNumber_(new Date('2026-08-21T00:00:00Z')), 0);
+});
+
+test('gradeにbooleanが入っていても0にする', () => {
+  assert.strictEqual(core.toGradeNumber_(true), 0);
+  assert.strictEqual(core.toGradeNumber_(false), 0);
+});
+
+test('gradeが範囲外の数値なら0にする', () => {
+  assert.strictEqual(core.toGradeNumber_(10), 0);
+  assert.strictEqual(core.toGradeNumber_(-1), 0);
+  assert.strictEqual(core.toGradeNumber_(2.5), 0);
+});
+
+test('student_nameが未定義なら student_number にフォールバックする（コードベースの既存規約）', () => {
+  const row = core.buildZeroLogDashboardRow_({ studentNumber: 'X001' }, AT);
+  assert.strictEqual(row[2], 'X001');
+});
+
+test('student_nameが空文字でも student_number にフォールバックする', () => {
+  const row = core.buildZeroLogDashboardRow_({ studentNumber: 'X001', studentName: '' }, AT);
+  assert.strictEqual(row[2], 'X001');
+});
+
+test('departmentが未定義なら空文字にする（存在しない学科名を捏造しない）', () => {
+  assert.strictEqual(core.buildZeroLogDashboardRow_({ studentNumber: 'X001' }, AT)[3], '');
+});
+
+test('学籍番号が数値型でも student_id は文字列連結になる', () => {
+  const row = core.buildZeroLogDashboardRow_({ studentNumber: 9001, grade: 4 }, AT);
+  assert.strictEqual(row[0], 'zerolog-9001');
+  assert.strictEqual(row[1], '9001');
+});
+
+test('student_id は名簿の表記をそのまま使う（前ゼロを潰さない）', () => {
+  const row = core.buildZeroLogDashboardRow_({ studentNumber: '0091' }, AT);
+  assert.strictEqual(row[0], 'zerolog-0091');
+  assert.strictEqual(row[1], '0091');
+});
+
+test('疑似キーの接頭辞はv4 UUIDと衝突しない文字を含む', () => {
+  // v4 UUID は 16進数字とハイフンのみ。z/l/o/g/r は出現しない
+  assert.match(core.ZEROLOG_ID_PREFIX, /[zlogr]/);
+  assert.doesNotMatch(core.ZEROLOG_ID_PREFIX, /^[0-9a-f-]+$/);
+});
