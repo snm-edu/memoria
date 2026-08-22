@@ -104,6 +104,30 @@ Apps Script エディタに以下を貼って実行する。**実行後、この
 - **名簿の `student_number` が重複している行は先勝ちで1件だけ疑似行になる。** 除外件数は実行ログに出る。
 - Looker から疑似行の「教員向けAI分析」を開くと、日次バッチから24時間を超えている場合にエラーページ（`対象学生の学習データが見つかりません (studentId=zerolog-…)`）が出る。Task 15 のチェックリストで挙動を確認すること（対処はユーザー判断により見送り）。
 
+## `withDashboardLock_` を触るときの警告（重要）
+
+`LockService.getScriptLock()` は **Apps Script プロジェクト単位の単一ロック**であり、
+このプロジェクトでは既に7箇所が同じロックを取っている（2026-08-23 時点の実測）:
+
+| 取得箇所 | 待ち時間 |
+|---|---|
+| `AnswerService.gs:45`（`submitAnswer`） | `waitLock(10000)` |
+| `AnswerService.gs:134` | `waitLock(30000)` |
+| `ArchiveService.gs:47` | `waitLock(30000)` |
+| `ProspectiveService.gs:27` | `waitLock(10000)` |
+| `GeminiService.gs:174` | `waitLock(10000)` |
+| `VideoService.gs:117` | `waitLock(10000)` |
+| `DashboardService.gs:511`（`withDashboardLock_`・今回追加） | `tryLock(20000)` |
+
+つまり **`withDashboardLock_` の中に置いた処理は、その間ずっと全学生の回答送信
+（`submitAnswer`）をブロックする**。現状の中身は「シートを1回読む → 行を削除 → 1回書く」だけで
+保持時間は短く、`submitAnswer` の10秒待ちに収まるため実害は無い。
+
+**禁止事項: `withDashboardLock_` のコールバック内に、外部API呼び出し（Gemini・UrlFetchApp）や
+全ログ走査などの重い処理を入れてはならない。** 入れると回答送信がロックタイムアウトで
+失敗しはじめる。現在 `generateAiComment` は `refreshStudent` の 1102 行（ロック開始の 1140 行より前）に
+あり、意図的にロックの外に置いてある。この配置を崩さないこと。
+
 ## 未実装の対処と残存リスク（ユーザー判断）
 
 計画書 Task 10「疑似行から『教員向けAI分析』を開いたときのガード」は
