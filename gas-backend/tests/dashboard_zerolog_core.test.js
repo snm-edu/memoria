@@ -182,3 +182,42 @@ test('列順が入れ替わっていてもヘッダー名で引く', () => {
     department: 'orthoptist', grade: 4, reportGroup: '2026既卒',
   });
 });
+
+// ---------------------------------------------------------------------------
+// buildNameMapFromRoster_
+// ---------------------------------------------------------------------------
+
+test('学籍番号→氏名のマップを返す', () => {
+  const roster = core.parseRosterValues_([
+    ROSTER_HEADERS,
+    ['X001', '氏名A', 'nursing', 1, ''],
+    ['X002', '氏名B', 'nursing', 1, ''],
+  ]);
+  assert.deepStrictEqual(core.buildNameMapFromRoster_(roster), { X001: '氏名A', X002: '氏名B' });
+});
+
+test('空配列・null なら空オブジェクト', () => {
+  assert.deepStrictEqual(core.buildNameMapFromRoster_([]), {});
+  assert.deepStrictEqual(core.buildNameMapFromRoster_(null), {});
+});
+
+test('前後空白のある学籍番号は生キーと trim キーの両方を登録する（既存挙動の後方互換）', () => {
+  const roster = core.parseRosterValues_([ROSTER_HEADERS, ['X001 ', '氏名A', 'nursing', 1, '']]);
+  const nameMap = core.buildNameMapFromRoster_(roster);
+  assert.strictEqual(nameMap['X001 '], '氏名A'); // 現行実装が作っていたキー
+  assert.strictEqual(nameMap['X001'], '氏名A');  // 追加されるキー
+});
+
+test('氏名が空の行でもキーは登録される（現行実装と同じ）', () => {
+  const roster = core.parseRosterValues_([ROSTER_HEADERS, ['X001', '', 'nursing', 1, '']]);
+  assert.deepStrictEqual(core.buildNameMapFromRoster_(roster), { X001: '' });
+});
+
+test('同一学籍番号の重複行は後勝ちで上書きされる（現行実装と同じ）', () => {
+  const roster = core.parseRosterValues_([
+    ROSTER_HEADERS,
+    ['X001', '先の行', 'nursing', 1, ''],
+    ['X001', '後の行', 'nursing', 1, ''],
+  ]);
+  assert.strictEqual(core.buildNameMapFromRoster_(roster)['X001'], '後の行');
+});

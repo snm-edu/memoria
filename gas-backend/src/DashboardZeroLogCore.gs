@@ -104,6 +104,30 @@ function parseRosterValues_(values) {
   return records;
 }
 
+/**
+ * 名簿レコードから「学籍番号 → 氏名」のマップを作る。
+ *
+ * 現行の getStudentNameMap() は名簿セルを trim せずキーにしていた（DashboardService.gs:492, :508）。
+ * 引く側（updateAll:149 など）はログの生値で引くため、キーを trim だけにすると
+ * 「名簿もログも末尾スペース付き」の学生の氏名が引けなくなる。
+ * そこで生キーと trim 済みキーの両方を登録し、既存の一致を必ず維持する。
+ * 重複行が後勝ちになる点も現行実装と同じ。
+ *
+ * @param {Array<Object>} rosterRecords parseRosterValues_() の戻り値
+ * @return {Object} { 学籍番号: 氏名 }
+ */
+function buildNameMapFromRoster_(rosterRecords) {
+  var nameMap = {};
+  if (!rosterRecords || !rosterRecords.length) return nameMap;
+  for (var i = 0; i < rosterRecords.length; i++) {
+    var r = rosterRecords[i] || {};
+    var name = r.studentName === undefined || r.studentName === null ? '' : r.studentName;
+    if (r.studentNumberRaw) nameMap[r.studentNumberRaw] = name;
+    if (r.studentNumber) nameMap[r.studentNumber] = name;
+  }
+  return nameMap;
+}
+
 if (typeof module !== 'undefined') {
   module.exports = {
     ZEROLOG_ID_PREFIX,
@@ -112,5 +136,6 @@ if (typeof module !== 'undefined') {
     normalizeMatchKey_,
     buildStudentNumbersWithLogs_,
     parseRosterValues_,
+    buildNameMapFromRoster_,
   };
 }
