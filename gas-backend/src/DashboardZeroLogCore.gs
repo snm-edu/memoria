@@ -128,6 +128,65 @@ function buildNameMapFromRoster_(rosterRecords) {
   return nameMap;
 }
 
+/**
+ * 疑似行を作るべき名簿レコードを選別する。
+ *
+ * 条件（Stage 1）:
+ *   1. report_group が boolean でない（チェックボックス列に変更されたとき全名簿が対象化するのを防ぐ）
+ *   2. report_group が空でない（＝レポート対象コホートに属する）
+ *      ※ コホート名の文字列はハードコードしない。将来コホート名が変わったときに
+ *        フィルタが無言で0件になるのを防ぐため
+ *   3. student_number が空でない（空だと疑似キーが全員同一になり上書き事故になる）
+ *   4. その student_number がログ側の集合に存在しない（突合は正規化キーで行う）
+ *   5. 同一 student_number の重複行は先勝ちで1件に絞る（重複は記録して呼び出し側でログに出す）
+ *
+ * @param {Array<Object>} rosterRecords parseRosterValues_() が返す形の配列
+ * @param {Object} studentNumbersWithLogs buildStudentNumbersWithLogs_() の戻り値
+ * @return {{records: Array<Object>, groupRows: number, withLogsExcluded: number,
+ *           booleanGroupRows: number, duplicateNumbers: Array<string>}}
+ */
+function selectZeroLogRosterRecords_(rosterRecords, studentNumbersWithLogs) {
+  var result = {
+    records: [],
+    groupRows: 0,
+    withLogsExcluded: 0,
+    booleanGroupRows: 0,
+    duplicateNumbers: []
+  };
+  if (!rosterRecords || !rosterRecords.length) return result;
+  var withLogs = studentNumbersWithLogs || {};
+  var seen = {};
+
+  for (var i = 0; i < rosterRecords.length; i++) {
+    var record = rosterRecords[i] || {};
+
+    if (typeof record.reportGroup === 'boolean') {
+      result.booleanGroupRows++;
+      continue;
+    }
+    var group = normalizeStudentNumber_(record.reportGroup);
+    if (!group) continue;
+    result.groupRows++;
+
+    var num = normalizeStudentNumber_(record.studentNumber);
+    if (!num) continue;
+
+    var key = normalizeMatchKey_(record.studentNumber);
+    if (withLogs[key]) {
+      result.withLogsExcluded++;
+      continue;
+    }
+    if (seen[key]) {
+      result.duplicateNumbers.push(num);
+      continue;
+    }
+
+    seen[key] = true;
+    result.records.push(record);
+  }
+  return result;
+}
+
 if (typeof module !== 'undefined') {
   module.exports = {
     ZEROLOG_ID_PREFIX,
@@ -137,5 +196,6 @@ if (typeof module !== 'undefined') {
     buildStudentNumbersWithLogs_,
     parseRosterValues_,
     buildNameMapFromRoster_,
+    selectZeroLogRosterRecords_,
   };
 }

@@ -221,3 +221,133 @@ test('同一学籍番号の重複行は後勝ちで上書きされる（現行�
   ]);
   assert.strictEqual(core.buildNameMapFromRoster_(roster)['X001'], '後の行');
 });
+
+// ---------------------------------------------------------------------------
+// selectZeroLogRosterRecords_
+// ---------------------------------------------------------------------------
+
+/** テスト用の名簿レコードを作るヘルパー（parseRosterValues_ の出力と同じ形） */
+function rec(studentNumber, reportGroup, extra) {
+  return Object.assign({
+    studentNumber: String(studentNumber === null || studentNumber === undefined ? '' : studentNumber).trim(),
+    studentNumberRaw: String(studentNumber === null || studentNumber === undefined ? '' : studentNumber),
+    studentName: '名簿氏名',
+    department: 'clinical_eng',
+    grade: '4',
+    reportGroup: reportGroup,
+  }, extra || {});
+}
+
+test('名簿0件・null なら選別結果も0件でカウンタは全て0', () => {
+  const got = core.selectZeroLogRosterRecords_([], { X001: true });
+  assert.deepStrictEqual(got.records, []);
+  assert.strictEqual(got.groupRows, 0);
+  assert.strictEqual(got.withLogsExcluded, 0);
+  assert.strictEqual(got.booleanGroupRows, 0);
+  assert.deepStrictEqual(got.duplicateNumbers, []);
+  assert.deepStrictEqual(core.selectZeroLogRosterRecords_(null, {}).records, []);
+});
+
+test('report_groupが空欄の行は対象外（Stage 1のスコープ）', () => {
+  const roster = [rec('X001', ''), rec('X002', '2026既卒')];
+  const got = core.selectZeroLogRosterRecords_(roster, {});
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['X002']);
+  assert.strictEqual(got.groupRows, 1);
+});
+
+test('report_groupの値は問わない（コホート名をハードコードしない）', () => {
+  const roster = [rec('X001', '2027既卒'), rec('X002', '2026既卒')];
+  const got = core.selectZeroLogRosterRecords_(roster, {});
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['X001', 'X002']);
+});
+
+test('report_groupが空白文字だけの行は空欄とみなして対象外', () => {
+  const got = core.selectZeroLogRosterRecords_([rec('X001', '   ')], {});
+  assert.deepStrictEqual(got.records, []);
+  assert.strictEqual(got.groupRows, 0);
+});
+
+test('report_groupが boolean false の行は対象外（チェックボックス列への変更対策）', () => {
+  const got = core.selectZeroLogRosterRecords_([rec('X001', false)], {});
+  assert.deepStrictEqual(got.records, []);
+  assert.strictEqual(got.booleanGroupRows, 1);
+  assert.strictEqual(got.groupRows, 0);
+});
+
+test('report_groupが boolean true の行も対象外（コホート名として扱えないため）', () => {
+  const got = core.selectZeroLogRosterRecords_([rec('X001', true)], {});
+  assert.deepStrictEqual(got.records, []);
+  assert.strictEqual(got.booleanGroupRows, 1);
+});
+
+test('report_groupが "-" の行は対象になる（文字列ブロックリストは持たない・上限ブレーカーで受ける）', () => {
+  const got = core.selectZeroLogRosterRecords_([rec('X001', '-')], {});
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['X001']);
+});
+
+test('report_groupが数値でも対象になる', () => {
+  const got = core.selectZeroLogRosterRecords_([rec('X001', 2027)], {});
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['X001']);
+});
+
+test('report_groupがDateでも対象になる', () => {
+  const got = core.selectZeroLogRosterRecords_([rec('X001', new Date('2026-03-31T00:00:00Z'))], {});
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['X001']);
+});
+
+test('ログを持つ学籍番号は対象外', () => {
+  const roster = [rec('X001', '2026既卒'), rec('X002', '2026既卒')];
+  const got = core.selectZeroLogRosterRecords_(roster, { X001: true });
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['X002']);
+  assert.strictEqual(got.withLogsExcluded, 1);
+});
+
+test('student_numberが空・空白の名簿行は疑似行を作らない（防御。通常は parse 側で落ちる）', () => {
+  const roster = [rec('', '2026既卒'), rec('   ', '2026既卒'), rec('X002', '2026既卒')];
+  const got = core.selectZeroLogRosterRecords_(roster, {});
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['X002']);
+});
+
+test('名簿に同一student_numberの重複行があっても1件に絞り、重複を記録する（先勝ち）', () => {
+  const roster = [
+    rec('X001', '2026既卒', { studentName: '先の行' }),
+    rec('X001', '2026既卒', { studentName: '後の行' }),
+  ];
+  const got = core.selectZeroLogRosterRecords_(roster, {});
+  assert.strictEqual(got.records.length, 1);
+  assert.strictEqual(got.records[0].studentName, '先の行');
+  assert.deepStrictEqual(got.duplicateNumbers, ['X001']);
+});
+
+test('ログ0件（集合が空）なら report_group を持つ全員が対象になる', () => {
+  const roster = [rec('X001', '2026既卒'), rec('X002', '2026既卒')];
+  assert.strictEqual(core.selectZeroLogRosterRecords_(roster, {}).records.length, 2);
+});
+
+test('名簿がテキスト書式の前ゼロでもログ側の数値と突合できる', () => {
+  const roster = [rec('0091', '2026既卒'), rec('0092', '2026既卒')];
+  const got = core.selectZeroLogRosterRecords_(roster, { 91: true });
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['0092']);
+});
+
+test('名簿が全角数字でもログ側の半角と突合できる', () => {
+  const roster = [rec('９００１', '2026既卒'), rec('9002', '2026既卒')];
+  const got = core.selectZeroLogRosterRecords_(roster, { 9001: true });
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), ['9002']);
+});
+
+test('学籍番号が数値型のレコードでも突合できる（防御。通常は parse 側で文字列化される）', () => {
+  const roster = [
+    { studentNumber: 9001, studentNumberRaw: '9001', studentName: 'A', department: 'nursing', grade: 4, reportGroup: '2026既卒' },
+    { studentNumber: 9002, studentNumberRaw: '9002', studentName: 'B', department: 'nursing', grade: 4, reportGroup: '2026既卒' },
+  ];
+  const got = core.selectZeroLogRosterRecords_(roster, { 9001: true });
+  assert.deepStrictEqual(got.records.map((r) => r.studentNumber), [9002]);
+});
+
+test('groupRows は report_group が非空の行数（対象外になった行も含む）を数える', () => {
+  const roster = [rec('X001', '2026既卒'), rec('X002', '2026既卒'), rec('X003', '')];
+  const got = core.selectZeroLogRosterRecords_(roster, { X001: true });
+  assert.strictEqual(got.groupRows, 2);
+  assert.strictEqual(got.records.length, 1);
+});
