@@ -24,8 +24,10 @@ const DashboardService = {
     // questionsシートからカテゴリ情報取得
     const categoryMap = this.getCategoryMap(ss);
 
-    // 学生名簿から学籍番号→氏名のマップを作成
-    var nameMap = this.getStudentNameMap();
+    // 学生名簿を1回だけ読み、氏名マップとゼロログ疑似行の両方で共有する
+    // （roster が null なら名簿の取得に失敗している。氏名は空のまま続行し、疑似行は作らない）
+    var roster = this.getStudentRoster_();
+    var nameMap = buildNameMapFromRoster_(roster || []);
 
     // 教員向けコメント生成用に curriculum と questions マスタを事前構築
     // 同じデータを下の updateCategoryStats でも使うため、先に作って共有する
@@ -474,45 +476,53 @@ const DashboardService = {
   },
 
   /**
+   * 名簿の students シートを取得する。
+   * ScriptProperty STUDENT_LIST_ID があれば外部スプレッドシート、無ければコンテナ内を見る。
+   * 見つからなければ null を返す。
+   */
+  getRosterSheet_() {
+    var nameSheetId = PropertiesService.getScriptProperties().getProperty('STUDENT_LIST_ID');
+    if (!nameSheetId) {
+      return getSpreadsheet().getSheetByName('students');
+    }
+    return SpreadsheetApp.openById(nameSheetId).getSheetByName('students');
+  },
+
+  /**
+   * 学生名簿をレコード配列で取得する。
+   * 形: [{ studentNumber, studentNumberRaw, studentName, department, grade, reportGroup }, ...]
+   *
+   * 取得に失敗した場合・シートが見つからない場合は null を返す（例外は投げない）。
+   * 「取得できなかった」と「本当に0件」を区別できないと、名簿の一時障害のときに
+   * 疑似行を全部消してしまうため、[] とは別の値にすること。
+   */
+  getStudentRoster_() {
+    try {
+      var sheet = this.getRosterSheet_();
+      if (!sheet) {
+        Logger.log('学生名簿: students シートが見つかりません');
+        return null;
+      }
+      var values = sheet.getDataRange().getValues();
+      var records = parseRosterValues_(values);
+      var skipped = Math.max(0, values.length - 1 - records.length);
+      if (skipped > 0) {
+        Logger.log('学生名簿: 学籍番号が空の行を ' + skipped + '件スキップしました');
+      }
+      return records;
+    } catch (e) {
+      Logger.log('学生名簿取得エラー: ' + (e && e.stack ? e.stack : e));
+      return null;
+    }
+  },
+
+  /**
    * 学生名簿スプレッドシートから学籍番号→氏名のマップを取得
+   * （getStudentRoster_ に委譲。戻り値の形と「例外を投げない」挙動は従来どおり。
+   *   キーは生値＋trim 済みの両方が登録されるので、従来一致していた参照は必ず維持される）
    */
   getStudentNameMap() {
-    var nameMap = {};
-    try {
-      var nameSheetId = PropertiesService.getScriptProperties().getProperty('STUDENT_LIST_ID');
-      if (!nameSheetId) {
-        var ss = getSpreadsheet();
-        var sheet = ss.getSheetByName('students');
-        if (sheet) {
-          var data = sheet.getDataRange().getValues();
-          var headers = data[0];
-          var idx = {};
-          headers.forEach(function(h, i) { idx[h] = i; });
-          for (var i = 1; i < data.length; i++) {
-            var num = String(data[i][idx['student_number']] || '');
-            var name = data[i][idx['student_name']] || '';
-            if (num) nameMap[num] = name;
-          }
-          return nameMap;
-        }
-        return nameMap;
-      }
-      var nameSS = SpreadsheetApp.openById(nameSheetId);
-      var sheet = nameSS.getSheetByName('students');
-      if (!sheet) return nameMap;
-      var data = sheet.getDataRange().getValues();
-      var headers = data[0];
-      var idx = {};
-      headers.forEach(function(h, i) { idx[h] = i; });
-      for (var i = 1; i < data.length; i++) {
-        var num = String(data[i][idx['student_number']] || '');
-        var name = data[i][idx['student_name']] || '';
-        if (num) nameMap[num] = name;
-      }
-    } catch (e) {
-      Logger.log('学生名簿取得エラー: ' + e);
-    }
-    return nameMap;
+    return buildNameMapFromRoster_(this.getStudentRoster_() || []);
   },
 
   /**
