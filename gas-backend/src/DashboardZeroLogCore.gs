@@ -252,6 +252,61 @@ function buildZeroLogDashboardRow_(record, updatedAtIso) {
   ];
 }
 
+/**
+ * ai_dashboard の getValues() 結果から、疑似行（student_id が接頭辞で始まる行）の
+ * 行番号（1始まり）を降順で返す。
+ *
+ * 削除は行番号をずらすため、必ずこの降順のまま削除すること。
+ *
+ * @param {Array<Array>} values 1行目がヘッダーの2次元配列
+ * @return {Array<number>} 降順の行番号
+ */
+function findZeroLogRowNumbersDesc_(values) {
+  var rowNums = [];
+  if (!values || values.length <= 1) return rowNums;
+
+  var headers = values[0] || [];
+  var sidIdx = -1;
+  for (var h = 0; h < headers.length; h++) {
+    if (String(headers[h]).trim() === 'student_id') { sidIdx = h; break; }
+  }
+  if (sidIdx === -1) return rowNums;
+
+  for (var i = values.length - 1; i >= 1; i--) {
+    var sid = String((values[i] || [])[sidIdx] || '');
+    if (sid.indexOf(ZEROLOG_ID_PREFIX) === 0) rowNums.push(i + 1);
+  }
+  return rowNums;
+}
+
+/**
+ * 降順の行番号配列を、連続区間のブロックにまとめる。
+ * 返り値は「開始行の降順」なので、この順に deleteRows(start, count) を呼べば
+ * 後続ブロックの行番号がずれない。
+ *
+ * @param {Array<number>} rowNumsDesc findZeroLogRowNumbersDesc_() の戻り値
+ * @return {Array<{start: number, count: number}>}
+ */
+function groupContiguousDesc_(rowNumsDesc) {
+  var blocks = [];
+  if (!rowNumsDesc || !rowNumsDesc.length) return blocks;
+
+  var start = rowNumsDesc[0];
+  var count = 1;
+  for (var i = 1; i < rowNumsDesc.length; i++) {
+    if (rowNumsDesc[i] === start - 1) {
+      start = rowNumsDesc[i];
+      count++;
+    } else {
+      blocks.push({ start: start, count: count });
+      start = rowNumsDesc[i];
+      count = 1;
+    }
+  }
+  blocks.push({ start: start, count: count });
+  return blocks;
+}
+
 if (typeof module !== 'undefined') {
   module.exports = {
     ZEROLOG_ID_PREFIX,
@@ -265,5 +320,7 @@ if (typeof module !== 'undefined') {
     selectZeroLogRosterRecords_,
     toGradeNumber_,
     buildZeroLogDashboardRow_,
+    findZeroLogRowNumbersDesc_,
+    groupContiguousDesc_,
   };
 }

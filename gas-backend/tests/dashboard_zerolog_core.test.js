@@ -455,3 +455,91 @@ test('疑似キーの接頭辞はv4 UUIDと衝突しない文字を含む', () =
   assert.match(core.ZEROLOG_ID_PREFIX, /[zlogr]/);
   assert.doesNotMatch(core.ZEROLOG_ID_PREFIX, /^[0-9a-f-]+$/);
 });
+
+// ---------------------------------------------------------------------------
+// findZeroLogRowNumbersDesc_ / groupContiguousDesc_
+// ---------------------------------------------------------------------------
+
+const DASH_HEADERS = [
+  'student_id', 'student_number', 'student_name', 'department', 'grade',
+  'total_questions', 'correct_rate', 'streak_days',
+  'weak_categories', 'strong_categories', 'weekly_trend',
+  'error_patterns', 'ai_comment', 'last_study_date', 'updated_at', 'teacher_comment',
+];
+
+/** student_id だけを持つダッシュボード行を作るヘルパー */
+function dashRow(studentId) {
+  const row = new Array(DASH_HEADERS.length).fill('');
+  row[0] = studentId;
+  return row;
+}
+
+test('疑似行の行番号を1始まりで、降順に返す', () => {
+  const values = [
+    DASH_HEADERS,
+    dashRow('11111111-2222-4333-8444-555555555555'), // 2行目: 実UUID
+    dashRow('zerolog-X001'),                          // 3行目
+    dashRow('99999999-2222-4333-8444-555555555555'), // 4行目
+    dashRow('zerolog-X002'),                          // 5行目
+  ];
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_(values), [5, 3]);
+});
+
+test('疑似行が無ければ空配列', () => {
+  const values = [DASH_HEADERS, dashRow('11111111-2222-4333-8444-555555555555')];
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_(values), []);
+});
+
+test('シートが空・ヘッダーのみ・null なら空配列', () => {
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_([]), []);
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_([DASH_HEADERS]), []);
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_(null), []);
+});
+
+test('student_id列が無いシートでは空配列（誤削除を防ぐ）', () => {
+  const values = [['foo', 'bar'], ['zerolog-X001', 'x']];
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_(values), []);
+});
+
+test('接頭辞が途中に出てくるだけの行は対象外（前方一致のみ）', () => {
+  const values = [DASH_HEADERS, dashRow('abc-zerolog-X001')];
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_(values), []);
+});
+
+test('student_idが空の行は無視する', () => {
+  const values = [DASH_HEADERS, dashRow(''), dashRow('zerolog-X001')];
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_(values), [3]);
+});
+
+test('student_idが数値セルでも落ちない', () => {
+  const values = [DASH_HEADERS, dashRow(9001), dashRow('zerolog-X001')];
+  assert.deepStrictEqual(core.findZeroLogRowNumbersDesc_(values), [3]);
+});
+
+test('groupContiguousDesc_: 空配列・null なら空配列', () => {
+  assert.deepStrictEqual(core.groupContiguousDesc_([]), []);
+  assert.deepStrictEqual(core.groupContiguousDesc_(null), []);
+});
+
+test('groupContiguousDesc_: 単独行は count 1 のブロックになる', () => {
+  assert.deepStrictEqual(core.groupContiguousDesc_([4]), [{ start: 4, count: 1 }]);
+});
+
+test('groupContiguousDesc_: 連続しない行はブロックを分ける（開始行の降順）', () => {
+  assert.deepStrictEqual(core.groupContiguousDesc_([5, 3]), [
+    { start: 5, count: 1 },
+    { start: 3, count: 1 },
+  ]);
+});
+
+test('groupContiguousDesc_: 連続する行を1ブロックにまとめる', () => {
+  assert.deepStrictEqual(core.groupContiguousDesc_([12, 11, 10]), [{ start: 10, count: 3 }]);
+});
+
+test('groupContiguousDesc_: 連続と単独が混在しても開始行の降順で返す', () => {
+  assert.deepStrictEqual(core.groupContiguousDesc_([9, 8, 7, 5, 3, 2]), [
+    { start: 7, count: 3 },
+    { start: 5, count: 1 },
+    { start: 2, count: 2 },
+  ]);
+});
