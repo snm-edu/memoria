@@ -182,13 +182,34 @@ const DashboardService = {
       + '、教員AI: 生成 ' + teacherAiGenerated + '名 / 再利用 ' + teacherAiSkipped + '名）');
 
     // category_statsシートを更新（ツリーマップ用）
+    // 注: category_stats には疑似行を書かない。学生×カテゴリ×サブカテゴリ×サブトピックの
+    //     リーフ単位なのでゼロログ学生1名で数百行になり、「未着手」という1つの事実の
+    //     言い換えが増えるだけになるため（設計判断1）
     this.updateCategoryStats(ss, allLogs, categoryMap);
+
+    // ゼロログ学生の疑似行を作り直す。
+    // 必ずこの位置（通常ループと updateCategoryStats の完了後）で呼ぶこと。
+    // 行削除で行番号がずれ、上の existingMap[].rowNum が無効になるため。
+    var zeroLog = { deleted: 0, added: 0, aborted: '', error: '' };
+    try {
+      this.rebuildZeroLogRows_(dashboard, allLogs, dashHeaders.length, roster, zeroLog);
+    } catch (e) {
+      // 疑似行の失敗で日次バッチ全体を落とさない（通常学生の更新はすでに完了している）。
+      // zeroLog は参照渡しなので、途中まで進んだ実績（削除件数）はここでも読める。
+      zeroLog.error = String(e);
+      Logger.log('ゼロログ疑似行の更新に失敗: ' + (e && e.stack ? e.stack : e)
+        + '（この時点の実績: 削除 ' + zeroLog.deleted + '行 / 追加 ' + zeroLog.added + '行）');
+    }
 
     return {
       updated: updatedCount,
       studentAiSkipped: studentAiSkipped,
       teacherAiSkipped: teacherAiSkipped,
-      teacherAiGenerated: teacherAiGenerated
+      teacherAiGenerated: teacherAiGenerated,
+      zeroLogAdded: zeroLog.added,
+      zeroLogDeleted: zeroLog.deleted,
+      zeroLogAborted: zeroLog.aborted,
+      zeroLogError: zeroLog.error
     };
   },
 
@@ -514,6 +535,105 @@ const DashboardService = {
       Logger.log('学生名簿取得エラー: ' + (e && e.stack ? e.stack : e));
       return null;
     }
+  },
+
+  /**
+   * ゼロログ学生の疑似行を毎回ゼロから作り直す。
+   *
+   * 処理順（厳守）:
+   *   0. 通常の学生ループと updateCategoryStats が完了した後に呼ぶこと
+   *      （下の削除が行番号をずらすため、updateAll 冒頭の existingMap[].rowNum が無効になる）
+   *   1. 名簿から対象を確定する。名簿が取れない/0件なら1行も壊さずに中止する
+   *      （削除を先にすると、名簿の一時障害の日だけ既卒生が全員消える＝直そうとしている症状に戻る）
+   *   2. シートを読み直す（updateAll 冒頭の oldData は使わない）
+   *   3. 疑似行を降順・連続区間まとめで削除する
+   *   4. グリッド行数を確保してから一括追記する
+   *
+   * 「有ログ化したら消す」条件方式にしないのは、削除条件が発火しないケースで
+   * ゴースト行が永久に残るため。毎回作り直せば判定結果が変わった瞬間に自動追随する
+   * （ただし追随の粒度は日次。日中の遷移は refreshStudent 側で吸収する）。
+   *
+   * Gemini API は呼ばない（観察できる事実が無いため。設計判断5）。
+   *
+   * @param {Sheet} dashboard ai_dashboard シート
+   * @param {Array<Object>} allLogs collectAllLogs() の結果
+   * @param {number} columnCount ヘッダー列数（16）
+   * @param {Array<Object>|null} roster getStudentRoster_() の結果（null は取得失敗）
+   * @param {Object} result 進捗を書き込む集計オブジェクト（部分失敗時も呼び出し側が実績を読めるようにする）
+   * @return {Object} result と同じ参照
+   */
+  rebuildZeroLogRows_(dashboard, allLogs, columnCount, roster, result) {
+    result.deleted = 0;
+    result.added = 0;
+    result.aborted = '';
+
+    // --- 1. 材料をそろえる（破壊的操作より前に必ず行う） ---
+    if (roster === null || roster === undefined) {
+      result.aborted = 'roster_unavailable';
+      Logger.log('ゼロログ疑似行: 名簿を取得できないため中止（既存の疑似行はそのまま保持）');
+      return result;
+    }
+    if (!roster.length) {
+      result.aborted = 'roster_empty';
+      Logger.log('ゼロログ疑似行: 名簿0件のため中止（既存の疑似行はそのまま保持）');
+      return result;
+    }
+
+    var numbersWithLogs = buildStudentNumbersWithLogs_(allLogs);
+    var selection = selectZeroLogRosterRecords_(roster, numbersWithLogs);
+    var targets = selection.records;
+
+    var emptyDept = 0;
+    for (var e = 0; e < targets.length; e++) {
+      if (!targets[e].department) emptyDept++;
+    }
+
+    Logger.log('ゼロログ疑似行: 名簿 ' + roster.length + '件'
+      + ' / コホート対象 ' + selection.groupRows + '件'
+      + ' / ログ有りで除外 ' + selection.withLogsExcluded + '件'
+      + ' / 学籍番号重複で除外 ' + selection.duplicateNumbers.length + '件'
+      + ' / report_groupがboolean ' + selection.booleanGroupRows + '件'
+      + ' / 疑似行の対象 ' + targets.length + '件'
+      + '（うち学科が空 ' + emptyDept + '件）');
+
+    if (targets.length > ZEROLOG_MAX_ROWS) {
+      result.aborted = 'too_many';
+      Logger.log('ゼロログ疑似行: 対象 ' + targets.length + '件が上限 ' + ZEROLOG_MAX_ROWS
+        + ' 件を超過したため中止（既存の疑似行はそのまま保持）。'
+        + 'report_group 列の運用が変わっていないか確認すること');
+      return result;
+    }
+
+    var updatedAt = new Date().toISOString();
+    var rows = [];
+    for (var t = 0; t < targets.length; t++) {
+      rows.push(buildZeroLogDashboardRow_(targets[t], updatedAt));
+    }
+
+    // --- 2. シートを読み直す ---
+    var values = dashboard.getDataRange().getValues();
+    var blocks = groupContiguousDesc_(findZeroLogRowNumbersDesc_(values));
+
+    // --- 3. 既存の疑似行を削除（開始行の降順なので行番号がずれない） ---
+    for (var b = 0; b < blocks.length; b++) {
+      dashboard.deleteRows(blocks[b].start, blocks[b].count);
+      result.deleted += blocks[b].count;
+    }
+
+    // --- 4. 一括追記（deleteRows でグリッド行数が減っているので不足分を先に足す） ---
+    if (rows.length) {
+      var startRow = dashboard.getLastRow() + 1;
+      var needRows = startRow + rows.length - 1;
+      var maxRows = dashboard.getMaxRows();
+      if (needRows > maxRows) {
+        dashboard.insertRowsAfter(maxRows, needRows - maxRows);
+      }
+      dashboard.getRange(startRow, 1, rows.length, columnCount).setValues(rows);
+      result.added = rows.length;
+    }
+
+    Logger.log('ゼロログ疑似行: 削除 ' + result.deleted + '行 / 追加 ' + result.added + '行');
+    return result;
   },
 
   /**
