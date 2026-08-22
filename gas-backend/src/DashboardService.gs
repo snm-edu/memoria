@@ -1110,22 +1110,37 @@ const DashboardService = {
     }
 
     // 既存行を探し、teacher_comment 列の既存値を保持
+    // 日次バッチが作った疑似行 (zerolog-<student_number>) が残っている場合は、その行を再利用して
+    // 上書きする。append すると同一学生が「未着手」と実データの2行に分裂して見えるため
+    // （翌朝のバッチまで最大約18時間その状態が続く）。
     var data = dashboard.getDataRange().getValues();
     var headers = data[0] || [];
     var sidIdx = headers.indexOf('student_id');
     var existingTeacherCommentIdx = headers.indexOf('teacher_comment');
     var existingTeacherComment = '';
     var foundRow = -1;
+    var zeroLogRow = -1;
+    var analysisNumber = normalizeStudentNumber_(analysis.studentNumber);
+    var zeroLogId = analysisNumber ? (ZEROLOG_ID_PREFIX + analysisNumber) : '';
     if (sidIdx !== -1) {
       for (var i = 1; i < data.length; i++) {
-        if (data[i][sidIdx] === studentId) {
+        var rowSid = String(data[i][sidIdx] || '');
+        if (rowSid === studentId) {
           foundRow = i + 1;
           if (existingTeacherCommentIdx !== -1) {
             existingTeacherComment = data[i][existingTeacherCommentIdx] || '';
           }
           break;
         }
+        if (zeroLogRow === -1 && zeroLogId && rowSid === zeroLogId) {
+          zeroLogRow = i + 1;
+        }
       }
+    }
+    // 実UUIDの行が無く疑似行だけがある場合は、疑似行を実データで上書きする。
+    // 疑似行の teacher_comment は固定文言なので引き継がない（空のまま再生成に委ねる）。
+    if (foundRow === -1 && zeroLogRow !== -1) {
+      foundRow = zeroLogRow;
     }
 
     var row = [
