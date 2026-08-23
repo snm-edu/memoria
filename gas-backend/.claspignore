@@ -1,0 +1,7 @@
+tests/**
+**/*.test.js
+node_modules/**
+.claude/**
+src/.claude/**
+.DS_Store
+README-zerolog.md

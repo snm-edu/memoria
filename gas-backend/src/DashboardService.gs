@@ -24,8 +24,10 @@ const DashboardService = {
     // questionsシートからカテゴリ情報取得
     const categoryMap = this.getCategoryMap(ss);
 
-    // 学生名簿から学籍番号→氏名のマップを作成
-    var nameMap = this.getStudentNameMap();
+    // 学生名簿を1回だけ読み、氏名マップとゼロログ疑似行の両方で共有する
+    // （roster が null なら名簿の取得に失敗している。氏名は空のまま続行し、疑似行は作らない）
+    var roster = this.getStudentRoster_();
+    var nameMap = buildNameMapFromRoster_(roster || []);
 
     // 教員向けコメント生成用に curriculum と questions マスタを事前構築
     // 同じデータを下の updateCategoryStats でも使うため、先に作って共有する
@@ -180,13 +182,34 @@ const DashboardService = {
       + '、教員AI: 生成 ' + teacherAiGenerated + '名 / 再利用 ' + teacherAiSkipped + '名）');
 
     // category_statsシートを更新（ツリーマップ用）
+    // 注: category_stats には疑似行を書かない。学生×カテゴリ×サブカテゴリ×サブトピックの
+    //     リーフ単位なのでゼロログ学生1名で数百行になり、「未着手」という1つの事実の
+    //     言い換えが増えるだけになるため（設計判断1）
     this.updateCategoryStats(ss, allLogs, categoryMap);
+
+    // ゼロログ学生の疑似行を作り直す。
+    // 必ずこの位置（通常ループと updateCategoryStats の完了後）で呼ぶこと。
+    // 行削除で行番号がずれ、上の existingMap[].rowNum が無効になるため。
+    var zeroLog = { deleted: 0, added: 0, aborted: '', error: '' };
+    try {
+      this.rebuildZeroLogRows_(dashboard, allLogs, dashHeaders.length, roster, zeroLog);
+    } catch (e) {
+      // 疑似行の失敗で日次バッチ全体を落とさない（通常学生の更新はすでに完了している）。
+      // zeroLog は参照渡しなので、途中まで進んだ実績（削除件数）はここでも読める。
+      zeroLog.error = String(e);
+      Logger.log('ゼロログ疑似行の更新に失敗: ' + (e && e.stack ? e.stack : e)
+        + '（この時点の実績: 削除 ' + zeroLog.deleted + '行 / 追加 ' + zeroLog.added + '行）');
+    }
 
     return {
       updated: updatedCount,
       studentAiSkipped: studentAiSkipped,
       teacherAiSkipped: teacherAiSkipped,
-      teacherAiGenerated: teacherAiGenerated
+      teacherAiGenerated: teacherAiGenerated,
+      zeroLogAdded: zeroLog.added,
+      zeroLogDeleted: zeroLog.deleted,
+      zeroLogAborted: zeroLog.aborted,
+      zeroLogError: zeroLog.error
     };
   },
 
@@ -474,45 +497,175 @@ const DashboardService = {
   },
 
   /**
+   * ai_dashboard の「行番号を引いてから書く」処理を直列化する。
+   *
+   * 2026-08-21 以降、日次バッチが疑似行を deleteRows するため既存行の行番号が動く。
+   * read と write の間に削除が挟まると別人の行を上書きするので、
+   * refreshStudent / saveTeacherComment / rebuildZeroLogRows_ の3経路すべてがこのロックを取る。
+   * （ロックは全参加者が取って初めて機能する。1箇所だけ取っても意味が無い）
+   *
+   * @param {Function} fn ロック内で実行する処理
+   * @return {*} fn の戻り値
+   */
+  withDashboardLock_(fn) {
+    var lock = LockService.getScriptLock();
+    if (!lock.tryLock(20000)) {
+      throw new Error('ai_dashboard のロックを20秒待っても取得できませんでした');
+    }
+    try {
+      return fn();
+    } finally {
+      lock.releaseLock();
+    }
+  },
+
+  /**
+   * 名簿の students シートを取得する。
+   * ScriptProperty STUDENT_LIST_ID があれば外部スプレッドシート、無ければコンテナ内を見る。
+   * 見つからなければ null を返す。
+   */
+  getRosterSheet_() {
+    var nameSheetId = PropertiesService.getScriptProperties().getProperty('STUDENT_LIST_ID');
+    if (!nameSheetId) {
+      return getSpreadsheet().getSheetByName('students');
+    }
+    return SpreadsheetApp.openById(nameSheetId).getSheetByName('students');
+  },
+
+  /**
+   * 学生名簿をレコード配列で取得する。
+   * 形: [{ studentNumber, studentNumberRaw, studentName, department, grade, reportGroup }, ...]
+   *
+   * 取得に失敗した場合・シートが見つからない場合は null を返す（例外は投げない）。
+   * 「取得できなかった」と「本当に0件」を区別できないと、名簿の一時障害のときに
+   * 疑似行を全部消してしまうため、[] とは別の値にすること。
+   */
+  getStudentRoster_() {
+    try {
+      var sheet = this.getRosterSheet_();
+      if (!sheet) {
+        Logger.log('学生名簿: students シートが見つかりません');
+        return null;
+      }
+      var values = sheet.getDataRange().getValues();
+      var records = parseRosterValues_(values);
+      var skipped = Math.max(0, values.length - 1 - records.length);
+      if (skipped > 0) {
+        Logger.log('学生名簿: 学籍番号が空の行を ' + skipped + '件スキップしました');
+      }
+      return records;
+    } catch (e) {
+      Logger.log('学生名簿取得エラー: ' + (e && e.stack ? e.stack : e));
+      return null;
+    }
+  },
+
+  /**
+   * ゼロログ学生の疑似行を毎回ゼロから作り直す。
+   *
+   * 処理順（厳守）:
+   *   0. 通常の学生ループと updateCategoryStats が完了した後に呼ぶこと
+   *      （下の削除が行番号をずらすため、updateAll 冒頭の existingMap[].rowNum が無効になる）
+   *   1. 名簿から対象を確定する。名簿が取れない/0件なら1行も壊さずに中止する
+   *      （削除を先にすると、名簿の一時障害の日だけ既卒生が全員消える＝直そうとしている症状に戻る）
+   *   2. シートを読み直す（updateAll 冒頭の oldData は使わない）
+   *   3. 疑似行を降順・連続区間まとめで削除する
+   *   4. グリッド行数を確保してから一括追記する
+   *
+   * 「有ログ化したら消す」条件方式にしないのは、削除条件が発火しないケースで
+   * ゴースト行が永久に残るため。毎回作り直せば判定結果が変わった瞬間に自動追随する
+   * （ただし追随の粒度は日次。日中の遷移は refreshStudent 側で吸収する）。
+   *
+   * Gemini API は呼ばない（観察できる事実が無いため。設計判断5）。
+   *
+   * @param {Sheet} dashboard ai_dashboard シート
+   * @param {Array<Object>} allLogs collectAllLogs() の結果
+   * @param {number} columnCount ヘッダー列数（16）
+   * @param {Array<Object>|null} roster getStudentRoster_() の結果（null は取得失敗）
+   * @param {Object} result 進捗を書き込む集計オブジェクト（部分失敗時も呼び出し側が実績を読めるようにする）
+   * @return {Object} result と同じ参照
+   */
+  rebuildZeroLogRows_(dashboard, allLogs, columnCount, roster, result) {
+    result.deleted = 0;
+    result.added = 0;
+    result.aborted = '';
+
+    // --- 1. 材料をそろえる（破壊的操作より前に必ず行う） ---
+    if (roster === null || roster === undefined) {
+      result.aborted = 'roster_unavailable';
+      Logger.log('ゼロログ疑似行: 名簿を取得できないため中止（既存の疑似行はそのまま保持）');
+      return result;
+    }
+    if (!roster.length) {
+      result.aborted = 'roster_empty';
+      Logger.log('ゼロログ疑似行: 名簿0件のため中止（既存の疑似行はそのまま保持）');
+      return result;
+    }
+
+    var numbersWithLogs = buildStudentNumbersWithLogs_(allLogs);
+    var selection = selectZeroLogRosterRecords_(roster, numbersWithLogs);
+    var targets = selection.records;
+
+    var emptyDept = 0;
+    for (var e = 0; e < targets.length; e++) {
+      if (!targets[e].department) emptyDept++;
+    }
+
+    Logger.log('ゼロログ疑似行: 名簿 ' + roster.length + '件'
+      + ' / コホート対象 ' + selection.groupRows + '件'
+      + ' / ログ有りで除外 ' + selection.withLogsExcluded + '件'
+      + ' / 学籍番号重複で除外 ' + selection.duplicateNumbers.length + '件'
+      + ' / report_groupがboolean ' + selection.booleanGroupRows + '件'
+      + ' / 疑似行の対象 ' + targets.length + '件'
+      + '（うち学科が空 ' + emptyDept + '件）');
+
+    if (targets.length > ZEROLOG_MAX_ROWS) {
+      result.aborted = 'too_many';
+      Logger.log('ゼロログ疑似行: 対象 ' + targets.length + '件が上限 ' + ZEROLOG_MAX_ROWS
+        + ' 件を超過したため中止（既存の疑似行はそのまま保持）。'
+        + 'report_group 列の運用が変わっていないか確認すること');
+      return result;
+    }
+
+    var updatedAt = new Date().toISOString();
+    var rows = [];
+    for (var t = 0; t < targets.length; t++) {
+      rows.push(buildZeroLogDashboardRow_(targets[t], updatedAt));
+    }
+
+    // --- 2〜4. 読み直し・削除・追記はロック内で一息に行う（行番号レース対策） ---
+    this.withDashboardLock_(function () {
+      var values = dashboard.getDataRange().getValues();
+      var blocks = groupContiguousDesc_(findZeroLogRowNumbersDesc_(values));
+
+      for (var b = 0; b < blocks.length; b++) {
+        dashboard.deleteRows(blocks[b].start, blocks[b].count);
+        result.deleted += blocks[b].count;
+      }
+
+      if (rows.length) {
+        var startRow = dashboard.getLastRow() + 1;
+        var needRows = startRow + rows.length - 1;
+        var maxRows = dashboard.getMaxRows();
+        if (needRows > maxRows) {
+          dashboard.insertRowsAfter(maxRows, needRows - maxRows);
+        }
+        dashboard.getRange(startRow, 1, rows.length, columnCount).setValues(rows);
+        result.added = rows.length;
+      }
+    });
+
+    Logger.log('ゼロログ疑似行: 削除 ' + result.deleted + '行 / 追加 ' + result.added + '行');
+    return result;
+  },
+
+  /**
    * 学生名簿スプレッドシートから学籍番号→氏名のマップを取得
+   * （getStudentRoster_ に委譲。戻り値の形と「例外を投げない」挙動は従来どおり。
+   *   キーは生値＋trim 済みの両方が登録されるので、従来一致していた参照は必ず維持される）
    */
   getStudentNameMap() {
-    var nameMap = {};
-    try {
-      var nameSheetId = PropertiesService.getScriptProperties().getProperty('STUDENT_LIST_ID');
-      if (!nameSheetId) {
-        var ss = getSpreadsheet();
-        var sheet = ss.getSheetByName('students');
-        if (sheet) {
-          var data = sheet.getDataRange().getValues();
-          var headers = data[0];
-          var idx = {};
-          headers.forEach(function(h, i) { idx[h] = i; });
-          for (var i = 1; i < data.length; i++) {
-            var num = String(data[i][idx['student_number']] || '');
-            var name = data[i][idx['student_name']] || '';
-            if (num) nameMap[num] = name;
-          }
-          return nameMap;
-        }
-        return nameMap;
-      }
-      var nameSS = SpreadsheetApp.openById(nameSheetId);
-      var sheet = nameSS.getSheetByName('students');
-      if (!sheet) return nameMap;
-      var data = sheet.getDataRange().getValues();
-      var headers = data[0];
-      var idx = {};
-      headers.forEach(function(h, i) { idx[h] = i; });
-      for (var i = 1; i < data.length; i++) {
-        var num = String(data[i][idx['student_number']] || '');
-        var name = data[i][idx['student_name']] || '';
-        if (num) nameMap[num] = name;
-      }
-    } catch (e) {
-      Logger.log('学生名簿取得エラー: ' + e);
-    }
-    return nameMap;
+    return buildNameMapFromRoster_(this.getStudentRoster_() || []);
   },
 
   /**
@@ -980,22 +1133,39 @@ const DashboardService = {
     }
 
     // 既存行を探し、teacher_comment 列の既存値を保持
+    // 日次バッチが作った疑似行 (zerolog-<student_number>) が残っている場合は、その行を再利用して
+    // 上書きする。append すると同一学生が「未着手」と実データの2行に分裂して見えるため
+    // （翌朝のバッチまで最大約18時間その状態が続く）。
+    var self = this;
+    this.withDashboardLock_(function () {
     var data = dashboard.getDataRange().getValues();
     var headers = data[0] || [];
     var sidIdx = headers.indexOf('student_id');
     var existingTeacherCommentIdx = headers.indexOf('teacher_comment');
     var existingTeacherComment = '';
     var foundRow = -1;
+    var zeroLogRow = -1;
+    var analysisNumber = normalizeStudentNumber_(analysis.studentNumber);
+    var zeroLogId = analysisNumber ? (ZEROLOG_ID_PREFIX + analysisNumber) : '';
     if (sidIdx !== -1) {
       for (var i = 1; i < data.length; i++) {
-        if (data[i][sidIdx] === studentId) {
+        var rowSid = String(data[i][sidIdx] || '');
+        if (rowSid === studentId) {
           foundRow = i + 1;
           if (existingTeacherCommentIdx !== -1) {
             existingTeacherComment = data[i][existingTeacherCommentIdx] || '';
           }
           break;
         }
+        if (zeroLogRow === -1 && zeroLogId && rowSid === zeroLogId) {
+          zeroLogRow = i + 1;
+        }
       }
+    }
+    // 実UUIDの行が無く疑似行だけがある場合は、疑似行を実データで上書きする。
+    // 疑似行の teacher_comment は固定文言なので引き継がない（空のまま再生成に委ねる）。
+    if (foundRow === -1 && zeroLogRow !== -1) {
+      foundRow = zeroLogRow;
     }
 
     var row = [
@@ -1022,6 +1192,7 @@ const DashboardService = {
     } else {
       dashboard.appendRow(row);
     }
+    });
 
     // PWA経由で学生がレスポンスを受け取るため、teacher_comment は API には含めない
     // (Looker は spreadsheet 直接参照なので影響なし)
