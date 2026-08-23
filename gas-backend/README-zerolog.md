@@ -158,3 +158,20 @@ Apps Script エディタに以下を貼って実行する。**実行後、この
 ## Looker 側の変更記録
 
 （Task 15 で追記）
+
+## デプロイ実施記録
+
+**2026-08-23 09:01 に本番へ反映（手順A: clasp push）**
+
+- 反映内容: `DashboardService.gs` 1184→1355行 / `TeacherCommentService.gs` 383→387行 /
+  `DashboardZeroLogCore.gs` 326行を新規追加。本番のファイル総数 19→20。
+- 本番限定の `ParentReport.js`(12,482 bytes) / `VideoDemo.js`(3,953 bytes) は**保持**（push 後に
+  別ディレクトリへ再 clone して diff で確認済み。バイト数も一致）。
+- Webアプリのデプロイ版は**再発行していない**（日次トリガー `runDashboardUpdate` は Head 駆動のため不要）。
+- push 前の検査（すべて0件）: リポジトリ内の定義重複／`ParentReport.js`・`VideoDemo.js` との
+  グローバル名衝突／clone ディレクトリへの `.gs` 混入／basename の重複。
+
+**手順の罠（実施時に判明）:** clone されるファイルは全て `.js` だが `.clasp.json` の
+`scriptExtensions` は `[".js", ".gs"]` の**両方**。リポジトリの `.gs` をそのままの名前でコピーすると
+同名の `.js` と `.gs` が別ファイルとして両方 push され、`const DashboardService` が二重宣言になって
+**本番プロジェクト全体が構文エラーで停止する**。必ず `.js` 名で上書きすること。

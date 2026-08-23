@@ -2185,13 +2185,14 @@ Expected: **ヒット0件**。1件でもヒットしたら push せず、衝突�
 
 clone した作業ディレクトリ側に、今回の変更ファイルだけをコピーしてから push する。`ParentReport.js` / `VideoDemo.js` は clone 済みなのでそのまま残る。
 
+**必ず `.js` 名で上書きすること（2026-08-23 の実施時に判明した罠）。** clone されるファイルは全て `.js` だが、`.clasp.json` の `scriptExtensions` は `[".js", ".gs"]` の**両方**である。`.gs` のままコピーすると `DashboardService.js` と `DashboardService.gs` が**別ファイルとして両方 push され**、`const DashboardService` が二重宣言になって**本番プロジェクト全体が構文エラーで停止する**。
+
 ```bash
 SRC="/Users/ny/Documents/MyVault/30_Work/メモリア（Memoria）/gas-backend/src"
 DST="/private/tmp/claude-501/-Users-ny-Documents-MyVault-30-Work------Memoria-/096318ba-e891-48e5-ac97-d010ea0ec74e/scratchpad/gas-live"
-cp "$SRC/DashboardService.gs" "$DST/DashboardService.gs"
-cp "$SRC/DashboardZeroLogCore.gs" "$DST/DashboardZeroLogCore.gs"
-cp "$SRC/TeacherCommentService.gs" "$DST/TeacherCommentService.gs"
-cp "$SRC/ImportService.gs" "$DST/ImportService.gs"
+cp "$SRC/DashboardService.gs" "$DST/DashboardService.js"
+cp "$SRC/DashboardZeroLogCore.gs" "$DST/DashboardZeroLogCore.js"
+cp "$SRC/TeacherCommentService.gs" "$DST/TeacherCommentService.js"
 cd "$DST" && ls -1 && clasp push
 ```
 Expected: push 結果のファイル一覧に `ParentReport.js` と `VideoDemo.js` が**含まれている**こと。含まれていなければ即座にユーザーへ報告する（本番から消える）。
