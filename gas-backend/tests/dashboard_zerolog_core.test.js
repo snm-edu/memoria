@@ -370,7 +370,10 @@ test('16要素の配列を返し、各列が仕様どおりの型・値になる
   assert.strictEqual(row[3], 'clinical_eng'); // department
   assert.strictEqual(row[4], 4);              // grade（数値）
   assert.strictEqual(row[5], 0);              // total_questions
-  assert.strictEqual(row[6], 0);              // correct_rate
+  // correct_rate は数値0ではなく空文字。0 を書くと Looker の平均正答率の母数に
+  // 0% として混ざる（実測で 24.9% → 16.5% まで下がった）。
+  // 「未着手は空値」は updateCategoryStats:308 が既に採っている規約。
+  assert.strictEqual(row[6], '');             // correct_rate（空値。0 にしないこと）
   assert.strictEqual(row[7], 0);              // streak_days
   assert.strictEqual(row[8], '[]');           // weak_categories
   assert.strictEqual(row[9], '[]');           // strong_categories

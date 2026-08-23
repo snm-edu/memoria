@@ -1717,7 +1717,12 @@ Task 0 Step 1 の項目(3)が承認されていることを確認する。**却�
     // Gemini は呼ばず、ai_dashboard に書かれている固定文言をそのまま表示する。
     if (String(studentId).indexOf(ZEROLOG_ID_PREFIX) === 0) {
       var zeroLogInfo = this.getCachedComment(studentId);
-      Logger.log('[TeacherComment] Zero-log row requested studentId=' + studentId + ' by=' + email);
+      // ⚠ この Logger.log は採用しないこと（2026-08-23 の監査で指摘）。
+      //    studentId は zerolog-{実在の学籍番号}、email は教員の実アドレスであり、
+      //    実装すると GAS の実行ログ画面に学籍番号と教員メールが常時記録される。
+      //    ガードを入れる場合もこの1行は落とすこと。詳細は非公開メモ
+      //    project_memoria_dashboard_zerolog_private を参照。
+      // Logger.log('[TeacherComment] Zero-log row requested studentId=' + studentId + ' by=' + email);
       return this.renderCommentPage(studentId, {
         comment: zeroLogInfo.comment || ZEROLOG_TEACHER_COMMENT,
         updatedAt: zeroLogInfo.updatedAt || '',

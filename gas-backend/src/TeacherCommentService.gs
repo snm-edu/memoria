@@ -80,7 +80,18 @@ const TeacherCommentService = {
       return this.renderErrorPage(fresh.error, email);
     }
 
-    this.saveTeacherComment(studentId, fresh.comment);
+    // 保存の失敗でコメント表示ごと落とさない。
+    // saveTeacherComment は withDashboardLock_ を通すようになり、ロックを20秒取れないと throw する。
+    // この関数は doGet(getTeacherComment) から HtmlOutput を返す契約で呼ばれるため、
+    // ここで投げると Code.gs の外側 catch に落ちて教員のタブに生JSONが出るうえ、
+    // 課金済みの Gemini 出力まで捨てることになる。保存はキャッシュにすぎないので、
+    // 失敗してもログに残して表示は続ける（次回アクセスで再生成される）。
+    try {
+      this.saveTeacherComment(studentId, fresh.comment);
+    } catch (e) {
+      Logger.log('[TeacherComment] キャッシュ保存に失敗（表示は継続）: '
+        + (e && e.stack ? e.stack : e));
+    }
 
     return this.renderCommentPage(studentId, {
       comment: fresh.comment,

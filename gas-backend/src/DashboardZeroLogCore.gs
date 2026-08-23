@@ -239,7 +239,12 @@ function buildZeroLogDashboardRow_(record, updatedAtIso) {
     r.department ? String(r.department) : '', // department
     toGradeNumber_(r.grade),          // grade
     0,                                // total_questions
-    0,                                // correct_rate
+    // correct_rate は空文字。0 にすると Looker の平均正答率スコアカードの母数に
+    // 0% として混ざり、実測で 24.9% → 16.5% まで押し下げた（2026-08-23）。
+    // updateCategoryStats:308 の「未着手は空値（Looker で null 扱い）」と同じ規約に揃える。
+    // リスク判定は先頭の「総解答数 = 0 なら未着手」分岐で先に確定するため、
+    // 全体正答率が null になってもラベルは変わらない。
+    '',                               // correct_rate
     0,                                // streak_days
     '[]',                             // weak_categories
     '[]',                             // strong_categories
