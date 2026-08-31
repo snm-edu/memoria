@@ -956,7 +956,7 @@ const DashboardService = {
       errorInfo + '\n' +
       '上記ルールに従い、この学生本人への個別アドバイスを 150 字以内で書いてください。';
 
-    var result = callGeminiAPI(prompt);
+    var result = callLLM(prompt, 3, { caller: 'dashboard.studentAdvice' });
     if (result.error) {
       Logger.log('Gemini comment generation error: ' + result.error);
       return '分析データが不足しています。もう少し問題を解いてみましょう。';
@@ -1070,7 +1070,7 @@ const DashboardService = {
       + errorInfo + '\n'
       + '上記ルールに厳格に従い、許可カテゴリ名リスト内の正確な名称のみを使い、創作カテゴリや試験区分用語を一切混ぜずに、250字以内で書いてください。';
 
-    var result = callGeminiAPI(prompt);
+    var result = callLLM(prompt, 3, { caller: 'dashboard.teacherComment' });
     if (result.error) {
       Logger.log('Gemini teacher comment error: ' + result.error);
       return '教員コメント生成に失敗。データが揃ったら次回バッチで再試行されます。';

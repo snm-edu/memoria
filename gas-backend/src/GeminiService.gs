@@ -84,7 +84,7 @@ error_typeの判定基準（内部分類用）:
 - misread: 問題文や選択肢の読み違い（「ではない」の見落とし等）
 - confusion: 似た概念との混同`;
 
-    const result = callGeminiAPI(prompt, 3, { json: true });
+    const result = callLLM(prompt, 3, { json: true, caller: 'analyzeError' });
     if (result.error) return result;
 
     // レスポンスをパース
@@ -129,9 +129,11 @@ error_typeの判定基準（内部分類用）:
     const originalText = serverQuestion.question_text;
     const analysisText = String(analysis || '').slice(0, 400);
 
-    // 既存の類題をチェック（最大3題まで）
+    // 既存の類題をチェック（上限まで達していれば生成せず返す）
+    // ※ここはロック外＝API呼び出しを無駄打ちしないための早期リターン。
+    //   上限の実際の担保は下の永続化ブロック（ロック内の再確認）が行う。
     const existing = findGeneratedQuestions(questionId);
-    if (existing.length >= 3) {
+    if (existing.length >= CONFIG.AI_GENERATED_MAX_PER_QUESTION) {
       return { questions: existing, cached: true };
     }
 
@@ -158,7 +160,7 @@ error_typeの判定基準（内部分類用）:
   "difficulty": 3
 }`;
 
-    const result = callGeminiAPI(prompt, 3, { json: true });
+    const result = callLLM(prompt, 3, { json: true, caller: 'generateSimilar' });
     if (result.error) return result;
 
     const generated = parseJsonResponse(result.text);
@@ -172,8 +174,20 @@ error_typeの判定基準（内部分類用）:
 
     const sheet = getOrCreateSheet(CONFIG.SHEETS.AI_GENERATED);
     const lock = LockService.getScriptLock();
+    let lockAcquired = false;
     try {
       lock.waitLock(10000);
+      lockAcquired = true;
+
+      // ロック内で件数を再確認する。
+      // 冒頭の事前チェックは API 呼び出しの前＝ロック外にあるため、同一 questionId への
+      // 同時リクエストやクライアントの再送があると双方が事前チェックを通過し、
+      // 「1問につき最大 N 題」の契約を超えて積まれる（生成物は他の学生にも配信される）。
+      const current = findGeneratedQuestions(questionId);
+      if (current.length >= CONFIG.AI_GENERATED_MAX_PER_QUESTION) {
+        return { questions: current, cached: true };
+      }
+
       sheet.appendRow([
         genId,
         questionId,
@@ -188,8 +202,17 @@ error_typeの判定基準（内部分類用）:
         generated.difficulty || 3,
         now,
       ]);
+    } catch (e) {
+      if (!lockAcquired) {
+        // ロックが取れないまま終わった＝同じシートへの書き込みが進行中。
+        // 待たずに諦め、部分実行を残さず安全側へ着地する。
+        return { error: 'generateSimilar is busy, try again later' };
+      }
+      throw e;
     } finally {
-      lock.releaseLock();
+      if (lockAcquired) {
+        lock.releaseLock();
+      }
     }
 
     return {
@@ -238,67 +261,13 @@ function getDepartmentExpertName(department) {
   return map[department] || '国家試験';
 }
 
-// === Gemini API ヘルパー ===
-
-/**
- * Gemini APIを呼び出す
- */
-function callGeminiAPI(prompt, retries, options) {
-  retries = retries || 3;
-  options = options || {};
-
-  const url = CONFIG.GEMINI_API_URL + CONFIG.GEMINI_MODEL + ':generateContent?key=' + CONFIG.GEMINI_API_KEY;
-
-  var genConfig = {
-    temperature: 0.7,
-    maxOutputTokens: 1024,
-  };
-  // JSON出力が必要な場合のみ設定（デフォルトはテキスト）
-  if (options.json) {
-    genConfig.responseMimeType = 'application/json';
-  }
-
-  const payload = {
-    contents: [{
-      parts: [{ text: prompt }]
-    }],
-    generationConfig: genConfig,
-  };
-
-  for (let attempt = 0; attempt < retries; attempt++) {
-    try {
-      const response = UrlFetchApp.fetch(url, {
-        method: 'post',
-        contentType: 'application/json',
-        payload: JSON.stringify(payload),
-        muteHttpExceptions: true,
-      });
-
-      const code = response.getResponseCode();
-      if (code === 200) {
-        const json = JSON.parse(response.getContentText());
-        const text = json.candidates?.[0]?.content?.parts?.[0]?.text || '';
-        return { text };
-      }
-
-      if (code === 429 || code >= 500) {
-        // レート制限 or サーバーエラー → リトライ
-        const backoff = Math.pow(2, attempt) * 1000;
-        Utilities.sleep(backoff);
-        continue;
-      }
-
-      return { error: 'Gemini API error: ' + code + ' ' + response.getContentText() };
-    } catch (e) {
-      if (attempt === retries - 1) {
-        return { error: 'Gemini API call failed: ' + e.message };
-      }
-      Utilities.sleep(Math.pow(2, attempt) * 1000);
-    }
-  }
-
-  return { error: 'Gemini API: max retries exceeded' };
-}
+// === LLM 呼び出し ===
+//
+// 送信処理は LlmService.gs へ移設した（プロバイダ切替と ai_call_log 記録のため）。
+//   - 実処理:   llmCallGemini_ / llmCallOpenAI_（LlmService.gs）
+//   - 純粋関数: LlmServiceCore.gs（tests/llm_service_core.test.js で検証）
+//   - 入口:     callLLM(prompt, retries, options)
+// 旧名 callGeminiAPI は LlmService.gs に後方互換エイリアスとして残してある。
 
 /**
  * JSONレスポンスをパース（Markdownコードブロック対応）

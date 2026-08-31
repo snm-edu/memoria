@@ -16,6 +16,32 @@ const CONFIG = {
   // Gemini API エンドポイント
   GEMINI_API_URL: 'https://generativelanguage.googleapis.com/v1beta/models/',
 
+  // LLM プロバイダ 'gemini' | 'openai'
+  // スクリプトプロパティ LLM_PROVIDER で切り替える（グローバルは実行ごとに再評価されるため
+  // 値を変えれば次の実行から効く。再デプロイ不要）
+  LLM_PROVIDER: PropertiesService.getScriptProperties().getProperty('LLM_PROVIDER') || 'gemini',
+
+  // OpenAI API キー（platform.openai.com 発行）
+  OPENAI_API_KEY: PropertiesService.getScriptProperties().getProperty('OPENAI_API_KEY') || '',
+
+  // OpenAI モデル
+  OPENAI_MODEL: 'gpt-5.6-luna',
+
+  // OpenAI Responses API エンドポイント
+  // Chat Completions は reasoning モデルの effort 指定に非対応のため Responses を使う
+  OPENAI_API_URL: 'https://api.openai.com/v1/responses',
+
+  // reasoning effort。reasoning tokens は output tokens として課金されるため、
+  // 既定(medium)のままだと 100〜250字の定型出力でもコストが数倍に膨らむ。
+  // 誤答分析・類題生成は学生が同期で待つ経路でもあるので 'none' 固定を既定にする。
+  OPENAI_REASONING_EFFORT: 'none',
+
+  // OpenAI の出力上限。effort が none 以外のときは LlmServiceCore 側で下限まで引き上げられる。
+  OPENAI_MAX_OUTPUT_TOKENS: 1024,
+
+  // 1問あたりに積む AI 類題の上限（ai_generated シート）
+  AI_GENERATED_MAX_PER_QUESTION: 3,
+
   // レート制限
   MAX_AI_CALLS_PER_STUDENT_DAY: 5,
 
@@ -33,6 +59,7 @@ const CONFIG = {
     RECORDING_SEGMENTS: 'recording_segments',
     VIDEO_RECOMMENDATIONS: 'video_recommendations',
     VIDEO_EVENTS: 'video_events',
+    AI_CALL_LOG: 'ai_call_log',
   },
 
   // 1 studentId あたりの enrollment 検証試行回数上限（1日）
@@ -127,6 +154,12 @@ function getSheetHeaders(sheetName) {
         'event_id', 'recommendation_key', 'recommendation_id', 'student_id',
         'student_number', 'event_type', 'question_id', 'segment_key', 'segment_id',
         'feedback', 'created_at'
+      ];
+    case CONFIG.SHEETS.AI_CALL_LOG:
+      return [
+        'timestamp', 'caller', 'provider', 'model', 'http_code', 'latency_ms',
+        'prompt_chars', 'input_tokens', 'output_tokens', 'reasoning_tokens',
+        'attempts', 'error_reason'
       ];
     case CONFIG.SHEETS.AI_GENERATED:
       return [
